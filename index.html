@@ -241,11 +241,10 @@
         [data-theme="light"] .feature-card:hover {
             background: rgba(0, 0, 0, 0.015);
         }
-        .f-meta {
-            font-size: 10px;
+        .f-title {
+            font-size: 1.15rem;
             font-weight: 600;
-            letter-spacing: 2px;
-            color: var(--meta-color);
+            color: var(--text-main);
             margin-bottom: 40px;
         }
         .f-illustration {
@@ -267,16 +266,6 @@
             stroke: var(--text-main);
             filter: drop-shadow(0 0 8px rgba(255,255,255,0.08));
             transform: translateY(-4px);
-        }
-        .f-text {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .f-text h3 {
-            font-size: 1.15rem;
-            margin: 0;
-            font-weight: 600;
         }
         .f-text p {
             color: var(--text-muted);
@@ -682,7 +671,7 @@
         <section class="features container fade-in">
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="f-meta">FIG 0.1</div>
+                    <h3 class="f-title">Always on Top</h3>
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
                             <!-- Dashed vertical connecting lines -->
@@ -702,13 +691,12 @@
                         </svg>
                     </div>
                     <div class="f-text">
-                        <h3>Always on Top</h3>
                         <p>Pins itself above all other applications. Never lose context or alt-tab endlessly again.</p>
                     </div>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="f-meta">FIG 0.2</div>
+                    <h3 class="f-title">Rich Content</h3>
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
                             <!-- Left Cube -->
@@ -732,13 +720,12 @@
                         </svg>
                     </div>
                     <div class="f-text">
-                        <h3>Rich Content</h3>
                         <p>Paste text, images, and videos. FloatBoard handles multiple formats seamlessly.</p>
                     </div>
                 </div>
 
                 <div class="feature-card">
-                    <div class="f-meta">FIG 0.3</div>
+                    <h3 class="f-title">Beautiful UI</h3>
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
                             <rect class="anim-wave" x="70" y="30" width="70" height="90" rx="6" opacity="0.2" />
@@ -749,7 +736,6 @@
                         </svg>
                     </div>
                     <div class="f-text">
-                        <h3>Beautiful UI</h3>
                         <p>Built with a stunning Glassmorphism UI, Dark Mode support, and ultra-low latency.</p>
                     </div>
                 </div>
