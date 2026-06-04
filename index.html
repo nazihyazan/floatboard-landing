@@ -213,66 +213,76 @@
             background: var(--btn-secondary-hover);
         }
 
-        /* Features */
+        /* Features (Linear Style Grid) */
         .features {
-            padding: 120px 0;
+            padding: 0;
+            border-top: 1px solid var(--card-border);
+            border-bottom: 1px solid var(--card-border);
+            margin: 120px auto;
         }
         .features-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+            gap: 1px;
+            background: var(--card-border);
         }
         .feature-card {
-            background: transparent;
-            border-top: 1px solid var(--card-border);
-            padding: 40px 24px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            background: var(--bg-color);
+            padding: 48px 40px;
+            display: flex;
+            flex-direction: column;
+            min-height: 480px;
             position: relative;
-        }
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: -1px;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--text-main), transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-        .feature-card:hover::before {
-            opacity: 0.3;
+            transition: background 0.4s ease;
         }
         .feature-card:hover {
-            background: rgba(255,255,255,0.01);
-            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.015);
         }
         [data-theme="light"] .feature-card:hover {
-            background: rgba(0,0,0,0.01);
+            background: rgba(0, 0, 0, 0.015);
         }
-        .f-icon {
-            width: 32px;
-            height: 32px;
-            margin-bottom: 24px;
-            color: var(--text-main);
-            opacity: 0.8;
+        .f-meta {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: var(--meta-color);
+            margin-bottom: 40px;
         }
-        .f-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: currentColor;
-            stroke-width: 1.5;
+        .f-illustration {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 60px;
+        }
+        .f-illustration svg {
+            width: 160px;
+            height: 160px;
+            stroke: var(--text-muted);
+            stroke-width: 0.75;
             fill: none;
+            transition: all 0.5s ease;
         }
-        .feature-card h3 {
+        .feature-card:hover .f-illustration svg {
+            stroke: var(--text-main);
+            filter: drop-shadow(0 0 8px rgba(255,255,255,0.08));
+            transform: translateY(-4px);
+        }
+        .f-text {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .f-text h3 {
             font-size: 1.15rem;
-            margin-bottom: 12px;
+            margin: 0;
             font-weight: 600;
         }
-        .feature-card p {
+        .f-text p {
             color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
+            margin: 0;
         }
 
         /* SHOWCASES (Linear Style) */
@@ -643,25 +653,64 @@
         <section class="features container fade-in">
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="f-icon">
-                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    <div class="f-meta">FIG 0.1</div>
+                    <div class="f-illustration">
+                        <svg viewBox="0 0 180 180">
+                            <!-- Dashed vertical connecting lines -->
+                            <path d="M40 60 L40 120 M90 90 L90 150 M140 60 L140 120" stroke-dasharray="2 4" opacity="0.4" />
+                            <!-- Bottom Plane -->
+                            <path d="M90 90 L140 120 L90 150 L40 120 Z" opacity="0.3" />
+                            <!-- Middle Plane -->
+                            <path d="M90 60 L140 90 L90 120 L40 90 Z" opacity="0.6" />
+                            <!-- Top Plane (Glowing) -->
+                            <path d="M90 30 L140 60 L90 90 L40 60 Z" fill="rgba(255,255,255,0.03)" stroke-width="1.5" />
+                        </svg>
                     </div>
-                    <h3>Always on Top</h3>
-                    <p>Pins itself above all other applications. Never lose context or alt-tab endlessly again.</p>
+                    <div class="f-text">
+                        <h3>Always on Top</h3>
+                        <p>Pins itself above all other applications. Never lose context or alt-tab endlessly again.</p>
+                    </div>
                 </div>
+                
                 <div class="feature-card">
-                    <div class="f-icon">
-                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <div class="f-meta">FIG 0.2</div>
+                    <div class="f-illustration">
+                        <svg viewBox="0 0 180 180">
+                            <!-- Left Cube -->
+                            <path d="M70 75 L100 90 L70 105 L40 90 Z" />
+                            <path d="M40 90 L70 105 L70 145 L40 130 Z" opacity="0.6" />
+                            <path d="M70 105 L100 90 L100 130 L70 145 Z" opacity="0.3" />
+                            <!-- Top Cube -->
+                            <path d="M100 45 L130 60 L100 75 L70 60 Z" />
+                            <path d="M70 60 L100 75 L100 105 L70 90 Z" opacity="0.6" />
+                            <path d="M100 75 L130 60 L130 90 L100 105 Z" opacity="0.3" />
+                            <!-- Right Cube -->
+                            <path d="M130 85 L160 100 L130 115 L100 100 Z" />
+                            <path d="M100 100 L130 115 L130 155 L100 140 Z" opacity="0.6" />
+                            <path d="M130 115 L160 100 L160 140 L130 155 Z" opacity="0.3" />
+                        </svg>
                     </div>
-                    <h3>Rich Content</h3>
-                    <p>Paste text, images, and videos. FloatBoard handles multiple formats seamlessly.</p>
+                    <div class="f-text">
+                        <h3>Rich Content</h3>
+                        <p>Paste text, images, and videos. FloatBoard handles multiple formats seamlessly.</p>
+                    </div>
                 </div>
+
                 <div class="feature-card">
-                    <div class="f-icon">
-                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    <div class="f-meta">FIG 0.3</div>
+                    <div class="f-illustration">
+                        <svg viewBox="0 0 180 180">
+                            <rect x="70" y="30" width="70" height="90" rx="6" opacity="0.2" />
+                            <rect x="60" y="45" width="70" height="90" rx="6" opacity="0.4" />
+                            <rect x="50" y="60" width="70" height="90" rx="6" opacity="0.6" />
+                            <rect x="40" y="75" width="70" height="90" rx="6" opacity="0.8" />
+                            <rect x="30" y="90" width="70" height="90" rx="6" fill="rgba(255,255,255,0.03)" stroke-width="1.5" />
+                        </svg>
                     </div>
-                    <h3>Beautiful UI</h3>
-                    <p>Built with a stunning Glassmorphism UI, Dark Mode support, and ultra-low latency.</p>
+                    <div class="f-text">
+                        <h3>Beautiful UI</h3>
+                        <p>Built with a stunning Glassmorphism UI, Dark Mode support, and ultra-low latency.</p>
+                    </div>
                 </div>
             </div>
         </section>
