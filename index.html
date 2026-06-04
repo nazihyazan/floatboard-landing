@@ -39,6 +39,12 @@
             --dot-color: rgba(0, 0, 0, 0.06);
             --glass-border: rgba(0, 0, 0, 0.06);
             --divider: rgba(0, 0, 0, 0.1);
+            
+            /* Showcase Specifics (Light) */
+            --showcase-bg: rgba(255,255,255,0.7);
+            --mockup-bg: rgba(255,255,255,0.85);
+            --mockup-border: rgba(0,0,0,0.08);
+            --mockup-shadow: 0 24px 60px rgba(0,0,0,0.15);
         }
 
         [data-theme="dark"] {
@@ -59,6 +65,12 @@
             --dot-color: rgba(255, 255, 255, 0.04);
             --glass-border: rgba(255, 255, 255, 0.06);
             --divider: rgba(255, 255, 255, 0.1);
+
+            /* Showcase Specifics (Dark) */
+            --showcase-bg: rgba(0,0,0,0.4);
+            --mockup-bg: rgba(20,20,25,0.85);
+            --mockup-border: rgba(255,255,255,0.1);
+            --mockup-shadow: 0 30px 80px rgba(0,0,0,0.6);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -148,28 +160,12 @@
             align-items: center;
             position: relative;
         }
-        /* Floating background mockup */
-        .hero-bg-mockup {
-            position: absolute;
-            top: 60px;
-            left: 50%;
-            transform: translateX(-50%) rotate(-2deg);
-            width: 700px;
-            height: 400px;
-            border-radius: 12px;
-            background: var(--card-bg);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--card-shadow);
-            z-index: -1;
-            opacity: 0.15;
-            pointer-events: none;
-            backdrop-filter: blur(10px);
-        }
         .hero h1 {
             font-size: clamp(3.5rem, 8vw, 6rem);
             line-height: 1.1;
             margin-bottom: 24px;
             max-width: 900px;
+            z-index: 2;
         }
         .hero p {
             font-size: 1.25rem;
@@ -177,10 +173,12 @@
             max-width: 600px;
             margin-bottom: 40px;
             font-weight: 400;
+            z-index: 2;
         }
         .hero-btns {
             display: flex;
             gap: 16px;
+            z-index: 2;
         }
         .btn {
             display: inline-flex;
@@ -244,72 +242,78 @@
             font-size: 0.95rem;
         }
 
-        /* Screenshots Section */
-        .screenshots {
-            padding: 120px 0;
-            border-top: 1px solid var(--glass-border);
-            border-bottom: 1px solid var(--glass-border);
-            background: rgba(0,0,0,0.01);
-        }
-        [data-theme="dark"] .screenshots {
-            background: rgba(255,255,255,0.01);
-        }
-        .section-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-        .section-header h2 {
-            font-size: 3rem;
-            margin-bottom: 16px;
+        /* SHOWCASES (Linear Style) */
+        .showcases-section {
+            padding: 100px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 160px;
         }
         
-        .mockups-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
+        .showcase {
+            position: relative;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
+        /* The Massive Background Application Window */
+        .showcase-bg-app {
+            width: 90%;
+            max-width: 1000px;
+            height: 600px;
+            border-radius: 16px;
+            background: var(--showcase-bg);
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--card-shadow);
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+        .showcase-bg-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            transition: opacity 0.4s ease;
+        }
+        [data-theme="dark"] .showcase-bg-img {
+            opacity: 0.4;
+        }
+
+        /* The FloatBoard Mockup Overlapping */
         .mockup {
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            text-align: left;
+            position: absolute;
+            background: var(--mockup-bg);
+            border: 1px solid var(--mockup-border);
+            color: var(--text-main);
             backdrop-filter: blur(25px);
             -webkit-backdrop-filter: blur(25px);
-            height: 260px;
-        }
-        .mockup:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            box-shadow: var(--mockup-shadow);
+            width: 440px;
+            height: 280px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             z-index: 10;
         }
         
-        /* Hardcoded Light Mockups */
-        .m-light {
-            background: rgba(255, 255, 255, 0.85);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            color: #1a1a1a;
-            order: 1;
+        /* Layout Positions */
+        .mockup.left {
+            left: 2%;
+            bottom: 15%;
         }
-        .m-light .m-divider, .m-light .m-v-divider { background: rgba(0, 0, 0, 0.1); }
-        
-        /* Hardcoded Dark Mockups */
-        .m-dark {
-            background: rgba(20, 20, 25, 0.85);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: #f0f0f0;
-            order: 2;
+        .mockup.right {
+            right: 2%;
+            top: 20%;
         }
-        .m-dark .m-divider, .m-dark .m-v-divider { background: rgba(255, 255, 255, 0.1); }
 
-        /* Dynamic Ordering based on Theme */
-        [data-theme="dark"] .m-light { order: 2; }
-        [data-theme="dark"] .m-dark { order: 1; }
+        .mockup:hover {
+            transform: scale(1.03) translateY(-10px);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
+        }
 
         .m-header {
             display: flex;
@@ -340,6 +344,7 @@
         .m-divider {
             height: 1px;
             width: 100%;
+            background: var(--divider);
         }
         .m-body {
             display: flex;
@@ -355,15 +360,16 @@
             flex-direction: column;
             justify-content: center;
             font-size: 0.85rem;
-            line-height: 1.5;
+            line-height: 1.6;
         }
         .m-v-divider {
             width: 1px;
             height: 100%;
+            background: var(--divider);
         }
         .m-image-container {
             width: 40%;
-            padding: 12px;
+            padding: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -373,6 +379,7 @@
             height: 100%;
             object-fit: cover;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         
         /* Content specific styles */
@@ -381,17 +388,17 @@
             font-size: 0.75rem;
             opacity: 0.9;
             white-space: pre;
-            line-height: 1.4;
+            line-height: 1.5;
         }
         .todo-item {
             display: flex;
             align-items: center;
-            gap: 8px;
-            margin-bottom: 10px;
+            gap: 10px;
+            margin-bottom: 12px;
         }
         .todo-box {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             border-radius: 4px;
             border: 1px solid currentColor;
             opacity: 0.5;
@@ -403,28 +410,17 @@
         }
         .quote {
             font-style: italic;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             border-left: 3px solid currentColor;
-            padding-left: 12px;
-            opacity: 0.8;
+            padding-left: 14px;
+            opacity: 0.9;
             margin: auto 0;
         }
-        .data-table {
-            width: 100%;
-            font-size: 0.75rem;
-            border-collapse: collapse;
-        }
-        .data-table th, .data-table td {
-            text-align: left;
-            padding: 6px 0;
-            border-bottom: 1px solid currentColor;
-        }
-        .data-table th { opacity: 0.5; font-weight: normal; }
-        .data-table tr:last-child td { border-bottom: none; }
 
         /* How it works */
         .steps {
             padding: 120px 0;
+            border-top: 1px solid var(--glass-border);
         }
         .steps-container {
             display: flex;
@@ -468,8 +464,8 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .dl-card:hover {
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-            transform: scale(1.02);
+            box-shadow: var(--card-shadow);
+            transform: translateY(-4px);
         }
         .dl-icon {
             width: 48px;
@@ -569,10 +565,20 @@
         }
 
         @media (max-width: 900px) {
-            .mockups-grid, .features-grid, .steps-container, .dl-grid {
+            .features-grid, .steps-container, .dl-grid {
                 grid-template-columns: 1fr;
             }
             .hero h1 { font-size: 2.5rem; }
+            .showcase-bg-app { height: 400px; }
+            .mockup {
+                width: 90%;
+                position: relative;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                top: -40px !important;
+                margin: 0 auto;
+            }
         }
     </style>
 </head>
@@ -593,14 +599,8 @@
 
     <main>
         <section class="hero container">
-            <div class="hero-bg-mockup">
-                <div class="m-header" style="border-bottom: 1px solid var(--glass-border);">
-                    <div class="m-controls" style="left: 12px;"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                </div>
-            </div>
-            
             <h1 class="fade-in visible">Your clipboard, always on top</h1>
-            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard stays above every window. Paste texts, images, and videos effortlessly.</p>
+            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard stays above every window. Paste texts, images, and videos effortlessly without losing your context.</p>
             <div class="hero-btns fade-in visible" style="transition-delay: 0.2s;">
                 <a href="#download" class="btn btn-primary">Download for Free</a>
                 <a href="https://github.com/nazihyazan/floating_board" target="_blank" class="btn btn-secondary">View on GitHub</a>
@@ -627,93 +627,48 @@
             </div>
         </section>
 
-        <section class="screenshots fade-in">
-            <div class="container">
-                <div class="section-header">
-                    <h2>See it in Action</h2>
+        <section class="showcases-section container fade-in">
+            <!-- Showcase 1 -->
+            <div class="showcase">
+                <div class="showcase-bg-app">
+                    <!-- Background App Image -->
+                    <img src="file:///home/nazih/Downloads/picfloat/pexels-thilina-alagiyawanna-3266092-36214461.jpg" alt="Background Application" class="showcase-bg-img">
                 </div>
-                <div class="mockups-grid">
-                    
-                    <!-- Mockup 1: Light (Long Text + Image) -->
-                    <div class="mockup m-light">
-                        <div class="m-header">
-                            <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                            <div class="m-title">Always on top</div>
+                
+                <div class="mockup left">
+                    <div class="m-header">
+                        <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
+                        <div class="m-title">FloatBoard</div>
+                    </div>
+                    <div class="m-divider"></div>
+                    <div class="m-body">
+                        <div class="m-content">
+                            <strong>Meeting Notes</strong><br><br>
+                            We discussed the new redesign today. The goal is to achieve a minimalist, high-end look.<br><br>
+                            The UI must reflect absolute simplicity.
                         </div>
-                        <div class="m-divider"></div>
-                        <div class="m-body">
-                            <div class="m-content">
-                                <strong>Meeting Notes</strong><br><br>
-                                We discussed the new redesign today. The goal is to achieve a minimalist, high-end look.<br><br>
-                                The UI must reflect absolute simplicity and speed.
-                            </div>
-                            <div class="m-v-divider"></div>
-                            <div class="m-image-container">
-                                <img src="/home/nazih/Downloads/picfloat/birmingham-museums-trust-nbneQlI2M1A-unsplash.jpg" alt="Preview" class="m-img">
-                            </div>
+                        <div class="m-v-divider"></div>
+                        <div class="m-image-container">
+                            <img src="file:///home/nazih/Downloads/picfloat/birmingham-museums-trust-nbneQlI2M1A-unsplash.jpg" alt="Content" class="m-img">
                         </div>
                     </div>
+                </div>
+            </div>
 
-                    <!-- Mockup 2: Light (HTML Code + Image) -->
-                    <div class="mockup m-light">
-                        <div class="m-header">
-                            <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                            <div class="m-title">Always on top</div>
-                        </div>
-                        <div class="m-divider"></div>
-                        <div class="m-body">
-                            <div class="m-content code-block">
-&lt;div class="hero"&gt;
-  &lt;h1&gt;FloatBoard&lt;/h1&gt;
-  &lt;p&gt;Glassmorphism&lt;/p&gt;
-  &lt;button&gt;Download&lt;/button&gt;
-&lt;/div&gt;
-
-&lt;style&gt;
-  .hero {
-    display: flex;
-    padding: 120px;
-  }
-&lt;/style&gt;
-                            </div>
-                            <div class="m-v-divider"></div>
-                            <div class="m-image-container">
-                                <img src="/home/nazih/Downloads/picfloat/mads-schmidt-rasmussen-xfngap_DToE-unsplash.jpg" alt="Preview" class="m-img">
-                            </div>
-                        </div>
+            <!-- Showcase 2 -->
+            <div class="showcase">
+                <div class="showcase-bg-app">
+                    <img src="file:///home/nazih/Downloads/picfloat/pexels-sinan-aslan-1844393508-33619479.jpg" alt="Background Application" class="showcase-bg-img">
+                </div>
+                
+                <div class="mockup right">
+                    <div class="m-header">
+                        <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
+                        <div class="m-title">Always on top</div>
                     </div>
-
-                    <!-- Mockup 3: Light (To-Do List + Image) -->
-                    <div class="mockup m-light">
-                        <div class="m-header">
-                            <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                            <div class="m-title">Always on top</div>
-                        </div>
-                        <div class="m-divider"></div>
-                        <div class="m-body">
-                            <div class="m-content">
-                                <strong>Weekly Tasks</strong><br><br>
-                                <div class="todo-item"><div class="todo-box checked"></div> Design Landing Page</div>
-                                <div class="todo-item"><div class="todo-box checked"></div> Write HTML/CSS</div>
-                                <div class="todo-item"><div class="todo-box"></div> Fix Animations</div>
-                                <div class="todo-item"><div class="todo-box"></div> Push to GitHub</div>
-                            </div>
-                            <div class="m-v-divider"></div>
-                            <div class="m-image-container">
-                                <img src="/home/nazih/Downloads/picfloat/pexels-jan-van-der-wolf-11680885-37537468.jpg" alt="Preview" class="m-img">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mockup 4: Dark (JS Code + Image) -->
-                    <div class="mockup m-dark">
-                        <div class="m-header">
-                            <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                            <div class="m-title">Always on top</div>
-                        </div>
-                        <div class="m-divider"></div>
-                        <div class="m-body">
-                            <div class="m-content code-block">
+                    <div class="m-divider"></div>
+                    <div class="m-body">
+                        <div class="m-content code-block">
 const toggleTheme = () => {
   const root = document.documentElement;
   const current = root.dataset.theme;
@@ -725,65 +680,74 @@ const toggleTheme = () => {
   root.dataset.theme = next;
   localStorage.setItem('theme', next);
 };
-                            </div>
-                            <div class="m-v-divider"></div>
-                            <div class="m-image-container">
-                                <img src="/home/nazih/Downloads/picfloat/pexels-justyna-sieczka-2161487384-37534963.jpg" alt="Preview" class="m-img">
-                            </div>
+                        </div>
+                        <div class="m-v-divider"></div>
+                        <div class="m-image-container">
+                            <img src="file:///home/nazih/Downloads/picfloat/mads-schmidt-rasmussen-xfngap_DToE-unsplash.jpg" alt="Content" class="m-img">
                         </div>
                     </div>
-
-                    <!-- Mockup 5: Dark (Quote + Image) -->
-                    <div class="mockup m-dark">
-                        <div class="m-header">
-                            <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                            <div class="m-title">Always on top</div>
-                        </div>
-                        <div class="m-divider"></div>
-                        <div class="m-body">
-                            <div class="m-content">
-                                <div class="quote">
-                                    "Simplicity is about subtracting the obvious and adding the meaningful."
-                                    <br><br>- John Maeda
-                                </div>
-                            </div>
-                            <div class="m-v-divider"></div>
-                            <div class="m-image-container">
-                                <img src="/home/nazih/Downloads/picfloat/pexels-karola-g-4622942.jpg" alt="Preview" class="m-img">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Mockup 6: Dark (Table + Image) -->
-                    <div class="mockup m-dark">
-                        <div class="m-header">
-                            <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                            <div class="m-title">Always on top</div>
-                        </div>
-                        <div class="m-divider"></div>
-                        <div class="m-body">
-                            <div class="m-content">
-                                <strong>System Metrics</strong><br><br>
-                                <table class="data-table">
-                                    <tr><th>OS</th><th>Downloads</th></tr>
-                                    <tr><td>macOS</td><td>12,400</td></tr>
-                                    <tr><td>Windows</td><td>8,920</td></tr>
-                                    <tr><td>Linux</td><td>4,100</td></tr>
-                                </table>
-                            </div>
-                            <div class="m-v-divider"></div>
-                            <div class="m-image-container">
-                                <img src="/home/nazih/Downloads/picfloat/pexels-leon-kohle-3158283-14038353.jpg" alt="Preview" class="m-img">
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
+
+            <!-- Showcase 3 -->
+            <div class="showcase">
+                <div class="showcase-bg-app">
+                    <img src="file:///home/nazih/Downloads/picfloat/pexels-jan-van-der-wolf-11680885-37537468.jpg" alt="Background Application" class="showcase-bg-img">
+                </div>
+                
+                <div class="mockup left" style="bottom: 10%;">
+                    <div class="m-header">
+                        <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
+                        <div class="m-title">Tasks</div>
+                    </div>
+                    <div class="m-divider"></div>
+                    <div class="m-body">
+                        <div class="m-content">
+                            <strong>Weekly Tasks</strong><br><br>
+                            <div class="todo-item"><div class="todo-box checked"></div> Design Landing Page</div>
+                            <div class="todo-item"><div class="todo-box checked"></div> Write HTML/CSS</div>
+                            <div class="todo-item"><div class="todo-box"></div> Fix Animations</div>
+                            <div class="todo-item"><div class="todo-box"></div> Push to GitHub</div>
+                        </div>
+                        <div class="m-v-divider"></div>
+                        <div class="m-image-container">
+                            <img src="file:///home/nazih/Downloads/picfloat/pexels-justyna-sieczka-2161487384-37534963.jpg" alt="Content" class="m-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Showcase 4 -->
+            <div class="showcase">
+                <div class="showcase-bg-app">
+                    <img src="file:///home/nazih/Downloads/picfloat/pexels-karola-g-4622942.jpg" alt="Background Application" class="showcase-bg-img">
+                </div>
+                
+                <div class="mockup right">
+                    <div class="m-header">
+                        <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
+                        <div class="m-title">Inspiration</div>
+                    </div>
+                    <div class="m-divider"></div>
+                    <div class="m-body">
+                        <div class="m-content">
+                            <div class="quote">
+                                "Simplicity is about subtracting the obvious and adding the meaningful."
+                                <br><br>- John Maeda
+                            </div>
+                        </div>
+                        <div class="m-v-divider"></div>
+                        <div class="m-image-container">
+                            <img src="file:///home/nazih/Downloads/picfloat/pexels-leon-kohle-3158283-14038353.jpg" alt="Content" class="m-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section class="steps container fade-in">
-            <div class="section-header" style="margin-bottom: 60px;">
+            <div class="section-header" style="text-align: center; margin-bottom: 80px;">
                 <h2>How it works</h2>
             </div>
             <div class="steps-container">
@@ -807,7 +771,7 @@ const toggleTheme = () => {
 
         <section id="download" class="download fade-in">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                     <h2>Get FloatBoard</h2>
                     <p style="color: var(--text-muted); font-size: 1.25rem;">Available for all major operating systems.</p>
                 </div>
@@ -864,7 +828,7 @@ const toggleTheme = () => {
         </section>
 
         <section id="faq" class="faq container fade-in">
-            <div class="section-header" style="margin-bottom: 60px;">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
                 <h2>Frequently Asked Questions</h2>
             </div>
             <div class="faq-list">
