@@ -1,996 +1,818 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="FloatBoard is a floating clipboard that stays always on top. Paste texts, images, and videos effortlessly." />
-  <title>FloatBoard - Floating Clipboard</title>
-  <script>
-    document.documentElement.classList.add("js");
-  </script>
-  <style>
-    :root {
-      --bg-deep: #0a0a2e;
-      --bg-mid: #1a1a4e;
-      --text: #ffffff;
-      --muted: rgba(255, 255, 255, 0.72);
-      --soft: rgba(255, 255, 255, 0.1);
-      --softer: rgba(255, 255, 255, 0.07);
-      --line: rgba(255, 255, 255, 0.18);
-      --accent: #65f0d5;
-      --accent-2: #ffc861;
-      --accent-3: #ff7aa8;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
-      --blur: blur(22px);
-      --radius: 8px;
-      --max: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      min-height: 100vh;
-      overflow-x: hidden;
-      background:
-        radial-gradient(circle at 50% -20%, rgba(101, 240, 213, 0.16), transparent 34%),
-        linear-gradient(135deg, var(--bg-deep) 0%, var(--bg-mid) 54%, #10103c 100%);
-      color: var(--text);
-      font-family: "Segoe UI", sans-serif;
-      line-height: 1.6;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      z-index: -2;
-      background-image:
-        linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px);
-      background-size: 56px 56px;
-      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.72), transparent 82%);
-      pointer-events: none;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .container {
-      width: min(100% - 40px, var(--max));
-      margin: 0 auto;
-    }
-
-    .glass {
-      border: 1px solid var(--line);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.06));
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      -webkit-backdrop-filter: var(--blur);
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 30;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-      background: rgba(10, 10, 46, 0.58);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-    }
-
-    .nav-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      min-height: 72px;
-      gap: 24px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0;
-      white-space: nowrap;
-    }
-
-    .brand-icon {
-      display: grid;
-      place-items: center;
-      width: 38px;
-      height: 38px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.22);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .nav-link {
-      border-radius: 8px;
-      padding: 10px 14px;
-      color: var(--muted);
-      font-size: 15px;
-      font-weight: 650;
-      transition: color 220ms ease, background 220ms ease, transform 220ms ease;
-    }
-
-    .nav-link:hover,
-    .nav-link:focus-visible {
-      background: rgba(255, 255, 255, 0.1);
-      color: #fff;
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .hero {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 100vh;
-      overflow: hidden;
-      padding: 112px 0 72px;
-    }
-
-    .hero-stage {
-      position: absolute;
-      inset: 72px 0 0;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .hero-window {
-      position: absolute;
-      right: clamp(16px, 8vw, 124px);
-      top: clamp(92px, 14vh, 150px);
-      width: min(430px, 48vw);
-      min-height: 440px;
-      border-radius: 14px;
-      animation: floatWindow 6s ease-in-out infinite;
-      transform-origin: center;
-    }
-
-    .window-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
-    }
-
-    .traffic {
-      display: flex;
-      gap: 8px;
-    }
-
-    .dot {
-      width: 11px;
-      height: 11px;
-      border-radius: 50%;
-      background: var(--accent-3);
-      box-shadow: 0 0 20px rgba(255, 122, 168, 0.44);
-    }
-
-    .dot:nth-child(2) {
-      background: var(--accent-2);
-      box-shadow: 0 0 20px rgba(255, 200, 97, 0.38);
-    }
-
-    .dot:nth-child(3) {
-      background: var(--accent);
-      box-shadow: 0 0 20px rgba(101, 240, 213, 0.42);
-    }
-
-    .window-title {
-      color: rgba(255, 255, 255, 0.82);
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    .clip-list {
-      display: grid;
-      gap: 14px;
-      padding: 18px;
-    }
-
-    .clip-item {
-      display: grid;
-      grid-template-columns: 42px minmax(0, 1fr);
-      gap: 12px;
-      align-items: center;
-      min-height: 74px;
-      border: 1px solid rgba(255, 255, 255, 0.13);
-      border-radius: 8px;
-      padding: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
-    }
-
-    .clip-icon {
-      display: grid;
-      place-items: center;
-      width: 42px;
-      height: 42px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.12);
-      font-size: 21px;
-    }
-
-    .clip-lines {
-      display: grid;
-      gap: 8px;
-    }
-
-    .line {
-      height: 9px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .line.short {
-      width: 54%;
-    }
-
-    .line.mid {
-      width: 76%;
-    }
-
-    .mini-note {
-      position: absolute;
-      left: clamp(18px, 8vw, 136px);
-      bottom: clamp(100px, 16vh, 180px);
-      width: min(240px, 34vw);
-      border-radius: 8px;
-      padding: 16px;
-      animation: floatNote 7s ease-in-out infinite;
-    }
-
-    .mini-note strong {
-      display: block;
-      margin-bottom: 8px;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .mini-note span {
-      color: var(--muted);
-      font-size: 13px;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      width: min(100% - 40px, 880px);
-      text-align: center;
-      text-shadow: 0 14px 44px rgba(0, 0, 0, 0.45);
-    }
-
-    .hero h1 {
-      font-size: clamp(48px, 8vw, 60px);
-      font-weight: 800;
-      line-height: 1;
-      letter-spacing: 0;
-    }
-
-    .hero p {
-      max-width: 720px;
-      margin: 24px auto 0;
-      color: rgba(255, 255, 255, 0.82);
-      font-size: clamp(18px, 2.4vw, 22px);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 14px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 50px;
-      border: 1px solid rgba(255, 255, 255, 0.22);
-      border-radius: 8px;
-      padding: 0 22px;
-      color: #fff;
-      font-size: 16px;
-      font-weight: 800;
-      cursor: pointer;
-      transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease, border-color 220ms ease;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, rgba(101, 240, 213, 0.95), rgba(255, 200, 97, 0.92));
-      color: #080823;
-      box-shadow: 0 16px 40px rgba(101, 240, 213, 0.22);
-    }
-
-    .btn-secondary {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-    }
-
-    .btn:hover,
-    .btn:focus-visible {
-      border-color: rgba(255, 255, 255, 0.42);
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.28);
-      transform: translateY(-3px);
-      outline: none;
-    }
-
-    section {
-      position: relative;
-      padding: 96px 0;
-      scroll-margin-top: 84px;
-    }
-
-    .section-head {
-      max-width: 760px;
-      margin: 0 auto 42px;
-      text-align: center;
-    }
-
-    .section-head h2 {
-      font-size: clamp(34px, 5vw, 46px);
-      font-weight: 800;
-      line-height: 1.12;
-      letter-spacing: 0;
-    }
-
-    .section-head p {
-      margin-top: 14px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .feature-card,
-    .download-card {
-      border-radius: var(--radius);
-      padding: 24px;
-      transition: transform 240ms ease, border-color 240ms ease, background 240ms ease;
-    }
-
-    .feature-card:hover,
-    .download-card:hover {
-      border-color: rgba(101, 240, 213, 0.42);
-      background: linear-gradient(145deg, rgba(255, 255, 255, 0.17), rgba(255, 255, 255, 0.075));
-      transform: translateY(-5px);
-    }
-
-    .feature-icon,
-    .platform-icon {
-      display: grid;
-      place-items: center;
-      width: 54px;
-      height: 54px;
-      margin-bottom: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.11);
-      font-size: 28px;
-    }
-
-    .platform-icon svg {
-      display: block;
-      width: 34px;
-      height: 34px;
-      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.22));
-    }
-
-    .platform-icon .apple-logo {
-      width: 32px;
-      height: 32px;
-      color: #fff;
-    }
-
-    .platform-icon .linux-logo {
-      width: 40px;
-      height: 40px;
-    }
-
-    .feature-card h3,
-    .download-card h3 {
-      font-size: 20px;
-      line-height: 1.2;
-    }
-
-    .feature-card p,
-    .download-card p {
-      margin-top: 10px;
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .screenshot-shell {
-      width: min(100%, 970px);
-      margin: 0 auto;
-      border-radius: 14px;
-      padding: 16px;
-    }
-
-    .screenshot-frame {
-      display: grid;
-      place-items: center;
-      min-height: 470px;
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.16);
-      border-radius: 8px;
-      background:
-        linear-gradient(135deg, rgba(245, 247, 255, 0.9), rgba(205, 215, 232, 0.88)),
-        #eef1f7;
-      color: rgba(20, 28, 52, 0.62);
-      font-size: clamp(22px, 4vw, 34px);
-      font-weight: 800;
-      text-align: center;
-      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-    }
-
-    .download-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .download-card {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 260px;
-    }
-
-    .download-card .btn {
-      width: 100%;
-      margin-top: auto;
-    }
-
-    .faq-wrap {
-      width: min(100%, 880px);
-      margin: 0 auto;
-      display: grid;
-      gap: 12px;
-    }
-
-    .faq-item {
-      overflow: hidden;
-      border-radius: 8px;
-    }
-
-    .faq-question {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      min-height: 68px;
-      border: 0;
-      padding: 0 20px;
-      background: transparent;
-      color: #fff;
-      font: inherit;
-      font-size: 17px;
-      font-weight: 800;
-      list-style: none;
-      text-align: left;
-      cursor: pointer;
-    }
-
-    .faq-question::-webkit-details-marker {
-      display: none;
-    }
-
-    .faq-question::after {
-      content: "+";
-      display: grid;
-      place-items: center;
-      flex: 0 0 30px;
-      width: 30px;
-      height: 30px;
-      margin-left: 14px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--accent);
-      font-size: 24px;
-      line-height: 1;
-      transition: transform 220ms ease, background 220ms ease;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      color: var(--muted);
-      transition: max-height 260ms ease;
-    }
-
-    .faq-answer p {
-      padding: 0 20px 20px;
-    }
-
-    .faq-item[open] .faq-question::after {
-      content: "-";
-      background: rgba(101, 240, 213, 0.16);
-      transform: rotate(180deg);
-    }
-
-    .faq-item[open] .faq-answer {
-      max-height: 120px;
-    }
-
-    .footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(4, 4, 22, 0.78);
-      padding: 30px 0;
-      color: rgba(255, 255, 255, 0.72);
-      text-align: center;
-    }
-
-    .fade-in {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 700ms ease, transform 700ms ease;
-    }
-
-    .js .fade-in {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-
-    .js .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @keyframes floatWindow {
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0) rotate(1deg);
-      }
-
-      50% {
-        transform: translate3d(-12px, 18px, 0) rotate(-1.2deg);
-      }
-    }
-
-    @keyframes floatNote {
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0) rotate(-2deg);
-      }
-
-      50% {
-        transform: translate3d(10px, -16px, 0) rotate(1.5deg);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *,
-      *::before,
-      *::after {
-        animation-duration: 1ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 1ms !important;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .features-grid,
-      .download-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .hero-window {
-        right: -90px;
-        top: 112px;
-        width: 370px;
-        opacity: 0.58;
-      }
-
-      .mini-note {
-        left: 24px;
-        bottom: 94px;
-        width: 210px;
-        opacity: 0.7;
-      }
-    }
-
-    @media (max-width: 680px) {
-      .container,
-      .hero-content {
-        width: min(100% - 28px, var(--max));
-      }
-
-      .nav-inner {
-        min-height: 66px;
-      }
-
-      .brand {
-        font-size: 19px;
-      }
-
-      .brand-icon {
-        width: 34px;
-        height: 34px;
-      }
-
-      .nav-links {
-        gap: 2px;
-      }
-
-      .nav-link {
-        padding: 8px;
-        font-size: 13px;
-      }
-
-      .hero {
-        min-height: 100svh;
-        padding-top: 96px;
-      }
-
-      .hero-window {
-        top: 90px;
-        right: -170px;
-        width: 340px;
-        min-height: 370px;
-      }
-
-      .mini-note {
-        display: none;
-      }
-
-      .hero p {
-        margin-top: 18px;
-      }
-
-      .hero-actions {
-        align-items: stretch;
-        flex-direction: column;
-        width: min(100%, 360px);
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      section {
-        padding: 74px 0;
-      }
-
-      .features-grid,
-      .download-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .feature-card,
-      .download-card {
-        padding: 20px;
-      }
-
-      .screenshot-shell {
-        padding: 10px;
-      }
-
-      .screenshot-frame {
-        min-height: 280px;
-      }
-
-      .faq-question {
-        padding: 0 16px;
-        font-size: 16px;
-      }
-
-      .faq-answer p {
-        padding: 0 16px 18px;
-      }
-    }
-
-    @media (max-width: 430px) {
-      .nav-inner {
-        gap: 10px;
-      }
-
-      .brand span:last-child {
-        max-width: 112px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      .nav-link {
-        font-size: 12px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloatBoard - Your clipboard, always on top</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="FloatBoard">
+    <meta property="og:description" content="A floating clipboard that stays always on top">
+    <meta property="og:image" content="https://floatboard.xyz/assets/icon.png">
+    <meta property="og:url" content="https://floatboard.xyz">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            /* Light Theme Default */
+            --bg-color: #f5f5f7;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
+            --nav-bg: rgba(245, 245, 247, 0.7);
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.05);
+            --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+            --btn-primary: #0066ff;
+            --btn-primary-hover: #0052cc;
+            --btn-primary-text: #ffffff;
+            --btn-secondary: transparent;
+            --btn-secondary-hover: rgba(0, 0, 0, 0.05);
+            --btn-secondary-text: #1a1a1a;
+            --dot-color: rgba(0, 0, 0, 0.06);
+            --glass-border: rgba(0, 0, 0, 0.08);
+            --border-radius: 6px;
+            
+            /* Mockup Variables (Light) */
+            --mockup-bg: rgba(255, 255, 255, 0.75);
+            --mockup-border: rgba(0, 0, 0, 0.1);
+            --mockup-card-bg: rgba(0, 0, 0, 0.04);
+            --mockup-text: #1a1a1a;
+        }
+
+        [data-theme="dark"] {
+            --bg-color: #0d0d1a;
+            --text-main: #ffffff;
+            --text-muted: #a0a0a0;
+            --nav-bg: rgba(13, 13, 26, 0.7);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            --btn-primary: #2f7df6;
+            --btn-primary-hover: #1e66d4;
+            --btn-primary-text: #ffffff;
+            --btn-secondary: transparent;
+            --btn-secondary-hover: rgba(255, 255, 255, 0.05);
+            --btn-secondary-text: #ffffff;
+            --dot-color: rgba(255, 255, 255, 0.04);
+            --glass-border: rgba(255, 255, 255, 0.1);
+
+            /* Mockup Variables (Dark) */
+            --mockup-bg: rgba(30, 30, 30, 0.8);
+            --mockup-border: rgba(255, 255, 255, 0.1);
+            --mockup-card-bg: rgba(255, 255, 255, 0.05);
+            --mockup-text: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-position: -12px -12px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--nav-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+        .logo {
+            font-weight: 800;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: color 0.3s ease;
+        }
+        .logo img {
+            width: 24px;
+            height: 24px;
+        }
+        .theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-main);
+            cursor: pointer;
+            padding: 8px;
+            border-radius: var(--border-radius);
+            transition: background 0.2s ease, color 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: var(--btn-secondary-hover);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: clamp(3rem, 6vw, 4.5rem);
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.1s;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.8s ease forwards 0.2s;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 24px;
+            height: 44px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: 1px solid transparent;
+        }
+        .btn-primary {
+            background: var(--btn-primary);
+            color: var(--btn-primary-text);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .btn-primary:hover {
+            background: var(--btn-primary-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+        }
+        .btn-secondary {
+            background: var(--btn-secondary);
+            color: var(--btn-secondary-text);
+            border-color: var(--glass-border);
+        }
+        .btn-secondary:hover {
+            background: var(--btn-secondary-hover);
+        }
+
+        /* Mockup Container */
+        .mockups-wrapper {
+            margin-top: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            perspective: 1000px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeUp 1s ease forwards 0.4s;
+        }
+        
+        .mockup {
+            width: 300px;
+            height: 400px;
+            border-radius: 12px;
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            text-align: left;
+            /* Dynamic Theme Variables */
+            background: var(--mockup-bg);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border: 1px solid var(--mockup-border);
+            color: var(--mockup-text);
+        }
+        .mockup:hover {
+            transform: translateY(-8px) scale(1.02) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        .m-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        .m-controls {
+            display: flex;
+            gap: 6px;
+        }
+        .m-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .m-dot.r { background: #ff5f56; }
+        .m-dot.y { background: #ffbd2e; }
+        .m-dot.g { background: #27c93f; }
+        .m-title {
+            flex: 1;
+            text-align: center;
+            font-size: 0.75rem;
+            font-weight: 600;
+            opacity: 0.6;
+            margin-right: 42px; /* Balance controls */
+        }
+        
+        /* Mockup Cards */
+        .m-card {
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 0.8rem;
+            background: var(--mockup-card-bg);
+            transition: background 0.3s ease;
+        }
+        .m-img {
+            width: 100%;
+            height: 100px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            background: linear-gradient(45deg, #2f7df6, #ff7aa8);
+        }
+        
+        /* Split View Mockup */
+        .m-split {
+            display: flex;
+            gap: 12px;
+            height: 100%;
+        }
+        .m-split-col {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .m-divider {
+            width: 1px;
+            background: var(--glass-border);
+            transition: background 0.3s ease;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            border-color: var(--btn-primary);
+            box-shadow: var(--card-shadow);
+        }
+        .f-icon {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* How it works */
+        .steps {
+            padding: 100px 0;
+            background: rgba(0, 0, 0, 0.02);
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+        [data-theme="dark"] .steps {
+            background: rgba(255, 255, 255, 0.01);
+        }
+        .steps-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .step {
+            flex: 1;
+            min-width: 250px;
+        }
+        .step-num {
+            font-size: 4rem;
+            font-weight: 800;
+            color: var(--glass-border);
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+        .step p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 100px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 24px;
+            max-height: 0;
+            overflow: hidden;
+            color: var(--text-muted);
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            padding: 0 24px 24px;
+            max-height: 200px;
+        }
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        /* Download */
+        .download {
+            padding: 100px 0;
+            border-top: 1px solid var(--glass-border);
+        }
+        .dl-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+        .dl-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 32px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        .dl-card:hover {
+            box-shadow: var(--card-shadow);
+            transform: translateY(-4px);
+        }
+        .dl-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 20px;
+        }
+        .dl-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+        .dl-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+        .dl-card .btn {
+            width: 100%;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--glass-border);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animations for scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .mockups-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .mockup {
+                transform: none !important;
+            }
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar" aria-label="Primary navigation">
-    <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="FloatBoard home">
-        <span class="brand-icon" aria-hidden="true">📌</span>
-        <span>FloatBoard</span>
-      </a>
-      <div class="nav-links">
-        <a class="nav-link" href="#features">Features</a>
-        <a class="nav-link" href="#download">Download</a>
-        <a class="nav-link" href="#faq">FAQ</a>
-      </div>
-    </div>
-  </nav>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-stage" aria-hidden="true">
-        <div class="hero-window glass">
-          <div class="window-top">
-            <div class="traffic">
-              <span class="dot"></span>
-              <span class="dot"></span>
-              <span class="dot"></span>
-            </div>
-            <div class="window-title">Always on top</div>
-          </div>
-          <div class="clip-list">
-            <div class="clip-item">
-              <div class="clip-icon">📝</div>
-              <div class="clip-lines">
-                <span class="line"></span>
-                <span class="line mid"></span>
-                <span class="line short"></span>
-              </div>
-            </div>
-            <div class="clip-item">
-              <div class="clip-icon">🖼️</div>
-              <div class="clip-lines">
-                <span class="line mid"></span>
-                <span class="line"></span>
-                <span class="line short"></span>
-              </div>
-            </div>
-            <div class="clip-item">
-              <div class="clip-icon">🎬</div>
-              <div class="clip-lines">
-                <span class="line"></span>
-                <span class="line short"></span>
-                <span class="line mid"></span>
-              </div>
-            </div>
-          </div>
+    <nav>
+        <div class="container nav-content">
+            <a href="#" class="logo">
+                <img src="assets/icon.png" alt="FloatBoard Logo" onerror="this.style.display='none'">
+                FloatBoard
+            </a>
+            <button class="theme-toggle" id="theme-btn" aria-label="Toggle theme">
+                <svg id="moon-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                <svg id="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            </button>
         </div>
-        <div class="mini-note glass">
-          <strong>Saved instantly</strong>
-          <span>Your recent clips stay ready when you need them.</span>
-        </div>
-      </div>
+    </nav>
 
-      <div class="hero-content fade-in">
-        <h1>FloatBoard</h1>
-        <p>A floating clipboard that stays always on top. Paste texts, images, and videos effortlessly.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#download">Download for Free</a>
-          <a class="btn btn-secondary" href="#features">Learn More</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="features">
-      <div class="container">
-        <div class="section-head fade-in">
-          <h2>Why FloatBoard?</h2>
-          <p>Keep your most useful clips close, visible, and ready without interrupting your workflow.</p>
-        </div>
-        <div class="features-grid">
-          <article class="feature-card glass fade-in">
-            <div class="feature-icon" aria-hidden="true">📌</div>
-            <h3>Always on Top</h3>
-            <p>Pin FloatBoard above your apps so your clipboard is never hidden behind busy windows.</p>
-          </article>
-          <article class="feature-card glass fade-in">
-            <div class="feature-icon" aria-hidden="true">📝</div>
-            <h3>Text &amp; Images</h3>
-            <p>Save quick notes, snippets, screenshots, and visuals in one clean floating space.</p>
-          </article>
-          <article class="feature-card glass fade-in">
-            <div class="feature-icon" aria-hidden="true">🎬</div>
-            <h3>Video Support</h3>
-            <p>Drop video clips into your board and keep references ready while you create or review.</p>
-          </article>
-          <article class="feature-card glass fade-in">
-            <div class="feature-icon" aria-hidden="true">🎨</div>
-            <h3>Glassmorphism UI</h3>
-            <p>Enjoy a translucent interface with smooth blur, soft depth, and focused controls.</p>
-          </article>
-          <article class="feature-card glass fade-in">
-            <div class="feature-icon" aria-hidden="true">🌙</div>
-            <h3>Dark Mode</h3>
-            <p>Work comfortably at night with a deep interface that keeps content easy to scan.</p>
-          </article>
-          <article class="feature-card glass fade-in">
-            <div class="feature-icon" aria-hidden="true">💾</div>
-            <h3>Auto Save</h3>
-            <p>Your clips are saved automatically, so useful content stays available after closing.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="screenshot">
-      <div class="container">
-        <div class="section-head fade-in">
-          <h2>See It in Action</h2>
-          <p>A clean workspace for everything you paste, pin, and reuse.</p>
-        </div>
-        <div class="screenshot-shell glass fade-in">
-          <div class="screenshot-frame">Screenshot Placeholder</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="download">
-      <div class="container">
-        <div class="section-head fade-in">
-          <h2>Get FloatBoard</h2>
-          <p>Free to start, with optional premium features when you need more power.</p>
-        </div>
-        <div class="download-grid">
-          <article class="download-card glass fade-in">
-            <div class="platform-icon" aria-hidden="true">
-              <svg class="windows-logo" viewBox="0 0 64 64" role="img">
-                <path fill="#00adef" d="M6 13.8 29.2 10v22H6V13.8Z" />
-                <path fill="#00adef" d="M32.8 9.4 58 5.3V32H32.8V9.4Z" />
-                <path fill="#00adef" d="M6 35.6h23.2v22.2L6 54V35.6Z" />
-                <path fill="#00adef" d="M32.8 35.6H58v28.1l-25.2-4.1V35.6Z" />
-              </svg>
+    <main>
+        <section class="hero container">
+            <h1>Your clipboard,<br>always on top</h1>
+            <p>FloatBoard stays above every window. Paste texts, images, and videos effortlessly without losing your workflow.</p>
+            <div class="hero-btns">
+                <a href="#download" class="btn btn-primary">Download for Free</a>
+                <a href="https://github.com/nazihyazan/floating_board" target="_blank" class="btn btn-secondary">View on GitHub</a>
             </div>
-            <h3>Windows</h3>
-            <p>Download the installer for Windows as an .exe package.</p>
-            <a class="btn btn-primary" href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.0.exe">Download .exe</a>
-          </article>
-          <article class="download-card glass fade-in">
-            <div class="platform-icon" aria-hidden="true">
-              <svg class="apple-logo" viewBox="0 0 384 512" role="img">
-                <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.4-18.8-26.9-47.2-41.7-84.7-44.6-35.8-2.8-75 20.8-89.7 20.8-15.5 0-51-19.9-79.2-19.4-41.7.7-79.5 24.4-98.9 62.3-41.3 71.7-10.5 177.5 29.4 235.6 19.6 28.2 42.8 59.8 73.3 58.7 29.2-1.2 40.2-18.9 75.5-18.9 35.1 0 45.3 18.9 76.8 18.2 31.8-.5 51.8-28.7 71.4-57 22.4-32.7 31.5-64.3 31.8-65.9-.7-.3-61.3-23.5-61.6-93.3ZM261.1 104.1c16.4-19.8 27.4-47.4 24.4-75.1-23.7 1-52.4 15.8-69.4 35.6-15.2 17.6-28.6 45.6-25 72.4 26.4 2 53.6-13.4 70-32.9Z" />
-              </svg>
+
+            <div class="mockups-wrapper">
+                <!-- Screenshot 1: Standard List -->
+                <div class="mockup">
+                    <div class="m-header">
+                        <div class="m-controls">
+                            <div class="m-dot r"></div>
+                            <div class="m-dot y"></div>
+                            <div class="m-dot g"></div>
+                        </div>
+                        <div class="m-title">FloatBoard</div>
+                    </div>
+                    <div class="m-card">
+                        <strong>Link Copied</strong><br>
+                        https://linear.app/redesign
+                    </div>
+                    <div class="m-card">
+                        <div class="m-img" style="background: linear-gradient(45deg, #00c6ff, #0072ff);"></div>
+                        Dashboard Screenshot.png
+                    </div>
+                </div>
+
+                <!-- Screenshot 2: Code Snippet -->
+                <div class="mockup" style="z-index: 5; transform: translateY(-20px);">
+                    <div class="m-header">
+                        <div class="m-controls">
+                            <div class="m-dot r"></div>
+                            <div class="m-dot y"></div>
+                            <div class="m-dot g"></div>
+                        </div>
+                        <div class="m-title">Snippets</div>
+                    </div>
+                    <div class="m-card">
+                        <strong>API Key</strong><br>
+                        sk_test_51Nx...
+                    </div>
+                    <div class="m-card" style="font-family: monospace;">
+                        const theme = () => {<br>
+                        &nbsp;&nbsp;console.log('Mode!');<br>
+                        }
+                    </div>
+                </div>
+
+                <!-- Screenshot 3: Split View -->
+                <div class="mockup">
+                    <div class="m-header">
+                        <div class="m-controls">
+                            <div class="m-dot r"></div>
+                            <div class="m-dot y"></div>
+                            <div class="m-dot g"></div>
+                        </div>
+                        <div class="m-title">Split View</div>
+                    </div>
+                    <div class="m-split">
+                        <div class="m-split-col">
+                            <div class="m-card">Notes 📝</div>
+                            <div class="m-card" style="flex:1;">Colors:<br>#0d0d1a<br>#2f7df6</div>
+                        </div>
+                        <div class="m-divider"></div>
+                        <div class="m-split-col">
+                            <div class="m-card" style="height: 100%;">
+                                <div class="m-img" style="background: linear-gradient(45deg, #f12711, #f5af19); height: 100%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h3>macOS</h3>
-            <p>Install FloatBoard on Mac with a simple .dmg download.</p>
-            <a class="btn btn-primary" href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard-1.0.0-mac.zip">Download .dmg</a>
-          </article>
-          <article class="download-card glass fade-in">
-            <div class="platform-icon" aria-hidden="true">
-              <svg class="linux-logo" viewBox="0 0 64 64" role="img">
-                <ellipse cx="20" cy="54" rx="11" ry="5.5" fill="#f2a20c" transform="rotate(-12 20 54)" />
-                <ellipse cx="44" cy="54" rx="11" ry="5.5" fill="#f2a20c" transform="rotate(12 44 54)" />
-                <path fill="#151821" d="M45.7 42.5c0 12.1-7.4 18.3-13.7 18.3s-13.7-6.2-13.7-18.3S23 14.4 32 14.4s13.7 16 13.7 28.1Z" />
-                <ellipse cx="32" cy="40.5" rx="10.4" ry="16.4" fill="#f7f7f2" />
-                <ellipse cx="32" cy="16.6" rx="13.4" ry="14.9" fill="#151821" />
-                <ellipse cx="27" cy="13.8" rx="3.3" ry="4.2" fill="#fff" />
-                <ellipse cx="37" cy="13.8" rx="3.3" ry="4.2" fill="#fff" />
-                <circle cx="27.8" cy="14.7" r="1.25" fill="#151821" />
-                <circle cx="36.2" cy="14.7" r="1.25" fill="#151821" />
-                <path fill="#f2a20c" d="M25.5 22.7c2.8-2.5 5.1-3.5 6.5-3.5s3.7 1 6.5 3.5c-2.7 2.1-4.9 3-6.5 3s-3.8-.9-6.5-3Z" />
-                <path fill="#151821" d="M18.8 35.3c-4.1 2.7-6.1 7.5-5.3 12.8.5 3.6 2.1 6.6 4.2 8.2 1.1.8 2.5.5 3.1-.8 1.7-3.7 2.8-8.4 2.8-13.5 0-3.2-.5-5.7-1.5-7.4-.7-1.2-2.1-1.5-3.3-.7Z" />
-                <path fill="#151821" d="M45.2 35.3c4.1 2.7 6.1 7.5 5.3 12.8-.5 3.6-2.1 6.6-4.2 8.2-1.1.8-2.5.5-3.1-.8-1.7-3.7-2.8-8.4-2.8-13.5 0-3.2.5-5.7 1.5-7.4.7-1.2 2.1-1.5 3.3-.7Z" />
-              </svg>
+        </section>
+
+        <section class="features container fade-in">
+            <div class="section-header">
+                <h2>Designed for speed</h2>
+                <p style="color: var(--text-muted); font-size: 1.2rem;">Everything you copy, accessible instantly without switching windows.</p>
             </div>
-            <h3>Linux</h3>
-            <p>Use the Debian package for Ubuntu, Debian, and compatible distros.</p>
-            <a class="btn btn-primary" href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.deb">Download .deb</a>
-          </article>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="f-icon">📌</div>
+                    <h3>Always on Top</h3>
+                    <p>Pins itself above all other applications. Never lose context or alt-tab endlessly again.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon">📝</div>
+                    <h3>Rich Content</h3>
+                    <p>Paste text, images, and videos. FloatBoard handles multiple formats seamlessly.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="f-icon">🎨</div>
+                    <h3>Beautiful & Fast</h3>
+                    <p>Built with a stunning Glassmorphism UI, Light/Dark Mode support, and ultra-low latency.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="steps">
+            <div class="container fade-in">
+                <div class="section-header">
+                    <h2>How it works</h2>
+                </div>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <h3>Download</h3>
+                        <p>Get the lightweight FloatBoard installer for Windows, macOS, or Linux.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <h3>Float</h3>
+                        <p>Launch the app and let it float elegantly in the corner of your screen.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <h3>Work</h3>
+                        <p>Copy anything. Drag, drop, and paste efficiently while keeping your focus.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="faq container fade-in">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is FloatBoard?
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <div class="faq-answer">
+                        FloatBoard is a desktop application that acts as a floating clipboard manager. It stays on top of your other windows, allowing you to easily paste and manage texts, images, and videos without interrupting your workflow.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is FloatBoard free?
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, FloatBoard is completely free and open-source. You can view the source code and contribute on our GitHub repository.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Which operating systems are supported?
+                        <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                    </div>
+                    <div class="faq-answer">
+                        FloatBoard is available for Windows, macOS, and Linux. You can download the specific installer for your operating system below.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="download" class="download container fade-in">
+            <div class="section-header">
+                <h2>Get FloatBoard</h2>
+                <p style="color: var(--text-muted); font-size: 1.2rem;">Available for all major operating systems.</p>
+            </div>
+            <div class="dl-grid">
+                <!-- Windows -->
+                <div class="dl-card">
+                    <div class="dl-icon">
+                        <svg viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="#00adef" d="M6 13.8 29.2 10v22H6V13.8Z" />
+                            <path fill="#00adef" d="M32.8 9.4 58 5.3V32H32.8V9.4Z" />
+                            <path fill="#00adef" d="M6 35.6h23.2v22.2L6 54V35.6Z" />
+                            <path fill="#00adef" d="M32.8 35.6H58v28.1l-25.2-4.1V35.6Z" />
+                        </svg>
+                    </div>
+                    <h3>Windows</h3>
+                    <p>Download the installer for Windows as an .exe package.</p>
+                    <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/Floating.Board.Setup.1.0.0.exe" class="btn btn-primary">Download .exe</a>
+                </div>
+                <!-- macOS -->
+                <div class="dl-card">
+                    <div class="dl-icon" style="color: var(--text-main);">
+                        <svg viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                            <path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.4-18.8-26.9-47.2-41.7-84.7-44.6-35.8-2.8-75 20.8-89.7 20.8-15.5 0-51-19.9-79.2-19.4-41.7.7-79.5 24.4-98.9 62.3-41.3 71.7-10.5 177.5 29.4 235.6 19.6 28.2 42.8 59.8 73.3 58.7 29.2-1.2 40.2-18.9 75.5-18.9 35.1 0 45.3 18.9 76.8 18.2 31.8-.5 51.8-28.7 71.4-57 22.4-32.7 31.5-64.3 31.8-65.9-.7-.3-61.3-23.5-61.6-93.3ZM261.1 104.1c16.4-19.8 27.4-47.4 24.4-75.1-23.7 1-52.4 15.8-69.4 35.6-15.2 17.6-28.6 45.6-25 72.4 26.4 2 53.6-13.4 70-32.9Z"/>
+                        </svg>
+                    </div>
+                    <h3>macOS</h3>
+                    <p>Install FloatBoard on Mac with a simple .dmg download.</p>
+                    <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/Floating.Board-1.0.0-mac.zip" class="btn btn-primary">Download .dmg</a>
+                </div>
+                <!-- Linux -->
+                <div class="dl-card">
+                    <div class="dl-icon">
+                        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                            <ellipse cx="20" cy="54" rx="11" ry="5.5" fill="#f2a20c" transform="rotate(-12 20 54)" />
+                            <ellipse cx="44" cy="54" rx="11" ry="5.5" fill="#f2a20c" transform="rotate(12 44 54)" />
+                            <path fill="#151821" d="M45.7 42.5c0 12.1-7.4 18.3-13.7 18.3s-13.7-6.2-13.7-18.3S23 14.4 32 14.4s13.7 16 13.7 28.1Z" />
+                            <ellipse cx="32" cy="40.5" rx="10.4" ry="16.4" fill="#f7f7f2" />
+                            <ellipse cx="32" cy="16.6" rx="13.4" ry="14.9" fill="#151821" />
+                            <ellipse cx="27" cy="13.8" rx="3.3" ry="4.2" fill="#fff" />
+                            <ellipse cx="37" cy="13.8" rx="3.3" ry="4.2" fill="#fff" />
+                            <circle cx="27.8" cy="14.7" r="1.25" fill="#151821" />
+                            <circle cx="36.2" cy="14.7" r="1.25" fill="#151821" />
+                            <path fill="#f2a20c" d="M25.5 22.7c2.8-2.5 5.1-3.5 6.5-3.5s3.7 1 6.5 3.5c-2.7 2.1-4.9 3-6.5 3s-3.8-.9-6.5-3Z" />
+                            <path fill="#151821" d="M18.8 35.3c-4.1 2.7-6.1 7.5-5.3 12.8.5 3.6 2.1 6.6 4.2 8.2 1.1.8 2.5.5 3.1-.8 1.7-3.7 2.8-8.4 2.8-13.5 0-3.2-.5-5.7-1.5-7.4-.7-1.2-2.1-1.5-3.3-.7Z" />
+                            <path fill="#151821" d="M45.2 35.3c4.1 2.7 6.1 7.5 5.3 12.8-.5 3.6-2.1 6.6-4.2 8.2-1.1.8-2.5.5-3.1-.8-1.7-3.7-2.8-8.4-2.8-13.5 0-3.2.5-5.7 1.5-7.4.7-1.2 2.1-1.5 3.3-.7Z" />
+                        </svg>
+                    </div>
+                    <h3>Linux</h3>
+                    <p>Use the Debian package for Ubuntu, Debian, and compatible distros.</p>
+                    <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floating-board_1.0.0_amd64.deb" class="btn btn-primary">Download .deb</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Made with ❤️ by Yazan</p>
+            <div style="margin-top: 12px; display: flex; justify-content: center; gap: 16px;">
+                <a href="https://github.com/nazihyazan/floating_board" target="_blank">GitHub</a>
+                <a href="https://github.com/sponsors/nazihyazan" target="_blank">Sponsors</a>
+            </div>
         </div>
-      </div>
-    </section>
+    </footer>
 
-    <section id="faq">
-      <div class="container">
-        <div class="section-head fade-in">
-          <h2>Frequently Asked Questions</h2>
-        </div>
-        <div class="faq-wrap">
-          <details class="faq-item glass fade-in" name="floatboard-faq">
-            <summary class="faq-question">Is FloatBoard free?</summary>
-            <div class="faq-answer">
-              <p>Yes, with optional premium features.</p>
-            </div>
-          </details>
-          <details class="faq-item glass fade-in" name="floatboard-faq">
-            <summary class="faq-question">Does it work offline?</summary>
-            <div class="faq-answer">
-              <p>Yes, fully offline.</p>
-            </div>
-          </details>
-          <details class="faq-item glass fade-in" name="floatboard-faq">
-            <summary class="faq-question">What formats are supported?</summary>
-            <div class="faq-answer">
-              <p>Text, PNG, JPG, GIF, MP4, WebM.</p>
-            </div>
-          </details>
-          <details class="faq-item glass fade-in" name="floatboard-faq">
-            <summary class="faq-question">Is my data safe?</summary>
-            <div class="faq-answer">
-              <p>All data is stored locally on your device.</p>
-            </div>
-          </details>
-        </div>
-      </div>
-    </section>
-  </main>
+    <script>
+        // Theme Toggle Logic
+        const themeBtn = document.getElementById('theme-btn');
+        const sunIcon = document.getElementById('sun-icon');
+        const moonIcon = document.getElementById('moon-icon');
+        
+        // Check saved theme
+        let currentTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateIcons(currentTheme);
 
-  <footer class="footer">
-    <div class="container">© 2025 FloatBoard. Made with ❤️ by Nazih</div>
-  </footer>
+        themeBtn.addEventListener('click', () => {
+            currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', currentTheme);
+            localStorage.setItem('theme', currentTheme);
+            updateIcons(currentTheme);
+        });
 
-  <script>
-    const navTargets = document.querySelectorAll('a[href^="#"]');
-    const revealItems = document.querySelectorAll(".fade-in");
-
-    navTargets.forEach((link) => {
-      link.addEventListener("click", (event) => {
-        const targetId = link.getAttribute("href");
-
-        if (targetId === "#") {
-          return;
-        }
-
-        const target = document.querySelector(targetId);
-
-        if (!target) {
-          return;
-        }
-
-        event.preventDefault();
-        target.scrollIntoView({ behavior: "smooth", block: "start" });
-      });
-    });
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-              observer.unobserve(entry.target);
+        function updateIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
             }
-          });
-        },
-        { threshold: 0.16 }
-      );
+        }
 
-      revealItems.forEach((item) => observer.observe(item));
-    } else {
-      revealItems.forEach((item) => item.classList.add("visible"));
-    }
-  </script>
+        // FAQ Toggle Logic
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                // Close all other items
+                faqItems.forEach(faq => faq.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
