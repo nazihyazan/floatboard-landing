@@ -39,6 +39,7 @@
             --dot-color: rgba(0, 0, 0, 0.06);
             --glass-border: rgba(0, 0, 0, 0.06);
             --divider: rgba(0, 0, 0, 0.1);
+            --line-color: transparent;
             
             /* Showcase Specifics (Light) */
             --showcase-bg: rgba(255,255,255,0.7);
@@ -65,6 +66,7 @@
             --dot-color: rgba(255, 255, 255, 0.04);
             --glass-border: rgba(255, 255, 255, 0.06);
             --divider: rgba(255, 255, 255, 0.1);
+            --line-color: rgba(255, 255, 255, 0.03);
 
             /* Showcase Specifics (Dark) */
             --showcase-bg: rgba(0,0,0,0.4);
@@ -83,9 +85,11 @@
             color: var(--text-main);
             min-height: 100vh;
             overflow-x: hidden;
-            background-image: radial-gradient(var(--dot-color) 1px, transparent 1px);
-            background-size: 40px 40px;
-            background-position: -20px -20px;
+            background-image: 
+                radial-gradient(var(--dot-color) 1px, transparent 1px),
+                repeating-linear-gradient(to right, transparent, transparent 119px, var(--line-color) 119px, var(--line-color) 120px);
+            background-size: 40px 40px, 100% 100%;
+            background-position: -20px -20px, center;
             font-weight: 400;
             line-height: 1.7;
             transition: background-color 0.4s ease, color 0.4s ease;
@@ -698,16 +702,21 @@ const toggleTheme = () => {
                 <div class="mockup left" style="bottom: 10%;">
                     <div class="m-header">
                         <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                        <div class="m-title">Tasks</div>
+                        <div class="m-title">Clipboard History</div>
                     </div>
                     <div class="m-divider"></div>
                     <div class="m-body">
                         <div class="m-content">
-                            <strong>Weekly Tasks</strong><br><br>
-                            <div class="todo-item"><div class="todo-box checked"></div> Design Landing Page</div>
-                            <div class="todo-item"><div class="todo-box checked"></div> Write HTML/CSS</div>
-                            <div class="todo-item"><div class="todo-box"></div> Fix Animations</div>
-                            <div class="todo-item"><div class="todo-box"></div> Push to GitHub</div>
+                            <strong>Recent Copies</strong><br><br>
+                            <div style="padding: 8px 10px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--card-border); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <span style="opacity: 0.5; margin-right: 8px;">📝</span> The UI must reflect absolute simplicity.
+                            </div>
+                            <div style="padding: 8px 10px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--card-border); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                <span style="opacity: 0.5; margin-right: 8px;">🔗</span> https://floatboard.xyz/download
+                            </div>
+                            <div style="padding: 8px 10px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--card-border); display: flex; align-items: center;">
+                                <span style="opacity: 0.5; margin-right: 8px;">🖼️</span> background_image.jpg
+                            </div>
                         </div>
                         <div class="m-v-divider"></div>
                         <div class="m-image-container">
