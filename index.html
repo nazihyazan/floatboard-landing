@@ -726,7 +726,88 @@ const toggleTheme = () => {
                 </div>
             </div>
             
-            <!-- Showcase 4 -->
+            <!-- Showcase 4 (Drag & Drop Animation) -->
+            <style>
+                @keyframes dragDropItem {
+                    0%, 10% { transform: translate(120px, -60px) scale(1); opacity: 0; }
+                    15% { transform: translate(120px, -60px) scale(1.05); opacity: 1; }
+                    40% { transform: translate(0px, 0px) scale(1.05); opacity: 1; }
+                    50%, 70% { transform: translate(0px, 0px) scale(1); opacity: 1; }
+                    80%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0; }
+                }
+                @keyframes dropZoneActive {
+                    0%, 35% { border-color: var(--card-border); background: transparent; }
+                    40%, 65% { border-color: #2f7df6; background: rgba(47, 125, 246, 0.1); color: #2f7df6; }
+                    70%, 100% { border-color: var(--card-border); background: transparent; }
+                }
+                @keyframes cursorPress {
+                    0%, 14% { transform: scale(1); }
+                    15%, 45% { transform: scale(0.85); }
+                    46%, 100% { transform: scale(1); }
+                }
+                .drag-demo {
+                    position: relative;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 20px;
+                }
+                .drop-zone {
+                    width: 100%;
+                    height: 120px;
+                    border: 2px dashed var(--card-border);
+                    border-radius: 12px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                    color: var(--meta-color);
+                    font-size: 13px;
+                    font-weight: 500;
+                    animation: dropZoneActive 4s infinite;
+                    transition: all 0.3s ease;
+                }
+                .drop-zone svg {
+                    width: 24px;
+                    height: 24px;
+                    stroke: currentColor;
+                    fill: none;
+                    stroke-width: 2;
+                }
+                .drag-item {
+                    position: absolute;
+                    background: var(--card-bg);
+                    border: 1px solid var(--card-border);
+                    border-radius: 8px;
+                    padding: 8px 12px;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    font-size: 12px;
+                    font-weight: 500;
+                    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+                    animation: dragDropItem 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
+                    pointer-events: none;
+                    z-index: 10;
+                    backdrop-filter: blur(10px);
+                }
+                .drag-item img {
+                    width: 24px;
+                    height: 24px;
+                    border-radius: 4px;
+                    object-fit: cover;
+                }
+                .drag-cursor {
+                    position: absolute;
+                    bottom: -18px;
+                    right: -18px;
+                    font-size: 24px;
+                    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.3));
+                    animation: cursorPress 4s infinite;
+                }
+            </style>
             <div class="showcase">
                 <div class="showcase-bg-app">
                     <img src="assets/images/pexels-karola-g-4622942.jpg" alt="Background Application" class="showcase-bg-img">
@@ -735,19 +816,26 @@ const toggleTheme = () => {
                 <div class="mockup right">
                     <div class="m-header">
                         <div class="m-controls"><div class="m-dot r"></div><div class="m-dot y"></div><div class="m-dot g"></div></div>
-                        <div class="m-title">Inspiration</div>
+                        <div class="m-title">Drag & Drop</div>
                     </div>
                     <div class="m-divider"></div>
                     <div class="m-body">
                         <div class="m-content">
-                            <div class="quote">
-                                "Simplicity is about subtracting the obvious and adding the meaningful."
-                                <br><br>- John Maeda
+                            <div class="drag-demo">
+                                <div class="drop-zone">
+                                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path></svg>
+                                    Drop any file here
+                                </div>
+                                <div class="drag-item">
+                                    <img src="assets/images/pexels-leon-kohle-3158283-14038353.jpg" alt="thumbnail">
+                                    image_001.jpg
+                                    <div class="drag-cursor">👆</div>
+                                </div>
                             </div>
                         </div>
                         <div class="m-v-divider"></div>
                         <div class="m-image-container">
-                            <img src="assets/images/pexels-leon-kohle-3158283-14038353.jpg" alt="Content" class="m-img">
+                            <img src="assets/images/pexels-leon-kohle-3158283-14038353.jpg" alt="Content" class="m-img" style="object-position: top;">
                         </div>
                     </div>
                 </div>
