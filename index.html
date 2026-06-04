@@ -650,6 +650,35 @@
             </div>
         </section>
 
+        <style>
+            @keyframes floatLayer {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-6px); }
+            }
+            @keyframes bounceCube {
+                0%, 100% { transform: translateY(0); }
+                50% { transform: translateY(-4px); }
+            }
+            @keyframes waveGlass {
+                0%, 100% { transform: translateX(0) translateY(0); }
+                50% { transform: translateX(4px) translateY(-4px); }
+            }
+
+            .anim-float-1 { animation: floatLayer 4s ease-in-out infinite; transform-origin: center; }
+            .anim-float-2 { animation: floatLayer 4s ease-in-out infinite 0.3s; transform-origin: center; }
+            .anim-float-3 { animation: floatLayer 4s ease-in-out infinite 0.6s; transform-origin: center; }
+
+            .anim-bounce-1 { animation: bounceCube 3s ease-in-out infinite; transform-origin: center; }
+            .anim-bounce-2 { animation: bounceCube 3s ease-in-out infinite 0.6s; transform-origin: center; }
+            .anim-bounce-3 { animation: bounceCube 3s ease-in-out infinite 1.2s; transform-origin: center; }
+
+            .anim-wave { animation: waveGlass 3s ease-in-out infinite; }
+            .anim-wave:nth-child(1) { animation-delay: 0s; }
+            .anim-wave:nth-child(2) { animation-delay: 0.2s; }
+            .anim-wave:nth-child(3) { animation-delay: 0.4s; }
+            .anim-wave:nth-child(4) { animation-delay: 0.6s; }
+            .anim-wave:nth-child(5) { animation-delay: 0.8s; }
+        </style>
         <section class="features container fade-in">
             <div class="features-grid">
                 <div class="feature-card">
@@ -659,11 +688,17 @@
                             <!-- Dashed vertical connecting lines -->
                             <path d="M40 60 L40 120 M90 90 L90 150 M140 60 L140 120" stroke-dasharray="2 4" opacity="0.4" />
                             <!-- Bottom Plane -->
-                            <path d="M90 90 L140 120 L90 150 L40 120 Z" opacity="0.3" />
+                            <g class="anim-float-3">
+                                <path d="M90 90 L140 120 L90 150 L40 120 Z" opacity="0.3" />
+                            </g>
                             <!-- Middle Plane -->
-                            <path d="M90 60 L140 90 L90 120 L40 90 Z" opacity="0.6" />
+                            <g class="anim-float-2">
+                                <path d="M90 60 L140 90 L90 120 L40 90 Z" opacity="0.6" />
+                            </g>
                             <!-- Top Plane (Glowing) -->
-                            <path d="M90 30 L140 60 L90 90 L40 60 Z" fill="rgba(255,255,255,0.03)" stroke-width="1.5" />
+                            <g class="anim-float-1">
+                                <path d="M90 30 L140 60 L90 90 L40 60 Z" fill="rgba(255,255,255,0.03)" stroke-width="1.5" />
+                            </g>
                         </svg>
                     </div>
                     <div class="f-text">
@@ -677,17 +712,23 @@
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
                             <!-- Left Cube -->
-                            <path d="M70 75 L100 90 L70 105 L40 90 Z" />
-                            <path d="M40 90 L70 105 L70 145 L40 130 Z" opacity="0.6" />
-                            <path d="M70 105 L100 90 L100 130 L70 145 Z" opacity="0.3" />
+                            <g class="anim-bounce-1">
+                                <path d="M70 75 L100 90 L70 105 L40 90 Z" />
+                                <path d="M40 90 L70 105 L70 145 L40 130 Z" opacity="0.6" />
+                                <path d="M70 105 L100 90 L100 130 L70 145 Z" opacity="0.3" />
+                            </g>
                             <!-- Top Cube -->
-                            <path d="M100 45 L130 60 L100 75 L70 60 Z" />
-                            <path d="M70 60 L100 75 L100 105 L70 90 Z" opacity="0.6" />
-                            <path d="M100 75 L130 60 L130 90 L100 105 Z" opacity="0.3" />
+                            <g class="anim-bounce-2">
+                                <path d="M100 45 L130 60 L100 75 L70 60 Z" />
+                                <path d="M70 60 L100 75 L100 105 L70 90 Z" opacity="0.6" />
+                                <path d="M100 75 L130 60 L130 90 L100 105 Z" opacity="0.3" />
+                            </g>
                             <!-- Right Cube -->
-                            <path d="M130 85 L160 100 L130 115 L100 100 Z" />
-                            <path d="M100 100 L130 115 L130 155 L100 140 Z" opacity="0.6" />
-                            <path d="M130 115 L160 100 L160 140 L130 155 Z" opacity="0.3" />
+                            <g class="anim-bounce-3">
+                                <path d="M130 85 L160 100 L130 115 L100 100 Z" />
+                                <path d="M100 100 L130 115 L130 155 L100 140 Z" opacity="0.6" />
+                                <path d="M130 115 L160 100 L160 140 L130 155 Z" opacity="0.3" />
+                            </g>
                         </svg>
                     </div>
                     <div class="f-text">
@@ -700,11 +741,11 @@
                     <div class="f-meta">FIG 0.3</div>
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
-                            <rect x="70" y="30" width="70" height="90" rx="6" opacity="0.2" />
-                            <rect x="60" y="45" width="70" height="90" rx="6" opacity="0.4" />
-                            <rect x="50" y="60" width="70" height="90" rx="6" opacity="0.6" />
-                            <rect x="40" y="75" width="70" height="90" rx="6" opacity="0.8" />
-                            <rect x="30" y="90" width="70" height="90" rx="6" fill="rgba(255,255,255,0.03)" stroke-width="1.5" />
+                            <rect class="anim-wave" x="70" y="30" width="70" height="90" rx="6" opacity="0.2" />
+                            <rect class="anim-wave" x="60" y="45" width="70" height="90" rx="6" opacity="0.4" />
+                            <rect class="anim-wave" x="50" y="60" width="70" height="90" rx="6" opacity="0.6" />
+                            <rect class="anim-wave" x="40" y="75" width="70" height="90" rx="6" opacity="0.8" />
+                            <rect class="anim-wave" x="30" y="90" width="70" height="90" rx="6" fill="rgba(255,255,255,0.03)" stroke-width="1.5" />
                         </svg>
                     </div>
                     <div class="f-text">
