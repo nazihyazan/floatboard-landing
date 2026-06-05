@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - FloatBoard</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/icon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #fbfbfb;
+            --text-main: #111111;
+            --text-muted: #666666;
+            --card-bg: #ffffff;
+            --card-border: rgba(0, 0, 0, 0.08);
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --premium-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+            --btn-secondary-bg: #ffffff;
+            --btn-secondary-border: #d1d1d1;
+            --btn-secondary-hover: #f3f3f3;
+            --accent-gradient: linear-gradient(135deg, #2f7df6 0%, #3ea894 100%);
+            --divider: rgba(0, 0, 0, 0.08);
+            --icon-color: #2f7df6;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            line-height: 1.6;
+            overflow-x: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        nav {
+            width: 100%;
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 800;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .logo img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Pricing Cards */
+        .pricing-section {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 32px;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-free {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .card-premium {
+            box-shadow: var(--premium-shadow);
+            border-color: rgba(47, 125, 246, 0.3);
+            transform: scale(1.02);
+            position: relative;
+        }
+        
+        .card-premium::before {
+            content: 'Most Popular';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-gradient);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .card-premium:hover {
+            transform: scale(1.04);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .card-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+            min-height: 48px;
+        }
+
+        .card-price {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: baseline;
+            gap: 4px;
+        }
+
+        .card-price span {
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-bottom: 32px;
+        }
+
+        .btn-free {
+            background: var(--btn-secondary-bg);
+            color: var(--text-main);
+            border: 1px solid var(--btn-secondary-border);
+        }
+
+        .btn-free:hover {
+            background: var(--btn-secondary-hover);
+        }
+
+        .btn-premium {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(47, 125, 246, 0.3);
+        }
+
+        .btn-premium:hover {
+            box-shadow: 0 6px 16px rgba(47, 125, 246, 0.4);
+            filter: brightness(1.05);
+        }
+
+        .features-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            flex-grow: 1;
+        }
+
+        .features-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .features-list svg {
+            width: 18px;
+            height: 18px;
+            color: var(--icon-color);
+            flex-shrink: 0;
+            stroke-width: 2.5;
+        }
+        
+        .card-premium .features-list svg {
+            color: #3ea894;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            max-width: 680px;
+            margin: 0 auto 80px;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--divider);
+            padding: 24px 0;
+        }
+
+        .faq-item:first-child {
+            border-top: 1px solid var(--divider);
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .faq-answer {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--divider);
+            padding: 40px 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-text {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .footer-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.7;
+        }
+
+        .sponsor-icon {
+            color: #ea4aaa;
+        }
+
+        @media (max-width: 800px) {
+            .pricing-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+            }
+            .card-premium {
+                transform: scale(1);
+            }
+            .card-premium:hover {
+                transform: scale(1.02);
+            }
+            .card-free {
+                margin: 0;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.5rem; }
+            .card { padding: 32px 24px; }
+        }
+    </style>
+    <!-- Client ID الحقيقي (Live) -->
+    <!-- <script src="https://www.paypal.com/sdk/js?client-id=YOUR_LIVE_CLIENT_ID_HERE&currency=USD" data-sdk-integration-source="button-factory"></script> -->
+
+    <!-- Client ID تجريبي (Sandbox) -->
+    <script src="https://www.paypal.com/sdk/js?client-id=AXUU6dTIaD5dljHk-j9vx3hAsEUAx4VX4kJk7vkO86sSJ7v2mZxL6JsOFNecbplEYbbaDBnfjVg33c6Y&currency=USD" data-sdk-integration-source="button-factory"></script>
+</head>
+<body>
+
+    <div class="container">
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="assets/icon.png" alt="FloatBoard" onerror="this.style.display='none'">
+                FloatBoard
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Back to Home</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <h1>Plans & Pricing</h1>
+            <p>Start for free. Upgrade when you need more.</p>
+        </section>
+
+        <section class="pricing-section">
+            <!-- Free Plan -->
+            <div class="card card-free">
+                <div class="card-title">Free</div>
+                <div class="card-desc">For personal use and casual floating.</div>
+                <div class="card-price">$0</div>
+                <a href="index.html#download" class="btn btn-free">Download for Free</a>
+                
+                <ul class="features-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        5 texts per day
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        5 images per day
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        1 window
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Dark Mode
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        All themes
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Auto save
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="card card-premium">
+                <div class="card-title">Premium</div>
+                <div class="card-desc">One-time payment · Lifetime access</div>
+                <div class="card-price">$9.99 <span>/ lifetime</span></div>
+                <div id="paypal-button-container" style="max-width: 300px; margin: 20px auto; width: 100%;"></div>
+                <div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: -24px; margin-bottom: 24px;">License Key sent by email within 24h</div>
+                
+                <ul class="features-list">
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        <strong>Everything in Free</strong>
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Unlimited texts
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Unlimited images
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Unlimited windows
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Lifetime updates
+                    </li>
+                    <li>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                        Priority support
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="faq-section">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is it really a one-time payment?</div>
+                <div class="faq-answer">Yes! You pay once and get access to all current and future Premium features forever. No hidden fees or recurring subscriptions.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can I switch from Free to Premium later?</div>
+                <div class="faq-answer">Absolutely. You can start with the Free plan to see if FloatBoard fits your workflow, and upgrade directly from inside the app whenever you hit the limits.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What payment methods do you accept?</div>
+                <div class="faq-answer">We use PayPal as our secure payment processor. You can pay with your PayPal balance, or use any major credit/debit card through PayPal even if you don't have an account.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Do you offer refunds?</div>
+                <div class="faq-answer">Yes, we offer a 30-day money-back guarantee. If FloatBoard Premium isn't right for you, just let us know within 30 days of purchase for a full refund.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">How do I activate Premium?</div>
+                <div class="faq-answer">After your purchase via PayPal, your unique License Key will be sent to your PayPal email address within 24 hours. Simply open FloatBoard, go to settings, click 'Upgrade', and paste your key to instantly unlock all features.</div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-text">© FloatBoard · Made with ❤️ by Yazan</div>
+            <div class="footer-links">
+                <a href="https://github.com/sponsors/nazihyazan" target="_blank">
+                    <svg class="sponsor-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                    Sponsor on GitHub
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        paypal.Buttons({
+            style: {
+                shape: 'rect',
+                color: 'gold',
+                layout: 'vertical',
+                label: 'paypal'
+            },
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '9.99'
+                        }
+                    }]
+                });
+            },
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    alert('Payment successful! We are generating your License Key. Please check your email (' + details.payer.email_address + ').');
+
+                    fetch('https://floatboard.xyz/api/webhook', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            orderID: data.orderID,
+                            payerEmail: details.payer.email_address,
+                            payerName: details.payer.name.given_name
+                        })
+                    }).catch(error => console.error('Error sending to server:', error));
+                });
+            },
+            onError: function(err) {
+                console.error(err);
+                alert('Payment error. Please try again or contact support.');
+            }
+        }).render('#paypal-button-container');
+    </script>
+</body>
+</html>
