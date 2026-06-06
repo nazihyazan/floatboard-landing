@@ -425,6 +425,12 @@
                 <div class="card-title">Premium</div>
                 <div class="card-desc">One-time payment · Lifetime access</div>
                 <div class="card-price">$9.99 <span>/ lifetime</span></div>
+                
+                <div style="max-width: 300px; margin: 0 auto 16px;">
+                  <input type="email" id="user-email" placeholder="Your email address" required 
+                    style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #333; background: rgba(255,255,255,0.05); color: #fff; font-size: 16px;">
+                </div>
+                
                 <div id="paypal-button-container" style="max-width: 300px; margin: 20px auto; width: 100%;"></div>
                 <div style="text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: -24px; margin-bottom: 24px;">License Key sent by email within 24h</div>
                 
@@ -501,12 +507,28 @@
     </footer>
 
     <script>
+        document.getElementById('paypal-button-container').addEventListener('click', function(e) {
+            const email = document.getElementById('user-email').value;
+            if (!email) {
+                alert('Please enter your email address to receive your License Key.');
+                e.preventDefault();
+            }
+        });
+
         paypal.Buttons({
             style: {
                 shape: 'rect',
                 color: 'gold',
                 layout: 'vertical',
                 label: 'paypal'
+            },
+            onClick: function(data, actions) {
+                const email = document.getElementById('user-email').value;
+                if (!email) {
+                    alert('Please enter your email address to receive your License Key.');
+                    return actions.reject();
+                }
+                return actions.resolve();
             },
             createOrder: function(data, actions) {
                 return actions.order.create({
@@ -519,15 +541,16 @@
             },
             onApprove: function(data, actions) {
                 return actions.order.capture().then(function(details) {
-                    alert('Payment successful! We are generating your License Key. Please check your email (' + details.payer.email_address + ').');
+                    const email = document.getElementById('user-email').value;
+                    alert('Payment successful! We are generating your License Key. Please check your email (' + email + ').');
 
                     fetch('/api/webhook', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
                             orderID: data.orderID,
-                            payerEmail: details.payer.email_address,
-                            payerName: details.payer.name.given_name
+                            payerEmail: email,
+                            payerName: email.split('@')[0]
                         })
                     }).catch(error => console.error('Error sending to server:', error));
                 });
