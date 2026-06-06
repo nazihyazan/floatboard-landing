@@ -521,7 +521,7 @@
                 return actions.order.capture().then(function(details) {
                     alert('Payment successful! We are generating your License Key. Please check your email (' + details.payer.email_address + ').');
 
-                    fetch('https://floatboard.xyz/api/webhook', {
+                    fetch('/api/webhook', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
