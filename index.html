@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FloatBoard - Floating Clipboard Manager | Always on Top</title>
-    <meta name="description" content="FloatBoard is a free floating clipboard that stays always on top. Paste texts, images, and videos effortlessly. Download for Windows, macOS, and Linux.">
+    <title>FloatBoard - Floating Clipboard Always on Top</title>
+    <link rel="canonical" href="https://floatboard.xyz/" />
+    <meta name="description" content="Free floating clipboard that stays above windows. Paste text, images & videos. Download for Windows, Mac & Linux.">
     <meta name="keywords" content="floating clipboard, clipboard manager, always on top, productivity tool, desktop widget, floatboard">
     
     <!-- Open Graph -->
@@ -20,604 +21,12 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <style>
-        /* CSS Variables */
-        :root {
-            /* Light Theme */
-            --bg-color: #fbfbfb;
-            --text-main: #1a1a1a;
-            --text-muted: #666666;
-            --nav-bg: rgba(251, 251, 251, 0.7);
-            --card-bg: #ffffff;
-            --card-border: rgba(0, 0, 0, 0.06);
-            --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.05);
-            --btn-primary: #1a1a1a;
-            --btn-primary-hover: #333333;
-            --btn-primary-text: #ffffff;
-            --btn-secondary: transparent;
-            --btn-secondary-hover: rgba(0, 0, 0, 0.04);
-            --btn-secondary-text: #1a1a1a;
-            --dot-color: rgba(0, 0, 0, 0.06);
-            --glass-border: rgba(0, 0, 0, 0.06);
-            --divider: rgba(0, 0, 0, 0.1);
-            --line-color: transparent;
-            
-            /* Showcase Specifics (Light) */
-            --showcase-bg: rgba(255,255,255,0.7);
-            --mockup-bg: rgba(255,255,255,0.85);
-            --mockup-border: rgba(0,0,0,0.08);
-            --mockup-shadow: 0 24px 60px rgba(0,0,0,0.15);
-        }
-
-        [data-theme="dark"] {
-            /* Dark Theme */
-            --bg-color: #0a0a0f;
-            --text-main: #e0e0e0;
-            --text-muted: #999999;
-            --nav-bg: rgba(10, 10, 15, 0.7);
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.05);
-            --card-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
-            --btn-primary: #ffffff;
-            --btn-primary-hover: #e0e0e0;
-            --btn-primary-text: #0a0a0f;
-            --btn-secondary: transparent;
-            --btn-secondary-hover: rgba(255, 255, 255, 0.05);
-            --btn-secondary-text: #e0e0e0;
-            --dot-color: rgba(255, 255, 255, 0.04);
-            --glass-border: rgba(255, 255, 255, 0.06);
-            --divider: rgba(255, 255, 255, 0.1);
-            --line-color: rgba(255, 255, 255, 0.03);
-
-            /* Showcase Specifics (Dark) */
-            --showcase-bg: rgba(0,0,0,0.4);
-            --mockup-bg: rgba(20,20,25,0.85);
-            --mockup-border: rgba(255,255,255,0.1);
-            --mockup-shadow: 0 30px 80px rgba(0,0,0,0.6);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
-            overflow-x: hidden;
-            background-image: 
-                radial-gradient(var(--dot-color) 1px, transparent 1px),
-                repeating-linear-gradient(to right, transparent, transparent 119px, var(--line-color) 119px, var(--line-color) 120px);
-            background-size: 40px 40px, 100% 100%;
-            background-position: -20px -20px, center;
-            font-weight: 400;
-            line-height: 1.7;
-            transition: background-color 0.4s ease, color 0.4s ease;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        h1, h2, h3, h4, .m-title {
-            font-weight: 800;
-            letter-spacing: -0.03em;
-        }
-
-        /* Navbar */
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: var(--nav-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--glass-border);
-            height: 56px;
-            display: flex;
-            align-items: center;
-        }
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-        .logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            text-decoration: none;
-            color: var(--text-main);
-            letter-spacing: -0.02em;
-        }
-        .logo img {
-            width: 20px;
-            height: 20px;
-        }
-        .theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-main);
-            cursor: pointer;
-            padding: 6px;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .theme-toggle:hover {
-            background: var(--btn-secondary-hover);
-        }
-
-        /* Hero */
-        .hero {
-            padding: 120px 0;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-        }
-        .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 6rem);
-            line-height: 1.1;
-            margin-bottom: 24px;
-            max-width: 900px;
-            z-index: 2;
-        }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 40px;
-            font-weight: 400;
-            z-index: 2;
-        }
-        .hero-btns {
-            display: flex;
-            gap: 16px;
-            z-index: 2;
-        }
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border-radius: 6px;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border: 1px solid transparent;
-        }
-        .btn-primary {
-            background: var(--btn-primary);
-            color: var(--btn-primary-text);
-        }
-        .btn-primary:hover {
-            background: var(--btn-primary-hover);
-            transform: translateY(-1px);
-        }
-        .btn-secondary {
-            background: var(--btn-secondary);
-            color: var(--btn-secondary-text);
-            border-color: var(--glass-border);
-        }
-        .btn-secondary:hover {
-            background: var(--btn-secondary-hover);
-        }
-
-        /* Features (Linear Style Grid) */
-        .features {
-            padding: 0;
-            border-top: 1px solid var(--card-border);
-            border-bottom: 1px solid var(--card-border);
-            margin: 120px auto;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--card-border);
-        }
-        .feature-card {
-            background: var(--bg-color);
-            padding: 48px 40px;
-            display: flex;
-            flex-direction: column;
-            min-height: 480px;
-            position: relative;
-            transition: background 0.4s ease;
-        }
-        .feature-card:hover {
-            background: rgba(255, 255, 255, 0.015);
-        }
-        [data-theme="light"] .feature-card:hover {
-            background: rgba(0, 0, 0, 0.015);
-        }
-        .f-title {
-            font-size: 1.15rem;
-            font-weight: 600;
-            color: var(--text-main);
-            margin-bottom: 40px;
-        }
-        .f-illustration {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 60px;
-        }
-        .f-illustration svg {
-            width: 160px;
-            height: 160px;
-            stroke: var(--text-muted);
-            stroke-width: 0.75;
-            fill: none;
-            transition: all 0.5s ease;
-        }
-        .feature-card:hover .f-illustration svg {
-            stroke: var(--text-main);
-            filter: drop-shadow(0 0 8px rgba(255,255,255,0.08));
-            transform: translateY(-4px);
-        }
-        .f-text p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* SHOWCASES (Linear Style) */
-        .showcases-section {
-            padding: 100px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 160px;
-        }
-        
-        .showcase {
-            position: relative;
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        /* The Massive Background Application Window */
-        .showcase-bg-app {
-            width: 90%;
-            max-width: 1000px;
-            height: 600px;
-            border-radius: 16px;
-            background: var(--showcase-bg);
-            border: 1px solid var(--glass-border);
-            box-shadow: var(--card-shadow);
-            overflow: hidden;
-            position: relative;
-            transition: all 0.4s ease;
-        }
-        .showcase-bg-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.6;
-            transition: opacity 0.4s ease;
-        }
-        [data-theme="dark"] .showcase-bg-img {
-            opacity: 0.4;
-        }
-
-        /* The FloatBoard Mockup Overlapping */
-        .mockup {
-            border-radius: 12px;
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            background: var(--mockup-bg);
-            border: 1px solid var(--mockup-border);
-            color: var(--text-main);
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
-            box-shadow: var(--mockup-shadow);
-            width: 440px;
-            height: 280px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            z-index: 10;
-        }
-        
-        /* Layout Positions */
-        .mockup.left {
-            left: 2%;
-            bottom: 15%;
-        }
-        .mockup.right {
-            right: 2%;
-            top: 20%;
-        }
-
-        .mockup:hover {
-            transform: scale(1.03) translateY(-10px);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
-        }
-
-        .m-header {
-            display: flex;
-            align-items: center;
-            padding: 12px 16px;
-            position: relative;
-        }
-        .m-controls {
-            display: flex;
-            gap: 8px;
-            position: absolute;
-            left: 16px;
-        }
-        .m-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-        }
-        .m-dot.r { background: #ff5f56; }
-        .m-dot.y { background: #ffbd2e; }
-        .m-dot.g { background: #27c93f; }
-        .m-title {
-            width: 100%;
-            text-align: center;
-            font-size: 0.8rem;
-            opacity: 0.8;
-        }
-        .m-divider {
-            height: 1px;
-            width: 100%;
-            background: var(--divider);
-        }
-        .m-body {
-            display: flex;
-            flex: 1;
-            padding: 0;
-            overflow: hidden;
-        }
-        .m-content {
-            width: 60%;
-            padding: 20px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            font-size: 0.85rem;
-            line-height: 1.6;
-        }
-        .m-v-divider {
-            width: 1px;
-            height: 100%;
-            background: var(--divider);
-        }
-        .m-image-container {
-            width: 40%;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .m-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-        
-        /* Content specific styles */
-        .code-block {
-            font-family: monospace;
-            font-size: 0.75rem;
-            opacity: 0.9;
-            white-space: pre;
-            line-height: 1.5;
-        }
-        .todo-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-        .todo-box {
-            width: 16px;
-            height: 16px;
-            border-radius: 4px;
-            border: 1px solid currentColor;
-            opacity: 0.5;
-            flex-shrink: 0;
-        }
-        .todo-box.checked {
-            background: currentColor;
-            opacity: 1;
-        }
-        .quote {
-            font-style: italic;
-            font-size: 0.95rem;
-            border-left: 3px solid currentColor;
-            padding-left: 14px;
-            opacity: 0.9;
-            margin: auto 0;
-        }
-
-        /* How it works */
-        .steps {
-            padding: 120px 0;
-            border-top: 1px solid var(--glass-border);
-        }
-        .steps-container {
-            display: flex;
-            justify-content: space-between;
-            gap: 40px;
-        }
-        .step {
-            flex: 1;
-        }
-        .step-num {
-            font-size: 5rem;
-            font-weight: 800;
-            color: var(--glass-border);
-            margin-bottom: 16px;
-            line-height: 1;
-        }
-        .step h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-        }
-
-        /* Download */
-        .download {
-            padding: 120px 0;
-            border-top: 1px solid var(--glass-border);
-        }
-        .dl-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px;
-        }
-        .dl-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .dl-card:hover {
-            box-shadow: var(--card-shadow);
-            transform: translateY(-4px);
-        }
-        .dl-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 24px;
-        }
-        .dl-card h3 {
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-        }
-        .dl-card p {
-            color: var(--text-muted);
-            margin-bottom: 32px;
-            flex: 1;
-        }
-        .dl-card .btn {
-            width: 100%;
-        }
-
-        /* FAQ Section */
-        .faq {
-            padding: 120px 0;
-            border-top: 1px solid var(--glass-border);
-        }
-        .faq-list {
-            max-width: 800px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-        .faq-item {
-            border-bottom: 1px solid var(--glass-border);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .faq-question {
-            padding: 24px 0;
-            font-weight: 600;
-            font-size: 1.1rem;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            color: var(--text-muted);
-            transition: all 0.3s ease;
-            padding: 0;
-            opacity: 0;
-        }
-        .faq-item.active .faq-answer {
-            padding: 0 0 32px 0;
-            max-height: 300px;
-            opacity: 1;
-        }
-        .faq-icon {
-            transition: transform 0.3s ease;
-        }
-        .faq-item.active .faq-icon {
-            transform: rotate(45deg);
-        }
-
-        /* Footer */
-        footer {
-            padding: 60px 0;
-            border-top: 1px solid var(--glass-border);
-            text-align: center;
-            color: var(--text-muted);
-        }
-        footer a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-        }
-        footer a:hover {
-            opacity: 0.7;
-        }
-        .footer-links {
-            margin-top: 24px;
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-        }
-
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 900px) {
-            .features-grid, .steps-container, .dl-grid {
-                grid-template-columns: 1fr;
-            }
-            .hero h1 { font-size: 2.5rem; }
-            .showcase-bg-app { height: 400px; }
-            .mockup {
-                width: 90%;
-                position: relative;
-                left: 0 !important;
-                right: 0 !important;
-                bottom: 0 !important;
-                top: -40px !important;
-                margin: 0 auto;
-            }
-        }
-    </style>
+    <style>:root{--bg-color:#fbfbfb;--text-main:#1a1a1a;--text-muted:#666666;--nav-bg:rgba(251,251,251,0.7);--card-bg:#ffffff;--card-border:rgba(0,0,0,0.06);--card-shadow:0 12px 32px rgba(0,0,0,0.05);--btn-primary:#1a1a1a;--btn-primary-hover:#333333;--btn-primary-text:#ffffff;--btn-secondary:transparent;--btn-secondary-hover:rgba(0,0,0,0.04);--btn-secondary-text:#1a1a1a;--dot-color:rgba(0,0,0,0.06);--glass-border:rgba(0,0,0,0.06);--divider:rgba(0,0,0,0.1);--line-color:transparent;--showcase-bg:rgba(255,255,255,0.7);--mockup-bg:rgba(255,255,255,0.85);--mockup-border:rgba(0,0,0,0.08);--mockup-shadow:0 24px 60px rgba(0,0,0,0.15)}[data-theme="dark"]{--bg-color:#0a0a0f;--text-main:#e0e0e0;--text-muted:#999999;--nav-bg:rgba(10,10,15,0.7);--card-bg:rgba(255,255,255,0.03);--card-border:rgba(255,255,255,0.05);--card-shadow:0 12px 40px rgba(0,0,0,0.4);--btn-primary:#ffffff;--btn-primary-hover:#e0e0e0;--btn-primary-text:#0a0a0f;--btn-secondary:transparent;--btn-secondary-hover:rgba(255,255,255,0.05);--btn-secondary-text:#e0e0e0;--dot-color:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.06);--divider:rgba(255,255,255,0.1);--line-color:rgba(255,255,255,0.03);--showcase-bg:rgba(0,0,0,0.4);--mockup-bg:rgba(20,20,25,0.85);--mockup-border:rgba(255,255,255,0.1);--mockup-shadow:0 30px 80px rgba(0,0,0,0.6)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);min-height:100vh;overflow-x:hidden;background-image:radial-gradient(var(--dot-color) 1px,transparent 1px),repeating-linear-gradient(to right,transparent,transparent 119px,var(--line-color) 119px,var(--line-color) 120px);background-size:40px 40px,100% 100%;background-position:-20px -20px,center;font-weight:400;line-height:1.7;transition:background-color 0.4s ease,color 0.4s ease}.container{max-width:1200px;margin:0 auto;padding:0 24px}h1,h2,h3,h4,.m-title{font-weight:800;letter-spacing:-0.03em}nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);height:56px;display:flex;align-items:center}.nav-content{display:flex;justify-content:space-between;align-items:center;width:100%}.logo{font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-main);letter-spacing:-0.02em}.logo img{width:20px;height:20px}.theme-toggle{background:none;border:none;color:var(--text-main);cursor:pointer;padding:6px;border-radius:6px;transition:all 0.2s ease;display:flex;align-items:center;justify-content:center}.theme-toggle:hover{background:var(--btn-secondary-hover)}.hero{padding:120px 0;text-align:center;display:flex;flex-direction:column;align-items:center;position:relative}.hero h1{font-size:clamp(3.5rem,8vw,6rem);line-height:1.1;margin-bottom:24px;max-width:900px;z-index:2}.hero p{font-size:1.25rem;color:var(--text-muted);max-width:600px;margin-bottom:40px;font-weight:400;z-index:2}.hero-btns{display:flex;gap:16px;z-index:2}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;font-size:0.95rem;font-weight:600;border-radius:6px;text-decoration:none;transition:all 0.2s ease;border:1px solid transparent}.btn-primary{background:var(--btn-primary);color:var(--btn-primary-text)}.btn-primary:hover{background:var(--btn-primary-hover);transform:translateY(-1px)}.btn-secondary{background:var(--btn-secondary);color:var(--btn-secondary-text);border-color:var(--glass-border)}.btn-secondary:hover{background:var(--btn-secondary-hover)}.features{padding:0;border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);margin:120px auto}.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--card-border)}.feature-card{background:var(--bg-color);padding:48px 40px;display:flex;flex-direction:column;min-height:480px;position:relative;transition:background 0.4s ease}.feature-card:hover{background:rgba(255,255,255,0.015)}[data-theme="light"] .feature-card:hover{background:rgba(0,0,0,0.015)}.f-title{font-size:1.15rem;font-weight:600;color:var(--text-main);margin-bottom:40px}.f-illustration{flex:1;display:flex;align-items:center;justify-content:center;margin-bottom:60px}.f-illustration svg{width:160px;height:160px;stroke:var(--text-muted);stroke-width:0.75;fill:none;transition:all 0.5s ease}.feature-card:hover .f-illustration svg{stroke:var(--text-main);filter:drop-shadow(0 0 8px rgba(255,255,255,0.08));transform:translateY(-4px)}.f-text p{color:var(--text-muted);font-size:0.95rem;line-height:1.6;margin:0}.showcases-section{padding:100px 0;display:flex;flex-direction:column;gap:160px}.showcase{position:relative;width:100%;display:flex;align-items:center;justify-content:center}.showcase-bg-app{width:90%;max-width:1000px;height:600px;border-radius:16px;background:var(--showcase-bg);border:1px solid var(--glass-border);box-shadow:var(--card-shadow);overflow:hidden;position:relative;transition:all 0.4s ease}.showcase-bg-img{width:100%;height:100%;object-fit:cover;opacity:0.6;transition:opacity 0.4s ease}[data-theme="dark"] .showcase-bg-img{opacity:0.4}.mockup{border-radius:12px;display:flex;flex-direction:column;position:absolute;background:var(--mockup-bg);border:1px solid var(--mockup-border);color:var(--text-main);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);box-shadow:var(--mockup-shadow);width:440px;height:280px;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);z-index:10}.mockup.left{left:2%;bottom:15%}.mockup.right{right:2%;top:20%}.mockup:hover{transform:scale(1.03) translateY(-10px);box-shadow:0 40px 100px rgba(0,0,0,0.3)}.m-header{display:flex;align-items:center;padding:12px 16px;position:relative}.m-controls{display:flex;gap:8px;position:absolute;left:16px}.m-dot{width:12px;height:12px;border-radius:50%}.m-dot.r{background:#ff5f56}.m-dot.y{background:#ffbd2e}.m-dot.g{background:#27c93f}.m-title{width:100%;text-align:center;font-size:0.8rem;opacity:0.8}.m-divider{height:1px;width:100%;background:var(--divider)}.m-body{display:flex;flex:1;padding:0;overflow:hidden}.m-content{width:60%;padding:20px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;font-size:0.85rem;line-height:1.6}.m-v-divider{width:1px;height:100%;background:var(--divider)}.m-image-container{width:40%;padding:16px;display:flex;align-items:center;justify-content:center}.m-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.code-block{font-family:monospace;font-size:0.75rem;opacity:0.9;white-space:pre;line-height:1.5}.todo-item{display:flex;align-items:center;gap:10px;margin-bottom:12px}.todo-box{width:16px;height:16px;border-radius:4px;border:1px solid currentColor;opacity:0.5;flex-shrink:0}.todo-box.checked{background:currentColor;opacity:1}.quote{font-style:italic;font-size:0.95rem;border-left:3px solid currentColor;padding-left:14px;opacity:0.9;margin:auto 0}.steps{padding:120px 0;border-top:1px solid var(--glass-border)}.steps-container{display:flex;justify-content:space-between;gap:40px}.step{flex:1}.step-num{font-size:5rem;font-weight:800;color:var(--glass-border);margin-bottom:16px;line-height:1}.step h3{font-size:1.2rem;margin-bottom:8px}.download{padding:120px 0;border-top:1px solid var(--glass-border)}.dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.dl-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:40px;text-align:center;display:flex;flex-direction:column;align-items:center;transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}.dl-card:hover{box-shadow:var(--card-shadow);transform:translateY(-4px)}.dl-icon{width:48px;height:48px;margin-bottom:24px}.dl-card h3{margin-bottom:12px;font-size:1.2rem}.dl-card p{color:var(--text-muted);margin-bottom:32px;flex:1}.dl-card .btn{width:100%}.faq{padding:120px 0;border-top:1px solid var(--glass-border)}.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:16px}.faq-item{border-bottom:1px solid var(--glass-border);overflow:hidden;transition:all 0.3s ease}.faq-question{padding:24px 0;font-weight:600;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.faq-answer{max-height:0;overflow:hidden;color:var(--text-muted);transition:all 0.3s ease;padding:0;opacity:0}.faq-item.active .faq-answer{padding:0 0 32px 0;max-height:300px;opacity:1}.faq-icon{transition:transform 0.3s ease}.faq-item.active .faq-icon{transform:rotate(45deg)}footer{padding:60px 0;border-top:1px solid var(--glass-border);text-align:center;color:var(--text-muted)}footer a{color:var(--text-main);text-decoration:none;font-weight:600}footer a:hover{opacity:0.7}.footer-links{margin-top:24px;display:flex;justify-content:center;gap:24px}.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}.fade-in.visible{opacity:1;transform:translateY(0)}@media (max-width:900px){.features-grid,.steps-container,.dl-grid{grid-template-columns:1fr}.hero h1{font-size:2.5rem}.showcase-bg-app{height:400px}.mockup{width:90%;position:relative;left:0 !important;right:0 !important;bottom:0 !important;top:-40px !important;margin:0 auto}}</style>
     <!-- JSON-LD -->
-    <script type="application/ld+json">
+    <script defer type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
@@ -638,7 +47,7 @@
     <nav>
         <div class="container nav-content">
             <a href="#" class="logo">
-                <img src="assets/icon.png" alt="FloatBoard Logo" onerror="this.style.display='none'">
+                <img src="assets/icon.webp" alt="FloatBoard logo - floating clipboard app" width="20" height="20">
                 FloatBoard
             </a>
             <div style="display: flex; align-items: center; gap: 20px;">
@@ -658,44 +67,16 @@
 
     <main>
         <section class="hero container">
-            <h1 class="fade-in visible">Your clipboard, always on top</h1>
-            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard stays above every window. Paste texts, images, and videos effortlessly without losing your context.</p>
+            <h1 class="fade-in visible">FloatBoard - The Ultimate Floating Clipboard Manager</h1>
+            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard is an always on top widget that acts as your desktop productivity tool. As a powerful clipboard manager, it creates a floating workspace where you can paste images and text effortlessly without losing context.</p>
             <div class="hero-btns fade-in visible" style="transition-delay: 0.2s;">
-                <a href="#download" class="btn btn-primary">Download for Free</a>
-                <a href="pricing.html" class="btn btn-secondary">View Pricing</a>
+                <a href="#download" class="btn btn-primary">Download Free Clipboard Manager</a>
+                <a href="pricing.html" class="btn btn-secondary">View Premium Workspace Features</a>
                 <a href="https://github.com/nazihyazan/floating_board" target="_blank" class="btn btn-secondary">View on GitHub</a>
             </div>
         </section>
 
-        <style>
-            @keyframes floatLayer {
-                0%, 100% { transform: translateY(0); }
-                50% { transform: translateY(-6px); }
-            }
-            @keyframes bounceCube {
-                0%, 100% { transform: translateY(0); }
-                50% { transform: translateY(-4px); }
-            }
-            @keyframes waveGlass {
-                0%, 100% { transform: translateX(0) translateY(0); }
-                50% { transform: translateX(4px) translateY(-4px); }
-            }
-
-            .anim-float-1 { animation: floatLayer 4s ease-in-out infinite; transform-origin: center; }
-            .anim-float-2 { animation: floatLayer 4s ease-in-out infinite 0.3s; transform-origin: center; }
-            .anim-float-3 { animation: floatLayer 4s ease-in-out infinite 0.6s; transform-origin: center; }
-
-            .anim-bounce-1 { animation: bounceCube 3s ease-in-out infinite; transform-origin: center; }
-            .anim-bounce-2 { animation: bounceCube 3s ease-in-out infinite 0.6s; transform-origin: center; }
-            .anim-bounce-3 { animation: bounceCube 3s ease-in-out infinite 1.2s; transform-origin: center; }
-
-            .anim-wave { animation: waveGlass 3s ease-in-out infinite; }
-            .anim-wave:nth-child(1) { animation-delay: 0s; }
-            .anim-wave:nth-child(2) { animation-delay: 0.2s; }
-            .anim-wave:nth-child(3) { animation-delay: 0.4s; }
-            .anim-wave:nth-child(4) { animation-delay: 0.6s; }
-            .anim-wave:nth-child(5) { animation-delay: 0.8s; }
-        </style>
+        <style> @keyframes floatLayer{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}@keyframes bounceCube{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}@keyframes waveGlass{0%,100%{transform:translateX(0) translateY(0)}50%{transform:translateX(4px) translateY(-4px)}}.anim-float-1{animation:floatLayer 4s ease-in-out infinite;transform-origin:center}.anim-float-2{animation:floatLayer 4s ease-in-out infinite 0.3s;transform-origin:center}.anim-float-3{animation:floatLayer 4s ease-in-out infinite 0.6s;transform-origin:center}.anim-bounce-1{animation:bounceCube 3s ease-in-out infinite;transform-origin:center}.anim-bounce-2{animation:bounceCube 3s ease-in-out infinite 0.6s;transform-origin:center}.anim-bounce-3{animation:bounceCube 3s ease-in-out infinite 1.2s;transform-origin:center}.anim-wave{animation:waveGlass 3s ease-in-out infinite}.anim-wave:nth-child(1){animation-delay:0s}.anim-wave:nth-child(2){animation-delay:0.2s}.anim-wave:nth-child(3){animation-delay:0.4s}.anim-wave:nth-child(4){animation-delay:0.6s}.anim-wave:nth-child(5){animation-delay:0.8s}</style>
         <section id="features" class="features container fade-in">
             <div class="features-grid">
                 <div class="feature-card">
@@ -768,6 +149,7 @@
                     </div>
                 </div>
             </div>
+        <div style="text-align: center; margin-top: 40px;"><a href="pricing.html" style="color: var(--text-muted); font-weight: 600; text-decoration: none;">Need more? View Premium features →</a></div>
         </section>
 
         <section class="showcases-section container fade-in">
@@ -775,7 +157,7 @@
             <div class="showcase">
                 <div class="showcase-bg-app">
                     <!-- Background App Image -->
-                    <img src="assets/images/pexels-thilina-alagiyawanna-3266092-36214461.jpg" alt="Background Application" class="showcase-bg-img">
+                    <img src="assets/images/pexels-thilina-alagiyawanna-3266092-36214461.webp" alt="Background Application using floating clipboard" loading="lazy" width="1000" height="600" class="showcase-bg-img">
                 </div>
                 
                 <div class="mockup left">
@@ -792,7 +174,7 @@
                         </div>
                         <div class="m-v-divider"></div>
                         <div class="m-image-container">
-                            <img src="assets/images/birmingham-museums-trust-nbneQlI2M1A-unsplash.jpg" alt="Content" class="m-img">
+                            <img src="assets/images/birmingham-museums-trust-nbneQlI2M1A-unsplash.webp" alt="FloatBoard interface showing text and image split view" loading="lazy" width="400" height="300" class="m-img">
                         </div>
                     </div>
                 </div>
@@ -801,7 +183,7 @@
             <!-- Showcase 2 -->
             <div class="showcase">
                 <div class="showcase-bg-app">
-                    <img src="assets/images/pexels-sinan-aslan-1844393508-33619479.jpg" alt="Background Application" class="showcase-bg-img">
+                    <img src="assets/images/pexels-sinan-aslan-1844393508-33619479.webp" alt="Code snippet behind always on top widget" loading="lazy" width="1000" height="600" class="showcase-bg-img">
                 </div>
                 
                 <div class="mockup right">
@@ -826,7 +208,7 @@ const toggleTheme = () => {
                         </div>
                         <div class="m-v-divider"></div>
                         <div class="m-image-container">
-                            <img src="assets/images/mads-schmidt-rasmussen-xfngap_DToE-unsplash.jpg" alt="Content" class="m-img">
+                            <img src="assets/images/mads-schmidt-rasmussen-xfngap_DToE-unsplash.webp" alt="Code editor with floating workspace" loading="lazy" width="400" height="300" class="m-img">
                         </div>
                     </div>
                 </div>
@@ -835,7 +217,7 @@ const toggleTheme = () => {
             <!-- Showcase 3 -->
             <div class="showcase">
                 <div class="showcase-bg-app">
-                    <img src="assets/images/pexels-jan-van-der-wolf-11680885-37537468.jpg" alt="Background Application" class="showcase-bg-img">
+                    <img src="assets/images/pexels-jan-van-der-wolf-11680885-37537468.webp" alt="Desktop productivity tool background" loading="lazy" width="1000" height="600" class="showcase-bg-img">
                 </div>
                 
                 <div class="mockup left" style="bottom: 10%;">
@@ -859,97 +241,17 @@ const toggleTheme = () => {
                         </div>
                         <div class="m-v-divider"></div>
                         <div class="m-image-container">
-                            <img src="assets/images/pexels-justyna-sieczka-2161487384-37534963.jpg" alt="Content" class="m-img">
+                            <img src="assets/images/pexels-justyna-sieczka-2161487384-37534963.webp" alt="Clipboard manager history list" loading="lazy" width="400" height="300" class="m-img">
                         </div>
                     </div>
                 </div>
             </div>
             
             <!-- Showcase 4 (Drag & Drop Animation) -->
-            <style>
-                @keyframes dragDropItem {
-                    0%, 10% { transform: translate(120px, -60px) scale(1); opacity: 0; }
-                    15% { transform: translate(120px, -60px) scale(1.05); opacity: 1; }
-                    40% { transform: translate(0px, 0px) scale(1.05); opacity: 1; }
-                    50%, 70% { transform: translate(0px, 0px) scale(1); opacity: 1; }
-                    80%, 100% { transform: translate(0px, 0px) scale(1); opacity: 0; }
-                }
-                @keyframes dropZoneActive {
-                    0%, 35% { border-color: var(--card-border); background: transparent; }
-                    40%, 65% { border-color: #2f7df6; background: rgba(47, 125, 246, 0.1); color: #2f7df6; }
-                    70%, 100% { border-color: var(--card-border); background: transparent; }
-                }
-                @keyframes cursorPress {
-                    0%, 14% { transform: scale(1); }
-                    15%, 45% { transform: scale(0.85); }
-                    46%, 100% { transform: scale(1); }
-                }
-                .drag-demo {
-                    position: relative;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 20px;
-                }
-                .drop-zone {
-                    width: 100%;
-                    height: 120px;
-                    border: 2px dashed var(--card-border);
-                    border-radius: 12px;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;
-                    gap: 8px;
-                    color: var(--meta-color);
-                    font-size: 13px;
-                    font-weight: 500;
-                    animation: dropZoneActive 4s infinite;
-                    transition: all 0.3s ease;
-                }
-                .drop-zone svg {
-                    width: 24px;
-                    height: 24px;
-                    stroke: currentColor;
-                    fill: none;
-                    stroke-width: 2;
-                }
-                .drag-item {
-                    position: absolute;
-                    background: var(--card-bg);
-                    border: 1px solid var(--card-border);
-                    border-radius: 8px;
-                    padding: 8px 12px;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    font-size: 12px;
-                    font-weight: 500;
-                    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-                    animation: dragDropItem 4s infinite cubic-bezier(0.2, 0.8, 0.2, 1);
-                    pointer-events: none;
-                    z-index: 10;
-                    backdrop-filter: blur(10px);
-                }
-                .drag-item img {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 4px;
-                    object-fit: cover;
-                }
-                .drag-cursor {
-                    position: absolute;
-                    bottom: -18px;
-                    right: -18px;
-                    font-size: 24px;
-                    filter: drop-shadow(0 4px 4px rgba(0,0,0,0.3));
-                    animation: cursorPress 4s infinite;
-                }
-            </style>
+            <style> @keyframes dragDropItem{0%,10%{transform:translate(120px,-60px) scale(1);opacity:0}15%{transform:translate(120px,-60px) scale(1.05);opacity:1}40%{transform:translate(0px,0px) scale(1.05);opacity:1}50%,70%{transform:translate(0px,0px) scale(1);opacity:1}80%,100%{transform:translate(0px,0px) scale(1);opacity:0}}@keyframes dropZoneActive{0%,35%{border-color:var(--card-border);background:transparent}40%,65%{border-color:#2f7df6;background:rgba(47,125,246,0.1);color:#2f7df6}70%,100%{border-color:var(--card-border);background:transparent}}@keyframes cursorPress{0%,14%{transform:scale(1)}15%,45%{transform:scale(0.85)}46%,100%{transform:scale(1)}}.drag-demo{position:relative;height:100%;display:flex;align-items:center;justify-content:center;padding:20px}.drop-zone{width:100%;height:120px;border:2px dashed var(--card-border);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;color:var(--meta-color);font-size:13px;font-weight:500;animation:dropZoneActive 4s infinite;transition:all 0.3s ease}.drop-zone svg{width:24px;height:24px;stroke:currentColor;fill:none;stroke-width:2}.drag-item{position:absolute;background:var(--card-bg);border:1px solid var(--card-border);border-radius:8px;padding:8px 12px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:500;box-shadow:0 15px 35px rgba(0,0,0,0.3);animation:dragDropItem 4s infinite cubic-bezier(0.2,0.8,0.2,1);pointer-events:none;z-index:10;backdrop-filter:blur(10px)}.drag-item img{width:24px;height:24px;border-radius:4px;object-fit:cover}.drag-cursor{position:absolute;bottom:-18px;right:-18px;font-size:24px;filter:drop-shadow(0 4px 4px rgba(0,0,0,0.3));animation:cursorPress 4s infinite}</style>
             <div class="showcase">
                 <div class="showcase-bg-app">
-                    <img src="assets/images/pexels-karola-g-4622942.jpg" alt="Background Application" class="showcase-bg-img">
+                    <img src="assets/images/pexels-karola-g-4622942.webp" alt="Drag and drop files background application" loading="lazy" width="1000" height="600" class="showcase-bg-img">
                 </div>
                 
                 <div class="mockup right">
@@ -966,7 +268,7 @@ const toggleTheme = () => {
                                     Drop any file here
                                 </div>
                                 <div class="drag-item">
-                                    <img src="assets/images/pexels-leon-kohle-3158283-14038353.jpg" alt="thumbnail">
+                                    <img src="assets/images/pexels-leon-kohle-3158283-14038353.webp" alt="Paste images and text thumbnail" loading="lazy" width="400" height="300" class="">
                                     image_001.jpg
                                     <div class="drag-cursor">👆</div>
                                 </div>
@@ -974,7 +276,7 @@ const toggleTheme = () => {
                         </div>
                         <div class="m-v-divider"></div>
                         <div class="m-image-container">
-                            <img src="assets/images/pexels-leon-kohle-3158283-14038353.jpg" alt="Content" class="m-img" style="object-position: top;">
+                            <img src="assets/images/pexels-leon-kohle-3158283-14038353.webp" alt="Paste images and text thumbnail" loading="lazy" width="400" height="300" class="">
                         </div>
                     </div>
                 </div>
@@ -1110,7 +412,7 @@ const toggleTheme = () => {
         </div>
     </footer>
 
-    <script>
+    <script defer>
         // Theme Toggle Logic
         const themeBtn = document.getElementById('theme-btn');
         const sunIcon = document.getElementById('sun-icon');
