@@ -23,15 +23,26 @@ export default async function handler(req, res) {
     return res.status(400).json({ valid: false, message: 'License key is required' });
   }
 
-  try {
-    // قائمة المفاتيح الصالحة
-    const validKeys = [
-      // أضف مفاتيح الاختبار هنا
-      "FL-DCDC28BA7863ECD0",
-      // سيتم إضافة المفاتيح الجديدة بعد كل عملية شراء
-    ];
+  const LEMON_SQUEEZY_API_KEY = process.env.LEMON_SQUEEZY_API_KEY;
 
-    const isValid = validKeys.includes(licenseKey.trim());
+  if (!LEMON_SQUEEZY_API_KEY) {
+    console.error('LEMON_SQUEEZY_API_KEY is not set in environment variables');
+    return res.status(500).json({ valid: false, error: 'Server configuration error' });
+  }
+
+  try {
+    const response = await fetch('https://api.lemonsqueezy.com/v1/licenses/validate', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/vnd.api+json',
+        'Authorization': `Bearer ${LEMON_SQUEEZY_API_KEY}`
+      },
+      body: JSON.stringify({ license_key: licenseKey.trim() })
+    });
+    
+    const data = await response.json();
+    const isValid = data.valid === true;
 
     return res.status(200).json({
       valid: isValid,
