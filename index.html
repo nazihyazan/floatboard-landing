@@ -404,15 +404,16 @@ const toggleTheme = () => {
                         </div>
                         <h3>Linux</h3>
                         <p>Choose your preferred package format for your Linux distribution.</p>
-                        <div class="download-dropdown">
-                          <button class="btn btn-secondary dropdown-toggle">
-                            Linux Distributions ▾
-                          </button>
-                          <div class="dropdown-menu">
-                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.deb" class="dropdown-item">Debian / Ubuntu (.deb)</a>
-                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard-1.0.0.x86_64.rpm" class="dropdown-item">Fedora / RHEL (.rpm)</a>
-                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard-1.0.0.AppImage" class="dropdown-item">AppImage (All distros)</a>
-                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.snap" class="dropdown-item">Snap (Snap Store)</a>
+                        <div style="display: flex; gap: 8px; width: 100%;">
+                          <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.deb" id="linux-download-btn" class="btn btn-secondary" style="flex: 1;">Download .deb</a>
+                          <div class="download-dropdown" style="width: auto;">
+                            <button class="btn btn-secondary dropdown-toggle" style="padding: 12px;">▾</button>
+                            <div class="dropdown-menu" style="right: 0; left: auto; min-width: 220px;">
+                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.deb" data-label="Download .deb" class="dropdown-item">Debian / Ubuntu (.deb)</a>
+                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard-1.0.0.x86_64.rpm" data-label="Download .rpm" class="dropdown-item">Fedora / RHEL (.rpm)</a>
+                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard-1.0.0.AppImage" data-label="Download .AppImage" class="dropdown-item">AppImage (All distros)</a>
+                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.snap" data-label="Download .snap" class="dropdown-item">Snap (Snap Store)</a>
+                            </div>
                           </div>
                         </div>
                     </div>
@@ -537,11 +538,22 @@ const toggleTheme = () => {
                 });
             }
         });
-        // Close dropdown when an item is clicked
+        
+        // Handle dropdown item click
         document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function() {
+            item.addEventListener('click', function(e) {
+                e.preventDefault();
                 const menu = this.closest('.dropdown-menu');
                 if (menu) menu.classList.remove('show');
+                
+                const newHref = this.getAttribute('data-href');
+                const newLabel = this.getAttribute('data-label');
+                const mainBtn = document.getElementById('linux-download-btn');
+                
+                if (mainBtn && newHref && newLabel) {
+                    mainBtn.href = newHref;
+                    mainBtn.textContent = newLabel;
+                }
             });
         });
     </script>
