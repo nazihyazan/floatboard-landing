@@ -41,6 +41,51 @@
       }
     }
     </script>
+    <style>
+      .download-dropdown {
+        position: relative;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .dropdown-toggle {
+        cursor: pointer;
+      }
+
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        bottom: 100%; /* Show above the button to avoid cutting off */
+        left: 0;
+        width: 100%;
+        background: var(--card-bg);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--card-border);
+        border-radius: 12px;
+        z-index: 100;
+        margin-bottom: 8px;
+        overflow: hidden;
+        box-shadow: var(--card-shadow);
+        text-align: left;
+      }
+
+      .dropdown-menu.show {
+        display: block;
+      }
+
+      .dropdown-item {
+        display: block;
+        padding: 12px 16px;
+        color: var(--text-main);
+        text-decoration: none;
+        font-size: 14px;
+        transition: background 0.2s;
+      }
+
+      .dropdown-item:hover {
+        background: var(--btn-secondary-hover);
+      }
+    </style>
 </head>
 <body>
 
@@ -358,8 +403,18 @@ const toggleTheme = () => {
                             </svg>
                         </div>
                         <h3>Linux</h3>
-                        <p>Use the Debian package for Ubuntu, Debian, and compatible distros.</p>
-                        <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.deb" class="btn btn-secondary">Download .deb</a>
+                        <p>Choose your preferred package format for your Linux distribution.</p>
+                        <div class="download-dropdown">
+                          <button class="btn btn-secondary dropdown-toggle">
+                            Linux Distributions ▾
+                          </button>
+                          <div class="dropdown-menu">
+                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.deb" class="dropdown-item">Debian / Ubuntu (.deb)</a>
+                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard-1.0.0.x86_64.rpm" class="dropdown-item">Fedora / RHEL (.rpm)</a>
+                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard-1.0.0.AppImage" class="dropdown-item">AppImage (All distros)</a>
+                            <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/floatboard_1.0.0_amd64.snap" class="dropdown-item">Snap (Snap Store)</a>
+                          </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -464,6 +519,24 @@ const toggleTheme = () => {
         }, { threshold: 0.1 });
 
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+        // Dropdown toggle
+        document.querySelectorAll('.dropdown-toggle').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const menu = this.nextElementSibling;
+                menu.classList.toggle('show');
+            });
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.matches('.dropdown-toggle')) {
+                document.querySelectorAll('.dropdown-menu').forEach(menu => {
+                    menu.classList.remove('show');
+                });
+            }
+        });
     </script>
 </body>
 </html>
