@@ -55,7 +55,7 @@
       .dropdown-menu {
         display: none;
         position: absolute;
-        bottom: 100%; /* Show above the button to avoid cutting off */
+        top: 100%; /* Show below the button */
         left: 0;
         width: 100%;
         background: var(--card-bg);
@@ -63,7 +63,7 @@
         border: 1px solid var(--card-border);
         border-radius: 12px;
         z-index: 100;
-        margin-bottom: 8px;
+        margin-top: 8px;
         overflow: hidden;
         box-shadow: var(--card-shadow);
         text-align: left;
@@ -536,6 +536,13 @@ const toggleTheme = () => {
                     menu.classList.remove('show');
                 });
             }
+        });
+        // Close dropdown when an item is clicked
+        document.querySelectorAll('.dropdown-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const menu = this.closest('.dropdown-menu');
+                if (menu) menu.classList.remove('show');
+            });
         });
     </script>
 </body>
