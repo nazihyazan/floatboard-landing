@@ -369,8 +369,21 @@ const toggleTheme = () => {
                             </svg>
                         </div>
                         <h3>Windows</h3>
-                        <p>Download the installer for Windows as an .exe package.</p>
-                        <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.0.exe" class="btn btn-secondary">Download .exe</a>
+                        <p>Download the standard .exe installer or the Microsoft Store AppX.</p>
+                        <div style="display: flex; gap: 8px; width: 100%; align-items: stretch;">
+                          <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.0.exe" id="windows-download-btn" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">Download .exe</a>
+                          <div class="download-dropdown" style="width: auto; display: flex; margin: 0;">
+                            <button class="btn btn-secondary dropdown-toggle" style="padding: 0 16px; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">
+                              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                              </svg>
+                            </button>
+                            <div class="dropdown-menu" style="right: 0; left: auto; min-width: 220px;">
+                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.0.exe" data-label="Download .exe" class="dropdown-item">Standard Installer (.exe)</a>
+                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.0.appx" data-label="Download .appx" class="dropdown-item">Microsoft Store Package (.appx)</a>
+                            </div>
+                          </div>
+                        </div>
                     </div>
                     <!-- macOS -->
                     <div class="dl-card">
@@ -549,7 +562,9 @@ const toggleTheme = () => {
                 
                 const newHref = this.getAttribute('data-href');
                 const newLabel = this.getAttribute('data-label');
-                const mainBtn = document.getElementById('linux-download-btn');
+                
+                const dropdownWrapper = this.closest('.download-dropdown');
+                const mainBtn = dropdownWrapper ? dropdownWrapper.previousElementSibling : null;
                 
                 if (mainBtn && newHref && newLabel) {
                     mainBtn.href = newHref;
