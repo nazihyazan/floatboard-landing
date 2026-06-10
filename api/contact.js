@@ -21,6 +21,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         name: name || 'FloatBoard User',
         email: email,
+        _replyto: email,
         message: message,
         _subject: 'New Support Request for FloatBoard'
       })
