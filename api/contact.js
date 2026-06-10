@@ -10,12 +10,13 @@ export default async function handler(req, res) {
       return res.status(400).json({ error: 'Email and message are required' });
     }
 
-    // Forward the email to FormSubmit using the secure random string
     const response = await fetch('https://formsubmit.co/ajax/5f7a532cf82e3d1eb01c14d4e84c52ca', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Accept': 'application/json'
+        'Accept': 'application/json',
+        'Origin': 'https://floatboard.xyz',
+        'Referer': 'https://floatboard.xyz/'
       },
       body: JSON.stringify({
         name: name || 'FloatBoard User',
