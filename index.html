@@ -470,6 +470,29 @@ const toggleTheme = () => {
                 </div>
             </div>
         </section>
+        <section id="contact" class="container fade-in" style="padding: 120px 0; border-top: 1px solid var(--glass-border);">
+            <div class="section-header" style="text-align: center; margin-bottom: 60px;">
+                <h2>Support & Contact</h2>
+                <p style="color: var(--text-muted); font-size: 1.1rem;">Have an issue, question, or feature request? Let us know!</p>
+            </div>
+            
+            <form id="support-form" style="max-width: 600px; margin: 0 auto; background: var(--card-bg); padding: 40px; border-radius: 12px; border: 1px solid var(--card-border); box-shadow: var(--card-shadow);">
+                <div style="margin-bottom: 20px;">
+                    <label for="name" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem;">Name (Optional)</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-color); color: var(--text-main); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label for="email" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem;">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-color); color: var(--text-main); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s;">
+                </div>
+                <div style="margin-bottom: 24px;">
+                    <label for="message" style="display: block; margin-bottom: 8px; font-weight: 600; font-size: 0.95rem;">Issue or Feature Request</label>
+                    <textarea id="message" name="message" required placeholder="Please describe your issue or idea here..." rows="5" style="width: 100%; padding: 12px 16px; border-radius: 8px; border: 1px solid var(--card-border); background: var(--bg-color); color: var(--text-main); font-family: inherit; font-size: 0.95rem; outline: none; transition: border-color 0.2s; resize: vertical;"></textarea>
+                </div>
+                <button type="submit" id="submit-btn" class="btn btn-primary" style="width: 100%; padding: 14px; font-size: 1rem; border: none; cursor: pointer;">Send Message</button>
+                <div id="form-status" style="margin-top: 16px; text-align: center; font-size: 0.95rem; display: none;"></div>
+            </form>
+        </section>
     </main>
 
     <footer>
@@ -573,6 +596,51 @@ const toggleTheme = () => {
                 }
             });
         });
+
+        // Handle Support Form Submission
+        const supportForm = document.getElementById('support-form');
+        const submitBtn = document.getElementById('submit-btn');
+        const formStatus = document.getElementById('form-status');
+
+        if (supportForm) {
+            supportForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
+                
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                submitBtn.style.opacity = '0.7';
+                formStatus.style.display = 'none';
+
+                try {
+                    const response = await fetch('/api/contact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ name, email, message })
+                    });
+                    
+                    if (response.ok) {
+                        formStatus.style.display = 'block';
+                        formStatus.style.color = '#27c93f';
+                        formStatus.textContent = 'Your message has been sent successfully!';
+                        supportForm.reset();
+                    } else {
+                        throw new Error('Failed');
+                    }
+                } catch (error) {
+                    formStatus.style.display = 'block';
+                    formStatus.style.color = '#ff5f56';
+                    formStatus.textContent = 'Failed to send message. Please try again.';
+                } finally {
+                    submitBtn.textContent = 'Send Message';
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                }
+            });
+        }
     </script>
 </body>
 </html>
