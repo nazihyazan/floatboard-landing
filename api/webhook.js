@@ -5,10 +5,28 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 2. كنجبدو الإيميل ديال الكليان اللي خلص في Paddle
+    // 2. كنجبدو الـ ID ديال الكليان من Paddle (حيت Paddle الإصدار الجديد مكيصيفطش الإيميل مباشرة فـ الإشعار)
     const eventData = req.body.data;
-    // إيلا مالقاش الإيميل لأي سبب، غيستعمل إيميل افتراضي باش ما يحبسش
-    const customerEmail = eventData?.customer?.email || 'test@example.com'; 
+    const customerId = eventData?.customer_id;
+
+    if (!customerId) {
+        return res.status(400).json({ error: 'No customer ID found in webhook payload' });
+    }
+
+    // 2.5 كنتواصلو مع السيرفر ديال Paddle باش نجبدو الإيميل الحقيقي ديال هاد الكليان
+    const paddleResponse = await fetch(`https://sandbox-api.paddle.com/customers/${customerId}`, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${process.env.PADDLE_API_KEY}`
+      }
+    });
+    
+    const paddleCustomerData = await paddleResponse.json();
+    const customerEmail = paddleCustomerData?.data?.email;
+
+    if (!customerEmail) {
+        return res.status(400).json({ error: 'Could not fetch customer email from Paddle' });
+    }
 
     // 3. كنتواصلو مع Keygen باش نصاوبو كود التفعيل (License Key)
     const keygenResponse = await fetch(`https://api.keygen.sh/v1/accounts/${process.env.KEYGEN_ACCOUNT_ID}/licenses`, {
