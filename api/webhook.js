@@ -50,7 +50,7 @@ export default async function handler(req, res) {
         'Authorization': `Bearer ${process.env.RESEND_API_KEY}`
       },
       body: JSON.stringify({
-        from: 'FloatBoard <onboarding@resend.dev>', // إيميل التجريب ديال Resend
+        from: 'Nazih <nazihyazan7@gmail.com>', // إيميل التجريب ديال Resend
         to: [customerEmail],
         subject: 'FloatBoard Premium - Your License Key 🚀',
         html: `
