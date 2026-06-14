@@ -14,7 +14,7 @@ export default async function handler(req, res) {
     }
 
     // 2.5 كنتواصلو مع السيرفر ديال Paddle باش نجبدو الإيميل الحقيقي ديال هاد الكليان
-    const paddleResponse = await fetch(`https://sandbox-api.paddle.com/customers/${customerId}`, {
+    const paddleResponse = await fetch(`https://api.paddle.com/customers/${customerId}`, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${process.env.PADDLE_API_KEY}`
