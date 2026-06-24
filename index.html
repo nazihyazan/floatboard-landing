@@ -396,6 +396,11 @@ const toggleTheme = () => {
                         <h3>macOS</h3>
                         <p>Install FloatBoard on Mac with the latest macOS ZIP package.</p>
                         <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard-1.0.15-mac.zip" class="btn btn-secondary">Download macOS ZIP</a>
+                        <details style="margin-top: 15px; font-size: 0.85rem; text-align: left; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 8px; cursor: pointer; color: var(--text-secondary);">
+                            <summary style="font-weight: 500; outline: none;">macOS Installation Note</summary>
+                            <p style="margin-top: 10px; line-height: 1.4;">If macOS shows an "App is damaged" warning, open your <b>Terminal</b> and paste this command once to allow the app:</p>
+                            <code style="display: block; background: #2d2d2d; color: #4af626; padding: 8px; border-radius: 4px; user-select: all; font-size: 0.8rem; margin-top: 5px; cursor: text;">xattr -cr /Applications/FloatBoard.app</code>
+                        </details>
                     </div>
                     <!-- Linux -->
                     <div class="dl-card">
