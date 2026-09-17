@@ -35,3 +35,9 @@ The website is integrated directly with our licensing provider to enable the Fre
 ## 📄 Legal
 - [Terms of Service](https://floatboard.xyz/terms.html)
 - [Privacy Policy](https://floatboard.xyz/privacy.html)
+
+## Search indexing
+
+See [the September 2026 Search Console audit and publishing steps (Arabic)](SEO-NOTES.md).
+Keep `sitemap.xml` limited to canonical public pages and update `lastmod` only when a page's content, structured data, or links change. The homepage URL is `/`; internal links should not use `/index.html`.
+The legacy `/download` route is handled by `download/index.html`, which immediately redirects to `/#download` using HTML meta refresh and provides a fallback link. Keep this redirect out of the sitemap.

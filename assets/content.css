@@ -1,0 +1,72 @@
+/* Shared content styles for the landing page and product guides. */
+.content-section {
+  padding: 80px 24px;
+  border-top: 1px solid var(--glass-border);
+}
+.content-heading {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.content-heading h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); line-height: 1.2; margin-bottom: 16px; }
+.content-heading p, .use-case p { color: var(--text-muted); }
+.use-cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.use-case { padding: 32px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 12px; }
+.use-case h3 { margin-bottom: 12px; font-size: 1.3rem; }
+.use-case p { margin-bottom: 20px; }
+.content-link { color: var(--text-main); font-weight: 600; text-underline-offset: 4px; }
+.plan-note { margin-top: 24px; text-align: center; color: var(--text-muted); }
+.faq-list details { border-bottom: 1px solid var(--glass-border); padding: 24px 0; }
+.faq-list summary { font-size: 1.1rem; font-weight: 600; cursor: pointer; }
+.faq-list details p { color: var(--text-muted); margin-top: 16px; }
+.faq-list details a { color: var(--text-main); text-underline-offset: 4px; }
+:focus-visible { outline: 2px solid #2f7df6; outline-offset: 4px; }
+[id] { scroll-margin-top: 90px; }
+
+/* Guides share the landing page palette without requiring JavaScript. */
+.guide-page {
+  --bg-color: #0a0a0f;
+  --text-main: #e0e0e0;
+  --text-muted: #aaaab2;
+  --card-bg: #131319;
+  --card-border: #292930;
+  --glass-border: #292930;
+  margin: 0;
+  background: var(--bg-color);
+  color: var(--text-main);
+  font-family: Inter, system-ui, sans-serif;
+  line-height: 1.75;
+}
+.guide-page * { box-sizing: border-box; }
+.guide-page a { color: inherit; text-underline-offset: 4px; }
+.guide-nav, .guide-footer { max-width: 1120px; margin: auto; padding: 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px; }
+.guide-nav { border-bottom: 1px solid var(--glass-border); justify-content: space-between; }
+.guide-brand { display: inline-flex; gap: 10px; align-items: center; font-weight: 800; text-decoration: none; }
+.guide-nav-links { display: flex; gap: 20px; flex-wrap: wrap; }
+.guide-nav-links a { text-decoration: none; }
+.guide-main { max-width: 900px; margin: auto; padding: 56px 24px 80px; }
+.guide-main h1 { font-size: clamp(2.2rem, 6vw, 3.7rem); line-height: 1.15; letter-spacing: -.04em; margin: 20px 0; }
+.guide-main h2 { font-size: 1.7rem; line-height: 1.3; letter-spacing: -.02em; margin: 0 0 20px; }
+.guide-main h3 { line-height: 1.4; }
+.guide-main p, .guide-main li { color: var(--text-muted); }
+.guide-main li + li { margin-top: 12px; }
+.guide-main section { margin-top: 56px; }
+.guide-intro { font-size: 1.15rem; }
+.guide-eyebrow { font-size: .85rem; letter-spacing: .08em; text-transform: uppercase; }
+.guide-actions { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 28px; align-items: center; }
+.guide-button { display: inline-block; background: #f5f5f7; color: #101015 !important; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; }
+.guide-example { border: 1px solid var(--card-border); border-radius: 12px; padding: 28px; background: var(--card-bg); }
+.guide-footer { border-top: 1px solid var(--glass-border); color: var(--text-muted); font-size: .9rem; }
+.guide-page .faq-list { display: block; }
+.guide-page .faq-list summary { font-size: 1rem; }
+@media (max-width: 700px) {
+  .hero.container { padding-left: 24px; padding-right: 24px; }
+  [id] { scroll-margin-top: 160px; }
+  .use-cases { grid-template-columns: 1fr; }
+  .use-case { padding: 24px; }
+  .guide-nav { gap: 16px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}

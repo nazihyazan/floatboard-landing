@@ -3,20 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Floating Clipboard & Notes Manager - Always on Top | FloatBoard</title>
+    <title>FloatBoard — Floating Notes & Clipboard Manager</title>
     <link rel="canonical" href="https://floatboard.xyz/" />
-    <meta name="description" content="The ultimate always-on-top floating clipboard manager for Windows, Mac & Linux. Copy, paste, save notes, images, and history without losing context or alt-tabbing.">
-    <meta name="keywords" content="floating clipboard, clipboard manager, always on top notes, copy paste tool, clipboard history, floating notes app, desktop widget, sticky notes alternative, paste images, floatboard">
+    <meta name="description" content="Keep notes, copied text and images always on top with FloatBoard, a floating clipboard manager for Windows, macOS and Linux. Download the free plan.">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="FloatBoard">
-    <meta property="og:description" content="Your clipboard, always on top. A minimalist, blazing fast floating clipboard manager.">
-    <meta property="og:image" content="https://floatboard.xyz/assets/icon.png">
-    <meta property="og:url" content="https://floatboard.xyz">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FloatBoard">
+    <meta property="og:title" content="FloatBoard — Floating Notes & Clipboard Manager">
+    <meta property="og:description" content="Keep desktop notes, copied text and images visible above your apps. Available for Windows, macOS and Linux with a free plan.">
+    <meta property="og:image" content="https://floatboard.xyz/icon.png">
+    <meta property="og:image:alt" content="FloatBoard app icon">
+    <meta property="og:url" content="https://floatboard.xyz/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="FloatBoard — Floating Notes & Clipboard Manager">
+    <meta name="twitter:description" content="Always-on-top notes, clipboard history and a floating workspace for text and images. Download for Windows, macOS or Linux.">
+    <meta name="twitter:image" content="https://floatboard.xyz/icon.png">
     
     <!-- Favicon -->
-    <link rel="icon" href="assets/icon.png">
+    <link rel="icon" href="/icon.png">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,18 +29,25 @@
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
-    <style>:root{--bg-color:#fbfbfb;--text-main:#1a1a1a;--text-muted:#666666;--nav-bg:rgba(251,251,251,0.7);--card-bg:#ffffff;--card-border:rgba(0,0,0,0.06);--card-shadow:0 12px 32px rgba(0,0,0,0.05);--btn-primary:#1a1a1a;--btn-primary-hover:#333333;--btn-primary-text:#ffffff;--btn-secondary:transparent;--btn-secondary-hover:rgba(0,0,0,0.04);--btn-secondary-text:#1a1a1a;--dot-color:rgba(0,0,0,0.06);--glass-border:rgba(0,0,0,0.06);--divider:rgba(0,0,0,0.1);--line-color:transparent;--showcase-bg:rgba(255,255,255,0.7);--mockup-bg:rgba(255,255,255,0.85);--mockup-border:rgba(0,0,0,0.08);--mockup-shadow:0 24px 60px rgba(0,0,0,0.15)}[data-theme="dark"]{--bg-color:#0a0a0f;--text-main:#e0e0e0;--text-muted:#999999;--nav-bg:rgba(10,10,15,0.7);--card-bg:rgba(255,255,255,0.03);--card-border:rgba(255,255,255,0.05);--card-shadow:0 12px 40px rgba(0,0,0,0.4);--btn-primary:#ffffff;--btn-primary-hover:#e0e0e0;--btn-primary-text:#0a0a0f;--btn-secondary:transparent;--btn-secondary-hover:rgba(255,255,255,0.05);--btn-secondary-text:#e0e0e0;--dot-color:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.06);--divider:rgba(255,255,255,0.1);--line-color:rgba(255,255,255,0.03);--showcase-bg:rgba(0,0,0,0.4);--mockup-bg:rgba(20,20,25,0.85);--mockup-border:rgba(255,255,255,0.1);--mockup-shadow:0 30px 80px rgba(0,0,0,0.6)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);min-height:100vh;overflow-x:hidden;background-image:radial-gradient(var(--dot-color) 1px,transparent 1px),repeating-linear-gradient(to right,transparent,transparent 119px,var(--line-color) 119px,var(--line-color) 120px);background-size:40px 40px,100% 100%;background-position:-20px -20px,center;font-weight:400;line-height:1.7;transition:background-color 0.4s ease,color 0.4s ease}.container{max-width:1200px;margin:0 auto;padding:0 24px}h1,h2,h3,h4,.m-title{font-weight:800;letter-spacing:-0.03em}nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);height:56px;display:flex;align-items:center}.nav-content{display:flex;justify-content:space-between;align-items:center;width:100%}.logo{font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-main);letter-spacing:-0.02em}.logo img{width:20px;height:20px}.theme-toggle{background:none;border:none;color:var(--text-main);cursor:pointer;padding:6px;border-radius:6px;transition:all 0.2s ease;display:flex;align-items:center;justify-content:center}.theme-toggle:hover{background:var(--btn-secondary-hover)}.hero{padding:120px 0;text-align:center;display:flex;flex-direction:column;align-items:center;position:relative}.hero h1{font-size:clamp(3.5rem,8vw,6rem);line-height:1.1;margin-bottom:24px;max-width:900px;z-index:2}.hero p{font-size:1.25rem;color:var(--text-muted);max-width:600px;margin-bottom:40px;font-weight:400;z-index:2}.hero-btns{display:flex;gap:16px;z-index:2}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;font-size:0.95rem;font-weight:600;border-radius:6px;text-decoration:none;transition:all 0.2s ease;border:1px solid transparent}.btn-primary{background:var(--btn-primary);color:var(--btn-primary-text)}.btn-primary:hover{background:var(--btn-primary-hover);transform:translateY(-1px)}.btn-secondary{background:var(--btn-secondary);color:var(--btn-secondary-text);border-color:var(--glass-border)}.btn-secondary:hover{background:var(--btn-secondary-hover)}.features{padding:0;border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);margin:120px auto}.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--card-border)}.feature-card{background:var(--bg-color);padding:48px 40px;display:flex;flex-direction:column;min-height:480px;position:relative;transition:background 0.4s ease}.feature-card:hover{background:rgba(255,255,255,0.015)}[data-theme="light"] .feature-card:hover{background:rgba(0,0,0,0.015)}.f-title{font-size:1.15rem;font-weight:600;color:var(--text-main);margin-bottom:40px}.f-illustration{flex:1;display:flex;align-items:center;justify-content:center;margin-bottom:60px}.f-illustration svg{width:160px;height:160px;stroke:var(--text-muted);stroke-width:0.75;fill:none;transition:all 0.5s ease}.feature-card:hover .f-illustration svg{stroke:var(--text-main);filter:drop-shadow(0 0 8px rgba(255,255,255,0.08));transform:translateY(-4px)}.f-text p{color:var(--text-muted);font-size:0.95rem;line-height:1.6;margin:0}.showcases-section{padding:100px 0;display:flex;flex-direction:column;gap:160px}.showcase{position:relative;width:100%;display:flex;align-items:center;justify-content:center}.showcase-bg-app{width:90%;max-width:1000px;height:600px;border-radius:16px;background:var(--showcase-bg);border:1px solid var(--glass-border);box-shadow:var(--card-shadow);overflow:hidden;position:relative;transition:all 0.4s ease}.showcase-bg-img{width:100%;height:100%;object-fit:cover;opacity:0.6;transition:opacity 0.4s ease}[data-theme="dark"] .showcase-bg-img{opacity:0.4}.mockup{border-radius:12px;display:flex;flex-direction:column;position:absolute;background:var(--mockup-bg);border:1px solid var(--mockup-border);color:var(--text-main);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);box-shadow:var(--mockup-shadow);width:440px;height:280px;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);z-index:10}.mockup.left{left:2%;bottom:15%}.mockup.right{right:2%;top:20%}.mockup:hover{transform:scale(1.03) translateY(-10px);box-shadow:0 40px 100px rgba(0,0,0,0.3)}.m-header{display:flex;align-items:center;padding:12px 16px;position:relative}.m-controls{display:flex;gap:8px;position:absolute;left:16px}.m-dot{width:12px;height:12px;border-radius:50%}.m-dot.r{background:#ff5f56}.m-dot.y{background:#ffbd2e}.m-dot.g{background:#27c93f}.m-title{width:100%;text-align:center;font-size:0.8rem;opacity:0.8}.m-divider{height:1px;width:100%;background:var(--divider)}.m-body{display:flex;flex:1;padding:0;overflow:hidden}.m-content{width:60%;padding:20px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;font-size:0.85rem;line-height:1.6}.m-v-divider{width:1px;height:100%;background:var(--divider)}.m-image-container{width:40%;padding:16px;display:flex;align-items:center;justify-content:center}.m-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.code-block{font-family:monospace;font-size:0.75rem;opacity:0.9;white-space:pre;line-height:1.5}.todo-item{display:flex;align-items:center;gap:10px;margin-bottom:12px}.todo-box{width:16px;height:16px;border-radius:4px;border:1px solid currentColor;opacity:0.5;flex-shrink:0}.todo-box.checked{background:currentColor;opacity:1}.quote{font-style:italic;font-size:0.95rem;border-left:3px solid currentColor;padding-left:14px;opacity:0.9;margin:auto 0}.steps{padding:120px 0;border-top:1px solid var(--glass-border)}.steps-container{display:flex;justify-content:space-between;gap:40px}.step{flex:1}.step-num{font-size:5rem;font-weight:800;color:var(--glass-border);margin-bottom:16px;line-height:1}.step h3{font-size:1.2rem;margin-bottom:8px}.download{padding:120px 0;border-top:1px solid var(--glass-border)}.dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.dl-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:40px;text-align:center;display:flex;flex-direction:column;align-items:center;transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}.dl-card:hover{box-shadow:var(--card-shadow);transform:translateY(-4px)}.dl-icon{width:48px;height:48px;margin-bottom:24px}.dl-card h3{margin-bottom:12px;font-size:1.2rem}.dl-card p{color:var(--text-muted);margin-bottom:32px;flex:1}.dl-card .btn{width:100%}.faq{padding:120px 0;border-top:1px solid var(--glass-border)}.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:16px}.faq-item{border-bottom:1px solid var(--glass-border);overflow:hidden;transition:all 0.3s ease}.faq-question{padding:24px 0;font-weight:600;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.faq-answer{max-height:0;overflow:hidden;color:var(--text-muted);transition:all 0.3s ease;padding:0;opacity:0}.faq-item.active .faq-answer{padding:0 0 32px 0;max-height:300px;opacity:1}.faq-icon{transition:transform 0.3s ease}.faq-item.active .faq-icon{transform:rotate(45deg)}footer{padding:60px 0;border-top:1px solid var(--glass-border);text-align:center;color:var(--text-muted)}footer a{color:var(--text-main);text-decoration:none;font-weight:600}footer a:hover{opacity:0.7}.footer-links{margin-top:24px;display:flex;justify-content:center;gap:24px}.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}.fade-in.visible{opacity:1;transform:translateY(0)}@media (max-width:900px){.features-grid,.steps-container,.dl-grid{grid-template-columns:1fr}.hero h1{font-size:2.5rem}.showcase-bg-app{height:400px}.mockup{width:90%;position:relative;left:0 !important;right:0 !important;bottom:0 !important;top:-40px !important;margin:0 auto}}</style>
+    <style>:root{--bg-color:#fbfbfb;--text-main:#1a1a1a;--text-muted:#666666;--nav-bg:rgba(251,251,251,0.7);--card-bg:#ffffff;--card-border:rgba(0,0,0,0.06);--card-shadow:0 12px 32px rgba(0,0,0,0.05);--btn-primary:#1a1a1a;--btn-primary-hover:#333333;--btn-primary-text:#ffffff;--btn-secondary:transparent;--btn-secondary-hover:rgba(0,0,0,0.04);--btn-secondary-text:#1a1a1a;--dot-color:rgba(0,0,0,0.06);--glass-border:rgba(0,0,0,0.06);--divider:rgba(0,0,0,0.1);--line-color:transparent;--showcase-bg:rgba(255,255,255,0.7);--mockup-bg:rgba(255,255,255,0.85);--mockup-border:rgba(0,0,0,0.08);--mockup-shadow:0 24px 60px rgba(0,0,0,0.15)}[data-theme="dark"]{--bg-color:#0a0a0f;--text-main:#e0e0e0;--text-muted:#999999;--nav-bg:rgba(10,10,15,0.7);--card-bg:rgba(255,255,255,0.03);--card-border:rgba(255,255,255,0.05);--card-shadow:0 12px 40px rgba(0,0,0,0.4);--btn-primary:#ffffff;--btn-primary-hover:#e0e0e0;--btn-primary-text:#0a0a0f;--btn-secondary:transparent;--btn-secondary-hover:rgba(255,255,255,0.05);--btn-secondary-text:#e0e0e0;--dot-color:rgba(255,255,255,0.04);--glass-border:rgba(255,255,255,0.06);--divider:rgba(255,255,255,0.1);--line-color:rgba(255,255,255,0.03);--showcase-bg:rgba(0,0,0,0.4);--mockup-bg:rgba(20,20,25,0.85);--mockup-border:rgba(255,255,255,0.1);--mockup-shadow:0 30px 80px rgba(0,0,0,0.6)}*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;background-color:var(--bg-color);color:var(--text-main);min-height:100vh;overflow-x:hidden;background-image:radial-gradient(var(--dot-color) 1px,transparent 1px),repeating-linear-gradient(to right,transparent,transparent 119px,var(--line-color) 119px,var(--line-color) 120px);background-size:40px 40px,100% 100%;background-position:-20px -20px,center;font-weight:400;line-height:1.7;transition:background-color 0.4s ease,color 0.4s ease}.container{max-width:1200px;margin:0 auto;padding:0 24px}h1,h2,h3,h4,.m-title{font-weight:800;letter-spacing:-0.03em}nav{position:sticky;top:0;z-index:100;background:var(--nav-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border);height:56px;display:flex;align-items:center}.nav-content{display:flex;justify-content:space-between;align-items:center;width:100%}.logo{font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text-main);letter-spacing:-0.02em}.logo img{width:20px;height:20px}.theme-toggle{background:none;border:none;color:var(--text-main);cursor:pointer;padding:6px;border-radius:6px;transition:all 0.2s ease;display:flex;align-items:center;justify-content:center}.theme-toggle:hover{background:var(--btn-secondary-hover)}.hero{padding:120px 0;text-align:center;display:flex;flex-direction:column;align-items:center;position:relative}.hero h1{font-size:clamp(3.5rem,8vw,6rem);line-height:1.1;margin-bottom:24px;max-width:900px;z-index:2}.hero p{font-size:1.25rem;color:var(--text-muted);max-width:600px;margin-bottom:40px;font-weight:400;z-index:2}.hero-btns{display:flex;gap:16px;z-index:2}.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 24px;font-size:0.95rem;font-weight:600;border-radius:6px;text-decoration:none;transition:all 0.2s ease;border:1px solid transparent}.btn-primary{background:var(--btn-primary);color:var(--btn-primary-text)}.btn-primary:hover{background:var(--btn-primary-hover);transform:translateY(-1px)}.btn-secondary{background:var(--btn-secondary);color:var(--btn-secondary-text);border-color:var(--glass-border)}.btn-secondary:hover{background:var(--btn-secondary-hover)}.features{padding:0;border-top:1px solid var(--card-border);border-bottom:1px solid var(--card-border);margin:120px auto}.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--card-border)}.feature-card{background:var(--bg-color);padding:48px 40px;display:flex;flex-direction:column;min-height:480px;position:relative;transition:background 0.4s ease}.feature-card:hover{background:rgba(255,255,255,0.015)}[data-theme="light"] .feature-card:hover{background:rgba(0,0,0,0.015)}.f-title{font-size:1.15rem;font-weight:600;color:var(--text-main);margin-bottom:40px}.f-illustration{flex:1;display:flex;align-items:center;justify-content:center;margin-bottom:60px}.f-illustration svg{width:160px;height:160px;stroke:var(--text-muted);stroke-width:0.75;fill:none;transition:all 0.5s ease}.feature-card:hover .f-illustration svg{stroke:var(--text-main);filter:drop-shadow(0 0 8px rgba(255,255,255,0.08));transform:translateY(-4px)}.f-text p{color:var(--text-muted);font-size:0.95rem;line-height:1.6;margin:0}.showcases-section{padding:100px 0;display:flex;flex-direction:column;gap:160px}.showcase{position:relative;width:100%;display:flex;align-items:center;justify-content:center}.showcase-bg-app{width:90%;max-width:1000px;height:600px;border-radius:16px;background:var(--showcase-bg);border:1px solid var(--glass-border);box-shadow:var(--card-shadow);overflow:hidden;position:relative;transition:all 0.4s ease}.showcase-bg-img{width:100%;height:100%;object-fit:cover;opacity:0.6;transition:opacity 0.4s ease}[data-theme="dark"] .showcase-bg-img{opacity:0.4}.mockup{border-radius:12px;display:flex;flex-direction:column;position:absolute;background:var(--mockup-bg);border:1px solid var(--mockup-border);color:var(--text-main);backdrop-filter:blur(25px);-webkit-backdrop-filter:blur(25px);box-shadow:var(--mockup-shadow);width:440px;height:280px;transition:all 0.4s cubic-bezier(0.16,1,0.3,1);z-index:10}.mockup.left{left:2%;bottom:15%}.mockup.right{right:2%;top:20%}.mockup:hover{transform:scale(1.03) translateY(-10px);box-shadow:0 40px 100px rgba(0,0,0,0.3)}.m-header{display:flex;align-items:center;padding:12px 16px;position:relative}.m-controls{display:flex;gap:8px;position:absolute;left:16px}.m-dot{width:12px;height:12px;border-radius:50%}.m-dot.r{background:#ff5f56}.m-dot.y{background:#ffbd2e}.m-dot.g{background:#27c93f}.m-title{width:100%;text-align:center;font-size:0.8rem;opacity:0.8}.m-divider{height:1px;width:100%;background:var(--divider)}.m-body{display:flex;flex:1;padding:0;overflow:hidden}.m-content{width:60%;padding:20px;overflow:hidden;display:flex;flex-direction:column;justify-content:center;font-size:0.85rem;line-height:1.6}.m-v-divider{width:1px;height:100%;background:var(--divider)}.m-image-container{width:40%;padding:16px;display:flex;align-items:center;justify-content:center}.m-img{width:100%;height:100%;object-fit:cover;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.1)}.code-block{font-family:monospace;font-size:0.75rem;opacity:0.9;white-space:pre;line-height:1.5}.todo-item{display:flex;align-items:center;gap:10px;margin-bottom:12px}.todo-box{width:16px;height:16px;border-radius:4px;border:1px solid currentColor;opacity:0.5;flex-shrink:0}.todo-box.checked{background:currentColor;opacity:1}.quote{font-style:italic;font-size:0.95rem;border-left:3px solid currentColor;padding-left:14px;opacity:0.9;margin:auto 0}.steps{padding:120px 0;border-top:1px solid var(--glass-border)}.steps-container{display:flex;justify-content:space-between;gap:40px}.step{flex:1}.step-num{font-size:5rem;font-weight:800;color:var(--glass-border);margin-bottom:16px;line-height:1}.step h3{font-size:1.2rem;margin-bottom:8px}.download{padding:120px 0;border-top:1px solid var(--glass-border)}.dl-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.dl-card{background:var(--card-bg);border:1px solid var(--card-border);border-radius:12px;padding:40px;text-align:center;display:flex;flex-direction:column;align-items:center;transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}.dl-card:hover{box-shadow:var(--card-shadow);transform:translateY(-4px)}.dl-icon{width:48px;height:48px;margin-bottom:24px}.dl-card h3{margin-bottom:12px;font-size:1.2rem}.dl-card p{color:var(--text-muted);margin-bottom:32px;flex:1}.dl-card .btn{width:100%}.faq{padding:120px 0;border-top:1px solid var(--glass-border)}.faq-list{max-width:800px;margin:0 auto;display:flex;flex-direction:column;gap:16px}.faq-item{border-bottom:1px solid var(--glass-border);overflow:hidden;transition:all 0.3s ease}.faq-question{padding:24px 0;font-weight:600;font-size:1.1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center}.faq-answer{max-height:0;overflow:hidden;color:var(--text-muted);transition:all 0.3s ease;padding:0;opacity:0}.faq-item.active .faq-answer{padding:0 0 32px 0;max-height:300px;opacity:1}.faq-icon{transition:transform 0.3s ease}.faq-item.active .faq-icon{transform:rotate(45deg)}footer{padding:60px 0;border-top:1px solid var(--glass-border);text-align:center;color:var(--text-muted)}footer a{color:var(--text-main);text-decoration:none;font-weight:600}footer a:hover{opacity:0.7}.footer-links{margin-top:24px;display:flex;justify-content:center;gap:24px;flex-wrap:wrap}.fade-in{opacity:1;transform:none;transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),transform 0.8s cubic-bezier(0.16,1,0.3,1)}.fade-in.visible{opacity:1;transform:translateY(0)}@media (max-width:900px){nav{height:auto;min-height:56px;padding:12px 0}.nav-content{gap:16px;flex-wrap:wrap}.nav-content>div{flex-wrap:wrap;gap:14px !important}.hero{padding:72px 0}.hero-btns{flex-wrap:wrap;justify-content:center}.steps-container{flex-direction:column}.features-grid,.steps-container,.dl-grid{grid-template-columns:1fr}.hero h1{font-size:2.5rem}.showcase-bg-app{height:400px}.mockup{width:90%;position:relative;left:0 !important;right:0 !important;bottom:0 !important;top:-40px !important;margin:0 auto}}</style>
     <!-- JSON-LD -->
-    <script defer type="application/ld+json">
+    <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
+      "@id": "https://floatboard.xyz/#software",
       "name": "FloatBoard",
+      "url": "https://floatboard.xyz/",
+      "image": "https://floatboard.xyz/icon.png",
       "operatingSystem": "Windows, macOS, Linux",
       "applicationCategory": "ProductivityApplication",
-      "description": "FloatBoard is a floating workspace widget to boost productivity.",
+      "description": "A floating clipboard manager and desktop notes app for Windows, macOS and Linux. Keep text, images and notes always on top while you work.",
+      "featureList": ["Always-on-top floating workspace", "Desktop notes", "Clipboard history", "Text and image support", "Drag and drop", "Light and dark themes"],
+      "downloadUrl": "https://floatboard.xyz/#download",
       "offers": {
         "@type": "Offer",
+        "name": "Free plan",
+        "url": "https://floatboard.xyz/pricing.html",
         "price": "0.00",
         "priceCurrency": "USD"
       }
@@ -85,19 +97,20 @@
         background: var(--btn-secondary-hover);
       }
     </style>
+    <link rel="stylesheet" href="/assets/content.css">
 </head>
 <body>
 
     <nav>
         <div class="container nav-content">
-            <a href="#" class="logo">
+            <a href="/" class="logo">
                 <img src="assets/icon.webp" alt="FloatBoard logo - floating clipboard app" width="20" height="20">
                 FloatBoard
             </a>
             <div style="display: flex; align-items: center; gap: 20px;">
                 <a href="#features" style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Features</a>
                 <a href="#download" style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Download</a>
-                <a href="pricing.html" style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Pricing</a>
+                <a href="/pricing.html" style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Pricing</a>
                 <a href="#contact" style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">Support</a>
                 <a href="https://github.com/sponsors/nazihyazan" target="_blank" style="color: var(--text-main); text-decoration: none; font-weight: 500; font-size: 0.95rem; opacity: 0.8; transition: opacity 0.2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.8'">
                     Sponsors <span style="color: #ff4d4f;">❤️</span>
@@ -112,11 +125,11 @@
 
     <main>
         <section class="hero container">
-            <h1 class="fade-in visible">FloatBoard - The Ultimate Floating Clipboard Manager</h1>
-            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard is an always on top widget that acts as your desktop productivity tool. As a powerful clipboard manager, it creates a floating workspace where you can paste images and text effortlessly without losing context.</p>
+            <h1 class="fade-in visible">Floating notes.<br>A clipboard always on top.</h1>
+            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard is a desktop notes app and clipboard manager for Windows, macOS and Linux. Keep copied text, images and quick notes visible above your other windows, so you can write, research and copy and paste without losing your place.</p>
             <div class="hero-btns fade-in visible" style="transition-delay: 0.2s;">
-                <a href="#download" class="btn btn-primary">Download Free Clipboard Manager</a>
-                <a href="pricing.html" class="btn btn-secondary">View Premium Workspace Features</a>
+                <a href="#download" class="btn btn-primary">Download FloatBoard Free</a>
+                <a href="/pricing.html" class="btn btn-secondary">Compare Free & Premium</a>
                 <a href="https://github.com/nazihyazan/floating_board" target="_blank" class="btn btn-secondary">View on GitHub</a>
             </div>
             <div class="fade-in visible" style="transition-delay: 0.3s; background: rgba(47, 125, 246, 0.05); border: 1px solid rgba(47, 125, 246, 0.15); border-radius: 8px; padding: 12px 16px; margin: 24px auto 0; max-width: 550px; text-align: center; color: var(--text-muted); font-size: 0.85rem; line-height: 1.5;">
@@ -128,7 +141,7 @@
         <section id="features" class="features container fade-in">
             <div class="features-grid">
                 <div class="feature-card">
-                    <h2 class="f-title">Always on Top</h2>
+                    <h2 class="f-title">Always-on-top notes</h2>
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
                             <!-- Dashed vertical connecting lines -->
@@ -148,12 +161,12 @@
                         </svg>
                     </div>
                     <div class="f-text">
-                        <p>Pins itself above all other applications. Never lose context or alt-tab endlessly again.</p>
+                        <p>Keep quick notes and reference text above your active window. Read, write or follow instructions without repeatedly switching apps.</p>
                     </div>
                 </div>
                 
                 <div class="feature-card">
-                    <h2 class="f-title">Rich Content</h2>
+                    <h2 class="f-title">Text, images & clipboard history</h2>
                     <div class="f-illustration">
                         <svg viewBox="0 0 180 180">
                             <!-- Left Cube -->
@@ -197,7 +210,27 @@
                     </div>
                 </div>
             </div>
-        <div style="text-align: center; margin-top: 40px;"><a href="pricing.html" style="color: var(--text-muted); font-weight: 600; text-decoration: none;">Need more? View Premium features →</a></div>
+        <div style="text-align: center; margin-top: 40px;"><a href="/pricing.html" style="color: var(--text-muted); font-weight: 600; text-decoration: none;">Need more? View Premium features →</a></div>
+        </section>
+
+        <section class="content-section container" aria-labelledby="workspace-uses">
+            <div class="content-heading">
+                <h2 id="workspace-uses">Your notes and clipboard, beside your work</h2>
+                <p>Keep the references you need in view. FloatBoard gives copied text, images and desktop notes a floating workspace above your active apps.</p>
+            </div>
+            <div class="use-cases">
+                <article class="use-case">
+                    <h3>Floating notes for research and writing</h3>
+                    <p>Keep a quotation beside your draft, talking points beside a meeting, or instructions above the app you are using. An always-on-top notes window keeps your reference visible when you switch tasks.</p>
+                    <a class="content-link" href="/floating-notes.html">Explore always-on-top floating notes</a>
+                </article>
+                <article class="use-case">
+                    <h3>A clipboard manager for everyday copy and paste</h3>
+                    <p>Collect text snippets and images in one place, then return to recent copied text with clipboard history. Use the floating board to keep links, reference images and source text close at hand.</p>
+                    <a class="content-link" href="/clipboard-manager.html">See the clipboard manager workflow</a>
+                </article>
+            </div>
+            <p class="plan-note">Start with 5 texts per day, 5 images per day and one window on the free plan. <a class="content-link" href="/pricing.html">Compare Free and Premium</a>.</p>
         </section>
 
         <section class="showcases-section container fade-in">
@@ -281,7 +314,7 @@ const toggleTheme = () => {
                                 <span style="opacity: 0.5; margin-right: 8px;">📝</span> The UI must reflect absolute simplicity.
                             </div>
                             <div style="padding: 8px 10px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--card-border); margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                                <span style="opacity: 0.5; margin-right: 8px;">🔗</span> https://floatboard.xyz/download
+                                <span style="opacity: 0.5; margin-right: 8px;">🔗</span> https://floatboard.xyz/#download
                             </div>
                             <div style="padding: 8px 10px; background: var(--card-bg); border-radius: 6px; border: 1px solid var(--card-border); display: flex; align-items: center;">
                                 <span style="opacity: 0.5; margin-right: 8px;">🖼️</span> background_image.jpg
@@ -358,7 +391,7 @@ const toggleTheme = () => {
         <section id="download" class="download fade-in">
             <div class="container">
                 <div class="section-header" style="text-align: center; margin-bottom: 60px;">
-                    <h2>Get FloatBoard</h2>
+                    <h2>Download FloatBoard for Windows, macOS or Linux</h2>
                     <p style="color: var(--text-muted); font-size: 1.25rem;">Available for all major operating systems.</p>
                 </div>
                 <div class="dl-grid">
@@ -450,33 +483,30 @@ const toggleTheme = () => {
                 <h2>Frequently Asked Questions</h2>
             </div>
             <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        What is FloatBoard?
-                        <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </div>
-                    <div class="faq-answer">
-                        FloatBoard is a desktop application that acts as a floating clipboard manager. It stays on top of your other windows, allowing you to easily paste and manage texts, images, and videos without interrupting your workflow.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Which operating systems are supported?
-                        <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </div>
-                    <div class="faq-answer">
-                        FloatBoard is available for Windows, macOS, and Linux. You can download the specific installer for your operating system below.
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        How does it stay always on top?
-                        <svg class="faq-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
-                    </div>
-                    <div class="faq-answer">
-                        FloatBoard utilizes native OS window APIs through Electron to enforce a top-most window state, ensuring it never gets buried behind your active applications.
-                    </div>
-                </div>
+                <details>
+                    <summary>What is FloatBoard?</summary>
+                    <p>FloatBoard is a desktop notes app and floating clipboard manager. It keeps text, images and quick notes above your other windows so you can refer to them while working in another app.</p>
+                </details>
+                <details>
+                    <summary>Can I use FloatBoard as an always-on-top notes app?</summary>
+                    <p>Yes. Keep reference text, quick notes and images on the floating board while you write, research or follow instructions. See the <a href="/floating-notes.html">floating notes guide</a> for a practical workflow.</p>
+                </details>
+                <details>
+                    <summary>Does FloatBoard include clipboard history?</summary>
+                    <p>Yes. Clipboard history lets you return to recent copied text and copy it again. The board also holds text and images you want to keep visible. Learn more about the <a href="/clipboard-manager.html">clipboard manager and copy and paste workflow</a>.</p>
+                </details>
+                <details>
+                    <summary>Which operating systems are supported?</summary>
+                    <p>FloatBoard is available for Windows, macOS and Linux. Choose your installer in the <a href="#download">download section</a>.</p>
+                </details>
+                <details>
+                    <summary>Is FloatBoard free to use?</summary>
+                    <p>There is a free plan with 5 texts per day, 5 images per day and one window. Premium removes those limits. Check the <a href="/pricing.html">Free and Premium plans</a> and try the free version before upgrading.</p>
+                </details>
+                <details>
+                    <summary>How do I keep my notes above other windows?</summary>
+                    <p>Use FloatBoard's always-on-top setting and place the board beside the app you are working in. Your notes stay visible as you move between other windows.</p>
+                </details>
             </div>
         </section>
         <section id="contact" class="container fade-in" style="padding: 120px 0; border-top: 1px solid var(--glass-border);">
@@ -508,12 +538,14 @@ const toggleTheme = () => {
         <div class="container">
             <p>Made with ❤️ by Yazan</p>
             <div class="footer-links">
-                <a href="pricing.html">Pricing</a>
+                <a href="/floating-notes.html">Floating Notes</a>
+                <a href="/clipboard-manager.html">Clipboard Manager</a>
+                <a href="/pricing.html">Pricing</a>
                 <a href="https://github.com/nazihyazan/floating_board" target="_blank">GitHub</a>
                 <a href="https://github.com/sponsors/nazihyazan" target="_blank">Sponsors</a>
-                <a href="refund.html">Refund Policy</a>
-                <a href="terms.html">Terms</a>
-                <a href="privacy.html">Privacy</a>
+                <a href="/refund.html">Refund Policy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/privacy.html">Privacy</a>
             </div>
         </div>
     </footer>
@@ -545,31 +577,6 @@ const toggleTheme = () => {
                 moonIcon.style.display = 'block';
             }
         }
-
-        // FAQ Toggle Logic
-        const faqItems = document.querySelectorAll('.faq-item');
-        faqItems.forEach(item => {
-            const question = item.querySelector('.faq-question');
-            question.addEventListener('click', () => {
-                const isActive = item.classList.contains('active');
-                // Close all other items
-                faqItems.forEach(faq => faq.classList.remove('active'));
-                if (!isActive) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Scroll Animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
         // Dropdown toggle
         document.querySelectorAll('.dropdown-toggle').forEach(btn => {
