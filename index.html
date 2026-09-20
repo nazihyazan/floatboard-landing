@@ -43,7 +43,7 @@
       "applicationCategory": "ProductivityApplication",
       "description": "A floating clipboard manager and desktop notes app for Windows, macOS and Linux. Keep text, images and notes always on top while you work.",
       "featureList": ["Always-on-top floating workspace", "Desktop notes", "Clipboard history", "Text and image support", "Drag and drop", "Light and dark themes"],
-      "downloadUrl": "https://floatboard.xyz/#download",
+      "downloadUrl": "https://floatboard.xyz/download/",
       "offers": {
         "@type": "Offer",
         "name": "Free plan",
@@ -416,8 +416,8 @@ const toggleTheme = () => {
                               </svg>
                             </button>
                             <div class="dropdown-menu" style="right: 0; left: auto; min-width: 220px;">
-                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.exe" data-label="Download .exe" class="dropdown-item">Standard Installer (.exe)</a>
-                              <a href="#" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.appx" data-label="Download .msix" class="dropdown-item">Windows App Package (.msix/.appx)</a>
+                              <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.exe" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.exe" data-label="Download .exe" class="dropdown-item">Standard Installer (.exe)</a>
+                              <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.appx" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.appx" data-label="Download .msix" class="dropdown-item">Windows App Package (.msix/.appx)</a>
                             </div>
                           </div>
                         </div>
@@ -467,15 +467,16 @@ const toggleTheme = () => {
                               </svg>
                             </button>
                             <div class="dropdown-menu" style="right: 0; left: auto; min-width: 220px;">
-                              <a href="#" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" data-label="Download .deb" class="dropdown-item">Debian / Ubuntu (.deb)</a>
-                              <a href="#" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.rpm" data-label="Download .rpm" class="dropdown-item">Fedora / RHEL (.rpm)</a>
-                              <a href="#" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.AppImage" data-label="Download .AppImage" class="dropdown-item">Portable AppImage (.AppImage)</a>
-                              <a href="#" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.snap" data-label="Download .snap" class="dropdown-item">Snap (manual installation)</a>
+                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" data-label="Download .deb" class="dropdown-item">Debian / Ubuntu (.deb)</a>
+                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.rpm" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.rpm" data-label="Download .rpm" class="dropdown-item">Fedora / RHEL (.rpm)</a>
+                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.AppImage" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.AppImage" data-label="Download .AppImage" class="dropdown-item">Portable AppImage (.AppImage)</a>
+                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.snap" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.snap" data-label="Download .snap" class="dropdown-item">Snap (manual installation)</a>
                             </div>
                           </div>
                         </div>
                         <p id="linux-snap-instructions" hidden style="font-size: 0.8rem; margin-top: 12px; overflow-wrap: anywhere;">Install the downloaded Snap:<br><code>sudo snap install --dangerous FloatBoard-1.0.17-linux.snap</code></p>
                         <a href="https://github.com/nazihyazan/mac_test/releases/tag/v1.0.17" style="font-size: 0.85rem; margin-top: 12px; color: var(--text-main); text-underline-offset: 3px;">Linux release notes</a>
+                        <a href="https://snapcraft.io/floatboard" style="margin-top: 12px; color: var(--text-main);">Install from Snap Store</a>
                     </div>
                 </div>
             </div>
@@ -541,6 +542,7 @@ const toggleTheme = () => {
         <div class="container">
             <p>Made with ❤️ by Yazan</p>
             <div class="footer-links">
+                <a href="/download/">Downloads &amp; installation</a>
                 <a href="/floating-notes.html">Floating Notes</a>
                 <a href="/clipboard-manager.html">Clipboard Manager</a>
                 <a href="/pricing.html">Pricing</a>

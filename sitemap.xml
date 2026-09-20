@@ -2,15 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://floatboard.xyz/</loc>
-    <lastmod>2026-09-18</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://floatboard.xyz/floating-notes.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://floatboard.xyz/clipboard-manager.html</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-20</lastmod>
   </url>
   <url>
     <loc>https://floatboard.xyz/pricing.html</loc>
@@ -27,5 +27,9 @@
   <url>
     <loc>https://floatboard.xyz/refund.html</loc>
     <lastmod>2026-09-17</lastmod>
+  </url>
+  <url>
+    <loc>https://floatboard.xyz/download/</loc>
+    <lastmod>2026-09-20</lastmod>
   </url>
 </urlset>
