@@ -17,3 +17,11 @@ p, li, a { overflow-wrap: anywhere; }
 .skip-link { position: absolute; left: 12px; top: -100px; background: white; color: black !important; padding: 12px; z-index: 100; }
 .skip-link:focus { top: 12px; }
 @media (max-width: 650px) { .blog-card { grid-template-columns: 1fr; } .guide-main { padding-top: 32px; } .blog-card > a { padding-bottom: 0; } }
+.comparison-scroll { max-width: 100%; overflow-x: auto; margin: 24px 0; }
+.comparison { width: 100%; border-collapse: collapse; font-size: .95rem; }
+.comparison caption { text-align: left; font-weight: 700; padding-bottom: 12px; }
+.comparison th, .comparison td { padding: 16px; border: 1px solid var(--card-border); text-align: left; vertical-align: top; }
+.comparison thead { background: var(--card-bg); }
+.comparison th[scope="row"] { white-space: nowrap; }
+.comparison-scroll:focus-visible { outline: 2px solid #80b3ff; outline-offset: 4px; }
+@media (max-width: 650px) { .comparison { min-width: 580px; } }

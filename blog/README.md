@@ -18,3 +18,9 @@ Initial intent map:
 - /floating-notes.html and /clipboard-manager.html remain product overviews.
 
 These are relevance-based topics, not claims of measured keyword search volume. Google does not prescribe a minimum word count or guarantee indexing/ranking.
+
+## Search intent and comparison updates
+
+The image-reference guide targets designers and illustrators organizing reference images. Its secondary questions cover reference image organizers and whether a PureRef alternative fits a mixed notes-and-images task. Keep these in this guide rather than making near-duplicate keyword pages.
+
+For future articles, identify one audience and task, answer it early, include a concrete FloatBoard example, and link naturally to the relevant notes or clipboard guide. Compare competitors only where it helps the decision; cite official documentation, date the check, disclose that this is a product blog, and distinguish documented features from hands-on tests. Add useful FAQs without claiming unverified search volume or rich-result eligibility. Measure actual queries and clicks in Search Console before choosing follow-up topics.
