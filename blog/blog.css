@@ -1,0 +1,19 @@
+.guide-main { max-width: 960px; }
+article > header { max-width: 800px; }
+.byline, figcaption { color: var(--text-muted); font-size: .9rem; }
+figure { margin: 36px 0; }
+figure img { display: block; width: 100%; max-width: 657px; height: auto; margin: auto; border-radius: 14px; border: 1px solid var(--card-border); }
+figcaption { max-width: 657px; margin: 12px auto; }
+.toc, .related { background: var(--card-bg); border: 1px solid var(--card-border); padding: 24px; border-radius: 12px; margin-top: 40px; }
+pre { overflow-x: auto; padding: 20px; background: #17171e; border: 1px solid var(--card-border); border-radius: 10px; line-height: 1.8; }
+p, li, a { overflow-wrap: anywhere; }
+.blog-grid { display: grid; gap: 28px; margin-top: 48px; }
+.blog-card { display: grid; grid-template-columns: 42% 1fr; border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; background: var(--card-bg); }
+.blog-card > a { display: flex; align-items: center; padding: 20px; }
+.blog-card img { width: 100%; height: auto; border-radius: 8px; }
+.blog-card > div { padding: 24px; }
+.blog-card h2 { font-size: 1.45rem; margin: 8px 0; }
+.blog-card h2 a { text-decoration: none; }
+.skip-link { position: absolute; left: 12px; top: -100px; background: white; color: black !important; padding: 12px; z-index: 100; }
+.skip-link:focus { top: 12px; }
+@media (max-width: 650px) { .blog-card { grid-template-columns: 1fr; } .guide-main { padding-top: 32px; } .blog-card > a { padding-bottom: 0; } }
