@@ -27,4 +27,4 @@ For future articles, identify one audience and task, answer it early, include a 
 
 The developer comparison must not claim that snippet managers cannot handle images: massCode documents visual notes, Pieces supports screenshots, and Cacher supports image attachments. FloatBoard's differentiator here is a small always-on-top working set, not exclusive image support.
 
-Traffic goal: 500 visits/day is a measurement target, not an expected result from these two article revisions. Track actual article landing sessions, engaged sessions and downloads separately from Search Console clicks. Use the distribution checklist in `distribution.md`, review search queries after indexing, and revise around demonstrated demand instead of guessed keyword volume.
+Traffic goal: 500 visits/day is a measurement target, not an expected result from these two article revisions. Track actual article landing sessions, engaged sessions and downloads separately from Search Console clicks. Review search queries after indexing, then improve existing articles or choose a distinct follow-up topic based on demonstrated demand rather than guessed keyword volume.
