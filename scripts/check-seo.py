@@ -48,7 +48,14 @@ for url in urls:
         if u.fragment and u.fragment != '!' and target.suffix=='.html':
             q=Page(); q.feed(target.read_text()); assert u.fragment in q.ids,(url,link)
     for image in p.images:
-        if image.get('src','').startswith('/'): assert file_for(image['src']).exists(),image
-        if '/blog/' in url: assert image.get('alt') and image.get('width') and image.get('height'),image
+        if image.get('src','').startswith('/'):
+            image_file = file_for(image['src'])
+            assert image_file.exists(), image
+            if '/blog/assets/' in image['src']:
+                signature = image_file.read_bytes()[:8]
+                assert (image_file.suffix == '.jpg' and signature.startswith(b'\xff\xd8')) or (image_file.suffix == '.png' and signature == b'\x89PNG\r\n\x1a\n'), image_file
+        if '/blog/' in url:
+            assert image.get('alt') and image.get('width') and image.get('height'),image
+            assert 0 < int(image['width']) < 10000 and 0 < int(image['height']) < 10000, image
     print('PASS',url)
 print('Validated',len(urls),'canonical pages, metadata, internal links, images and JSON-LD.')

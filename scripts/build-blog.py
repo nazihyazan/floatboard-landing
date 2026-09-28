@@ -15,7 +15,29 @@ footer = '<footer class="guide-footer"><a href="/blog/about/">About this blog</a
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']
-    width, height = struct.unpack('>II', file.read_bytes()[16:24])
+    data = file.read_bytes()
+    if data.startswith(b'\x89PNG\r\n\x1a\n'):
+        width, height = struct.unpack('>II', data[16:24])
+    elif data.startswith(b'\xff\xd8'):
+        pos = 2
+        while pos < len(data):
+            if data[pos] != 0xff:
+                raise ValueError(f'Invalid JPEG marker in {file}')
+            while data[pos] == 0xff:
+                pos += 1
+            marker = data[pos]
+            pos += 1
+            if marker in (0xd8, 0xd9) or 0xd0 <= marker <= 0xd7:
+                continue
+            length = struct.unpack('>H', data[pos:pos + 2])[0]
+            if marker in (0xc0, 0xc1, 0xc2, 0xc3, 0xc5, 0xc6, 0xc7, 0xc9, 0xca, 0xcb, 0xcd, 0xce, 0xcf):
+                height, width = struct.unpack('>HH', data[pos + 3:pos + 7])
+                break
+            pos += length
+        else:
+            raise ValueError(f'No JPEG dimensions found in {file}')
+    else:
+        raise ValueError(f'Unsupported image format: {file}')
     return f'<img src="/blog/assets/{esc(p["image"])}" width="{width}" height="{height}" alt="{esc(p["alt"])}" decoding="async" {"loading=\"lazy\"" if lazy else "fetchpriority=\"high\""}>'
 
 def page(path, title, description, body, schema, picture=None):
@@ -41,8 +63,9 @@ for p in posts:
     toc = ''.join(f'<li><a href="#{s["id"]}">{esc(s["title"])}</a></li>' for s in p['sections'])
     sections = ''.join(f'<section aria-labelledby="{s["id"]}"><h2 id="{s["id"]}">{esc(s["title"])}</h2>{s["html"]}</section>' for s in p['sections'])
     related = ''.join(f'<li><a href="/blog/{q["slug"]}/">{esc(q["title"])}</a></li>' for q in posts if q != p)
-    body = f'''<article><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time></p><p class="guide-intro">{esc(p['intro'])}</p></header><figure>{image(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav>{sections}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></article>'''
-    schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p['date'],'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
+    updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
+    body = f'''<article><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p><p class="guide-intro">{esc(p['intro'])}</p></header><figure>{image(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav>{sections}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></article>'''
+    schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
     page(path,p['title'],p['description'],body,schema,p['image'])
     cards.append(f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h2><a href="{path}">{esc(p["title"])}</a></h2><p>{esc(p["description"])}</p><a href="{path}">Read the guide →</a></div></article>')
 
@@ -52,11 +75,19 @@ page('/blog/about/','About the FloatBoard blog','Who publishes the FloatBoard bl
 ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
 ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
 tree = ET.parse(ROOT/'sitemap.xml')
-for path in ['/blog/','/blog/about/'] + ['/blog/'+p['slug']+'/' for p in posts]:
-    if not any(x.find(ns+'loc').text == BASE+path for x in tree.getroot()):
+modified_dates = {'/blog/': max(p.get('modified', p['date']) for p in posts), '/blog/about/': '2026-09-24'}
+modified_dates.update({'/blog/'+p['slug']+'/': p.get('modified', p['date']) for p in posts})
+for path, modified in modified_dates.items():
+    entry = next((x for x in tree.getroot() if x.find(ns+'loc') is not None and x.find(ns+'loc').text == BASE+path), None)
+    if entry is None:
         el = ET.SubElement(tree.getroot(), ns+'url')
         ET.SubElement(el, ns+'loc').text=BASE+path
-        ET.SubElement(el, ns+'lastmod').text='2026-09-24'
+        ET.SubElement(el, ns+'lastmod').text=modified
+    else:
+        lastmod = entry.find(ns+'lastmod')
+        if lastmod is None:
+            lastmod = ET.SubElement(entry, ns+'lastmod')
+        lastmod.text = max(lastmod.text or modified, modified)
 ET.indent(tree, space='  ')
 tree.write(ROOT/'sitemap.xml',encoding='UTF-8',xml_declaration=True)
 print('Built blog index, about page and',len(posts),'articles.')
