@@ -10,13 +10,15 @@ Goal: grow to **500 relevant visits per day** (roughly 15,000 per 30 days). This
 
 ## Distribute to the matching audience
 
-- **DEV Community:** Cross-post the *complete* UI debugging article, not a thin teaser. Link its original URL as `canonical_url` in the editor. DEV's [editor guide](https://dev.to/p/editor_guide) documents this field. Keep the comparison accurate and disclose that the article is from FloatBoard. Use no more than four relevant tags.
+- **DEV Community:** Do **not** paste the present product article there. DEV's [AI-assisted article guidelines](https://dev.to/guidelines-for-ai-assisted-articles-on-dev) require disclosure and say AI-assisted posts should not promote a business, while its [editor guide](https://dev.to/p/editor_guide) documents canonical URLs for eligible republication. A human owner could instead publish a firsthand, non-promotional debugging lesson that they can verify and discuss, using the platform's AI disclosure controls when applicable.
 - **Hashnode:** If the publication already exists, cross-post the same developer guide with the original URL in **Are you republishing? → Add Original URL**. Hashnode [documents the setting](https://docs.hashnode.com/blogs/editor/writing-a-blog-post). Check the rendered canonical before sharing. Do not create a second near-duplicate article on floatboard.xyz.
-- **Relevant discussions:** Answer an active, specific question about debugging with screenshots or keeping source notes beside a document. Lead with the useful checklist and disclose the FloatBoard connection. Add the article link only when it directly answers the person's question and the community rules allow it. Do not revive an old thread solely to drop a link.
+- **Relevant discussions:** A human owner can answer an active, specific question about debugging with screenshots or keeping source notes beside a document. Lead with a firsthand answer and disclose the FloatBoard connection. Add the article link only when it directly answers the person's question and the community rules allow it. Do not revive an old thread solely to drop a link or post AI-generated comments; DEV's guidelines expressly discourage AI-generated comments.
 - **Hacker News:** A Show HN submission should demonstrate the working app, not simply link to the blog. Follow the current [Show HN guidelines](https://news.ycombinator.com/showhn.html) and restriction notice before submitting. It is not an automatic traffic source.
 - **Writing audience:** Share the source-card template with a writing or research audience separately from the developer article. Do not post the debugging comparison in writing communities.
 
-## Copy-ready useful excerpts
+## Internal answer outlines for the owner
+
+These are ideas to check against your real experience, not comments to paste or post automatically.
 
 Developer discussion answer, to adapt to the specific question:
 
