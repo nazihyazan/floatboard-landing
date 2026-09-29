@@ -15,6 +15,8 @@ Initial intent map:
 - organize-image-references: small image reference board for a design decision.
 - code-snippets-and-screenshots: investigate one UI bug with a screenshot and relevant code in view; compare the role of a visible board with searchable snippet managers.
 - keep-reference-notes-visible-while-writing: keep research sources separate from the writer's own words while drafting, with a practical Windows pinning option.
+- windows-clipboard-history-vs-floating-notes: reuse recent copies with Windows + V, troubleshoot missing entries, and distinguish clipboard history from a visible task note.
+- take-notes-while-watching-tutorials: follow a software tutorial on one screen with timestamps, next actions and expected-versus-actual results.
 - /floating-notes.html and /clipboard-manager.html remain product overviews.
 
 These are relevance-based topics, not claims of measured keyword search volume. Google does not prescribe a minimum word count or guarantee indexing/ranking.
