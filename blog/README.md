@@ -17,6 +17,7 @@ Initial intent map:
 - keep-reference-notes-visible-while-writing: keep research sources separate from the writer's own words while drafting, with a practical Windows pinning option.
 - windows-clipboard-history-vs-floating-notes: reuse recent copies with Windows + V, troubleshoot missing entries, and distinguish clipboard history from a visible task note.
 - take-notes-while-watching-tutorials: follow a software tutorial on one screen with timestamps, next actions and expected-versus-actual results.
+- compare-photos-side-by-side-windows: compare two local or web images with Photos or Snap, then keep a four-image shortlist visible while working; use originals for precise detail.
 - /floating-notes.html and /clipboard-manager.html remain product overviews.
 
 These are relevance-based topics, not claims of measured keyword search volume. Google does not prescribe a minimum word count or guarantee indexing/ranking.

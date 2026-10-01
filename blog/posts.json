@@ -1,6 +1,7 @@
 [
   {
     "slug": "organize-image-references",
+    "related_slugs": ["code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
     "title": "How to Organize Reference Images for Design Work",
     "description": "Organize reference images for your next design: a practical workflow, a PureRef, Eagle, Milanote and FloatBoard comparison, and tips for keeping notes beside images.",
     "category": "Designers & illustrators",
@@ -54,6 +55,7 @@
   },
   {
     "slug": "code-snippets-and-screenshots",
+    "related_slugs": ["organize-image-references", "keep-reference-notes-visible-while-writing", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
     "title": "How to Debug UI Bugs with Code Snippets and Screenshots",
     "description": "Keep a screenshot, code snippet and expected result together while debugging UI bugs. Compare FloatBoard with snippet managers for this specific workflow.",
     "category": "Developer workflow",
@@ -103,6 +105,7 @@
   },
   {
     "slug": "keep-reference-notes-visible-while-writing",
+    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
     "title": "How to Keep Research Notes Visible While Writing",
     "description": "Keep research notes beside Word or Google Docs without losing sources. Compare split screen, PowerToys and FloatBoard, then use a source-card template.",
     "category": "Writing with notes",
@@ -147,6 +150,7 @@
   },
   {
     "slug": "windows-clipboard-history-vs-floating-notes",
+    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "take-notes-while-watching-tutorials"],
     "title": "Windows Clipboard History: Copy Multiple Items and Keep Notes Visible",
     "description": "Learn how to use Win + V for copied text and images, troubleshoot missing clipboard items, and choose when floating notes help with an active task.",
     "category": "Windows clipboard workflow",
@@ -190,6 +194,7 @@
   },
   {
     "slug": "take-notes-while-watching-tutorials",
+    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "windows-clipboard-history-vs-floating-notes"],
     "title": "How to Take Notes While Watching a Tutorial on One Screen",
     "description": "Use a timestamp, next-action note and screenshot to follow a software tutorial on one monitor. Compare split screen, PowerToys and floating notes.",
     "category": "Learning & desktop notes",
@@ -233,6 +238,65 @@
         "id": "tutorial-notes-faq",
         "title": "Questions about taking notes during tutorials",
         "html": "<h3>Should I write down everything the instructor says?</h3><p>For a practical software task, begin with the action, expected result and question you need answered. Add background explanation when it changes how you perform the task. A full transcript can be useful for other purposes, but it is hard to use as a small on-screen checklist.</p><h3>How can I take notes without a second monitor?</h3><p>Pause the lesson while practising, use side-by-side windows when space allows, or keep a short note pinned above your app. Change the layout if it makes controls too small to use comfortably.</p><h3>Does FloatBoard automatically transcribe or synchronize a video?</h3><p>This workflow uses manually written notes, timestamps and selected image references. It does not depend on transcription, a video integration or automatic timestamp capture.</p><h3>Can I use this for reading a written tutorial?</h3><p>Yes. Replace the timestamp with the heading or section link. For longer reading and drafting, use the <a href='/blog/keep-reference-notes-visible-while-writing/'>research notes workflow</a>. To try the compact tutorial setup, <a href='/download/'>download FloatBoard</a> and start with a single next-action note.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "compare-photos-side-by-side-windows",
+    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots"],
+    "title": "How to Compare Photos Side by Side on Windows",
+    "description": "Compare photos side by side with Microsoft Photos, Windows Snap or a floating image board. Use a four-photo example to shortlist references without losing the originals.",
+    "category": "Photo comparison workflow",
+    "image": "compare-photos-side-by-side.png",
+    "alt": "FloatBoard showing four car-photo thumbnails in a two-by-two grid above a browser page with larger source images",
+    "caption": "Four car-photo references in FloatBoard above the source page. The grid helps shortlist images while browsing; open the originals to judge detail or color.",
+    "date": "2026-10-01",
+    "intro": "To compare photos side by side on Windows, start with Microsoft Photos’ multi-view if your pictures are already in one collection. Use Windows Snap for two full-size windows. If you are browsing several references while working in another app, keep a small image board visible and return to the originals for close inspection. This guide shows all three layouts and a four-photo comparison you can repeat.",
+    "sections": [
+      {
+        "id": "choose-comparison-goal",
+        "title": "Decide what you are comparing before opening more photos",
+        "html": "<p>Choose one question: Which composition fits a project? Which lighting treatment should you study? Which of two exports preserves small details? The answer determines the layout. A grid of thumbnails can help you shortlist visual directions, but it is a poor place to judge sharpness, small text or exact colors.</p><p>For a fair comparison, choose images of a similar subject, angle and crop when possible. If the candidates have different framing or lighting, record that difference before treating it as a difference in the subject. Keep a link or filename for every original so you can inspect it again.</p>"
+      },
+      {
+        "id": "microsoft-photos-multi-view",
+        "title": "Compare multiple local photos in Microsoft Photos",
+        "html": "<ol><li>Open the current Microsoft Photos app and navigate to the folder containing your candidates.</li><li>Open one photo, then use the filmstrip to select the other photos you want to view in multi-view.</li><li>Compare the same feature in each image, such as a crop, reflection or edge detail. Return to a larger view before making a decision about fine quality.</li></ol><p>Microsoft documents <a href='https://support.microsoft.com/en-us/windows/apps/photos/changes-in-the-new-photos-app'>multi-view in the new Photos app</a> as a way to compare photos and videos side by side by selecting items in the filmstrip. Its interface may differ if you have Photos Legacy or an older app version. This built-in option is a good starting point when the originals are local and you do not need them above a separate working app. Documentation checked on 1 October 2026.</p>"
+      },
+      {
+        "id": "windows-snap-two-images",
+        "title": "Use Windows Snap for two large images or browser pages",
+        "html": "<p>When you need to read details at a larger size, open the two originals in separate windows. These could be two browser windows showing source pages or an image viewer beside the app where you work. Select the first window and press <strong>Windows + Left Arrow</strong>; select the second and press <strong>Windows + Right Arrow</strong>. Resize the divider or use the available Snap layout to leave enough room for both images.</p><p><a href='https://support.microsoft.com/en-us/windows/experience/snap-your-windows'>Microsoft’s Snap guide</a> also describes dragging windows to screen edges or corners and filling the remaining space with Snap Assist. This layout is useful for checking two full-size views. If you keep switching among four candidates, narrow the set to two finalists before examining small details.</p>"
+      },
+      {
+        "id": "floatboard-working-grid",
+        "title": "Keep a short image shortlist visible while you browse",
+        "html": "<p>The screenshot above shows a real FloatBoard layout: four car images in a two-by-two grid, with larger source photos visible in the browser behind it. Use this kind of board when your task is to keep a few references in sight while you browse, draw or write—not to replace the original files or pages.</p><ol><li>Save each source URL or original filename in your project notes. Use images you are allowed to keep and share.</li><li>Add two to four candidate images to FloatBoard using the image workflow in your installed version. The free plan currently allows <a href='/pricing.html'>five images per day and one window</a>.</li><li>Position the board where it does not cover the feature you are comparing, then use its pin control and return to your browser or work app.</li><li>Give the candidates simple names in your project note—A, B, C and D—and write one useful observation for each. The labels belong in your note; this screenshot does not show labels on the image tiles.</li><li>Open a source image at full size whenever a thumbnail leaves a question unresolved. Keep the final choice and its source in your project folder.</li></ol><p>FloatBoard can also show text notes, so a short decision checklist can sit with the images. For a larger searchable collection of references, use a dedicated asset library and bring only the current shortlist to the floating board. The <a href='/blog/organize-image-references/'>reference-image organization guide</a> explains that longer-term setup.</p>"
+      },
+      {
+        "id": "four-photo-example",
+        "title": "Example: shortlist four car-photo references without confusing lighting with design",
+        "html": "<p>Suppose you are choosing a visual reference for an illustration of a car. In the screenshot, one image is an outdoor silver-car shot, another shows a blue car in a warm courtyard, a third has a dark convertible against a neutral background, and a fourth shows a bright yellow car in a courtyard. They are different scenes and viewpoints, so this is a <em>shortlist for art direction</em>, not a controlled test of vehicle shape or paint color.</p><div class='comparison-scroll' role='region' aria-label='Four-photo reference checklist' tabindex='0'><table class='comparison'><caption>What the four-image grid can help you decide</caption><thead><tr><th scope='col'>Question</th><th scope='col'>Compare in the grid</th><th scope='col'>Verify in the original</th></tr></thead><tbody><tr><th scope='row'>Composition</th><td>How much space surrounds the car and where the visual weight falls.</td><td>Whether the crop hides a part needed for your drawing.</td></tr><tr><th scope='row'>Lighting</th><td>Daylight, warm courtyard light or a more neutral backdrop.</td><td>Highlight edges and shadow detail at a larger size.</td></tr><tr><th scope='row'>Color direction</th><td>Which broad palette supports the mood you want.</td><td>Original file, exposure and color settings before choosing exact values.</td></tr></tbody></table></div><p>If your question is about wheel shape, compare photos taken from a similar angle. If it is about color, do not assume the blue and yellow courtyard shots have matching light. The useful result of a first pass is a smaller set of candidates and a clearer next question, not a verdict from four tiny tiles.</p>"
+      },
+      {
+        "id": "choose-tool",
+        "title": "Photos, Snap, a pinned viewer or FloatBoard: which fits the task?",
+        "html": "<p>These are different ways to arrange what you see, not a speed benchmark. The Windows and PowerToys descriptions are based on Microsoft documentation checked on 1 October 2026; FloatBoard publishes this guide.</p><div class='comparison-scroll' role='region' aria-label='Photo comparison layout choices' tabindex='0'><table class='comparison'><caption>Choose a comparison layout</caption><thead><tr><th scope='col'>Setup</th><th scope='col'>Use it when</th><th scope='col'>Limit to remember</th></tr></thead><tbody><tr><th scope='row'>Microsoft Photos multi-view</th><td>Your originals are local and you want several images in one viewer.</td><td>The interface depends on which Photos version is installed.</td></tr><tr><th scope='row'>Windows Snap</th><td>You need two larger windows or two source pages side by side.</td><td>Each window gets less screen width, especially on a small display.</td></tr><tr><th scope='row'><a href='https://learn.microsoft.com/en-us/windows/powertoys/always-on-top'>PowerToys Always On Top</a></th><td>You already have a suitable image viewer and want to pin its window above another app.</td><td>It pins the viewer; it does not create an image library or comparison grid.</td></tr><tr><th scope='row'>FloatBoard</th><td>You want a compact shortlist of images, with optional text notes, visible while you use another app.</td><td>Use the originals for zoomed detail and check the <a href='/pricing.html'>free-plan limits</a>.</td></tr></tbody></table></div><p>If you need aligned zoom, an overlay or pixel differences between nearly identical exports, use a tool built for precise image comparison. FloatBoard’s grid is for visible references; it does not calculate differences, rank images or verify that two files are duplicates.</p>"
+      },
+      {
+        "id": "comparison-mistakes",
+        "title": "Avoid four common mistakes when comparing image references",
+        "html": "<ul><li><strong>Comparing unlike crops:</strong> match the subject and framing before drawing conclusions about proportions. A low camera angle can make a shape look different.</li><li><strong>Judging exact color from a thumbnail:</strong> browser scaling, display settings and the source image can all affect what you see. Open the original in an appropriate editor when color accuracy matters.</li><li><strong>Losing the source:</strong> write down the file path or page URL before closing the browser. A temporary board is not a project archive.</li><li><strong>Reusing an image without permission:</strong> collecting a visual reference does not grant publication rights. Check the source and license before you put a photo in a public deliverable.</li></ul><p>When a decision matters, record why you chose the finalist. For example: ‘Use the neutral-background image to study silhouette; keep the courtyard image only for warm lighting.’ That is more useful than a folder of unnamed thumbnails.</p>"
+      },
+      {
+        "id": "photo-comparison-faq",
+        "title": "Questions about comparing photos side by side",
+        "html": "<h3>How do I compare two photos side by side in Windows 11?</h3><p>Use Microsoft Photos multi-view for pictures in its filmstrip, or put two image windows side by side with Windows Snap. Choose Photos when you want a single viewer and Snap when you need separate windows or source pages.</p><h3>Can I compare images from a website without making a collage?</h3><p>Yes. Open the source pages in separate browser windows and use Snap, or keep a few allowed reference images in a small floating board while the browser stays open. You do not need to export a combined image just to make a decision.</p><h3>Can I keep reference photos on top of another app?</h3><p>On Windows, PowerToys Always On Top can pin an existing viewer. FloatBoard has its own pin control and can keep a small image grid beside optional notes. Move the pinned window if it blocks your work.</p><h3>Does FloatBoard detect differences between two images?</h3><p>No. This workflow uses human visual comparison of a small reference set. For pixel-level differences, synchronized zoom or duplicate detection, use a dedicated image-comparison tool and inspect the original files.</p><h3>What if I need to organize hundreds of photos?</h3><p>Keep those files in a searchable photo library or project folder. Use FloatBoard only for the few candidates you are actively considering, then save the final decision and source back in the project record. See the <a href='/blog/organize-image-references/'>guide to organizing reference images</a> for that distinction.</p>"
+      },
+      {
+        "id": "try-a-comparison",
+        "title": "Try the two-minute comparison",
+        "html": "<p>Pick one real question and two candidate images. Try Microsoft Photos or Snap first. If you need the candidates to remain visible while editing or browsing, <a href='/download/'>try FloatBoard</a> with a small pinned set and one note about the decision. Open the originals before you commit to the choice, then clear the temporary board when the task is done.</p><p>If your main problem is keeping instructions visible rather than comparing images, the <a href='/floating-notes.html'>floating-notes guide</a> covers that workflow.</p>"
       }
     ]
   }
