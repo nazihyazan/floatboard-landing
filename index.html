@@ -98,8 +98,49 @@
       }
     </style>
     <link rel="stylesheet" href="/assets/content.css">
+    <style>
+      .promo-bar {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        min-height: 54px;
+        padding: 7px max(16px, calc((100vw - 1200px) / 2));
+        overflow: hidden;
+        background: linear-gradient(105deg, #1645b8, #2b55d9 58%, #087e79);
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, .25);
+      }
+      .promo-ticker { flex: 1; min-width: 0; overflow: hidden; border-right: 1px solid rgba(255, 255, 255, .4); }
+      .promo-ticker-track { display: flex; width: max-content; animation: promo-scroll 22s linear infinite; }
+      .promo-ticker-track span { flex: none; padding-right: 32px; white-space: nowrap; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
+      .promo-bar:hover .promo-ticker-track { animation-play-state: paused; }
+      @keyframes promo-scroll { to { transform: translateX(-50%); } }
+      .promo-offer { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px 12px; font-size: .88rem; line-height: 1.3; }
+      .promo-discount { display: inline-block; padding: 5px 9px; border-radius: 5px; background: #fff; color: #1645b8; font-size: .85rem; font-weight: 800; white-space: nowrap; }
+      .promo-copy { font-weight: 700; white-space: nowrap; }
+      .promo-code { white-space: nowrap; }
+      .promo-code code { padding: 4px 7px; border: 1px dashed rgba(255, 255, 255, .85); border-radius: 5px; color: #fff; font-size: 1em; font-weight: 800; letter-spacing: .04em; user-select: all; }
+      .promo-link { color: #fff; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+      .promo-link:hover { color: #e4fffb; }
+      @media (max-width: 760px) {
+        .promo-bar { display: block; padding: 6px 12px 9px; }
+        .promo-ticker { height: 18px; margin-bottom: 4px; border-right: 0; }
+        .promo-offer { justify-content: center; text-align: center; gap: 5px 9px; }
+        .promo-copy { white-space: normal; }
+      }
+    </style>
 </head>
 <body>
+
+    <aside class="promo-bar" aria-label="Limited-time FloatBoard Premium offer">
+        <div class="promo-ticker" aria-hidden="true"><div class="promo-ticker-track"><span>Limited-time offer · 50% off Premium · Ends soon · </span><span>Limited-time offer · 50% off Premium · Ends soon · </span></div></div>
+        <div class="promo-offer">
+            <strong class="promo-discount">50% OFF</strong>
+            <span class="promo-copy">FloatBoard Premium · Ends soon</span>
+            <span class="promo-code">Use code <code>DEVTO50</code></span>
+            <a class="promo-link" href="/pricing.html">Get the offer →</a>
+        </div>
+    </aside>
 
     <nav>
         <div class="container nav-content">
