@@ -18,7 +18,11 @@ Initial intent map:
 - windows-clipboard-history-vs-floating-notes: reuse recent copies with Windows + V, troubleshoot missing entries, and distinguish clipboard history from a visible task note.
 - take-notes-while-watching-tutorials: follow a software tutorial on one screen with timestamps, next actions and expected-versus-actual results.
 - compare-photos-side-by-side-windows: compare two local or web images with Photos or Snap, then keep a four-image shortlist visible while working; use originals for precise detail.
+- copy-text-from-screenshot-windows: extract screenshot text with Windows OCR tools, verify the copy against the original, and keep the source image with the corrected note. FloatBoard is not the OCR tool.
+- keep-meeting-notes-visible-video-call: keep a personal agenda card in sight during a Teams call while recording agreed actions in shared meeting notes; check screen-sharing privacy.
 - /floating-notes.html and /clipboard-manager.html remain product overviews.
+
+The blog-wide `DEVTO50` ribbon uses the same discount message as the landing page. New posts can set `promo_after_section` to show one offer card within the article. Keep the offer outside editorial claims and remove or update both placements when the campaign changes.
 
 These are relevance-based topics, not claims of measured keyword search volume. Google does not prescribe a minimum word count or guarantee indexing/ranking.
 

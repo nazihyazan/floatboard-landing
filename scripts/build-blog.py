@@ -12,7 +12,14 @@ posts = json.loads((ROOT / 'blog/posts.json').read_text())
 posts_by_slug = {post['slug']: post for post in posts}
 assert len(posts_by_slug) == len(posts), 'Duplicate blog slug'
 esc = html.escape
-nav = '<a class="skip-link" href="#main">Skip to content</a><nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/">Download</a></div></nav>'
+nav = '<nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/">Download</a></div></nav>'
+promo_bar = '''<aside class="blog-promo-bar" aria-label="FloatBoard Premium offer">
+<div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off Premium · Ends soon · </span><span>Limited-time offer · 50% off Premium · Ends soon · </span></div></div>
+<div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Premium · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Get the offer →</a></div>
+</aside>'''
+article_offer = '''<aside class="blog-offer" aria-label="FloatBoard Premium discount">
+<div><p class="blog-offer-label">A FloatBoard offer</p><h2>Get 50% off Premium</h2><p>Limited-time offer. Ends soon.</p><p class="blog-offer-code">Use code <code>DEVTO50</code></p></div><a href="/pricing.html">See plans and offer →</a>
+</aside>'''
 footer = '<footer class="guide-footer"><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
 
 def image(p, lazy=False):
@@ -54,7 +61,7 @@ def page(path, title, description, body, schema, picture=None):
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-</head><body class="guide-page">{nav}<main id="main" class="guide-main">{body}</main>{footer}</body></html>'''
+</head><body class="guide-page"><a class="skip-link" href="#main">Skip to content</a>{promo_bar}{nav}<main id="main" class="guide-main">{body}</main>{footer}</body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
@@ -63,7 +70,14 @@ cards = []
 for p in posts:
     path = '/blog/' + p['slug'] + '/'
     toc = ''.join(f'<li><a href="#{s["id"]}">{esc(s["title"])}</a></li>' for s in p['sections'])
-    sections = ''.join(f'<section aria-labelledby="{s["id"]}"><h2 id="{s["id"]}">{esc(s["title"])}</h2>{s["html"]}</section>' for s in p['sections'])
+    promo_after = p.get('promo_after_section')
+    if promo_after is not None:
+        assert isinstance(promo_after, int) and 0 < promo_after < len(p['sections']), f'Invalid promo position: {p["slug"]}'
+    sections = ''.join(
+        f'<section aria-labelledby="{s["id"]}"><h2 id="{s["id"]}">{esc(s["title"])}</h2>{s["html"]}</section>'
+        + (article_offer if index == promo_after else '')
+        for index, s in enumerate(p['sections'], start=1)
+    )
     related = ''.join(f'<li><a href="/blog/{q["slug"]}/">{esc(q["title"])}</a></li>' for q in (posts_by_slug[slug] for slug in p['related_slugs']) if q != p)
     updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
     body = f'''<article><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p><p class="guide-intro">{esc(p['intro'])}</p></header><figure>{image(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav>{sections}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></article>'''
@@ -71,7 +85,7 @@ for p in posts:
     page(path,p['title'],p['description'],body,schema,p['image'])
     cards.append(f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h2><a href="{path}">{esc(p["title"])}</a></h2><p>{esc(p["description"])}</p><a href="{path}">Read the guide →</a></div></article>')
 
-page('/blog/','Notes, clipboard & visual-reference workflows','Practical FloatBoard guides for writing with reference notes, organizing images and keeping code snippets beside your work.', '<header><p class="guide-eyebrow">The FloatBoard blog</p><h1>A clearer workspace, one useful reference at a time.</h1><p class="guide-intro">Practical guides to working with desktop notes, copied text and image references. Pick the task you want to complete.</p></header><div class="blog-grid">'+''.join(cards)+'</div><section><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>',{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
+page('/blog/','Notes, clipboard & visual-reference workflows','Practical FloatBoard guides for meeting notes, screenshot text, clipboard history, code snippets and image references.', '<header><p class="guide-eyebrow">The FloatBoard blog</p><h1>A clearer workspace, one useful reference at a time.</h1><p class="guide-intro">Practical guides to working with desktop notes, copied text and image references. Pick the task you want to complete.</p></header><div class="blog-grid">'+''.join(cards)+'</div><section><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>',{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
 page('/blog/about/','About the FloatBoard blog','Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.', '''<h1>About the FloatBoard blog</h1><p class="guide-intro">This is FloatBoard’s official product blog. We publish practical guides for people working with desktop notes, copied text and image references.</p><section><h2>Who publishes these guides</h2><p>The publisher is FloatBoard, the application featured on this website. These are product guides, not independent reviews. For the app’s source and release history, visit the <a href="https://github.com/nazihyazan/floating_board">FloatBoard project</a> and <a href="https://github.com/nazihyazan/mac_test/releases">Linux releases</a>.</p></section><section><h2>How the guides are prepared</h2><p>These guides are drafted with AI assistance using product screenshots supplied by the app owner, FloatBoard product information and linked primary documentation. Screenshots illustrate the interface; workflow examples are labelled examples, not measured productivity studies. We do not claim that a feature was independently tested unless the article documents that test.</p><p>We keep each guide focused on one task, describe limitations, link to current pricing and downloads, and avoid invented ratings, customer quotations or performance claims. Features and layouts can differ between versions.</p></section><section><h2>Corrections and updates</h2><p>If an instruction does not match your version, <a href="/#contact">contact FloatBoard</a> with the article URL, your operating system and app version. Publication dates identify the original articles; revision dates should change only when the content changes substantially.</p></section><p><a href="/blog/">Explore the guides</a></p>''',{'@context':'https://schema.org','@type':'AboutPage','name':'About the FloatBoard blog','url':BASE+'/blog/about/'})
 
 ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
@@ -92,4 +106,6 @@ for path, modified in modified_dates.items():
         lastmod.text = max(lastmod.text or modified, modified)
 ET.indent(tree, space='  ')
 tree.write(ROOT/'sitemap.xml',encoding='UTF-8',xml_declaration=True)
+with (ROOT/'sitemap.xml').open('ab') as stream:
+    stream.write(b'\n')
 print('Built blog index, about page and',len(posts),'articles.')
