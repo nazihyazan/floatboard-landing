@@ -55,7 +55,7 @@
   },
   {
     "slug": "code-snippets-and-screenshots",
-    "related_slugs": ["organize-image-references", "keep-reference-notes-visible-while-writing", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
+    "related_slugs": ["copy-text-from-screenshot-windows", "organize-image-references", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
     "title": "How to Debug UI Bugs with Code Snippets and Screenshots",
     "description": "Keep a screenshot, code snippet and expected result together while debugging UI bugs. Compare FloatBoard with snippet managers for this specific workflow.",
     "category": "Developer workflow",
@@ -150,7 +150,7 @@
   },
   {
     "slug": "windows-clipboard-history-vs-floating-notes",
-    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "take-notes-while-watching-tutorials"],
+    "related_slugs": ["copy-text-from-screenshot-windows", "code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "take-notes-while-watching-tutorials"],
     "title": "Windows Clipboard History: Copy Multiple Items and Keep Notes Visible",
     "description": "Learn how to use Win + V for copied text and images, troubleshoot missing clipboard items, and choose when floating notes help with an active task.",
     "category": "Windows clipboard workflow",
