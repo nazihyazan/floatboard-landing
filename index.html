@@ -128,6 +128,15 @@
         .promo-offer { justify-content: center; text-align: center; gap: 5px 9px; }
         .promo-copy { white-space: normal; }
       }
+      .hero-platform-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 18px; margin-top: 22px; position: relative; z-index: 2; font-size: .92rem; color: var(--text-muted); }
+      .hero-platform-links a { color: var(--text-main); font-weight: 600; text-underline-offset: 4px; }
+      .linux-package-options { display: grid; gap: 8px; width: 100%; }
+      @media (max-width: 760px) {
+        .hero { padding: 48px 0 64px; }
+        .hero h1 { font-size: 2.15rem; }
+        .hero p { font-size: 1.08rem; line-height: 1.55; margin-bottom: 28px; }
+        .hero-platform-links { margin-top: 16px; }
+      }
     </style>
 </head>
 <body>
@@ -167,11 +176,16 @@
     <main>
         <section class="hero container">
             <h1 class="fade-in visible">Floating notes.<br>A clipboard always on top.</h1>
-            <p class="fade-in visible" style="transition-delay: 0.1s;">FloatBoard is a desktop notes app and clipboard manager for Windows, macOS and Linux. Keep copied text, images and quick notes visible above your other windows, so you can write, research and copy and paste without losing your place.</p>
+            <p class="fade-in visible" style="transition-delay: 0.1s;">Keep copied text, images and quick notes visible above your work. FloatBoard is a desktop notes and clipboard app for Windows, macOS and Linux.</p>
             <div class="hero-btns fade-in visible" style="transition-delay: 0.2s;">
-                <a href="#download" class="btn btn-primary">Download FloatBoard Free</a>
-                <a href="/pricing.html" class="btn btn-secondary">Compare Free & Premium</a>
-                <a href="https://github.com/nazihyazan/floating_board" target="_blank" class="btn btn-secondary">View on GitHub</a>
+                <a href="/download/" class="btn btn-primary">Download FloatBoard Free</a>
+                <a href="#features" class="btn btn-secondary">See how it works</a>
+            </div>
+            <div class="hero-platform-links" aria-label="Quick download links">
+                <span>Choose your system:</span>
+                <a href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard.Setup.1.0.15.exe">Windows installer</a>
+                <a href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard-1.0.15-mac.zip">macOS ZIP</a>
+                <a href="/download/#linux">Linux packages</a>
             </div>
         </section>
 
@@ -444,18 +458,18 @@ const toggleTheme = () => {
                             </svg>
                         </div>
                         <h3>Windows</h3>
-                        <p>Download the standard .exe installer or the Microsoft Store AppX.</p>
+                        <p>Download the standard .exe installer or the separate Windows .appx package.</p>
                         <div style="display: flex; gap: 8px; width: 100%; align-items: stretch;">
-                          <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.exe" id="windows-download-btn" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">Download .exe</a>
+                          <a href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard.Setup.1.0.15.exe" id="windows-download-btn" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">Download .exe</a>
                           <div class="download-dropdown" style="width: auto; display: flex; margin: 0;">
-                            <button class="btn btn-secondary dropdown-toggle" style="padding: 0 16px; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">
+                            <button type="button" class="btn btn-secondary dropdown-toggle" aria-label="Other Windows packages" aria-expanded="false" style="padding: 0 16px; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">
                               <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                                 <polyline points="6 9 12 15 18 9"></polyline>
                               </svg>
                             </button>
                             <div class="dropdown-menu" style="right: 0; left: auto; min-width: 220px;">
-                              <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.exe" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.exe" data-label="Download .exe" class="dropdown-item">Standard Installer (.exe)</a>
-                              <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.appx" data-href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard.Setup.1.0.15.appx" data-label="Download .msix" class="dropdown-item">Windows App Package (.msix/.appx)</a>
+                              <a href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard.Setup.1.0.15.exe" data-href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard.Setup.1.0.15.exe" data-label="Download .exe" class="dropdown-item">Standard Installer (.exe)</a>
+                              <a href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard.Setup.1.0.15.appx" data-href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard.Setup.1.0.15.appx" data-label="Download .appx" class="dropdown-item">Windows App Package (.appx)</a>
                             </div>
                           </div>
                         </div>
@@ -469,7 +483,7 @@ const toggleTheme = () => {
                         </div>
                         <h3>macOS</h3>
                         <p>Install FloatBoard on Mac with the latest macOS ZIP package.</p>
-                        <a href="https://github.com/nazihyazan/floating_board/releases/latest/download/FloatBoard-1.0.15-mac.zip" class="btn btn-secondary">Download macOS ZIP</a>
+                        <a href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard-1.0.15-mac.zip" class="btn btn-secondary">Download macOS ZIP</a>
                         <details style="margin-top: 15px; font-size: 0.85rem; text-align: left; background: rgba(0,0,0,0.05); padding: 10px; border-radius: 8px; cursor: pointer; color: var(--text-secondary);">
                             <summary style="font-weight: 500; outline: none;">macOS Installation Note</summary>
                             <p style="margin-top: 10px; line-height: 1.4;">If macOS shows an "App is damaged" warning, open your <b>Terminal</b> and paste this command once to allow the app:</p>
@@ -495,26 +509,14 @@ const toggleTheme = () => {
                             </svg>
                         </div>
                         <h3>Linux</h3>
-                        <p>Version 1.0.17 for Linux x64. Choose your preferred package format.</p>
-                        <div style="display: flex; gap: 8px; width: 100%; align-items: stretch;">
-                          <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" id="linux-download-btn" class="btn btn-secondary" style="flex: 1; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">Download .deb</a>
-                          <div class="download-dropdown" style="width: auto; display: flex; margin: 0;">
-                            <button class="btn btn-secondary dropdown-toggle" style="padding: 0 16px; display: flex; align-items: center; justify-content: center; height: auto; margin: 0;">
-                              <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                              </svg>
-                            </button>
-                            <div class="dropdown-menu" style="right: 0; left: auto; min-width: 220px;">
-                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" data-label="Download .deb" class="dropdown-item">Debian / Ubuntu (.deb)</a>
-                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.rpm" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.rpm" data-label="Download .rpm" class="dropdown-item">Fedora / RHEL (.rpm)</a>
-                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.AppImage" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.AppImage" data-label="Download .AppImage" class="dropdown-item">Portable AppImage (.AppImage)</a>
-                              <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.snap" data-href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.snap" data-label="Download .snap" class="dropdown-item">Snap (manual installation)</a>
-                            </div>
-                          </div>
+                        <p>Version 1.0.17 for Linux x64. Choose the package that matches your distribution.</p>
+                        <div class="linux-package-options">
+                          <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.deb" class="btn btn-secondary">Debian / Ubuntu (.deb)</a>
+                          <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.rpm" class="btn btn-secondary">Fedora / RHEL (.rpm)</a>
+                          <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.17/FloatBoard-1.0.17-linux.AppImage" class="btn btn-secondary">Portable AppImage</a>
                         </div>
-                        <p id="linux-snap-instructions" hidden style="font-size: 0.8rem; margin-top: 12px; overflow-wrap: anywhere;">Install the downloaded Snap:<br><code>sudo snap install --dangerous FloatBoard-1.0.17-linux.snap</code></p>
+                        <a href="https://snapcraft.io/floatboard" style="margin-top: 12px; color: var(--text-main);">Use Snap Store if Snap is installed</a>
                         <a href="https://github.com/nazihyazan/mac_test/releases/tag/v1.0.17" style="font-size: 0.85rem; margin-top: 12px; color: var(--text-main); text-underline-offset: 3px;">Linux release notes</a>
-                        <a href="https://snapcraft.io/floatboard" style="margin-top: 12px; color: var(--text-main);">Install from Snap Store</a>
                     </div>
                 </div>
             </div>
@@ -627,7 +629,8 @@ const toggleTheme = () => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault();
                 const menu = this.nextElementSibling;
-                menu.classList.toggle('show');
+                const isOpen = menu.classList.toggle('show');
+                this.setAttribute('aria-expanded', String(isOpen));
             });
         });
 
@@ -636,16 +639,19 @@ const toggleTheme = () => {
             if (!e.target.closest('.dropdown-toggle')) {
                 document.querySelectorAll('.dropdown-menu').forEach(menu => {
                     menu.classList.remove('show');
+                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
                 });
             }
         });
         
         // Handle dropdown item click
         document.querySelectorAll('.dropdown-item').forEach(item => {
-            item.addEventListener('click', function(e) {
-                e.preventDefault();
+            item.addEventListener('click', function() {
                 const menu = this.closest('.dropdown-menu');
-                if (menu) menu.classList.remove('show');
+                if (menu) {
+                    menu.classList.remove('show');
+                    menu.previousElementSibling.setAttribute('aria-expanded', 'false');
+                }
                 
                 const newHref = this.getAttribute('data-href');
                 const newLabel = this.getAttribute('data-label');
@@ -656,9 +662,6 @@ const toggleTheme = () => {
                 if (mainBtn && newHref && newLabel) {
                     mainBtn.href = newHref;
                     mainBtn.textContent = newLabel;
-                    if (mainBtn.id === 'linux-download-btn') {
-                        document.getElementById('linux-snap-instructions').hidden = !newHref.endsWith('.snap');
-                    }
                 }
             });
         });

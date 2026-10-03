@@ -1,0 +1,57 @@
+{
+  "recorded_at_utc": "2026-10-03T06:31:26Z",
+  "metric": "github_release_asset_download_count",
+  "note": "Cumulative requests for the listed GitHub assets; not unique users or confirmed installations. Snap Store installs are excluded.",
+  "assets": [
+    {
+      "repo": "nazihyazan/floating_board",
+      "tag": "v1.0.15",
+      "name": "FloatBoard.Setup.1.0.15.exe",
+      "asset_id": 454878525,
+      "download_count": 48
+    },
+    {
+      "repo": "nazihyazan/floating_board",
+      "tag": "v1.0.15",
+      "name": "FloatBoard.Setup.1.0.15.appx",
+      "asset_id": 454880274,
+      "download_count": 13
+    },
+    {
+      "repo": "nazihyazan/floating_board",
+      "tag": "v1.0.15",
+      "name": "FloatBoard-1.0.15-mac.zip",
+      "asset_id": 454877949,
+      "download_count": 29
+    },
+    {
+      "repo": "nazihyazan/mac_test",
+      "tag": "v1.0.17",
+      "name": "FloatBoard-1.0.17-linux.deb",
+      "asset_id": 572941559,
+      "download_count": 15
+    },
+    {
+      "repo": "nazihyazan/mac_test",
+      "tag": "v1.0.17",
+      "name": "FloatBoard-1.0.17-linux.rpm",
+      "asset_id": 572941558,
+      "download_count": 10
+    },
+    {
+      "repo": "nazihyazan/mac_test",
+      "tag": "v1.0.17",
+      "name": "FloatBoard-1.0.17-linux.AppImage",
+      "asset_id": 572941555,
+      "download_count": 7
+    },
+    {
+      "repo": "nazihyazan/mac_test",
+      "tag": "v1.0.17",
+      "name": "FloatBoard-1.0.17-linux.snap",
+      "asset_id": 572941556,
+      "download_count": 5
+    }
+  ],
+  "tracked_asset_total": 127
+}
