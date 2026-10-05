@@ -1,7 +1,14 @@
 [
   {
     "slug": "organize-image-references",
-    "related_slugs": ["code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
+    "related_slugs": [
+      "code-snippets-and-screenshots",
+      "keep-reference-notes-visible-while-writing",
+      "windows-clipboard-history-vs-floating-notes",
+      "take-notes-while-watching-tutorials",
+      "collect-visual-references-across-search-pages",
+      "start-two-image-reference-board"
+    ],
     "title": "How to Organize Reference Images for Design Work",
     "description": "Organize reference images for your next design: a practical workflow, a PureRef, Eagle, Milanote and FloatBoard comparison, and tips for keeping notes beside images.",
     "category": "Designers & illustrators",
@@ -55,7 +62,13 @@
   },
   {
     "slug": "code-snippets-and-screenshots",
-    "related_slugs": ["copy-text-from-screenshot-windows", "organize-image-references", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
+    "related_slugs": [
+      "copy-text-from-screenshot-windows",
+      "organize-image-references",
+      "windows-clipboard-history-vs-floating-notes",
+      "take-notes-while-watching-tutorials",
+      "capture-webpage-detail-screenshot-reference"
+    ],
     "title": "How to Debug UI Bugs with Code Snippets and Screenshots",
     "description": "Keep a screenshot, code snippet and expected result together while debugging UI bugs. Compare FloatBoard with snippet managers for this specific workflow.",
     "category": "Developer workflow",
@@ -105,7 +118,13 @@
   },
   {
     "slug": "keep-reference-notes-visible-while-writing",
-    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots", "windows-clipboard-history-vs-floating-notes", "take-notes-while-watching-tutorials"],
+    "related_slugs": [
+      "organize-image-references",
+      "code-snippets-and-screenshots",
+      "windows-clipboard-history-vs-floating-notes",
+      "take-notes-while-watching-tutorials",
+      "keep-webpage-text-beside-image-references"
+    ],
     "title": "How to Keep Research Notes Visible While Writing",
     "description": "Keep research notes beside Word or Google Docs without losing sources. Compare split screen, PowerToys and FloatBoard, then use a source-card template.",
     "category": "Writing with notes",
@@ -150,7 +169,13 @@
   },
   {
     "slug": "windows-clipboard-history-vs-floating-notes",
-    "related_slugs": ["copy-text-from-screenshot-windows", "code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "take-notes-while-watching-tutorials"],
+    "related_slugs": [
+      "copy-text-from-screenshot-windows",
+      "code-snippets-and-screenshots",
+      "keep-reference-notes-visible-while-writing",
+      "take-notes-while-watching-tutorials",
+      "clear-copied-text-history-keep-working-set"
+    ],
     "title": "Windows Clipboard History: Copy Multiple Items and Keep Notes Visible",
     "description": "Learn how to use Win + V for copied text and images, troubleshoot missing clipboard items, and choose when floating notes help with an active task.",
     "category": "Windows clipboard workflow",
@@ -194,7 +219,13 @@
   },
   {
     "slug": "take-notes-while-watching-tutorials",
-    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots", "keep-reference-notes-visible-while-writing", "windows-clipboard-history-vs-floating-notes"],
+    "related_slugs": [
+      "organize-image-references",
+      "code-snippets-and-screenshots",
+      "keep-reference-notes-visible-while-writing",
+      "windows-clipboard-history-vs-floating-notes",
+      "keep-webpage-text-beside-image-references"
+    ],
     "title": "How to Take Notes While Watching a Tutorial on One Screen",
     "description": "Use a timestamp, next-action note and screenshot to follow a software tutorial on one monitor. Compare split screen, PowerToys and floating notes.",
     "category": "Learning & desktop notes",
@@ -243,7 +274,12 @@
   },
   {
     "slug": "compare-photos-side-by-side-windows",
-    "related_slugs": ["organize-image-references", "code-snippets-and-screenshots"],
+    "related_slugs": [
+      "organize-image-references",
+      "code-snippets-and-screenshots",
+      "review-image-grid-and-large-preview",
+      "inspect-image-original-after-thumbnail"
+    ],
     "title": "How to Compare Photos Side by Side on Windows",
     "description": "Compare photos side by side with Microsoft Photos, Windows Snap or a floating image board. Use a four-photo example to shortlist references without losing the originals.",
     "category": "Photo comparison workflow",
@@ -306,7 +342,8 @@
       "windows-clipboard-history-vs-floating-notes",
       "code-snippets-and-screenshots",
       "keep-reference-notes-visible-while-writing",
-      "take-notes-while-watching-tutorials"
+      "take-notes-while-watching-tutorials",
+      "capture-webpage-detail-screenshot-reference"
     ],
     "title": "How to Copy Text from a Screenshot on Windows and Check It Against the Original",
     "description": "Extract text from a Windows screenshot with Snipping Tool or PowerToys, then compare the result with the image before using it in a form, note or report.",
@@ -410,6 +447,666 @@
         "id": "meeting-notes-faq",
         "title": "Frequently asked questions about visible meeting notes",
         "html": "<h3>Can I keep my notes visible without a second monitor?</h3><p>Yes. Reduce the call to a smaller view where your meeting app supports it, pop out its notes, or put a compact note beside the call. Keep faces, shared content and controls readable; if an overlay hides them, switch to side-by-side windows or a paper checklist.</p><h3>Are FloatBoard notes the same as Teams meeting notes?</h3><p>No. Teams Notes are collaborative meeting content for eligible participants. FloatBoard holds a personal working set of text and images on your desktop. Copy confirmed decisions into the shared record yourself; there is no automatic sync or transcription in this workflow.</p><h3>Will a pinned note appear when I share my screen?</h3><p>It may appear if you share your whole display. If you share a specific window, check the preview and the actual participant view before relying on that selection for privacy. Clear sensitive material before presenting.</p><h3>What should an action item include?</h3><p>Write a concrete deliverable, one owner and an agreed due date. Add an open question when a decision is pending. Confirm the wording aloud and place the final item in the team's shared notes or task system.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "keep-web-image-reference-visible-while-browsing",
+    "related_slugs": [
+      "organize-image-references",
+      "copy-text-from-screenshot-windows",
+      "shortlist-landscape-photos-for-website-hero"
+    ],
+    "title": "How to Keep a Web Image Reference Visible While You Browse",
+    "description": "Keep one useful web image in sight while researching without losing its source. A practical workflow for designers using a floating image reference.",
+    "category": "Image reference workflows",
+    "image": "gif-1-poster.jpg",
+    "alt": "Recorded FloatBoard demo beside a browser search for landscape photography, with a selected reference image shown in a larger view",
+    "caption": "Recorded Linux demo from July 2026: one landscape reference stays beside the browser as the search continues. The current interface may differ; this recording later contains more images than the free plan permits per day.",
+    "demo_video": "gif-1-demo.mp4",
+    "demo_alt": "Recorded FloatBoard demo showing a landscape web image opened as a working reference while browsing continues",
+    "date": "2026-10-05",
+    "promo_after_section": 3,
+    "tags": [
+      "Web image references",
+      "Design research",
+      "Always-on-top workspace"
+    ],
+    "intro": "When you are looking through web images for a design, the useful picture often disappears as soon as you open another result. The simple fix is to separate the page you are researching from the one image you are studying. Keep a record of the original page, show a working copy beside your browser, and ask one concrete question of it. This guide explains that one-image workflow, when a floating board helps, and when to return to the original file instead.",
+    "sections": [
+      {
+        "id": "one-reference-question",
+        "title": "Give the reference one specific job",
+        "html": "<p>Start with a decision, not an instruction to collect everything attractive on the page. Imagine that you are designing a landing page with a broad landscape photograph behind a short headline. Your question might be: <em>Does this image leave enough calm space for the text?</em> A single candidate can answer that question. You do not yet need a gallery, a mood board or a permanent image library.</p><p>Look at the photograph in its source context first. Note the subject, horizon and area where text could sit. If the image seems relevant, keep it visible while you examine other candidates. You can then judge whether a new result solves the same problem better instead of trusting a vague memory of the first. This is a small working comparison across time, even though only one image is on your board at once.</p>"
+      },
+      {
+        "id": "record-source",
+        "title": "Record the source before leaving the page",
+        "html": "<p>Before opening another result, put two things in a scratch note: a link to the page and a short visual label. For example, “A — low ridge with empty sky; possible headline area.” When a page contains a gallery, note which image you mean. A link to a page with thirty thumbnails is much less useful if you cannot identify the candidate later.</p><p>Keep this note next to your design question. As you browse, compare each new result against A on that question alone: does it offer more uninterrupted sky, a cleaner horizon or a better subject position? If yes, replace the working reference and relabel the note. If no, move on. The link is a way back to the source, and you should still check the source's usage terms before putting any image in published work. For now, it mainly prevents your search from turning into an anonymous sequence of pictures.</p>"
+      },
+      {
+        "id": "working-copy",
+        "title": "Put a working copy beside your browser",
+        "html": "<p>With the source recorded, add the image to FloatBoard using the image workflow supported by your installed version. Place its window at the side of the browser and enable always-on-top if you want the picture to remain in view when another browser tab receives focus. The recorded demo above shows the broad idea on Linux: a web landscape is visible in the app while the browser continues through more results. The app's controls can change between versions, so use the controls in your current build rather than copying a video gesture exactly.</p><p>Keep the reference small enough that the search results remain usable. If the window covers the next candidate, move or resize it. On a narrow screen, alternate between the source page and your reference instead of squeezing both until neither is readable. FloatBoard is a working surface for a few live references, not the only place to store project assets.</p>"
+      },
+      {
+        "id": "describe-observation",
+        "title": "Write down what the image actually contributes",
+        "html": "<p>Add one short note in your project document: <strong>source, useful detail, design implication</strong>. For the landscape example: “Source page X; open sky above the ridge; headline could sit in the sky if contrast holds at the target crop.” This records an observation rather than a promise that the image will work. It also helps you discard an image later without losing the reason you selected it.</p><p>Distinguish the photographer's caption from your own description. When you copy text from a source page, mark it as a quotation and keep the link beside it. If you cannot state what the picture helps you decide, it may be pleasant browsing rather than a useful reference. Return to the design question and either replace the image or stop collecting for a moment to make a draft.</p>"
+      },
+      {
+        "id": "check-at-size",
+        "title": "Check the original at the size that matters",
+        "html": "<p>When one image seems promising, pause browsing and put it in the layout you are actually designing. A photograph with a generous sky in the browser can lose that space when a wide hero is cropped into a phone-sized panel. Try the real headline and button over the image; check whether they cover the subject or become hard to read. Make one note about the result, such as “desktop works, mobile crop loses the ridge.”</p><p>If the concern is fine detail, open the source at an appropriate size instead of zooming a tiny board preview. If the concern is composition, draw a rough crop boundary or test the layout directly. These are different checks. Do not reject a useful composition solely because the floating window is small, and do not approve a final crop solely because its thumbnail looks calm. The working reference keeps your thought in sight; the design canvas settles the decision.</p>"
+      },
+      {
+        "id": "avoid-overcollection",
+        "title": "Know when one reference should become a shortlist",
+        "html": "<p>One visible reference works while you search for a better answer to one question. It stops working when the task changes to comparing multiple dimensions simultaneously. If you need to decide among a few different visual directions, build a deliberate shortlist and name each candidate's role. The <a href='/blog/shortlist-landscape-photos-for-website-hero/'>landscape hero-image shortlist</a> explains how to move from browsing to a decision. For a broader design research library, see the <a href='/blog/organize-image-references/'>reference image organizer guide</a>.</p><p>Do not let the demo's later multi-image view define the free plan. The recorded session includes more images than the current free plan's five images per day. Check the <a href='/pricing.html'>current limits</a> before starting a larger session, and keep originals in a separate folder regardless of the plan you use.</p>"
+      },
+      {
+        "id": "end-session",
+        "title": "Finish the session with a decision and a retrievable file",
+        "html": "<p>End the search with a one-line decision rather than a board full of unexplained candidates. Write “keep A for desktop draft,” “replace A with B because the mobile crop is cleaner,” or “no candidate answers the brief; search for a lower horizon.” If A moves forward, place its page link beside that decision so you can retrieve the exact image. If it fails, record the failed criterion; that becomes the next search query.</p><p>Do a five-minute layout test before starting another round of browsing. Seeing the candidate behind real content often reveals that the problem is the headline placement, not the photograph. In that case, adjusting the layout may be more productive than collecting more pictures. If you do need several distinct candidates at once, switch to the <a href='/blog/shortlist-landscape-photos-for-website-hero/'>hero-image shortlist workflow</a> and give each a clear role. A one-image pin is best while you are testing one hypothesis.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently asked questions",
+        "html": "<h3>How can I keep a picture visible when I change browser tabs?</h3><p>Use a small always-on-top image window next to the browser, or arrange two windows on the desktop. Leave enough room to inspect new results; the reference should support browsing, not cover it.</p><h3>What if the floating window blocks the next result?</h3><p>Move or resize it, or briefly hide it during a closer look. Returning to the same reference is more useful than keeping it permanently in the way.</p><h3>When should one reference become a shortlist?</h3><p>When you need to compare different solutions at the same time. Choose a few candidates with distinct roles rather than accumulating similar images as you scroll.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "shortlist-landscape-photos-for-website-hero",
+    "related_slugs": [
+      "keep-web-image-reference-visible-while-browsing",
+      "organize-image-references",
+      "review-image-grid-and-large-preview"
+    ],
+    "title": "How to Shortlist Landscape Photos for a Website Hero Image",
+    "description": "Choose landscape hero-image candidates by crop, text space, visual direction and rights. Build a small photo shortlist instead of collecting endlessly.",
+    "category": "Designers & illustrators",
+    "image": "gif-2-poster.jpg",
+    "alt": "Recorded FloatBoard demo showing a small grid of landscape candidate images while browsing a photography website",
+    "caption": "Recorded Linux demo from July 2026: landscape candidates appear in a compact FloatBoard grid beside web results. The current interface may differ, and this recording later shows more images than the free plan permits per day.",
+    "demo_video": "gif-2-demo.mp4",
+    "demo_alt": "Recorded demo of building a small landscape-photo working grid next to browser results",
+    "date": "2026-10-05",
+    "promo_after_section": 3,
+    "tags": [
+      "Hero image selection",
+      "Visual references",
+      "Design decisions"
+    ],
+    "intro": "A website hero image has a harder job than simply looking good. It must support the message, survive desktop and mobile crops, leave space for readable text and be usable under the source license. This guide is for a designer choosing a landscape photograph for one hero section. It uses a small visible shortlist to make the choice explicit, then checks the finalists in the actual layout. It is deliberately narrower than building a general inspiration board.",
+    "sections": [
+      {
+        "id": "hero-brief",
+        "title": "Write the hero-image brief before opening a photo site",
+        "html": "<p>Describe the page in one sentence: what does the visitor need to understand, and what action should follow? Then list the image constraints. For a travel landing page, you might need an open horizon, a calm right side for a headline, a subject that remains recognizable on a phone, and a tone that fits the brand. These constraints are more useful than “find something beautiful.”</p><p>Decide whether the image must show a real place, a mood or a product context. A scenic photograph that implies the wrong destination can mislead. If the hero contains text, identify its likely position before you browse. If the page will be localized into longer languages, allow more room than the English mockup appears to need. Write these facts in a project note so each candidate faces the same test.</p>"
+      },
+      {
+        "id": "candidate-roles",
+        "title": "Choose candidates with different reasons to win",
+        "html": "<p>Shortlist three or four images that test different approaches, rather than four nearly identical mountain photos. One might offer open sky for text, another a strong foreground that communicates place, and a third a softer palette that supports navigation. Give each a one-line role. The goal is to learn which visual direction works, not to fill every empty slot on the board.</p><p>Keep a link to each source page and, where available, the creator and license details. Before bringing an image into a review board, check that you can identify its origin. A search page is a discovery tool; it is not the source record. If the only copy you can find is a repost or tiny preview, set it aside until the original is located. Otherwise you risk making a layout around an asset you cannot responsibly use.</p>"
+      },
+      {
+        "id": "small-grid",
+        "title": "Use a compact grid to compare overall direction",
+        "html": "<p>A small grid helps you scan composition and contrast quickly. Add your selected working copies to FloatBoard using your installed version's image controls, then keep the window beside the browser or design app. The recorded demo above shows landscapes collected into a compact grid during a web search. Use the current app interface as it exists today; the recording is from July 2026 on Linux and should not be treated as a feature walkthrough for every platform.</p><p>Label candidates in your own project note by source and role: <code>A: open sky</code>, <code>B: human scale</code>, <code>C: dark foreground</code>. Avoid calling an image “best” before testing the crop. If the working grid becomes too small to judge even composition, remove weaker candidates. The current free plan is limited to five images per day; the later recorded board contains more than that, so plan your shortlist against the <a href='/pricing.html'>current plan details</a>.</p>"
+      },
+      {
+        "id": "crop-tests",
+        "title": "Test every finalist in the real hero crop",
+        "html": "<p>Move from the board into the page layout for the actual decision. Put each candidate behind the real headline, button and navigation. Check a wide desktop viewport and a narrow phone viewport. A dramatic mountain peak can disappear at mobile width; a person can fall beneath a button; a dark region that helped white text on desktop can shift out of frame on mobile. Record the failure or success for each crop, not just a gut feeling about the original.</p><p>Do not use the board thumbnail as a color or sharpness test. Open the original asset at adequate resolution for that review. Check that the supplied file can support the intended size without obvious softness, and look for compression artifacts around high-contrast edges. Keep a neutral backup plan, such as a solid-color hero, if no photograph survives the functional checks. The design needs clarity more than it needs a scenic image.</p>"
+      },
+      {
+        "id": "readability",
+        "title": "Judge text readability without hiding the image",
+        "html": "<p>Test the actual words, not placeholder text. The longest likely headline and the button label expose collisions that a two-word mockup hides. Check light and dark areas behind each line at both viewport sizes. You may need a gradient overlay, a text panel or a different photo. The overlay should support legibility without making the image muddy or concealing the subject that justified choosing it.</p><p>Ask a colleague who has not seen the shortlist to read the page for its message first, then describe what the image contributes. If they focus only on the photograph, it may be overpowering the content. If they cannot read the heading immediately, the crop or treatment is not ready. This simple review is more useful than a debate over which picture has the most impressive subject.</p>"
+      },
+      {
+        "id": "rights",
+        "title": "Confirm that the finalist can actually be published",
+        "html": "<p>Before the team approves a hero, revisit the source page for the chosen file. Read the site's current license and any additional restrictions attached to the image. Note the creator, source URL, permission terms and download date. If the use involves recognizable people, logos or sensitive property, check whether further permissions are needed for your particular commercial context. A visible “download” button is not a blanket clearance for every use.</p><p>Save the original file and the source record together. Do not flatten the project into a screenshot from a browser; it can lose resolution and provenance. If a finalist fails the rights check, choose a licensed alternative from the shortlist or return to search. It is cheaper to make that change before the design is approved than after artwork and copy are built around the image.</p>"
+      },
+      {
+        "id": "decision-record",
+        "title": "Choose one winner and record why",
+        "html": "<p>Use a brief decision table in your project document: candidate, hero message fit, desktop crop, mobile crop, text space, asset and rights status. Mark each item with a short observation, not a pseudo-precise score. For example: “A: strong open sky, but subject disappears on phone”; “B: subject holds on both, needs a light text panel.” This exposes the tradeoff instead of letting the most recent image win by accident.</p><p>When one candidate wins, move it into the actual design and retain the source record. Archive the other links in your project notes if they might help a later page, but clear the temporary board. If your task is to keep just one image visible while continuing research, use the <a href='/blog/keep-web-image-reference-visible-while-browsing/'>single web reference workflow</a>. If the challenge is a larger cross-project image library, the <a href='/blog/organize-image-references/'>reference organizer guide</a> covers that different job.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently asked questions",
+        "html": "<h3>How many hero-image candidates should I shortlist?</h3><p>Start with three or four that represent genuinely different solutions to your brief. The useful number is the smallest set that reveals the crop, message and rights tradeoffs. More near-duplicates rarely improve the decision.</p><h3>Should I choose by the desktop or mobile version?</h3><p>Test both with the real content. If one image cannot work across the required crops, use a different image treatment or a separate, properly licensed asset for the other layout.</p><h3>Can a photo grid replace a layout test?</h3><p>No. A grid is for scanning direction. The final decision belongs in the actual hero at the intended sizes, with text and interface elements in place.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "review-image-grid-and-large-preview",
+    "related_slugs": [
+      "shortlist-landscape-photos-for-website-hero",
+      "compare-photos-side-by-side-windows",
+      "organize-image-references"
+    ],
+    "title": "How to Review Images in a Grid and a Large Preview",
+    "description": "Use an image grid to scan candidates, then a larger preview to inspect one at a time. A practical review method that keeps source context and decisions intact.",
+    "category": "Image reference workflows",
+    "image": "gif-3-poster.jpg",
+    "alt": "Recorded FloatBoard demo showing a small grid of landscape references beside browser image results",
+    "caption": "Recorded Linux demo from July 2026: a landscape grid stays beside browser results. The larger-view inspection below is a suggested next step, not an action shown in this clip. Current controls may differ; the wider session includes more images than the free plan permits per day.",
+    "demo_video": "gif-3-demo.mp4",
+    "demo_alt": "Recorded demo showing a grid of landscape image references beside browser results",
+    "date": "2026-10-05",
+    "promo_after_section": 3,
+    "tags": [
+      "Image preview",
+      "Visual references",
+      "Design decisions"
+    ],
+    "intro": "An image grid answers “which candidate is worth another look?” A larger preview answers “what is happening in this candidate?” Using both views prevents a common mistake: approving a picture from a tiny tile or losing the shortlist while inspecting one image. This guide gives a repeatable review pass for a small set of reference images. It is about screening and inspection, not a precise side-by-side pixel comparison or a permanent asset library.",
+    "sections": [
+      {
+        "id": "two-questions",
+        "title": "Separate selection from inspection",
+        "html": "<p>Before reviewing, write down what you are deciding. For example, a designer may need a landscape with a clear horizon, visible foreground and quiet space for text. The grid lets them compare broad composition across candidates. It is fast because every image is reduced to the same visual scale. That is also its weakness: details can disappear and cropping can change the apparent balance.</p><p>A larger preview gives one image room to breathe, but it removes the immediate comparison against the others. Use the two views in sequence. First identify two or three candidates in the grid, then inspect each larger, then return to the grid to make a choice. Do not ask a small tile to establish sharpness or a single preview to rank an entire collection from memory.</p>"
+      },
+      {
+        "id": "prepare-source",
+        "title": "Give every candidate a retrievable identity",
+        "html": "<p>Save the source page URL and a short label for each candidate before a review session. “Coastal cliff, source page A” is more useful than “image 3.” Keep the original files in a project folder if the site's terms allow download. If you only have search thumbnails, follow the result to the source page first. A board can keep working copies visible, but it cannot replace the records that tell you where an image came from and whether it can be used.</p><p>Use the same order in your project note and your working grid. This matters once candidates look similar. If you call an image “the good mountain one” and later rearrange the board, the feedback becomes ambiguous. A simple label, link and one-sentence reason for inclusion is enough. You do not need an elaborate tagging system for a four-image decision.</p>"
+      },
+      {
+        "id": "grid-pass",
+        "title": "Make a first pass in the grid",
+        "html": "<p>Add only the candidates relevant to the decision to FloatBoard, using the image controls in your installed version. Arrange the app where it does not cover your browser or canvas. The recording above shows a small landscape grid while search results remain nearby. It was captured on Linux in July 2026; treat it as an example of the review pattern, not as a guarantee that every current platform uses identical controls.</p><p>Scan the grid for the large signals: horizon position, subject size, overall light and open space. For each image, write one useful observation and one uncertainty. For instance: “Strong silhouette, but foreground may be too dark.” Remove obvious mismatches before opening a larger view. The recorded session eventually includes more images than the current free plan's five images per day; use the <a href='/pricing.html'>current plan limits</a> when planning your own working set.</p>"
+      },
+      {
+        "id": "large-pass",
+        "title": "Open one candidate larger and test the uncertainty",
+        "html": "<p>After the grid pass, pick the image whose uncertainty matters most and inspect it larger. Open its source page or original file; if your installed app offers a larger image view, that can be a convenient intermediate look. This is a proposed review step, not an action demonstrated in the clip above. Ask one question at a time: Is the foreground genuinely too dark? Does the subject separate from the background? Is there a usable text-safe area? If the larger view cannot settle a detail, use the source at adequate resolution.</p><p>Write the answer next to the candidate label before moving to the next one. This prevents the enlarged image from gaining an unfair advantage simply because it is the most recent image you saw. If the candidate fails, note exactly why: “Important subject clipped in target crop” is actionable; “doesn't feel right” is not. The specific reason also helps you make a better search query later.</p>"
+      },
+      {
+        "id": "return-to-grid",
+        "title": "Return to the grid before making the final choice",
+        "html": "<p>After inspecting the finalists individually, return to the grid and compare them again on the original question. You may find that a picture with beautiful detail in the large preview still loses on composition when seen beside the other candidates. Conversely, a quiet tile may be the strongest background for text. This back-and-forth is the point of having both views, rather than treating the larger preview as a final approval state.</p><p>Choose a winner only after a real use test. For a website hero, put the file behind the actual copy at desktop and mobile sizes. For illustration reference, check whether the relevant shape or lighting is visible at your canvas size. For a product image, inspect the source at adequate resolution. The board narrows choices; the actual design context validates them.</p>"
+      },
+      {
+        "id": "limitations",
+        "title": "Avoid false confidence from scaled images",
+        "html": "<p>Neither view proves an image is licensed, high-resolution, color-accurate or suitable for every crop. The grid may use thumbnails, and a larger preview can still be resized or compressed. Return to the original asset for technical checks and the source page for usage terms. If a site offers multiple sizes, confirm the file you plan to use is the one you actually inspected. Do not infer dimensions from how large an app window appears.</p><p>If you need exact pixel differences between two photographs, use a tool intended for that comparison or open the originals side by side. Our <a href='/blog/compare-photos-side-by-side-windows/'>Windows photo comparison guide</a> covers that use case. A review grid is better at triage: separating promising candidates from weak ones while keeping the broader choice visible.</p>"
+      },
+      {
+        "id": "review-notes",
+        "title": "Turn the visual pass into a decision record",
+        "html": "<p>Keep a compact record with four columns: candidate and source, what the grid suggested, what the larger view revealed, and outcome. A sample entry might read: “B: calm sky in grid; larger preview shows busy branches at headline height; reject for hero, keep as editorial image.” This is faster to revisit than a screenshot of the final board and makes the reasoning useful to teammates who were not present.</p><p>Once the chosen image is in the project, remove temporary copies from the working board if they are no longer needed. Retain original files and permissions where your team normally stores them. If you are still looking for candidates, the <a href='/blog/shortlist-landscape-photos-for-website-hero/'>landscape photo shortlist guide</a> explains how to choose a few images with distinct roles before this review pass begins.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently asked questions",
+        "html": "<h3>Should I judge image quality from the grid?</h3><p>Use the grid for broad composition and shortlist decisions. Inspect the original file for sharpness, compression and precise detail.</p><h3>When should I switch to a larger preview?</h3><p>Switch when a specific uncertainty cannot be settled from the tile. Check one question, record the answer, then return to the grid before deciding.</p><h3>Do I need to keep every candidate after the review?</h3><p>Keep the chosen original and its source record. Archive other links only if they may serve a future task; clear temporary working copies that no longer help the current decision.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "collect-visual-references-across-search-pages",
+    "related_slugs": [
+      "keep-web-image-reference-visible-while-browsing",
+      "shortlist-landscape-photos-for-website-hero",
+      "copy-web-image-and-keep-source"
+    ],
+    "title": "How to Collect Visual References Across Search Results Without Losing Focus",
+    "description": "Gather a few useful images across search-result pages by color, silhouette and composition while preserving source links and avoiding duplicate references.",
+    "category": "Image reference workflows",
+    "image": "gif-6-poster.jpg",
+    "alt": "Recorded browser search for tree images with a FloatBoard window visible while different results and pages are reviewed",
+    "caption": "Recorded Linux demo from July 2026: tree results are browsed across a page while FloatBoard holds a mixed working set. Current controls may differ; the recording contains more images than the free plan permits per day.",
+    "demo_video": "gif-6-demo.mp4",
+    "demo_alt": "Recorded demo of browsing tree-image results across pages with a floating working set visible",
+    "date": "2026-10-05",
+    "promo_after_section": 3,
+    "tags": [
+      "Visual reference search",
+      "Design research",
+      "Source tracking"
+    ],
+    "intro": "A broad image search can produce hundreds of results and very little progress. The useful task is usually narrower: find a few references that show different visual attributes, then stop and decide. This guide uses a tree-image search as an example. It shows how to make each result page answer a question, hold a small working set beside the browser, preserve original sources and avoid collecting duplicates that only make the board harder to use.",
+    "sections": [
+      {
+        "id": "attribute-brief",
+        "title": "Search for attributes, not just a noun",
+        "html": "<p>“Trees” is a starting category, not a research brief. Write down the attribute you need to study. An illustrator might need a bare winter silhouette, a dense green canopy and one isolated tree with open space around it. A designer might instead need muted color, a clear horizon and a subject that survives a narrow crop. The attribute list tells you why an image deserves attention and when the search can end.</p><p>Use separate queries for genuinely different needs rather than endlessly scrolling one generic result page. “Bare trees in fog” and “single tree open sky” are likely to show different compositions. The point is not to game search results; it is to reduce the chance that the first appealing image determines the whole visual direction. Keep the brief visible in a project note while you browse.</p>"
+      },
+      {
+        "id": "one-page-pass",
+        "title": "Give each result page a short first pass",
+        "html": "<p>Give each result page a quick pass with your attribute list in view. On page one, you might find a bare silhouette and a dense green canopy. Mark those two attributes as covered. On page two, look mainly for the missing isolated tree with clear space around it. This makes the next page answer a question instead of inviting another unsorted scroll. If a page has nothing new, do not add an image simply because you spent time looking at it.</p><p>Keep a tiny candidate queue in your project note: “A — winter branches, page link”; “B — overhead canopy, page link.” A source link is useful for returning to the exact candidate, but the label should describe its role in the search. When a new image serves B's role better, replace B instead of creating C for the same visual attribute. The queue stays readable even when browser tabs and search-result order change.</p>"
+      },
+      {
+        "id": "working-set",
+        "title": "Keep only the active working set visible",
+        "html": "<p>FloatBoard can hold a small set of images where you can see it while browsing. Add candidates using the workflow in your installed version, then place the window so it leaves enough room to inspect the next source. The recording above shows a tree search in a browser with a FloatBoard window alongside it. That old session already contains mixed references from other searches; it illustrates the importance of clearing or separating unrelated working material before making a new decision.</p><p>Assign each candidate a role in your notes: “bare branches,” “colored canopy,” “single tree,” or “strong backlight.” Replace a weaker example when a better one serves the same role. The full recording includes more images than the current free plan's five images per day, so do not use its board count as a plan promise; review the <a href='/pricing.html'>current limits</a> if your task needs a larger set.</p>"
+      },
+      {
+        "id": "compare-attributes",
+        "title": "Compare the attributes, not the prettiness",
+        "html": "<p>Ask the same question of each candidate: What shape is the tree? How much empty space surrounds it? Does the light clarify or hide the branches? Could the composition be cropped into the intended canvas? A visually striking image can still be a poor reference for the specific problem. Write one observation per candidate instead of a star rating; observations explain why an image will help later.</p><p>If you need to compare color mood, keep display conditions in mind. Browser thumbnails and floating previews may have been resized or compressed. Use them for broad direction, then open original files in your design workflow for precise color decisions. If you need a form study, crop a legitimate working copy around the silhouette while retaining the uncropped source. Do not let a thumbnail's attractive crop substitute for the composition of the actual source image.</p>"
+      },
+      {
+        "id": "dedupe",
+        "title": "Remove near-duplicates as the search expands",
+        "html": "<p>Two files can be different photographs yet contribute the same visual lesson. If both show a dark tree centered against pink sky, compare their role rather than their filenames. Keep the one with clearer branch structure or a composition that fits your canvas. This is a more useful form of deduplication than looking only for identical files. It also keeps one colorful category from crowding out the winter or isolated-tree example your brief still needs.</p><p>When an image appears on several result pages, follow the version whose page gives you reliable context and a way back to the original. Note the chosen page link in your candidate queue, then ignore the reposts. Do not let repeated exposure make the same image seem more representative. The board is a small sample of distinct visual attributes, not a popularity tally of what the search engine happens to repeat.</p>"
+      },
+      {
+        "id": "stop-rule",
+        "title": "Use a stop rule before opening another page",
+        "html": "<p>Stop when each required attribute has a useful example, or when another page is unlikely to change the next design decision. For the tree brief, place one winter silhouette, one leafy canopy and one isolated tree beside a rough sketch. Try the actual line weight, background and crop you plan to use. If the sketch still lacks a form reference, the missing form gives you a precise next query. If it works, more browsing is probably delay disguised as research.</p><p>Write a short outcome for each selected image: “bare branches define negative space,” “canopy shows overlapping masses,” and “single tree tests focal placement.” This turns a mixed search into a coherent set of design questions. If the board also contains unrelated code or landscape pictures from an earlier task, mentally separate them or begin a fresh working set for this decision; otherwise the page can look full before your attribute list is actually complete.</p>"
+      },
+      {
+        "id": "limitations",
+        "title": "Know what the board and search page cannot tell you",
+        "html": "<p>A compact board can make very different images look deceptively similar when every tile is small. Before you select an image for a fine-detail study, open it larger and check that the branch, leaf or lighting feature you need is actually visible. For a composition study, test the candidate in your intended crop. A square search thumbnail may hide the empty space that made an isolated tree useful, or create empty space that disappears in the original.</p><p>The board also has no knowledge of your categories unless you write them down. Keep the attribute list in the same order as the candidates, or label the candidates in your project note. If you rearrange the working set, update that order. You only need enough organization to answer the current visual question. A separate source-page check is still necessary before publishing an image, but the active search should be driven by the missing visual attributes, not by a growing pile of metadata.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently asked questions",
+        "html": "<h3>How many images should I take from one result page?</h3><p>Often none or one. Add an image only when it covers an attribute that is missing or improves an existing candidate's role.</p><h3>What if my board already has unrelated images?</h3><p>Start a fresh working set for the new question, or keep a written list of which tiles belong to it. A full-looking board can hide gaps in the actual brief.</p><h3>How do I know when to stop searching?</h3><p>Use the selected images in a quick sketch or layout. If every attribute has an example and the test exposes no missing need, stop and make the design decision.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "copy-web-image-and-keep-source",
+    "related_slugs": [
+      "collect-visual-references-across-search-pages",
+      "keep-web-image-reference-visible-while-browsing",
+      "organize-image-references"
+    ],
+    "title": "How to Copy an Image From a Webpage and Keep Its Source",
+    "description": "Copy a web image for a working reference without losing the source page, creator and usage terms. Understand the difference between an image copy and its URL.",
+    "category": "Clipboard & source tracking",
+    "image": "gif-7-poster.jpg",
+    "alt": "Recorded browser demo showing an opened tree photograph on its source page beside FloatBoard image tiles",
+    "caption": "Recorded Linux demo from July 2026: an opened tree photograph and FloatBoard image tiles remain in view. The copy-image menu discussed below is a separate instruction, not shown in this clip. Current controls may differ; the session contains more images than the free plan permits per day.",
+    "demo_video": "gif-7-demo.mp4",
+    "demo_alt": "Recorded demo showing a tree photograph on its source page beside FloatBoard image tiles",
+    "date": "2026-10-05",
+    "promo_after_section": 3,
+    "tags": [
+      "Copy image from webpage",
+      "Clipboard workflow",
+      "Source tracking"
+    ],
+    "intro": "Copying a web image is easy; remembering where it came from is the part that often fails. A clipboard copy usually contains the pixels you can paste, not the full source page, creator and publication terms. This guide shows a source-first workflow for a single image you want to study while working. It explains the browser menu choices, what to save alongside the copy, and why a copied reference is not automatically an asset you may publish.",
+    "sections": [
+      {
+        "id": "open-source",
+        "title": "Open the source page before copying",
+        "html": "<p>Start from the page where the image is presented with its title, creator, context and usage information, not from a search thumbnail alone. The recorded example opens a tree photograph on a photography site after browsing search results. That extra step matters: a thumbnail can be cropped, cached or detached from information you will need later. A source page also helps you locate a proper download if you later decide to use the image in a design.</p><p>Write down the page URL in your project note before you copy anything. If the page names the photographer or creator, record that too. If it links to specific terms, save the relevant link or a note that you checked it on a particular date. Do not rely on a clipboard manager to reconstruct this context from the image alone. That is rarely what an image clipboard item contains.</p>"
+      },
+      {
+        "id": "menu-difference",
+        "title": "Know what the browser menu choices give you",
+        "html": "<p>Most desktop browsers expose related but different actions when you right-click an image. <strong>Copy Image</strong> places image data on the clipboard for pasting into an app that accepts it. <strong>Copy Image Address</strong> or a similarly named command copies a file URL, which may be temporary, resized or served by a content delivery network. <strong>Copy Link</strong> may refer to the clicked link rather than the image itself. Read the actual menu label before choosing.</p><p>The clip above shows the opened source page beside image tiles; it does not demonstrate this menu action. Browser wording and behavior vary, so verify what was pasted in the target app. If a site prevents direct copying, look for its intended download or sharing path and follow its terms. If your goal is only to cite or return to the photo, the source page URL may be all you need.</p>"
+      },
+      {
+        "id": "working-copy",
+        "title": "Paste a working reference without treating it as an archive",
+        "html": "<p>After copying, paste into an image-accepting destination and confirm that you got image pixels rather than a URL or plain text. In FloatBoard, use the image-add workflow supported by your installed version; keep the board beside the source page while you decide whether the photograph helps. If the tile displays only a cropped view, compare it with the opened image before concluding that the subject or negative space is right for your task.</p><p>Ask a narrow question such as “Does this tree silhouette work as a shape reference?” or “Would its open sky leave room for a caption?” The recording is from Linux in July 2026, so current controls can differ. Its full session also contains more images than the current free plan's five images per day; check <a href='/pricing.html'>plan limits</a> for a larger session. Keep the source page link in your own note, since an image copy alone does not reliably carry it.</p>"
+      },
+      {
+        "id": "source-record",
+        "title": "Keep a minimal source record beside the image",
+        "html": "<p>A useful record has five fields: source page URL, creator, image title or description, the reason you saved it, and the usage terms you actually checked. If a field is unknown, write “unknown” rather than guessing. For example: “Single tree in pale field; source page URL; photographer named on page; study negative space only; publication permission not yet reviewed.” This takes less time than rediscovering an image from a screenshot weeks later.</p><p>Keep your own observation separate from text copied from the source page. If you paste a title or description, mark it as a quote and link back. This is particularly helpful when the original image is edited, removed or replaced. A short record makes your visual reference useful after the immediate clipboard state has changed, without pretending that FloatBoard itself is a provenance database.</p>"
+      },
+      {
+        "id": "rights-check",
+        "title": "Separate permission to study from permission to publish",
+        "html": "<p>Saving a private working reference and publishing a photograph in an app, ad or client website are different acts. Before publication, read the source site's current license and any restrictions shown for that particular image. Consider whether the image includes a recognizable person, logo or property that needs additional clearance for your use. A context-menu copy action says nothing about those permissions.</p><p>If the terms do allow your use, obtain the appropriate original file through the source's intended route and keep the terms with your project record. If you cannot establish a reliable source or suitable permission, choose another image. Do not silently substitute a browser screenshot or crop: it can lower quality while leaving the rights question unresolved. The most responsible workflow is also the easiest one to hand over to a client or teammate.</p>"
+      },
+      {
+        "id": "troubleshoot",
+        "title": "When the pasted result is wrong",
+        "html": "<p>If pasting yields a URL instead of pixels, you probably copied the image address or link. Return to the source page and choose the image-data command if available. If the target app does not accept image clipboard data, use its image-import method with a file obtained under the source site's terms. If the image looks blurry, the browser may have copied a preview or a low-resolution variant; inspect the original asset rather than enlarging the pasted copy.</p><p>If the clipboard has changed before you paste, revisit the source page using the URL you saved. This is another reason to record it before copying. If several similar results are open, label each source in your notes. The clipboard is transient; it is a poor way to remember which of five nearly identical tree photographs a pasted image came from.</p>"
+      },
+      {
+        "id": "next-step",
+        "title": "Move from one source to a coherent working set",
+        "html": "<p>After the first paste, do a retrieval test: close the source tab, then use the page URL in your note to find the exact photograph again. If you cannot tell which image on a multi-photo page you meant, add its title, creator name or a short visual description. This is faster than searching for a vague phrase such as “tree in field” after the browser history has filled with similar results. The test also reveals whether you saved the source page or only a temporary file address.</p><p>Now decide whether the copy stays a temporary shape reference or becomes a candidate for published work. For the first case, a labelled working tile may be enough. For the second, revisit the source's terms, get a suitable file and make a real layout test; the clipboard preview is not the final asset. If you need several different tree forms, use the <a href='/blog/collect-visual-references-across-search-pages/'>attribute-led search workflow</a> to assign each a role rather than collecting lookalikes.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently asked questions",
+        "html": "<h3>Why did pasting give me a URL instead of a picture?</h3><p>You may have chosen Copy Image Address or Copy Link. Return to the image and choose the image-data command if the browser offers it, then verify the pasted result.</p><h3>Why isn't the source link attached to my copied image?</h3><p>Image clipboard data and page context are separate. Record the page URL and enough detail to identify the image before you move away.</p><h3>Can I publish a copied web image?</h3><p>Only after checking the source terms and any permissions needed for your use. A successful copy action says nothing about publication rights.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "capture-webpage-detail-screenshot-reference",
+    "related_slugs": [
+      "copy-text-from-screenshot-windows",
+      "organize-image-references",
+      "inspect-image-original-after-thumbnail"
+    ],
+    "title": "How to Capture One Webpage Detail as a Screenshot Reference",
+    "description": "Capture a specific visual detail from a webpage, crop it for a temporary reference board, and preserve the page source and wider context before design decisions.",
+    "category": "Webpage screenshot workflow",
+    "image": "gif-8-poster.jpg",
+    "demo_video": "gif-8-demo.mp4",
+    "demo_alt": "Archived Linux browser recording showing a tree photograph, an image context menu with Take Screenshot, and a floating board with image thumbnails",
+    "alt": "Archived Linux browser recording showing a tree photograph, an image context menu with Take Screenshot, and a floating board with image thumbnails",
+    "caption": "Archived July Linux demonstration: the browser image menu includes “Take Screenshot,” and FloatBoard displays a temporary image board. The clip does not establish exact capture steps or current controls; the old landing-page copy shown later is historical.",
+    "date": "2026-10-05",
+    "tags": [
+      "Webpage screenshot reference",
+      "Screenshots",
+      "Source tracking"
+    ],
+    "intro": "A screenshot is useful when you want to keep one on-screen detail in sight while working: the shape of a tree branch, the spacing around an element, or a visual contrast you noticed on a webpage. It is less useful when you need the original image at full resolution or proof of its license. This guide explains how to capture a deliberate crop, preserve the wider page and source, and use the crop as a temporary FloatBoard reference. The archived Linux recording shows a browser menu that includes “Take Screenshot,” but the workflow below does not depend on that exact menu or claim that FloatBoard takes screenshots.",
+    "promo_after_section": 3,
+    "sections": [
+      {
+        "id": "pick-observation",
+        "title": "Name the exact detail before capturing",
+        "html": "<p>Start with one observation you need to carry into another window. Suppose you are designing a quiet hero section and notice how the dark trunk of a tree remains legible against a pale, hazy background. Your task is not to collect a forest photograph; it is to study the contrast at that edge while you test your own layout.</p><p>Write a short question: <em>Can a narrow dark shape stay readable without making the whole header feel heavy?</em> This determines the crop. A screenshot of the entire browser window may be too small to show the branch. A crop of only a few pixels removes the setting that makes the contrast meaningful. Aim for the smallest region that still answers your question.</p><p>The archived clip shows a tree photograph on a webpage and a browser context menu with a screenshot option. </p>"
+      },
+      {
+        "id": "capture-context",
+        "title": "Keep a wider context view as well as the tight crop",
+        "html": "<p>Before cropping, save the webpage URL, page title, creator or publisher if available, and the date you viewed it. If you may need to explain where the detail came from, take a wider context screenshot showing enough of the page to identify the image and its surroundings. Keep that file in your project notes; do not rely on a tiny board tile to remember the source.</p><p>Then capture the detail itself. Your browser may offer a page screenshot command, a right-click option, or neither; operating-system screenshot tools can capture the visible region. In the archived Linux recording the image menu displays “Take Screenshot.” Browser menus vary by version and site, so use whichever built-in capture method is present on your machine. Select the relevant area and inspect the saved result before moving on.</p><p>A wider screenshot and a tight crop serve different purposes. The first preserves context; the second is easy to scan beside your design. Label both so you cannot later mistake the crop for a complete view of the page.</p>"
+      },
+      {
+        "id": "crop-detail",
+        "title": "Crop around the relationship you need to study",
+        "html": "<p>For the tree example, include the branch and enough pale background to see the contrast. Avoid cutting exactly along the edge you are evaluating; that makes the outline look artificially strong. If your question is about spacing around a photograph on the page, include the adjacent page area too. If it is about a button or error message, include the label or nearby control that explains its function.</p><p>Check the crop at the size you will actually use. A browser zoom setting or high-density display can make a screenshot look sharper or larger than it will in a final design. Note the approximate viewport or zoom if it affects the comparison. Save the crop with a name such as <code>tree-edge-contrast-web-crop.png</code>, not <code>final-hero.png</code>. The filename should tell a teammate that this is a reference, not an approved asset.</p><p>Do not use a crop to conceal inconvenient context. If the full page shows that an effect came from an overlay, filter or unusual background, that context belongs in your note.</p>"
+      },
+      {
+        "id": "place-board",
+        "title": "Put the crop beside the work, with one sentence of purpose",
+        "html": "<p>Add the cropped screenshot to a small FloatBoard workspace and place it beside the layout you are editing. Add a brief text label: <em>Reference: dark edge against light haze; test with our own illustration</em>. Keep the page URL and wider screenshot in the project record. The visible crop helps you remember the visual relationship while switching between design and browser windows; it is not the definitive source file.</p><p>If you capture a second variant, state what it tests: for example, <em>same edge against darker sky</em>. Do not fill the board with near-identical crops.  The archival recording contains more image tiles than today's free-plan daily allowance; the <a href='/pricing.html'>current free plan lists five images and five texts per day in one window</a>. Use one or two captures for the immediate decision.</p><p>FloatBoard displays the reference. It is not presented here as the screenshot tool, an OCR service, a rights checker or an automatic citation system.</p>"
+      },
+      {
+        "id": "test-in-own-layout",
+        "title": "Translate the observation into your own design test",
+        "html": "<p>Recreate the principle in your design tool rather than tracing the source picture. In this example, put a slim dark shape against a softly colored background and place the actual headline nearby. Test whether the shape reads at desktop and narrow mobile widths. Check whether the text remains legible when the crop changes. If a subtle gradient was doing the work on the source page, try it deliberately and measure the result in your own layout.</p><p>Write down what changed: <em>At 390-pixel width, the dark shape competes with the button; moving it to the opposite side restores a clear text area.</em>  It also keeps the screenshot in its proper role: a prompt for a design question, not a ready-to-publish background.</p><p>For a broader image-based design question, the <a href='/blog/organize-image-references/'>image-reference workflow</a> explains how to choose a small set around one decision.</p>"
+      },
+      {
+        "id": "source-and-rights",
+        "title": "Do not confuse a screenshot with permission or the original",
+        "html": "<p>Taking a screenshot does not transfer copyright or grant a license to reuse the photographed content. If you need the actual image in a public design, locate the original source and check its terms or obtain permission. If you only needed to study contrast or spacing, record that observation and create your own asset. Keep the screenshot in a private working context unless its rights allow broader sharing.</p><p>A screenshot also captures whatever the browser displayed: a scaled preview, color treatment, overlay, compression or crop. It is not equivalent to the source file. For decisions about print size, sharpness, exact color or small details, open the original in a suitable viewer. The <a href='/blog/inspect-image-original-after-thumbnail/'>original-image inspection guide</a> covers that step. If you need to extract words visible inside a screenshot, use the separate <a href='/blog/copy-text-from-screenshot-windows/'>Windows OCR guide</a>; FloatBoard does not perform OCR in this workflow.</p>"
+      },
+      {
+        "id": "privacy-and-cleanup",
+        "title": "Protect page details and retire the temporary crop",
+        "html": "<p>Before sharing a captured webpage, inspect the full frame for names, account identifiers, private URLs, browser tabs and notifications. Crop or redact sensitive areas using an approved editor, and keep a clean original where your project requires it. A tight crop can hide private information, but it can also hide context needed to interpret the image; record both concerns in the project note.</p><p>Once the design test is complete, save the result and source URL with the project. Remove the temporary crop from the visible board if it no longer helps the next action.  This keeps the board from becoming an unlabeled archive of material whose origin you have forgotten.</p><p></p>"
+      },
+      {
+        "id": "faq",
+        "title": "Questions about webpage screenshot references",
+        "html": "<h3>Should I screenshot the page or copy the original image?</h3><p>Use a screenshot when you need the displayed page detail or its surrounding context as a temporary reference. Use the licensed original file when you need publication quality, exact detail or an asset you can legally reuse.</p><h3>How tight should I crop?</h3><p>Keep the smallest area that still shows the relationship you are studying. Preserve a wider context capture and the source URL separately so the crop does not become misleading.</p><h3>Does a screenshot prove what the webpage always shows?</h3><p>No. It records one visible state at one time, zoom and viewport. Note those conditions if they affect your conclusion, and revisit the live page when current behavior matters.</p><h3>Can FloatBoard take the screenshot for me?</h3><p>No screenshot-capture feature is claimed here. Use your browser or operating-system capture tool, then place the relevant image in FloatBoard if keeping it visible helps.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "keep-webpage-text-beside-image-references",
+    "related_slugs": [
+      "keep-reference-notes-visible-while-writing",
+      "organize-image-references",
+      "windows-clipboard-history-vs-floating-notes"
+    ],
+    "title": "How to Keep Copied Webpage Text Beside Image References",
+    "description": "Combine a short webpage quote with image references in a floating desktop workspace, without losing attribution, context or the original source.",
+    "category": "Web research workflow",
+    "image": "gif-9-poster.jpg",
+    "demo_video": "gif-9-demo.mp4",
+    "demo_alt": "Archived Linux FloatBoard demo with text selected on a website and text cards displayed beside image thumbnails",
+    "alt": "Archived Linux FloatBoard demo with text selected on a website and text cards displayed beside image thumbnails",
+    "caption": "Archived July Linux demonstration: selected text from the old FloatBoard landing page appears beside image references. The landing-page wording shown is historical and is not current product or pricing copy.",
+    "date": "2026-10-05",
+    "tags": [
+      "Copied webpage text",
+      "Clipboard workflow",
+      "Desktop notes"
+    ],
+    "intro": "Sometimes the useful part of a webpage is a sentence, and the useful part of another page is a picture. Keeping both visible can help you write a brief, compare a design requirement, or answer a support question. This guide builds a small text-and-image working set from web pages while keeping the original URLs and meaning intact. The recording shows an older FloatBoard page and interface; use today’s site and pricing information for current product details.",
+    "promo_after_section": 3,
+    "sections": [
+      {
+        "id": "state-task",
+        "title": "Define the question before copying",
+        "html": "<p>Start with a task that needs both words and a visual. Suppose you are drafting a short accessibility review of a signup page. You need the specification's wording about error messages and a screenshot of the form state. The output is a recommendation, not a scrapbook of every page you opened.</p><p>Write the question in one line: <em>Does the visible error tell a user what to correct?</em> Then list the minimum evidence you need: a short source quotation, the page URL and date, one screenshot, and an observation in your own words. Keeping this list narrow makes it obvious when a copied passage is irrelevant or when an image lacks enough context to support a claim.</p><p>The archived clip selects text on a webpage and displays text beside multiple image tiles. It illustrates the layout, but it does not prove that the old website wording is still accurate today.</p>"
+      },
+      {
+        "id": "copy-with-context",
+        "title": "Copy the smallest useful passage and its source",
+        "html": "<p>Select the sentence or paragraph that answers your question. Do not copy an entire article if one sentence will do. Record the page title, URL, publisher and the date you accessed it alongside the excerpt. If you plan to quote in published writing, confirm the exact words in the original page immediately before publishing and follow appropriate citation and quotation rules.</p><p>For the fictional signup example, a working card could say: <code>Requirement — error text should identify the field and correction. Source: [document title], [URL], checked 5 Oct 2026.</code> Keep the exact quotation in the source document if necessary; the visible card can be a short paraphrase with an explicit label. Separate copied words from your own conclusion. That prevents a quick note from looking like a verified quotation when it is only your interpretation.</p><p>A webpage may update after you copied it. If the wording is consequential, keep a dated source record in your research notes or issue tracker. FloatBoard is a visible working surface, not a web archive.</p>"
+      },
+      {
+        "id": "pair-image",
+        "title": "Place the matching image where it can answer the question",
+        "html": "<p>Add one screenshot or licensed image that directly relates to the excerpt. In the signup example, capture the error state with enough of the form visible to know which field and action produced it. Remove names, email addresses and account data before sharing. Label the image with its file path or source URL and a short observation, such as <em>after empty submit: error appears below email field</em>.</p><p>Arrange the text card and image within sight of the document you are writing. FloatBoard can hold text and images in the same floating window; keep the window small enough that your destination app remains usable. The point is to stop repeatedly switching between a source tab, an image viewer and your draft while checking a single claim.</p><p>If the image is a photograph from the web rather than your own screenshot, note the creator and usage rights. The <a href='/blog/capture-webpage-detail-screenshot-reference/'>browser image-reference guide</a> covers that separate source check.</p>"
+      },
+      {
+        "id": "draft-claim",
+        "title": "Write a claim that the two sources actually support",
+        "html": "<p>Now compare the visible evidence. A strong review sentence might be: <em>After submitting an empty email field, the form shows “Email is required” beneath that field; the requirement asks for an error that identifies a correction.</em> This sentence states what the screenshot shows and what the recorded source asks for. It does not assume that every error in the product behaves the same way.</p><p>Check for missing context. Could the screenshot show an older version? Is the copied sentence an example rather than a binding requirement? Was there a tooltip or announcement outside the captured area? Open the original webpage or application whenever the answer could change your conclusion. A floating layout reduces tab switching, but it cannot validate evidence by itself.</p><p>For writing with many research sources, maintain a proper research document and use the <a href='/blog/keep-reference-notes-visible-while-writing/'>reference-notes workflow</a> to decide what belongs on a temporary card.</p>"
+      },
+      {
+        "id": "separate-copy",
+        "title": "Tell copied text, paraphrase and decision apart",
+        "html": "<p>Use explicit prefixes: <strong>Source says</strong>, <strong>Image shows</strong>, and <strong>My action</strong>. For example: <code>Source says: name the field and correction | Image shows: \"Email is required\" | My action: test invalid-format error next</code>. This small structure avoids blending a requirement, an observation and a plan into one uncertain paragraph.</p><p>When you copy a sentence that includes a link, table or footnote, opening the original is essential. A plain text copy can omit those details. Likewise, text that looks like a heading may belong to a different section after it is pasted. Keep the board as a reminder to verify, not as the only available evidence.</p><p>Do not paste private customer text into a public screenshot or public document. Use approved data-handling rules for work material and clear temporary references when finished.</p>"
+      },
+      {
+        "id": "choose-tool",
+        "title": "Use history for retrieval and a board for visibility",
+        "html": "<p>Clipboard history is useful when you need to retrieve a recently copied passage to paste again. A visible board is useful when you need to read the passage while evaluating an image. Those are related but separate tasks. FloatBoard provides a floating workspace and history, while a browser bookmark or project document keeps the durable source record.</p><p>Try a plain split-screen layout first if you only have one text source and one screenshot. Use a floating board when switching between the browser, design file and draft would otherwise hide the context you need. If your work requires full-page annotation, citations across dozens of sources, or team review, use a research notebook or document system rather than multiplying tiny cards.</p><p>The <a href='/blog/windows-clipboard-history-vs-floating-notes/'>Windows clipboard-history guide</a> covers retrieval of recent copies; this article is about checking a current web claim against a visual.</p>"
+      },
+      {
+        "id": "limits",
+        "title": "Budget the board and close the source loop",
+        "html": "<p>The recording contains many image tiles because it is an archived demo. It does not represent what can be added without limits on today's free plan. The current <a href='/pricing.html'>free plan lists five texts per day, five images per day and one window</a>. A single claim, one short note and one relevant image fit a more disciplined task than copying a whole page and a dozen pictures.</p><p>Before closing the task, move the verified conclusion, source links and any permitted image file into the project record. Remove outdated cards from the working surface. If a claim still needs verification, write that uncertainty in the final document instead of letting the board make it appear settled. This habit also helps the next person understand why each reference was collected.</p><p>No automatic source attribution, cloud synchronization or OCR is assumed in this method. You select text from a webpage, verify it manually and keep the source separately.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Questions about copying webpage text with images",
+        "html": "<h3>Can FloatBoard collect text and images in one window?</h3><p>Yes. The board can display text cards and image references together. Check the <a href='/pricing.html'>current plan limits</a> before building a larger set.</p><h3>Does copying webpage text preserve a citation?</h3><p>Not reliably. Record the page title, publisher, URL and date yourself, then verify the quote against the original before publication.</p><h3>Should I paste a full article into the board?</h3><p>Usually no. Keep the smallest passage that helps the immediate task and store full research in a document or source library. Long copies are difficult to scan and can lose context.</p><h3>What if the screenshot and copied text seem to disagree?</h3><p>Return to the original sources. Check versions, cropping, dates and whether the passage applies to that image. Do not force a conclusion from two fragments that may describe different states.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "clear-copied-text-history-keep-working-set",
+    "related_slugs": [
+      "windows-clipboard-history-vs-floating-notes",
+      "keep-webpage-text-beside-image-references",
+      "keep-reference-notes-visible-while-writing"
+    ],
+    "title": "How to Clear Copied-Text History Without Losing Your Working Set",
+    "description": "Review and clear old copied text while retaining the references you still need in a project note or small visible board. A practical clipboard cleanup checklist.",
+    "category": "Clipboard cleanup workflow",
+    "image": "gif-10-poster.jpg",
+    "demo_video": "gif-10-demo.mp4",
+    "demo_alt": "Archived Linux FloatBoard demonstration showing several text cards, an image board, and a clipboard history panel with a clear control",
+    "alt": "Archived Linux FloatBoard demonstration showing several text cards, an image board, and a clipboard history panel with a clear control",
+    "caption": "Archived July Linux demonstration: a FloatBoard history panel and a separate working board are visible. The old webpage copy behind the app is historical, and controls in the current release may differ.",
+    "date": "2026-10-05",
+    "tags": [
+      "Clear clipboard history",
+      "Clipboard workflow",
+      "Desktop notes"
+    ],
+    "intro": "A clipboard history can help you recover a paragraph you copied five minutes ago. It can also become a mixed list of outdated drafts, private details and snippets from unrelated tasks. The safest cleanup starts by deciding what you still need, saving it in the right place, and only then clearing transient copies. This guide focuses on that transition from recent history to a small working set; it is different from the Windows + V setup guide.",
+    "promo_after_section": 3,
+    "sections": [
+      {
+        "id": "identify-keepers",
+        "title": "Identify useful items before touching Clear",
+        "html": "<p>Open the history in the app you use and scan for the few items connected to the task still in progress. Do not decide based only on recency. The newest copy might be a one-time code, while an older item might be the exact support wording you still need to compare. Label each candidate mentally as <strong>keep in the project</strong>, <strong>keep visible for this task</strong>, or <strong>discard</strong>.</p><p>For a fictional support reply, your working set might include an approved answer paragraph, the product page URL and a screenshot filename. A copied password, stale quote and three draft versions do not need to remain in history. If you are unsure whether an item is authoritative, open the source and verify it before saving; clipboard text can be partial or outdated.</p><p>The archived FloatBoard clip shows text cards and a history panel. Use it as an illustration of separate surfaces, not evidence that clearing one surface has a specific effect on every current release.</p>"
+      },
+      {
+        "id": "save-first",
+        "title": "Move important content to a durable location first",
+        "html": "<p>Save the approved support wording in your team's knowledge base or ticket. Save a design note in the project document. Keep a screenshot in its source folder with a useful filename. A clipboard history is a convenience for recent copies, not a backup system. Before clearing, reopen the saved destination and confirm the full text is there. Do not rely on a single pasted card if the information is important.</p><p>If you need a phrase in view for the next half-hour, add a short, labelled text card to FloatBoard. For example: <code>Approved reply — checked against KB article [link], 5 Oct 2026</code>. Save the authoritative paragraph elsewhere and use the card as a cue. This gives the card a clear job and makes it easy to remove when the task ends.</p><p>Do not leave sensitive tokens, passwords or personal data on a visible board. In many cases the right action is to use a password manager or approved secure system, then clear the transient copy promptly.</p>"
+      },
+      {
+        "id": "check-scope",
+        "title": "Understand which history you are about to clear",
+        "html": "<p>Computers can have more than one history: the operating system's clipboard history, an app's own history, and possibly history in another utility. A <strong>Clear</strong> control in one app should not be treated as proof that all copies vanished everywhere. Check the name of the panel, current app version, and its privacy documentation before relying on a deletion action. If you use Windows + V, that is a separate Windows feature with its own settings and behavior; see the <a href='/blog/windows-clipboard-history-vs-floating-notes/'>Windows clipboard-history article</a>.</p><p>Before a real cleanup, try the control with a harmless test phrase. Copy <code>cleanup test 2026</code>, confirm where it appears, clear that history, then check the relevant panel again. This verifies the actual behavior of your installed version without sacrificing important material. If the app offers individual deletion and that is all you need, use it instead of clearing everything.</p>"
+      },
+      {
+        "id": "keep-task-board",
+        "title": "Keep the board focused after the cleanup",
+        "html": "<p>Once durable copies exist, keep only the references needed for the current step on your visible board. A support reply might need the product screenshot on one side and the verified sentence on the other. A translation check might need the original sentence and your draft. The board should answer “what do I need to see now?” rather than mirror every item copied today.</p><p>After using the clear control, check that your working references still appear in the board in your installed version. If anything is missing, recover it from the durable project source, not from guesswork. The point is to make a small, verifiable working set that remains useful even when recent-history entries change. The archived demo shows a board and history together, but it does not justify assuming a universal retention rule.</p><p>The <a href='/blog/keep-webpage-text-beside-image-references/'>web text and image workflow</a> shows how to label a source-aware reference card.</p>"
+      },
+      {
+        "id": "example",
+        "title": "Example: end one task without carrying its copies forward",
+        "html": "<p>Suppose you have finished a support message and are about to start a product mockup. Your recent copies contain a shipping reply, an order number, two test URLs and several colors. First, save the final reply in the ticket. Confirm the ticket holds the order number only where your team permits it. Next, move the two useful color values into the mockup file or a task note and label what each one means. Then delete or clear the old history entries in the appropriate app.</p><p>Start the next task with just the mockup references visible. If the shipping reply appears in a copied-text suggestion again, check whether you cleared the correct history source; another clipboard utility or system feature may be storing it. Avoid copying the private order number into more places while investigating. If you need to prove deletion for regulated data, follow your organization's retention and incident procedures rather than treating a UI clear button as a compliance record.</p>"
+      },
+      {
+        "id": "privacy",
+        "title": "Treat cleanup as housekeeping, not a security guarantee",
+        "html": "<p>Clearing a clipboard history panel reduces accidental reuse of stale text, but it does not necessarily erase text pasted into documents, saved in apps, synced by other services, cached in backups or captured by screenshots. If you copied a secret, rotate or revoke it where appropriate rather than assuming the clear action made it safe. For private work, minimize copying sensitive material in the first place and check what screen-sharing participants can see.</p><p>FloatBoard's <a href='/privacy.html'>privacy page</a> describes its data practices, but your whole computer can run other clipboard tools as well. Review all active utilities and operating-system settings if privacy is the reason for cleanup. This article offers a workflow, not a forensic deletion guarantee.</p><p>On a shared or managed machine, the right retention process may be set by an administrator. Ask the responsible team before changing required records.</p>"
+      },
+      {
+        "id": "limits",
+        "title": "Use limits and labels to avoid rebuilding clutter",
+        "html": "<p>The archived recording shows many images and text cards. The current <a href='/pricing.html'>free plan allows five texts per day, five images per day and one window</a>. A smaller working set is not only within those limits; it is easier to understand and clean. Give every text card a source and a purpose. If you cannot explain why it needs to remain visible, save it elsewhere or remove it.</p><p>Do a quick closeout at the end of each task: confirm final files, remove temporary cards, clear obsolete history entries in the relevant tools, and open the next task without stale context. That is more reliable than a large weekly purge in which you cannot remember what each copied fragment was for.</p><p>Do not infer current app behavior solely from a July 2026 recording. Test destructive controls on harmless data in the release you have installed.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Questions about clearing copied text",
+        "html": "<h3>Will clearing FloatBoard history clear Windows + V too?</h3><p>Do not assume it will. They are separate history surfaces. Check each tool and its current documentation or settings.</p><h3>What should I save before clearing?</h3><p>Save anything needed as a source, approved wording, project decision or final deliverable in the system where that work belongs. Reopen the saved copy and verify it before clearing.</p><h3>Can I keep a useful item visible while deleting old copies?</h3><p>You can keep a short labelled reference on a board, but verify how your installed version treats board items when history is cleared. Keep the authoritative copy in your project records.</p><h3>Does a clear button securely erase everything I copied?</h3><p>No such guarantee is made. Pasted documents, other apps, system history and backups may still contain the material. Handle secrets through the proper security process.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "inspect-image-original-after-thumbnail",
+    "related_slugs": [
+      "compare-photos-side-by-side-windows",
+      "capture-webpage-detail-screenshot-reference",
+      "organize-image-references"
+    ],
+    "title": "How to Check a Reference Image Beyond Its Thumbnail",
+    "description": "Use a small image board to locate a candidate, open the original at full size for detail, then return to a labelled working set without confusing a preview for evidence.",
+    "category": "Image quality workflow",
+    "image": "gif-11-poster.jpg",
+    "demo_video": "gif-11-demo.mp4",
+    "demo_alt": "Archived Linux FloatBoard demonstration showing image thumbnails on a board and a history panel with older entries",
+    "alt": "Archived Linux FloatBoard demonstration showing image thumbnails on a board and a history panel with older entries",
+    "caption": "Archived July Linux demonstration: thumbnail and history views are shown, not a verified full-size image inspection. Open the original file or source page to assess detail. The current app interface may differ.",
+    "date": "2026-10-05",
+    "tags": [
+      "Inspect original image",
+      "Visual references",
+      "Image quality"
+    ],
+    "intro": "A thumbnail helps you remember which picture you meant to check; it is a poor basis for judging small text, edge detail or an export defect. A practical two-stage workflow is to locate the candidate in a small board, open the original in a browser or image viewer, record what you found, and return to the task. The archival FloatBoard clip illustrates the small-board and history stage only. It should not be mistaken for a demonstration of a full-size viewer inside the app.",
+    "promo_after_section": 3,
+    "sections": [
+      {
+        "id": "choose-detail",
+        "title": "Decide which detail matters before zooming",
+        "html": "<p>Ask what the image must prove for your task. Is a button label legible? Does a thin border disappear? Are two crops truly the same composition? Different questions need different originals and different zoom levels. A thumbnail can help you find the candidate, but it compresses away the very details you may need.</p><p>For a UI review, write a precise question such as <em>Is the focus outline visible around the primary button at normal display size?</em> Save the original screenshot file and its app version or date. For an art reference, note whether you care about shape, lighting or texture. If you only need a rough composition cue, a small tile may suffice; if you need exact evidence, open the source.</p><p>The archival GIF shows thumbnail tiles and a history panel. It does not show reliable full-size validation, so the steps below use a browser or image viewer for that part.</p>"
+      },
+      {
+        "id": "find-original",
+        "title": "Find the actual source file, not an enlarged preview",
+        "html": "<p>Locate the original image in your project folder or on its source page. A browser-generated preview, messaging-app thumbnail, or screenshot of a screenshot may have been resized or recompressed. Compare the file name, dimensions and date with the candidate on your board. If you no longer know which original produced the tile, treat the image as unverified until you can trace it.</p><p>For a web image, return to the publisher's page and record its URL and usage terms. For a product screenshot, use the file created during the test, not a version pasted into chat. Give the original a descriptive name such as <code>settings-focus-outline-linux-2026-10-05.png</code>. Keep that name with your task note so another reviewer can inspect the same evidence.</p><p>A copied image in clipboard history may be useful for navigation, but it is not a substitute for knowing the authoritative source.</p>"
+      },
+      {
+        "id": "inspect-at-size",
+        "title": "Inspect at the size that answers the question",
+        "html": "<p>Open the original in a browser tab, system image viewer or editor. First view it at 100% or actual pixels if the tool offers that control, then fit it to the expected display size. At 100%, check the small feature you care about: edge, glyph, cursor, crop boundary or artifact. At the target size, check whether the issue remains visible to a normal viewer. Record both observations if they differ.</p><p>For a screenshot of an interface, do not mistake browser zoom for image resolution. Zooming a low-resolution preview only makes its pixels larger. If a claim depends on exact text, read it in the source app when possible. If a claim depends on color, use a suitable calibrated workflow rather than a floating thumbnail. A viewer can expose detail; it cannot restore information absent from the file.</p><p>When comparing two exports, use the <a href='/blog/compare-photos-side-by-side-windows/'>photo comparison guide</a> for synchronized questions about crop, sharpness and detail.</p>"
+      },
+      {
+        "id": "record-result",
+        "title": "Write down one observation before returning to work",
+        "html": "<p>After inspecting the original, write a short result tied to your initial question: <em>Focus outline is visible at 100%, but it disappears against the dark background at the target scale.</em> Add the original file name and relevant version. If the result is uncertain, say so. For example, <em>Cannot assess because this is a 640-pixel preview; request the original export.</em> That is more useful than silently choosing the better-looking thumbnail.</p><p>Keep the result in the project issue or document. A brief FloatBoard text card can remind you of it while you edit, but it should not be the only place where the observation exists. If the image is confidential, keep both the original and note in approved storage, and clear the temporary display before a screen share.</p><p>This loop turns a visual impression into a reproducible finding without pretending that the board itself measured image quality.</p>"
+      },
+      {
+        "id": "return-working-set",
+        "title": "Return to the board with a smaller, labelled set",
+        "html": "<p>Close or minimize the full-size view, then return to the design, editor or report. Keep only the candidate that informs the next step, plus a short label such as <em>original checked; border needs stronger contrast</em>. Remove stale tiles that could be mistaken for approved images. The board's advantage here is continuity: you can see what you checked while you make the change.</p><p>If you need to refer to a recent text copy, a history panel may help retrieve it. The GIF's history view is not proof that a given image remains there in every current version, so keep source files outside the app. If your work needs dozens of annotated originals, a dedicated asset-management tool is better suited to search and audit.</p><p>The <a href='/blog/organize-image-references/'>image-reference guide</a> explains how to keep a small design shortlist; this guide is about verifying one candidate beyond its preview.</p>"
+      },
+      {
+        "id": "example",
+        "title": "Example: verify a screenshot before filing a bug",
+        "html": "<p>Suppose a QA reviewer adds a screenshot tile to a board because an icon seems clipped. Before filing a bug, they find the original PNG and check whether the icon is actually cut off at 100%. The first thumbnail looked suspicious because the tile cropped the edge. In the original, the icon is intact, but at normal window size it is too close to the panel border. The accurate report is therefore about spacing at the target layout, not a broken PNG.</p><p>The reviewer saves the original PNG in the issue, notes the screen size and app version, and keeps one small reference on the board while adjusting padding. If the icon were clipped in the original instead, the same process would point to a different cause. Either way, the full-size check prevents a misleading report based on a preview.</p><p>This is a fictional example of the method, not a claim that the archived recording shows this particular bug.</p>"
+      },
+      {
+        "id": "limits",
+        "title": "Know when even the original is insufficient",
+        "html": "<p>An original screenshot can still omit what happened before capture, the system zoom setting, or an interaction state. For an accessibility or responsive-layout issue, reproduce the behavior in the application when possible. For a photographic asset, the original file may still lack rights information or a trustworthy color profile. Ask for missing context rather than inferring it from pixels.</p><p>FloatBoard's current <a href='/pricing.html'>free plan provides five images and five texts per day in one window</a>. The archival clip displays a larger set; it may represent an older setup or a different plan. Neither the tile count nor a history view in that clip changes the current limits.</p><p>Use the board as a navigation aid, the original as visual evidence, and the project record as the place for conclusions.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Questions about image thumbnails and originals",
+        "html": "<h3>Can I judge image sharpness from a thumbnail?</h3><p>No. Open the original file and inspect it at an appropriate scale. A tile may be resized, cropped or compressed.</p><h3>Does FloatBoard provide the original image file?</h3><p>Do not rely on a board tile as your authoritative source. Keep the original in your project folder or return to the source page, then record its path or URL.</p><h3>What if the original and thumbnail look different?</h3><p>Check whether the preview was cropped or scaled, and whether you opened the correct source file. Judge the detail using the original and actual target layout.</p><h3>Should I keep every image after checking it?</h3><p>Keep the originals your project needs, but remove irrelevant temporary tiles from the visible board. A labelled working set is easier to use than a large unreviewed wall.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "start-two-image-reference-board",
+    "related_slugs": [
+      "organize-image-references",
+      "capture-webpage-detail-screenshot-reference",
+      "compare-photos-side-by-side-windows"
+    ],
+    "title": "How to Start a Two-Image Reference Board for a New Design Task",
+    "description": "Create a focused two-image working board, label why each picture matters, and keep source files and decisions organized before collecting more visual references.",
+    "category": "Two-image design workflow",
+    "image": "gif-12-poster.jpg",
+    "demo_video": "gif-12-demo.mp4",
+    "demo_alt": "Archived Linux FloatBoard demonstration starting with an empty window and ending with two landscape images visible side by side",
+    "alt": "Archived Linux FloatBoard demonstration starting with an empty window and ending with two landscape images visible side by side",
+    "caption": "Archived July Linux demonstration: a new FloatBoard working surface ends with two landscape references. Intermediate settings and historical website copy may differ from the current release.",
+    "date": "2026-10-05",
+    "tags": [
+      "Two-image reference board",
+      "Visual references",
+      "Design decisions"
+    ],
+    "intro": "A new project does not need a wall of references on day one. Two images with distinct jobs are often enough to start: one suggests a direction, and the other tests its limits. The archived FloatBoard clip ends with two landscape images on a fresh board. This guide turns that simple setup into a repeatable way to begin a design task, keep sources traceable, and avoid gathering images before you know what decision they serve.",
+    "promo_after_section": 3,
+    "sections": [
+      {
+        "id": "write-brief",
+        "title": "Write a one-sentence brief before opening the board",
+        "html": "<p>Choose the immediate design question. For example: <em>What visual direction will make a travel page feel calm without making its call to action disappear?</em> The brief should describe a decision you can make today, not a broad ambition such as “find inspiration.” Put it in the project file or task note so the board has a purpose even after the images change.</p><p>Select two roles before selecting two pictures. Image A might express a quiet composition with negative space. Image B might provide a contrasting color or lighting treatment. If both images are simply sunsets you like, they may not help you decide anything. The archived GIF shows two landscape images side by side at the end; it does not tell us the creator's purpose, so the roles below are an illustrative workflow.</p><p>For a bug task, the roles could instead be <em>expected state</em> and <em>observed state</em>. Keep the same two-role discipline.</p>"
+      },
+      {
+        "id": "choose-pair",
+        "title": "Choose a pair that tests a real alternative",
+        "html": "<p>For the travel-page example, suppose the first image has pale sky and a low horizon, leaving space for a headline. The second has a strong purple sunset and foreground flowers, creating emotional impact but competing with text. That pair poses a useful question: should the page prioritize quiet readability or a dramatic visual hook? A third nearly identical sunset would not improve the first decision.</p><p>Try to compare images with a similar intended placement. A vertical photograph and a very wide banner can be useful references, but they are not direct candidates for the same crop. Mark that difference in your note. Do not declare a winner by viewing two small tiles; the pair is a starting point for layout experiments.</p><p>If you are judging fine detail between actual photos rather than starting a direction, use the <a href='/blog/compare-photos-side-by-side-windows/'>full-size Windows comparison workflow</a>.</p>"
+      },
+      {
+        "id": "capture-sources",
+        "title": "Record where the two images came from",
+        "html": "<p>Before adding either image to the board, save its source page or local file path and a note about rights. If the pictures are web photographs, check who created them and whether your intended use is permitted. A mood study and a published campaign asset have different permission requirements. If they are screenshots you made, name the app state, version and date.</p><p>A minimal source note could be: <code>A — cloud scene — [URL or file] — negative space; B — sunset scene — [URL or file] — color energy</code>. Put this in the project record, then add a short copy to a board text card if it helps. The board should not be the only place that remembers source information. Avoid publishing either image just because it appeared in a browser or clipboard.</p><p>The <a href='/blog/capture-webpage-detail-screenshot-reference/'>browser image-reference guide</a> goes further into attribution and reuse.</p>"
+      },
+      {
+        "id": "add-two-images",
+        "title": "Add only the two selected images",
+        "html": "<p>Open FloatBoard and position its window beside your design tool, browser or planning document. Add the two chosen images. Arrange the window so the references remain visible without covering the artboard or controls. If the installation offers display settings such as transparency or pinning, choose the setting that keeps the task readable and verify the result in your own environment; labels can differ from those in the July recording.</p><p>Do not worry about filling every available tile. Leave space for a concise text card that names the two roles and your next test. A board is most useful when it is legible at a glance. If you cannot tell which source an image represents, return to the project note and label it before proceeding.</p><p>The current <a href='/pricing.html'>free plan lists five images per day, five texts per day and one window</a>. A two-image setup fits the idea of a small trial; the archival video and any other older demo should not be used to infer current plan capacity.</p>"
+      },
+      {
+        "id": "test-in-layout",
+        "title": "Test the pair in the actual layout",
+        "html": "<p>Put each image into a copy of the target layout, or sketch its main shapes and color in the artboard if rights or file quality do not permit direct reuse. Add the real headline, button and important content. Review desktop and narrow-screen crops. For Image A, the open sky may support legible text but feel generic. For Image B, the sunset may convey the right mood but demand a solid text panel. Record those observations instead of awarding a subjective “best image” score.</p><p>Look at the original files for resolution, compression and relevant detail. A board tile cannot establish whether a candidate will work at banner size. Also check accessibility: text contrast and meaningful alternative text depend on the final composition and purpose, not on the tiny reference view. If neither candidate meets the brief, state why and seek a new direction deliberately.</p><p>One task, two roles and a concrete test produce more useful evidence than an expanding collection of loosely related images.</p>"
+      },
+      {
+        "id": "document-decision",
+        "title": "Keep the decision in the project, not only on the board",
+        "html": "<p>After the layout test, write a short decision: <em>Use the quiet composition, but create our own illustration with more contrast behind the heading.</em> Link the mockup or test file, and list what must happen next. If you used copyrighted references only for internal study, make sure the final asset is original or properly licensed. If a teammate will continue, the source and decision note should be understandable without opening your desktop app.</p><p>Remove the image that no longer helps. Keep the remaining reference visible only while it guides a specific action, such as adjusting spacing or exploring color. When that action is finished, close the board and leave the project record intact. This is a working surface, not a permanent archive.</p><p>For a larger set of candidates after the first decision, see the <a href='/blog/organize-image-references/'>image-reference organization article</a>.</p>"
+      },
+      {
+        "id": "boundaries",
+        "title": "Keep the board honest about what it shows",
+        "html": "<p>The GIF is an archived Linux demonstration, recorded against an older FloatBoard landing page. It shows a fresh board, settings and two visible landscape images at the end. It does not show the source licenses, an accessibility test, a completed design, or today's exact controls. The workflow described here adds those checks; they are not actions proven by the recording.</p><p>Do not use the two-tile view for precise color matching, pixel comparison or source attribution. Open originals and use the correct design or image tools for those jobs. If your task is collecting hundreds of examples, searchable asset software will likely serve you better than a tiny always-visible window.</p><p>The benefit of the two-image board is simple: it keeps a deliberate contrast in sight long enough to make one decision, then gets out of the way.</p>"
+      },
+      {
+        "id": "faq",
+        "title": "Questions about starting with two images",
+        "html": "<h3>Why only two images?</h3><p>Two images with different roles expose an actual choice. Add a third only when the first pair reveals a new question that a third candidate can answer.</p><h3>Can I publish an image because it appears in my board?</h3><p>No. Verify the creator, source and license for the intended use. A temporary reference and a publishable asset are different things.</p><h3>Is this the same as comparing photos at full size?</h3><p>No. This workflow starts a design direction with a small visible pair. Inspect original files in a viewer when evaluating sharpness, color or fine detail.</p><h3>Will the board replace my design brief?</h3><p>No. Keep the brief, source links, mockups and final decision in the project. The board holds only the references needed for the current step.</p>"
       }
     ]
   }

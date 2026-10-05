@@ -5,6 +5,7 @@
 .blog-promo-track span { flex: none; padding-right: 32px; white-space: nowrap; font-size: .72rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; }
 .blog-promo-bar:hover .blog-promo-track { animation-play-state: paused; }
 @keyframes blog-promo-scroll { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .blog-promo-track { animation: none; } }
 .blog-promo-details { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 6px 12px; font-size: .88rem; font-weight: 700; }
 .blog-promo-details > span { white-space: nowrap; }
 .blog-promo-discount { display: inline-block; padding: 5px 9px; border-radius: 5px; background: #fff; color: #1645b8; font-size: .85rem; font-weight: 800; white-space: nowrap; }
@@ -20,9 +21,12 @@
 .guide-page .blog-offer > a { flex: none; display: inline-block; padding: 11px 16px; border-radius: 8px; background: #fff; color: #142c65; text-decoration: none; font-weight: 800; }
 .guide-page .blog-offer > a:hover { background: #e6f4ff; }
 article > header { max-width: 800px; }
+.guide-tags { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 16px 0 22px; padding: 0; }
+.guide-tags li { padding: 5px 10px; border: 1px solid var(--card-border); border-radius: 999px; background: var(--card-bg); color: var(--text-muted); font-size: .78rem; font-weight: 700; }
 .byline, figcaption { color: var(--text-muted); font-size: .9rem; }
 figure { margin: 36px 0; }
 figure img { display: block; width: 100%; max-width: 657px; height: auto; margin: auto; border-radius: 14px; border: 1px solid var(--card-border); }
+.guide-demo { display: block; width: 100%; max-width: 760px; height: auto; aspect-ratio: 1080 / 607; margin: auto; border: 1px solid var(--card-border); border-radius: 14px; background: #111; }
 figcaption { max-width: 657px; margin: 12px auto; }
 .toc, .related { background: var(--card-bg); border: 1px solid var(--card-border); padding: 24px; border-radius: 12px; margin-top: 40px; }
 pre { overflow-x: auto; padding: 20px; background: #17171e; border: 1px solid var(--card-border); border-radius: 10px; line-height: 1.8; }

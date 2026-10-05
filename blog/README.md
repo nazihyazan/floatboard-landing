@@ -6,7 +6,9 @@ For each new article:
 - Solve one concrete reader problem. Check the existing articles and product guides to avoid duplicating intent.
 - Add an original example, useful steps, limitations and only verified product claims. Do not invent experience, measurements or testimonials.
 - Inspect the chosen screenshot. Use one relevant image with descriptive alt text and a caption; do not republish every screenshot in every article.
+- For a recorded demo, derive a small poster and a compressed MP4 from the source GIF. Put `image`, `demo_video` and `demo_alt` in the post. The player waits for the reader to press play, so the blog index never loads all videos.
 - Use a stable slug, unique title and description, and the real publication date. Set `modified` only when revising a post; the generator uses it for the visible update date, schema and sitemap.
+- Give each article a distinct task and a few descriptive `tags`. Tags appear to readers and in BlogPosting data; they are not a substitute for clear titles or original guidance.
 - Check current plan limits and platform support against the app. Request author review for claims not supported by documentation or screenshots.
 - Link to related guides where useful. Avoid pages created solely for small keyword variations.
 - Run the SEO validator and inspect desktop/mobile layout before publishing. Check sitemap inclusion, then use Search Console for new canonical article URLs.
@@ -24,6 +26,8 @@ Initial intent map:
 
 The blog-wide `DEVTO50` ribbon uses the same discount message as the landing page. New posts can set `promo_after_section` to show one offer card within the article. Keep the offer outside editorial claims and remove or update both placements when the campaign changes.
 
+The GIF-based demos were recorded on Linux in July 2026. Some show an older website and a board with more images than the current free plan permits per day. Captions must make this clear and articles must not present the footage as the current Windows interface or imply the full recorded board fits the free tier.
+
 These are relevance-based topics, not claims of measured keyword search volume. Google does not prescribe a minimum word count or guarantee indexing/ranking.
 
 ## Search intent and comparison updates
@@ -35,3 +39,18 @@ For future articles, identify one audience and task, answer it early, include a 
 The developer comparison must not claim that snippet managers cannot handle images: massCode documents visual notes, Pieces supports screenshots, and Cacher supports image attachments. FloatBoard's differentiator here is a small always-on-top working set, not exclusive image support.
 
 Traffic goal: 500 visits/day is a measurement target, not an expected result from these two article revisions. Track actual article landing sessions, engaged sessions and downloads separately from Search Console clicks. Review search queries after indexing, then improve existing articles or choose a distinct follow-up topic based on demonstrated demand rather than guessed keyword volume.
+
+## GIF guide intent map (5 October 2026)
+
+These phrases describe the reader's task; they are not measured search-volume claims. Each guide uses one different segment of the July Linux recording, with a compressed video and a small poster.
+
+- `keep-web-image-reference-visible-while-browsing`: keep one web image visible during browsing.
+- `shortlist-landscape-photos-for-website-hero`: choose a website hero photo using crop and text-space checks.
+- `review-image-grid-and-large-preview`: triage a small image grid, then inspect one candidate larger.
+- `collect-visual-references-across-search-pages`: gather attribute-specific references from several result pages.
+- `copy-web-image-and-keep-source`: copy an image while recording its source and usage context.
+- `capture-webpage-detail-screenshot-reference`: capture a specific on-screen detail rather than the original image file.
+- `keep-webpage-text-beside-image-references`: keep a labelled webpage excerpt next to visual references.
+- `clear-copied-text-history-keep-working-set`: clean transient history after preserving useful content.
+- `inspect-image-original-after-thumbnail`: verify fine detail in the original outside the board.
+- `start-two-image-reference-board`: start a new design decision with two contrasting references.

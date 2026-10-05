@@ -8,7 +8,7 @@ import xml.etree.ElementTree as ET
 ROOT = Path(__file__).resolve().parents[1]
 class Page(HTMLParser):
     def __init__(self):
-        super().__init__(); self.canonical=[]; self.h1=0; self.links=[]; self.images=[]; self.schema=[]; self.in_schema=False; self.ids=set(); self.description=[]; self.title=''; self.in_title=False
+        super().__init__(); self.canonical=[]; self.h1=0; self.links=[]; self.images=[]; self.videos=[]; self.sources=[]; self.schema=[]; self.in_schema=False; self.ids=set(); self.description=[]; self.title=''; self.in_title=False
     def handle_starttag(self,tag,attrs):
         a=dict(attrs)
         if a.get('id'): self.ids.add(a['id'])
@@ -18,6 +18,8 @@ class Page(HTMLParser):
         if tag=='meta' and a.get('name')=='description': self.description.append(a['content'])
         if tag=='a': self.links.append(a.get('href',''))
         if tag=='img': self.images.append(a)
+        if tag=='video': self.videos.append(a)
+        if tag=='source': self.sources.append(a)
         if tag=='script' and a.get('type')=='application/ld+json': self.in_schema=True
     def handle_endtag(self,tag):
         if tag=='script': self.in_schema=False
@@ -57,5 +59,14 @@ for url in urls:
         if '/blog/' in url:
             assert image.get('alt') and image.get('width') and image.get('height'),image
             assert 0 < int(image['width']) < 10000 and 0 < int(image['height']) < 10000, image
+    for video in p.videos:
+        assert video.get('aria-label') and 'controls' in video, (url,'accessible video')
+        poster = file_for(video.get('poster',''))
+        assert poster.exists() and poster.read_bytes().startswith(b'\xff\xd8'), (url,'video poster')
+        assert video.get('preload') == 'none', (url,'video preload')
+    for media in p.sources:
+        if media.get('type') == 'video/mp4':
+            source_file = file_for(media['src'])
+            assert source_file.exists() and source_file.read_bytes()[4:8] == b'ftyp', (url,'video source')
     print('PASS',url)
 print('Validated',len(urls),'canonical pages, metadata, internal links, images and JSON-LD.')
