@@ -2,21 +2,19 @@
   {
     "slug": "organize-image-references",
     "related_slugs": [
-      "code-snippets-and-screenshots",
-      "keep-reference-notes-visible-while-writing",
-      "windows-clipboard-history-vs-floating-notes",
-      "take-notes-while-watching-tutorials",
+      "keep-web-image-reference-visible-while-browsing",
       "collect-visual-references-across-search-pages",
-      "start-two-image-reference-board"
+      "start-two-image-reference-board",
+      "compare-photos-side-by-side-windows"
     ],
-    "title": "How to Organize Reference Images for Design Work",
-    "description": "Organize reference images for your next design: a practical workflow, a PureRef, Eagle, Milanote and FloatBoard comparison, and tips for keeping notes beside images.",
+    "title": "Keep Reference Images Visible While Designing",
+    "description": "Build a small always-on-top image-and-note set in FloatBoard while designing; keep originals and source links in project files.",
     "category": "Designers & illustrators",
     "image": "image-reference-board.jpg",
     "alt": "FloatBoard in dark mode displaying four landscape image references in a two-column grid",
     "caption": "A four-image board keeps a small set of references visible together. This screenshot shows the FloatBoard image layout; the workflow below is an illustrative example.",
     "date": "2026-09-24",
-    "intro": "To organize reference images for design work, keep your original files in a searchable project folder, then choose a small working set for the decision in front of you. This guide is for designers and illustrators who need to compare composition, light or visual direction while drawing. It walks through a four-image example in FloatBoard and explains when PureRef, Eagle or Milanote may fit better.",
+    "intro": "A searchable image library helps you retrieve files; a small visible board helps you make the next design decision. In FloatBoard, keep a few selected references and one note beside your canvas, then return to the originals for detail. This guide shows that workflow and where PureRef, Eagle or Milanote may fit better.",
     "sections": [
       {
         "id": "choose-a-question",
@@ -41,7 +39,7 @@
       {
         "id": "choose-the-right-tool",
         "title": "Tools for this workflow: PureRef, Eagle, Milanote or FloatBoard?",
-        "html": "<p>Choose a reference image organizer by the job you need it to do. Keeping pictures above your canvas, finding an old asset and presenting a mood board are different needs. The suggestions below are based on the linked product documentation, checked on 24 September 2026; they are not a hands-on comparison or a speed benchmark. This guide is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Reference tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Which tool fits your reference-image workflow?</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Consider it when</th><th scope=\"col\">What to check</th></tr></thead><tbody><tr><th scope=\"row\">PureRef</th><td>Your main task is arranging visual references and keeping them above a drawing app. Its <a href=\"https://www.pureref.com/handbook/2.0/features/\">reference-viewing features</a> include always-on-top.</td><td>Choose the appropriate personal or commercial license. Start here if a dedicated reference canvas is your priority.</td></tr><tr><th scope=\"row\">Eagle</th><td>You need to retrieve assets across many projects. Its <a href=\"https://eagle.cool/support/desktop/organize\">organizing tools</a> include tags, folders and smart folders.</td><td>Decide how you will label and maintain the library. A catalog and a small on-screen working set can serve complementary roles.</td></tr><tr><th scope=\"row\">Milanote</th><td>You want to explain visual direction to someone else. Its <a href=\"https://milanote.com/product/moodboarding\">mood boards</a> support sharing and comments.</td><td>Check sharing permissions and <a href=\"https://milanote.com/plans\">plan limits</a> before building a large client board.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small set of images beside desktop notes or copied text, with an always-on-top window while you work.</td><td>The <a href=\"/pricing.html\">free plan</a> allows 5 texts and 5 images per day and one window. This image grid is not a substitute for a full asset catalog or shared review tool.</td></tr></tbody></table></div><p>If you arrived looking for a PureRef alternative, identify what you want to change first. For a mixed notes-and-images workspace, try FloatBoard with one task. For asset retrieval, investigate Eagle; for shared feedback, investigate Milanote. These tools are not interchangeable replacements for every PureRef feature.</p>"
+        "html": "<p>Choose a reference image organizer by the job you need it to do. Keeping pictures above your canvas, finding an old asset and presenting a mood board are different needs. The suggestions below are based on the linked product documentation, checked on 24 September 2026; they are not a hands-on comparison or a speed benchmark. This guide is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Reference tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Which tool fits your reference-image workflow?</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Consider it when</th><th scope=\"col\">What to check</th></tr></thead><tbody><tr><th scope=\"row\">PureRef</th><td>Your main task is arranging visual references and keeping them above a drawing app. Its <a href=\"https://www.pureref.com/handbook/2.0/features/\">reference-viewing features</a> include always-on-top.</td><td>Choose the appropriate personal or commercial license. Start here if a dedicated reference canvas is your priority.</td></tr><tr><th scope=\"row\">Eagle</th><td>You need to retrieve assets across many projects. Its <a href=\"https://eagle.cool/support/desktop/organize\">organizing tools</a> include tags, folders and smart folders.</td><td>Decide how you will label and maintain the library. A catalog and a small on-screen working set can serve complementary roles.</td></tr><tr><th scope=\"row\">Milanote</th><td>You want to explain visual direction to someone else. Its <a href=\"https://milanote.com/product/moodboarding\">mood boards</a> support sharing and comments.</td><td>Check sharing permissions and <a href=\"https://milanote.com/plans\">plan limits</a> before building a large client board.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small set of images beside desktop notes or copied text, with an always-on-top window while you work.</td><td>Check the <a href=\"/pricing.html\">current plan limits</a> for the additions and windows available to your version. This image grid is not a substitute for a full asset catalog or shared review tool.</td></tr></tbody></table></div><p>If you arrived looking for a PureRef alternative, identify what you want to change first. For a mixed notes-and-images workspace, try FloatBoard with one task. For asset retrieval, investigate Eagle; for shared feedback, investigate Milanote. These tools are not interchangeable replacements for every PureRef feature.</p>"
       },
       {
         "id": "pureref-free",
@@ -58,25 +56,25 @@
         "title": "Try the workflow with your next design task",
         "html": "<p><a href=\"/download/\">Download FloatBoard</a>, choose up to four reference images and add one note describing the decision you are making. Pin the board beside your design app, make a draft, then remove any reference that no longer helps. Keep final decisions in your project document so they survive beyond this working set.</p><p>If copied instructions are what you lose most often, explore the <a href=\"/clipboard-manager.html\">clipboard manager workflow</a>. If your priority is written reminders above other windows, start with <a href=\"/floating-notes.html\">floating desktop notes</a>. Use the board for the material you need in sight now.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "code-snippets-and-screenshots",
     "related_slugs": [
       "copy-text-from-screenshot-windows",
-      "organize-image-references",
-      "windows-clipboard-history-vs-floating-notes",
-      "take-notes-while-watching-tutorials",
+      "keep-webpage-text-beside-image-references",
       "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "How to Debug UI Bugs with Code Snippets and Screenshots",
-    "description": "Keep a screenshot, code snippet and expected result together while debugging UI bugs. Compare FloatBoard with snippet managers for this specific workflow.",
+    "title": "Keep Code Snippets and Screenshots Visible While Debugging",
+    "description": "Use FloatBoard as a small always-on-top text-and-image reference while fixing one UI bug; keep reusable snippets in a searchable library.",
     "category": "Developer workflow",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard with four image thumbnails on the left and a text card containing HTML markup on the right",
     "caption": "FloatBoard can show image references and text side by side. The HTML in this screenshot is a reference snippet, not an executable code editor.",
     "date": "2026-09-24",
-    "intro": "If you are debugging a visual bug, a searchable code snippet manager and a visible reference board solve different problems. Keep reusable code in your repository or snippet library; put the screenshot, the few relevant lines and the expected result in view for the bug you are fixing now. Here is a repeatable UI-debugging workflow, followed by an honest comparison with massCode, Pieces and Cacher.",
+    "intro": "When a UI bug takes you between editor and browser, the screenshot and suspected lines can disappear behind windows. FloatBoard can keep that small set visible above the editor while you test a fix; it is not a searchable code library. This guide shows a repeatable debugging workflow and compares massCode, Pieces and Cacher for storage and retrieval.",
     "sections": [
       {
         "id": "capture-context",
@@ -96,7 +94,7 @@
       {
         "id": "choose-a-tool",
         "title": "Snippet manager or floating board? Choose by the job",
-        "html": "<p>A code snippet manager is a better place for examples you want to search and reuse next month. A floating board is for the few references you must compare while fixing one bug today. This is a feature-and-use-case comparison based on the linked product documentation, checked on 28 September 2026; we did not benchmark the competing apps. FloatBoard publishes this guide.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Code snippet and screenshot tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Where to keep snippets and screenshots</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Useful when</th><th scope=\"col\">Image and code context</th></tr></thead><tbody><tr><th scope=\"row\">massCode</th><td>You need a searchable, reusable local snippet library. Its <a href=\"https://masscode.io/documentation/code/\">Code workspace</a> supports folders, tags and search.</td><td>Its <a href=\"https://masscode.io/documentation/\">Notes and Drawings</a> can contain visual material. Do not treat it as a text-only app.</td></tr><tr><th scope=\"row\">Pieces</th><td>You need capture and retrieval features beyond a small working board.</td><td>Pieces documents <a href=\"https://pieces.app/changelog/pieces-desktop-app-193-paste-images-improved-snippet-discovery\">image pasting</a> and <a href=\"https://pieces.app/changelog/1-5-0-extract-code-from-screenshots-and-more\">code extraction from screenshots</a>. Check its current product and plan before choosing it.</td></tr><tr><th scope=\"row\">Cacher</th><td>You want a searchable code library, editor integrations or team snippets. Its <a href=\"https://www.cacher.io/docs/getting-started/using-your-snippets\">documentation</a> describes search and insertion.</td><td>Its <a href=\"https://www.cacher.io/docs/guides/snippets/file-attachments\">attachments</a> support pasted images. Do not assume a snippet manager cannot store screenshots.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small screenshot and text reference visible above your editor while investigating one issue.</td><td>Separate image and text panels sit in one always-on-top window. There is no code-library search or syntax highlighting. The <a href=\"/pricing.html\">free plan</a> allows 5 texts and 5 images per day.</td></tr></tbody></table></div><p>Looking for a <em>massCode alternative</em> or a <em>Pieces alternative</em>? If the missing feature is search, tagging or long-term snippet reuse, FloatBoard is not a direct replacement. If your problem is losing the screenshot while changing CSS, try a mixed reference board alongside your existing snippet library. <a href=\"https://kapeli.com/dash\">Dash</a> is another documentation and snippet tool, primarily for macOS, when API reference lookup is the main job.</p>"
+        "html": "<p>A code snippet manager is a better place for examples you want to search and reuse next month. A floating board is for the few references you must compare while fixing one bug today. This is a feature-and-use-case comparison based on the linked product documentation, checked on 28 September 2026; we did not benchmark the competing apps. FloatBoard publishes this guide.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Code snippet and screenshot tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Where to keep snippets and screenshots</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Useful when</th><th scope=\"col\">Image and code context</th></tr></thead><tbody><tr><th scope=\"row\">massCode</th><td>You need a searchable, reusable local snippet library. Its <a href=\"https://masscode.io/documentation/code/\">Code workspace</a> supports folders, tags and search.</td><td>Its <a href=\"https://masscode.io/documentation/\">Notes and Drawings</a> can contain visual material. Do not treat it as a text-only app.</td></tr><tr><th scope=\"row\">Pieces</th><td>You need capture and retrieval features beyond a small working board.</td><td>Pieces documents <a href=\"https://pieces.app/changelog/pieces-desktop-app-193-paste-images-improved-snippet-discovery\">image pasting</a> and <a href=\"https://pieces.app/changelog/1-5-0-extract-code-from-screenshots-and-more\">code extraction from screenshots</a>. Check its current product and plan before choosing it.</td></tr><tr><th scope=\"row\">Cacher</th><td>You want a searchable code library, editor integrations or team snippets. Its <a href=\"https://www.cacher.io/docs/getting-started/using-your-snippets\">documentation</a> describes search and insertion.</td><td>Its <a href=\"https://www.cacher.io/docs/guides/snippets/file-attachments\">attachments</a> support pasted images. Do not assume a snippet manager cannot store screenshots.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small screenshot and text reference visible above your editor while investigating one issue.</td><td>Separate image and text panels sit in one always-on-top window. There is no code-library search or syntax highlighting. Check the <a href=\"/pricing.html\">current plan limits</a> before planning a larger working set.</td></tr></tbody></table></div><p>Looking for a <em>massCode alternative</em> or a <em>Pieces alternative</em>? If the missing feature is search, tagging or long-term snippet reuse, FloatBoard is not a direct replacement. If your problem is losing the screenshot while changing CSS, try a mixed reference board alongside your existing snippet library. <a href=\"https://kapeli.com/dash\">Dash</a> is another documentation and snippet tool, primarily for macOS, when API reference lookup is the main job.</p>"
       },
       {
         "id": "clipboard-or-board",
@@ -114,25 +112,24 @@
         "html": "<p>When the issue is fixed, record the reproduction steps, changed file and before-and-after evidence in the issue or pull request. Store reusable snippets in the repository or a searchable library. Remove temporary references that no longer explain the task.</p><p><a href=\"/download/\">Try FloatBoard for a small UI debugging task</a> with one screenshot, one snippet and one expected result. If the real pain is research notes rather than code, see the <a href=\"/blog/keep-reference-notes-visible-while-writing/\">writing reference workflow</a>.</p>"
       }
     ],
-    "modified": "2026-09-28"
+    "modified": "2026-10-07",
+    "audience": "visual-references"
   },
   {
     "slug": "keep-reference-notes-visible-while-writing",
     "related_slugs": [
-      "organize-image-references",
-      "code-snippets-and-screenshots",
-      "windows-clipboard-history-vs-floating-notes",
+      "keep-webpage-text-beside-image-references",
       "take-notes-while-watching-tutorials",
-      "keep-webpage-text-beside-image-references"
+      "keep-meeting-notes-visible-video-call"
     ],
-    "title": "How to Keep Research Notes Visible While Writing",
-    "description": "Keep research notes beside Word or Google Docs without losing sources. Compare split screen, PowerToys and FloatBoard, then use a source-card template.",
+    "title": "Keep Research Notes Visible While Writing",
+    "description": "Pin short source notes and optional image references beside Word or Google Docs in FloatBoard; keep full citations in your project document.",
     "category": "Writing with notes",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard showing text reference cards on the left and six image thumbnails on the right",
     "caption": "Text and image references can share a FloatBoard window. The screenshot shows the layout; the writing example below uses its own illustrative notes.",
     "date": "2026-09-24",
-    "intro": "To keep research notes visible while writing, separate the source from your own wording, then place only the two or three notes needed for the next paragraph beside your draft. On Windows you can use split screen, pin a notes window with PowerToys or use a purpose-built floating board. This guide shows when each works and how to avoid losing attribution while you write.",
+    "intro": "If you keep changing windows to reread a source, put only the facts needed for the next paragraph in view. FloatBoard can hold a short text note and supporting image in an always-on-top window beside your draft; your project document remains the record for full citations. This guide also explains when split screen or PowerToys is enough.",
     "sections": [
       {
         "id": "choose-reference-notes",
@@ -142,7 +139,7 @@
       {
         "id": "set-up",
         "title": "Three ways to keep notes beside Word or Google Docs",
-        "html": "<p>Use the least complicated setup that leaves your draft readable. These options solve the same visibility problem at different levels; the feature descriptions come from the linked product documentation, checked on 28 September 2026. This article is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Ways to keep writing notes visible\" tabindex=\"0\"><table class=\"comparison\"><caption>Choose a note setup for a writing session</caption><thead><tr><th scope=\"col\">Setup</th><th scope=\"col\">Best fit</th><th scope=\"col\">Trade-off</th></tr></thead><tbody><tr><th scope=\"row\">Split screen</th><td>Two windows are enough and you have room for both. Put the original source or notes beside your draft.</td><td>On a narrow display, each window may become too small to read comfortably.</td></tr><tr><th scope=\"row\">PowerToys Always On Top</th><td>On Windows, pin a notes window above the draft with the default <a href=\"https://learn.microsoft.com/en-us/windows/powertoys/always-on-top\">Win+Ctrl+T shortcut</a>.</td><td>It pins an existing window; you still need to choose a notes app and keep source details organized yourself.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>Keep short text notes and optional image reminders in one small window, then use its pin control while writing.</td><td>It is a working board, not a citation manager or searchable research archive. The <a href=\"/pricing.html\">free plan</a> includes 5 texts and 5 images per day.</td></tr></tbody></table></div><p>Open the draft first. Place the reference so it does not cover the sentence you are editing. Switch back to the writing app and confirm the note stays visible. If it blocks the document, reduce the working set or use split screen instead.</p>"
+        "html": "<p>Use the least complicated setup that leaves your draft readable. These options solve the same visibility problem at different levels; the feature descriptions come from the linked product documentation, checked on 28 September 2026. This article is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Ways to keep writing notes visible\" tabindex=\"0\"><table class=\"comparison\"><caption>Choose a note setup for a writing session</caption><thead><tr><th scope=\"col\">Setup</th><th scope=\"col\">Best fit</th><th scope=\"col\">Trade-off</th></tr></thead><tbody><tr><th scope=\"row\">Split screen</th><td>Two windows are enough and you have room for both. Put the original source or notes beside your draft.</td><td>On a narrow display, each window may become too small to read comfortably.</td></tr><tr><th scope=\"row\">PowerToys Always On Top</th><td>On Windows, pin a notes window above the draft with the default <a href=\"https://learn.microsoft.com/en-us/windows/powertoys/always-on-top\">Win+Ctrl+T shortcut</a>.</td><td>It pins an existing window; you still need to choose a notes app and keep source details organized yourself.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>Keep short text notes and optional image reminders in one small window, then use its pin control while writing.</td><td>It is a working board, not a citation manager or searchable research archive. Check the <a href=\"/pricing.html\">current plan limits</a> before planning a larger working set.</td></tr></tbody></table></div><p>Open the draft first. Place the reference so it does not cover the sentence you are editing. Switch back to the writing app and confirm the note stays visible. If it blocks the document, reduce the working set or use split screen instead.</p>"
       },
       {
         "id": "example-note",
@@ -165,25 +162,24 @@
         "html": "<p>At the end of the section, reopen each source and verify names, dates, numbers, qualifications and quotations. Move any lasting note into your source library or project document. Replace the temporary references with those needed for the next section.</p><p><a href=\"/download/\">Try FloatBoard with two source cards beside a draft</a>, then decide whether a visible board improves your writing setup. If you mainly need to recover copied text, see the <a href=\"/clipboard-manager.html\">clipboard history guide</a>; if you are comparing visual ideas, see the <a href=\"/blog/organize-image-references/\">image reference workflow</a>.</p>"
       }
     ],
-    "modified": "2026-09-28"
+    "modified": "2026-10-07",
+    "audience": "floating-notes"
   },
   {
     "slug": "windows-clipboard-history-vs-floating-notes",
     "related_slugs": [
-      "copy-text-from-screenshot-windows",
-      "code-snippets-and-screenshots",
-      "keep-reference-notes-visible-while-writing",
-      "take-notes-while-watching-tutorials",
-      "clear-copied-text-history-keep-working-set"
+      "clear-copied-text-history-keep-working-set",
+      "keep-webpage-text-beside-image-references",
+      "copy-text-from-screenshot-windows"
     ],
-    "title": "Windows Clipboard History: Copy Multiple Items and Keep Notes Visible",
-    "description": "Learn how to use Win + V for copied text and images, troubleshoot missing clipboard items, and choose when floating notes help with an active task.",
+    "title": "Keep Copied Text Visible While Working on Windows",
+    "description": "Use Windows + V to retrieve copied items and FloatBoard to keep selected text or images visible beside your work; learn when each helps.",
     "category": "Windows clipboard workflow",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard window showing separate text cards beside a grid of image thumbnails",
     "caption": "FloatBoard displays text and image references together. This product screenshot illustrates the layout; it is not the Windows clipboard history panel.",
     "date": "2026-09-29",
-    "intro": "Press Windows + V to open clipboard history on Windows and reuse something you copied earlier. If you need instructions to stay in sight while completing a task, keep a short note in a separate visible window. This guide shows how to use both approaches, how to investigate missing clipboard entries, and how to avoid turning a temporary clipboard into your only record.",
+    "intro": "To keep copied text visible while working on Windows, choose a short, labelled note in FloatBoard and pin its window beside your task. Use Windows + V when you need to retrieve a recent copy and paste it again; FloatBoard also has its own recent text history. This guide separates those jobs, shows a practical copy-and-paste task, and explains why a Windows history item may be missing.",
     "sections": [
       {
         "id": "use-windows-clipboard-history",
@@ -208,32 +204,32 @@
       {
         "id": "manage-the-working-set",
         "title": "Keep the working set small and labelled",
-        "html": "<p>Before a new task, remove references that belong to the previous one. Preserve anything important in your project files first. Avoid copying passwords or other secrets into a board that might appear in a screen share.</p><p>FloatBoard’s <a href='/pricing.html'>free plan</a> currently allows five texts and five images per day and one window. A note containing a few labelled fields is enough to try this workflow. This article does not claim that FloatBoard provides Windows clipboard synchronization or an unlimited free history.</p>"
+        "html": "<p>Before a new task, remove references that belong to the previous one. Preserve anything important in your project files first. Avoid copying passwords or other secrets into a board that might appear in a screen share.</p><p>Check the <a href='/pricing.html'>current FloatBoard plan limits</a> before building a larger working set. A note containing a few labelled fields is enough to try this workflow. This article does not claim that FloatBoard provides Windows clipboard synchronization or an unlimited free history.</p>"
       },
       {
         "id": "clipboard-faq",
         "title": "Questions about clipboard history and floating notes",
         "html": "<h3>Does Windows + V show everything I have ever copied?</h3><p>No. It is a limited history, not a permanent archive. Keep important material in a saved document and use the history for recent copied items.</p><h3>Can clipboard history contain images?</h3><p>Windows clipboard history supports bitmap content within its size limit. That does not mean every copied image or file format will be stored. Keep the original image when you need dependable access.</p><h3>Can I keep copied text visible without repeatedly opening the history?</h3><p>Put the relevant text in a note window. FloatBoard can keep a small text-and-image working set above other windows. If you already have the note in another app, a window-pinning tool may be enough.</p><h3>What should I try first?</h3><p>Try Windows + V for reuse. If the real problem is losing sight of instructions, <a href='/download/'>try FloatBoard</a> with one labelled note and read the <a href='/clipboard-manager.html'>clipboard workspace guide</a>. For code and screenshots, follow the separate <a href='/blog/code-snippets-and-screenshots/'>UI debugging workflow</a>.</p>"
       }
-    ]
+    ],
+    "audience": "clipboard",
+    "modified": "2026-10-07"
   },
   {
     "slug": "take-notes-while-watching-tutorials",
     "related_slugs": [
-      "organize-image-references",
-      "code-snippets-and-screenshots",
       "keep-reference-notes-visible-while-writing",
-      "windows-clipboard-history-vs-floating-notes",
-      "keep-webpage-text-beside-image-references"
+      "keep-webpage-text-beside-image-references",
+      "code-snippets-and-screenshots"
     ],
-    "title": "How to Take Notes While Watching a Tutorial on One Screen",
-    "description": "Use a timestamp, next-action note and screenshot to follow a software tutorial on one monitor. Compare split screen, PowerToys and floating notes.",
+    "title": "Keep Tutorial Notes Visible While Practising on One Screen",
+    "description": "Keep a timestamp, next action and expected result in a small pinned FloatBoard note while following a software tutorial on one monitor.",
     "category": "Learning & desktop notes",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard displaying image thumbnails next to a text panel containing an HTML reference snippet",
     "caption": "A FloatBoard text-and-image layout can hold references for a learning task. This existing product screenshot shows the interface, not a capture of the tutorial example below.",
     "date": "2026-09-29",
-    "intro": "When following a software tutorial on one screen, keep three things in your notes: the timestamp, the next action to try, and the result you expect. Pause to practise each step, then record what actually happened. A split-screen layout or a small floating note can keep those instructions visible beside your app without copying the entire lesson.",
+    "intro": "Following a tutorial on one monitor often means pausing, switching windows and forgetting the next action. Keep one short FloatBoard note visible beside the lesson and your work app, then update it after each practice step. This guide provides a timestamp-and-result template and alternatives when split screen is enough.",
     "sections": [
       {
         "id": "set-a-learning-task",
@@ -270,24 +266,25 @@
         "title": "Questions about taking notes during tutorials",
         "html": "<h3>Should I write down everything the instructor says?</h3><p>For a practical software task, begin with the action, expected result and question you need answered. Add background explanation when it changes how you perform the task. A full transcript can be useful for other purposes, but it is hard to use as a small on-screen checklist.</p><h3>How can I take notes without a second monitor?</h3><p>Pause the lesson while practising, use side-by-side windows when space allows, or keep a short note pinned above your app. Change the layout if it makes controls too small to use comfortably.</p><h3>Does FloatBoard automatically transcribe or synchronize a video?</h3><p>This workflow uses manually written notes, timestamps and selected image references. It does not depend on transcription, a video integration or automatic timestamp capture.</p><h3>Can I use this for reading a written tutorial?</h3><p>Yes. Replace the timestamp with the heading or section link. For longer reading and drafting, use the <a href='/blog/keep-reference-notes-visible-while-writing/'>research notes workflow</a>. To try the compact tutorial setup, <a href='/download/'>download FloatBoard</a> and start with a single next-action note.</p>"
       }
-    ]
+    ],
+    "audience": "floating-notes",
+    "modified": "2026-10-07"
   },
   {
     "slug": "compare-photos-side-by-side-windows",
     "related_slugs": [
-      "organize-image-references",
-      "code-snippets-and-screenshots",
       "review-image-grid-and-large-preview",
-      "inspect-image-original-after-thumbnail"
+      "inspect-image-original-after-thumbnail",
+      "shortlist-landscape-photos-for-website-hero"
     ],
-    "title": "How to Compare Photos Side by Side on Windows",
-    "description": "Compare photos side by side with Microsoft Photos, Windows Snap or a floating image board. Use a four-photo example to shortlist references without losing the originals.",
+    "title": "Compare Photos Side by Side on Windows While You Work",
+    "description": "Use Photos or Snap for full-size comparison, then keep a small FloatBoard image shortlist visible beside your browser or design app.",
     "category": "Photo comparison workflow",
     "image": "compare-photos-side-by-side.png",
     "alt": "FloatBoard showing four car-photo thumbnails in a two-by-two grid above a browser page with larger source images",
     "caption": "Four car-photo references in FloatBoard above the source page. The grid helps shortlist images while browsing; open the originals to judge detail or color.",
     "date": "2026-10-01",
-    "intro": "To compare photos side by side on Windows, start with Microsoft Photos’ multi-view if your pictures are already in one collection. Use Windows Snap for two full-size windows. If you are browsing several references while working in another app, keep a small image board visible and return to the originals for close inspection. This guide shows all three layouts and a four-photo comparison you can repeat.",
+    "intro": "For fine detail, use Microsoft Photos or two windows with Snap. If the decision requires several candidate photos to stay in sight while you work in another app, keep a small image set in FloatBoard and return to the originals before choosing. This guide walks through both jobs with a four-photo example; FloatBoard is a visible reference board, not a full-size photo comparator.",
     "sections": [
       {
         "id": "choose-comparison-goal",
@@ -307,7 +304,7 @@
       {
         "id": "floatboard-working-grid",
         "title": "Keep a short image shortlist visible while you browse",
-        "html": "<p>The screenshot above shows a real FloatBoard layout: four car images in a two-by-two grid, with larger source photos visible in the browser behind it. Use this kind of board when your task is to keep a few references in sight while you browse, draw or write—not to replace the original files or pages.</p><ol><li>Save each source URL or original filename in your project notes. Use images you are allowed to keep and share.</li><li>Add two to four candidate images to FloatBoard using the image workflow in your installed version. The free plan currently allows <a href='/pricing.html'>five images per day and one window</a>.</li><li>Position the board where it does not cover the feature you are comparing, then use its pin control and return to your browser or work app.</li><li>Give the candidates simple names in your project note—A, B, C and D—and write one useful observation for each. The labels belong in your note; this screenshot does not show labels on the image tiles.</li><li>Open a source image at full size whenever a thumbnail leaves a question unresolved. Keep the final choice and its source in your project folder.</li></ol><p>FloatBoard can also show text notes, so a short decision checklist can sit with the images. For a larger searchable collection of references, use a dedicated asset library and bring only the current shortlist to the floating board. The <a href='/blog/organize-image-references/'>reference-image organization guide</a> explains that longer-term setup.</p>"
+        "html": "<p>The screenshot above shows a real FloatBoard layout: four car images in a two-by-two grid, with larger source photos visible in the browser behind it. Use this kind of board when your task is to keep a few references in sight while you browse, draw or write—not to replace the original files or pages.</p><ol><li>Save each source URL or original filename in your project notes. Use images you are allowed to keep and share.</li><li>Add two to four candidate images to FloatBoard using the image workflow in your installed version. Check the <a href='/pricing.html'>current plan limits</a> before preparing a larger shortlist.</li><li>Position the board where it does not cover the feature you are comparing, then use its pin control and return to your browser or work app.</li><li>Give the candidates simple names in your project note—A, B, C and D—and write one useful observation for each. The labels belong in your note; this screenshot does not show labels on the image tiles.</li><li>Open a source image at full size whenever a thumbnail leaves a question unresolved. Keep the final choice and its source in your project folder.</li></ol><p>FloatBoard can also show text notes, so a short decision checklist can sit with the images. For a larger searchable collection of references, use a dedicated asset library and bring only the current shortlist to the floating board. The <a href='/blog/organize-image-references/'>reference-image organization guide</a> explains that longer-term setup.</p>"
       },
       {
         "id": "four-photo-example",
@@ -334,25 +331,25 @@
         "title": "Try the two-minute comparison",
         "html": "<p>Pick one real question and two candidate images. Try Microsoft Photos or Snap first. If you need the candidates to remain visible while editing or browsing, <a href='/download/'>try FloatBoard</a> with a small pinned set and one note about the decision. Open the originals before you commit to the choice, then clear the temporary board when the task is done.</p><p>If your main problem is keeping instructions visible rather than comparing images, the <a href='/floating-notes.html'>floating-notes guide</a> covers that workflow.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "copy-text-from-screenshot-windows",
     "related_slugs": [
-      "windows-clipboard-history-vs-floating-notes",
+      "keep-webpage-text-beside-image-references",
       "code-snippets-and-screenshots",
-      "keep-reference-notes-visible-while-writing",
-      "take-notes-while-watching-tutorials",
-      "capture-webpage-detail-screenshot-reference"
+      "windows-clipboard-history-vs-floating-notes"
     ],
-    "title": "How to Copy Text from a Screenshot on Windows and Check It Against the Original",
-    "description": "Extract text from a Windows screenshot with Snipping Tool or PowerToys, then compare the result with the image before using it in a form, note or report.",
+    "title": "Copy Text from a Screenshot and Keep the Image in View",
+    "description": "Use Windows OCR tools to extract screenshot text, then keep corrected text and the source image side by side in FloatBoard for verification.",
     "category": "Windows screenshot workflow",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard displaying four image thumbnails beside a text card containing HTML reference text",
     "caption": "This FloatBoard screenshot shows a mixed image-and-text layout. It does not show OCR or the Windows text-extraction tools.",
     "date": "2026-10-02",
-    "intro": "A screenshot looks like text, but its letters are pixels. On Windows, Snipping Tool or PowerToys can turn those pixels into copyable text. The extra step that matters is checking the result against the image before it reaches a form, document or message. This guide walks through both extraction options and a small comparison workflow that keeps the source in view.",
+    "intro": "Snipping Tool and PowerToys extract text from pixels; FloatBoard does not perform OCR. After extraction, keep the screenshot and a short corrected text note visible together while you check names, numbers and punctuation. This guide covers the Windows extraction steps and the verification workflow.",
     "promo_after_section": 3,
     "sections": [
       {
@@ -390,23 +387,25 @@
         "title": "Questions about copying text from screenshots",
         "html": "<h3>Can I copy text from a screenshot without installing PowerToys?</h3><p>Yes. Snipping Tool’s Text actions can extract text from a snip. Follow <a href=\"https://support.microsoft.com/en-us/windows/apps/use-snipping-tool-to-capture-screenshots\">Microsoft’s current Snipping Tool instructions</a> and check that your installed version offers the control.</p><h3>Why did PowerToys copy the wrong words?</h3><p>Try a tighter capture around the relevant line and enlarge the screenshot before extracting. Check the configured OCR language if the text uses another language. Proofread the result against the image; a second pass does not guarantee accuracy.</p><h3>Is a screenshot or the extracted text better for an error report?</h3><p>Keep both. The screenshot shows visual context; verified, selectable text makes the exact message easier to quote and search. Add the action that triggered the error, but exclude private fields. For a code and screenshot debugging example, see the <a href=\"/blog/code-snippets-and-screenshots/\">UI bug guide</a>.</p><h3>Does FloatBoard recognize text inside an image?</h3><p>No OCR feature is claimed here. Use a Windows text-extraction tool for recognition. FloatBoard can keep the screenshot and your verified text note visible together while you complete the task. <a href=\"/download/\">Try FloatBoard</a> if that visible reference would help.</p>"
       }
-    ]
+    ],
+    "audience": "clipboard",
+    "modified": "2026-10-07"
   },
   {
     "slug": "keep-meeting-notes-visible-video-call",
     "related_slugs": [
       "keep-reference-notes-visible-while-writing",
-      "windows-clipboard-history-vs-floating-notes"
+      "clear-copied-text-history-keep-working-set"
     ],
-    "title": "How to Keep Meeting Notes Visible During a Video Call",
-    "description": "Keep an agenda and action list in sight during a Teams video call. Set up a personal note, use collaborative meeting notes for the shared record, and share your screen safely.",
+    "title": "Keep Personal Meeting Notes Visible During a Teams Call",
+    "description": "Use a pinned FloatBoard note for private prompts during a Teams call, keep official decisions in shared notes, and check screen sharing.",
     "category": "Meeting notes & desktop workflow",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard window with text cards on the left and image thumbnails on the right",
     "caption": "This FloatBoard screenshot shows a mixed text-and-image layout. It is not a capture of a video call or the meeting-note example below.",
     "date": "2026-10-02",
     "promo_after_section": 3,
-    "intro": "To keep meeting notes visible during a video call, prepare a short personal checklist before the call, place it beside the meeting window, and record decisions and actions in the team's shared notes. If you use Microsoft Teams, its collaborative Notes can hold the agenda and official follow-up tasks; a small pinned FloatBoard window can hold your own prompts while you speak.",
+    "intro": "A personal checklist helps you remember questions during a call, while Teams Notes is the place for agreed decisions and actions. FloatBoard can keep a small prompt card visible beside the meeting window; it is not the shared meeting record. This guide shows a safe layout and what to check before sharing your screen.",
     "sections": [
       {
         "id": "two-note-layers",
@@ -448,17 +447,19 @@
         "title": "Frequently asked questions about visible meeting notes",
         "html": "<h3>Can I keep my notes visible without a second monitor?</h3><p>Yes. Reduce the call to a smaller view where your meeting app supports it, pop out its notes, or put a compact note beside the call. Keep faces, shared content and controls readable; if an overlay hides them, switch to side-by-side windows or a paper checklist.</p><h3>Are FloatBoard notes the same as Teams meeting notes?</h3><p>No. Teams Notes are collaborative meeting content for eligible participants. FloatBoard holds a personal working set of text and images on your desktop. Copy confirmed decisions into the shared record yourself; there is no automatic sync or transcription in this workflow.</p><h3>Will a pinned note appear when I share my screen?</h3><p>It may appear if you share your whole display. If you share a specific window, check the preview and the actual participant view before relying on that selection for privacy. Clear sensitive material before presenting.</p><h3>What should an action item include?</h3><p>Write a concrete deliverable, one owner and an agreed due date. Add an open question when a decision is pending. Confirm the wording aloud and place the final item in the team's shared notes or task system.</p>"
       }
-    ]
+    ],
+    "audience": "floating-notes",
+    "modified": "2026-10-07"
   },
   {
     "slug": "keep-web-image-reference-visible-while-browsing",
     "related_slugs": [
-      "organize-image-references",
-      "copy-text-from-screenshot-windows",
-      "shortlist-landscape-photos-for-website-hero"
+      "copy-web-image-and-keep-source",
+      "collect-visual-references-across-search-pages",
+      "organize-image-references"
     ],
-    "title": "How to Keep a Web Image Reference Visible While You Browse",
-    "description": "Keep one useful web image in sight while researching without losing its source. A practical workflow for designers using a floating image reference.",
+    "title": "Keep One Web Image Visible While Browsing",
+    "description": "Pin one image and a source note in FloatBoard while you browse, then verify the original before using it in your design.",
     "category": "Image reference workflows",
     "image": "gif-1-poster.jpg",
     "alt": "Recorded FloatBoard demo beside a browser search for landscape photography, with a selected reference image shown in a larger view",
@@ -472,7 +473,7 @@
       "Design research",
       "Always-on-top workspace"
     ],
-    "intro": "When you are looking through web images for a design, the useful picture often disappears as soon as you open another result. The simple fix is to separate the page you are researching from the one image you are studying. Keep a record of the original page, show a working copy beside your browser, and ask one concrete question of it. This guide explains that one-image workflow, when a floating board helps, and when to return to the original file instead.",
+    "intro": "When the image you are evaluating disappears behind the next browser tab, keep only that working reference visible in FloatBoard. Pair it with a short text note containing its source and the question it should answer, then reopen the original for detail or usage rights. This one-image task differs from building a larger reference library.",
     "sections": [
       {
         "id": "one-reference-question",
@@ -487,7 +488,7 @@
       {
         "id": "working-copy",
         "title": "Put a working copy beside your browser",
-        "html": "<p>With the source recorded, add the image to FloatBoard using the image workflow supported by your installed version. Place its window at the side of the browser and enable always-on-top if you want the picture to remain in view when another browser tab receives focus. The recorded demo above shows the broad idea on Linux: a web landscape is visible in the app while the browser continues through more results. The app's controls can change between versions, so use the controls in your current build rather than copying a video gesture exactly.</p><p>Keep the reference small enough that the search results remain usable. If the window covers the next candidate, move or resize it. On a narrow screen, alternate between the source page and your reference instead of squeezing both until neither is readable. FloatBoard is a working surface for a few live references, not the only place to store project assets.</p>"
+        "html": "<p>With the source recorded, add the image to FloatBoard using the image workflow supported by your installed version. Place its window at the side of the browser and enable always-on-top if you want the picture to remain in view when another browser tab receives focus. The recorded demo above shows the broad idea on Linux: a web landscape is visible in the app while the browser continues through more results. The app's controls can change between versions, so use the controls in your current build rather than copying a video gesture exactly.</p><p>Keep the reference small enough that the search results remain usable. If the window covers the next candidate, move or resize it. On a narrow screen, alternate between the source page and your reference instead of squeezing both until neither is readable. FloatBoard is a working surface for a few live references, not the only place to store project assets.</p><p><strong>One-image FloatBoard check:</strong> Open the source page, add one image to your board with the image workflow in your installed version, and place a short text card with the page URL and the question you are testing beside it. Pin the board next to the browser and switch tabs once to confirm the reference stays visible. <a href=\"/download/\">Try this with FloatBoard</a>; return to the source page before using the picture in a published design.</p>"
       },
       {
         "id": "describe-observation",
@@ -502,7 +503,7 @@
       {
         "id": "avoid-overcollection",
         "title": "Know when one reference should become a shortlist",
-        "html": "<p>One visible reference works while you search for a better answer to one question. It stops working when the task changes to comparing multiple dimensions simultaneously. If you need to decide among a few different visual directions, build a deliberate shortlist and name each candidate's role. The <a href='/blog/shortlist-landscape-photos-for-website-hero/'>landscape hero-image shortlist</a> explains how to move from browsing to a decision. For a broader design research library, see the <a href='/blog/organize-image-references/'>reference image organizer guide</a>.</p><p>Do not let the demo's later multi-image view define the free plan. The recorded session includes more images than the current free plan's five images per day. Check the <a href='/pricing.html'>current limits</a> before starting a larger session, and keep originals in a separate folder regardless of the plan you use.</p>"
+        "html": "<p>One visible reference works while you search for a better answer to one question. It stops working when the task changes to comparing multiple dimensions simultaneously. If you need to decide among a few different visual directions, build a deliberate shortlist and name each candidate's role. The <a href='/blog/shortlist-landscape-photos-for-website-hero/'>landscape hero-image shortlist</a> explains how to move from browsing to a decision. For a broader design research library, see the <a href='/blog/organize-image-references/'>reference image organizer guide</a>.</p><p>Do not let the demo's later multi-image view define the free plan. The recorded session predates today's plan. Check the <a href='/pricing.html'>current limits</a> before starting a larger session, and keep originals in a separate folder regardless of the plan you use.</p>"
       },
       {
         "id": "end-session",
@@ -514,17 +515,19 @@
         "title": "Frequently asked questions",
         "html": "<h3>How can I keep a picture visible when I change browser tabs?</h3><p>Use a small always-on-top image window next to the browser, or arrange two windows on the desktop. Leave enough room to inspect new results; the reference should support browsing, not cover it.</p><h3>What if the floating window blocks the next result?</h3><p>Move or resize it, or briefly hide it during a closer look. Returning to the same reference is more useful than keeping it permanently in the way.</p><h3>When should one reference become a shortlist?</h3><p>When you need to compare different solutions at the same time. Choose a few candidates with distinct roles rather than accumulating similar images as you scroll.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "shortlist-landscape-photos-for-website-hero",
     "related_slugs": [
-      "keep-web-image-reference-visible-while-browsing",
-      "organize-image-references",
-      "review-image-grid-and-large-preview"
+      "review-image-grid-and-large-preview",
+      "start-two-image-reference-board",
+      "compare-photos-side-by-side-windows"
     ],
-    "title": "How to Shortlist Landscape Photos for a Website Hero Image",
-    "description": "Choose landscape hero-image candidates by crop, text space, visual direction and rights. Build a small photo shortlist instead of collecting endlessly.",
+    "title": "Shortlist Hero Photos With a Floating Image Board",
+    "description": "Keep a few hero-photo candidates visible in FloatBoard while testing crop and text space in the real webpage layout.",
     "category": "Designers & illustrators",
     "image": "gif-2-poster.jpg",
     "alt": "Recorded FloatBoard demo showing a small grid of landscape candidate images while browsing a photography website",
@@ -538,7 +541,7 @@
       "Visual references",
       "Design decisions"
     ],
-    "intro": "A website hero image has a harder job than simply looking good. It must support the message, survive desktop and mobile crops, leave space for readable text and be usable under the source license. This guide is for a designer choosing a landscape photograph for one hero section. It uses a small visible shortlist to make the choice explicit, then checks the finalists in the actual layout. It is deliberately narrower than building a general inspiration board.",
+    "intro": "A hero photograph needs room for a headline and a crop that works on desktop and mobile. Use FloatBoard to keep a small candidate set visible beside the page mockup, then test finalists in the actual layout and confirm rights at the source. This is a shortlist workflow, not a stock-photo library.",
     "sections": [
       {
         "id": "hero-brief",
@@ -553,7 +556,7 @@
       {
         "id": "small-grid",
         "title": "Use a compact grid to compare overall direction",
-        "html": "<p>A small grid helps you scan composition and contrast quickly. Add your selected working copies to FloatBoard using your installed version's image controls, then keep the window beside the browser or design app. The recorded demo above shows landscapes collected into a compact grid during a web search. Use the current app interface as it exists today; the recording is from July 2026 on Linux and should not be treated as a feature walkthrough for every platform.</p><p>Label candidates in your own project note by source and role: <code>A: open sky</code>, <code>B: human scale</code>, <code>C: dark foreground</code>. Avoid calling an image “best” before testing the crop. If the working grid becomes too small to judge even composition, remove weaker candidates. The current free plan is limited to five images per day; the later recorded board contains more than that, so plan your shortlist against the <a href='/pricing.html'>current plan details</a>.</p>"
+        "html": "<p>A small grid helps you scan composition and contrast quickly. Add your selected working copies to FloatBoard using your installed version's image controls, then keep the window beside the browser or design app. The recorded demo above shows landscapes collected into a compact grid during a web search. Use the current app interface as it exists today; the recording is from July 2026 on Linux and should not be treated as a feature walkthrough for every platform.</p><p>Label candidates in your own project note by source and role: <code>A: open sky</code>, <code>B: human scale</code>, <code>C: dark foreground</code>. Avoid calling an image “best” before testing the crop. If the working grid becomes too small to judge even composition, remove weaker candidates. The later recording was made under an earlier plan, so plan your shortlist against the <a href='/pricing.html'>current plan details</a>.</p><p><strong>Board-assisted hero test:</strong> Add two or three candidates with different composition to FloatBoard, pin the board beside a copy of your hero layout, and write one note naming the crop risk for each. Test the real headline over each original image in the page mockup before deciding; the board helps you remember the shortlist, not predict the final crop. <a href=\"/download/\">Open the FloatBoard download options</a> if you want a visible shortlist during that test.</p>"
       },
       {
         "id": "crop-tests",
@@ -580,17 +583,19 @@
         "title": "Frequently asked questions",
         "html": "<h3>How many hero-image candidates should I shortlist?</h3><p>Start with three or four that represent genuinely different solutions to your brief. The useful number is the smallest set that reveals the crop, message and rights tradeoffs. More near-duplicates rarely improve the decision.</p><h3>Should I choose by the desktop or mobile version?</h3><p>Test both with the real content. If one image cannot work across the required crops, use a different image treatment or a separate, properly licensed asset for the other layout.</p><h3>Can a photo grid replace a layout test?</h3><p>No. A grid is for scanning direction. The final decision belongs in the actual hero at the intended sizes, with text and interface elements in place.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "review-image-grid-and-large-preview",
     "related_slugs": [
-      "shortlist-landscape-photos-for-website-hero",
+      "inspect-image-original-after-thumbnail",
       "compare-photos-side-by-side-windows",
-      "organize-image-references"
+      "shortlist-landscape-photos-for-website-hero"
     ],
-    "title": "How to Review Images in a Grid and a Large Preview",
-    "description": "Use an image grid to scan candidates, then a larger preview to inspect one at a time. A practical review method that keeps source context and decisions intact.",
+    "title": "Review a Small Image Grid, Then Check the Original",
+    "description": "Use a small visible FloatBoard image grid to shortlist candidates, then open the original file to inspect detail or quality.",
     "category": "Image reference workflows",
     "image": "gif-3-poster.jpg",
     "alt": "Recorded FloatBoard demo showing a small grid of landscape references beside browser image results",
@@ -604,7 +609,7 @@
       "Visual references",
       "Design decisions"
     ],
-    "intro": "An image grid answers “which candidate is worth another look?” A larger preview answers “what is happening in this candidate?” Using both views prevents a common mistake: approving a picture from a tiny tile or losing the shortlist while inspecting one image. This guide gives a repeatable review pass for a small set of reference images. It is about screening and inspection, not a precise side-by-side pixel comparison or a permanent asset library.",
+    "intro": "A compact FloatBoard grid lets you compare broad composition while staying in your work app. When one image looks promising, open its original in a browser or viewer to inspect details; the board tile is only a locator. This guide separates the quick grid pass from the full-size verification pass.",
     "sections": [
       {
         "id": "two-questions",
@@ -619,7 +624,7 @@
       {
         "id": "grid-pass",
         "title": "Make a first pass in the grid",
-        "html": "<p>Add only the candidates relevant to the decision to FloatBoard, using the image controls in your installed version. Arrange the app where it does not cover your browser or canvas. The recording above shows a small landscape grid while search results remain nearby. It was captured on Linux in July 2026; treat it as an example of the review pattern, not as a guarantee that every current platform uses identical controls.</p><p>Scan the grid for the large signals: horizon position, subject size, overall light and open space. For each image, write one useful observation and one uncertainty. For instance: “Strong silhouette, but foreground may be too dark.” Remove obvious mismatches before opening a larger view. The recorded session eventually includes more images than the current free plan's five images per day; use the <a href='/pricing.html'>current plan limits</a> when planning your own working set.</p>"
+        "html": "<p>Add only the candidates relevant to the decision to FloatBoard, using the image controls in your installed version. Arrange the app where it does not cover your browser or canvas. The recording above shows a small landscape grid while search results remain nearby. It was captured on Linux in July 2026; treat it as an example of the review pattern, not as a guarantee that every current platform uses identical controls.</p><p>Scan the grid for the large signals: horizon position, subject size, overall light and open space. For each image, write one useful observation and one uncertainty. For instance: “Strong silhouette, but foreground may be too dark.” Remove obvious mismatches before opening a larger view. The recorded session reflects an earlier plan; use the <a href='/pricing.html'>current plan limits</a> when planning your own working set.</p><p><strong>From tile to source:</strong> Place three candidate images in FloatBoard and pin the grid beside your work. Choose one tile whose detail is uncertain, open its original file in a separate viewer, then add a short text note with the observation before you return to the grid. FloatBoard keeps the candidate in view; the viewer performs the full-size inspection. <a href=\"/download/\">Try a small FloatBoard grid</a> with your own files.</p>"
       },
       {
         "id": "large-pass",
@@ -646,17 +651,19 @@
         "title": "Frequently asked questions",
         "html": "<h3>Should I judge image quality from the grid?</h3><p>Use the grid for broad composition and shortlist decisions. Inspect the original file for sharpness, compression and precise detail.</p><h3>When should I switch to a larger preview?</h3><p>Switch when a specific uncertainty cannot be settled from the tile. Check one question, record the answer, then return to the grid before deciding.</p><h3>Do I need to keep every candidate after the review?</h3><p>Keep the chosen original and its source record. Archive other links only if they may serve a future task; clear temporary working copies that no longer help the current decision.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "collect-visual-references-across-search-pages",
     "related_slugs": [
       "keep-web-image-reference-visible-while-browsing",
-      "shortlist-landscape-photos-for-website-hero",
-      "copy-web-image-and-keep-source"
+      "copy-web-image-and-keep-source",
+      "organize-image-references"
     ],
-    "title": "How to Collect Visual References Across Search Results Without Losing Focus",
-    "description": "Gather a few useful images across search-result pages by color, silhouette and composition while preserving source links and avoiding duplicate references.",
+    "title": "Keep Search-Page Image References Visible as You Browse",
+    "description": "Build a small FloatBoard image-and-note working set across search pages, with one distinct role and source for each candidate.",
     "category": "Image reference workflows",
     "image": "gif-6-poster.jpg",
     "alt": "Recorded browser search for tree images with a FloatBoard window visible while different results and pages are reviewed",
@@ -670,7 +677,7 @@
       "Design research",
       "Source tracking"
     ],
-    "intro": "A broad image search can produce hundreds of results and very little progress. The useful task is usually narrower: find a few references that show different visual attributes, then stop and decide. This guide uses a tree-image search as an example. It shows how to make each result page answer a question, hold a small working set beside the browser, preserve original sources and avoid collecting duplicates that only make the board harder to use.",
+    "intro": "Moving through image-search pages can make you forget why a candidate mattered. Keep a few distinct images visible in FloatBoard with a short text note listing each role and source, then stop when those roles answer the design question. This guide is for cross-page collection, not a permanent asset library.",
     "sections": [
       {
         "id": "attribute-brief",
@@ -685,7 +692,7 @@
       {
         "id": "working-set",
         "title": "Keep only the active working set visible",
-        "html": "<p>FloatBoard can hold a small set of images where you can see it while browsing. Add candidates using the workflow in your installed version, then place the window so it leaves enough room to inspect the next source. The recording above shows a tree search in a browser with a FloatBoard window alongside it. That old session already contains mixed references from other searches; it illustrates the importance of clearing or separating unrelated working material before making a new decision.</p><p>Assign each candidate a role in your notes: “bare branches,” “colored canopy,” “single tree,” or “strong backlight.” Replace a weaker example when a better one serves the same role. The full recording includes more images than the current free plan's five images per day, so do not use its board count as a plan promise; review the <a href='/pricing.html'>current limits</a> if your task needs a larger set.</p>"
+        "html": "<p>FloatBoard can hold a small set of images where you can see it while browsing. Add candidates using the workflow in your installed version, then place the window so it leaves enough room to inspect the next source. The recording above shows a tree search in a browser with a FloatBoard window alongside it. That old session already contains mixed references from other searches; it illustrates the importance of clearing or separating unrelated working material before making a new decision.</p><p>Assign each candidate a role in your notes: “bare branches,” “colored canopy,” “single tree,” or “strong backlight.” Replace a weaker example when a better one serves the same role. The full recording reflects an earlier plan, so do not use its board count as a plan promise; review the <a href='/pricing.html'>current limits</a> if your task needs a larger set.</p><p><strong>Cross-page board test:</strong> On each result page, add at most one image that fills a missing role, such as silhouette, canopy or open space. Keep a FloatBoard text card listing each role and source URL next to the image set, pin the board beside the browser, and remove a weaker duplicate before continuing to the next page. <a href=\"/download/\">Try this small working set in FloatBoard</a>; store the source records in your project file as well.</p>"
       },
       {
         "id": "compare-attributes",
@@ -712,17 +719,19 @@
         "title": "Frequently asked questions",
         "html": "<h3>How many images should I take from one result page?</h3><p>Often none or one. Add an image only when it covers an attribute that is missing or improves an existing candidate's role.</p><h3>What if my board already has unrelated images?</h3><p>Start a fresh working set for the new question, or keep a written list of which tiles belong to it. A full-looking board can hide gaps in the actual brief.</p><h3>How do I know when to stop searching?</h3><p>Use the selected images in a quick sketch or layout. If every attribute has an example and the test exposes no missing need, stop and make the design decision.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "copy-web-image-and-keep-source",
     "related_slugs": [
-      "collect-visual-references-across-search-pages",
       "keep-web-image-reference-visible-while-browsing",
-      "organize-image-references"
+      "collect-visual-references-across-search-pages",
+      "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "How to Copy an Image From a Webpage and Keep Its Source",
-    "description": "Copy a web image for a working reference without losing the source page, creator and usage terms. Understand the difference between an image copy and its URL.",
+    "title": "Copy a Web Image to a Floating Board and Keep Its Source",
+    "description": "Add a copied web image to a small FloatBoard working set and record the source page, creator and usage terms separately.",
     "category": "Clipboard & source tracking",
     "image": "gif-7-poster.jpg",
     "alt": "Recorded browser demo showing an opened tree photograph on its source page beside FloatBoard image tiles",
@@ -736,7 +745,7 @@
       "Clipboard workflow",
       "Source tracking"
     ],
-    "intro": "Copying a web image is easy; remembering where it came from is the part that often fails. A clipboard copy usually contains the pixels you can paste, not the full source page, creator and publication terms. This guide shows a source-first workflow for a single image you want to study while working. It explains the browser menu choices, what to save alongside the copy, and why a copied reference is not automatically an asset you may publish.",
+    "intro": "Copying image pixels does not reliably preserve the source page. After checking the original page, use your installed version’s image workflow to place a working copy in FloatBoard and add a short source note beside it. This guide distinguishes an image copy from an image URL and explains what to verify before publication.",
     "sections": [
       {
         "id": "open-source",
@@ -751,7 +760,7 @@
       {
         "id": "working-copy",
         "title": "Paste a working reference without treating it as an archive",
-        "html": "<p>After copying, paste into an image-accepting destination and confirm that you got image pixels rather than a URL or plain text. In FloatBoard, use the image-add workflow supported by your installed version; keep the board beside the source page while you decide whether the photograph helps. If the tile displays only a cropped view, compare it with the opened image before concluding that the subject or negative space is right for your task.</p><p>Ask a narrow question such as “Does this tree silhouette work as a shape reference?” or “Would its open sky leave room for a caption?” The recording is from Linux in July 2026, so current controls can differ. Its full session also contains more images than the current free plan's five images per day; check <a href='/pricing.html'>plan limits</a> for a larger session. Keep the source page link in your own note, since an image copy alone does not reliably carry it.</p>"
+        "html": "<p>After copying, paste into an image-accepting destination and confirm that you got image pixels rather than a URL or plain text. In FloatBoard, use the image-add workflow supported by your installed version; keep the board beside the source page while you decide whether the photograph helps. If the tile displays only a cropped view, compare it with the opened image before concluding that the subject or negative space is right for your task.</p><p>Ask a narrow question such as “Does this tree silhouette work as a shape reference?” or “Would its open sky leave room for a caption?” The recording is from Linux in July 2026, so current controls can differ. Its full session reflects an earlier plan; check <a href='/pricing.html'>current plan limits</a> for a larger session. Keep the source page link in your own note, since an image copy alone does not reliably carry it.</p><p><strong>Copy-and-source test:</strong> Copy image pixels from the original page, then use the image-add workflow in your installed FloatBoard version and confirm the tile is an image rather than a URL. Add a separate text card with the source page, creator and reason for keeping it; pin both beside your work, and reopen the page before any public reuse. FloatBoard does not attach attribution automatically. <a href=\"/download/\">Try a sourced image reference</a>.</p>"
       },
       {
         "id": "source-record",
@@ -778,17 +787,19 @@
         "title": "Frequently asked questions",
         "html": "<h3>Why did pasting give me a URL instead of a picture?</h3><p>You may have chosen Copy Image Address or Copy Link. Return to the image and choose the image-data command if the browser offers it, then verify the pasted result.</p><h3>Why isn't the source link attached to my copied image?</h3><p>Image clipboard data and page context are separate. Record the page URL and enough detail to identify the image before you move away.</p><h3>Can I publish a copied web image?</h3><p>Only after checking the source terms and any permissions needed for your use. A successful copy action says nothing about publication rights.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "capture-webpage-detail-screenshot-reference",
     "related_slugs": [
-      "copy-text-from-screenshot-windows",
-      "organize-image-references",
-      "inspect-image-original-after-thumbnail"
+      "copy-web-image-and-keep-source",
+      "inspect-image-original-after-thumbnail",
+      "code-snippets-and-screenshots"
     ],
-    "title": "How to Capture One Webpage Detail as a Screenshot Reference",
-    "description": "Capture a specific visual detail from a webpage, crop it for a temporary reference board, and preserve the page source and wider context before design decisions.",
+    "title": "Keep a Webpage Detail Screenshot Visible Beside Your Design",
+    "description": "Capture a specific webpage detail with browser or OS tools, keep the crop and a source note in FloatBoard, and test the design idea.",
     "category": "Webpage screenshot workflow",
     "image": "gif-8-poster.jpg",
     "demo_video": "gif-8-demo.mp4",
@@ -801,7 +812,7 @@
       "Screenshots",
       "Source tracking"
     ],
-    "intro": "A screenshot is useful when you want to keep one on-screen detail in sight while working: the shape of a tree branch, the spacing around an element, or a visual contrast you noticed on a webpage. It is less useful when you need the original image at full resolution or proof of its license. This guide explains how to capture a deliberate crop, preserve the wider page and source, and use the crop as a temporary FloatBoard reference. The archived Linux recording shows a browser menu that includes “Take Screenshot,” but the workflow below does not depend on that exact menu or claim that FloatBoard takes screenshots.",
+    "intro": "When a webpage detail matters—spacing, contrast or shape—capture just enough context with your browser or operating system. FloatBoard can keep that crop and a short purpose note visible beside your design while you test the idea; it is not a screenshot tool. This guide also covers retaining the original page and checking what you are allowed to reuse.",
     "promo_after_section": 3,
     "sections": [
       {
@@ -822,12 +833,12 @@
       {
         "id": "place-board",
         "title": "Put the crop beside the work, with one sentence of purpose",
-        "html": "<p>Add the cropped screenshot to a small FloatBoard workspace and place it beside the layout you are editing. Add a brief text label: <em>Reference: dark edge against light haze; test with our own illustration</em>. Keep the page URL and wider screenshot in the project record. The visible crop helps you remember the visual relationship while switching between design and browser windows; it is not the definitive source file.</p><p>If you capture a second variant, state what it tests: for example, <em>same edge against darker sky</em>. Do not fill the board with near-identical crops.  The archival recording contains more image tiles than today's free-plan daily allowance; the <a href='/pricing.html'>current free plan lists five images and five texts per day in one window</a>. Use one or two captures for the immediate decision.</p><p>FloatBoard displays the reference. It is not presented here as the screenshot tool, an OCR service, a rights checker or an automatic citation system.</p>"
+        "html": "<p>Add the cropped screenshot to a small FloatBoard workspace and place it beside the layout you are editing. Add a brief text label: <em>Reference: dark edge against light haze; test with our own illustration</em>. Keep the page URL and wider screenshot in the project record. The visible crop helps you remember the visual relationship while switching between design and browser windows; it is not the definitive source file.</p><p>If you capture a second variant, state what it tests: for example, <em>same edge against darker sky</em>. Do not fill the board with near-identical crops. The archival recording reflects an earlier plan; check the <a href='/pricing.html'>current plan limits</a> before adding a larger set. Use one or two captures for the immediate decision.</p><p>FloatBoard displays the reference. It is not presented here as the screenshot tool, an OCR service, a rights checker or an automatic citation system.</p><p><strong>Crop-to-layout test:</strong> Capture the page detail with your browser or operating-system tool, place the crop in FloatBoard, and add a short text card naming the source URL and the design relationship to test. Pin the board beside your own layout, change one design detail, then compare the result with the source page again. FloatBoard displays the crop; it does not take the screenshot. <a href=\"/download/\">Try a temporary reference board</a>.</p>"
       },
       {
         "id": "test-in-own-layout",
         "title": "Translate the observation into your own design test",
-        "html": "<p>Recreate the principle in your design tool rather than tracing the source picture. In this example, put a slim dark shape against a softly colored background and place the actual headline nearby. Test whether the shape reads at desktop and narrow mobile widths. Check whether the text remains legible when the crop changes. If a subtle gradient was doing the work on the source page, try it deliberately and measure the result in your own layout.</p><p>Write down what changed: <em>At 390-pixel width, the dark shape competes with the button; moving it to the opposite side restores a clear text area.</em>  It also keeps the screenshot in its proper role: a prompt for a design question, not a ready-to-publish background.</p><p>For a broader image-based design question, the <a href='/blog/organize-image-references/'>image-reference workflow</a> explains how to choose a small set around one decision.</p>"
+        "html": "<p>Recreate the principle in your design tool rather than tracing the source picture. In this example, put a slim dark shape against a softly colored background and place the actual headline nearby. Test whether the shape reads at desktop and narrow mobile widths. Check whether the text remains legible when the crop changes. If a subtle gradient was doing the work on the source page, try it deliberately and measure the result in your own layout.</p><p>Write down what changed: <em>At 390-pixel width, the dark shape competes with the button; moving it to the opposite side restores a clear text area.</em> It also keeps the screenshot in its proper role: a prompt for a design question, not a ready-to-publish background.</p><p>For a broader image-based design question, the <a href='/blog/organize-image-references/'>image-reference workflow</a> explains how to choose a small set around one decision.</p>"
       },
       {
         "id": "source-and-rights",
@@ -837,24 +848,26 @@
       {
         "id": "privacy-and-cleanup",
         "title": "Protect page details and retire the temporary crop",
-        "html": "<p>Before sharing a captured webpage, inspect the full frame for names, account identifiers, private URLs, browser tabs and notifications. Crop or redact sensitive areas using an approved editor, and keep a clean original where your project requires it. A tight crop can hide private information, but it can also hide context needed to interpret the image; record both concerns in the project note.</p><p>Once the design test is complete, save the result and source URL with the project. Remove the temporary crop from the visible board if it no longer helps the next action.  This keeps the board from becoming an unlabeled archive of material whose origin you have forgotten.</p><p></p>"
+        "html": "<p>Before sharing a captured webpage, inspect the full frame for names, account identifiers, private URLs, browser tabs and notifications. Crop or redact sensitive areas using an approved editor, and keep a clean original where your project requires it. A tight crop can hide private information, but it can also hide context needed to interpret the image; record both concerns in the project note.</p><p>Once the design test is complete, save the result and source URL with the project. Remove the temporary crop from the visible board if it no longer helps the next action. This keeps the board from becoming an unlabeled archive of material whose origin you have forgotten.</p>"
       },
       {
         "id": "faq",
         "title": "Questions about webpage screenshot references",
         "html": "<h3>Should I screenshot the page or copy the original image?</h3><p>Use a screenshot when you need the displayed page detail or its surrounding context as a temporary reference. Use the licensed original file when you need publication quality, exact detail or an asset you can legally reuse.</p><h3>How tight should I crop?</h3><p>Keep the smallest area that still shows the relationship you are studying. Preserve a wider context capture and the source URL separately so the crop does not become misleading.</p><h3>Does a screenshot prove what the webpage always shows?</h3><p>No. It records one visible state at one time, zoom and viewport. Note those conditions if they affect your conclusion, and revisit the live page when current behavior matters.</p><h3>Can FloatBoard take the screenshot for me?</h3><p>No screenshot-capture feature is claimed here. Use your browser or operating-system capture tool, then place the relevant image in FloatBoard if keeping it visible helps.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "keep-webpage-text-beside-image-references",
     "related_slugs": [
       "keep-reference-notes-visible-while-writing",
-      "organize-image-references",
-      "windows-clipboard-history-vs-floating-notes"
+      "windows-clipboard-history-vs-floating-notes",
+      "code-snippets-and-screenshots"
     ],
-    "title": "How to Keep Copied Webpage Text Beside Image References",
-    "description": "Combine a short webpage quote with image references in a floating desktop workspace, without losing attribution, context or the original source.",
+    "title": "Keep Copied Webpage Text Beside Image References",
+    "description": "Use FloatBoard to keep a short sourced webpage excerpt and related image visible in one window while checking a claim or design.",
     "category": "Web research workflow",
     "image": "gif-9-poster.jpg",
     "demo_video": "gif-9-demo.mp4",
@@ -867,7 +880,7 @@
       "Clipboard workflow",
       "Desktop notes"
     ],
-    "intro": "Sometimes the useful part of a webpage is a sentence, and the useful part of another page is a picture. Keeping both visible can help you write a brief, compare a design requirement, or answer a support question. This guide builds a small text-and-image working set from web pages while keeping the original URLs and meaning intact. The recording shows an older FloatBoard page and interface; use today’s site and pricing information for current product details.",
+    "intro": "A copied sentence and a related image help only if you keep their sources and meaning straight. Put the short excerpt and selected image in a small FloatBoard working set beside your document, then record the verified conclusion in your project file. This guide is for a mixed text-and-image task, not automatic citation or OCR.",
     "promo_after_section": 3,
     "sections": [
       {
@@ -883,7 +896,7 @@
       {
         "id": "pair-image",
         "title": "Place the matching image where it can answer the question",
-        "html": "<p>Add one screenshot or licensed image that directly relates to the excerpt. In the signup example, capture the error state with enough of the form visible to know which field and action produced it. Remove names, email addresses and account data before sharing. Label the image with its file path or source URL and a short observation, such as <em>after empty submit: error appears below email field</em>.</p><p>Arrange the text card and image within sight of the document you are writing. FloatBoard can hold text and images in the same floating window; keep the window small enough that your destination app remains usable. The point is to stop repeatedly switching between a source tab, an image viewer and your draft while checking a single claim.</p><p>If the image is a photograph from the web rather than your own screenshot, note the creator and usage rights. The <a href='/blog/capture-webpage-detail-screenshot-reference/'>browser image-reference guide</a> covers that separate source check.</p>"
+        "html": "<p>Add one screenshot or licensed image that directly relates to the excerpt. In the signup example, capture the error state with enough of the form visible to know which field and action produced it. Remove names, email addresses and account data before sharing. Label the image with its file path or source URL and a short observation, such as <em>after empty submit: error appears below email field</em>.</p><p>Arrange the text card and image within sight of the document you are writing. FloatBoard can hold text and images in the same floating window; keep the window small enough that your destination app remains usable. The point is to stop repeatedly switching between a source tab, an image viewer and your draft while checking a single claim.</p><p>If the image is a photograph from the web rather than your own screenshot, note the creator and usage rights. The <a href='/blog/capture-webpage-detail-screenshot-reference/'>browser image-reference guide</a> covers that separate source check.</p><p><strong>Text-and-image check:</strong> Put one short copied passage in a FloatBoard text card with its page title and URL, add one related image, and pin the window beside the document you are reviewing. Label the passage as a source quote and write your conclusion separately in the project file; the board does not verify or cite it for you. <a href=\"/download/\">Try a mixed FloatBoard working set</a>.</p>"
       },
       {
         "id": "draft-claim",
@@ -903,14 +916,16 @@
       {
         "id": "limits",
         "title": "Budget the board and close the source loop",
-        "html": "<p>The recording contains many image tiles because it is an archived demo. It does not represent what can be added without limits on today's free plan. The current <a href='/pricing.html'>free plan lists five texts per day, five images per day and one window</a>. A single claim, one short note and one relevant image fit a more disciplined task than copying a whole page and a dozen pictures.</p><p>Before closing the task, move the verified conclusion, source links and any permitted image file into the project record. Remove outdated cards from the working surface. If a claim still needs verification, write that uncertainty in the final document instead of letting the board make it appear settled. This habit also helps the next person understand why each reference was collected.</p><p>No automatic source attribution, cloud synchronization or OCR is assumed in this method. You select text from a webpage, verify it manually and keep the source separately.</p>"
+        "html": "<p>The recording contains many image tiles because it is an archived demo. It does not represent what can be added without limits on today's free plan. Check the <a href='/pricing.html'>current plan limits</a> before adding a larger working set. A single claim, one short note and one relevant image fit a more disciplined task than copying a whole page and a dozen pictures.</p><p>Before closing the task, move the verified conclusion, source links and any permitted image file into the project record. Remove outdated cards from the working surface. If a claim still needs verification, write that uncertainty in the final document instead of letting the board make it appear settled. This habit also helps the next person understand why each reference was collected.</p><p>No automatic source attribution, cloud synchronization or OCR is assumed in this method. You select text from a webpage, verify it manually and keep the source separately.</p>"
       },
       {
         "id": "faq",
         "title": "Questions about copying webpage text with images",
         "html": "<h3>Can FloatBoard collect text and images in one window?</h3><p>Yes. The board can display text cards and image references together. Check the <a href='/pricing.html'>current plan limits</a> before building a larger set.</p><h3>Does copying webpage text preserve a citation?</h3><p>Not reliably. Record the page title, publisher, URL and date yourself, then verify the quote against the original before publication.</p><h3>Should I paste a full article into the board?</h3><p>Usually no. Keep the smallest passage that helps the immediate task and store full research in a document or source library. Long copies are difficult to scan and can lose context.</p><h3>What if the screenshot and copied text seem to disagree?</h3><p>Return to the original sources. Check versions, cropping, dates and whether the passage applies to that image. Do not force a conclusion from two fragments that may describe different states.</p>"
       }
-    ]
+    ],
+    "audience": "clipboard",
+    "modified": "2026-10-07"
   },
   {
     "slug": "clear-copied-text-history-keep-working-set",
@@ -919,8 +934,8 @@
       "keep-webpage-text-beside-image-references",
       "keep-reference-notes-visible-while-writing"
     ],
-    "title": "How to Clear Copied-Text History Without Losing Your Working Set",
-    "description": "Review and clear old copied text while retaining the references you still need in a project note or small visible board. A practical clipboard cleanup checklist.",
+    "title": "Clear Clipboard History Without Losing Working Notes",
+    "description": "Before clearing recent copied text, save lasting items elsewhere and keep only the current task’s note or image visible in FloatBoard.",
     "category": "Clipboard cleanup workflow",
     "image": "gif-10-poster.jpg",
     "demo_video": "gif-10-demo.mp4",
@@ -933,7 +948,7 @@
       "Clipboard workflow",
       "Desktop notes"
     ],
-    "intro": "A clipboard history can help you recover a paragraph you copied five minutes ago. It can also become a mixed list of outdated drafts, private details and snippets from unrelated tasks. The safest cleanup starts by deciding what you still need, saving it in the right place, and only then clearing transient copies. This guide focuses on that transition from recent history to a small working set; it is different from the Windows + V setup guide.",
+    "intro": "Clipboard history is a temporary convenience, not the only place to keep a decision or source. Review the recent text you still need, save durable material to the right project file, and leave just the active note or image visible in FloatBoard before clearing obsolete history. This guide distinguishes app history from Windows + V.",
     "promo_after_section": 3,
     "sections": [
       {
@@ -954,7 +969,7 @@
       {
         "id": "keep-task-board",
         "title": "Keep the board focused after the cleanup",
-        "html": "<p>Once durable copies exist, keep only the references needed for the current step on your visible board. A support reply might need the product screenshot on one side and the verified sentence on the other. A translation check might need the original sentence and your draft. The board should answer “what do I need to see now?” rather than mirror every item copied today.</p><p>After using the clear control, check that your working references still appear in the board in your installed version. If anything is missing, recover it from the durable project source, not from guesswork. The point is to make a small, verifiable working set that remains useful even when recent-history entries change. The archived demo shows a board and history together, but it does not justify assuming a universal retention rule.</p><p>The <a href='/blog/keep-webpage-text-beside-image-references/'>web text and image workflow</a> shows how to label a source-aware reference card.</p>"
+        "html": "<p>Once durable copies exist, keep only the references needed for the current step on your visible board. A support reply might need the product screenshot on one side and the verified sentence on the other. A translation check might need the original sentence and your draft. The board should answer “what do I need to see now?” rather than mirror every item copied today.</p><p>After using the clear control, check that your working references still appear in the board in your installed version. If anything is missing, recover it from the durable project source, not from guesswork. The point is to make a small, verifiable working set that remains useful even when recent-history entries change. The archived demo shows a board and history together, but it does not justify assuming a universal retention rule.</p><p>The <a href='/blog/keep-webpage-text-beside-image-references/'>web text and image workflow</a> shows how to label a source-aware reference card.</p><p><strong>History closeout:</strong> Before clearing anything, identify the recent text you still need, save the durable version in the project file, and leave one short task note visible in FloatBoard. Clear obsolete entries only in the history surface you have checked; verify Windows + V separately if you use it. A pinned board can show what remains relevant while you finish. <a href=\"/download/\">Try FloatBoard for the active note</a>.</p>"
       },
       {
         "id": "example",
@@ -969,24 +984,26 @@
       {
         "id": "limits",
         "title": "Use limits and labels to avoid rebuilding clutter",
-        "html": "<p>The archived recording shows many images and text cards. The current <a href='/pricing.html'>free plan allows five texts per day, five images per day and one window</a>. A smaller working set is not only within those limits; it is easier to understand and clean. Give every text card a source and a purpose. If you cannot explain why it needs to remain visible, save it elsewhere or remove it.</p><p>Do a quick closeout at the end of each task: confirm final files, remove temporary cards, clear obsolete history entries in the relevant tools, and open the next task without stale context. That is more reliable than a large weekly purge in which you cannot remember what each copied fragment was for.</p><p>Do not infer current app behavior solely from a July 2026 recording. Test destructive controls on harmless data in the release you have installed.</p>"
+        "html": "<p>The archived recording shows many images and text cards. Check the <a href='/pricing.html'>current plan limits</a> before adding a larger working set. A smaller working set is not only within those limits; it is easier to understand and clean. Give every text card a source and a purpose. If you cannot explain why it needs to remain visible, save it elsewhere or remove it.</p><p>Do a quick closeout at the end of each task: confirm final files, remove temporary cards, clear obsolete history entries in the relevant tools, and open the next task without stale context. That is more reliable than a large weekly purge in which you cannot remember what each copied fragment was for.</p><p>Do not infer current app behavior solely from a July 2026 recording. Test destructive controls on harmless data in the release you have installed.</p>"
       },
       {
         "id": "faq",
         "title": "Questions about clearing copied text",
         "html": "<h3>Will clearing FloatBoard history clear Windows + V too?</h3><p>Do not assume it will. They are separate history surfaces. Check each tool and its current documentation or settings.</p><h3>What should I save before clearing?</h3><p>Save anything needed as a source, approved wording, project decision or final deliverable in the system where that work belongs. Reopen the saved copy and verify it before clearing.</p><h3>Can I keep a useful item visible while deleting old copies?</h3><p>You can keep a short labelled reference on a board, but verify how your installed version treats board items when history is cleared. Keep the authoritative copy in your project records.</p><h3>Does a clear button securely erase everything I copied?</h3><p>No such guarantee is made. Pasted documents, other apps, system history and backups may still contain the material. Handle secrets through the proper security process.</p>"
       }
-    ]
+    ],
+    "audience": "clipboard",
+    "modified": "2026-10-07"
   },
   {
     "slug": "inspect-image-original-after-thumbnail",
     "related_slugs": [
+      "review-image-grid-and-large-preview",
       "compare-photos-side-by-side-windows",
-      "capture-webpage-detail-screenshot-reference",
-      "organize-image-references"
+      "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "How to Check a Reference Image Beyond Its Thumbnail",
-    "description": "Use a small image board to locate a candidate, open the original at full size for detail, then return to a labelled working set without confusing a preview for evidence.",
+    "title": "Check an Original Image While Its Reference Tile Stays Visible",
+    "description": "Use a FloatBoard image tile to track the candidate, inspect its original in a viewer, and record one finding before returning to work.",
     "category": "Image quality workflow",
     "image": "gif-11-poster.jpg",
     "demo_video": "gif-11-demo.mp4",
@@ -999,7 +1016,7 @@
       "Visual references",
       "Image quality"
     ],
-    "intro": "A thumbnail helps you remember which picture you meant to check; it is a poor basis for judging small text, edge detail or an export defect. A practical two-stage workflow is to locate the candidate in a small board, open the original in a browser or image viewer, record what you found, and return to the task. The archival FloatBoard clip illustrates the small-board and history stage only. It should not be mistaken for a demonstration of a full-size viewer inside the app.",
+    "intro": "A small image tile helps you remember the candidate, but it cannot prove sharpness or fine detail. Keep the FloatBoard reference visible while opening the original in a browser or image viewer, then add a short note about what you found. This guide is about verifying one candidate, not enlarging a thumbnail inside the board.",
     "promo_after_section": 3,
     "sections": [
       {
@@ -1025,7 +1042,7 @@
       {
         "id": "return-working-set",
         "title": "Return to the board with a smaller, labelled set",
-        "html": "<p>Close or minimize the full-size view, then return to the design, editor or report. Keep only the candidate that informs the next step, plus a short label such as <em>original checked; border needs stronger contrast</em>. Remove stale tiles that could be mistaken for approved images. The board's advantage here is continuity: you can see what you checked while you make the change.</p><p>If you need to refer to a recent text copy, a history panel may help retrieve it. The GIF's history view is not proof that a given image remains there in every current version, so keep source files outside the app. If your work needs dozens of annotated originals, a dedicated asset-management tool is better suited to search and audit.</p><p>The <a href='/blog/organize-image-references/'>image-reference guide</a> explains how to keep a small design shortlist; this guide is about verifying one candidate beyond its preview.</p>"
+        "html": "<p>Close or minimize the full-size view, then return to the design, editor or report. Keep only the candidate that informs the next step, plus a short label such as <em>original checked; border needs stronger contrast</em>. Remove stale tiles that could be mistaken for approved images. The board's advantage here is continuity: you can see what you checked while you make the change.</p><p>If you need to refer to a recent text copy, a history panel may help retrieve it. The GIF's history view is not proof that a given image remains there in every current version, so keep source files outside the app. If your work needs dozens of annotated originals, a dedicated asset-management tool is better suited to search and audit.</p><p>The <a href='/blog/organize-image-references/'>image-reference guide</a> explains how to keep a small design shortlist; this guide is about verifying one candidate beyond its preview.</p><p><strong>Original-file check:</strong> Keep the candidate tile visible in FloatBoard while you open its original file in a browser or image viewer. Inspect the specific edge, glyph or crop at an appropriate scale, then return to the board and add one text note stating the result and original filename. The board remains a locator rather than a zoom or image-quality tool. <a href=\"/download/\">Try this with one reference image</a>.</p>"
       },
       {
         "id": "example",
@@ -1035,24 +1052,26 @@
       {
         "id": "limits",
         "title": "Know when even the original is insufficient",
-        "html": "<p>An original screenshot can still omit what happened before capture, the system zoom setting, or an interaction state. For an accessibility or responsive-layout issue, reproduce the behavior in the application when possible. For a photographic asset, the original file may still lack rights information or a trustworthy color profile. Ask for missing context rather than inferring it from pixels.</p><p>FloatBoard's current <a href='/pricing.html'>free plan provides five images and five texts per day in one window</a>. The archival clip displays a larger set; it may represent an older setup or a different plan. Neither the tile count nor a history view in that clip changes the current limits.</p><p>Use the board as a navigation aid, the original as visual evidence, and the project record as the place for conclusions.</p>"
+        "html": "<p>An original screenshot can still omit what happened before capture, the system zoom setting, or an interaction state. For an accessibility or responsive-layout issue, reproduce the behavior in the application when possible. For a photographic asset, the original file may still lack rights information or a trustworthy color profile. Ask for missing context rather than inferring it from pixels.</p><p>Check the <a href='/pricing.html'>current FloatBoard plan limits</a> before building a larger working set. The archival clip displays an older setup; neither its tile count nor its history view establishes current limits.</p><p>Use the board as a navigation aid, the original as visual evidence, and the project record as the place for conclusions.</p>"
       },
       {
         "id": "faq",
         "title": "Questions about image thumbnails and originals",
         "html": "<h3>Can I judge image sharpness from a thumbnail?</h3><p>No. Open the original file and inspect it at an appropriate scale. A tile may be resized, cropped or compressed.</p><h3>Does FloatBoard provide the original image file?</h3><p>Do not rely on a board tile as your authoritative source. Keep the original in your project folder or return to the source page, then record its path or URL.</p><h3>What if the original and thumbnail look different?</h3><p>Check whether the preview was cropped or scaled, and whether you opened the correct source file. Judge the detail using the original and actual target layout.</p><h3>Should I keep every image after checking it?</h3><p>Keep the originals your project needs, but remove irrelevant temporary tiles from the visible board. A labelled working set is easier to use than a large unreviewed wall.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   },
   {
     "slug": "start-two-image-reference-board",
     "related_slugs": [
       "organize-image-references",
-      "capture-webpage-detail-screenshot-reference",
-      "compare-photos-side-by-side-windows"
+      "shortlist-landscape-photos-for-website-hero",
+      "keep-web-image-reference-visible-while-browsing"
     ],
-    "title": "How to Start a Two-Image Reference Board for a New Design Task",
-    "description": "Create a focused two-image working board, label why each picture matters, and keep source files and decisions organized before collecting more visual references.",
+    "title": "Start a Two-Image Reference Board for One Design Decision",
+    "description": "Keep two contrasting images and a brief decision note visible in FloatBoard while testing a new design direction.",
     "category": "Two-image design workflow",
     "image": "gif-12-poster.jpg",
     "demo_video": "gif-12-demo.mp4",
@@ -1065,7 +1084,7 @@
       "Visual references",
       "Design decisions"
     ],
-    "intro": "A new project does not need a wall of references on day one. Two images with distinct jobs are often enough to start: one suggests a direction, and the other tests its limits. The archived FloatBoard clip ends with two landscape images on a fresh board. This guide turns that simple setup into a repeatable way to begin a design task, keep sources traceable, and avoid gathering images before you know what decision they serve.",
+    "intro": "Before collecting a wall of inspiration, choose two images that test different answers to one design question. Put them in a small FloatBoard board with a short text note, keep it visible beside the layout, and save your conclusion in the project file. This guide shows that first decision, not long-term image archiving.",
     "promo_after_section": 3,
     "sections": [
       {
@@ -1086,7 +1105,7 @@
       {
         "id": "add-two-images",
         "title": "Add only the two selected images",
-        "html": "<p>Open FloatBoard and position its window beside your design tool, browser or planning document. Add the two chosen images. Arrange the window so the references remain visible without covering the artboard or controls. If the installation offers display settings such as transparency or pinning, choose the setting that keeps the task readable and verify the result in your own environment; labels can differ from those in the July recording.</p><p>Do not worry about filling every available tile. Leave space for a concise text card that names the two roles and your next test. A board is most useful when it is legible at a glance. If you cannot tell which source an image represents, return to the project note and label it before proceeding.</p><p>The current <a href='/pricing.html'>free plan lists five images per day, five texts per day and one window</a>. A two-image setup fits the idea of a small trial; the archival video and any other older demo should not be used to infer current plan capacity.</p>"
+        "html": "<p>Open FloatBoard and position its window beside your design tool, browser or planning document. Add the two chosen images. Arrange the window so the references remain visible without covering the artboard or controls. If the installation offers display settings such as transparency or pinning, choose the setting that keeps the task readable and verify the result in your own environment; labels can differ from those in the July recording.</p><p>Do not worry about filling every available tile. Leave space for a concise text card that names the two roles and your next test. A board is most useful when it is legible at a glance. If you cannot tell which source an image represents, return to the project note and label it before proceeding.</p><p>Check the <a href='/pricing.html'>current plan limits</a> before adding a larger working set. A two-image setup fits the idea of a small trial; older demos should not be used to infer current capacity.</p><p><strong>Two-image first pass:</strong> Add one image representing the direction you like and another that tests a competing direction, then add a FloatBoard text card with the design question. Pin the board beside your layout, try both directions in the actual composition, and save the decision in your project file rather than only on the board. <a href=\"/download/\">Start with a small FloatBoard board</a> before collecting more images.</p>"
       },
       {
         "id": "test-in-layout",
@@ -1108,6 +1127,8 @@
         "title": "Questions about starting with two images",
         "html": "<h3>Why only two images?</h3><p>Two images with different roles expose an actual choice. Add a third only when the first pair reveals a new question that a third candidate can answer.</p><h3>Can I publish an image because it appears in my board?</h3><p>No. Verify the creator, source and license for the intended use. A temporary reference and a publishable asset are different things.</p><h3>Is this the same as comparing photos at full size?</h3><p>No. This workflow starts a design direction with a small visible pair. Inspect original files in a viewer when evaluating sharpness, color or fine detail.</p><h3>Will the board replace my design brief?</h3><p>No. Keep the brief, source links, mockups and final decision in the project. The board holds only the references needed for the current step.</p>"
       }
-    ]
+    ],
+    "audience": "visual-references",
+    "modified": "2026-10-07"
   }
 ]

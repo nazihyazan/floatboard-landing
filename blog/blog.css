@@ -32,12 +32,18 @@ figcaption { max-width: 657px; margin: 12px auto; }
 pre { overflow-x: auto; padding: 20px; background: #17171e; border: 1px solid var(--card-border); border-radius: 10px; line-height: 1.8; }
 p, li, a { overflow-wrap: anywhere; }
 .blog-grid { display: grid; gap: 28px; margin-top: 48px; }
+.blog-topic { margin-top: 64px; }
+.blog-topic > p { max-width: 760px; }
+.blog-topic .blog-grid { margin-top: 24px; }
+.blog-topic-nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 32px; }
+.blog-topic-nav a { display: inline-block; padding: 10px 14px; border: 1px solid var(--card-border); border-radius: 999px; background: var(--card-bg); font-weight: 700; text-decoration: none; }
+.blog-topic-nav a:hover, .blog-topic-nav a:focus-visible { border-color: #80b3ff; }
 .blog-card { display: grid; grid-template-columns: 42% 1fr; border: 1px solid var(--card-border); border-radius: 16px; overflow: hidden; background: var(--card-bg); }
 .blog-card > a { display: flex; align-items: center; padding: 20px; }
 .blog-card img { width: 100%; height: auto; border-radius: 8px; }
 .blog-card > div { padding: 24px; }
-.blog-card h2 { font-size: 1.45rem; margin: 8px 0; }
-.blog-card h2 a { text-decoration: none; }
+.blog-card h3 { font-size: 1.45rem; margin: 8px 0; }
+.blog-card h3 a { text-decoration: none; }
 .skip-link { position: absolute; left: 12px; top: -100px; background: white; color: black !important; padding: 12px; z-index: 100; }
 .skip-link:focus { top: 12px; }
 @media (max-width: 760px) { .blog-promo-bar { display: block; padding: 6px 12px 9px; } .blog-promo-ticker { height: 18px; margin-bottom: 4px; border-right: 0; } .blog-promo-details { justify-content: center; text-align: center; gap: 5px 9px; } .blog-promo-details > span { white-space: normal; } }

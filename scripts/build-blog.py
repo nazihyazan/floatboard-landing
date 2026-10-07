@@ -78,8 +78,39 @@ def page(path, title, description, body, schema, picture=None):
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
 
-cards = []
+audiences = {
+    'clipboard': {
+        'title': 'Clipboard and copied text',
+        'description': 'For people moving text and images between desktop apps. Learn when recent clipboard history helps and when a short working note needs to stay visible.',
+        'guide': '/clipboard-manager.html',
+        'guide_label': 'See how FloatBoard handles copied text',
+    },
+    'floating-notes': {
+        'title': 'Notes that stay in view',
+        'description': 'For writing, learning, calls and debugging when the next instruction or reference disappears behind another window.',
+        'guide': '/floating-notes.html',
+        'guide_label': 'Explore floating desktop notes',
+    },
+    'visual-references': {
+        'title': 'Small image working sets',
+        'description': 'For designers who need a few images beside their work. Keep the original files elsewhere and use the board for the current decision.',
+        'guide': '/floating-notes.html',
+        'guide_label': 'See the text-and-image board',
+    },
+}
+featured_order = {
+    'windows-clipboard-history-vs-floating-notes': 0,
+    'clear-copied-text-history-keep-working-set': 1,
+    'keep-reference-notes-visible-while-writing': 0,
+    'keep-meeting-notes-visible-video-call': 1,
+    'code-snippets-and-screenshots': 2,
+    'organize-image-references': 0,
+    'compare-photos-side-by-side-windows': 1,
+}
+cards = {audience: [] for audience in audiences}
 for p in posts:
+    audience = p['audience']
+    assert audience in audiences, f'Unknown audience for {p["slug"]}: {audience}'
     path = '/blog/' + p['slug'] + '/'
     toc = ''.join(f'<li><a href="#{s["id"]}">{esc(s["title"])}</a></li>' for s in p['sections'])
     promo_after = p.get('promo_after_section')
@@ -99,9 +130,20 @@ for p in posts:
     if p.get('tags'):
         schema['keywords'] = p['tags']
     page(path,p['title'],p['description'],body,schema,p['image'])
-    cards.append((p['date'], f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h2><a href="{path}">{esc(p["title"])}</a></h2><p>{esc(p["description"])}</p><a href="{path}">Read the guide →</a></div></article>'))
+    cards[audience].append((featured_order.get(p['slug'], 100), -date.fromisoformat(p['date']).toordinal(), f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h3><a href="{path}">{esc(p["title"])}</a></h3><p>{esc(p["description"])}</p><a href="{path}">Read the guide →</a></div></article>'))
 
-page('/blog/','Notes, clipboard & visual-reference workflows','Practical FloatBoard guides for meeting notes, screenshot text, clipboard history, code snippets and image references.', '<header><p class="guide-eyebrow">The FloatBoard blog</p><h1>A clearer workspace, one useful reference at a time.</h1><p class="guide-intro">Practical guides to working with desktop notes, copied text and image references. Pick the task you want to complete.</p></header><div class="blog-grid">'+''.join(markup for _, markup in sorted(cards, key=lambda card: card[0], reverse=True))+'</div><section><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>',{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
+blog_sections = []
+for key, info in audiences.items():
+    entries = ''.join(markup for _, _, markup in sorted(cards[key]))
+    blog_sections.append(f'<section id="{key}" class="blog-topic" aria-labelledby="{key}-heading"><h2 id="{key}-heading">{info["title"]}</h2><p>{info["description"]} <a href="{info["guide"]}">{info["guide_label"]}</a>.</p><div class="blog-grid">{entries}</div></section>')
+
+blog_intro = '''<header><p class="guide-eyebrow">The FloatBoard blog</p>
+<h1>Keep copied text, notes and images visible while you work</h1>
+<p class="guide-intro">FloatBoard is a desktop working board for short notes and image references that can stay above your other windows. Start with the task you do across apps: copy something, keep a note in sight, or compare a few images. These guides show where the board helps and where a dedicated tool is a better fit.</p>
+<p><a href="/download/">Try FloatBoard on your desktop</a> or read the <a href="/clipboard-manager.html">clipboard</a> and <a href="/floating-notes.html">floating-notes</a> overviews.</p>
+</header><nav class="blog-topic-nav" aria-label="Guide topics"><a href="#clipboard">Clipboard and copied text</a><a href="#floating-notes">Notes that stay in view</a><a href="#visual-references">Small image working sets</a></nav>'''
+blog_outro = '<section><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>'
+page('/blog/','Desktop clipboard, floating notes and image-reference guides','Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.', blog_intro + ''.join(blog_sections) + blog_outro,{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
 page('/blog/about/','About the FloatBoard blog','Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.', '''<h1>About the FloatBoard blog</h1><p class="guide-intro">This is FloatBoard’s official product blog. We publish practical guides for people working with desktop notes, copied text and image references.</p><section><h2>Who publishes these guides</h2><p>The publisher is FloatBoard, the application featured on this website. These are product guides, not independent reviews. For the app’s source and release history, visit the <a href="https://github.com/nazihyazan/floating_board">FloatBoard project</a> and <a href="https://github.com/nazihyazan/mac_test/releases">Linux releases</a>.</p></section><section><h2>How the guides are prepared</h2><p>These guides are drafted with AI assistance using product screenshots and recorded demonstrations supplied by the app owner, FloatBoard product information and linked primary documentation. The visuals illustrate workflows at the time captured; examples are not measured productivity studies. Older recordings may show controls or website copy that has since changed. We do not claim that a feature was independently tested unless the article documents that test.</p><p>We keep each guide focused on one task, describe limitations, link to current pricing and downloads, and avoid invented ratings, customer quotations or performance claims. Features and layouts can differ between versions.</p></section><section><h2>Corrections and updates</h2><p>If an instruction does not match your version, <a href="/#contact">contact FloatBoard</a> with the article URL, your operating system and app version. Publication dates identify the original articles; revision dates should change only when the content changes substantially.</p></section><p><a href="/blog/">Explore the guides</a></p>''',{'@context':'https://schema.org','@type':'AboutPage','name':'About the FloatBoard blog','url':BASE+'/blog/about/'})
 
 ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')

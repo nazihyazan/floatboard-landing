@@ -2,6 +2,14 @@
 
 Edit `posts.json`, then run `python3 scripts/build-blog.py` from the repository root. Commit the source and generated HTML together. No runtime or JavaScript is needed to read articles.
 
+## Audience and product fit
+
+FloatBoard is a small desktop working board: short text and image references can stay visible above another app, and recent copied text can be reused. The primary reader is someone switching between desktop apps who needs the current note or copied item in sight. Writing, calls, UI debugging and design references are examples of that same job. FloatBoard is not an OCR tool, screenshot tool, searchable snippet library, asset catalog or full image editor.
+
+Choose one `audience` for each post: `clipboard`, `floating-notes` or `visual-references`. The blog index groups guides by these jobs, with clipboard and floating notes first. Keep a distinct reader task per URL. For image-reference guides, name the specific decision the board supports; do not turn every step of one recording into another broad design-advice article. Retain existing published URLs when improving them so inbound links and Search Console history continue to point to the same guide.
+
+Before claiming a plan limit, check the current packaged app and pricing page against each other. The Windows 1.0.19 package currently applies a combined daily addition limit, while the public pricing copy describes separate text and image limits. Until those agree, link to the current pricing page rather than restating a precise count in a guide.
+
 For each new article:
 - Solve one concrete reader problem. Check the existing articles and product guides to avoid duplicating intent.
 - Add an original example, useful steps, limitations and only verified product claims. Do not invent experience, measurements or testimonials.
