@@ -1,0 +1,61 @@
+{
+  "name": "floatboard",
+  "displayName": "FloatBoard - Send to Floating Notes",
+  "description": "Pin code snippets, logs, and references to FloatBoard always-on-top floating desktop board.",
+  "version": "1.0.0",
+  "publisher": "nazihyazan",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages"
+  ],
+  "keywords": [
+    "floating notes",
+    "always on top",
+    "clipboard",
+    "sticky notes",
+    "reference",
+    "snippets",
+    "floatboard"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "floatboard.sendSelection",
+        "title": "FloatBoard: Send Selection to Floating Board",
+        "icon": "$(pinned)"
+      },
+      {
+        "command": "floatboard.openWebPad",
+        "title": "FloatBoard: Open Online Floating WebPad",
+        "icon": "$(globe)"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "floatboard.sendSelection",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "floatboard.sendSelection",
+        "key": "ctrl+alt+f",
+        "mac": "cmd+alt+f",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nazihyazan/floatboard-landing"
+  },
+  "homepage": "https://floatboard.xyz"
+}

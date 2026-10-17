@@ -1,0 +1,11 @@
+{
+  "id": "floatboard",
+  "name": "FloatBoard",
+  "version": "1.0.0",
+  "minAppVersion": "0.15.0",
+  "description": "Pin active notes, code blocks, and selected text into FloatBoard always-on-top floating desktop board above all windows.",
+  "author": "Nazih Yazan",
+  "authorUrl": "https://floatboard.xyz",
+  "fundingUrl": "https://floatboard.xyz/pricing.html",
+  "isDesktopOnly": true
+}
