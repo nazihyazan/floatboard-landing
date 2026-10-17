@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Floating Notepad – Free Always-on-Top Browser Notes | FloatBoard</title>
+    <meta name="description" content="Free online floating notepad using Document Picture-in-Picture. Pin notes, checklists, and code snippets always on top of any app without installing software.">
+    <link rel="canonical" href="https://floatboard.xyz/web-pad/">
+    <link rel="icon" href="/icon.png">
+    <link rel="stylesheet" href="/assets/content.css">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FloatBoard">
+    <meta property="og:title" content="Online Floating Notepad – Free Always-on-Top Browser Notes">
+    <meta property="og:description" content="Free online floating notepad using Document Picture-in-Picture. Pin notes, checklists, and code snippets always on top of any app without installing software.">
+    <meta property="og:url" content="https://floatboard.xyz/web-pad/">
+    <meta property="og:image" content="https://floatboard.xyz/icon.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Online Floating Notepad – Free Always-on-Top Browser Notes">
+    <meta name="twitter:description" content="Free online floating notepad using Document Picture-in-Picture. Pin notes, checklists, and code snippets always on top of any app without installing software.">
+    <meta name="twitter:image" content="https://floatboard.xyz/icon.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebApplication",
+          "name": "FloatBoard WebPad",
+          "url": "https://floatboard.xyz/web-pad/",
+          "applicationCategory": "UtilitiesApplication",
+          "operatingSystem": "All modern browsers (Chrome, Edge, Brave, Opera, Firefox, Safari)",
+          "browserRequirements": "Requires Document Picture-in-Picture API for always-on-top desktop detachment (Chrome/Edge 116+)",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          },
+          "description": "Free web-based floating scratchpad and always-on-top notes utility that detaches into an OS-level Picture-in-Picture window."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How does the online floating notepad stay on top of other windows?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "FloatBoard WebPad uses the modern Document Picture-in-Picture API available in Chromium browsers (Google Chrome, Microsoft Edge, Brave, Opera). This allows the webpage to open an operating-system level floating window that is pinned always-on-top above full-screen editors, browsers, and desktop software without installing any software or browser extensions."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does this floating notepad save my notes automatically?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Every keystroke is saved immediately to your browser's local storage (localStorage). Your text never leaves your device, requiring zero logins or cloud syncing, and persists even if you reload the tab."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Which web browsers support Document Picture-in-Picture always-on-top?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Document Picture-in-Picture is supported on Google Chrome 116+, Microsoft Edge 116+, Brave, and other Chromium-based browsers. Safari and Firefox support standard in-page scratchpad editing, but do not yet expose arbitrary HTML Picture-in-Picture windows."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between WebPad and the FloatBoard Desktop app?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "WebPad is a lightweight in-browser scratchpad designed for quick notes without installation. The native FloatBoard desktop app ($5.99 lifetime) runs as a dedicated system tray process independent of any browser, captures your full clipboard history (text, code, screenshots) automatically, supports image reference boards, provides global system-wide hotkeys, and supports unlimited concurrent boards."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      :root {
+        --pad-bg: #0f1016;
+        --pad-panel: #161822;
+        --pad-border: #272a3a;
+        --pad-accent: #3b82f6;
+        --pad-accent-glow: rgba(59, 130, 246, 0.35);
+        --pad-text: #f0f2f8;
+        --pad-muted: #9ba1b6;
+        --pad-success: #10b981;
+      }
+
+      .webpad-wrapper {
+        margin: 32px 0 48px;
+        position: relative;
+      }
+
+      .webpad-box {
+        background: var(--pad-bg);
+        border: 1px solid var(--pad-border);
+        border-radius: 14px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 255, 255, 0.05);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+
+      .webpad-topbar {
+        background: var(--pad-panel);
+        border-bottom: 1px solid var(--pad-border);
+        padding: 12px 18px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .webpad-brand {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--pad-text);
+      }
+
+      .webpad-status {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.8rem;
+        color: var(--pad-muted);
+      }
+
+      .status-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--pad-success);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--pad-success);
+      }
+
+      .webpad-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .btn-popout {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: linear-gradient(135deg, #2563eb, #1d4ed8);
+        color: #ffffff !important;
+        border: 1px solid #3b82f6;
+        padding: 8px 16px;
+        border-radius: 8px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: 0 4px 14px var(--pad-accent-glow);
+        transition: all 0.2s ease;
+      }
+
+      .btn-popout:hover {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px var(--pad-accent-glow);
+      }
+
+      .btn-popout.active {
+        background: #059669;
+        border-color: #10b981;
+        box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+      }
+
+      .btn-tool {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--pad-border);
+        color: var(--pad-text);
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.15s ease;
+      }
+
+      .btn-tool:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #3b82f6;
+      }
+
+      .webpad-toolbar {
+        background: rgba(22, 24, 34, 0.8);
+        border-bottom: 1px solid var(--pad-border);
+        padding: 8px 18px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .tb-btn {
+        background: transparent;
+        border: 1px solid transparent;
+        color: var(--pad-text);
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-family: inherit;
+        transition: all 0.15s ease;
+      }
+
+      .tb-btn:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: var(--pad-border);
+      }
+
+      .tb-divider {
+        width: 1px;
+        height: 18px;
+        background: var(--pad-border);
+        margin: 0 4px;
+      }
+
+      .webpad-editor {
+        min-height: 280px;
+        max-height: 520px;
+        overflow-y: auto;
+        padding: 24px;
+        font-family: 'Inter', system-ui, sans-serif;
+        font-size: 1rem;
+        line-height: 1.65;
+        color: var(--pad-text);
+        outline: none;
+        word-break: break-word;
+      }
+
+      .webpad-editor:empty:before {
+        content: attr(data-placeholder);
+        color: #555b70;
+        pointer-events: none;
+      }
+
+      .webpad-editor h3 {
+        margin: 12px 0 8px;
+        font-size: 1.15rem;
+        color: #60a5fa;
+      }
+
+      .webpad-editor ul, .webpad-editor ol {
+        margin: 8px 0 16px 24px;
+        padding: 0;
+      }
+
+      .webpad-editor li {
+        margin: 4px 0;
+      }
+
+      .webpad-editor code {
+        font-family: 'JetBrains Mono', monospace;
+        background: rgba(255, 255, 255, 0.08);
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-size: 0.9em;
+        color: #f472b6;
+      }
+
+      .webpad-editor pre {
+        background: #090a0f;
+        border: 1px solid var(--pad-border);
+        border-radius: 6px;
+        padding: 12px;
+        margin: 12px 0;
+        overflow-x: auto;
+      }
+
+      .webpad-editor pre code {
+        background: transparent;
+        padding: 0;
+        color: #38bdf8;
+      }
+
+      .webpad-meta {
+        padding: 8px 18px;
+        background: var(--pad-panel);
+        border-top: 1px solid var(--pad-border);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 0.78rem;
+        color: var(--pad-muted);
+      }
+
+      /* In-pad Desktop Upgrade Callout */
+      .webpad-cta {
+        background: linear-gradient(135deg, rgba(30, 41, 75, 0.95), rgba(17, 36, 45, 0.95));
+        border-top: 1px solid #3b82f6;
+        padding: 14px 18px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.25);
+      }
+
+      .webpad-cta-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+
+      .webpad-cta-text {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        color: #d1d5db;
+        flex: 1;
+        min-width: 220px;
+      }
+
+      .webpad-cta-text strong {
+        color: #ffffff;
+      }
+
+      .webpad-cta-btn {
+        background: #3b82f6;
+        color: #ffffff !important;
+        text-decoration: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 0.82rem;
+        white-space: nowrap;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.2s ease;
+      }
+
+      .webpad-cta-btn:hover {
+        background: #2563eb;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+      }
+
+      .webpad-placeholder-view {
+        display: none;
+        padding: 60px 24px;
+        text-align: center;
+        background: rgba(22, 24, 34, 0.6);
+        border: 2px dashed var(--pad-border);
+        border-radius: 12px;
+      }
+
+      .webpad-placeholder-view h3 {
+        margin-bottom: 8px;
+        font-size: 1.3rem;
+      }
+
+      .compatibility-banner {
+        background: rgba(245, 158, 11, 0.1);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        border-radius: 8px;
+        padding: 14px 18px;
+        margin-bottom: 24px;
+        font-size: 0.88rem;
+        color: #fbbf24;
+        display: none;
+      }
+
+      .feature-pills {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 20px 0 32px;
+      }
+
+      .feature-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--card-border);
+        border-radius: 20px;
+        padding: 6px 14px;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .pill-check {
+        color: var(--pad-success);
+        font-weight: bold;
+      }
+    </style>
+</head>
+<body class="guide-page">
+    <header class="guide-nav">
+        <a class="guide-brand" href="/">
+            <img src="/icon.png" alt="FloatBoard icon" width="24" height="24">
+            <span>FloatBoard</span>
+        </a>
+        <nav class="guide-nav-links">
+            <a href="/">Home</a>
+            <a href="/floating-notes.html">Notes Guide</a>
+            <a href="/clipboard-manager.html">Clipboard History</a>
+            <a href="/pricing.html">Pricing ($5.99)</a>
+            <a href="/download/" class="guide-button">Download App</a>
+        </nav>
+    </header>
+
+    <main class="guide-main">
+        <div class="guide-eyebrow">Free Web Tool • Document Picture-in-Picture</div>
+        <h1>Online Floating Notepad: Free Always-on-Top Browser Notes</h1>
+        <p class="guide-intro">
+            Type, format, and pin your scratchpad notes directly above all active windows on your computer. FloatBoard WebPad leverages the Document Picture-in-Picture API to detach your scratch notes into a native always-on-top desktop window without requiring software installation or plugins.
+        </p>
+
+        <div class="feature-pills">
+            <span class="feature-pill"><span class="pill-check">✓</span> 100% Free &amp; Offline Storage</span>
+            <span class="feature-pill"><span class="pill-check">✓</span> Always-on-Top Overlay</span>
+            <span class="feature-pill"><span class="pill-check">✓</span> Zero Logins or Cookies</span>
+            <span class="feature-pill"><span class="pill-check">✓</span> Auto-Saves Every Keystroke</span>
+        </div>
+
+        <div id="pip-notice" class="compatibility-banner">
+            <strong>Browser Note:</strong> Your current browser does not yet support the Document Picture-in-Picture API. You can still use this notepad inside the webpage, or switch to <strong>Google Chrome, Microsoft Edge, or Brave 116+</strong> to pop out an always-on-top floating desktop window. Alternatively, download the native <a href="/download/">FloatBoard Desktop application</a> for system-level overlays.
+        </div>
+
+        <!-- The Interactive WebPad App -->
+        <section class="webpad-wrapper" aria-label="Online Floating Notepad Application">
+            <div id="webpad-mount">
+                <div id="webpad-app" class="webpad-box">
+                    <div class="webpad-topbar">
+                        <div class="webpad-brand">
+                            <span>📝</span> FloatBoard WebPad
+                            <span class="webpad-status">
+                                <span class="status-dot"></span>
+                                <span id="save-status">Auto-saved</span>
+                            </span>
+                        </div>
+                        <div class="webpad-actions">
+                            <button id="popout-btn" class="btn-popout" type="button" title="Open floating always-on-top window above all apps">
+                                <span>⧉</span> Pop Out (Always on Top)
+                            </button>
+                            <button id="copy-btn" class="btn-tool" type="button" title="Copy all text to clipboard">Copy All</button>
+                            <button id="download-btn" class="btn-tool" type="button" title="Download note as text file">Save .txt</button>
+                            <button id="clear-btn" class="btn-tool" type="button" title="Clear note">Clear</button>
+                        </div>
+                    </div>
+
+                    <div class="webpad-toolbar">
+                        <button class="tb-btn" type="button" onclick="formatDoc('bold')" title="Bold"><b>B</b></button>
+                        <button class="tb-btn" type="button" onclick="formatDoc('italic')" title="Italic"><i>I</i></button>
+                        <button class="tb-btn" type="button" onclick="formatDoc('underline')" title="Underline"><u>U</u></button>
+                        <div class="tb-divider"></div>
+                        <button class="tb-btn" type="button" onclick="formatDoc('insertUnorderedList')" title="Bullet List">• List</button>
+                        <button class="tb-btn" type="button" onclick="formatDoc('insertOrderedList')" title="Numbered List">1. List</button>
+                        <div class="tb-divider"></div>
+                        <button class="tb-btn" type="button" onclick="insertCode()" title="Insert Code Block">&lt;/&gt; Code</button>
+                        <button class="tb-btn" type="button" onclick="insertChecklist()" title="Insert Checklist Item">☑ Checkbox</button>
+                    </div>
+
+                    <div id="pad-editor" class="webpad-editor" contenteditable="true" spellcheck="true" data-placeholder="Type or paste your quick notes, meeting talking points, or commands here..."></div>
+
+                    <div class="webpad-meta">
+                        <span id="char-word-count">0 words | 0 characters</span>
+                        <span>Press <b>Ctrl+B</b> / <b>Ctrl+I</b> to format</span>
+                    </div>
+
+                    <!-- Permanent High-Converting CTA Box (travels with PiP) -->
+                    <aside class="webpad-cta">
+                        <div class="webpad-cta-content">
+                            <div class="webpad-cta-text">
+                                <strong>Need Automatic Clipboard History &amp; Images?</strong><br>
+                                FloatBoard Desktop runs in your system tray, captures everything you copy automatically, pins visual images, and supports global hotkeys without needing a browser open.
+                            </div>
+                            <a href="/download/" class="webpad-cta-btn" target="_blank" rel="noopener">
+                                Get Desktop ($5.99) →
+                            </a>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+            <!-- In-page placeholder shown when detached into PiP -->
+            <div id="webpad-placeholder" class="webpad-placeholder-view">
+                <h3>Floating Window is Active 📌</h3>
+                <p>Your notepad is currently floating above all desktop windows in a native Picture-in-Picture overlay.</p>
+                <button id="restore-btn" class="btn-popout" type="button" style="margin-top: 16px;">
+                    Return to Page View
+                </button>
+            </div>
+        </section>
+
+        <!-- Educational SEO Content -->
+        <section aria-labelledby="how-it-works">
+            <h2 id="how-it-works">How Document Picture-in-Picture Works</h2>
+            <p>
+                Historically, web browsers only supported Picture-in-Picture for HTML5 <code>&lt;video&gt;</code> elements. The newer <strong>Document Picture-in-Picture API</strong> allows web applications to open an arbitrary, always-on-top desktop window containing full interactive HTML, styled CSS, and live JavaScript.
+            </p>
+            <p>
+                When you click <strong>"Pop Out (Always on Top)"</strong>, FloatBoard WebPad requests an OS-level top-most window directly through your Chromium browser. The editor transfers seamlessly into this detached viewport without dropping state, allowing you to edit meeting notes, keep documentation beside code, or review checklists while working inside VSCode, Zoom, Excel, or games.
+            </p>
+        </section>
+
+        <section aria-labelledby="use-cases">
+            <h2 id="use-cases">Popular Workflows for Online Floating Notes</h2>
+            <div class="use-cases">
+                <div class="use-case">
+                    <h3>Coding &amp; Terminal Reference</h3>
+                    <p>Pin curl commands, docker flags, SQL snippets, or API parameters floating above your IDE and terminal windows without constantly switching virtual desktops.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Video Calls &amp; Presentations</h3>
+                    <p>Keep your speaking agenda, interview questions, or customer talking points directly next to your webcam during Google Meet, Zoom, or Microsoft Teams meetings.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Following Video Tutorials</h3>
+                    <p>Watch YouTube courses or Udemy tutorials full screen while taking structured notes in a translucent floating overlay that never disappears behind the player.</p>
+                </div>
+                <div class="use-case">
+                    <h3>Cross-Tab Data Gathering</h3>
+                    <p>Compile research across dozens of web pages and PDF documents without splitting your screen or dragging windows side-by-side.</p>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="comparison">
+            <h2 id="comparison">Free WebPad vs. FloatBoard Desktop Application</h2>
+            <p>
+                While FloatBoard WebPad is ideal for quick browser sessions, the native FloatBoard desktop application provides powerful operating system integrations designed for heavy daily productivity:
+            </p>
+
+            <div class="comparison-table-wrapper">
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Capability</th>
+                            <th>WebPad (Browser PiP)</th>
+                            <th>FloatBoard Desktop ($5.99 Lifetime)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Always-on-Top Floating</strong></td>
+                            <td>Yes (Chromium 116+)</td>
+                            <td>Yes (Native OS window on Windows, Mac, Linux)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Works Without Browser Running</strong></td>
+                            <td>No (Requires tab open)</td>
+                            <td>Yes (Lightweight background system utility)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Automatic Clipboard History</strong></td>
+                            <td>No (Manual paste only)</td>
+                            <td>Yes (Auto-captures every copied clip &amp; snippet)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Image &amp; Screenshot Pinning</strong></td>
+                            <td>No (Text only)</td>
+                            <td>Yes (Side-by-side visual reference canvas)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Global Keyboard Shortcuts</strong></td>
+                            <td>No (Browser scoped)</td>
+                            <td>Yes (Global hotkeys to toggle &amp; paste anywhere)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiple Floating Windows</strong></td>
+                            <td>1 Window</td>
+                            <td>Unlimited floating cards &amp; boards</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Privacy &amp; Data Security</strong></td>
+                            <td>Local browser storage</td>
+                            <td>100% offline local encrypted database</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td>Free Forever</td>
+                            <td>$5.99 One-Time Lifetime License</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="verdict-box">
+                <strong>Need more than quick text?</strong> If you want to automatically record your clipboard history, pin reference screenshots side-by-side, and summon your notes with global keyboard shortcuts anywhere on your system, try the native desktop app.
+                <div style="margin-top: 14px;">
+                    <a href="/download/" class="content-link">Download FloatBoard for Windows, macOS, or Linux →</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-list" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently Asked Questions</h2>
+            <details>
+                <summary>Is FloatBoard WebPad really 100% free?</summary>
+                <p>Yes. WebPad is completely free with no user accounts, no subscriptions, and no advertisements. It is provided by FloatBoard as a demonstration of modern browser capabilities.</p>
+            </details>
+            <details>
+                <summary>Is my data stored securely?</summary>
+                <p>All notes typed into FloatBoard WebPad are stored exclusively inside your browser's local <code>localStorage</code> cache. No text is ever uploaded to any cloud server, third-party database, or analytics platform.</p>
+            </details>
+            <details>
+                <summary>Why did my floating window close when I closed the browser tab?</summary>
+                <p>Because the Document Picture-in-Picture window is tied to the lifecycle of the web page that opened it. If you close the browser tab, the floating window closes automatically. If you require persistent windows that remain open across reboots and browser closures, download the native <a href="/download/">FloatBoard Desktop app</a>.</p>
+            </details>
+            <details>
+                <summary>Can I download my notes as a file?</summary>
+                <p>Yes. Click the <strong>Save .txt</strong> button in the top action bar at any time to export the full plain text contents of your notepad directly to your Downloads folder.</p>
+            </details>
+        </section>
+
+        <aside class="cta-banner">
+            <h2>Experience Seamless Desktop Productivity</h2>
+            <p>Pin notes, automate clipboard history, and organize design tokens with FloatBoard Desktop.</p>
+            <a href="/download/" class="guide-button">Download FloatBoard ($5.99 Lifetime)</a>
+        </aside>
+    </main>
+
+    <footer class="guide-footer">
+        <a href="/">FloatBoard</a>
+        <a href="/download/">Download</a>
+        <a href="/pricing.html">Pricing</a>
+        <a href="/floating-notes.html">Floating Notes</a>
+        <a href="/clipboard-manager.html">Clipboard Manager</a>
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+    </footer>
+
+    <script>
+      (function() {
+        const editor = document.getElementById('pad-editor');
+        const countSpan = document.getElementById('char-word-count');
+        const saveStatus = document.getElementById('save-status');
+        const popoutBtn = document.getElementById('popout-btn');
+        const restoreBtn = document.getElementById('restore-btn');
+        const pipNotice = document.getElementById('pip-notice');
+        const appMount = document.getElementById('webpad-mount');
+        const app = document.getElementById('webpad-app');
+        const placeholder = document.getElementById('webpad-placeholder');
+        const copyBtn = document.getElementById('copy-btn');
+        const downloadBtn = document.getElementById('download-btn');
+        const clearBtn = document.getElementById('clear-btn');
+
+        const STORAGE_KEY = 'floatboard_webpad_notes';
+        let pipWindow = null;
+
+        // Check PiP capability
+        const hasPip = 'documentPictureInPicture' in window;
+        if (!hasPip && pipNotice) {
+          pipNotice.style.display = 'block';
+        }
+
+        // Initialize default content
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved !== null && saved.trim() !== '') {
+          editor.innerHTML = saved;
+        } else {
+          editor.innerHTML = '<h3>Welcome to FloatBoard WebPad</h3>' +
+            '<p>Click the <strong>"Pop Out (Always on Top)"</strong> button above to detach this scratchpad into an always-on-top desktop window.</p>' +
+            '<ul>' +
+            '<li>📌 Stays above VSCode, Word, spreadsheets, and games</li>' +
+            '<li>💾 Auto-saves instantly to your local browser storage</li>' +
+            '<li>🔒 100% private: zero cloud uploads or telemetry</li>' +
+            '</ul>';
+        }
+
+        function updateStats() {
+          const text = editor.innerText || '';
+          const chars = text.length;
+          const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+          countSpan.textContent = words + ' words | ' + chars + ' characters';
+        }
+
+        function saveContent() {
+          localStorage.setItem(STORAGE_KEY, editor.innerHTML);
+          saveStatus.textContent = 'Saved locally';
+          updateStats();
+        }
+
+        editor.addEventListener('input', () => {
+          saveStatus.textContent = 'Saving...';
+          saveContent();
+        });
+
+        updateStats();
+
+        // Toolbar formatting
+        window.formatDoc = function(cmd, value) {
+          document.execCommand(cmd, false, value || null);
+          editor.focus();
+          saveContent();
+        };
+
+        window.insertCode = function() {
+          const sel = window.getSelection();
+          if (sel && sel.toString().length > 0) {
+            document.execCommand('insertHTML', false, '<code>' + sel.toString() + '</code>');
+          } else {
+            document.execCommand('insertHTML', false, '<pre><code>// Enter code snippet here\n</code></pre><p><br></p>');
+          }
+          editor.focus();
+          saveContent();
+        };
+
+        window.insertChecklist = function() {
+          document.execCommand('insertHTML', false, '<p>☑ </p>');
+          editor.focus();
+          saveContent();
+        };
+
+        // Copy All
+        copyBtn.addEventListener('click', async () => {
+          try {
+            await navigator.clipboard.writeText(editor.innerText);
+            const originalText = copyBtn.textContent;
+            copyBtn.textContent = 'Copied!';
+            setTimeout(() => { copyBtn.textContent = originalText; }, 1800);
+          } catch (e) {
+            alert('Clipboard copy failed. Please select and copy manually.');
+          }
+        });
+
+        // Download .txt
+        downloadBtn.addEventListener('click', () => {
+          const blob = new Blob([editor.innerText], { type: 'text/plain;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = 'floatboard-note-' + new Date().toISOString().slice(0, 10) + '.txt';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        });
+
+        // Clear Note
+        clearBtn.addEventListener('click', () => {
+          if (confirm('Are you sure you want to clear your current note?')) {
+            editor.innerHTML = '';
+            saveContent();
+            editor.focus();
+          }
+        });
+
+        // Pop Out Logic
+        async function openPip() {
+          if (!hasPip) {
+            alert('Your browser does not support the Document Picture-in-Picture API.\n\nPlease open this page in Google Chrome, Microsoft Edge, or Brave 116+ to pop out always-on-top desktop windows!');
+            return;
+          }
+
+          if (pipWindow) {
+            pipWindow.close();
+            return;
+          }
+
+          try {
+            pipWindow = await window.documentPictureInPicture.requestWindow({
+              width: 400,
+              height: 560
+            });
+
+            // Clone head styles into PiP window
+            document.querySelectorAll('style, link[rel="stylesheet"]').forEach((el) => {
+              pipWindow.document.head.appendChild(el.cloneNode(true));
+            });
+
+            pipWindow.document.title = 'FloatBoard WebPad (Always on Top)';
+            pipWindow.document.body.style.margin = '0';
+            pipWindow.document.body.style.padding = '0';
+            pipWindow.document.body.style.background = '#0a0a0f';
+            pipWindow.document.body.style.color = '#e0e0e0';
+
+            // Transfer editor app into PiP
+            pipWindow.document.body.appendChild(app);
+            placeholder.style.display = 'block';
+
+            popoutBtn.innerHTML = '<span>⤺</span> Return to Page';
+            popoutBtn.classList.add('active');
+
+            // Force all anchor tags in PiP to open in external new tab/parent window
+            pipWindow.document.querySelectorAll('a').forEach((link) => {
+              link.setAttribute('target', '_blank');
+              link.setAttribute('rel', 'noopener');
+            });
+
+            pipWindow.addEventListener('pagehide', () => {
+              placeholder.style.display = 'none';
+              appMount.appendChild(app);
+              popoutBtn.innerHTML = '<span>⧉</span> Pop Out (Always on Top)';
+              popoutBtn.classList.remove('active');
+              pipWindow = null;
+              updateStats();
+            });
+          } catch (err) {
+            console.error('Failed to open Document Picture-in-Picture window:', err);
+          }
+        }
+
+        popoutBtn.addEventListener('click', openPip);
+        restoreBtn.addEventListener('click', () => {
+          if (pipWindow) pipWindow.close();
+        });
+      })();
+    </script>
+</body>
+</html>
