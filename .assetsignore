@@ -1,0 +1,14 @@
+node_modules
+downloads
+.git
+.github
+.agents
+.codex
+api
+scripts
+*.py
+*.zip
+aichat
+license_keys.json
+package.json
+package-lock.json
