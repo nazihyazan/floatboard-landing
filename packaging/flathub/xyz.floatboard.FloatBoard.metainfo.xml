@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>xyz.floatboard.FloatBoard</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>FloatBoard</name>
+  <summary>Always-on-top floating clipboard manager, sticky notes, and image reference board</summary>
+  <description>
+    <p>FloatBoard is a desktop productivity utility that lets you pin clipboard history, sticky notes, code snippets, and image references directly on top of any window without losing focus.</p>
+    <p>Features include:</p>
+    <ul>
+      <li>Always-on-top floating canvas that stays above all windows and full-screen apps</li>
+      <li>Automatic live clipboard history capture for text, code snippets, and screenshots</li>
+      <li>Compact translucent notes and todo checklists</li>
+      <li>Visual reference board for side-by-side design and development comparison</li>
+      <li>100% offline local storage privacy with zero telemetry or cloud requirements</li>
+    </ul>
+  </description>
+  <releases>
+    <release version="1.0.20" date="2026-10-17">
+      <description>
+        <p>Release v1.0.20: Updated packaging, performance improvements, and full Wayland and X11 support.</p>
+      </description>
+    </release>
+  </releases>
+  <launchable type="desktop-id">xyz.floatboard.FloatBoard.desktop</launchable>
+  <url type="homepage">https://floatboard.xyz</url>
+  <url type="help">https://floatboard.xyz</url>
+  <url type="bugtracker">https://github.com/nazihyazan/mac_test/issues</url>
+  <developer id="xyz.floatboard">
+    <name>Nazih Yazan</name>
+  </developer>
+  <provides>
+    <binary>floatboard</binary>
+  </provides>
+  <content_rating type="oars-1.1" />
+</component>

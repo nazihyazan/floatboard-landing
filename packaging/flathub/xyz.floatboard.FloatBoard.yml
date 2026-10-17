@@ -1,0 +1,44 @@
+app-id: xyz.floatboard.FloatBoard
+runtime: org.freedesktop.Platform
+runtime-version: '24.08'
+sdk: org.freedesktop.Sdk
+base: org.electronjs.Electron2.BaseApp
+base-version: '24.08'
+command: floatboard
+
+finish-args:
+  - --share=ipc
+  - --socket=x11
+  - --socket=wayland
+  - --device=dri
+  - --talk-name=org.freedesktop.Notifications
+  - --talk-name=org.kde.StatusNotifierWatcher
+  - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+
+modules:
+  - name: floatboard
+    buildsystem: simple
+    build-commands:
+      - ar -x floatboard.deb
+      - tar -xf data.tar.xz -C /app/
+      - chmod -R u+w /app/opt/FloatBoard
+      - install -Dm755 floatboard.sh /app/bin/floatboard
+      - install -Dm644 xyz.floatboard.FloatBoard.desktop /app/share/applications/xyz.floatboard.FloatBoard.desktop
+      - install -Dm644 xyz.floatboard.FloatBoard.metainfo.xml /app/share/metainfo/xyz.floatboard.FloatBoard.metainfo.xml
+      - install -Dm644 xyz.floatboard.FloatBoard.png /app/share/icons/hicolor/256x256/apps/xyz.floatboard.FloatBoard.png
+    sources:
+      - type: file
+        url: https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.deb
+        sha256: 3737fe61c2068805d40dcef0935d0d246ccd4a37baeb9bc5ca708317173ad79f
+        dest-filename: floatboard.deb
+      - type: file
+        path: xyz.floatboard.FloatBoard.desktop
+      - type: file
+        path: xyz.floatboard.FloatBoard.metainfo.xml
+      - type: file
+        path: xyz.floatboard.FloatBoard.png
+      - type: script
+        dest-filename: floatboard.sh
+        commands:
+          - exec zypak-wrapper /app/opt/FloatBoard/floatboard "$@"

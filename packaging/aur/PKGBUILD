@@ -1,0 +1,22 @@
+# Maintainer: Nazih Yazan <contact@floatboard.xyz>
+pkgname=floatboard-bin
+pkgver=1.0.20
+pkgrel=1
+pkgdesc="Always-on-top floating clipboard manager, sticky notes, and image reference board"
+arch=('x86_64')
+url="https://floatboard.xyz"
+license=('custom:Proprietary')
+depends=('gtk3' 'nss' 'alsa-lib')
+provides=('floatboard')
+conflicts=('floatboard')
+
+source=("https://github.com/nazihyazan/mac_test/releases/download/v${pkgver}/FloatBoard-${pkgver}-linux.deb")
+sha256sums=('3737fe61c2068805d40dcef0935d0d246ccd4a37baeb9bc5ca708317173ad79f')
+
+package() {
+    tar -xf data.tar.xz -C "${pkgdir}/"
+    mkdir -p "${pkgdir}/usr/bin"
+    ln -sf "/opt/FloatBoard/floatboard" "${pkgdir}/usr/bin/floatboard"
+    chmod -R 755 "${pkgdir}/opt/FloatBoard"
+    chmod 755 "${pkgdir}/opt/FloatBoard/floatboard"
+}

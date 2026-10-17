@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=FloatBoard
+Exec=floatboard
+Terminal=false
+Type=Application
+Icon=xyz.floatboard.FloatBoard
+StartupWMClass=floatboard
+Comment=Always-on-top floating clipboard manager, sticky notes, and image reference board
+Categories=Utility;
