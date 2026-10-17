@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://floatboard.xyz/sitemap.xml
+Sitemap: https://floatboard.xyz/sitemap-main.xml

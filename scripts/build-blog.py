@@ -168,6 +168,11 @@ for path, modified in modified_dates.items():
         lastmod.text = max(lastmod.text or modified, modified)
 ET.indent(tree, space='  ')
 tree.write(ROOT/'sitemap.xml',encoding='UTF-8',xml_declaration=True)
-with (ROOT/'sitemap.xml').open('ab') as stream:
-    stream.write(b'\n')
+sitemap_content = (ROOT/'sitemap.xml').read_text(encoding='utf-8')
+if sitemap_content.startswith("<?xml version='1.0' encoding='UTF-8'?>"):
+    sitemap_content = sitemap_content.replace("<?xml version='1.0' encoding='UTF-8'?>", '<?xml version="1.0" encoding="UTF-8"?>', 1)
+if not sitemap_content.endswith('\n'):
+    sitemap_content += '\n'
+(ROOT/'sitemap.xml').write_text(sitemap_content, encoding='utf-8')
+(ROOT/'sitemap-main.xml').write_text(sitemap_content, encoding='utf-8')
 print('Built blog index, about page and',len(posts),'articles.')
