@@ -20,7 +20,11 @@ promo_bar = '''<aside class="blog-promo-bar" aria-label="FloatBoard Premium offe
 article_offer = '''<aside class="blog-offer" aria-label="FloatBoard Premium discount">
 <div><p class="blog-offer-label">A FloatBoard offer</p><h2>Get 50% off Premium</h2><p>Limited-time offer. Ends soon.</p><p class="blog-offer-code">Use code <code>DEVTO50</code></p></div><a href="/pricing.html">See plans and offer →</a>
 </aside>'''
-footer = '<footer class="guide-footer"><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
+article_callout = '''<aside class="blog-callout" style="margin:24px 0;padding:16px 20px;background:var(--card-bg);border:1px solid var(--card-border);border-left:4px solid #3b82f6;border-radius:0 10px 10px 0;font-size:0.95rem;">
+<p style="margin:0 0 6px 0;font-weight:700;">Looking for an always-on-top desktop solution?</p>
+<p style="margin:0;">FloatBoard lets you pin clipboard clips, sticky notes, and reference images directly over any window. <a href="/download/">Download FloatBoard for free</a> or explore the <a href="/clipboard-manager.html">floating clipboard</a> and <a href="/floating-notes.html">floating notes</a> features.</p>
+</aside>'''
+footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']
@@ -125,7 +129,7 @@ for p in posts:
     tags = ''.join(f'<li>{esc(tag)}</li>' for tag in p.get('tags', []))
     topic_list = f'<ul class="guide-tags" aria-label="Topics">{tags}</ul>' if tags else ''
     updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
-    body = f'''<article><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}<p class="guide-intro">{esc(p['intro'])}</p></header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav>{sections}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></article>'''
+    body = f'''<article><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}<p class="guide-intro">{esc(p['intro'])}</p>{article_callout}</header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav>{sections}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></article>'''
     schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
     if p.get('tags'):
         schema['keywords'] = p['tags']

@@ -74,3 +74,46 @@
   html { scroll-behavior: auto !important; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.verdict-box {
+  background: var(--card-bg);
+  border: 1px solid #3b82f6;
+  border-left: 4px solid #3b82f6;
+  border-radius: 8px;
+  padding: 20px 24px;
+  margin: 28px 0;
+  font-size: 1.05rem;
+}
+.verdict-box strong { color: #fff; }
+.cta-banner {
+  margin: 48px 0;
+  padding: 36px 28px;
+  background: linear-gradient(135deg, #131a35, #112832);
+  border: 1px solid #3b82f6;
+  border-radius: 12px;
+  text-align: center;
+}
+.cta-banner h2, .cta-banner h3 { margin-top: 0; color: #fff; }
+.cta-banner p { max-width: 600px; margin: 12px auto 24px; }
+.comparison-table-wrapper {
+  overflow-x: auto;
+  margin: 32px 0;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px 18px;
+  border: 1px solid var(--card-border);
+  text-align: left;
+}
+.comparison-table thead {
+  background: var(--card-bg);
+  font-weight: 700;
+}
+.comparison-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
