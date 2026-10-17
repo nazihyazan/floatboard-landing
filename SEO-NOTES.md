@@ -62,3 +62,33 @@
 5. تابع Search results → Performance لمعرفة الاستعلامات والظهور والنقرات على الصفحات المهمة. تقرير Coverage وحده لا يقيس الزيارات أو التنزيلات. قارن تنزيلات GitHub خلال فترات محددة بدلاً من افتراض أنها صفر.
 
 طلب إعادة الزحف قد يحتاج أياماً أو أسابيع ولا يضمن الفهرسة؛ تكرار نفس الطلب لا يسرّعه. [إرشادات Google لطلب إعادة الزحف](https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl). تحسين المحتوى والفهرسة لا يضمن المرتبة الأولى.
+
+---
+
+# تحديث وتطوير الفهرسة — 17 أكتوبر 2026
+
+## 1. حل مشكلة تعليق قراءة خريطة الموقع (Couldn't fetch / Type: Unknown)
+في فحص Google Search Console لشهر أكتوبر 2026، ظهرت خريطة الموقع `sitemap.xml` بحالة `Couldn't fetch` ونوع `Unknown` مع 0 صفحات مكتشفة، بينما الفحص المباشر (Live URL Test) أظهر أن الرابط يعمل بشكل طبيعي كصفحة عادية (`Crawled - currently not indexed`).
+
+### الأسباب الجذرية والإصلاحات البرمجية:
+1. **ترويسات الخادم (HTTP Headers):** أُضيف ملف `_headers` في جذر المشروع لفرض ترويسة `Content-Type: application/xml; charset=utf-8` على Cloudflare Pages، مع ترويسة منع الكاش `Cache-Control: public, max-age=0, must-revalidate` وترويسة `X-Robots-Tag: noindex` لمنع أرشفة الخريطة كصفحة محتوى.
+2. **صياغة ملف XML القياسية:** تم توحيد السطر الأول إلى `<?xml version="1.0" encoding="UTF-8"?>` بعلامات تنصيص مزدوجة ودون أي أسطر فارغة أو مسافات سابقة.
+3. **كسر كاش Search Console:** تم إنشاء خريطة موقع جديدة باسم `sitemap-main.xml` متطابقة تماماً مع الخريطة الأساسية ومزامنتها برمجياً عبر `scripts/build-blog.py`.
+4. **تحديث robots.txt:** أُدرجت الخريطتان معاً في ملف `robots.txt`.
+
+## 2. توسيع استراتيجية الكلمات المفتاحية التجارية (Commercial & Piggyback SEO)
+تم إنشاء ونشر 5 صفحات هبوط جديدة مخصصة لاستهداف كلمات شرائية ذات منافسة منخفضة في أسواق الفئة الأولى (Tier-1):
+- `/alternatives/pureref-with-text-and-clipboard.html`: بديل PureRef للملاحظات وسجل الحافظة مع الصور.
+- `/compare/floatboard-vs-powertoys-always-on-top.html`: مقارنة مع PowerToys Always on Top (بطاقات خفيفة بدل نوافذ كاملة).
+- `/alternatives/windows-sticky-notes-always-on-top.html`: حل لمشكلة غياب ميزة التثبيت في Windows Sticky Notes.
+- `/alternatives/ditto-copyq-visual-clipboard.html`: بديل مرئي عصري لقوائم Ditto و CopyQ التقليدية.
+- `/linux/floating-clipboard-notes-ubuntu.html`: صفحة مخصصة لمستخدمي لينكس وأوبونتو وتثبيت Snapcraft.
+
+## 3. تحويل قراء المدونة إلى مستخدمين ومشترين
+- تضمين صناديق دعوة تفاعلية (Callout Boxes) أوتوماتيكياً في مقدمة جميع مقالات المدونة الـ 19 لربطها بصفحات التحميل `/download/` والميزات.
+- إضافة روابط فوتر مطابقة للكلمات المفتاحية (Exact-Match Links) في جميع صفحات الموقع.
+- تحديث بيانات `SoftwareApplication` (JSON-LD) لتعكس رخصة $5.99 مدى الحياة (Lifetime License).
+
+## 4. التحقق البرمجي النهائي
+- تشغيل أداة الفحص `scripts/check-seo.py`: اجتياز جميع الفحوصات بنجاح لـ **34 صفحة معيارية (Canonical Pages)**، وتأكيد تفرّد العناوين والأوصاف، وسلامة جميع الروابط والصور وبيانات Schema.
+
