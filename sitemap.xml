@@ -34,7 +34,7 @@
   </url>
   <url>
     <loc>https://floatboard.xyz/blog/</loc>
-    <lastmod>2026-10-07</lastmod>
+    <lastmod>2026-10-17</lastmod>
   </url>
   <url>
     <loc>https://floatboard.xyz/blog/about/</loc>
@@ -111,5 +111,9 @@
   <url>
     <loc>https://floatboard.xyz/blog/start-two-image-reference-board/</loc>
     <lastmod>2026-10-07</lastmod>
+  </url>
+  <url>
+    <loc>https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/</loc>
+    <lastmod>2026-10-17</lastmod>
   </url>
 </urlset>
