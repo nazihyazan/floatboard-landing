@@ -1,4 +1,5 @@
 const vscode = require('vscode');
+const { exec } = require('child_process');
 
 /**
  * @param {vscode.ExtensionContext} context
@@ -19,10 +20,14 @@ function activate(context) {
             return;
         }
 
-        // FloatBoard monitors the OS clipboard. Writing text places it directly on the floating board.
+        // 1. Copy text to system clipboard (captured by FloatBoard clipboard history)
         await vscode.env.clipboard.writeText(text);
 
-        vscode.window.setStatusBarMessage('$(pinned) Sent to FloatBoard floating board!', 3000);
+        // 2. Bring FloatBoard floating window into focus
+        exec('floatboard', () => {});
+
+        // 3. Show clear notification
+        vscode.window.showInformationMessage('FloatBoard: Code copied! Press Ctrl+V on FloatBoard to paste as a note, or click the Clock icon to view history.');
     });
 
     const openWebPadCmd = vscode.commands.registerCommand('floatboard.openWebPad', () => {
