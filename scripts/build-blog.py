@@ -134,7 +134,7 @@ def page(path, title, description, body, schema, picture=None):
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-</head><body class="guide-page"><a class="skip-link" href="#main">Skip to content</a>{promo_bar}{nav}<main id="main" class="{main_class}">{body}</main>{footer}</body></html>'''
+</head><body class="guide-page blog-page blog-light-mode"><a class="skip-link" href="#main">Skip to content</a>{promo_bar}{nav}<main id="main" class="{main_class}">{body}</main>{footer}</body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
