@@ -17,41 +17,69 @@ promo_bar = '''<aside class="blog-promo-bar" aria-label="FloatBoard Premium offe
 <div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off Premium · Ends soon · </span><span>Limited-time offer · 50% off Premium · Ends soon · </span></div></div>
 <div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Premium · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Get the offer →</a></div>
 </aside>'''
-article_offer = '''<aside class="blog-offer" aria-label="FloatBoard Premium discount">
-<div><p class="blog-offer-label">A FloatBoard offer</p><h2>Get 50% off Premium</h2><p>Limited-time offer. Ends soon.</p><p class="blog-offer-code">Use code <code>DEVTO50</code></p></div><a href="/pricing.html">See plans and offer →</a>
-</aside>'''
-article_top_ad = '''<aside class="ad-unit-native" aria-label="Sponsored display advertisement">
-<div class="ad-header-label"><span class="ad-tag-pill">SPONSORED BY FLOATBOARD</span><span class="ad-brand-tag">Always-On-Top Productivity</span></div>
-<div class="ad-native-content">
-<div class="ad-native-text">
-<h4>Tired of 1,200 Alt-Tabs a day? Pin your notes &amp; code clips above your IDE.</h4>
-<p>FloatBoard is a lightweight, always-on-top desktop scratchpad for Windows, Mac &amp; Linux. 100% offline, zero cloud subscriptions.</p>
+ad_sidebar_300x250 = '''<aside class="ad-card-iab ad-card-300x250" aria-label="Sponsored advertisement">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
 </div>
-<a href="/download/" class="ad-cta-btn">Download Free on Desktop →</a>
+<div class="ad-iab-body">
+<p class="ad-iab-category">Always on Top Notes</p>
+<h3 class="ad-iab-title">Pin Dev Notes &amp; API Keys Above Your IDE</h3>
+<p class="ad-iab-desc">Keep scratchpad notes, curl commands, and active tokens floating directly over your editor. 100% offline local memory.</p>
 </div>
-</aside>'''
-
-article_mid_ad = '''<aside class="ad-display-box" aria-label="In-content product display ad">
-<div class="ad-header-label"><span class="ad-tag-pill">ADVERTISEMENT · DEVELOPER TOOLS</span><span class="ad-brand-tag">FloatBoard Pro</span></div>
-<span class="ad-pill-highlight">SPECIAL LIFETIME OFFER · USE CODE: DEVTO50</span>
-<h3>Stop losing API tokens, curl commands, and mockups behind your windows.</h3>
-<p>Pin notes, clipboard history, and screenshots in one compact floating workspace. Available for Windows 10/11, macOS, and Linux.</p>
-<div class="ad-display-actions">
-<a href="/pricing.html" class="ad-btn-gold">Get 50% Off Lifetime ($2.99) →</a>
-<a href="/download/" class="ad-btn-outline">Download Free Version</a>
+<div class="ad-iab-footer">
+<a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
+<span class="ad-iab-attribution">Windows 11 · macOS · Linux</span>
 </div>
 </aside>'''
 
-sticky_dock = '''<aside class="ad-sticky-dock" aria-label="FloatBoard Offer">
-<div class="ad-dock-left">
-<span class="ad-dock-badge">SPONSORED</span>
-<span class="ad-dock-text">Tired of Alt-Tabbing? Pin notes &amp; screenshots with FloatBoard · Code <code>DEVTO50</code> (50% Off)</span>
+ad_sidebar_300x600 = '''<aside class="ad-card-iab ad-card-300x600" aria-label="Sponsored product showcase">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
 </div>
-<div class="ad-dock-actions">
-<a href="/download/" class="ad-dock-btn-main">Get FloatBoard Free →</a>
+<div class="ad-iab-media">
+<img src="/blog/assets/developer-floating-notes-workspace.jpg" width="268" height="178" alt="FloatBoard always-on-top developer workspace with notes and screenshots" loading="lazy">
+</div>
+<div class="ad-iab-body">
+<h3 class="ad-iab-title">Tired of Switching Windows 1,200 Times a Day?</h3>
+<p class="ad-iab-desc">FloatBoard pins volatile developer notes and reference mockups always on top. Stays in view while you write code.</p>
+<ul class="ad-iab-checklist">
+<li><span>✓</span> One-click always on top pin</li>
+<li><span>✓</span> Dual-pane text &amp; image board</li>
+<li><span>✓</span> 100% local offline memory</li>
+<li><span>✓</span> Windows 11, macOS, and Linux</li>
+</ul>
+</div>
+<div class="ad-iab-footer">
+<a href="/download/" class="ad-iab-btn-google">Get FloatBoard Free →</a>
+<div class="ad-iab-offer-row"><a href="/pricing.html" class="ad-iab-offer-link">50% off lifetime with <code>DEVTO50</code> ($2.99)</a></div>
+<span class="ad-iab-attribution">Ads by FloatBoard · Private &amp; Fast</span>
 </div>
 </aside>'''
-article_callout = article_top_ad
+
+article_mid_ad = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+</div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">Productivity Tool</p>
+<h3 class="ad-iab-title">Stop Losing API Keys Behind Windows</h3>
+<p class="ad-iab-desc">FloatBoard keeps temporary notes and reference screenshots floating on top of your screen. 100% offline local memory.</p>
+</div>
+<div class="ad-iab-footer">
+<a href="/pricing.html" class="ad-iab-btn-google">Get 50% Off Lifetime ($2.99) →</a>
+<span class="ad-iab-attribution">Limited-time developer deal · Code <code>DEVTO50</code></span>
+</div>
+</aside>'''
+
+sticky_dock = '''<aside class="ad-anchor-bar" aria-label="FloatBoard Offer">
+<div class="ad-anchor-inner">
+<div class="ad-anchor-left"><span class="ad-iab-badge">Ad</span><span class="ad-anchor-brand">FloatBoard</span><span class="ad-anchor-text">Always-on-top desktop notes &amp; screenshots for developers · 50% off with <code>DEVTO50</code></span></div>
+<div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free →</a></div>
+</div>
+</aside>'''
 footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
 
 def image(p, lazy=False):
@@ -97,6 +125,7 @@ def page(path, title, description, body, schema, picture=None):
     url = BASE + path
     social = BASE + '/blog/assets/' + picture if picture else BASE + '/icon.png'
     kind = 'article' if schema.get('@type') == 'BlogPosting' else 'website'
+    main_class = 'guide-main guide-article-main' if kind == 'article' else 'guide-main'
     result = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{esc(title)} | FloatBoard</title><meta name="description" content="{esc(description)}">
@@ -105,7 +134,7 @@ def page(path, title, description, body, schema, picture=None):
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-</head><body class="guide-page"><a class="skip-link" href="#main">Skip to content</a>{promo_bar}{nav}<main id="main" class="guide-main">{body}</main>{footer}</body></html>'''
+</head><body class="guide-page"><a class="skip-link" href="#main">Skip to content</a>{promo_bar}{nav}<main id="main" class="{main_class}">{body}</main>{footer}</body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
@@ -158,7 +187,7 @@ for p in posts:
     tags = ''.join(f'<li>{esc(tag)}</li>' for tag in p.get('tags', []))
     topic_list = f'<ul class="guide-tags" aria-label="Topics">{tags}</ul>' if tags else ''
     updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
-    body = f'''<article><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}<p class="guide-intro">{esc(p['intro'])}</p>{article_top_ad}</header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav>{sections}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside>{sticky_dock}</article>'''
+    body = f'''<article class="article-layout"><div class="article-content"><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}<p class="guide-intro">{esc(p['intro'])}</p></header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav><div class="article-body">{sections}</div><aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap">{ad_sidebar_300x250}{ad_sidebar_300x600}</div></aside></article>{sticky_dock}'''
     schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
     if p.get('tags'):
         schema['keywords'] = p['tags']

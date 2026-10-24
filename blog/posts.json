@@ -1205,8 +1205,8 @@
       "windows-clipboard-history-vs-floating-notes",
       "clear-copied-text-history-keep-working-set"
     ],
-    "title": "The Alt-Tab Tax: How Switching Windows 1,200 Times a Day Destroys Your Coding Flow",
-    "description": "Window switching isn't multitasking—it's a productivity leak. Discover how pinning API tokens, curl snippets, and dev scratchpads eliminates Alt-Tab fatigue forever.",
+    "title": "Always on Top Windows 11 & Mac: Fix the Alt-Tab Tax and Pin Dev Notes Above Your IDE",
+    "description": "Looking for how to make a window always on top in Windows 11 or Mac? Learn how to pin dev notes, curl snippets, and API keys without PowerToys or Alt-Tab fatigue.",
     "category": "Developer workflows & focus",
     "image": "developer-floating-notes-workspace.jpg",
     "alt": "FloatBoard desktop window showing developer API endpoints and auth tokens on the left with four visual reference images on the right",
@@ -1214,11 +1214,13 @@
     "date": "2026-10-23",
     "audience": "floating-notes",
     "tags": [
-      "Developer productivity",
-      "Floating notes",
-      "Always-on-top window",
-      "Alt-Tab multitasking",
-      "API debugging"
+      "Always on top Windows 11",
+      "How to pin window on top",
+      "Sticky notes always on top",
+      "PowerToys Always on Top shortcut",
+      "Pin window on top Mac",
+      "Developer scratchpad",
+      "Alt-Tab multitasking"
     ],
     "intro": "Every software engineer knows the 3 PM burnout: your eyes ache, your brain feels scrambled, and you have barely pushed 40 lines of clean code. You did not get stuck on a difficult algorithm. You got bled dry by the Alt-Tab tax.\n\nOn a laptop or single monitor, an engineer switches windows roughly 1,200 times every day—flicking between VS Code, Swagger docs, terminal logs, Slack, and Postman. Every single switch incurs 2 to 3 seconds of OS animation, eye refocusing, and working memory decay. By mid-afternoon, your focus is completely fractured. Here is why dual monitors and tiling managers fail to solve it, and how an always-on-top floating scratchpad cuts window toggling by 80%.",
     "sections": [
@@ -1262,8 +1264,8 @@
       "copy-text-from-screenshot-windows",
       "code-snippets-and-screenshots"
     ],
-    "title": "Your Desktop Is a Graveyard of 80 Temporary Screenshots. Here Is the Fix.",
-    "description": "Stop cluttering your desktop with throwaway PNGs. Learn how to auto-pin screenshots into an always-on-top floating reference board without saving a single file.",
+    "title": "How to Pin Screenshots Always on Top in Windows 11 & Mac (Clean Desktop Workflow)",
+    "description": "Stop saving 80 throwaway PNGs. Learn how to pin screenshots always on top of your screen instantly without saving files to disk or cluttering your desktop.",
     "category": "Designers & developers",
     "image": "infinity-mirror-screenshot-reference.jpg",
     "alt": "FloatBoard desktop window displaying recursive screenshot-in-screenshot mirror loop beside working text notes",
@@ -1273,11 +1275,12 @@
     "date": "2026-10-23",
     "audience": "visual-references",
     "tags": [
-      "Screenshot tool",
-      "Floating reference",
-      "Always on top",
-      "Screen capture workflow",
-      "Desktop productivity"
+      "Pin screenshot to desktop",
+      "Always on top Windows 11",
+      "Floating screenshot reference",
+      "DeskPins alternative",
+      "Pin window on top Mac",
+      "Screen capture workflow"
     ],
     "intro": "Open your desktop or Downloads folder right now. Chances are it looks like an abandoned storage unit filled with files like <code>Screenshot 2026-10-18 at 14.22.01.png</code>, <code>Screenshot (42).png</code>, and <code>image (7).png</code>.\n\nYou did not take those screenshots to preserve them for your grandchildren. You took them to check a hex color, compare two UI buttons, verify an error stack trace, or paste into a pull request. Yet your operating system forces you to treat every 20-second visual reference like a permanent archive file.\n\nThe video demonstration above shows the opposite: recursive floating capture. When you take a screenshot, FloatBoard catches it immediately, pins it always-on-top over your active workspace, and keeps it visible without saving a single throwaway file to your disk.",
     "sections": [
