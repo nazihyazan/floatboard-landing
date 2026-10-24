@@ -17,6 +17,20 @@ promo_bar = '''<aside class="blog-promo-bar" aria-label="FloatBoard Premium offe
 <div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off Premium · Ends soon · </span><span>Limited-time offer · 50% off Premium · Ends soon · </span></div></div>
 <div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Premium · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Get the offer →</a></div>
 </aside>'''
+ad_leaderboard_top = '''<aside class="ad-card-iab ad-leaderboard-top" aria-label="Sponsored leaderboard">
+<div class="ad-leaderboard-inner">
+<div class="ad-leaderboard-left">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
+<h3 class="ad-leaderboard-title">Always on Top Desktop Scratchpad &amp; Screen Pinning for Developers</h3>
+<p class="ad-leaderboard-desc">Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference screenshots. 100% offline.</p>
+</div>
+<div class="ad-leaderboard-right">
+<a href="/pricing.html" class="ad-leaderboard-offer">Use code <code>DEVTO50</code> (50% Off)</a>
+<a href="/download/" class="ad-iab-btn-google">Download Free App →</a>
+</div>
+</div>
+</aside>'''
+
 ad_sidebar_300x250 = '''<aside class="ad-card-iab ad-card-300x250" aria-label="Sponsored advertisement">
 <div class="ad-iab-header">
 <div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
@@ -58,7 +72,48 @@ ad_sidebar_300x600 = '''<aside class="ad-card-iab ad-card-300x600" aria-label="S
 </div>
 </aside>'''
 
-article_mid_ad = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+ad_sidebar_sticky_offer = '''<aside class="ad-card-iab ad-card-300x250 ad-sticky-offer" aria-label="Special offer">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Special Deal</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+</div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">Limited Lifetime Access</p>
+<h3 class="ad-iab-title">Get Unlimited Floating Windows for $2.99</h3>
+<p class="ad-iab-desc">Upgrade to FloatBoard Pro once, keep it forever. No monthly cloud fees, offline privacy guaranteed.</p>
+</div>
+<div class="ad-iab-footer">
+<a href="/pricing.html" class="ad-iab-btn-google">Claim 50% Off Lifetime →</a>
+<span class="ad-iab-attribution">Coupon DEVTO50 Applied at Checkout</span>
+</div>
+</aside>'''
+
+ad_sidebar_sponsored_links = '''<aside class="ad-card-iab ad-sponsored-links" aria-label="Sponsored recommendations">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Recommended by FloatBoard</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+</div>
+<div class="ad-sponsored-links-list">
+<a href="/download/" class="ad-sponsored-link-item">
+<span class="ad-link-bullet">▶</span>
+<div><strong>FloatBoard for Windows 11</strong><span>Pin scratchpad notes above any app. Free download.</span></div>
+</a>
+<a href="/pricing.html" class="ad-sponsored-link-item">
+<span class="ad-link-bullet">▶</span>
+<div><strong>Lifetime License · $2.99</strong><span>Unlock unlimited floating windows with code DEVTO50.</span></div>
+</a>
+<a href="/web-pad/" class="ad-sponsored-link-item">
+<span class="ad-link-bullet">▶</span>
+<div><strong>Free Online WebPad</strong><span>No-install floating notes in Chrome &amp; Edge.</span></div>
+</a>
+<a href="/clipboard-manager.html" class="ad-sponsored-link-item">
+<span class="ad-link-bullet">▶</span>
+<div><strong>Floating Clipboard Manager</strong><span>Auto-pin copied text &amp; images in real time.</span></div>
+</a>
+</div>
+</aside>'''
+
+ad_incontent_1 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
 <div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
 <span class="ad-iab-info" title="Advertisement">ⓘ</span>
@@ -73,6 +128,73 @@ article_mid_ad = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sp
 <span class="ad-iab-attribution">Limited-time developer deal · Code <code>DEVTO50</code></span>
 </div>
 </aside>'''
+
+ad_incontent_2 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Developer Scratchpad</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+</div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">Windows 11 · macOS · Linux</p>
+<h3 class="ad-iab-title">Pin Terminal Commands Above Your IDE</h3>
+<p class="ad-iab-desc">Never search your bash history for git cherry-picks or docker compose commands again. Keep active snippets right in view.</p>
+</div>
+<div class="ad-iab-footer">
+<a href="/download/" class="ad-iab-btn-google">Download Free App →</a>
+<span class="ad-iab-attribution">Offline &amp; Lightweight · Zero Cloud Bloat</span>
+</div>
+</aside>'''
+
+ad_incontent_3 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Screen Pinning</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+</div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">Visual Reference Board</p>
+<h3 class="ad-iab-title">Stop Saving 80 Throwaway Desktop Screenshots</h3>
+<p class="ad-iab-desc">Pin UI mockups, hex codes, and error traces into an always-on-top board instantly without saving temporary files to disk.</p>
+</div>
+<div class="ad-iab-footer">
+<a href="/pricing.html" class="ad-iab-btn-google">Upgrade to Pro ($2.99) →</a>
+<span class="ad-iab-attribution">Use Code <code>DEVTO50</code> at checkout</span>
+</div>
+</aside>'''
+
+ad_sponsored_grid = '''<section class="ad-sponsored-grid-section" aria-label="Sponsored content recommendations">
+<div class="ad-sponsored-grid-header">
+<h3>Promoted Stories</h3>
+<span class="ad-iab-badge">Sponsored by FloatBoard</span>
+</div>
+<div class="ad-sponsored-grid">
+<a href="/download/" class="ad-sponsored-tile">
+<img src="/blog/assets/developer-floating-notes-workspace.jpg" width="270" height="180" alt="FloatBoard developer floating scratchpad workspace" loading="lazy">
+<span class="ad-tile-badge">Ad · FloatBoard Desktop</span>
+<h4>How Developers Eliminate 1,200 Alt-Tabs a Day with One Screen Pin</h4>
+<p>Keep active API keys and curl templates floating directly above your code editor.</p>
+</a>
+<a href="/blog/instant-screenshot-capture-floating-reference/" class="ad-sponsored-tile">
+<img src="/blog/assets/infinity-mirror-screenshot-reference.jpg" width="270" height="180" alt="Recursive screenshot reference in FloatBoard" loading="lazy">
+<span class="ad-tile-badge">Ad · Screen Capture</span>
+<h4>Stop Saving 80 Throwaway PNGs: The Instant Floating Capture Loop</h4>
+<p>Pin screenshots immediately into an always-on-top workspace without saving files to disk.</p>
+</a>
+<a href="/pricing.html" class="ad-sponsored-tile">
+<img src="/blog/assets/code-and-image-references.jpg" width="270" height="152" alt="FloatBoard side by side code and image references" loading="lazy">
+<span class="ad-tile-badge">Ad · Limited Offer</span>
+<h4>Get 50% Off Lifetime FloatBoard License ($2.99 with Code DEVTO50)</h4>
+<p>One-time payment, zero subscriptions, 100% offline security for personal &amp; commercial use.</p>
+</a>
+<a href="/web-pad/" class="ad-sponsored-tile">
+<img src="/blog/assets/design-tokens-and-mockup-board.jpg" width="270" height="180" alt="Design tokens and mockups pinned in FloatBoard" loading="lazy">
+<span class="ad-tile-badge">Ad · WebPad Free</span>
+<h4>Try Floating Notes Right in Your Browser with Zero Installation</h4>
+<p>Leverage Document Picture-in-Picture to keep live notes above all desktop apps.</p>
+</a>
+</div>
+</section>'''
+
+article_mid_ad = ad_incontent_1
 
 sticky_dock = '''<aside class="ad-anchor-bar" aria-label="FloatBoard Offer">
 <div class="ad-anchor-inner">
@@ -177,17 +299,23 @@ for p in posts:
     promo_after = p.get('promo_after_section')
     if promo_after is not None:
         assert isinstance(promo_after, int) and 0 < promo_after < len(p['sections']), f'Invalid promo position: {p["slug"]}'
-    mid_pos = promo_after if promo_after is not None else 2 if len(p['sections']) >= 3 else 1
+    in_content_ads = {
+        1: ad_incontent_1,
+        3: ad_incontent_2,
+        5: ad_incontent_3,
+    }
+    if len(p['sections']) <= 3:
+        in_content_ads = {1: ad_incontent_1, 2: ad_incontent_2}
     sections = ''.join(
         f'<section aria-labelledby="{s["id"]}"><h2 id="{s["id"]}">{esc(s["title"])}</h2>{s["html"]}</section>'
-        + (article_mid_ad if index == mid_pos else '')
+        + in_content_ads.get(index, '')
         for index, s in enumerate(p['sections'], start=1)
     )
     related = ''.join(f'<li><a href="/blog/{q["slug"]}/">{esc(q["title"])}</a></li>' for q in (posts_by_slug[slug] for slug in p['related_slugs']) if q != p)
     tags = ''.join(f'<li>{esc(tag)}</li>' for tag in p.get('tags', []))
     topic_list = f'<ul class="guide-tags" aria-label="Topics">{tags}</ul>' if tags else ''
     updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
-    body = f'''<article class="article-layout"><div class="article-content"><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}<p class="guide-intro">{esc(p['intro'])}</p></header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav><div class="article-body">{sections}</div><aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap">{ad_sidebar_300x250}{ad_sidebar_300x600}</div></aside></article>{sticky_dock}'''
+    body = f'''<article class="article-layout"><div class="article-content"><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}{ad_leaderboard_top}<p class="guide-intro">{esc(p['intro'])}</p></header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav><div class="article-body">{sections}</div>{ad_sponsored_grid}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap">{ad_sidebar_300x250}{ad_sidebar_300x600}{ad_sidebar_sponsored_links}{ad_sidebar_sticky_offer}</div></aside></article>{sticky_dock}'''
     schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
     if p.get('tags'):
         schema['keywords'] = p['tags']
