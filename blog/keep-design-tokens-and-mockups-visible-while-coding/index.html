@@ -1,30 +1,63 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Keep Design Tokens and Mockup References Visible While Coding UI | FloatBoard</title><meta name="description" content="Keep CSS variables, color tokens and layout mockups pinned beside your code editor in FloatBoard so you can implement designs without tab-switching.">
+<title>How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding | FloatBoard</title><meta name="description" content="Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.">
 <link rel="canonical" href="https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/"><link rel="icon" href="/icon.png">
 <link rel="stylesheet" href="/assets/content.css"><link rel="stylesheet" href="/blog/blog.css">
-<meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="Keep Design Tokens and Mockup References Visible While Coding UI"><meta property="og:description" content="Keep CSS variables, color tokens and layout mockups pinned beside your code editor in FloatBoard so you can implement designs without tab-switching."><meta property="og:url" content="https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Keep Design Tokens and Mockup References Visible While Coding UI"><meta name="twitter:description" content="Keep CSS variables, color tokens and layout mockups pinned beside your code editor in FloatBoard so you can implement designs without tab-switching."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "Keep Design Tokens and Mockup References Visible While Coding UI", "description": "Keep CSS variables, color tokens and layout mockups pinned beside your code editor in FloatBoard so you can implement designs without tab-switching.", "image": ["https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg"], "datePublished": "2026-10-17", "dateModified": "2026-10-17", "mainEntityOfPage": "https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["Design tokens", "Frontend development", "Visual references", "UI implementation"]}</script>
+<meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding"><meta property="og:description" content="Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor."><meta property="og:url" content="https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding"><meta name="twitter:description" content="Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Pin Figma Mockups, Hex Colors & Design Tokens Above VS Code While Coding", "description": "Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.", "image": ["https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg"], "datePublished": "2026-10-17", "dateModified": "2026-10-17", "mainEntityOfPage": "https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["pin figma mockup on top of vs code", "always on top image overlay for developers", "keep design tokens visible", "frontend developer floating tool"]}</script>
 </head><body class="guide-page blog-page blog-light-mode"><a class="skip-link" href="#main">Skip to content</a><aside class="blog-promo-bar" aria-label="FloatBoard Premium offer">
-<div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off Premium · Ends soon · </span><span>Limited-time offer · 50% off Premium · Ends soon · </span></div></div>
-<div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Premium · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Get the offer →</a></div>
-</aside><nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/">Download</a></div></nav><main id="main" class="guide-main guide-article-main"><article class="article-layout"><div class="article-content"><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">Frontend developers &amp; designers</p><h1>Keep Design Tokens and Mockup References Visible While Coding UI</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="2026-10-17">17 October 2026</time></p><ul class="guide-tags" aria-label="Topics"><li>Design tokens</li><li>Frontend development</li><li>Visual references</li><li>UI implementation</li></ul><aside class="ad-card-iab ad-leaderboard-top" aria-label="Sponsored leaderboard">
+<div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off FloatBoard Pro · Ends soon · </span><span>Limited-time offer · 50% off FloatBoard Pro · Ends soon · </span></div></div>
+<div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Pro · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Claim offer →</a></div>
+</aside><nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/" class="guide-nav-btn">Download Free ↓</a></div></nav><main id="main" class="guide-main guide-article-main"><article class="article-layout blog-portal-grid"><aside class="portal-left-col" aria-label="Quick navigation and shortcuts"><div class="left-sticky-wrap"><nav class="portal-toc-box" aria-label="Quick navigation"><div class="portal-toc-header">📑 Quick Navigation</div><ol class="portal-toc-list"><li><a href="#pin-tokens-next-to-editor">Keep the active design tokens in immediate sight</a></li><li><a href="#pair-notes-with-visual-crops">Pair exact text rules with visual mockup crops</a></li><li><a href="#reduce-context-switching">Avoid constant window flipping between Figma and the IDE</a></li><li><a href="#keep-the-board-focused">Retain only what the current component needs</a></li><li><a href="#review-and-clean">Update the working set between frontend components</a></li></ol></nav><aside class="ad-card-iab ad-card-left-skyscraper" aria-label="Sponsored product showcase">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+</div>
+<div class="ad-left-title-box">
+<h3 class="ad-left-title">FLOATBOARD<br>CLIPBOARD<br>MANAGER</h3>
+</div>
+<div class="ad-left-checklist">
+<div><span>✔</span> Save Image + Source URL</div>
+<div><span>✔</span> Pin Sticky Notes on Top</div>
+<div><span>✔</span> OCR Screenshot Text</div>
+<div><span>✔</span> Compare Photos Side-by-Side</div>
+<div><span>✔</span> 100% Local &amp; Private</div>
+</div>
+<div class="ad-left-media">
+<img src="/blog/assets/developer-floating-notes-workspace.jpg" width="268" height="178" alt="FloatBoard floating notes screenshot preview" loading="lazy">
+</div>
+<div class="ad-left-footer">
+<a href="/download/" class="ad-left-btn">TRY FREE ON PC →</a>
+<span class="ad-left-label">160x600 Tall Skyscraper Ad</span>
+</div>
+</aside></div></aside><div class="article-content article-main-card"><a href="/blog/" class="portal-back-link">← All guides</a><header class="article-header"><div class="portal-category-pill">Frontend developers &amp; designers</div><h1>How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="2026-10-17">17 October 2026</time></p><ul class="guide-tags" aria-label="Topics"><li>pin figma mockup on top of vs code</li><li>always on top image overlay for developers</li><li>keep design tokens visible</li><li>frontend developer floating tool</li></ul><aside class="ad-card-iab ad-leaderboard-top" aria-label="Sponsored leaderboard">
 <div class="ad-leaderboard-inner">
 <div class="ad-leaderboard-left">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
-<h3 class="ad-leaderboard-title">Always on Top Desktop Scratchpad &amp; Screen Pinning for Developers</h3>
-<p class="ad-leaderboard-desc">Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference screenshots. 100% offline.</p>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span><span class="ad-iab-info" title="Advertisement">ⓘ ✕</span></div>
+<h3 class="ad-leaderboard-title">Stop Losing Copied Screenshots &amp; API Keys! Pin Anything Always-on-Top</h3>
+<p class="ad-leaderboard-desc">FloatBoard for Windows 11, macOS &amp; Linux — 100% Offline &amp; Instant Shortcut (728x90 Leaderboard)</p>
 </div>
 <div class="ad-leaderboard-right">
 <a href="/pricing.html" class="ad-leaderboard-offer">Use code <code>DEVTO50</code> (50% Off)</a>
 <a href="/download/" class="ad-iab-btn-google">Download Free App →</a>
 </div>
 </div>
-</aside><p class="guide-intro">Translating a design mockup into frontend code requires constant cross-referencing between hex codes, spacing units, responsive rules, and visual mockups. Pinning a compact FloatBoard workspace beside your editor keeps key tokens and visual references in immediate view without switching windows or splitting narrow laptop screens.</p></header><figure><img src="/blog/assets/design-tokens-and-mockup-board.jpg" width="780" height="520" alt="FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right" decoding="async" fetchpriority="high"><figcaption>FloatBoard pinned beside an editor with color tokens, typography rules, and component reference mockups visible in one compact workspace.</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol><li><a href="#pin-tokens-next-to-editor">Keep the active design tokens in immediate sight</a></li><li><a href="#pair-notes-with-visual-crops">Pair exact text rules with visual mockup crops</a></li><li><a href="#reduce-context-switching">Avoid constant window flipping between Figma and the IDE</a></li><li><a href="#keep-the-board-focused">Retain only what the current component needs</a></li><li><a href="#review-and-clean">Update the working set between frontend components</a></li></ol></nav><div class="article-body"><section aria-labelledby="pin-tokens-next-to-editor"><h2 id="pin-tokens-next-to-editor">Keep the active design tokens in immediate sight</h2><p>When implementing a new component or landing page section, write down the three or four variables you will reuse most: brand primary and accent hex codes, surface background colors, default border radiuses, and padding steps. Storing these in a short FloatBoard text card keeps the exact values visible without requiring you to repeatedly inspect design files or search global stylesheets.</p><p>A working card should contain values for the immediate task, not the entire design library. If a token is already standardized in your framework's utility classes or CSS custom properties, note only the token name or active override. This keeps the reference card compact and legible beside your editor window.</p></section><aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+</aside><p class="guide-intro">Translating a design mockup into frontend code requires constant cross-referencing between hex codes, spacing units, responsive rules, and visual mockups. Pinning a compact FloatBoard workspace beside your editor keeps key tokens and visual references in immediate view without switching windows or splitting narrow laptop screens.</p></header><figure class="article-hero-figure"><img src="/blog/assets/design-tokens-and-mockup-board.jpg" width="780" height="520" alt="FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right" decoding="async" fetchpriority="high"><figcaption>FloatBoard pinned beside an editor with color tokens, typography rules, and component reference mockups visible in one compact workspace.</figcaption></figure><div class="quick-answer-row">
+<div class="quick-answer-card">
+<div class="quick-answer-badge">⚡ Quick Answer (TL;DR — 3 Seconds):</div>
+<ol class="quick-answer-steps"><li>Take a quick screenshot of your Figma component, padding specs, and color palette tokens.</li><li>FloatBoard pins the mockup in an always-on-top window directly over your HTML/CSS editor.</li><li>Implement pixel-perfect styling without splitting your monitor into narrow 40-character columns.</li></ol>
+</div>
+<aside class="ad-card-iab ad-card-inline-promo" aria-label="Sponsored special offer">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">AD</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
+<h4 class="ad-inline-title">FloatBoard Pro · 50% OFF</h4>
+<p class="ad-inline-desc">Pin images, source URLs &amp; dev notes above VS Code or Chrome.</p>
+<a href="/pricing.html" class="ad-inline-btn">Get Instant Access (Code: DEVTO50) →</a>
+</aside>
+</div><div class="article-body"><section aria-labelledby="pin-tokens-next-to-editor"><h2 id="pin-tokens-next-to-editor">Keep the active design tokens in immediate sight</h2><p>When implementing a new component or landing page section, write down the three or four variables you will reuse most: brand primary and accent hex codes, surface background colors, default border radiuses, and padding steps. Storing these in a short FloatBoard text card keeps the exact values visible without requiring you to repeatedly inspect design files or search global stylesheets.</p><p>A working card should contain values for the immediate task, not the entire design library. If a token is already standardized in your framework's utility classes or CSS custom properties, note only the token name or active override. This keeps the reference card compact and legible beside your editor window.</p></section><aside class="ad-card-iab ad-card-in-content ad-incontent-orange" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro · 50% Off</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">Productivity Tool</p>
@@ -32,27 +65,26 @@
 <p class="ad-iab-desc">FloatBoard keeps temporary notes and reference screenshots floating on top of your screen. 100% offline local memory.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/pricing.html" class="ad-iab-btn-google">Get 50% Off Lifetime ($2.99) →</a>
+<a href="/pricing.html" class="ad-iab-btn-orange">Get 50% Off Lifetime ($2.99) →</a>
 <span class="ad-iab-attribution">Limited-time developer deal · Code <code>DEVTO50</code></span>
 </div>
-</aside><section aria-labelledby="pair-notes-with-visual-crops"><h2 id="pair-notes-with-visual-crops">Pair exact text rules with visual mockup crops</h2><p>Specifications on their own lack visual context, while full design boards consume too much screen area. FloatBoard's two-column layout pairs text specification cards on the left with image reference tiles on the right. You can crop the specific desktop and mobile views of the component you are implementing and drop them into the image section.</p><p>Seeing the target spacing, typography hierarchy, and visual balance alongside the exact CSS values helps you catch alignment discrepancies early. Because the image tiles remain pinned, you do not need to hide your code editor or browser devtools to verify button margins or card paddings.</p></section><section aria-labelledby="reduce-context-switching"><h2 id="reduce-context-switching">Avoid constant window flipping between Figma and the IDE</h2><p>Switching back and forth between a heavy design tool and a code editor disrupts focus and slows down frontend styling. On a single laptop screen, splitting the display evenly between an editor and a browser leaves little room for a third full application window.</p><p>FloatBoard stays on top as a lightweight overlay. You can pin it near the top or side of your editor, check color codes or target alignment, and continue typing in your code editor without losing keyboard focus. When you finish the component, minimize or hide the board with a single click.</p></section><aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+</aside><section aria-labelledby="pair-notes-with-visual-crops"><h2 id="pair-notes-with-visual-crops">Pair exact text rules with visual mockup crops</h2><p>Specifications on their own lack visual context, while full design boards consume too much screen area. FloatBoard's two-column layout pairs text specification cards on the left with image reference tiles on the right. You can crop the specific desktop and mobile views of the component you are implementing and drop them into the image section.</p><p>Seeing the target spacing, typography hierarchy, and visual balance alongside the exact CSS values helps you catch alignment discrepancies early. Because the image tiles remain pinned, you do not need to hide your code editor or browser devtools to verify button margins or card paddings.</p></section><section aria-labelledby="reduce-context-switching"><h2 id="reduce-context-switching">Avoid constant window flipping between Figma and the IDE</h2><p>Switching back and forth between a heavy design tool and a code editor disrupts focus and slows down frontend styling. On a single laptop screen, splitting the display evenly between an editor and a browser leaves little room for a third full application window.</p><p>FloatBoard stays on top as a lightweight overlay. You can pin it near the top or side of your editor, check color codes or target alignment, and continue typing in your code editor without losing keyboard focus. When you finish the component, minimize or hide the board with a single click.</p></section><aside class="ad-card-iab ad-card-in-content ad-incontent-yellow" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Developer Scratchpad</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge-sponsored">SPONSORED</span><span class="ad-iab-brand">FloatBoard Desktop</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
-<p class="ad-iab-category">Windows 11 · macOS · Linux</p>
-<h3 class="ad-iab-title">Pin Terminal Commands Above Your IDE</h3>
-<p class="ad-iab-desc">Never search your bash history for git cherry-picks or docker compose commands again. Keep active snippets right in view.</p>
+<h3 class="ad-iab-title">Tired of Windows Clipboard Losing Your Image Source Links?</h3>
+<p class="ad-iab-desc">FloatBoard automatically saves the webpage URL every time you copy a picture or screenshot. Pin notes and commands directly above your IDE.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/download/" class="ad-iab-btn-google">Download Free App →</a>
-<span class="ad-iab-attribution">Offline &amp; Lightweight · Zero Cloud Bloat</span>
+<a href="/download/" class="ad-iab-btn-blue">Download Free App →</a>
+<span class="ad-iab-attribution">Offline &amp; Lightweight · Windows 11, Mac &amp; Linux</span>
 </div>
-</aside><section aria-labelledby="keep-the-board-focused"><h2 id="keep-the-board-focused">Retain only what the current component needs</h2><p>A floating board works best as a transient working surface rather than a permanent asset archive. Keep your comprehensive design files, vector assets, and full Figma links in your project repository or task tracking tickets. Place only the immediate component's tokens, breakpoints, and visual references on the active board.</p><p>Overloading the board with dozens of unrelated screenshots defeats the purpose of rapid visual reference. When a card has served its purpose, remove it to keep the interface clean and easy to scan.</p></section><section aria-labelledby="review-and-clean"><h2 id="review-and-clean">Update the working set between frontend components</h2><p>Once the component styling is verified in your local browser and passes responsiveness tests, clear or update the references for the next task. FloatBoard's built-in history preserves deleted items so you can retrieve a previous token note if needed, while your active surface stays clean.</p><p>If your workflow also involves capturing transient debugging screenshots or copying error traces, see the <a href="/blog/code-snippets-and-screenshots/">code snippets and screenshots guide</a>. For broader image comparison workflows, explore the <a href="/blog/organize-image-references/">image reference organizer guide</a>.</p></section><aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+</aside><section aria-labelledby="keep-the-board-focused"><h2 id="keep-the-board-focused">Retain only what the current component needs</h2><p>A floating board works best as a transient working surface rather than a permanent asset archive. Keep your comprehensive design files, vector assets, and full Figma links in your project repository or task tracking tickets. Place only the immediate component's tokens, breakpoints, and visual references on the active board.</p><p>Overloading the board with dozens of unrelated screenshots defeats the purpose of rapid visual reference. When a card has served its purpose, remove it to keep the interface clean and easy to scan.</p></section><section aria-labelledby="review-and-clean"><h2 id="review-and-clean">Update the working set between frontend components</h2><p>Once the component styling is verified in your local browser and passes responsiveness tests, clear or update the references for the next task. FloatBoard's built-in history preserves deleted items so you can retrieve a previous token note if needed, while your active surface stays clean.</p><p>If your workflow also involves capturing transient debugging screenshots or copying error traces, see the <a href="/blog/code-snippets-and-screenshots/">code snippets and screenshots guide</a>. For broader image comparison workflows, explore the <a href="/blog/organize-image-references/">image reference organizer guide</a>.</p></section><aside class="ad-card-iab ad-card-in-content ad-incontent-emerald" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Screen Pinning</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Screen Pinning &amp; Scratchpad</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">Visual Reference Board</p>
@@ -60,7 +92,7 @@
 <p class="ad-iab-desc">Pin UI mockups, hex codes, and error traces into an always-on-top board instantly without saving temporary files to disk.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/pricing.html" class="ad-iab-btn-google">Upgrade to Pro ($2.99) →</a>
+<a href="/pricing.html" class="ad-iab-btn-emerald">Upgrade to Pro ($2.99) →</a>
 <span class="ad-iab-attribution">Use Code <code>DEVTO50</code> at checkout</span>
 </div>
 </aside></div><section class="ad-sponsored-grid-section" aria-label="Sponsored content recommendations">
@@ -94,42 +126,37 @@
 <p>Leverage Document Picture-in-Picture to keep live notes above all desktop apps.</p>
 </a>
 </div>
-</section><aside class="related"><h2>Related workflows</h2><ul><li><a href="/blog/code-snippets-and-screenshots/">Keep Code Snippets and Screenshots Visible While Debugging</a></li><li><a href="/blog/organize-image-references/">How to Organize Image References &amp; Notes on One Screen (Best PureRef Alternative 2026)</a></li><li><a href="/blog/capture-webpage-detail-screenshot-reference/">Keep a Webpage Detail Screenshot Visible Beside Your Design</a></li><li><a href="/blog/keep-webpage-text-beside-image-references/">Keep Copied Webpage Text Beside Image References</a></li></ul></aside></div><aside class="article-sidebar" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap"><aside class="ad-card-iab ad-card-300x250" aria-label="Sponsored advertisement">
+</section><aside class="related"><h2>Related workflows</h2><ul><li><a href="/blog/code-snippets-and-screenshots/">Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)</a></li><li><a href="/blog/organize-image-references/">How to Organize Image References &amp; Moodboards on Windows/Linux (Free PureRef Alternative)</a></li><li><a href="/blog/capture-webpage-detail-screenshot-reference/">How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference</a></li><li><a href="/blog/keep-webpage-text-beside-image-references/">How to Keep Copied Webpage Text Beside Image References on One Screen</a></li></ul></aside></div><aside class="article-sidebar portal-right-col" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap"><aside class="ad-card-iab ad-card-300x600" aria-label="Sponsored product showcase">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">AdChoices</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
-<p class="ad-iab-category">Always on Top Notes</p>
-<h3 class="ad-iab-title">Pin Dev Notes &amp; API Keys Above Your IDE</h3>
-<p class="ad-iab-desc">Keep scratchpad notes, curl commands, and active tokens floating directly over your editor. 100% offline local memory.</p>
-</div>
-<div class="ad-iab-footer">
-<a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
-<span class="ad-iab-attribution">Windows 11 · macOS · Linux</span>
-</div>
-</aside><aside class="ad-card-iab ad-card-300x600" aria-label="Sponsored product showcase">
-<div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
-</div>
+<p class="ad-iab-category">⚡ ALWAYS-ON-TOP WORKSPACE</p>
+<h3 class="ad-iab-title">Pin Dev Notes, API Keys &amp; Screenshots Above Your IDE or Browser</h3>
 <div class="ad-iab-media">
 <img src="/blog/assets/developer-floating-notes-workspace.jpg" width="268" height="178" alt="FloatBoard always-on-top developer workspace with notes and screenshots" loading="lazy">
 </div>
-<div class="ad-iab-body">
-<h3 class="ad-iab-title">Tired of Switching Windows 1,200 Times a Day?</h3>
-<p class="ad-iab-desc">FloatBoard pins volatile developer notes and reference mockups always on top. Stays in view while you write code.</p>
-<ul class="ad-iab-checklist">
-<li><span>✓</span> One-click always on top pin</li>
-<li><span>✓</span> Dual-pane text &amp; image board</li>
-<li><span>✓</span> 100% local offline memory</li>
-<li><span>✓</span> Windows 11, macOS, and Linux</li>
-</ul>
+<p class="ad-iab-desc">Stop paying the Alt-Tab tax. 100% offline local memory for Windows, Mac &amp; Linux.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/download/" class="ad-iab-btn-google">Get FloatBoard Free →</a>
+<a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
 <div class="ad-iab-offer-row"><a href="/pricing.html" class="ad-iab-offer-link">50% off lifetime with <code>DEVTO50</code> ($2.99)</a></div>
-<span class="ad-iab-attribution">Ads by FloatBoard · Private &amp; Fast</span>
+<span class="ad-iab-attribution">300x600 Half-Page Vertical Ad (Tall, Not Wide!)</span>
+</div>
+</aside><aside class="ad-card-iab ad-card-300x250 ad-card-emerald" aria-label="Sponsored visual tools">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+</div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">📸 ORGANIZE IMAGE REFERENCES</p>
+<h3 class="ad-iab-title">Compare Photos Side-by-Side</h3>
+<p class="ad-iab-desc">Compare photos side-by-side &amp; inspect 100% original resolution without opening 20 browser tabs.</p>
+</div>
+<div class="ad-iab-footer">
+<a href="/floating-notes.html" class="ad-iab-btn-emerald">Launch Free Image Board →</a>
+<span class="ad-iab-attribution">300x250 Medium Rectangle Ad</span>
 </div>
 </aside><aside class="ad-card-iab ad-sponsored-links" aria-label="Sponsored recommendations">
 <div class="ad-iab-header">
@@ -170,7 +197,13 @@
 </div>
 </aside></div></aside></article><aside class="ad-anchor-bar" aria-label="FloatBoard Offer">
 <div class="ad-anchor-inner">
-<div class="ad-anchor-left"><span class="ad-iab-badge">Ad</span><span class="ad-anchor-brand">FloatBoard</span><span class="ad-anchor-text">Always-on-top desktop notes &amp; screenshots for developers · 50% off with <code>DEVTO50</code></span></div>
-<div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free →</a></div>
+<div class="ad-anchor-left">
+<span class="ad-iab-badge">AD</span>
+<div class="ad-anchor-text-wrap">
+<strong class="ad-anchor-title">FloatBoard Pro — The #1 Floating Clipboard &amp; Reference Board for Windows 11, Mac &amp; Linux</strong>
+<span class="ad-anchor-deal">Special Reader Deal: Get 50% OFF Lifetime/Pro Plan with Promo Code: <code>DEVTO50</code> (Ends Tonight!)</span>
+</div>
+</div>
+<div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free + Claim 50% Off →</a></div>
 </div>
 </aside></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer></body></html>

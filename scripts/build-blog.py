@@ -12,17 +12,17 @@ posts = json.loads((ROOT / 'blog/posts.json').read_text())
 posts_by_slug = {post['slug']: post for post in posts}
 assert len(posts_by_slug) == len(posts), 'Duplicate blog slug'
 esc = html.escape
-nav = '<nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/">Download</a></div></nav>'
+nav = '<nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/" class="guide-nav-btn">Download Free ↓</a></div></nav>'
 promo_bar = '''<aside class="blog-promo-bar" aria-label="FloatBoard Premium offer">
-<div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off Premium · Ends soon · </span><span>Limited-time offer · 50% off Premium · Ends soon · </span></div></div>
-<div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Premium · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Get the offer →</a></div>
+<div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Limited-time offer · 50% off FloatBoard Pro · Ends soon · </span><span>Limited-time offer · 50% off FloatBoard Pro · Ends soon · </span></div></div>
+<div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Pro · Ends soon</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Claim offer →</a></div>
 </aside>'''
 ad_leaderboard_top = '''<aside class="ad-card-iab ad-leaderboard-top" aria-label="Sponsored leaderboard">
 <div class="ad-leaderboard-inner">
 <div class="ad-leaderboard-left">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
-<h3 class="ad-leaderboard-title">Always on Top Desktop Scratchpad &amp; Screen Pinning for Developers</h3>
-<p class="ad-leaderboard-desc">Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference screenshots. 100% offline.</p>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span><span class="ad-iab-info" title="Advertisement">ⓘ ✕</span></div>
+<h3 class="ad-leaderboard-title">Stop Losing Copied Screenshots &amp; API Keys! Pin Anything Always-on-Top</h3>
+<p class="ad-leaderboard-desc">FloatBoard for Windows 11, macOS &amp; Linux — 100% Offline &amp; Instant Shortcut (728x90 Leaderboard)</p>
 </div>
 <div class="ad-leaderboard-right">
 <a href="/pricing.html" class="ad-leaderboard-offer">Use code <code>DEVTO50</code> (50% Off)</a>
@@ -31,44 +31,63 @@ ad_leaderboard_top = '''<aside class="ad-card-iab ad-leaderboard-top" aria-label
 </div>
 </aside>'''
 
-ad_sidebar_300x250 = '''<aside class="ad-card-iab ad-card-300x250" aria-label="Sponsored advertisement">
+ad_left_skyscraper = '''<aside class="ad-card-iab ad-card-left-skyscraper" aria-label="Sponsored product showcase">
 <div class="ad-iab-header">
 <div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
-<div class="ad-iab-body">
-<p class="ad-iab-category">Always on Top Notes</p>
-<h3 class="ad-iab-title">Pin Dev Notes &amp; API Keys Above Your IDE</h3>
-<p class="ad-iab-desc">Keep scratchpad notes, curl commands, and active tokens floating directly over your editor. 100% offline local memory.</p>
+<div class="ad-left-title-box">
+<h3 class="ad-left-title">FLOATBOARD<br>CLIPBOARD<br>MANAGER</h3>
 </div>
-<div class="ad-iab-footer">
-<a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
-<span class="ad-iab-attribution">Windows 11 · macOS · Linux</span>
+<div class="ad-left-checklist">
+<div><span>✔</span> Save Image + Source URL</div>
+<div><span>✔</span> Pin Sticky Notes on Top</div>
+<div><span>✔</span> OCR Screenshot Text</div>
+<div><span>✔</span> Compare Photos Side-by-Side</div>
+<div><span>✔</span> 100% Local &amp; Private</div>
+</div>
+<div class="ad-left-media">
+<img src="/blog/assets/developer-floating-notes-workspace.jpg" width="268" height="178" alt="FloatBoard floating notes screenshot preview" loading="lazy">
+</div>
+<div class="ad-left-footer">
+<a href="/download/" class="ad-left-btn">TRY FREE ON PC →</a>
+<span class="ad-left-label">160x600 Tall Skyscraper Ad</span>
 </div>
 </aside>'''
 
 ad_sidebar_300x600 = '''<aside class="ad-card-iab ad-card-300x600" aria-label="Sponsored product showcase">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">AdChoices</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">⚡ ALWAYS-ON-TOP WORKSPACE</p>
+<h3 class="ad-iab-title">Pin Dev Notes, API Keys &amp; Screenshots Above Your IDE or Browser</h3>
 <div class="ad-iab-media">
 <img src="/blog/assets/developer-floating-notes-workspace.jpg" width="268" height="178" alt="FloatBoard always-on-top developer workspace with notes and screenshots" loading="lazy">
 </div>
-<div class="ad-iab-body">
-<h3 class="ad-iab-title">Tired of Switching Windows 1,200 Times a Day?</h3>
-<p class="ad-iab-desc">FloatBoard pins volatile developer notes and reference mockups always on top. Stays in view while you write code.</p>
-<ul class="ad-iab-checklist">
-<li><span>✓</span> One-click always on top pin</li>
-<li><span>✓</span> Dual-pane text &amp; image board</li>
-<li><span>✓</span> 100% local offline memory</li>
-<li><span>✓</span> Windows 11, macOS, and Linux</li>
-</ul>
+<p class="ad-iab-desc">Stop paying the Alt-Tab tax. 100% offline local memory for Windows, Mac &amp; Linux.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/download/" class="ad-iab-btn-google">Get FloatBoard Free →</a>
+<a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
 <div class="ad-iab-offer-row"><a href="/pricing.html" class="ad-iab-offer-link">50% off lifetime with <code>DEVTO50</code> ($2.99)</a></div>
-<span class="ad-iab-attribution">Ads by FloatBoard · Private &amp; Fast</span>
+<span class="ad-iab-attribution">300x600 Half-Page Vertical Ad (Tall, Not Wide!)</span>
+</div>
+</aside>'''
+
+ad_sidebar_300x250_emerald = '''<aside class="ad-card-iab ad-card-300x250 ad-card-emerald" aria-label="Sponsored visual tools">
+<div class="ad-iab-header">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+</div>
+<div class="ad-iab-body">
+<p class="ad-iab-category">📸 ORGANIZE IMAGE REFERENCES</p>
+<h3 class="ad-iab-title">Compare Photos Side-by-Side</h3>
+<p class="ad-iab-desc">Compare photos side-by-side &amp; inspect 100% original resolution without opening 20 browser tabs.</p>
+</div>
+<div class="ad-iab-footer">
+<a href="/floating-notes.html" class="ad-iab-btn-emerald">Launch Free Image Board →</a>
+<span class="ad-iab-attribution">300x250 Medium Rectangle Ad</span>
 </div>
 </aside>'''
 
@@ -113,10 +132,10 @@ ad_sidebar_sponsored_links = '''<aside class="ad-card-iab ad-sponsored-links" ar
 </div>
 </aside>'''
 
-ad_incontent_1 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+ad_incontent_1 = '''<aside class="ad-card-iab ad-card-in-content ad-incontent-orange" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro · 50% Off</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">Productivity Tool</p>
@@ -124,31 +143,30 @@ ad_incontent_1 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sp
 <p class="ad-iab-desc">FloatBoard keeps temporary notes and reference screenshots floating on top of your screen. 100% offline local memory.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/pricing.html" class="ad-iab-btn-google">Get 50% Off Lifetime ($2.99) →</a>
+<a href="/pricing.html" class="ad-iab-btn-orange">Get 50% Off Lifetime ($2.99) →</a>
 <span class="ad-iab-attribution">Limited-time developer deal · Code <code>DEVTO50</code></span>
 </div>
 </aside>'''
 
-ad_incontent_2 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+ad_incontent_2 = '''<aside class="ad-card-iab ad-card-in-content ad-incontent-yellow" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Developer Scratchpad</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge-sponsored">SPONSORED</span><span class="ad-iab-brand">FloatBoard Desktop</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
-<p class="ad-iab-category">Windows 11 · macOS · Linux</p>
-<h3 class="ad-iab-title">Pin Terminal Commands Above Your IDE</h3>
-<p class="ad-iab-desc">Never search your bash history for git cherry-picks or docker compose commands again. Keep active snippets right in view.</p>
+<h3 class="ad-iab-title">Tired of Windows Clipboard Losing Your Image Source Links?</h3>
+<p class="ad-iab-desc">FloatBoard automatically saves the webpage URL every time you copy a picture or screenshot. Pin notes and commands directly above your IDE.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/download/" class="ad-iab-btn-google">Download Free App →</a>
-<span class="ad-iab-attribution">Offline &amp; Lightweight · Zero Cloud Bloat</span>
+<a href="/download/" class="ad-iab-btn-blue">Download Free App →</a>
+<span class="ad-iab-attribution">Offline &amp; Lightweight · Windows 11, Mac &amp; Linux</span>
 </div>
 </aside>'''
 
-ad_incontent_3 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sponsored in-content ad">
+ad_incontent_3 = '''<aside class="ad-card-iab ad-card-in-content ad-incontent-emerald" aria-label="Sponsored in-content ad">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Screen Pinning</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Screen Pinning &amp; Scratchpad</span></div>
+<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">Visual Reference Board</p>
@@ -156,7 +174,7 @@ ad_incontent_3 = '''<aside class="ad-card-iab ad-card-in-content" aria-label="Sp
 <p class="ad-iab-desc">Pin UI mockups, hex codes, and error traces into an always-on-top board instantly without saving temporary files to disk.</p>
 </div>
 <div class="ad-iab-footer">
-<a href="/pricing.html" class="ad-iab-btn-google">Upgrade to Pro ($2.99) →</a>
+<a href="/pricing.html" class="ad-iab-btn-emerald">Upgrade to Pro ($2.99) →</a>
 <span class="ad-iab-attribution">Use Code <code>DEVTO50</code> at checkout</span>
 </div>
 </aside>'''
@@ -194,12 +212,16 @@ ad_sponsored_grid = '''<section class="ad-sponsored-grid-section" aria-label="Sp
 </div>
 </section>'''
 
-article_mid_ad = ad_incontent_1
-
 sticky_dock = '''<aside class="ad-anchor-bar" aria-label="FloatBoard Offer">
 <div class="ad-anchor-inner">
-<div class="ad-anchor-left"><span class="ad-iab-badge">Ad</span><span class="ad-anchor-brand">FloatBoard</span><span class="ad-anchor-text">Always-on-top desktop notes &amp; screenshots for developers · 50% off with <code>DEVTO50</code></span></div>
-<div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free →</a></div>
+<div class="ad-anchor-left">
+<span class="ad-iab-badge">AD</span>
+<div class="ad-anchor-text-wrap">
+<strong class="ad-anchor-title">FloatBoard Pro — The #1 Floating Clipboard &amp; Reference Board for Windows 11, Mac &amp; Linux</strong>
+<span class="ad-anchor-deal">Special Reader Deal: Get 50% OFF Lifetime/Pro Plan with Promo Code: <code>DEVTO50</code> (Ends Tonight!)</span>
+</div>
+</div>
+<div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free + Claim 50% Off →</a></div>
 </div>
 </aside>'''
 footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
@@ -296,9 +318,6 @@ for p in posts:
     assert audience in audiences, f'Unknown audience for {p["slug"]}: {audience}'
     path = '/blog/' + p['slug'] + '/'
     toc = ''.join(f'<li><a href="#{s["id"]}">{esc(s["title"])}</a></li>' for s in p['sections'])
-    promo_after = p.get('promo_after_section')
-    if promo_after is not None:
-        assert isinstance(promo_after, int) and 0 < promo_after < len(p['sections']), f'Invalid promo position: {p["slug"]}'
     in_content_ads = {
         1: ad_incontent_1,
         3: ad_incontent_2,
@@ -315,7 +334,22 @@ for p in posts:
     tags = ''.join(f'<li>{esc(tag)}</li>' for tag in p.get('tags', []))
     topic_list = f'<ul class="guide-tags" aria-label="Topics">{tags}</ul>' if tags else ''
     updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
-    body = f'''<article class="article-layout"><div class="article-content"><a href="/blog/">← All guides</a><header><p class="guide-eyebrow">{esc(p['category'])}</p><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}{ad_leaderboard_top}<p class="guide-intro">{esc(p['intro'])}</p></header><figure>{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure><nav class="toc" aria-label="In this guide"><strong>In this guide</strong><ol>{toc}</ol></nav><div class="article-body">{sections}</div>{ad_sponsored_grid}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap">{ad_sidebar_300x250}{ad_sidebar_300x600}{ad_sidebar_sponsored_links}{ad_sidebar_sticky_offer}</div></aside></article>{sticky_dock}'''
+    
+    steps_li = ''.join(f'<li>{esc(st)}</li>' for st in p.get('quick_answer', []))
+    quick_answer_row = f'''<div class="quick-answer-row">
+<div class="quick-answer-card">
+<div class="quick-answer-badge">⚡ Quick Answer (TL;DR — 3 Seconds):</div>
+<ol class="quick-answer-steps">{steps_li}</ol>
+</div>
+<aside class="ad-card-iab ad-card-inline-promo" aria-label="Sponsored special offer">
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">AD</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
+<h4 class="ad-inline-title">FloatBoard Pro · 50% OFF</h4>
+<p class="ad-inline-desc">Pin images, source URLs &amp; dev notes above VS Code or Chrome.</p>
+<a href="/pricing.html" class="ad-inline-btn">Get Instant Access (Code: DEVTO50) →</a>
+</aside>
+</div>''' if p.get('quick_answer') else ''
+
+    body = f'''<article class="article-layout blog-portal-grid"><aside class="portal-left-col" aria-label="Quick navigation and shortcuts"><div class="left-sticky-wrap"><nav class="portal-toc-box" aria-label="Quick navigation"><div class="portal-toc-header">📑 Quick Navigation</div><ol class="portal-toc-list">{toc}</ol></nav>{ad_left_skyscraper}</div></aside><div class="article-content article-main-card"><a href="/blog/" class="portal-back-link">← All guides</a><header class="article-header"><div class="portal-category-pill">{esc(p['category'])}</div><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}{ad_leaderboard_top}<p class="guide-intro">{esc(p['intro'])}</p></header><figure class="article-hero-figure">{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure>{quick_answer_row}<div class="article-body">{sections}</div>{ad_sponsored_grid}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar portal-right-col" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap">{ad_sidebar_300x600}{ad_sidebar_300x250_emerald}{ad_sidebar_sponsored_links}{ad_sidebar_sticky_offer}</div></aside></article>{sticky_dock}'''
     schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
     if p.get('tags'):
         schema['keywords'] = p['tags']
@@ -333,8 +367,8 @@ blog_intro = '''<header><p class="guide-eyebrow">The FloatBoard blog</p>
 <p><a href="/download/">Try FloatBoard on your desktop</a> or read the <a href="/clipboard-manager.html">clipboard</a> and <a href="/floating-notes.html">floating-notes</a> overviews.</p>
 </header><nav class="blog-topic-nav" aria-label="Guide topics"><a href="#clipboard">Clipboard and copied text</a><a href="#floating-notes">Notes that stay in view</a><a href="#visual-references">Small image working sets</a></nav>'''
 blog_outro = '<section><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>'
-page('/blog/','Desktop clipboard, floating notes and image-reference guides','Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.', blog_intro + ''.join(blog_sections) + blog_outro,{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
-page('/blog/about/','About the FloatBoard blog','Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.', '''<h1>About the FloatBoard blog</h1><p class="guide-intro">This is FloatBoard’s official product blog. We publish practical guides for people working with desktop notes, copied text and image references.</p><section><h2>Who publishes these guides</h2><p>The publisher is FloatBoard, the application featured on this website. These are product guides, not independent reviews. For the app’s source and release history, visit the <a href="https://github.com/nazihyazan/floating_board">FloatBoard project</a> and <a href="https://github.com/nazihyazan/mac_test/releases">Linux releases</a>.</p></section><section><h2>How the guides are prepared</h2><p>These guides are drafted with AI assistance using product screenshots and recorded demonstrations supplied by the app owner, FloatBoard product information and linked primary documentation. The visuals illustrate workflows at the time captured; examples are not measured productivity studies. Older recordings may show controls or website copy that has since changed. We do not claim that a feature was independently tested unless the article documents that test.</p><p>We keep each guide focused on one task, describe limitations, link to current pricing and downloads, and avoid invented ratings, customer quotations or performance claims. Features and layouts can differ between versions.</p></section><section><h2>Corrections and updates</h2><p>If an instruction does not match your version, <a href="/#contact">contact FloatBoard</a> with the article URL, your operating system and app version. Publication dates identify the original articles; revision dates should change only when the content changes substantially.</p></section><p><a href="/blog/">Explore the guides</a></p>''',{'@context':'https://schema.org','@type':'AboutPage','name':'About the FloatBoard blog','url':BASE+'/blog/about/'})
+page('/blog/','FloatBoard Guides: Windows 11, Mac & Linux Multitasking, Clipboard & Floating Notes Tips','Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.', blog_intro + ''.join(blog_sections) + blog_outro,{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
+page('/blog/about/','About FloatBoard – The Offline Always-on-Top Floating Clipboard & Scratchpad for Desktop','Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.', '''<h1>About the FloatBoard blog</h1><p class="guide-intro">This is FloatBoard’s official product blog. We publish practical guides for people working with desktop notes, copied text and image references.</p><section><h2>Who publishes these guides</h2><p>The publisher is FloatBoard, the application featured on this website. These are product guides, not independent reviews. For the app’s source and release history, visit the <a href="https://github.com/nazihyazan/floating_board">FloatBoard project</a> and <a href="https://github.com/nazihyazan/mac_test/releases">Linux releases</a>.</p></section><section><h2>How the guides are prepared</h2><p>These guides are drafted with AI assistance using product screenshots and recorded demonstrations supplied by the app owner, FloatBoard product information and linked primary documentation. The visuals illustrate workflows at the time captured; examples are not measured productivity studies. Older recordings may show controls or website copy that has since changed. We do not claim that a feature was independently tested unless the article documents that test.</p><p>We keep each guide focused on one task, describe limitations, link to current pricing and downloads, and avoid invented ratings, customer quotations or performance claims. Features and layouts can differ between versions.</p></section><section><h2>Corrections and updates</h2><p>If an instruction does not match your version, <a href="/#contact">contact FloatBoard</a> with the article URL, your operating system and app version. Publication dates identify the original articles; revision dates should change only when the content changes substantially.</p></section><p><a href="/blog/">Explore the guides</a></p>''',{'@context':'https://schema.org','@type':'AboutPage','name':'About the FloatBoard blog','url':BASE+'/blog/about/'})
 
 ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
 ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'

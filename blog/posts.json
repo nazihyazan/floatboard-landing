@@ -7,8 +7,8 @@
       "start-two-image-reference-board",
       "compare-photos-side-by-side-windows"
     ],
-    "title": "How to Organize Image References & Notes on One Screen (Best PureRef Alternative 2026)",
-    "description": "Need to keep reference images AND text notes pinned on top of your apps? Learn how to set up an always-on-top floating reference board for Windows, Mac, and Linux.",
+    "title": "How to Organize Image References & Moodboards on Windows/Linux (Free PureRef Alternative)",
+    "description": "Organize visual reference boards and text notes on one screen. A lightweight, always-on-top PureRef alternative for artists and designers.",
     "category": "Designers & illustrators",
     "image": "image-reference-board.jpg",
     "alt": "FloatBoard in dark mode displaying four landscape image references in a two-column grid",
@@ -58,7 +58,18 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "tags": [
+      "reference board maker",
+      "organize image references",
+      "floating reference image viewer",
+      "moodboard app for pc"
+    ],
+    "quick_answer": [
+      "Start with a specific design question (color palette, silhouette, or lighting) instead of collecting dozens of random images.",
+      "Add up to 4 distinct references into FloatBoard beside a short text note with your design constraints.",
+      "Keep the floating board pinned above Photoshop, Blender, or Figma while you sketch."
+    ]
   },
   {
     "slug": "code-snippets-and-screenshots",
@@ -67,8 +78,8 @@
       "keep-webpage-text-beside-image-references",
       "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "Keep Code Snippets and Screenshots Visible While Debugging",
-    "description": "Use FloatBoard as a small always-on-top text-and-image reference while fixing one UI bug; keep reusable snippets in a searchable library.",
+    "title": "Best Way to Save Code Snippets & Terminal Screenshots Always on Top (Windows, Mac & Linux)",
+    "description": "Keep curl commands, API tokens, regex patterns, and error screenshots pinned directly over your IDE while debugging.",
     "category": "Developer workflow",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard with four image thumbnails on the left and a text card containing HTML markup on the right",
@@ -113,7 +124,18 @@
       }
     ],
     "modified": "2026-10-07",
-    "audience": "visual-references"
+    "audience": "visual-references",
+    "tags": [
+      "code snippet manager windows",
+      "pin code snippets on screen",
+      "developer clipboard manager",
+      "floating scratchpad for coding"
+    ],
+    "quick_answer": [
+      "Copy your temporary curl requests, auth headers, and bash one-liners into FloatBoard.",
+      "Pin the board right beside your terminal and VS Code window so parameters stay in plain view.",
+      "Eliminate 1,200 Alt-Tabs per day with zero cloud latency and 100% offline local privacy."
+    ]
   },
   {
     "slug": "keep-reference-notes-visible-while-writing",
@@ -122,8 +144,8 @@
       "take-notes-while-watching-tutorials",
       "keep-meeting-notes-visible-video-call"
     ],
-    "title": "Keep Research Notes Visible While Writing",
-    "description": "Pin short source notes and optional image references beside Word or Google Docs in FloatBoard; keep full citations in your project document.",
+    "title": "How to Keep Research & Reference Notes Always on Top While Writing (Word, Docs & Notion)",
+    "description": "Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion.",
     "category": "Writing with notes",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard showing text reference cards on the left and six image thumbnails on the right",
@@ -163,7 +185,18 @@
       }
     ],
     "modified": "2026-10-07",
-    "audience": "floating-notes"
+    "audience": "floating-notes",
+    "tags": [
+      "floating notes for windows",
+      "keep notes on top of word",
+      "always on top notepad windows 11",
+      "split screen alternative for writers"
+    ],
+    "quick_answer": [
+      "Paste your thesis, outline bullets, and key source citations into a compact FloatBoard text pad.",
+      "Pin the pad Always-on-Top in the top-right corner of your screen.",
+      "Write in full-screen Google Docs, Word, or Notion without switching tabs or losing your writing flow."
+    ]
   },
   {
     "slug": "windows-clipboard-history-vs-floating-notes",
@@ -172,8 +205,8 @@
       "keep-webpage-text-beside-image-references",
       "copy-text-from-screenshot-windows"
     ],
-    "title": "Keep Copied Text Visible While Working on Windows",
-    "description": "Use Windows + V to retrieve copied items and FloatBoard to keep selected text or images visible beside your work; learn when each helps.",
+    "title": "Windows Clipboard History (Win + V) vs. Floating Notes: Which Is Better for Multitasking?",
+    "description": "Compare Windows Win+V clipboard history with always-on-top floating scratchpads for daily productivity, coding, and multitasking.",
     "category": "Windows clipboard workflow",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard window showing separate text cards beside a grid of image thumbnails",
@@ -213,7 +246,18 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "tags": [
+      "windows clipboard history",
+      "floating clipboard windows",
+      "floating notes for windows 11",
+      "win+v alternative"
+    ],
+    "quick_answer": [
+      "Windows Win+V: Great for pasting a 5-minute-old text snippet, but vanishes immediately as soon as you click anywhere else.",
+      "Floating Notes: Keeps multiple snippets, API keys, and reference images permanently visible above all running windows.",
+      "FloatBoard combines both: Auto-captures clipboard items into an always-on-top, resizable visual workspace."
+    ]
   },
   {
     "slug": "take-notes-while-watching-tutorials",
@@ -222,8 +266,8 @@
       "keep-webpage-text-beside-image-references",
       "code-snippets-and-screenshots"
     ],
-    "title": "Keep Tutorial Notes Visible While Practising on One Screen",
-    "description": "Keep a timestamp, next action and expected result in a small pinned FloatBoard note while following a software tutorial on one monitor.",
+    "title": "How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)",
+    "description": "Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen.",
     "category": "Learning & desktop notes",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard displaying image thumbnails next to a text panel containing an HTML reference snippet",
@@ -268,7 +312,18 @@
       }
     ],
     "audience": "floating-notes",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "tags": [
+      "take notes while watching video",
+      "floating notes for online learning",
+      "always on top notes youtube tutorial",
+      "single screen study notes"
+    ],
+    "quick_answer": [
+      "Open your tutorial in your browser or media player and position FloatBoard in a compact corner.",
+      "Toggle Always-on-Top so the note never gets hidden when you pause, play, or switch to your code editor.",
+      "Record timestamps, commands, and key takeaways in real time without splitting your screen."
+    ]
   },
   {
     "slug": "compare-photos-side-by-side-windows",
@@ -277,8 +332,8 @@
       "inspect-image-original-after-thumbnail",
       "shortlist-landscape-photos-for-website-hero"
     ],
-    "title": "Compare Photos Side by Side on Windows While You Work",
-    "description": "Use Photos or Snap for full-size comparison, then keep a small FloatBoard image shortlist visible beside your browser or design app.",
+    "title": "5 Best Ways to Compare Photos Side by Side on Windows 10 & 11 (Free Tools)",
+    "description": "Compare 2, 4, or 10 photos side by side on Windows 10 & 11 with an always-on-top floating image board without opening dozens of browser tabs.",
     "category": "Photo comparison workflow",
     "image": "compare-photos-side-by-side.png",
     "alt": "FloatBoard showing four car-photo thumbnails in a two-by-two grid above a browser page with larger source images",
@@ -333,7 +388,18 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "tags": [
+      "compare photos side by side",
+      "compare side by side images",
+      "side by side photo comparison",
+      "image comparison tool windows"
+    ],
+    "quick_answer": [
+      "Drag and drop your candidate photos into FloatBoard to arrange them in a clean 2-column or 4-column grid.",
+      "Pin the floating board on top of your photo editing or web design workspace.",
+      "Click any image thumbnail to inspect 100% full-resolution detail without opening heavy photo viewers."
+    ]
   },
   {
     "slug": "copy-text-from-screenshot-windows",
@@ -342,8 +408,8 @@
       "code-snippets-and-screenshots",
       "windows-clipboard-history-vs-floating-notes"
     ],
-    "title": "Copy Text from a Screenshot and Keep the Image in View",
-    "description": "Use Windows OCR tools to extract screenshot text, then keep corrected text and the source image side by side in FloatBoard for verification.",
+    "title": "How to Copy Text from a Screenshot or Screen on Windows 10 & 11 (3 Free OCR Ways)",
+    "description": "Need to screenshot, copy, and paste text from your screen? Here are the 3 fastest ways to capture text from any screen or image on Windows 10 and Windows 11.",
     "category": "Windows screenshot workflow",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard displaying four image thumbnails beside a text card containing HTML reference text",
@@ -389,7 +455,18 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "tags": [
+      "how to copy text from screen",
+      "screenshot copy and paste text",
+      "capture text from screen windows 10",
+      "extract text from image windows 11"
+    ],
+    "quick_answer": [
+      "Windows 11: Press Win + Shift + S, capture screen region, open Snipping Tool notification, and click \"Text Actions\" → \"Copy all text\".",
+      "Windows 10: Use PowerToys Text Extractor (Win + Shift + T) to highlight screen text and copy directly to your clipboard.",
+      "Keep Both Visible: Pin both your screenshot and extracted text on top with FloatBoard while coding or writing."
+    ]
   },
   {
     "slug": "keep-meeting-notes-visible-video-call",
@@ -397,8 +474,8 @@
       "keep-reference-notes-visible-while-writing",
       "clear-copied-text-history-keep-working-set"
     ],
-    "title": "Keep Personal Meeting Notes Visible During a Teams Call",
-    "description": "Use a pinned FloatBoard note for private prompts during a Teams call, keep official decisions in shared notes, and check screen sharing.",
+    "title": "How to Keep Meeting Notes Always on Top During Zoom, Teams & Google Meet Calls",
+    "description": "Keep talking points, agendas, and attendee notes pinned floating right beside your webcam during Zoom, Teams, or Google Meet video calls.",
     "category": "Meeting notes & desktop workflow",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard window with text cards on the left and image thumbnails on the right",
@@ -449,7 +526,18 @@
       }
     ],
     "audience": "floating-notes",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "tags": [
+      "floating notes for windows 11",
+      "keep notes visible on video call",
+      "always on top sticky notes zoom",
+      "transparent floating notes pc"
+    ],
+    "quick_answer": [
+      "Create a compact meeting note with your agenda, attendee names, and key speaking points.",
+      "Position the note right below your laptop webcam so your eyes look directly at attendees while speaking.",
+      "Toggle FloatBoard's Always-on-Top pin so the note never gets buried when sharing screens in Zoom or Teams."
+    ]
   },
   {
     "slug": "keep-web-image-reference-visible-while-browsing",
@@ -458,8 +546,8 @@
       "collect-visual-references-across-search-pages",
       "organize-image-references"
     ],
-    "title": "Keep One Web Image Visible While Browsing",
-    "description": "Pin one image and a source note in FloatBoard while you browse, then verify the original before using it in your design.",
+    "title": "How to Keep a Web Image Pinned on Screen While Browsing Multiple Tabs",
+    "description": "Pin a reference image on top of Chrome or Edge while continuing to browse other sites, search pages, and online documents.",
     "category": "Image reference workflows",
     "image": "gif-1-poster.jpg",
     "alt": "Recorded FloatBoard demo beside a browser search for landscape photography, with a selected reference image shown in a larger view",
@@ -469,9 +557,10 @@
     "date": "2026-10-05",
     "promo_after_section": 3,
     "tags": [
-      "Web image references",
-      "Design research",
-      "Always-on-top workspace"
+      "keep image visible while browsing",
+      "pin image on screen chrome",
+      "floating web image viewer",
+      "picture-in-picture image viewer"
     ],
     "intro": "When the image you are evaluating disappears behind the next browser tab, keep only that working reference visible in FloatBoard. Pair it with a short text note containing its source and the question it should answer, then reopen the original for detail or usage rights. This one-image task differs from building a larger reference library.",
     "sections": [
@@ -517,7 +606,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Copy or drag any web image into FloatBoard to lock it in a persistent always-on-top window.",
+      "Browse across dozens of tabs, search results, and documents while the reference stays locked in place.",
+      "Compare live web pages against your benchmark image without resizing or tiling browser windows."
+    ]
   },
   {
     "slug": "shortlist-landscape-photos-for-website-hero",
@@ -526,8 +620,8 @@
       "start-two-image-reference-board",
       "compare-photos-side-by-side-windows"
     ],
-    "title": "Shortlist Hero Photos With a Floating Image Board",
-    "description": "Keep a few hero-photo candidates visible in FloatBoard while testing crop and text space in the real webpage layout.",
+    "title": "How to Compare & Pick the Best Website Hero Image Side-by-Side (Web Design Workflow)",
+    "description": "Shortlist and compare candidate hero photos directly over your website staging layout with a floating reference board.",
     "category": "Designers & illustrators",
     "image": "gif-2-poster.jpg",
     "alt": "Recorded FloatBoard demo showing a small grid of landscape candidate images while browsing a photography website",
@@ -537,9 +631,10 @@
     "date": "2026-10-05",
     "promo_after_section": 3,
     "tags": [
-      "Hero image selection",
-      "Visual references",
-      "Design decisions"
+      "side by side picture comparison",
+      "website hero image comparison",
+      "web designer reference board",
+      "compare landscape photos"
     ],
     "intro": "A hero photograph needs room for a headline and a crop that works on desktop and mobile. Use FloatBoard to keep a small candidate set visible beside the page mockup, then test finalists in the actual layout and confirm rights at the source. This is a shortlist workflow, not a stock-photo library.",
     "sections": [
@@ -585,7 +680,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Collect your top 4 landscape photo candidates and add them into FloatBoard's image grid.",
+      "Position the floating board right over your website header mockup to test text contrast and focal points.",
+      "Eliminate weak images one by one until you identify the photo that pairs best with your call-to-action."
+    ]
   },
   {
     "slug": "review-image-grid-and-large-preview",
@@ -594,8 +694,8 @@
       "compare-photos-side-by-side-windows",
       "shortlist-landscape-photos-for-website-hero"
     ],
-    "title": "Review a Small Image Grid, Then Check the Original",
-    "description": "Use a small visible FloatBoard image grid to shortlist candidates, then open the original file to inspect detail or quality.",
+    "title": "How to View Photos in a Side-by-Side Grid with Instant Large Preview on Windows",
+    "description": "Review dozens of copied images in a floating grid and trigger instant full-size previews without saving temporary files to disk.",
     "category": "Image reference workflows",
     "image": "gif-3-poster.jpg",
     "alt": "Recorded FloatBoard demo showing a small grid of landscape references beside browser image results",
@@ -605,9 +705,10 @@
     "date": "2026-10-05",
     "promo_after_section": 3,
     "tags": [
-      "Image preview",
-      "Visual references",
-      "Design decisions"
+      "photo grid viewer windows 11",
+      "compare images side by side",
+      "quick look image preview windows",
+      "fast photo culling tool"
     ],
     "intro": "A compact FloatBoard grid lets you compare broad composition while staying in your work app. When one image looks promising, open its original in a browser or viewer to inspect details; the board tile is only a locator. This guide separates the quick grid pass from the full-size verification pass.",
     "sections": [
@@ -653,7 +754,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Drop multiple reference images into FloatBoard to view them side-by-side in a responsive multi-card layout.",
+      "Use keyboard shortcuts or quick clicks to toggle between high-level grid comparison and large detailed preview.",
+      "Pin the comparison board on top of your staging site or design tool to evaluate visual balance in context."
+    ]
   },
   {
     "slug": "collect-visual-references-across-search-pages",
@@ -662,8 +768,8 @@
       "copy-web-image-and-keep-source",
       "organize-image-references"
     ],
-    "title": "Keep Search-Page Image References Visible as You Browse",
-    "description": "Build a small FloatBoard image-and-note working set across search pages, with one distinct role and source for each candidate.",
+    "title": "How to Collect Visual References Across Search Pages into One Floating Board",
+    "description": "Gather images and inspiration across multiple Google search tabs into a single persistent floating reference board.",
     "category": "Image reference workflows",
     "image": "gif-6-poster.jpg",
     "alt": "Recorded browser search for tree images with a FloatBoard window visible while different results and pages are reviewed",
@@ -673,9 +779,10 @@
     "date": "2026-10-05",
     "promo_after_section": 3,
     "tags": [
-      "Visual reference search",
-      "Design research",
-      "Source tracking"
+      "collect visual references",
+      "moodboard from search results",
+      "floating image collector",
+      "compare image search results"
     ],
     "intro": "Moving through image-search pages can make you forget why a candidate mattered. Keep a few distinct images visible in FloatBoard with a short text note listing each role and source, then stop when those roles answer the design question. This guide is for cross-page collection, not a permanent asset library.",
     "sections": [
@@ -721,7 +828,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Open multiple image search queries (Google Images, Pinterest, Unsplash) in your browser.",
+      "Right-click and copy candidate images directly into FloatBoard's floating multi-pane board.",
+      "Build a curated working moodboard in seconds while FloatBoard preserves original source URLs."
+    ]
   },
   {
     "slug": "copy-web-image-and-keep-source",
@@ -730,8 +842,8 @@
       "collect-visual-references-across-search-pages",
       "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "Copy a Web Image to a Floating Board and Keep Its Source",
-    "description": "Add a copied web image to a small FloatBoard working set and record the source page, creator and usage terms separately.",
+    "title": "How to Copy an Image from a Website & Paste It (While Saving the Source URL)",
+    "description": "Learn how to copy and paste a picture from any website in seconds, plus a free trick for Windows & Linux to automatically save the original image source link.",
     "category": "Clipboard & source tracking",
     "image": "gif-7-poster.jpg",
     "alt": "Recorded browser demo showing an opened tree photograph on its source page beside FloatBoard image tiles",
@@ -741,9 +853,10 @@
     "date": "2026-10-05",
     "promo_after_section": 3,
     "tags": [
-      "Copy image from webpage",
-      "Clipboard workflow",
-      "Source tracking"
+      "how to copy an image from a website",
+      "copy and paste picture from website",
+      "save web image with source link",
+      "image clipboard manager"
     ],
     "intro": "Copying image pixels does not reliably preserve the source page. After checking the original page, use your installed version’s image workflow to place a working copy in FloatBoard and add a short source note beside it. This guide distinguishes an image copy from an image URL and explains what to verify before publication.",
     "sections": [
@@ -789,7 +902,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Right-click directly on the picture or photo on any webpage and select \"Copy image\".",
+      "Paste it into your document or workspace with Ctrl + V (or Cmd + V on Mac).",
+      "To avoid losing where the image came from, use FloatBoard to automatically pin the source URL with the picture."
+    ]
   },
   {
     "slug": "capture-webpage-detail-screenshot-reference",
@@ -798,8 +916,8 @@
       "inspect-image-original-after-thumbnail",
       "code-snippets-and-screenshots"
     ],
-    "title": "Keep a Webpage Detail Screenshot Visible Beside Your Design",
-    "description": "Capture a specific webpage detail with browser or OS tools, keep the crop and a source note in FloatBoard, and test the design idea.",
+    "title": "How to Take a Webpage Screenshot on Windows & Pin It as a Floating Reference",
+    "description": "Capture any UI snippet or article diagram and keep it floating always on top while designing or coding without cluttering your desktop.",
     "category": "Webpage screenshot workflow",
     "image": "gif-8-poster.jpg",
     "demo_video": "gif-8-demo.mp4",
@@ -808,9 +926,10 @@
     "caption": "Archived July Linux demonstration: the browser image menu includes “Take Screenshot,” and FloatBoard displays a temporary image board. The clip does not establish exact capture steps or current controls; the old landing-page copy shown later is historical.",
     "date": "2026-10-05",
     "tags": [
-      "Webpage screenshot reference",
-      "Screenshots",
-      "Source tracking"
+      "how to screenshot a webpage windows 11",
+      "pin screenshot on screen",
+      "floating screenshot reference tool",
+      "web capture with url"
     ],
     "intro": "When a webpage detail matters—spacing, contrast or shape—capture just enough context with your browser or operating system. FloatBoard can keep that crop and a short purpose note visible beside your design while you test the idea; it is not a screenshot tool. This guide also covers retaining the original page and checking what you are allowed to reuse.",
     "promo_after_section": 3,
@@ -857,7 +976,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Press your screenshot shortcut (Win + Shift + S or FloatBoard capture hotkey) to crop the target UI detail.",
+      "FloatBoard immediately captures the snippet into a pinned, always-on-top floating tile.",
+      "Keep the reference visible above your code editor or browser without saving throwaway PNG files to disk."
+    ]
   },
   {
     "slug": "keep-webpage-text-beside-image-references",
@@ -866,8 +990,8 @@
       "windows-clipboard-history-vs-floating-notes",
       "code-snippets-and-screenshots"
     ],
-    "title": "Keep Copied Webpage Text Beside Image References",
-    "description": "Use FloatBoard to keep a short sourced webpage excerpt and related image visible in one window while checking a claim or design.",
+    "title": "How to Keep Copied Webpage Text Beside Image References on One Screen",
+    "description": "Pin copied web text, quotes, and research excerpts right next to visual references in a dual-pane always-on-top floating window.",
     "category": "Web research workflow",
     "image": "gif-9-poster.jpg",
     "demo_video": "gif-9-demo.mp4",
@@ -876,9 +1000,10 @@
     "caption": "Archived July Linux demonstration: selected text from the old FloatBoard landing page appears beside image references. The landing-page wording shown is historical and is not current product or pricing copy.",
     "date": "2026-10-05",
     "tags": [
-      "Copied webpage text",
-      "Clipboard workflow",
-      "Desktop notes"
+      "text and image floating board",
+      "keep copied text beside image",
+      "dual pane desktop scratchpad",
+      "floating reference organizer"
     ],
     "intro": "A copied sentence and a related image help only if you keep their sources and meaning straight. Put the short excerpt and selected image in a small FloatBoard working set beside your document, then record the verified conclusion in your project file. This guide is for a mixed text-and-image task, not automatic citation or OCR.",
     "promo_after_section": 3,
@@ -925,7 +1050,12 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Copy your reference image into FloatBoard's left pane and your reference text/quote into the right pane.",
+      "Pin the combined dual-pane card Always-on-Top over your primary application.",
+      "Review requirements, specs, and visual assets simultaneously without switching between multiple apps."
+    ]
   },
   {
     "slug": "clear-copied-text-history-keep-working-set",
@@ -934,8 +1064,8 @@
       "keep-webpage-text-beside-image-references",
       "keep-reference-notes-visible-while-writing"
     ],
-    "title": "Clear Clipboard History Without Losing Working Notes",
-    "description": "Before clearing recent copied text, save lasting items elsewhere and keep only the current task’s note or image visible in FloatBoard.",
+    "title": "How to Clear Clipboard History on Windows 10 & 11 (Without Losing Pinned Clips)",
+    "description": "Learn how to clear Windows clipboard history without deleting your pinned notes and working clips. Compare Win+V with always-on-top floating pads.",
     "category": "Clipboard cleanup workflow",
     "image": "gif-10-poster.jpg",
     "demo_video": "gif-10-demo.mp4",
@@ -944,9 +1074,11 @@
     "caption": "Archived July Linux demonstration: a FloatBoard history panel and a separate working board are visible. The old webpage copy behind the app is historical, and controls in the current release may differ.",
     "date": "2026-10-05",
     "tags": [
-      "Clear clipboard history",
-      "Clipboard workflow",
-      "Desktop notes"
+      "clear copies",
+      "clipboard cleared",
+      "how to clear clipboard windows 11",
+      "keep pinned clipboard items",
+      "floating clipboard windows"
     ],
     "intro": "Clipboard history is a temporary convenience, not the only place to keep a decision or source. Review the recent text you still need, save durable material to the right project file, and leave just the active note or image visible in FloatBoard before clearing obsolete history. This guide distinguishes app history from Windows + V.",
     "promo_after_section": 3,
@@ -993,7 +1125,12 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Press Win + V on Windows 10/11 to open Clipboard History and click \"Clear all\" at the top.",
+      "Beware: Native clipboard clear deletes your active scratchpad and temporary working snippets.",
+      "Use FloatBoard to separate throwaway clipboard history from pinned reference notes that stay visible."
+    ]
   },
   {
     "slug": "inspect-image-original-after-thumbnail",
@@ -1002,8 +1139,8 @@
       "compare-photos-side-by-side-windows",
       "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "Check an Original Image While Its Reference Tile Stays Visible",
-    "description": "Use a FloatBoard image tile to track the candidate, inspect its original in a viewer, and record one finding before returning to work.",
+    "title": "How to View Full-Resolution Images & Zoom 100% From Clipboard Thumbnails on PC",
+    "description": "Inspect 100% original image details directly from clipboard thumbnails without opening heavy image editors on Windows and Linux.",
     "category": "Image quality workflow",
     "image": "gif-11-poster.jpg",
     "demo_video": "gif-11-demo.mp4",
@@ -1012,9 +1149,10 @@
     "caption": "Archived July Linux demonstration: thumbnail and history views are shown, not a verified full-size image inspection. Open the original file or source page to assess detail. The current app interface may differ.",
     "date": "2026-10-05",
     "tags": [
-      "Inspect original image",
-      "Visual references",
-      "Image quality"
+      "view full size image from clipboard",
+      "image thumbnail zoom viewer windows",
+      "inspect original image resolution",
+      "floating image viewer"
     ],
     "intro": "A small image tile helps you remember the candidate, but it cannot prove sharpness or fine detail. Keep the FloatBoard reference visible while opening the original in a browser or image viewer, then add a short note about what you found. This guide is about verifying one candidate, not enlarging a thumbnail inside the board.",
     "promo_after_section": 3,
@@ -1061,7 +1199,12 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Keep a compact grid of thumbnail references floating on your screen for quick visual context.",
+      "Click any reference tile in FloatBoard to expand the original uncompressed resolution instantly.",
+      "Verify fine typography, UI borders, and compression artifacts without launching heavy image editors."
+    ]
   },
   {
     "slug": "start-two-image-reference-board",
@@ -1070,8 +1213,8 @@
       "shortlist-landscape-photos-for-website-hero",
       "keep-web-image-reference-visible-while-browsing"
     ],
-    "title": "Start a Two-Image Reference Board for One Design Decision",
-    "description": "Keep two contrasting images and a brief decision note visible in FloatBoard while testing a new design direction.",
+    "title": "How to Start a Two-Image Reference Board for Focused Visual Decisions",
+    "description": "Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction.",
     "category": "Two-image design workflow",
     "image": "gif-12-poster.jpg",
     "demo_video": "gif-12-demo.mp4",
@@ -1080,9 +1223,10 @@
     "caption": "Archived July Linux demonstration: a new FloatBoard working surface ends with two landscape references. Intermediate settings and historical website copy may differ from the current release.",
     "date": "2026-10-05",
     "tags": [
-      "Two-image reference board",
-      "Visual references",
-      "Design decisions"
+      "compare two images side by side",
+      "two image reference board",
+      "minimal moodboard app",
+      "side by side visual comparison"
     ],
     "intro": "Before collecting a wall of inspiration, choose two images that test different answers to one design question. Put them in a small FloatBoard board with a short text note, keep it visible beside the layout, and save your conclusion in the project file. This guide shows that first decision, not long-term image archiving.",
     "promo_after_section": 3,
@@ -1129,12 +1273,17 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07"
+    "modified": "2026-10-07",
+    "quick_answer": [
+      "Select exactly two candidate images that represent opposing design choices (e.g. dark vs light hero).",
+      "Place them side-by-side in FloatBoard pinned directly above your active working canvas.",
+      "Evaluate composition and color balance quickly, pick the winner, and close the reference board."
+    ]
   },
   {
     "slug": "keep-design-tokens-and-mockups-visible-while-coding",
-    "title": "Keep Design Tokens and Mockup References Visible While Coding UI",
-    "description": "Keep CSS variables, color tokens and layout mockups pinned beside your code editor in FloatBoard so you can implement designs without tab-switching.",
+    "title": "How to Pin Figma Mockups, Hex Colors & Design Tokens Above VS Code While Coding",
+    "description": "Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.",
     "category": "Frontend developers & designers",
     "image": "design-tokens-and-mockup-board.jpg",
     "alt": "FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right",
@@ -1143,10 +1292,10 @@
     "modified": "2026-10-17",
     "audience": "visual-references",
     "tags": [
-      "Design tokens",
-      "Frontend development",
-      "Visual references",
-      "UI implementation"
+      "pin figma mockup on top of vs code",
+      "always on top image overlay for developers",
+      "keep design tokens visible",
+      "frontend developer floating tool"
     ],
     "intro": "Translating a design mockup into frontend code requires constant cross-referencing between hex codes, spacing units, responsive rules, and visual mockups. Pinning a compact FloatBoard workspace beside your editor keeps key tokens and visual references in immediate view without switching windows or splitting narrow laptop screens.",
     "sections": [
@@ -1195,6 +1344,11 @@
       "organize-image-references",
       "capture-webpage-detail-screenshot-reference",
       "keep-webpage-text-beside-image-references"
+    ],
+    "quick_answer": [
+      "Take a quick screenshot of your Figma component, padding specs, and color palette tokens.",
+      "FloatBoard pins the mockup in an always-on-top window directly over your HTML/CSS editor.",
+      "Implement pixel-perfect styling without splitting your monitor into narrow 40-character columns."
     ]
   },
   {
@@ -1205,8 +1359,8 @@
       "windows-clipboard-history-vs-floating-notes",
       "clear-copied-text-history-keep-working-set"
     ],
-    "title": "Always on Top Windows 11 & Mac: Fix the Alt-Tab Tax and Pin Dev Notes Above Your IDE",
-    "description": "Looking for how to make a window always on top in Windows 11 or Mac? Learn how to pin dev notes, curl snippets, and API keys without PowerToys or Alt-Tab fatigue.",
+    "title": "Always on Top Windows 11 & Mac: How to Pin Any Window, Sticky Note or IDE Scratchpad (3 Free Ways)",
+    "description": "Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference mockups always on top of your code editor.",
     "category": "Developer workflows & focus",
     "image": "developer-floating-notes-workspace.jpg",
     "alt": "FloatBoard desktop window showing developer API endpoints and auth tokens on the left with four visual reference images on the right",
@@ -1214,13 +1368,11 @@
     "date": "2026-10-23",
     "audience": "floating-notes",
     "tags": [
-      "Always on top Windows 11",
-      "How to pin window on top",
-      "Sticky notes always on top",
-      "PowerToys Always on Top shortcut",
-      "Pin window on top Mac",
-      "Developer scratchpad",
-      "Alt-Tab multitasking"
+      "always on top windows 11",
+      "how to pin window on top",
+      "sticky notes always on top",
+      "powertoys always on top shortcut",
+      "pin window on top mac"
     ],
     "intro": "Every software engineer knows the 3 PM burnout: your eyes ache, your brain feels scrambled, and you have barely pushed 40 lines of clean code. You did not get stuck on a difficult algorithm. You got bled dry by the Alt-Tab tax.\n\nOn a laptop or single monitor, an engineer switches windows roughly 1,200 times every day—flicking between VS Code, Swagger docs, terminal logs, Slack, and Postman. Every single switch incurs 2 to 3 seconds of OS animation, eye refocusing, and working memory decay. By mid-afternoon, your focus is completely fractured. Here is why dual monitors and tiling managers fail to solve it, and how an always-on-top floating scratchpad cuts window toggling by 80%.",
     "sections": [
@@ -1254,6 +1406,11 @@
         "title": "Reclaim your dopamine: Kill the Alt-Tab habit",
         "html": "<p>Eliminating window-switching friction is the highest-leverage upgrade you can make to your daily programming setup. <a href=\"/download/\">Download FloatBoard for Windows, Mac &amp; Linux</a> to pin your first working scratchpad over your editor.</p><p>Want to test the floating experience in your browser right now? Open our free <a href=\"/web-pad/\">WebPad online floating tool</a>, or explore our guides on <a href=\"/clipboard-manager.html\">floating clipboard management</a> and <a href=\"/floating-notes.html\">always-on-top sticky notes</a>.</p>"
       }
+    ],
+    "quick_answer": [
+      "Built-in Shortcut: Press Ctrl + Win + T (via Microsoft PowerToys) to pin any full window.",
+      "Purpose-Built Dev Board: Use FloatBoard to pin text notes, curl templates, and UI screenshots in a lightweight floating card.",
+      "Native Sticky Notes: Open Windows Sticky Notes and click the Pin icon to stay on top."
     ]
   },
   {
@@ -1265,7 +1422,7 @@
       "code-snippets-and-screenshots"
     ],
     "title": "How to Pin Screenshots Always on Top in Windows 11 & Mac (Clean Desktop Workflow)",
-    "description": "Stop saving 80 throwaway PNGs. Learn how to pin screenshots always on top of your screen instantly without saving files to disk or cluttering your desktop.",
+    "description": "Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.",
     "category": "Designers & developers",
     "image": "infinity-mirror-screenshot-reference.jpg",
     "alt": "FloatBoard desktop window displaying recursive screenshot-in-screenshot mirror loop beside working text notes",
@@ -1275,12 +1432,10 @@
     "date": "2026-10-23",
     "audience": "visual-references",
     "tags": [
-      "Pin screenshot to desktop",
-      "Always on top Windows 11",
-      "Floating screenshot reference",
-      "DeskPins alternative",
-      "Pin window on top Mac",
-      "Screen capture workflow"
+      "pin screenshot on screen",
+      "screenshot always on top windows 11",
+      "floating screenshot viewer",
+      "snip and pin desktop"
     ],
     "intro": "Open your desktop or Downloads folder right now. Chances are it looks like an abandoned storage unit filled with files like <code>Screenshot 2026-10-18 at 14.22.01.png</code>, <code>Screenshot (42).png</code>, and <code>image (7).png</code>.\n\nYou did not take those screenshots to preserve them for your grandchildren. You took them to check a hex color, compare two UI buttons, verify an error stack trace, or paste into a pull request. Yet your operating system forces you to treat every 20-second visual reference like a permanent archive file.\n\nThe video demonstration above shows the opposite: recursive floating capture. When you take a screenshot, FloatBoard catches it immediately, pins it always-on-top over your active workspace, and keeps it visible without saving a single throwaway file to your disk.",
     "sections": [
@@ -1314,6 +1469,11 @@
         "title": "Clean up your desktop once and for all",
         "html": "<p>Stop treating 20-second reference captures like permanent files. <a href=\"/download/\">Download FloatBoard for Windows, Mac &amp; Linux</a> to get started with the free plan, or unlock unlimited windows and lifetime updates for $5.99 on our <a href=\"/pricing.html\">pricing page</a>.</p><p>For related multi-window productivity workflows, explore our guides on <a href=\"/blog/code-snippets-and-screenshots/\">keeping code snippets and screenshots visible</a> and <a href=\"/clipboard-manager.html\">managing copied text with the floating clipboard</a>.</p>"
       }
+    ],
+    "quick_answer": [
+      "Trigger FloatBoard's screen capture shortcut to select any region or error message on your display.",
+      "The captured snippet instantly pins on top of all windows without prompting for a file save path.",
+      "Keep your reference visible until your task is finished, then close the card with zero clutter on your desktop."
     ]
   }
 ]
