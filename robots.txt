@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /metrics/
+Disallow: /packaging/
+Disallow: /bucket/
 Sitemap: https://floatboard.xyz/sitemap.xml
 Sitemap: https://floatboard.xyz/sitemap-main.xml

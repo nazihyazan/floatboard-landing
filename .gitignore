@@ -143,3 +143,6 @@ vite.config.ts.timestamp-*
 .vite/
 aichat
 license_keys.json
+repos/
+.cursor/
+reporrt/

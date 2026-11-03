@@ -1,0 +1,29 @@
+# FloatBoard
+
+> FloatBoard is a lightweight, 100% offline desktop utility for Windows, macOS, and Linux that combines an always-on-top floating clipboard manager, floating sticky notes, and a visual image reference board. Sold as a $5.99 lifetime license with no recurring subscriptions.
+
+The main homepage is available at: [floatboard.xyz](https://floatboard.xyz/)
+
+## Core Products & Capabilities
+
+- [Floating Notes](https://floatboard.xyz/floating-notes.html): Pin sticky notes, snippets, and references always on top while multitasking or coding.
+- [Clipboard Manager](https://floatboard.xyz/clipboard-manager.html): Multi-item clipboard history for text and images with instant copy, search, and pin.
+- [Pricing & License](https://floatboard.xyz/pricing.html): $5.99 one-time lifetime license. No subscriptions, offline activation, full privacy.
+- [Download](https://floatboard.xyz/download/): Direct downloads for Windows (installer and portable), macOS, and Linux.
+- [Web Pad](https://floatboard.xyz/web-pad/): In-browser scratchpad and quick note-taking pad without installation.
+- [Linux & Ubuntu](https://floatboard.xyz/linux/floating-clipboard-notes-ubuntu.html): Always-on-top floating clipboard and notes setup on Ubuntu and Debian-based Linux.
+
+## Alternative & Comparison Guides
+
+- [FloatBoard vs PureRef](https://floatboard.xyz/alternatives/pureref-with-text-and-clipboard.html): PureRef alternative combining visual image boards with rich text notes and clipboard history.
+- [FloatBoard vs PowerToys Always on Top](https://floatboard.xyz/compare/floatboard-vs-powertoys-always-on-top.html): Dedicated floating reference scratchpad compared to generic window pinning.
+- [FloatBoard vs Windows Sticky Notes](https://floatboard.xyz/alternatives/windows-sticky-notes-always-on-top.html): True always-on-top floating notes without disappearing behind active applications.
+- [FloatBoard vs Ditto & CopyQ](https://floatboard.xyz/alternatives/ditto-copyq-visual-clipboard.html): Modern visual clipboard manager with inline image previews and pinboard workspace.
+
+## Documentation & Guides
+
+- [Blog](https://floatboard.xyz/blog/): Workflow guides, productivity tips, and reference board techniques.
+- [Organize Image References](https://floatboard.xyz/blog/organize-image-references/): Guide on structuring mood boards and screenshot references for digital artists and designers.
+- [Keep Design Tokens Visible While Coding](https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/): Frontend developer workflow for side-by-side specs and code editors.
+- [Always-on-Top Notes for Developers](https://floatboard.xyz/blog/always-on-top-floating-notes-developers-multitasking/): Reducing Alt-Tab fatigue when managing API documentation and terminals.
+

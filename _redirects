@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects
+/downloads/* /download/ 301
+/downloads /download/ 301
+/download /download/ 301
+/web-pad /web-pad/ 301
+/blog /blog/ 301
+/index.html / 301
+

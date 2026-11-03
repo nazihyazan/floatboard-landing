@@ -1,18 +1,17 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow) | FloatBoard</title><meta name="description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.">
+<title>How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)</title><meta name="description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.">
 <link rel="canonical" href="https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/"><link rel="icon" href="/icon.png">
 <link rel="stylesheet" href="/assets/content.css"><link rel="stylesheet" href="/blog/blog.css">
 <meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)"><meta property="og:description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk."><meta property="og:url" content="https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)"><meta name="twitter:description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Pin Screenshots Always on Top in Windows 11 & Mac (Clean Desktop Workflow)", "description": "Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.", "image": ["https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg"], "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["pin screenshot on screen", "screenshot always on top windows 11", "floating screenshot viewer", "snip and pin desktop"]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to Pin Screenshots Always on Top in Windows 11 & Mac (Clean Desktop Workflow)", "description": "Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.", "image": ["https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg"], "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["pin screenshot on screen", "screenshot always on top windows 11", "floating screenshot viewer", "snip and pin desktop"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I pin a screenshot so it stays on top of other windows?", "acceptedAnswer": {"@type": "Answer", "text": "Open FloatBoard and ensure the pin icon in the top header is active. Then take a screenshot using your usual keyboard shortcut (such as Win+Shift+S on Windows or Cmd+Shift+4 on Mac). FloatBoard automatically captures the image and keeps it pinned above all other windows."}}, {"@type": "Question", "name": "Does FloatBoard create temporary file clutter on my desktop?", "acceptedAnswer": {"@type": "Answer", "text": "No. FloatBoard manages its working media internally in local application memory and temporary app cache. When you remove a card from the board, it is purged automatically without leaving throwaway files on your desktop."}}, {"@type": "Question", "name": "Can I keep written instructions next to my pinned screenshots?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FloatBoard features a dual-pane workspace. You can keep terminal commands, hex tokens, or task checklists in the text panel while your reference screenshots remain visible in the adjacent image panel."}}, {"@type": "Question", "name": "Is there a browser-based option to try floating notes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can test the free WebPad online tool directly inside Google Chrome or Microsoft Edge using the Document Picture-in-Picture API without installing anything."}}]}]}</script>
 </head><body class="guide-page blog-page blog-light-mode"><a class="skip-link" href="#main">Skip to content</a><aside class="blog-promo-bar" aria-label="FloatBoard Premium offer">
 <div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Special offer · 50% off FloatBoard Pro · Use code DEVTO50 · </span><span>Special offer · 50% off FloatBoard Pro · Use code DEVTO50 · </span></div></div>
 <div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Pro Special Deal</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Claim offer →</a></div>
-</aside><nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/" class="guide-nav-btn">Download Free ↓</a></div></nav><main id="main" class="guide-main guide-article-main"><article class="article-layout blog-portal-grid"><aside class="portal-left-col" aria-label="Quick navigation and shortcuts"><div class="left-sticky-wrap"><nav class="portal-toc-box" aria-label="Quick navigation"><div class="portal-toc-header">📑 Quick Navigation</div><ol class="portal-toc-list"><li><a href="#the-temporary-screenshot-trap">The temporary screenshot trap: 6 wasted steps per capture</a></li><li><a href="#instant-floating-capture-workflow">Zero files, zero clutter: The floating clipboard loop</a></li><li><a href="#visual-mirror-technique">The infinite mirror demo: Why recursive capture matters</a></li><li><a href="#compare-screenshot-tools">FloatBoard vs Lightshot vs Snagit: Choose by the job</a></li><li><a href="#screenshot-workflow-faq">Frequently asked questions about floating screenshot references</a></li><li><a href="#try-floating-screenshot-board">Clean up your desktop once and for all</a></li></ol></nav><aside class="ad-card-iab ad-card-left-skyscraper" aria-label="Sponsored product showcase">
+</aside><nav class="guide-nav" aria-label="Main navigation"><a class="guide-brand" href="/">FloatBoard</a><div class="guide-nav-links"><a href="/blog/">Blog</a><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/download/" class="guide-nav-btn">Download Free ↓</a></div></nav><main id="main" class="guide-main guide-article-main"><article class="article-layout blog-portal-grid"><aside class="portal-left-col" aria-label="Quick navigation and shortcuts"><div class="left-sticky-wrap"><nav class="portal-toc-box" aria-label="Quick navigation"><div class="portal-toc-header">📑 Quick Navigation</div><ol class="portal-toc-list"><li><a href="#the-temporary-screenshot-trap">The temporary screenshot trap: 6 wasted steps per capture</a></li><li><a href="#instant-floating-capture-workflow">Zero files, zero clutter: The floating clipboard loop</a></li><li><a href="#visual-mirror-technique">The infinite mirror demo: Why recursive capture matters</a></li><li><a href="#compare-screenshot-tools">FloatBoard vs Lightshot vs Snagit: Choose by the job</a></li><li><a href="#screenshot-workflow-faq">Frequently asked questions about floating screenshot references</a></li><li><a href="#try-floating-screenshot-board">Clean up your desktop once and for all</a></li></ol></nav><aside class="ad-card-iab ad-card-left-skyscraper" aria-label="FloatBoard Overview">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard</span></div>
 </div>
 <div class="ad-left-title-box">
 <h3 class="ad-left-title">FLOATBOARD<br>CLIPBOARD<br>MANAGER</h3>
@@ -29,14 +28,14 @@
 </div>
 <div class="ad-left-footer">
 <a href="/download/" class="ad-left-btn">TRY FREE ON PC →</a>
-<span class="ad-left-label">160x600 Tall Skyscraper Ad</span>
+<span class="ad-left-label">Windows 11, macOS &amp; Linux</span>
 </div>
-</aside></div></aside><div class="article-content article-main-card"><a href="/blog/" class="portal-back-link">← All guides</a><header class="article-header"><div class="portal-category-pill">Designers &amp; developers</div><h1>How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="2026-10-23">23 October 2026</time></p><ul class="guide-tags" aria-label="Topics"><li>pin screenshot on screen</li><li>screenshot always on top windows 11</li><li>floating screenshot viewer</li><li>snip and pin desktop</li></ul><aside class="ad-card-iab ad-leaderboard-top" aria-label="Sponsored leaderboard">
+</aside></div></aside><div class="article-content article-main-card"><a href="/blog/" class="portal-back-link">← All guides</a><header class="article-header"><div class="portal-category-pill">Designers &amp; developers</div><h1>How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="2026-10-23">23 October 2026</time></p><ul class="guide-tags" aria-label="Topics"><li>pin screenshot on screen</li><li>screenshot always on top windows 11</li><li>floating screenshot viewer</li><li>snip and pin desktop</li></ul><aside class="ad-card-iab ad-leaderboard-top" aria-label="FloatBoard Pro Feature Showcase">
 <div class="ad-leaderboard-inner">
 <div class="ad-leaderboard-left">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span><span class="ad-iab-info" title="Advertisement">ⓘ ✕</span></div>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard Desktop</span></div>
 <h3 class="ad-leaderboard-title">Stop Losing Copied Screenshots &amp; API Keys! Pin Anything Always-on-Top</h3>
-<p class="ad-leaderboard-desc">FloatBoard for Windows 11, macOS &amp; Linux — 100% Offline &amp; Instant Shortcut (728x90 Leaderboard)</p>
+<p class="ad-leaderboard-desc">FloatBoard for Windows 11, macOS &amp; Linux — 100% Offline &amp; Instant Shortcut</p>
 </div>
 <div class="ad-leaderboard-right">
 <a href="/pricing.html" class="ad-leaderboard-offer">Use code <code>DEVTO50</code> (50% Off)</a>
@@ -130,10 +129,9 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 <p>Leverage Document Picture-in-Picture to keep live notes above all desktop apps.</p>
 </a>
 </div>
-</section><aside class="related"><h2>Related workflows</h2><ul><li><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top Windows 11 &amp; Mac: How to Pin Any Window, Sticky Note or IDE Scratchpad (3 Free Ways)</a></li><li><a href="/blog/capture-webpage-detail-screenshot-reference/">How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference</a></li><li><a href="/blog/copy-text-from-screenshot-windows/">How to Copy Text from a Screenshot or Screen on Windows 10 &amp; 11 (3 Free OCR Ways)</a></li><li><a href="/blog/code-snippets-and-screenshots/">Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)</a></li></ul></aside></div><aside class="article-sidebar portal-right-col" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap"><aside class="ad-card-iab ad-card-300x600" aria-label="Sponsored product showcase">
+</section><aside class="related"><h2>Related workflows</h2><ul><li><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top Windows 11 &amp; Mac: Pin Any Note or Window</a></li><li><a href="/blog/capture-webpage-detail-screenshot-reference/">How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference</a></li><li><a href="/blog/copy-text-from-screenshot-windows/">How to Copy Text from a Screenshot on Windows 11/10</a></li><li><a href="/blog/code-snippets-and-screenshots/">Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)</a></li></ul></aside></div><aside class="article-sidebar portal-right-col" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap"><aside class="ad-card-iab ad-card-300x600" aria-label="Productivity workspace">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">AdChoices</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">⚡ ALWAYS-ON-TOP WORKSPACE</p>
@@ -146,12 +144,11 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 <div class="ad-iab-footer">
 <a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
 <div class="ad-iab-offer-row"><a href="/pricing.html" class="ad-iab-offer-link">50% off lifetime with <code>DEVTO50</code> ($2.99)</a></div>
-<span class="ad-iab-attribution">300x600 Half-Page Vertical Ad (Tall, Not Wide!)</span>
+<span class="ad-iab-attribution">100% Offline Local Privacy</span>
 </div>
-</aside><aside class="ad-card-iab ad-card-300x250 ad-card-emerald" aria-label="Sponsored visual tools">
+</aside><aside class="ad-card-iab ad-card-300x250 ad-card-emerald" aria-label="Visual reference tools">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard</span></div>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">📸 ORGANIZE IMAGE REFERENCES</p>
@@ -160,12 +157,11 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 </div>
 <div class="ad-iab-footer">
 <a href="/floating-notes.html" class="ad-iab-btn-emerald">Launch Free Image Board →</a>
-<span class="ad-iab-attribution">300x250 Medium Rectangle Ad</span>
+<span class="ad-iab-attribution">Zero Telemetry · Fast &amp; Lightweight</span>
 </div>
-</aside><aside class="ad-card-iab ad-sponsored-links" aria-label="Sponsored recommendations">
+</aside><aside class="ad-card-iab ad-sponsored-links" aria-label="Recommended resources">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Recommended by FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Guide</span><span class="ad-iab-brand">Recommended by FloatBoard</span></div>
 </div>
 <div class="ad-sponsored-links-list">
 <a href="/download/" class="ad-sponsored-link-item">
@@ -187,8 +183,7 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 </div>
 </aside><aside class="ad-card-iab ad-card-300x250 ad-sticky-offer" aria-label="Special offer">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Special Deal</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Deal</span><span class="ad-iab-brand">Special Deal</span></div>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">Limited Lifetime Access</p>
@@ -210,4 +205,4 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 </div>
 <div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free + Claim 50% Off →</a></div>
 </div>
-</aside></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer></body></html>
+</aside></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">PureRef Alternative</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">Sticky Notes Alternative</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">Ditto / CopyQ Alternative</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux &amp; Ubuntu</a><a href="/web-pad/">Online Floating Notepad</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer></body></html>

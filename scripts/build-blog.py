@@ -17,12 +17,12 @@ promo_bar = '''<aside class="blog-promo-bar" aria-label="FloatBoard Premium offe
 <div class="blog-promo-ticker" aria-hidden="true"><div class="blog-promo-track"><span>Special offer · 50% off FloatBoard Pro · Use code DEVTO50 · </span><span>Special offer · 50% off FloatBoard Pro · Use code DEVTO50 · </span></div></div>
 <div class="blog-promo-details"><strong class="blog-promo-discount">50% OFF</strong><span>FloatBoard Pro Special Deal</span><span>Use code <code>DEVTO50</code></span><a href="/pricing.html">Claim offer →</a></div>
 </aside>'''
-ad_leaderboard_top = '''<aside class="ad-card-iab ad-leaderboard-top" aria-label="Sponsored leaderboard">
+ad_leaderboard_top = '''<aside class="ad-card-iab ad-leaderboard-top" aria-label="FloatBoard Pro Feature Showcase">
 <div class="ad-leaderboard-inner">
 <div class="ad-leaderboard-left">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard Pro</span><span class="ad-iab-info" title="Advertisement">ⓘ ✕</span></div>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard Desktop</span></div>
 <h3 class="ad-leaderboard-title">Stop Losing Copied Screenshots &amp; API Keys! Pin Anything Always-on-Top</h3>
-<p class="ad-leaderboard-desc">FloatBoard for Windows 11, macOS &amp; Linux — 100% Offline &amp; Instant Shortcut (728x90 Leaderboard)</p>
+<p class="ad-leaderboard-desc">FloatBoard for Windows 11, macOS &amp; Linux — 100% Offline &amp; Instant Shortcut</p>
 </div>
 <div class="ad-leaderboard-right">
 <a href="/pricing.html" class="ad-leaderboard-offer">Use code <code>DEVTO50</code> (50% Off)</a>
@@ -31,10 +31,9 @@ ad_leaderboard_top = '''<aside class="ad-card-iab ad-leaderboard-top" aria-label
 </div>
 </aside>'''
 
-ad_left_skyscraper = '''<aside class="ad-card-iab ad-card-left-skyscraper" aria-label="Sponsored product showcase">
+ad_left_skyscraper = '''<aside class="ad-card-iab ad-card-left-skyscraper" aria-label="FloatBoard Overview">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard</span></div>
 </div>
 <div class="ad-left-title-box">
 <h3 class="ad-left-title">FLOATBOARD<br>CLIPBOARD<br>MANAGER</h3>
@@ -51,14 +50,13 @@ ad_left_skyscraper = '''<aside class="ad-card-iab ad-card-left-skyscraper" aria-
 </div>
 <div class="ad-left-footer">
 <a href="/download/" class="ad-left-btn">TRY FREE ON PC →</a>
-<span class="ad-left-label">160x600 Tall Skyscraper Ad</span>
+<span class="ad-left-label">Windows 11, macOS &amp; Linux</span>
 </div>
 </aside>'''
 
-ad_sidebar_300x600 = '''<aside class="ad-card-iab ad-card-300x600" aria-label="Sponsored product showcase">
+ad_sidebar_300x600 = '''<aside class="ad-card-iab ad-card-300x600" aria-label="Productivity workspace">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">AdChoices</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard Pro</span></div>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">⚡ ALWAYS-ON-TOP WORKSPACE</p>
@@ -71,14 +69,13 @@ ad_sidebar_300x600 = '''<aside class="ad-card-iab ad-card-300x600" aria-label="S
 <div class="ad-iab-footer">
 <a href="/download/" class="ad-iab-btn-google">Download Free on Desktop →</a>
 <div class="ad-iab-offer-row"><a href="/pricing.html" class="ad-iab-offer-link">50% off lifetime with <code>DEVTO50</code> ($2.99)</a></div>
-<span class="ad-iab-attribution">300x600 Half-Page Vertical Ad (Tall, Not Wide!)</span>
+<span class="ad-iab-attribution">100% Offline Local Privacy</span>
 </div>
 </aside>'''
 
-ad_sidebar_300x250_emerald = '''<aside class="ad-card-iab ad-card-300x250 ad-card-emerald" aria-label="Sponsored visual tools">
+ad_sidebar_300x250_emerald = '''<aside class="ad-card-iab ad-card-300x250 ad-card-emerald" aria-label="Visual reference tools">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ ✕</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Pro</span><span class="ad-iab-brand">FloatBoard</span></div>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">📸 ORGANIZE IMAGE REFERENCES</p>
@@ -87,14 +84,13 @@ ad_sidebar_300x250_emerald = '''<aside class="ad-card-iab ad-card-300x250 ad-car
 </div>
 <div class="ad-iab-footer">
 <a href="/floating-notes.html" class="ad-iab-btn-emerald">Launch Free Image Board →</a>
-<span class="ad-iab-attribution">300x250 Medium Rectangle Ad</span>
+<span class="ad-iab-attribution">Zero Telemetry · Fast &amp; Lightweight</span>
 </div>
 </aside>'''
 
 ad_sidebar_sticky_offer = '''<aside class="ad-card-iab ad-card-300x250 ad-sticky-offer" aria-label="Special offer">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Special Deal</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Deal</span><span class="ad-iab-brand">Special Deal</span></div>
 </div>
 <div class="ad-iab-body">
 <p class="ad-iab-category">Limited Lifetime Access</p>
@@ -107,10 +103,9 @@ ad_sidebar_sticky_offer = '''<aside class="ad-card-iab ad-card-300x250 ad-sticky
 </div>
 </aside>'''
 
-ad_sidebar_sponsored_links = '''<aside class="ad-card-iab ad-sponsored-links" aria-label="Sponsored recommendations">
+ad_sidebar_sponsored_links = '''<aside class="ad-card-iab ad-sponsored-links" aria-label="Recommended resources">
 <div class="ad-iab-header">
-<div class="ad-iab-badge-group"><span class="ad-iab-badge">Ad</span><span class="ad-iab-brand">Recommended by FloatBoard</span></div>
-<span class="ad-iab-info" title="Advertisement">ⓘ</span>
+<div class="ad-iab-badge-group"><span class="ad-iab-badge">Guide</span><span class="ad-iab-brand">Recommended by FloatBoard</span></div>
 </div>
 <div class="ad-sponsored-links-list">
 <a href="/download/" class="ad-sponsored-link-item">
@@ -224,7 +219,7 @@ sticky_dock = '''<aside class="ad-anchor-bar" aria-label="FloatBoard Offer">
 <div class="ad-anchor-actions"><a href="/download/" class="ad-anchor-btn">Download Free + Claim 50% Off →</a></div>
 </div>
 </aside>'''
-footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
+footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">PureRef Alternative</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">Sticky Notes Alternative</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">Ditto / CopyQ Alternative</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux &amp; Ubuntu</a><a href="/web-pad/">Online Floating Notepad</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']
@@ -268,11 +263,13 @@ def article_media(p):
 def page(path, title, description, body, schema, picture=None):
     url = BASE + path
     social = BASE + '/blog/assets/' + picture if picture else BASE + '/icon.png'
-    kind = 'article' if schema.get('@type') == 'BlogPosting' else 'website'
+    is_article = schema.get('@type') == 'BlogPosting' or any(x.get('@type') == 'BlogPosting' for x in schema.get('@graph', []))
+    kind = 'article' if is_article else 'website'
     main_class = 'guide-main guide-article-main' if kind == 'article' else 'guide-main'
+    title_tag = f"{esc(title)} | FloatBoard" if len(title) <= 46 else esc(title)
     result = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(title)} | FloatBoard</title><meta name="description" content="{esc(description)}">
+<title>{title_tag}</title><meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{url}"><link rel="icon" href="/icon.png">
 <link rel="stylesheet" href="/assets/content.css"><link rel="stylesheet" href="/blog/blog.css">
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
@@ -350,9 +347,39 @@ for p in posts:
 </div>''' if p.get('quick_answer') else ''
 
     body = f'''<article class="article-layout blog-portal-grid"><aside class="portal-left-col" aria-label="Quick navigation and shortcuts"><div class="left-sticky-wrap"><nav class="portal-toc-box" aria-label="Quick navigation"><div class="portal-toc-header">📑 Quick Navigation</div><ol class="portal-toc-list">{toc}</ol></nav>{ad_left_skyscraper}</div></aside><div class="article-content article-main-card"><a href="/blog/" class="portal-back-link">← All guides</a><header class="article-header"><div class="portal-category-pill">{esc(p['category'])}</div><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}{ad_leaderboard_top}<p class="guide-intro">{esc(p['intro'])}</p></header><figure class="article-hero-figure">{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure>{quick_answer_row}<div class="article-body">{sections}</div>{ad_sponsored_grid}<aside class="related"><h2>Related workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar portal-right-col" aria-label="Sponsored display advertisements"><div class="sidebar-sticky-wrap">{ad_sidebar_300x600}{ad_sidebar_300x250_emerald}{ad_sidebar_sponsored_links}{ad_sidebar_sticky_offer}</div></aside></article>{sticky_dock}'''
-    schema = {'@context':'https://schema.org','@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
+    faq_questions = []
+    for s in p['sections']:
+        if 'faq' in s['id'].lower():
+            import re
+            items = re.findall(r'<h3>(.*?)</h3>\s*<p>(.*?)</p>', s['html'], re.DOTALL)
+            for q_text, a_text in items:
+                clean_q = re.sub(r'<[^>]+>', '', q_text).strip()
+                clean_a = re.sub(r'<[^>]+>', '', a_text).strip()
+                if clean_q and clean_a:
+                    faq_questions.append({
+                        '@type': 'Question',
+                        'name': clean_q,
+                        'acceptedAnswer': {
+                            '@type': 'Answer',
+                            'text': clean_a
+                        }
+                    })
+    article_schema = {'@type':'BlogPosting','headline':p['title'],'description':p['description'],'image':[BASE+'/blog/assets/'+p['image']],'datePublished':p['date'],'dateModified':p.get('modified',p['date']),'mainEntityOfPage':BASE+path,'author':{'@type':'Organization','name':'FloatBoard','url':BASE+'/blog/about/'},'publisher':{'@type':'Organization','name':'FloatBoard','url':BASE+'/'}}
     if p.get('tags'):
-        schema['keywords'] = p['tags']
+        article_schema['keywords'] = p['tags']
+    if faq_questions:
+        schema = {
+            '@context': 'https://schema.org',
+            '@graph': [
+                article_schema,
+                {
+                    '@type': 'FAQPage',
+                    'mainEntity': faq_questions
+                }
+            ]
+        }
+    else:
+        schema = {'@context':'https://schema.org', **article_schema}
     page(path,p['title'],p['description'],body,schema,p['image'])
     cards[audience].append((featured_order.get(p['slug'], 100), -date.fromisoformat(p['date']).toordinal(), f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h3><a href="{path}">{esc(p["title"])}</a></h3><p>{esc(p["description"])}</p><a href="{path}">Read the guide →</a></div></article>'))
 

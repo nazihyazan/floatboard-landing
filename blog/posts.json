@@ -7,8 +7,8 @@
       "start-two-image-reference-board",
       "compare-photos-side-by-side-windows"
     ],
-    "title": "How to Organize Image References & Moodboards on Windows/Linux (Free PureRef Alternative)",
-    "description": "Organize visual reference boards and text notes on one screen. A lightweight, always-on-top PureRef alternative for artists and designers.",
+    "title": "How to Organize Image References (PureRef Alternative)",
+    "description": "Organize visual reference boards and text notes on one screen. A lightweight, always-on-top PureRef alternative for artists, UI designers, and devs.",
     "category": "Designers & illustrators",
     "image": "image-reference-board.jpg",
     "alt": "FloatBoard in dark mode displaying four landscape image references in a two-column grid",
@@ -39,7 +39,7 @@
       {
         "id": "choose-the-right-tool",
         "title": "Tools for this workflow: PureRef, Eagle, Milanote or FloatBoard?",
-        "html": "<p>Choose a reference image organizer by the job you need it to do. Keeping pictures above your canvas, finding an old asset and presenting a mood board are different needs. The suggestions below are based on the linked product documentation, checked on 24 September 2026; they are not a hands-on comparison or a speed benchmark. This guide is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Reference tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Which tool fits your reference-image workflow?</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Consider it when</th><th scope=\"col\">What to check</th></tr></thead><tbody><tr><th scope=\"row\">PureRef</th><td>Your main task is arranging visual references and keeping them above a drawing app. Its <a href=\"https://www.pureref.com/handbook/2.0/features/\">reference-viewing features</a> include always-on-top.</td><td>Choose the appropriate personal or commercial license. Start here if a dedicated reference canvas is your priority.</td></tr><tr><th scope=\"row\">Eagle</th><td>You need to retrieve assets across many projects. Its <a href=\"https://eagle.cool/support/desktop/organize\">organizing tools</a> include tags, folders and smart folders.</td><td>Decide how you will label and maintain the library. A catalog and a small on-screen working set can serve complementary roles.</td></tr><tr><th scope=\"row\">Milanote</th><td>You want to explain visual direction to someone else. Its <a href=\"https://milanote.com/product/moodboarding\">mood boards</a> support sharing and comments.</td><td>Check sharing permissions and <a href=\"https://milanote.com/plans\">plan limits</a> before building a large client board.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small set of images beside desktop notes or copied text, with an always-on-top window while you work.</td><td>Check the <a href=\"/pricing.html\">current plan limits</a> for the additions and windows available to your version. This image grid is not a substitute for a full asset catalog or shared review tool.</td></tr></tbody></table></div><p>If you arrived looking for a PureRef alternative, identify what you want to change first. For a mixed notes-and-images workspace, try FloatBoard with one task. For asset retrieval, investigate Eagle; for shared feedback, investigate Milanote. These tools are not interchangeable replacements for every PureRef feature.</p>"
+        "html": "<p>Choose a reference image organizer by the job you need it to do. Keeping pictures above your canvas, finding an old asset and presenting a mood board are different needs. The suggestions below are based on the linked product documentation, checked on 24 September 2026; they are not a hands-on comparison or a speed benchmark. This guide is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Reference tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Which tool fits your reference-image workflow?</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Consider it when</th><th scope=\"col\">What to check</th></tr></thead><tbody><tr><th scope=\"row\">PureRef</th><td>Your main task is arranging visual references and keeping them above a drawing app. Its <a href=\"https://www.pureref.com/handbook/2.0/features/\">reference-viewing features</a> include always-on-top.</td><td>Choose the appropriate personal or commercial license. Start here if a dedicated reference canvas is your priority.</td></tr><tr><th scope=\"row\">Eagle</th><td>You need to retrieve assets across many projects. Its <a href=\"https://eagle.cool/support/desktop/organize\">organizing tools</a> include tags, folders and smart folders.</td><td>Decide how you will label and maintain the library. A catalog and a small on-screen working set can serve complementary roles.</td></tr><tr><th scope=\"row\">Milanote</th><td>You want to explain visual direction to someone else. Its <a href=\"https://milanote.com/product/moodboarding\">mood boards</a> support sharing and comments.</td><td>Check sharing permissions and <a href=\"https://milanote.com/plans\">plan limits</a> before building a large client board.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small set of images beside desktop notes or copied text, with an always-on-top window while you work.</td><td>Check the <a href=\"/pricing.html\">current plan limits</a> for the additions and windows available to your version. This image grid is not a substitute for a full asset catalog or shared review tool.</td></tr></tbody></table></div><p>If you arrived looking for a <a href=\"/alternatives/pureref-with-text-and-clipboard.html\">PureRef alternative with text notes and clipboard history</a>, compare the feature tradeoffs directly. For a mixed notes-and-images workspace, try FloatBoard with one task. For asset retrieval, investigate Eagle; for shared feedback, investigate Milanote. These tools are not interchangeable replacements for every PureRef feature.</p>"
       },
       {
         "id": "pureref-free",
@@ -205,8 +205,8 @@
       "keep-webpage-text-beside-image-references",
       "copy-text-from-screenshot-windows"
     ],
-    "title": "Windows Clipboard History (Win + V) vs. Floating Notes: Which Is Better for Multitasking?",
-    "description": "Compare Windows Win+V clipboard history with always-on-top floating scratchpads for daily productivity, coding, and multitasking.",
+    "title": "Windows Clipboard (Win + V) vs Floating Notes Setup",
+    "description": "Compare Windows Win+V clipboard history with always-on-top floating scratchpads for daily developer productivity, coding, and multi-monitor workflows.",
     "category": "Windows clipboard workflow",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard window showing separate text cards beside a grid of image thumbnails",
@@ -237,7 +237,7 @@
       {
         "id": "manage-the-working-set",
         "title": "Keep the working set small and labelled",
-        "html": "<p>Before a new task, remove references that belong to the previous one. Preserve anything important in your project files first. Avoid copying passwords or other secrets into a board that might appear in a screen share.</p><p>Check the <a href='/pricing.html'>current FloatBoard plan limits</a> before building a larger working set. A note containing a few labelled fields is enough to try this workflow. This article does not claim that FloatBoard provides Windows clipboard synchronization or an unlimited free history.</p>"
+        "html": "<p>Before a new task, remove references that belong to the previous one. Preserve anything important in your project files first. Avoid copying passwords or other secrets into a board that might appear in a screen share.</p><p>Check the <a href='/pricing.html'>current FloatBoard plan limits</a> before building a larger working set. A note containing a few labelled fields is enough to try this workflow. This article does not claim that FloatBoard provides Windows clipboard synchronization or an unlimited free history.</p><p>Looking for an alternative to traditional multi-clip utilities? Read our <a href=\"/alternatives/ditto-copyq-visual-clipboard.html\">Ditto &amp; CopyQ Visual Clipboard comparison</a> to see how an on-screen floating board differs from text list managers.</p>"
       },
       {
         "id": "clipboard-faq",
@@ -332,8 +332,8 @@
       "inspect-image-original-after-thumbnail",
       "shortlist-landscape-photos-for-website-hero"
     ],
-    "title": "5 Best Ways to Compare Photos Side by Side on Windows 10 & 11 (Free Tools)",
-    "description": "Compare 2, 4, or 10 photos side by side on Windows 10 & 11 with an always-on-top floating image board without opening dozens of browser tabs.",
+    "title": "How to Compare Photos Side by Side on Windows 11/10",
+    "description": "Compare two or more photos side by side on Windows 11 & 10 without opening dozens of browser tabs. Simple native tricks and lightweight floating boards.",
     "category": "Photo comparison workflow",
     "image": "compare-photos-side-by-side.png",
     "alt": "FloatBoard showing four car-photo thumbnails in a two-by-two grid above a browser page with larger source images",
@@ -408,8 +408,8 @@
       "code-snippets-and-screenshots",
       "windows-clipboard-history-vs-floating-notes"
     ],
-    "title": "How to Copy Text from a Screenshot or Screen on Windows 10 & 11 (3 Free OCR Ways)",
-    "description": "Need to screenshot, copy, and paste text from your screen? Here are the 3 fastest ways to capture text from any screen or image on Windows 10 and Windows 11.",
+    "title": "How to Copy Text from a Screenshot on Windows 11/10",
+    "description": "Need to copy and paste text from your screen? 3 fast ways to capture and OCR text from any screen or image on Windows 11 and 10 with free tools.",
     "category": "Windows screenshot workflow",
     "image": "code-and-image-references.jpg",
     "alt": "FloatBoard displaying four image thumbnails beside a text card containing HTML reference text",
@@ -474,8 +474,8 @@
       "keep-reference-notes-visible-while-writing",
       "clear-copied-text-history-keep-working-set"
     ],
-    "title": "How to Keep Meeting Notes Always on Top During Zoom, Teams & Google Meet Calls",
-    "description": "Keep talking points, agendas, and attendee notes pinned floating right beside your webcam during Zoom, Teams, or Google Meet video calls.",
+    "title": "How to Pin Meeting Notes on Top in Zoom & Teams",
+    "description": "Keep talking points, agendas & notes pinned floating right beside your webcam during Zoom, Teams or Google Meet calls. Never look away from your camera.",
     "category": "Meeting notes & desktop workflow",
     "image": "writing-reference-notes.jpg",
     "alt": "FloatBoard window with text cards on the left and image thumbnails on the right",
@@ -842,8 +842,8 @@
       "collect-visual-references-across-search-pages",
       "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "How to Copy an Image from a Website & Paste It (While Saving the Source URL)",
-    "description": "Learn how to copy and paste a picture from any website in seconds, plus a free trick for Windows & Linux to automatically save the original image source link.",
+    "title": "How to Copy an Image from Any Website (Fast Guide)",
+    "description": "Learn how to copy and paste any picture from a website in seconds, even with right-click disabled, while keeping the original image source URL.",
     "category": "Clipboard & source tracking",
     "image": "gif-7-poster.jpg",
     "alt": "Recorded browser demo showing an opened tree photograph on its source page beside FloatBoard image tiles",
@@ -1064,8 +1064,8 @@
       "keep-webpage-text-beside-image-references",
       "keep-reference-notes-visible-while-writing"
     ],
-    "title": "How to Clear Clipboard History on Windows 10 & 11 (Without Losing Pinned Clips)",
-    "description": "Learn how to clear Windows clipboard history without deleting your pinned notes and working clips. Compare Win+V with always-on-top floating pads.",
+    "title": "How to Clear Windows Clipboard (Keep Pinned Clips)",
+    "description": "Clear your Windows 10/11 clipboard history with Win+V or Settings without deleting important pinned clips and notes. Fast step-by-step tutorial.",
     "category": "Clipboard cleanup workflow",
     "image": "gif-10-poster.jpg",
     "demo_video": "gif-10-demo.mp4",
@@ -1139,8 +1139,8 @@
       "compare-photos-side-by-side-windows",
       "capture-webpage-detail-screenshot-reference"
     ],
-    "title": "How to View Full-Resolution Images & Zoom 100% From Clipboard Thumbnails on PC",
-    "description": "Inspect 100% original image details directly from clipboard thumbnails without opening heavy image editors on Windows and Linux.",
+    "title": "How to View 100% Full-Size Images from Clipboard",
+    "description": "Inspect original full-resolution image details directly from clipboard thumbnails without opening heavy image editors on Windows, Mac, and Linux.",
     "category": "Image quality workflow",
     "image": "gif-11-poster.jpg",
     "demo_video": "gif-11-demo.mp4",
@@ -1359,8 +1359,8 @@
       "windows-clipboard-history-vs-floating-notes",
       "clear-copied-text-history-keep-working-set"
     ],
-    "title": "Always on Top Windows 11 & Mac: How to Pin Any Window, Sticky Note or IDE Scratchpad (3 Free Ways)",
-    "description": "Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference mockups always on top of your code editor.",
+    "title": "Always on Top Windows 11 & Mac: Pin Any Note or Window",
+    "description": "Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference mockups always on top of your IDE or code editor. 100% offline.",
     "category": "Developer workflows & focus",
     "image": "developer-floating-notes-workspace.jpg",
     "alt": "FloatBoard desktop window showing developer API endpoints and auth tokens on the left with four visual reference images on the right",
@@ -1394,7 +1394,7 @@
       {
         "id": "powertoys-vs-sticky-notes",
         "title": "Why PowerToys and Sticky Notes fail the developer test",
-        "html": "<p>Developers frequently test built-in tools before seeking dedicated utilities. Here is why the common alternatives fail:</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Developer window management tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Comparing desktop pinning and scratchpad tools for developers</caption><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">FloatBoard</th><th scope=\"col\">Microsoft PowerToys (Always on Top)</th><th scope=\"col\">Windows Sticky Notes</th></tr></thead><tbody><tr><th scope=\"row\">Mixed Text & Image Boards</th><td>Yes (side-by-side text cards and image reference gallery)</td><td>No (pins entire foreign application windows only)</td><td>Limited (images inline in single vertical notes)</td></tr><tr><th scope=\"row\">Always on Top Pinning</th><td>Built-in one-click pin with transparent visual state</td><td>Hot-key shortcut border outline</td><td>No (disappears behind active window upon clicking away)</td></tr><tr><th scope=\"row\">Clipboard Auto-Capture</th><td>Yes (automatically pins copied text and images when enabled)</td><td>No (requires separate clipboard utility)</td><td>No</td></tr><tr><th scope=\"row\">Cross-Platform Support</th><td>Windows 10/11, macOS, and Linux (Debian, Arch, Flathub)</td><td>Windows 10/11 only</td><td>Windows only</td></tr><tr><th scope=\"row\">Licensing & Offline Security</th><td>$5.99 one-time lifetime license · 100% offline local storage</td><td>Free open-source utility</td><td>Free with mandatory Microsoft account cloud sync</td></tr></tbody></table></div><p>PowerToys is great for pinning a full browser window, but it hogs half your screen. Sticky Notes disappears the millisecond you click into VS Code. FloatBoard gives you a purpose-built, compact floating surface designed specifically for active developer parameters.</p>"
+        "html": "<p>Developers frequently test built-in tools before seeking dedicated utilities. Here is why the common alternatives fail:</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Developer window management tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Comparing desktop pinning and scratchpad tools for developers</caption><thead><tr><th scope=\"col\">Feature</th><th scope=\"col\">FloatBoard</th><th scope=\"col\">Microsoft PowerToys (Always on Top)</th><th scope=\"col\">Windows Sticky Notes</th></tr></thead><tbody><tr><th scope=\"row\">Mixed Text & Image Boards</th><td>Yes (side-by-side text cards and image reference gallery)</td><td>No (pins entire foreign application windows only)</td><td>Limited (images inline in single vertical notes)</td></tr><tr><th scope=\"row\">Always on Top Pinning</th><td>Built-in one-click pin with transparent visual state</td><td>Hot-key shortcut border outline</td><td>No (disappears behind active window upon clicking away)</td></tr><tr><th scope=\"row\">Clipboard Auto-Capture</th><td>Yes (automatically pins copied text and images when enabled)</td><td>No (requires separate clipboard utility)</td><td>No</td></tr><tr><th scope=\"row\">Cross-Platform Support</th><td>Windows 10/11, macOS, and Linux (Debian, Arch, Flathub)</td><td>Windows 10/11 only</td><td>Windows only</td></tr><tr><th scope=\"row\">Licensing & Offline Security</th><td>$5.99 one-time lifetime license · 100% offline local storage</td><td>Free open-source utility</td><td>Free with mandatory Microsoft account cloud sync</td></tr></tbody></table></div><p>PowerToys is great for pinning a full browser window, but it hogs half your screen (see our <a href=\"/compare/floatboard-vs-powertoys-always-on-top.html\">FloatBoard vs PowerToys Always on Top comparison</a>). Sticky Notes disappears the millisecond you click into VS Code (see the <a href=\"/alternatives/windows-sticky-notes-always-on-top.html\">Windows Sticky Notes Always on Top alternative guide</a>). FloatBoard gives you a purpose-built, compact floating surface designed specifically for active developer parameters.</p>"
       },
       {
         "id": "faq-developer-notes",
