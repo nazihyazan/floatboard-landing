@@ -7,102 +7,1012 @@
     <meta name="description" content="Download native FloatBoard installer for Windows (.exe), macOS, and Linux (.deb / Snap / Flathub). Pin floating notes and clipboard history always on top.">
     <link rel="canonical" href="https://floatboard.xyz/download/">
     <link rel="icon" href="/icon.png">
-    <link rel="stylesheet" href="/assets/content.css">
+    
+    <!-- Open Graph / Twitter -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FloatBoard">
+    <meta property="og:title" content="Download FloatBoard for Windows, Mac &amp; Linux (Free)">
+    <meta property="og:description" content="Download native FloatBoard installer for Windows (.exe), macOS, and Linux (.deb / Snap / Flathub). Pin floating notes and clipboard history always on top.">
+    <meta property="og:url" content="https://floatboard.xyz/download/">
+    <meta property="og:image" content="https://floatboard.xyz/icon.png">
+    <meta name="twitter:card" content="summary">
+
+    <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "FloatBoard",
-      "operatingSystem": "Windows 10, Windows 11, macOS, Linux",
-      "applicationCategory": "UtilitiesApplication",
-      "applicationSubCategory": "Clipboard Manager & Floating Notes",
-      "url": "https://floatboard.xyz/",
-      "downloadUrl": "https://floatboard.xyz/download/",
-      "softwareVersion": "1.0.20",
-      "description": "Always-on-top floating clipboard manager, sticky notes, and image reference board for Windows, macOS, and Linux.",
-      "offers": {
-        "@type": "Offer",
-        "price": "5.99",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://floatboard.xyz/download/"
-      },
-      "featureList": [
-        "Always-on-top floating window overlay",
-        "Clipboard history manager for text and images",
-        "Floating sticky notes and code snippets",
-        "Cross-platform support for Windows, macOS, and Linux",
-        "100% offline local storage privacy"
+      "@graph": [
+        {
+          "@type": "SoftwareApplication",
+          "name": "FloatBoard",
+          "operatingSystem": "Windows 10, Windows 11, macOS, Linux",
+          "applicationCategory": "UtilitiesApplication",
+          "applicationSubCategory": "Clipboard Manager & Floating Notes",
+          "url": "https://floatboard.xyz/",
+          "downloadUrl": "https://floatboard.xyz/download/",
+          "softwareVersion": "1.0.20",
+          "description": "Always-on-top floating clipboard manager, sticky notes, and image reference board for Windows, macOS, and Linux.",
+          "offers": {
+            "@type": "Offer",
+            "price": "5.99",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock",
+            "url": "https://floatboard.xyz/download/"
+          },
+          "featureList": [
+            "Always-on-top floating window overlay",
+            "Clipboard history manager for text and images",
+            "Floating sticky notes and code snippets",
+            "Cross-platform support for Windows, macOS, and Linux",
+            "100% offline local storage privacy"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is FloatBoard really free to download?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. The free tier gives you 5 pinned texts per day, 5 reference images per day, and one floating window with zero payment, no trial expiration, and no account required."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does FloatBoard send any data to external servers?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. FloatBoard operates 100% offline. All notes, clipboard clips, and reference images are saved strictly in your local device storage."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does the Always-on-Top feature work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "FloatBoard uses native OS window manager APIs to keep the scratchpad floating above your IDE, browser, Word, Figma, or meeting windows so you never have to Alt-Tab."
+              }
+            }
+          ]
+        }
       ]
     }
     </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+      :root {
+        --bg: #fbfbfb;
+        --card-bg: #ffffff;
+        --text-main: #09090b;
+        --text-muted: #52525b;
+        --text-sub: #71717a;
+        --border-subtle: #e4e4e7;
+        --border-strong: #09090b;
+        --primary: #09090b;
+        --primary-hover: #27272a;
+        --accent-blue: #0284c7;
+        --accent-green: #10b981;
+        --radius-sm: 8px;
+        --radius-md: 14px;
+        --radius-lg: 20px;
+        --radius-full: 9999px;
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.06);
+        --shadow-card: 4px 4px 0 #09090b;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        background-color: var(--bg);
+        color: var(--text-main);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* Navigation */
+      nav.site-nav {
+        width: 100%;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--border-subtle);
+        background: #ffffff;
+      }
+      .nav-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 900;
+        font-size: 1.15rem;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        color: var(--text-main);
+      }
+      .nav-brand img {
+        width: 26px;
+        height: 26px;
+        border-radius: 6px;
+      }
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-muted);
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover {
+        color: var(--text-main);
+      }
+      .nav-btn {
+        background: var(--primary) !important;
+        color: #ffffff !important;
+        padding: 8px 18px;
+        border-radius: var(--radius-full);
+        font-size: 0.85rem !important;
+        font-weight: 700 !important;
+        text-decoration: none;
+      }
+
+      /* Hero Section */
+      .hero {
+        text-align: center;
+        padding: 60px 0 40px;
+      }
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: #f4f4f5;
+        border: 1px solid var(--border-subtle);
+        padding: 6px 14px;
+        border-radius: var(--radius-full);
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: var(--text-muted);
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .hero-pill-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent-green);
+      }
+      .hero h1 {
+        font-size: clamp(2.4rem, 5vw, 3.8rem);
+        font-weight: 900;
+        letter-spacing: -0.04em;
+        line-height: 1.15;
+        color: var(--text-main);
+        margin-bottom: 16px;
+      }
+      .hero-sub {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 680px;
+        margin: 0 auto 32px;
+        line-height: 1.6;
+      }
+
+      /* Quick OS Selector Tabs */
+      .os-quick-jump {
+        display: inline-flex;
+        background: #ffffff;
+        border: 2px solid var(--border-strong);
+        border-radius: var(--radius-full);
+        padding: 4px;
+        gap: 4px;
+        box-shadow: 2px 2px 0 var(--border-strong);
+        margin-bottom: 48px;
+      }
+      .os-jump-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 20px;
+        border-radius: var(--radius-full);
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: var(--text-main);
+        transition: all 0.15s;
+      }
+      .os-jump-btn:hover {
+        background: #f4f4f5;
+      }
+      .os-jump-btn.detected {
+        background: var(--primary);
+        color: #ffffff;
+      }
+
+      /* OS Cards Grid */
+      .platforms-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-bottom: 60px;
+      }
+      .platform-card {
+        background: var(--card-bg);
+        border: 2px solid var(--border-strong);
+        border-radius: var(--radius-lg);
+        padding: 32px 26px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: var(--shadow-card);
+        position: relative;
+        transition: transform 0.15s, box-shadow 0.15s;
+      }
+      .platform-card:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 6px 6px 0 var(--border-strong);
+      }
+      .platform-card.recommended {
+        border-color: #0284c7;
+        box-shadow: 4px 4px 0 #0284c7;
+      }
+      .platform-badge-rec {
+        position: absolute;
+        top: -12px;
+        left: 24px;
+        background: #0284c7;
+        color: #ffffff;
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 4px 12px;
+        border-radius: var(--radius-full);
+      }
+      .platform-header {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 16px;
+      }
+      .platform-icon-box {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-md);
+        background: #f4f4f5;
+        border: 1.5px solid var(--border-strong);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .platform-icon-box svg {
+        width: 26px;
+        height: 26px;
+      }
+      .platform-title-wrap h2 {
+        font-size: 1.45rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+      }
+      .platform-ver {
+        font-size: 0.78rem;
+        font-weight: 600;
+        color: var(--text-muted);
+      }
+      .platform-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin-bottom: 24px;
+        min-height: 42px;
+      }
+
+      /* Buttons */
+      .btn-download-primary {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        background: var(--primary);
+        color: #ffffff !important;
+        font-weight: 800;
+        font-size: 0.95rem;
+        padding: 14px 20px;
+        border-radius: var(--radius-md);
+        text-decoration: none;
+        border: 2px solid var(--border-strong);
+        transition: transform 0.1s, background-color 0.1s;
+        text-align: center;
+      }
+      .btn-download-primary:hover {
+        background: var(--primary-hover);
+        transform: translateY(-1px);
+      }
+      .btn-download-primary svg {
+        width: 18px;
+        height: 18px;
+      }
+      .alt-links-list {
+        margin-top: 18px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.8125rem;
+      }
+      .alt-link-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: var(--text-muted);
+      }
+      .alt-link-row a {
+        font-weight: 700;
+        color: var(--text-main);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      /* Linux Multi-Distro Box */
+      .linux-distro-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+      .linux-distro-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 14px;
+        background: #f8fafc;
+        border: 1.5px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        text-decoration: none;
+        font-size: 0.84rem;
+        font-weight: 700;
+        color: var(--text-main);
+        transition: all 0.15s;
+      }
+      .linux-distro-btn:hover {
+        background: #ffffff;
+        transform: translateX(2px);
+      }
+      .linux-tag {
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        font-weight: 600;
+      }
+
+      /* Terminal Snippets */
+      .code-snippet-box {
+        background: #0f172a;
+        color: #f8fafc;
+        border-radius: var(--radius-sm);
+        padding: 10px 14px;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+        font-size: 0.78rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 6px;
+      }
+      .code-snippet-box code {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .copy-btn {
+        background: #1e293b;
+        color: #94a3b8;
+        border: 1px solid #334155;
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.15s;
+      }
+      .copy-btn:hover {
+        color: #ffffff;
+        background: #334155;
+      }
+
+      /* WebPad Zero-Install Banner */
+      .webpad-banner {
+        background: #ffffff;
+        border: 2px solid var(--border-strong);
+        border-radius: var(--radius-lg);
+        padding: 32px 36px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        margin-bottom: 70px;
+        box-shadow: var(--shadow-card);
+      }
+      .webpad-banner-content h3 {
+        font-size: 1.35rem;
+        font-weight: 800;
+        margin-bottom: 6px;
+        letter-spacing: -0.02em;
+      }
+      .webpad-banner-content p {
+        font-size: 0.92rem;
+        color: var(--text-muted);
+      }
+      .btn-webpad {
+        background: #ffffff;
+        border: 2px solid var(--border-strong);
+        color: var(--text-main);
+        font-weight: 800;
+        font-size: 0.88rem;
+        padding: 12px 22px;
+        border-radius: var(--radius-full);
+        text-decoration: none;
+        white-space: nowrap;
+        transition: all 0.15s;
+      }
+      .btn-webpad:hover {
+        background: var(--primary);
+        color: #ffffff;
+      }
+
+      /* 3 Steps Getting Started */
+      .steps-section {
+        margin-bottom: 70px;
+        text-align: center;
+      }
+      .steps-section h2 {
+        font-size: 2rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        margin-bottom: 12px;
+      }
+      .steps-section-sub {
+        font-size: 1rem;
+        color: var(--text-muted);
+        margin-bottom: 40px;
+      }
+      .steps-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        text-align: left;
+      }
+      .step-card {
+        background: #ffffff;
+        border: 2px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        padding: 28px;
+        box-shadow: 3px 3px 0 var(--border-strong);
+      }
+      .step-number {
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        line-height: 34px;
+        text-align: center;
+        background: var(--primary);
+        color: #ffffff;
+        font-weight: 900;
+        font-size: 0.9rem;
+        border-radius: 50%;
+        margin-bottom: 16px;
+      }
+      .step-card h3 {
+        font-size: 1.1rem;
+        font-weight: 800;
+        margin-bottom: 8px;
+      }
+      .step-card p {
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+
+      /* Free vs Pro Info Box */
+      .free-tier-box {
+        background: #f4f4f5;
+        border: 2px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        padding: 24px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 60px;
+      }
+      .free-tier-text {
+        font-size: 0.95rem;
+        color: var(--text-main);
+      }
+      .free-tier-text strong {
+        font-weight: 800;
+      }
+      .free-tier-link {
+        font-weight: 800;
+        font-size: 0.88rem;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        white-space: nowrap;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        max-width: 800px;
+        margin: 0 auto 80px;
+      }
+      .faq-section h2 {
+        font-size: 1.8rem;
+        font-weight: 900;
+        letter-spacing: -0.03em;
+        text-align: center;
+        margin-bottom: 32px;
+      }
+      .faq-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+      }
+      .faq-item {
+        background: #ffffff;
+        border: 2px solid var(--border-strong);
+        border-radius: var(--radius-md);
+        box-shadow: 2px 2px 0 var(--border-strong);
+      }
+      .faq-item summary {
+        padding: 20px 24px;
+        font-weight: 800;
+        font-size: 1.05rem;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        user-select: none;
+      }
+      .faq-item summary::-webkit-details-marker {
+        display: none;
+      }
+      .faq-item summary::after {
+        content: '+';
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: var(--text-muted);
+      }
+      .faq-item[open] summary::after {
+        content: '−';
+      }
+      .faq-item p {
+        padding: 0 24px 20px;
+        font-size: 0.92rem;
+        color: var(--text-muted);
+        line-height: 1.6;
+      }
+      .faq-item a {
+        color: var(--text-main);
+        font-weight: 700;
+        text-decoration: underline;
+      }
+
+      /* Footer */
+      footer.site-footer {
+        border-top: 2px solid var(--border-strong);
+        background: #ffffff;
+        padding: 48px 0;
+        margin-top: auto;
+      }
+      .footer-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 28px;
+        font-size: 0.84rem;
+        color: var(--text-muted);
+      }
+      .footer-grid a {
+        text-decoration: none;
+        font-weight: 600;
+        color: var(--text-muted);
+        transition: color 0.15s;
+      }
+      .footer-grid a:hover {
+        color: var(--text-main);
+      }
+
+      /* Responsive */
+      @media (max-width: 960px) {
+        .platforms-grid {
+          grid-template-columns: 1fr;
+          gap: 24px;
+        }
+        .steps-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .webpad-banner {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .free-tier-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
 </head>
-<body class="guide-page download-page">
-    <nav class="guide-nav" aria-label="Main navigation">
-        <a class="guide-brand" href="/">FloatBoard</a>
-        <div class="guide-nav-links"><a href="/floating-notes.html">Floating notes</a><a href="/clipboard-manager.html">Clipboard manager</a><a href="/blog/">Blog</a>
-            <a href="/pricing.html">Pricing</a></div>
+<body>
+
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+            <a class="nav-brand" href="/">
+                <img src="/icon.png" width="26" height="26" alt="FloatBoard Logo">
+                <span>FloatBoard</span>
+            </a>
+            <div class="nav-links">
+                <a href="/floating-notes.html">Floating Notes</a>
+                <a href="/clipboard-manager.html">Clipboard Manager</a>
+                <a href="/blog/">Blog</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/download/" class="nav-btn">Download Free</a>
+            </div>
+        </div>
     </nav>
-    <main class="guide-main">
-        <h1>Download FloatBoard</h1>
-        <p class="guide-intro">Choose your system and get the installer for floating desktop notes, copied text and images. The free plan needs no payment.</p>
-        <nav class="download-choices" aria-label="Choose your operating system">
-            <a href="#windows">Windows</a>
-            <a href="#macos">macOS</a>
-            <a href="#linux">Linux</a>
-        </nav>
-        <section aria-labelledby="windows">
-            <h2 id="windows">Download for Windows</h2>
-            <p>Windows installer version 1.0.20. Download it, open it, and follow the installation prompts.</p>
-            <a class="guide-button" href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-windows-x64.exe">Download Windows installer (.exe)</a>
-            <p>Prefer automatic updates? <a href="https://apps.microsoft.com/detail/9NZMW1J6FRQL">Get FloatBoard from Microsoft Store</a>. See the <a href="https://github.com/nazihyazan/mac_test/releases/tag/v1.0.20">Windows release details</a> for the installer and checksums.</p>
-            <p><strong>Package Manager (Scoop):</strong> Install directly via Windows Terminal:</p>
-            <pre style="background: var(--card-bg); border: 1px solid var(--card-border); padding: 14px 18px; border-radius: 8px; overflow-x: auto; font-size: 0.9rem;"><code>scoop bucket add floatboard https://github.com/nazihyazan/floatboard-landing
-scoop install floatboard</code></pre>
+
+    <main class="container">
+        <!-- Hero Header -->
+        <header class="hero">
+            <div class="hero-pill">
+                <span class="hero-pill-dot"></span>
+                v1.0.20 Available &middot; 100% Offline &middot; No Account Required
+            </div>
+            <h1>Download FloatBoard</h1>
+            <p class="hero-sub">
+                Choose your operating system to install FloatBoard. Pin active notes, copied clipboard history, and reference screenshots permanently above your workspace.
+            </p>
+
+            <!-- OS Quick Jump -->
+            <div class="os-quick-jump" aria-label="Operating systems">
+                <a href="#windows" class="os-jump-btn" id="jump-windows">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.401H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                    Windows
+                </a>
+                <a href="#macos" class="os-jump-btn" id="jump-macos">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.35-.55.63-.99 1.66-.86 2.69 1 .08 2.02-.51 2.55-1.19z"/></svg>
+                    macOS
+                </a>
+                <a href="#linux" class="os-jump-btn" id="jump-linux">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12.002 0c-3.155 0-5.71 2.548-5.71 5.69 0 .426.046.842.135 1.246C3.966 8.354 2 11.233 2 14.595 2 18.966 5.545 22.5 10 22.5c.677 0 1.332-.086 1.957-.247.625.161 1.28.247 1.957.247 4.455 0 8-3.534 8-7.905 0-3.362-1.966-6.241-4.427-7.659.089-.404.135-.82.135-1.246 0-3.142-2.555-5.69-5.62-5.69z"/></svg>
+                    Linux
+                </a>
+            </div>
+        </header>
+
+        <!-- OS Platforms Grid -->
+        <div class="platforms-grid">
+            
+            <!-- WINDOWS CARD -->
+            <section class="platform-card" id="windows" aria-labelledby="windows-title">
+                <div class="platform-badge-rec" id="badge-windows" style="display: none;">Recommended for you</div>
+                <div>
+                    <div class="platform-header">
+                        <div class="platform-icon-box">
+                            <svg viewBox="0 0 24 24" fill="#0078d4"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.401H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+                        </div>
+                        <div class="platform-title-wrap">
+                            <h2 id="windows-title">Windows</h2>
+                            <span class="platform-ver">v1.0.20 &middot; 64-bit</span>
+                        </div>
+                    </div>
+                    <p class="platform-desc">
+                        Full native installer for Windows 11 and Windows 10. Automatically supports one-click Always-on-Top pinning.
+                    </p>
+                </div>
+
+                <div>
+                    <a class="btn-download-primary" href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-windows-x64.exe">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download Windows .exe
+                    </a>
+
+                    <div class="alt-links-list">
+                        <div class="alt-link-row">
+                            <span>Store version:</span>
+                            <a href="https://apps.microsoft.com/detail/9NZMW1J6FRQL">Get from Microsoft Store</a>
+                        </div>
+                        <div class="alt-link-row">
+                            <span>Release checksums:</span>
+                            <a href="https://github.com/nazihyazan/mac_test/releases/tag/v1.0.20">View GitHub Release</a>
+                        </div>
+                        <div style="margin-top: 6px;">
+                            <span style="color: var(--text-muted); font-size: 0.76rem;">Install via Scoop terminal:</span>
+                            <div class="code-snippet-box">
+                                <code>scoop install floatboard</code>
+                                <button class="copy-btn" onclick="copySnippet('scoop bucket add floatboard https://github.com/nazihyazan/floatboard-landing && scoop install floatboard', this)">Copy</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MACOS CARD -->
+            <section class="platform-card" id="macos" aria-labelledby="macos-title">
+                <div class="platform-badge-rec" id="badge-macos" style="display: none;">Recommended for you</div>
+                <div>
+                    <div class="platform-header">
+                        <div class="platform-icon-box">
+                            <svg viewBox="0 0 24 24" fill="#000000"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.17c.62-.75 1.04-1.8 0.92-2.85-.9.04-1.98.6-2.61 1.35-.55.63-.99 1.66-.86 2.69 1 .08 2.02-.51 2.55-1.19z"/></svg>
+                        </div>
+                        <div class="platform-title-wrap">
+                            <h2 id="macos-title">macOS</h2>
+                            <span class="platform-ver">v1.0.15 &middot; Apple Silicon &amp; Intel</span>
+                        </div>
+                    </div>
+                    <p class="platform-desc">
+                        Universal macOS build. Extract the ZIP archive and move FloatBoard directly to your Applications folder.
+                    </p>
+                </div>
+
+                <div>
+                    <a class="btn-download-primary" href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard-1.0.15-mac.zip">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                        Download macOS .zip
+                    </a>
+
+                    <div class="alt-links-list">
+                        <div class="alt-link-row">
+                            <span>Installation:</span>
+                            <span style="font-weight: 600;">Extract &amp; Drag to Apps</span>
+                        </div>
+                        <div class="alt-link-row">
+                            <span>Release checksums:</span>
+                            <a href="https://github.com/nazihyazan/floating_board/releases/tag/v1.0.15">macOS Release Notes</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LINUX CARD -->
+            <section class="platform-card" id="linux" aria-labelledby="linux-title">
+                <div class="platform-badge-rec" id="badge-linux" style="display: none;">Recommended for you</div>
+                <div>
+                    <div class="platform-header">
+                        <div class="platform-icon-box">
+                            <svg viewBox="0 0 24 24" fill="#e95420"><path d="M12.002 0c-3.155 0-5.71 2.548-5.71 5.69 0 .426.046.842.135 1.246C3.966 8.354 2 11.233 2 14.595 2 18.966 5.545 22.5 10 22.5c.677 0 1.332-.086 1.957-.247.625.161 1.28.247 1.957.247 4.455 0 8-3.534 8-7.905 0-3.362-1.966-6.241-4.427-7.659.089-.404.135-.82.135-1.246 0-3.142-2.555-5.69-5.62-5.69z"/></svg>
+                        </div>
+                        <div class="platform-title-wrap">
+                            <h2 id="linux-title">Linux</h2>
+                            <span class="platform-ver">v1.0.20 &middot; x64</span>
+                        </div>
+                    </div>
+                    <p class="platform-desc">
+                        Native packages for Ubuntu, Debian, Fedora, Arch Linux, and universal Flatpak or AppImage.
+                    </p>
+                </div>
+
+                <div>
+                    <div class="linux-distro-grid">
+                        <a class="linux-distro-btn" href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.deb">
+                            <span>Ubuntu / Debian (.deb)</span>
+                            <span class="linux-tag">Download &darr;</span>
+                        </a>
+                        <a class="linux-distro-btn" href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.rpm">
+                            <span>Fedora / RHEL (.rpm)</span>
+                            <span class="linux-tag">Download &darr;</span>
+                        </a>
+                        <a class="linux-distro-btn" href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.AppImage">
+                            <span>Universal AppImage</span>
+                            <span class="linux-tag">Portable &darr;</span>
+                        </a>
+                    </div>
+
+                    <div class="alt-links-list">
+                        <div>
+                            <span style="color: var(--text-muted); font-size: 0.76rem;">Flathub (Flatpak):</span>
+                            <div class="code-snippet-box">
+                                <code>flatpak install flathub xyz.floatboard.FloatBoard</code>
+                                <button class="copy-btn" onclick="copySnippet('flatpak install flathub xyz.floatboard.FloatBoard', this)">Copy</button>
+                            </div>
+                        </div>
+                        <div style="margin-top: 4px;">
+                            <span style="color: var(--text-muted); font-size: 0.76rem;">Snap Store:</span>
+                            <div class="code-snippet-box">
+                                <code>sudo snap install floatboard</code>
+                                <button class="copy-btn" onclick="copySnippet('sudo snap install floatboard', this)">Copy</button>
+                            </div>
+                        </div>
+                        <div class="alt-link-row" style="margin-top: 6px;">
+                            <span>Arch Linux / AUR:</span>
+                            <code style="font-weight: 700; color: var(--text-main);">yay -S floatboard-bin</code>
+                        </div>
+                        <div class="alt-link-row">
+                            <span>Package details:</span>
+                            <a href="https://github.com/nazihyazan/mac_test/releases/tag/v1.0.20">Linux Checksums</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- WebPad Zero-Install Banner -->
+        <section class="webpad-banner" aria-label="WebPad instant floating option">
+            <div class="webpad-banner-content">
+                <h3>Prefer not to install anything right now?</h3>
+                <p>Use FloatBoard WebPad directly in Google Chrome, Edge, or Brave using Picture-in-Picture technology.</p>
+            </div>
+            <a href="/web-pad/" class="btn-webpad">Launch Free WebPad &rarr;</a>
         </section>
-        <section aria-labelledby="macos">
-            <h2 id="macos">Download for macOS</h2>
-            <p>Version 1.0.15. Download and extract the ZIP archive to access the macOS app.</p>
-            <a class="guide-button" href="https://github.com/nazihyazan/floating_board/releases/download/v1.0.15/FloatBoard-1.0.15-mac.zip">Download macOS ZIP</a>
-            <p>For the file details, see the <a href="https://github.com/nazihyazan/floating_board/releases/tag/v1.0.15">macOS release</a>.</p>
+
+        <!-- 3 Steps Getting Started -->
+        <section class="steps-section" id="getting-started" aria-labelledby="getting-started-title">
+            <h2 id="getting-started-title">Start in 3 Simple Steps</h2>
+            <p class="steps-section-sub">Get your first always-on-top floating board running in less than 30 seconds.</p>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <span class="step-number">1</span>
+                    <h3>Download &amp; Open</h3>
+                    <p>Run the native installer for your OS. No sign-up, no credit card, and zero telemetry.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">2</span>
+                    <h3>Paste Notes or Images</h3>
+                    <p>Add active code snippets, research instructions, API keys, or visual reference mockups.</p>
+                </div>
+                <div class="step-card">
+                    <span class="step-number">3</span>
+                    <h3>Pin and Stay in Flow</h3>
+                    <p>Click the Pin icon. FloatBoard stays permanently visible above your code editor or browser without Alt-Tab switching.</p>
+                </div>
+            </div>
         </section>
-        <section aria-labelledby="linux">
-            <h2 id="linux">Download for Linux</h2>
-            <p>Version 1.0.20 for Linux x64. Choose the package that matches your distribution; your browser cannot reliably tell Debian from Fedora.</p>
-            <ul>
-                <li><strong>Debian / Ubuntu:</strong> <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.deb">Download the .deb installer</a>.</li>
-                <li><strong>Fedora / RHEL:</strong> <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.rpm">Download the .rpm package</a>.</li>
-                <li><strong>Arch Linux / Manjaro (AUR):</strong> Run <code>yay -S floatboard-bin</code> or <code>paru -S floatboard-bin</code>.</li>
-                <li><strong>Flathub (Flatpak):</strong> Run <code>flatpak install flathub xyz.floatboard.FloatBoard</code>.</li>
-                <li><strong>Portable option:</strong> <a href="https://github.com/nazihyazan/mac_test/releases/download/v1.0.20/FloatBoard-1.0.20-linux.AppImage">Download the AppImage</a> and enable permission to execute it before opening.</li>
-            </ul>
-            <p><strong>Snap:</strong> if Snap is installed, use the <a href="https://snapcraft.io/floatboard">stable Snap Store release</a> or run <code>sudo snap install floatboard</code>. Already installed? Close FloatBoard and run <code>sudo snap refresh floatboard</code>.</p>
-            <p>See the <a href="https://github.com/nazihyazan/mac_test/releases/tag/v1.0.20">Linux release details and checksums</a>.</p>
+
+        <!-- Free vs Pro info -->
+        <div class="free-tier-box">
+            <div class="free-tier-text">
+                <strong>Free Plan Included:</strong> 5 text clips per day, 5 reference images per day, and 1 floating window. Completely free forever.
+            </div>
+            <a href="/pricing.html" class="free-tier-link">Compare with $5.99 Lifetime Pro &rarr;</a>
+        </div>
+
+        <!-- FAQ Section -->
+        <section class="faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <details class="faq-item">
+                    <summary>Is FloatBoard really free to download?</summary>
+                    <p>
+                        Yes. You can download and use FloatBoard Free immediately with no credit card and no expiration. If you ever need unlimited items, multiple boards, and advanced features, you can get the <a href="/pricing.html">$5.99 one-time lifetime license</a>.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>Does FloatBoard require an account or internet connection?</summary>
+                    <p>
+                        No. FloatBoard is 100% offline. Everything you type, copy, or pin is stored locally on your hard drive. Zero telemetry, zero cloud tracking, zero data leaks.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>How does "Always on Top" work?</summary>
+                    <p>
+                        FloatBoard uses native operating system APIs to stay floating above full-screen editors (VS Code, Cursor), web browsers, and word processors. Read our <a href="/floating-notes.html">floating notes guide</a> and <a href="/clipboard-manager.html">clipboard manager guide</a> for more details.
+                    </p>
+                </details>
+                <details class="faq-item">
+                    <summary>What if I run into installation issues?</summary>
+                    <p>
+                        Check our <a href="/linux/floating-clipboard-notes-ubuntu.html">Linux installation guide</a> or <a href="/#contact">contact support</a> with your operating system and package format.
+                    </p>
+                </details>
+            </div>
         </section>
-        <p>The free plan includes 5 texts per day, 5 images per day and one window. <a href="/pricing.html">Compare Free and Premium</a> if you need more.</p>
-        <section aria-labelledby="getting-started">
-            <h2 id="getting-started">Start with your first floating note</h2>
-            <ol><li>Open FloatBoard and place the board beside your work.</li><li>Add a short text note or reference image.</li><li>Enable always-on-top and return to your browser or editor.</li></ol>
-            <p>Read the <a href="/floating-notes.html">floating notes guide</a> and <a href="/clipboard-manager.html">clipboard history guide</a> for examples. For installation problems, <a href="/#contact">contact support</a> with your operating system, package format and error message.</p>
-        </section>
+
     </main>
-    <footer class="guide-footer">
-        <a href="/">FloatBoard</a>
-        <a href="/clipboard-manager.html">Floating Clipboard Manager</a>
-        <a href="/floating-notes.html">Always on Top Sticky Notes</a>
-        <a href="/download/">Download for Windows, Mac &amp; Linux</a>
-        <a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a>
-        <a href="/alternatives/pureref-with-text-and-clipboard.html">PureRef Alternative</a>
-        <a href="/alternatives/windows-sticky-notes-always-on-top.html">Sticky Notes Alternative</a>
-        <a href="/alternatives/ditto-copyq-visual-clipboard.html">Ditto / CopyQ Alternative</a>
-        <a href="/linux/floating-clipboard-notes-ubuntu.html">Linux &amp; Ubuntu</a>
-        <a href="/web-pad/">Online Floating Notepad</a>
-        <a href="/blog/">Blog</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-        <a href="/refund.html">Refunds</a>
-        <a href="/#contact">Support</a>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <a href="/">FloatBoard</a>
+                <a href="/clipboard-manager.html">Floating Clipboard Manager</a>
+                <a href="/floating-notes.html">Always on Top Sticky Notes</a>
+                <a href="/download/">Download for Windows, Mac &amp; Linux</a>
+                <a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a>
+                <a href="/alternatives/pureref-with-text-and-clipboard.html">PureRef Alternative</a>
+                <a href="/alternatives/windows-sticky-notes-always-on-top.html">Sticky Notes Alternative</a>
+                <a href="/alternatives/ditto-copyq-visual-clipboard.html">Ditto / CopyQ Alternative</a>
+                <a href="/linux/floating-clipboard-notes-ubuntu.html">Linux &amp; Ubuntu</a>
+                <a href="/web-pad/">Online Floating Notepad</a>
+                <a href="/blog/">Blog</a>
+                <a href="/pricing.html">Pricing</a>
+                <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a>
+                <a href="/refund.html">Refunds</a>
+                <a href="/#contact">Support</a>
+            </div>
+        </div>
     </footer>
+
+    <!-- Smart OS Detection & Clipboard Script -->
+    <script>
+      (function() {
+        var ua = navigator.userAgent.toLowerCase();
+        var platform = (navigator.platform || '').toLowerCase();
+        var targetCard = null;
+        var targetJump = null;
+        var targetBadge = null;
+
+        if (ua.indexOf('win') !== -1 || platform.indexOf('win') !== -1) {
+          targetCard = document.getElementById('windows');
+          targetJump = document.getElementById('jump-windows');
+          targetBadge = document.getElementById('badge-windows');
+        } else if (ua.indexOf('mac') !== -1 || platform.indexOf('mac') !== -1) {
+          targetCard = document.getElementById('macos');
+          targetJump = document.getElementById('jump-macos');
+          targetBadge = document.getElementById('badge-macos');
+        } else if (ua.indexOf('linux') !== -1 || platform.indexOf('linux') !== -1) {
+          targetCard = document.getElementById('linux');
+          targetJump = document.getElementById('jump-linux');
+          targetBadge = document.getElementById('badge-linux');
+        }
+
+        if (targetCard) {
+          targetCard.classList.add('recommended');
+        }
+        if (targetJump) {
+          targetJump.classList.add('detected');
+        }
+        if (targetBadge) {
+          targetBadge.style.display = 'block';
+        }
+      })();
+
+      function copySnippet(text, btn) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(text).then(function() {
+            var orig = btn.innerText;
+            btn.innerText = 'Copied!';
+            btn.style.color = '#10b981';
+            btn.style.borderColor = '#10b981';
+            setTimeout(function() {
+              btn.innerText = orig;
+              btn.style.color = '';
+              btn.style.borderColor = '';
+            }, 2000);
+          });
+        }
+      }
+    </script>
 </body>
 </html>
