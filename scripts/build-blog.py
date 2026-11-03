@@ -104,11 +104,11 @@ def page(path, title, description, body, schema, picture=None):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title_tag}</title><meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{url}"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/assets/content.css"><link rel="stylesheet" href="/blog/blog.css">
+<link rel="stylesheet" href="/blog/blog.css">
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-</head><body class="guide-page blog-page blog-light-mode"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}</body></html>'''
+</head><body class="blog-page"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}</body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
