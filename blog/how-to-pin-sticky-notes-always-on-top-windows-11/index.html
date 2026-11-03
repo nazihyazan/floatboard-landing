@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)</title><meta name="description" content="Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools.">
+<link rel="canonical" href="https://floatboard.xyz/blog/how-to-pin-sticky-notes-always-on-top-windows-11/"><link rel="icon" href="/icon.png">
+<link rel="stylesheet" href="/blog/blog.css?v=20261103d">
+<meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)"><meta property="og:description" content="Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools."><meta property="og:url" content="https://floatboard.xyz/blog/how-to-pin-sticky-notes-always-on-top-windows-11/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/pin-sticky-notes-windows-11.jpg">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)"><meta name="twitter:description" content="Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/pin-sticky-notes-windows-11.jpg">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)", "description": "Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools.", "image": ["https://floatboard.xyz/blog/assets/pin-sticky-notes-windows-11.jpg"], "datePublished": "2026-11-03", "dateModified": "2026-11-03", "mainEntityOfPage": "https://floatboard.xyz/blog/how-to-pin-sticky-notes-always-on-top-windows-11/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["pin sticky notes always on top windows 11", "keep notes on top of other windows windows 11", "floating notes for windows 11", "always on top notepad windows 11", "sticky notes alternative without onenote"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I make classic Windows Sticky Notes stay on top without third-party tools?", "acceptedAnswer": {"@type": "Answer", "text": "No. Classic Windows Sticky Notes does not include a native always-on-top setting. You must either use the modern OneNote-linked version, a utility like PowerToys, or a dedicated tool like FloatBoard."}}, {"@type": "Question", "name": "Is FloatBoard safer for sensitive developer credentials than Sticky Notes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Microsoft Sticky Notes automatically syncs notes to the cloud if a Microsoft account is active. FloatBoard operates 100% offline with zero cloud telemetry, ensuring API keys and staging credentials remain private on your local machine."}}, {"@type": "Question", "name": "Does FloatBoard work on dual monitors in Windows 11?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can drag FloatBoard to any monitor, position it over a full-screen application or presentation, and it will remain pinned on that display without shifting."}}]}]}</script>
+</head><body class="blog-page"><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
+FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing.html">Get $5.99 lifetime license →</a>
+</aside><nav class="guide-nav" aria-label="Main navigation">
+<a class="guide-brand" href="/">
+<img src="/icon.png" width="26" height="26" alt="FloatBoard" class="guide-brand-icon">
+<span>FLOATBOARD BLOG.</span>
+</a>
+<div class="guide-nav-links">
+<a href="/blog/">Guides</a>
+<a href="/clipboard-manager.html">Clipboard</a>
+<a href="/pricing.html">Pricing</a>
+<a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
+</nav><main id="main"><article class="editorial-wrapper">
+<header class="editorial-hero-header">
+<div class="editorial-badge-row">
+<span class="editorial-category-badge">Developers &amp; multitaskers</span>
+<a href="/blog/" class="editorial-back-link">← All guides</a>
+</div>
+<h1 class="editorial-title">How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)</h1>
+<p class="editorial-intro-text">When coding, writing technical specs, or debugging live APIs in Windows 11, you frequently need a quick scratchpad visible in the corner of your screen. The built-in Microsoft Sticky Notes app buries itself behind maximized windows the instant you click back into VS Code or Chrome. This practical guide covers three ways to keep sticky notes always on top in Windows 11, the trade-offs of each method, and why a dedicated offline floating board prevents accidental data leakage.</p>
+<div class="editorial-meta-row">
+<span>By <a href="/blog/about/">FloatBoard</a></span>
+<span>·</span>
+<time datetime="2026-11-03">November 03, 2026</time>
+
+<span>·</span>
+<span>5 min read</span>
+</div>
+</header>
+<figure class="editorial-hero-figure">
+<img src="/blog/assets/pin-sticky-notes-windows-11.jpg" width="1200" height="675" alt="FloatBoard pinned sticky note scratchpad floating above Windows 11 desktop" decoding="async" fetchpriority="high">
+<figcaption>FloatBoard stays permanently pinned above your code editor or browser without cloud sync bloat.</figcaption>
+</figure>
+<div class="editorial-grid">
+<aside class="editorial-left-col" aria-label="Table of contents and app download">
+<div class="editorial-outline-box">
+<div class="editorial-outline-title">Outline</div>
+<ul class="editorial-outline-list">
+<li><a href="#why-windows-sticky-notes-disappear">Why default Windows Sticky Notes keep sinking behind your apps</a></li><li><a href="#method-1-onenote-sticky-notes-pin">Method 1: The OneNote modern Sticky Notes pin feature</a></li><li><a href="#method-2-powertoys-always-on-top">Method 2: Microsoft PowerToys (Win + Ctrl + T)</a></li><li><a href="#method-3-floatboard-dedicated-offline-board">Method 3: FloatBoard native offline floating scratchpad</a></li><li><a href="#faq">Frequently Asked Questions about Windows 11 Sticky Notes</a></li>
+</ul>
+</div>
+<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+<div class="editorial-sidebar-brand">
+<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
+<div>
+<h4 class="editorial-sidebar-title">FloatBoard</h4>
+<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
+</div>
+</div>
+<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
+<a href="/download/" class="editorial-btn-black">Download Free App →</a>
+<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+</div>
+</aside>
+<div class="editorial-content-col">
+<div class="editorial-quick-answer">
+<div class="editorial-quick-title">⚡ Quick Workflow Summary (TL;DR)</div>
+<ol class="editorial-quick-steps"><li>The default standalone Windows Sticky Notes app lacks a native always-on-top pin toggle.</li><li>Microsoft PowerToys (Win + Ctrl + T) can force windows to float, but requires a 200MB background utility.</li><li>FloatBoard provides a native, zero-cloud offline floating scratchpad that stays pinned above full-screen editors and browsers with one click.</li></ol>
+</div>
+<div class="editorial-article-sheet">
+<div class="editorial-article-body">
+<section aria-labelledby="why-windows-sticky-notes-disappear"><h2 id="why-windows-sticky-notes-disappear">Why default Windows Sticky Notes keep sinking behind your apps</h2><p>Windows 11 handles application layering through its Desktop Window Manager (DWM). By default, regular application windows lose focus and drop to the bottom layer when you click inside a full-screen or maximized app like VS Code, Figma, or Word. Classic Windows Sticky Notes behave as standard desktop child windows, which means they vanish behind active windows as soon as you start typing.</p><p>For developers and multitaskers, this causes constant <em>Alt-Tab friction</em>. You copy an API authorization token or staging URL, switch to your editor, and then have to minimize or un-maximize your IDE just to glance at the note again.</p></section><section aria-labelledby="method-1-onenote-sticky-notes-pin"><h2 id="method-1-onenote-sticky-notes-pin">Method 1: The OneNote modern Sticky Notes pin feature</h2><p>In recent Windows 11 feature updates, Microsoft integrated a newer version of Sticky Notes inside the OneNote ecosystem. If you pop a note out into its own window, a small pin icon appears in the top-right corner of the title bar.</p><p>While this works for simple text, it introduces significant downsides:</p><ul><li><strong>Forced Microsoft Account Login:</strong> You must sign in with an active Microsoft or work account.</li><li><strong>Cloud Synchronization Delay:</strong> Everything you type automatically syncs to Microsoft cloud servers, which violates corporate security rules for temporary staging passwords and production API tokens.</li><li><strong>Heavy Memory Footprint:</strong> The OneNote background runtime frequently consumes over 180MB of system memory.</li></ul></section><div class="editorial-dark-card" style="background:#2e4723 !important; color:#ffffff !important; border-color:#1e3117 !important;" aria-label="Product showcase">
+<h3 class="editorial-dark-heading" style="color:#ffffff !important;">FLOATBOARD.</h3>
+<p class="editorial-dark-sub" style="color:#e2ecd9 !important;">Stop paying the Alt-Tab tax. Keep active notes, API keys, and reference screenshots pinned permanently above your browser or code editor. 100% offline local memory.</p>
+<div class="editorial-dark-actions">
+<a href="/download/" class="editorial-btn-coral" style="background:#eadbb6 !important; color:#1e3117 !important;">Download Free App →</a>
+<span class="editorial-dark-price" style="color:#c8d7c2 !important;">$5.99 Lifetime · No Subscriptions</span>
+</div>
+</div><section aria-labelledby="method-2-powertoys-always-on-top"><h2 id="method-2-powertoys-always-on-top">Method 2: Microsoft PowerToys (Win + Ctrl + T)</h2><p>If you install Microsoft PowerToys from GitHub or the Microsoft Store, you can use the <strong>Always on Top</strong> utility. Pressing <code>Win + Ctrl + T</code> forces the currently focused window—including legacy Sticky Notes or Notepad—to remain pinned above all others.</p><p>While PowerToys is a versatile utility, using it exclusively for scratchpad notes has real limitations:</p><ul><li>It pins the entire application window, including huge empty margins and bulky title bars.</li><li>The visual border outline (colored border) can be distracting during video presentations.</li><li>PowerToys runs dozens of other background modules that consume system resources on lightweight laptops.</li></ul></section><section aria-labelledby="method-3-floatboard-dedicated-offline-board"><h2 id="method-3-floatboard-dedicated-offline-board">Method 3: FloatBoard native offline floating scratchpad</h2><p>FloatBoard is built specifically to solve the floating note problem without cloud accounts, telemetry, or complex shortcut configurations. It opens as an ultralight always-on-top tile directly in the corner of your workspace.</p><p>Key advantages for developers and technical workers:</p><ul><li><strong>100% Offline Local Privacy:</strong> No login, no cloud sync, and zero outbound network telemetry. Staging keys and proprietary secrets never leave your device.</li><li><strong>One-Click Pinning:</strong> The floating overlay stays permanently anchored above maximized browser tabs, terminals, and design tools.</li><li><strong>Combined Text &amp; Image Capture:</strong> Pin code snippets, color palettes, and cropped reference screenshots in the exact same workspace.</li><li><strong>Instant .99 Lifetime License:</strong> No recurring monthly subscriptions or SaaS lock-in. <a href="/download/">Download FloatBoard free for Windows, Mac &amp; Linux</a>.</li></ul></section><section aria-labelledby="faq"><h2 id="faq">Frequently Asked Questions about Windows 11 Sticky Notes</h2><h3>Can I make classic Windows Sticky Notes stay on top without third-party tools?</h3><p>No. Classic Windows Sticky Notes does not include a native always-on-top setting. You must either use the modern OneNote-linked version, a utility like PowerToys, or a dedicated tool like FloatBoard.</p><h3>Is FloatBoard safer for sensitive developer credentials than Sticky Notes?</h3><p>Yes. Microsoft Sticky Notes automatically syncs notes to the cloud if a Microsoft account is active. FloatBoard operates 100% offline with zero cloud telemetry, ensuring API keys and staging credentials remain private on your local machine.</p><h3>Does FloatBoard work on dual monitors in Windows 11?</h3><p>Yes. You can drag FloatBoard to any monitor, position it over a full-screen application or presentation, and it will remain pinned on that display without shifting.</p></section>
+</div>
+</div>
+<section class="editorial-related-section">
+<h2>Related Guides &amp; Workflows</h2>
+<div class="editorial-related-grid">
+<a href="/blog/always-on-top-floating-notes-developers-multitasking/" class="editorial-related-card"><span>Developer workflows &amp; focus</span><h3>Always on Top Windows 11 &amp; Mac: Pin Any Note or Window</h3></a><a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/" class="editorial-related-card"><span>Frontend developers &amp; designers</span><h3>How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding</h3></a><a href="/blog/windows-clipboard-history-vs-floating-notes/" class="editorial-related-card"><span>Windows clipboard workflow</span><h3>Windows Clipboard (Win + V) vs Floating Notes Setup</h3></a>
+</div>
+</section>
+</div>
+</div>
+</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script></body></html>

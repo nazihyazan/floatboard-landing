@@ -43,12 +43,12 @@ sidebar_download_card = '''<div class="editorial-card-sidebar" aria-label="Downl
 <span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
 </div>'''
 
-incontent_dark_card = '''<div class="editorial-dark-card" style="background:#111113 !important; color:#ffffff !important;" aria-label="Product showcase">
+incontent_dark_card = '''<div class="editorial-dark-card" style="background:#2e4723 !important; color:#ffffff !important; border-color:#1e3117 !important;" aria-label="Product showcase">
 <h3 class="editorial-dark-heading" style="color:#ffffff !important;">FLOATBOARD.</h3>
-<p class="editorial-dark-sub" style="color:#f4f4f5 !important;">Stop paying the Alt-Tab tax. Keep active notes, API keys, and reference screenshots pinned permanently above your browser or code editor. 100% offline local memory.</p>
+<p class="editorial-dark-sub" style="color:#e2ecd9 !important;">Stop paying the Alt-Tab tax. Keep active notes, API keys, and reference screenshots pinned permanently above your browser or code editor. 100% offline local memory.</p>
 <div class="editorial-dark-actions">
-<a href="/download/" class="editorial-btn-coral">Download Free App →</a>
-<span class="editorial-dark-price" style="color:#cbd5e1 !important;">$5.99 Lifetime · No Subscriptions</span>
+<a href="/download/" class="editorial-btn-coral" style="background:#eadbb6 !important; color:#1e3117 !important;">Download Free App →</a>
+<span class="editorial-dark-price" style="color:#c8d7c2 !important;">$5.99 Lifetime · No Subscriptions</span>
 </div>
 </div>'''
 
@@ -103,7 +103,7 @@ def page(path, title, description, body, schema, picture=None):
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title_tag}</title><meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{url}"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261103c">
+<link rel="stylesheet" href="/blog/blog.css?v=20261103d">
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>

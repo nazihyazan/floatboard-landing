@@ -1475,5 +1475,166 @@
       "The captured snippet instantly pins on top of all windows without prompting for a file save path.",
       "Keep your reference visible until your task is finished, then close the card with zero clutter on your desktop."
     ]
+  },
+  {
+    "slug": "how-to-pin-sticky-notes-always-on-top-windows-11",
+    "title": "How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)",
+    "description": "Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools.",
+    "category": "Developers & multitaskers",
+    "audience": "floating-notes",
+    "date": "2026-11-03",
+    "modified": "2026-11-03",
+    "image": "pin-sticky-notes-windows-11.jpg",
+    "alt": "FloatBoard pinned sticky note scratchpad floating above Windows 11 desktop",
+    "caption": "FloatBoard stays permanently pinned above your code editor or browser without cloud sync bloat.",
+    "quick_answer": [
+      "The default standalone Windows Sticky Notes app lacks a native always-on-top pin toggle.",
+      "Microsoft PowerToys (Win + Ctrl + T) can force windows to float, but requires a 200MB background utility.",
+      "FloatBoard provides a native, zero-cloud offline floating scratchpad that stays pinned above full-screen editors and browsers with one click."
+    ],
+    "tags": [
+      "pin sticky notes always on top windows 11",
+      "keep notes on top of other windows windows 11",
+      "floating notes for windows 11",
+      "always on top notepad windows 11",
+      "sticky notes alternative without onenote"
+    ],
+    "related_slugs": [
+      "always-on-top-floating-notes-developers-multitasking",
+      "keep-design-tokens-and-mockups-visible-while-coding",
+      "windows-clipboard-history-vs-floating-notes"
+    ],
+    "intro": "When coding, writing technical specs, or debugging live APIs in Windows 11, you frequently need a quick scratchpad visible in the corner of your screen. The built-in Microsoft Sticky Notes app buries itself behind maximized windows the instant you click back into VS Code or Chrome. This practical guide covers three ways to keep sticky notes always on top in Windows 11, the trade-offs of each method, and why a dedicated offline floating board prevents accidental data leakage.",
+    "sections": [
+      {
+        "id": "why-windows-sticky-notes-disappear",
+        "title": "Why default Windows Sticky Notes keep sinking behind your apps",
+        "html": "<p>Windows 11 handles application layering through its Desktop Window Manager (DWM). By default, regular application windows lose focus and drop to the bottom layer when you click inside a full-screen or maximized app like VS Code, Figma, or Word. Classic Windows Sticky Notes behave as standard desktop child windows, which means they vanish behind active windows as soon as you start typing.</p><p>For developers and multitaskers, this causes constant <em>Alt-Tab friction</em>. You copy an API authorization token or staging URL, switch to your editor, and then have to minimize or un-maximize your IDE just to glance at the note again.</p>"
+      },
+      {
+        "id": "method-1-onenote-sticky-notes-pin",
+        "title": "Method 1: The OneNote modern Sticky Notes pin feature",
+        "html": "<p>In recent Windows 11 feature updates, Microsoft integrated a newer version of Sticky Notes inside the OneNote ecosystem. If you pop a note out into its own window, a small pin icon appears in the top-right corner of the title bar.</p><p>While this works for simple text, it introduces significant downsides:</p><ul><li><strong>Forced Microsoft Account Login:</strong> You must sign in with an active Microsoft or work account.</li><li><strong>Cloud Synchronization Delay:</strong> Everything you type automatically syncs to Microsoft cloud servers, which violates corporate security rules for temporary staging passwords and production API tokens.</li><li><strong>Heavy Memory Footprint:</strong> The OneNote background runtime frequently consumes over 180MB of system memory.</li></ul>"
+      },
+      {
+        "id": "method-2-powertoys-always-on-top",
+        "title": "Method 2: Microsoft PowerToys (Win + Ctrl + T)",
+        "html": "<p>If you install Microsoft PowerToys from GitHub or the Microsoft Store, you can use the <strong>Always on Top</strong> utility. Pressing <code>Win + Ctrl + T</code> forces the currently focused window—including legacy Sticky Notes or Notepad—to remain pinned above all others.</p><p>While PowerToys is a versatile utility, using it exclusively for scratchpad notes has real limitations:</p><ul><li>It pins the entire application window, including huge empty margins and bulky title bars.</li><li>The visual border outline (colored border) can be distracting during video presentations.</li><li>PowerToys runs dozens of other background modules that consume system resources on lightweight laptops.</li></ul>"
+      },
+      {
+        "id": "method-3-floatboard-dedicated-offline-board",
+        "title": "Method 3: FloatBoard native offline floating scratchpad",
+        "html": "<p>FloatBoard is built specifically to solve the floating note problem without cloud accounts, telemetry, or complex shortcut configurations. It opens as an ultralight always-on-top tile directly in the corner of your workspace.</p><p>Key advantages for developers and technical workers:</p><ul><li><strong>100% Offline Local Privacy:</strong> No login, no cloud sync, and zero outbound network telemetry. Staging keys and proprietary secrets never leave your device.</li><li><strong>One-Click Pinning:</strong> The floating overlay stays permanently anchored above maximized browser tabs, terminals, and design tools.</li><li><strong>Combined Text &amp; Image Capture:</strong> Pin code snippets, color palettes, and cropped reference screenshots in the exact same workspace.</li><li><strong>Instant .99 Lifetime License:</strong> No recurring monthly subscriptions or SaaS lock-in. <a href=\"/download/\">Download FloatBoard free for Windows, Mac &amp; Linux</a>.</li></ul>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently Asked Questions about Windows 11 Sticky Notes",
+        "html": "<h3>Can I make classic Windows Sticky Notes stay on top without third-party tools?</h3><p>No. Classic Windows Sticky Notes does not include a native always-on-top setting. You must either use the modern OneNote-linked version, a utility like PowerToys, or a dedicated tool like FloatBoard.</p><h3>Is FloatBoard safer for sensitive developer credentials than Sticky Notes?</h3><p>Yes. Microsoft Sticky Notes automatically syncs notes to the cloud if a Microsoft account is active. FloatBoard operates 100% offline with zero cloud telemetry, ensuring API keys and staging credentials remain private on your local machine.</p><h3>Does FloatBoard work on dual monitors in Windows 11?</h3><p>Yes. You can drag FloatBoard to any monitor, position it over a full-screen application or presentation, and it will remain pinned on that display without shifting.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "lightweight-pureref-alternative-reference-board",
+    "title": "Lightweight PureRef Alternative for Fast Image Reference Boards",
+    "description": "Need reference images pinned beside your 3D canvas or web design without loading a heavy infinite canvas? Here is how to keep visual references floating offline.",
+    "category": "Designers & illustrators",
+    "audience": "visual-references",
+    "date": "2026-11-03",
+    "modified": "2026-11-03",
+    "image": "lightweight-pureref-alternative.jpg",
+    "alt": "FloatBoard lightweight PureRef alternative displaying architectural reference image and color palette swatches",
+    "caption": "FloatBoard provides a compact, lightweight reference board with color swatches and text notes beside your art canvas.",
+    "quick_answer": [
+      "PureRef is the industry standard for giant infinite moodboards, but can be heavy when you only need 2-4 quick reference shots.",
+      "PureRef lacks native structured text note cards and clipboard history integration.",
+      "FloatBoard offers a lightweight, always-on-top reference board combining cropped screenshots, color palette notes, and text snippets in a single compact overlay."
+    ],
+    "tags": [
+      "lightweight pureref alternative",
+      "reference board maker",
+      "compare images side by side",
+      "floating image reference board windows",
+      "pureref alternative with text notes"
+    ],
+    "related_slugs": [
+      "organize-image-references",
+      "compare-photos-side-by-side-windows",
+      "review-image-grid-and-large-preview"
+    ],
+    "intro": "PureRef has long been a favorite tool for concept artists and 3D sculptors who need an infinite canvas of visual inspiration. However, web designers, UI/UX developers, and illustrators frequently find infinite-canvas software over-engineered when all they need is two reference screenshots and a handful of CSS hex codes pinned beside their active canvas. This guide compares PureRef with compact floating reference alternatives.",
+    "sections": [
+      {
+        "id": "when-pureref-is-overkill",
+        "title": "When an infinite canvas becomes workflow clutter",
+        "html": "<p>Infinite moodboard software excels when compiling hundreds of anatomical sketches or cinematic stills for high-end character production. But for UI designers, web developers, and day-to-day graphic artists, infinite canvas tools introduce distinct pain points:</p><ul><li><strong>Navigation Overhead:</strong> Panning and zooming across a massive canvas just to double-check a single button contrast ratio wastes time.</li><li><strong>Lack of Structured Text Notes:</strong> PureRef treats text as an afterthought—you cannot easily format API tokens, responsive breakpoints, or client copy constraints.</li><li><strong>Memory Usage:</strong> Loading gigabytes of embedded high-resolution graphics strains laptop batteries and GPU VRAM when running alongside Blender or Unreal Engine.</li></ul>"
+      },
+      {
+        "id": "what-makes-floatboard-different",
+        "title": "FloatBoard: Focused, lightweight reference tiles with text integration",
+        "html": "<p>FloatBoard approaches visual reference from the perspective of <em>working sets</em> rather than infinite archives. Instead of throwing fifty unorganized images onto a canvas, you pin the exact two to four assets you are actively designing against.</p><p>Key differences that speed up your creative workflow:</p><ul><li><strong>Native Text &amp; Token Cards:</strong> Keep your design system tokens (e.g. <code>--bg-page: #FAF8F5</code> and <code>--accent-olive: #2E4723</code>) directly beside your visual crops.</li><li><strong>Seamless Clipboard Capture:</strong> Copy an image or UI detail from Chrome or Figma, and FloatBoard immediately detects the crop without requiring manual file saves.</li><li><strong>Compact Overlay:</strong> FloatBoard docks cleanly in the corner of your screen, letting you sketch in Photoshop, Procreate, or Figma without obstructing your main workspace.</li></ul>"
+      },
+      {
+        "id": "practical-reference-board-setup",
+        "title": "Step-by-step: Setting up a focused reference tile for a web hero section",
+        "html": "<p>Here is how a senior product designer sets up a focused reference board in under thirty seconds:</p><ol><li><strong>Crop the specific visual relationship:</strong> Use your operating system shortcut (e.g. <code>Win + Shift + S</code>) to capture the exact layout contrast or typography hierarchy you want to study.</li><li><strong>Drop the crop into FloatBoard:</strong> The snippet appears as a floating tile above your editor.</li><li><strong>Attach constraints:</strong> Add a quick note below the crop: <em>Hero grid: 1200px max-width, 16px radius, warm olive tone #2E4723</em>.</li><li><strong>Toggle Always-on-Top:</strong> Keep the tile anchored in the upper corner while tweaking CSS in VS Code or adjusting vectors in Figma.</li></ol>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently Asked Questions about PureRef Alternatives",
+        "html": "<h3>Is FloatBoard a complete replacement for PureRef?</h3><p>FloatBoard is designed for focused reference sets (2 to 8 items) with rich text notes and clipboard capture. If you need a giant moodboard with hundreds of high-resolution textures, PureRef remains excellent for that specific role.</p><h3>Can I copy colors and text from FloatBoard?</h3><p>Yes. FloatBoard features native clipboard history and text scratchpads, making it effortless to copy hex colors, font names, and measurements directly into your code or design tool.</p><h3>Does FloatBoard require an active internet connection?</h3><p>No. FloatBoard operates 100% offline with zero cloud telemetry, ensuring that unreleased client designs and proprietary mockups remain strictly on your local disk.</p>"
+      }
+    ]
+  },
+  {
+    "slug": "best-offline-clipboard-manager-windows-11",
+    "title": "Best Offline Clipboard Manager for Windows 11 (With Image Preview)",
+    "description": "Protect developer API keys, confidential tokens, and copied snippets with a 100% offline clipboard manager. Compare Windows Win + V and local visual clipboards.",
+    "category": "Productivity & shortcuts",
+    "audience": "clipboard",
+    "date": "2026-11-03",
+    "modified": "2026-11-03",
+    "image": "offline-clipboard-manager-windows-11.jpg",
+    "alt": "FloatBoard offline clipboard manager showing pinned developer snippets and image previews",
+    "caption": "FloatBoard keeps recent copied snippets and pinned clips accessible offline without cloud synchronization risks.",
+    "quick_answer": [
+      "Windows Win + V clipboard history is convenient, but clears unpinned items on restart and lacks persistent visual thumbnail previews.",
+      "Many modern clipboard tools sync your history to the cloud, risking enterprise compliance and exposing API keys or auth tokens.",
+      "FloatBoard provides a 100% offline, local clipboard board with visual image thumbnails, pinned working sets, and zero network telemetry."
+    ],
+    "tags": [
+      "best offline clipboard manager windows 11",
+      "floating clipboard windows 11",
+      "windows clipboard history keep pinned items",
+      "private clipboard manager no cloud",
+      "visual clipboard history tool"
+    ],
+    "related_slugs": [
+      "clear-copied-text-history-keep-working-set",
+      "windows-clipboard-history-vs-floating-notes",
+      "code-snippets-and-screenshots"
+    ],
+    "intro": "Copying and pasting is the most repeated interaction on modern desktop computers. Whether copying database queries, authentication headers, or responsive screenshot snippets, relying on standard single-item clipboards wastes minutes every hour. While Windows 11 includes a native clipboard history pop-up (Win + V), professionals handling sensitive client data, code, or visual mockups require an offline visual tool that keeps working items visible. Here is what to look for in an offline clipboard manager.",
+    "sections": [
+      {
+        "id": "limitations-of-windows-win-v",
+        "title": "The limitations of Windows 11 built-in clipboard (Win + V)",
+        "html": "<p>Windows 11 includes a native clipboard history feature accessible via <code>Win + V</code>. While it provides basic multi-clip storage, it comes with fundamental daily workflow friction:</p><ul><li><strong>Disappearing Overlay:</strong> The moment you click away or paste into your editor, the Windows clipboard overlay completely closes. You cannot leave it visible while typing multiple fields.</li><li><strong>Unreliable Cloud Sync:</strong> If \"Sync across your devices\" is accidentally enabled in Windows Settings, confidential snippets and passwords get copied to Microsoft servers.</li><li><strong>Loss of Unpinned Items:</strong> Rebooting your machine or experiencing an unexpected crash purges your unpinned copied history.</li><li><strong>Poor Image Rendering:</strong> Graphical snippets are rendered as tiny, low-contrast previews that make it impossible to distinguish between similar UI mockups.</li></ul>"
+      },
+      {
+        "id": "why-offline-local-privacy-matters",
+        "title": "Why 100% offline local privacy is mandatory for developers and teams",
+        "html": "<p>Modern development frequently involves staging secrets, such as <code>Bearer sec_live_9942a781</code> tokens, database connection URIs, and confidential client customer records. Pasting these items through SaaS clipboard apps that use cloud telemetry violates corporate data-loss prevention (DLP) rules and GDPR compliance.</p><p>A proper offline clipboard manager operates with <strong>zero network permissions</strong>. All clipboard history is stored locally in an encrypted or sandboxed file on your own drive, never touching an external server.</p>"
+      },
+      {
+        "id": "how-floatboard-improves-clipboard-flow",
+        "title": "FloatBoard: Visual preview, persistent pinning, and always-on-top layout",
+        "html": "<p>FloatBoard bridges the gap between a temporary clipboard log and a durable desktop scratchpad:</p><ul><li><strong>Pinned Working Sets:</strong> Mark your active API endpoints and reusable shell commands as <em>Pinned</em> so they stay permanently accessible until you deliberately dismiss them.</li><li><strong>Large Visual Thumbnails:</strong> Inspect captured screenshots at full clarity before pasting, preventing mistakes when comparing multiple UI mockups.</li><li><strong>Floating Dock Mode:</strong> Keep the clipboard docked in the corner of your screen while migrating data between web dashboards or spreadsheets.</li><li><strong>Universal Shortcut:</strong> Summon and dismiss your board with a single customizable hotkey.</li></ul>"
+      },
+      {
+        "id": "faq",
+        "title": "Frequently Asked Questions about Offline Clipboard Managers",
+        "html": "<h3>Does FloatBoard upload my copied clipboard history to the cloud?</h3><p>Never. FloatBoard is 100% offline software with zero network telemetry or tracking. Your clipboard history, text notes, and images reside entirely in local storage on your device.</p><h3>How does FloatBoard handle image clips compared to text clips?</h3><p>FloatBoard displays high-resolution thumbnails for copied images and screenshots, allowing you to preview visual details side by side with code snippets and text notes.</p><h3>What platforms does FloatBoard support?</h3><p>FloatBoard runs natively on Windows 11, Windows 10, macOS (Apple Silicon &amp; Intel), and Linux (Ubuntu, Debian, Fedora, Arch Linux, Snap &amp; AppImage). <a href=\"/download/\">Download FloatBoard free</a>.</p>"
+      }
+    ]
   }
 ]
