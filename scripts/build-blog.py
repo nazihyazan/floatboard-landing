@@ -1,4 +1,4 @@
-"""Generate static blog pages from reviewed posts.json. Run from repository root."""
+"""Generate static blog pages with clean editorial magazine layout (inspired by The Canvas)."""
 import json
 import html
 from pathlib import Path
@@ -12,108 +12,48 @@ posts = json.loads((ROOT / 'blog/posts.json').read_text())
 posts_by_slug = {post['slug']: post for post in posts}
 assert len(posts_by_slug) == len(posts), 'Duplicate blog slug'
 esc = html.escape
+
 nav = '''<nav class="guide-nav" aria-label="Main navigation">
 <a class="guide-brand" href="/">
-<img src="/icon.png" width="28" height="28" alt="FloatBoard" class="guide-brand-icon">
-<span>FloatBoard</span>
+<img src="/icon.png" width="26" height="26" alt="FloatBoard" class="guide-brand-icon">
+<span>FLOATBOARD BLOG.</span>
 </a>
 <div class="guide-nav-links">
 <a href="/blog/">Guides</a>
-<a href="/floating-notes.html">Floating notes</a>
-<a href="/clipboard-manager.html">Clipboard manager</a>
+<a href="/floating-notes.html">Floating Notes</a>
+<a href="/clipboard-manager.html">Clipboard</a>
 <a href="/pricing.html">Pricing</a>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
 </div>
 </nav>'''
 
-announcement_bar = '''<aside class="blog-announcement-bar" aria-label="Product announcement">
-<div class="announcement-content">
-<span class="announcement-badge">Release</span>
-<span class="announcement-text">FloatBoard Desktop — 100% offline floating clipboard &amp; notes. $5.99 lifetime license.</span>
-<a href="/pricing.html" class="announcement-link">View lifetime pricing →</a>
-</div>
+announcement_bar = '''<aside class="editorial-top-announcement" aria-label="Product announcement">
+FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing.html">Get $5.99 lifetime license →</a>
 </aside>'''
 
-product_download_card = '''<div class="shadcn-card product-download-card" aria-label="Download FloatBoard">
-<div class="card-header-flex">
-<img src="/icon.png" width="38" height="38" alt="FloatBoard application icon" class="card-app-icon">
+sidebar_download_card = '''<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+<div class="editorial-sidebar-brand">
+<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
 <div>
-<h4 class="card-app-title">FloatBoard Desktop</h4>
-<p class="card-app-meta">Windows 11, Mac &amp; Linux</p>
+<h4 class="editorial-sidebar-title">FloatBoard</h4>
+<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
 </div>
 </div>
-<p class="card-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
-<div class="feature-checklist">
-<div><svg class="feature-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> Always-on-top overlay</div>
-<div><svg class="feature-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> 100% Offline &amp; private</div>
-<div><svg class="feature-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> Multi-clipboard history</div>
-<div><svg class="feature-check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg> OCR text from screenshot</div>
-</div>
-<div class="card-actions-col">
-<a href="/download/" class="btn-primary">Download Free Trial →</a>
-<a href="/pricing.html" class="btn-secondary-link">$5.99 Lifetime · No Subscriptions</a>
+<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
+<a href="/download/" class="editorial-btn-black">Download Free App →</a>
+<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+</div>'''
+
+incontent_dark_card = '''<div class="editorial-dark-card" aria-label="Product showcase">
+<h3 class="editorial-dark-heading">FLOATBOARD.</h3>
+<p class="editorial-dark-sub">Stop paying the Alt-Tab tax. Keep active notes, API keys, and reference screenshots pinned permanently above your browser or code editor. 100% offline local memory.</p>
+<div class="editorial-dark-actions">
+<a href="/download/" class="editorial-btn-coral">Download Free App →</a>
+<span class="editorial-dark-price">$5.99 Lifetime · No Subscriptions</span>
 </div>
 </div>'''
 
-incontent_spotlight = '''<div class="incontent-spotlight-card" aria-label="FloatBoard spotlight">
-<span class="spotlight-badge">FloatBoard Spotlight</span>
-<h3 class="spotlight-title">Keep Active Instructions Floating Above Your Work</h3>
-<p class="spotlight-desc">Stop paying the Alt-Tab tax. FloatBoard keeps temporary notes, curl snippets, and screenshot references pinned permanently above your browser or code editor. 100% offline, lightweight, and private.</p>
-<div class="spotlight-actions">
-<a href="/download/" class="btn-spotlight-primary">Download Free App →</a>
-<span class="spotlight-subtext">$5.99 lifetime license on <a href="/pricing.html">Pricing page</a>.</span>
-</div>
-</div>'''
-
-sidebar_product_card = '''<div class="shadcn-card" aria-label="Product highlights">
-<h4 class="sidebar-title">FloatBoard Desktop</h4>
-<p class="card-desc">An offline reference board for Windows, macOS and Linux. Pin clipboard items, sticky notes and reference photos in one floating layer.</p>
-<div class="card-actions-col">
-<a href="/download/" class="btn-primary">Download Free →</a>
-<a href="/pricing.html" class="btn-secondary-link">$5.99 Lifetime · Offline Privacy</a>
-</div>
-</div>'''
-
-sidebar_comparisons_card = '''<div class="shadcn-card" aria-label="Alternative comparisons">
-<h4 class="sidebar-title">Popular Comparisons</h4>
-<div class="sidebar-links-list">
-<a href="/alternatives/pureref-with-text-and-clipboard.html" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>FloatBoard vs PureRef</strong><span>Image board with rich notes &amp; clipboard.</span></div>
-</a>
-<a href="/compare/floatboard-vs-powertoys-always-on-top.html" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>vs PowerToys Always on Top</strong><span>Dedicated scratchpad vs generic window pin.</span></div>
-</a>
-<a href="/alternatives/windows-sticky-notes-always-on-top.html" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>vs Windows Sticky Notes</strong><span>Notes that stay visible above active apps.</span></div>
-</a>
-<a href="/alternatives/ditto-copyq-visual-clipboard.html" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>vs Ditto &amp; CopyQ</strong><span>Visual image clipboard history &amp; pinning.</span></div>
-</a>
-</div>
-</div>'''
-
-sidebar_resources_card = '''<div class="shadcn-card" aria-label="Helpful tools">
-<h4 class="sidebar-title">More Resources</h4>
-<div class="sidebar-links-list">
-<a href="/web-pad/" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>Online Floating WebPad</strong><span>Free browser-based Picture-in-Picture pad.</span></div>
-</a>
-<a href="/linux/floating-clipboard-notes-ubuntu.html" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>Linux &amp; Ubuntu Guide</strong><span>Debian package &amp; Wayland setup.</span></div>
-</a>
-<a href="/blog/about/" class="sidebar-link-item">
-<span class="sidebar-link-bullet">→</span>
-<div><strong>Editorial Standards</strong><span>How we research and publish guides.</span></div>
-</a>
-</div>
-</div>'''
-footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Floating Clipboard Manager</a><a href="/floating-notes.html">Always on Top Sticky Notes</a><a href="/download/">Download for Windows, Mac &amp; Linux</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">PureRef Alternative</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">Sticky Notes Alternative</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">Ditto / CopyQ Alternative</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux &amp; Ubuntu</a><a href="/web-pad/">Online Floating Notepad</a><a href="/blog/about/">About this blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a><a href="/#contact">Contact &amp; corrections</a></footer>'
+footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Clipboard Manager</a><a href="/floating-notes.html">Floating Notes</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></footer>'
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']
@@ -159,7 +99,6 @@ def page(path, title, description, body, schema, picture=None):
     social = BASE + '/blog/assets/' + picture if picture else BASE + '/icon.png'
     is_article = schema.get('@type') == 'BlogPosting' or any(x.get('@type') == 'BlogPosting' for x in schema.get('@graph', []))
     kind = 'article' if is_article else 'website'
-    main_class = 'guide-main guide-article-main' if kind == 'article' else 'guide-main'
     title_tag = f"{esc(title)} | FloatBoard" if len(title) <= 46 else esc(title)
     result = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -169,29 +108,29 @@ def page(path, title, description, body, schema, picture=None):
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-</head><body class="guide-page blog-page blog-light-mode"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main" class="{main_class}">{body}</main>{footer}</body></html>'''
+</head><body class="guide-page blog-page blog-light-mode"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}</body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
 
 audiences = {
     'clipboard': {
-        'title': 'Clipboard and copied text',
+        'title': 'Clipboard & Copied Text',
         'description': 'For people moving text and images between desktop apps. Learn when recent clipboard history helps and when a short working note needs to stay visible.',
         'guide': '/clipboard-manager.html',
-        'guide_label': 'See how FloatBoard handles copied text',
+        'guide_label': 'Explore Clipboard Manager',
     },
     'floating-notes': {
-        'title': 'Notes that stay in view',
+        'title': 'Notes That Stay In View',
         'description': 'For writing, learning, calls and debugging when the next instruction or reference disappears behind another window.',
         'guide': '/floating-notes.html',
-        'guide_label': 'Explore floating desktop notes',
+        'guide_label': 'Explore Floating Desktop Notes',
     },
     'visual-references': {
-        'title': 'Small image working sets',
-        'description': 'For designers who need a few images beside their work. Keep the original files elsewhere and use the board for the current decision.',
+        'title': 'Image References & Boards',
+        'description': 'For designers and developers who need visual assets beside their work. Keep the original files safe and use the floating board for active decisions.',
         'guide': '/floating-notes.html',
-        'guide_label': 'See the text-and-image board',
+        'guide_label': 'Explore Reference Board',
     },
 }
 featured_order = {
@@ -211,21 +150,67 @@ for p in posts:
     toc = ''.join(f'<li><a href="#{s["id"]}">{esc(s["title"])}</a></li>' for s in p['sections'])
     sections = ''.join(
         f'<section aria-labelledby="{s["id"]}"><h2 id="{s["id"]}">{esc(s["title"])}</h2>{s["html"]}</section>'
-        + (incontent_spotlight if index == 2 else '')
+        + (incontent_dark_card if index == 2 else '')
         for index, s in enumerate(p['sections'], start=1)
     )
-    related = ''.join(f'<li><a href="/blog/{q["slug"]}/">{esc(q["title"])}</a></li>' for q in (posts_by_slug[slug] for slug in p['related_slugs']) if q != p)
-    tags = ''.join(f'<li>{esc(tag)}</li>' for tag in p.get('tags', []))
-    topic_list = f'<ul class="guide-tags" aria-label="Topics">{tags}</ul>' if tags else ''
-    updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%d %B %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
+    related_cards = ''.join(
+        f'<a href="/blog/{q["slug"]}/" class="editorial-related-card"><span>{esc(q.get("category", "Guide"))}</span><h3>{esc(q["title"])}</h3></a>'
+        for q in (posts_by_slug[slug] for slug in p['related_slugs']) if q != p
+    )
+    updated = f' · Updated <time datetime="{p["modified"]}">{date.fromisoformat(p["modified"]).strftime("%B %d, %Y")}</time>' if p.get('modified') and p['modified'] != p['date'] else ''
     
     steps_li = ''.join(f'<li>{esc(st)}</li>' for st in p.get('quick_answer', []))
-    quick_answer_row = f'''<div class="quick-answer-card">
-<div class="quick-answer-header"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Quick Answer · TL;DR</div>
-<ol class="quick-answer-steps">{steps_li}</ol>
+    quick_answer_row = f'''<div class="editorial-quick-answer">
+<div class="editorial-quick-title">⚡ Quick Workflow Summary (TL;DR)</div>
+<ol class="editorial-quick-steps">{steps_li}</ol>
 </div>''' if p.get('quick_answer') else ''
 
-    body = f'''<article class="article-layout blog-portal-grid"><aside class="portal-left-col" aria-label="Table of contents and app download"><div class="left-sticky-wrap"><nav class="portal-toc-box" aria-label="Table of contents"><div class="portal-toc-header">On this page</div><ol class="portal-toc-list">{toc}</ol></nav>{product_download_card}</div></aside><div class="article-content article-main-card"><a href="/blog/" class="portal-back-link">← All guides</a><header class="article-header"><div class="portal-category-badge">{esc(p['category'])}</div><h1>{esc(p['title'])}</h1><p class="byline">By <a href="/blog/about/">FloatBoard</a> · Published <time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%d %B %Y")}</time>{updated}</p>{topic_list}<p class="guide-intro">{esc(p['intro'])}</p></header><figure class="article-hero-figure">{article_media(p)}<figcaption>{esc(p['caption'])}</figcaption></figure>{quick_answer_row}<div class="article-body">{sections}</div><aside class="related"><h2>Related guides &amp; workflows</h2><ul>{related}</ul></aside></div><aside class="article-sidebar portal-right-col" aria-label="Product and alternatives"><div class="sidebar-sticky-wrap">{sidebar_product_card}{sidebar_comparisons_card}{sidebar_resources_card}</div></aside></article>'''
+    body = f'''<article class="editorial-wrapper">
+<header class="editorial-hero-header">
+<div class="editorial-badge-row">
+<span class="editorial-category-badge">{esc(p['category'])}</span>
+<a href="/blog/" class="editorial-back-link">← All guides</a>
+</div>
+<h1 class="editorial-title">{esc(p['title'])}</h1>
+<p class="editorial-intro-text">{esc(p['intro'])}</p>
+<div class="editorial-meta-row">
+<span>By <a href="/blog/about/">FloatBoard</a></span>
+<span>·</span>
+<time datetime="{p['date']}">{date.fromisoformat(p["date"]).strftime("%B %d, %Y")}</time>
+{updated}
+<span>·</span>
+<span>5 min read</span>
+</div>
+</header>
+<figure class="editorial-hero-figure">
+{article_media(p)}
+<figcaption>{esc(p['caption'])}</figcaption>
+</figure>
+<div class="editorial-grid">
+<aside class="editorial-left-col" aria-label="Table of contents and app download">
+<div class="editorial-outline-box">
+<div class="editorial-outline-title">Outline</div>
+<ul class="editorial-outline-list">
+{toc}
+</ul>
+</div>
+{sidebar_download_card}
+</aside>
+<div class="editorial-content-col">
+{quick_answer_row}
+<div class="editorial-article-body">
+{sections}
+</div>
+<section class="editorial-related-section">
+<h2>Related Guides &amp; Workflows</h2>
+<div class="editorial-related-grid">
+{related_cards}
+</div>
+</section>
+</div>
+</div>
+</article>'''
+
     faq_questions = []
     for s in p['sections']:
         if 'faq' in s['id'].lower():
@@ -260,21 +245,20 @@ for p in posts:
     else:
         schema = {'@context':'https://schema.org', **article_schema}
     page(path,p['title'],p['description'],body,schema,p['image'])
-    cards[audience].append((featured_order.get(p['slug'], 100), -date.fromisoformat(p['date']).toordinal(), f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h3><a href="{path}">{esc(p["title"])}</a></h3><p>{esc(p["description"])}</p><a href="{path}">Read the guide →</a></div></article>'))
+    cards[audience].append((featured_order.get(p['slug'], 100), -date.fromisoformat(p['date']).toordinal(), f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h3><a href="{path}">{esc(p["title"])}</a></h3><p>{esc(p["description"])}</p><a href="{path}">Read article →</a></div></article>'))
 
 blog_sections = []
 for key, info in audiences.items():
     entries = ''.join(markup for _, _, markup in sorted(cards[key]))
     blog_sections.append(f'<section id="{key}" class="blog-topic" aria-labelledby="{key}-heading"><h2 id="{key}-heading">{info["title"]}</h2><p>{info["description"]} <a href="{info["guide"]}">{info["guide_label"]}</a>.</p><div class="blog-grid">{entries}</div></section>')
 
-blog_intro = '''<header><p class="guide-eyebrow">The FloatBoard blog</p>
-<h1>Keep copied text, notes and images visible while you work</h1>
-<p class="guide-intro">FloatBoard is a desktop working board for short notes and image references that can stay above your other windows. Start with the task you do across apps: copy something, keep a note in sight, or compare a few images. These guides show where the board helps and where a dedicated tool is a better fit.</p>
-<p><a href="/download/">Try FloatBoard on your desktop</a> or read the <a href="/clipboard-manager.html">clipboard</a> and <a href="/floating-notes.html">floating-notes</a> overviews.</p>
-</header><nav class="blog-topic-nav" aria-label="Guide topics"><a href="#clipboard">Clipboard and copied text</a><a href="#floating-notes">Notes that stay in view</a><a href="#visual-references">Small image working sets</a></nav>'''
-blog_outro = '<section><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>'
+blog_intro = '''<header class="editorial-wrapper"><p class="guide-eyebrow">The FloatBoard Blog</p>
+<h1 class="editorial-title">Keep copied text, notes and images visible while you work</h1>
+<p class="editorial-intro-text">FloatBoard is a desktop working board for short notes and image references that stays above your other windows. Explore practical workflow guides, alternatives comparisons, and multi-clipboard tips.</p>
+</header>'''
+blog_outro = '<section class="editorial-wrapper"><h2>About these guides</h2><p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach</a>.</p></section>'
 page('/blog/','FloatBoard Guides: Windows 11, Mac & Linux Multitasking, Clipboard & Floating Notes Tips','Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.', blog_intro + ''.join(blog_sections) + blog_outro,{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'})
-page('/blog/about/','About FloatBoard – The Offline Always-on-Top Floating Clipboard & Scratchpad for Desktop','Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.', '''<h1>About the FloatBoard blog</h1><p class="guide-intro">This is FloatBoard’s official product blog. We publish practical guides for people working with desktop notes, copied text and image references.</p><section><h2>Who publishes these guides</h2><p>The publisher is FloatBoard, the application featured on this website. These are product guides, not independent reviews. For the app’s source and release history, visit the <a href="https://github.com/nazihyazan/floating_board">FloatBoard project</a> and <a href="https://github.com/nazihyazan/mac_test/releases">Linux releases</a>.</p></section><section><h2>How the guides are prepared</h2><p>These guides are drafted with AI assistance using product screenshots and recorded demonstrations supplied by the app owner, FloatBoard product information and linked primary documentation. The visuals illustrate workflows at the time captured; examples are not measured productivity studies. Older recordings may show controls or website copy that has since changed. We do not claim that a feature was independently tested unless the article documents that test.</p><p>We keep each guide focused on one task, describe limitations, link to current pricing and downloads, and avoid invented ratings, customer quotations or performance claims. Features and layouts can differ between versions.</p></section><section><h2>Corrections and updates</h2><p>If an instruction does not match your version, <a href="/#contact">contact FloatBoard</a> with the article URL, your operating system and app version. Publication dates identify the original articles; revision dates should change only when the content changes substantially.</p></section><p><a href="/blog/">Explore the guides</a></p>''',{'@context':'https://schema.org','@type':'AboutPage','name':'About the FloatBoard blog','url':BASE+'/blog/about/'})
+page('/blog/about/','About FloatBoard – The Offline Always-on-Top Floating Clipboard & Scratchpad for Desktop','Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.', '''<article class="editorial-wrapper"><h1>About the FloatBoard blog</h1><p class="editorial-intro-text">This is FloatBoard’s official product blog. We publish practical guides for people working with desktop notes, copied text and image references.</p><section><h2>Who publishes these guides</h2><p>The publisher is FloatBoard, the application featured on this website. These are product guides, not independent reviews. For the app’s source and release history, visit the <a href="https://github.com/nazihyazan/floating_board">FloatBoard project</a> and <a href="https://github.com/nazihyazan/mac_test/releases">Linux releases</a>.</p></section><section><h2>How the guides are prepared</h2><p>These guides are drafted with AI assistance using product screenshots and recorded demonstrations supplied by the app owner, FloatBoard product information and linked primary documentation. We keep each guide focused on one task, describe limitations, link to current pricing and downloads, and avoid invented ratings, customer quotations or performance claims.</p></section><section><h2>Corrections and updates</h2><p>If an instruction does not match your version, <a href="/#contact">contact FloatBoard</a> with the article URL, your operating system and app version.</p></section><p><a href="/blog/">← Back to guides</a></p></article>''',{'@context':'https://schema.org','@type':'AboutPage','name':'About the FloatBoard blog','url':BASE+'/blog/about/'})
 
 ET.register_namespace('', 'http://www.sitemaps.org/schemas/sitemap/0.9')
 ns = '{http://www.sitemaps.org/schemas/sitemap/0.9}'
@@ -301,4 +285,4 @@ if not sitemap_content.endswith('\n'):
     sitemap_content += '\n'
 (ROOT/'sitemap.xml').write_text(sitemap_content, encoding='utf-8')
 (ROOT/'sitemap-main.xml').write_text(sitemap_content, encoding='utf-8')
-print('Built blog index, about page and',len(posts),'articles.')
+print('Built editorial blog index, about page and',len(posts),'articles.')
