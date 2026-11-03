@@ -198,8 +198,10 @@ for p in posts:
 </aside>
 <div class="editorial-content-col">
 {quick_answer_row}
+<div class="editorial-article-sheet">
 <div class="editorial-article-body">
 {sections}
+</div>
 </div>
 <section class="editorial-related-section">
 <h2>Related Guides &amp; Workflows</h2>
