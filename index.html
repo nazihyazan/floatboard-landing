@@ -36,9 +36,26 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Organization",
+          "@id": "https://floatboard.xyz/#organization",
+          "name": "FloatBoard",
+          "url": "https://floatboard.xyz/",
+          "logo": "https://floatboard.xyz/icon.png",
+          "sameAs": [
+            "https://github.com/nazihyazan/floating_board",
+            "https://github.com/nazihyazan/mac_test"
+          ],
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "Customer Support",
+            "url": "https://floatboard.xyz/#contact"
+          }
+        },
+        {
           "@type": "SoftwareApplication",
           "@id": "https://floatboard.xyz/#software",
           "name": "FloatBoard",
+          "publisher": {"@id": "https://floatboard.xyz/#organization"},
           "url": "https://floatboard.xyz/",
           "image": "https://floatboard.xyz/icon.png",
           "operatingSystem": "Windows 10, Windows 11, macOS, Linux",
