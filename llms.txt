@@ -6,10 +6,9 @@ The main homepage is available at: [floatboard.xyz](https://floatboard.xyz/)
 
 ## Core Products & Capabilities
 
-- [Floating Notes](https://floatboard.xyz/floating-notes.html): Pin sticky notes, snippets, and references always on top while multitasking or coding.
+- [Download FloatBoard](https://floatboard.xyz/download/): Direct native installers for Windows 10/11 (.exe), macOS (.zip), and Linux (.deb / .rpm / Flatpak / Snap).
 - [Clipboard Manager](https://floatboard.xyz/clipboard-manager.html): Multi-item clipboard history for text and images with instant copy, search, and pin.
 - [Pricing & License](https://floatboard.xyz/pricing.html): $5.99 one-time lifetime license. No subscriptions, offline activation, full privacy.
-- [Download](https://floatboard.xyz/download/): Direct downloads for Windows (installer and portable), macOS, and Linux.
 - [Web Pad](https://floatboard.xyz/web-pad/): In-browser scratchpad and quick note-taking pad without installation.
 - [Linux & Ubuntu](https://floatboard.xyz/linux/floating-clipboard-notes-ubuntu.html): Always-on-top floating clipboard and notes setup on Ubuntu and Debian-based Linux.
 

@@ -1,4 +1,6 @@
 # Cloudflare Pages Redirects
+/floating-notes.html /download/ 301
+/floating-notes /download/ 301
 /downloads/* /download/ 301
 /downloads /download/ 301
 /download /download/ 301

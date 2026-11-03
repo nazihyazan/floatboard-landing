@@ -20,7 +20,6 @@ nav = '''<nav class="guide-nav" aria-label="Main navigation">
 </a>
 <div class="guide-nav-links">
 <a href="/blog/">Guides</a>
-<a href="/floating-notes.html">Floating Notes</a>
 <a href="/clipboard-manager.html">Clipboard</a>
 <a href="/pricing.html">Pricing</a>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
@@ -53,7 +52,7 @@ incontent_dark_card = '''<div class="editorial-dark-card" aria-label="Product sh
 </div>
 </div>'''
 
-footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Clipboard Manager</a><a href="/floating-notes.html">Floating Notes</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></footer>'
+footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></footer>'
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']
@@ -123,14 +122,14 @@ audiences = {
     'floating-notes': {
         'title': 'Notes That Stay In View',
         'description': 'For writing, learning, calls and debugging when the next instruction or reference disappears behind another window.',
-        'guide': '/floating-notes.html',
-        'guide_label': 'Explore Floating Desktop Notes',
+        'guide': '/download/',
+        'guide_label': 'Download FloatBoard Free',
     },
     'visual-references': {
         'title': 'Image References & Boards',
         'description': 'For designers and developers who need visual assets beside their work. Keep the original files safe and use the floating board for active decisions.',
-        'guide': '/floating-notes.html',
-        'guide_label': 'Explore Reference Board',
+        'guide': '/download/',
+        'guide_label': 'Download Reference Board',
     },
 }
 featured_order = {
