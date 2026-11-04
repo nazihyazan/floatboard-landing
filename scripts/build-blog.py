@@ -107,7 +107,7 @@ def page(path, title, description, body, schema, picture=None):
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
-</head><body class="blog-page"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}<script>document.addEventListener("DOMContentLoaded",function(){{var v=document.querySelector("video.guide-demo");if(v){{v.muted=true;v.play().catch(function(){{}});}}}});</script></body></html>'''
+</head><body class="blog-page"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}<script>document.addEventListener("DOMContentLoaded",function(){{var v=document.querySelector("video.guide-demo");if(v){{v.muted=true;v.play().catch(function(){{}});}}}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
