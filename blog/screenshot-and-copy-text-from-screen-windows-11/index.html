@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight) | FloatBoard</title>
+  <meta name="description" content="Instantly capture screen crops and copy text snippets directly into a pinned floating workspace on Windows 11 without opening Snipping Tool files.">
+  <link rel="canonical" href="https://floatboard.xyz/blog/screenshot-and-copy-text-from-screen-windows-11/">
+  <link rel="icon" href="/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/blog.css?v=20261103d">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FloatBoard">
+  <meta property="og:title" content="Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight)">
+  <meta property="og:description" content="Instantly capture screen crops and copy text snippets directly into a pinned floating workspace on Windows 11 without opening Snipping Tool files.">
+  <meta property="og:url" content="https://floatboard.xyz/blog/screenshot-and-copy-text-from-screen-windows-11/">
+  <meta property="og:image" content="https://floatboard.xyz/blog/assets/screenshot-capture-to-floating-board-demo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight)">
+  <meta name="twitter:description" content="Instantly capture screen crops and copy text snippets directly into a pinned floating workspace on Windows 11 without opening Snipping Tool files.">
+  <meta name="twitter:image" content="https://floatboard.xyz/blog/assets/screenshot-capture-to-floating-board-demo.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Capture Screenshots & Copy Text from Screen on Windows 11 (Speed of Sight)",
+        "description": "Instantly capture screen crops and copy text snippets directly into a pinned floating workspace on Windows 11 without opening Snipping Tool files.",
+        "image": ["https://floatboard.xyz/blog/assets/screenshot-capture-to-floating-board-demo.jpg"],
+        "datePublished": "2026-11-06",
+        "dateModified": "2026-11-06",
+        "mainEntityOfPage": "https://floatboard.xyz/blog/screenshot-and-copy-text-from-screen-windows-11/",
+        "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"},
+        "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"},
+        "keywords": ["screenshot copy and paste text", "capture text from screen windows 10", "instant screenshot capture floating reference", "how to copy text from screen"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What shortcut triggers instant screenshot capture?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Press Win + Shift + S on Windows 11 or 10. Once you drag your crop area, FloatBoard automatically pulls the clipboard bitmap onto your pinned board."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I copy text directly from the screen?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Select and copy any onscreen text with Ctrl + C, or paste code snippets directly into FloatBoard's integrated scratchpad panel."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does FloatBoard interfere with the native Windows clipboard history?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Windows + V history continues to function independently for historical recall, while FloatBoard serves as your focused, pinned foreground working set."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* FLUXEDIT THEME OVERRIDES (Scoped) */
+    body.blog-page.fluxedit-theme {
+      background-color: #02070a !important;
+      color: #fcffff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      position: relative !important;
+      overflow-x: hidden !important;
+    }
+    .flux-aurora {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 50% 18%, rgba(252, 115, 77, 0.22) 0%, transparent 45%),
+                  radial-gradient(circle at 18% 30%, rgba(2, 151, 222, 0.28) 0%, transparent 50%),
+                  radial-gradient(circle at 82% 40%, rgba(216, 57, 149, 0.22) 0%, transparent 50%),
+                  #02070a;
+    }
+    .flux-matrix {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.12) 1.2px, transparent 1.2px);
+      background-size: 28px 28px;
+      opacity: 0.25;
+      mask-image: radial-gradient(circle at 50% 30%, black 20%, transparent 80%);
+    }
+    body.blog-page.fluxedit-theme a.skip-link {
+      background: #fc734d !important;
+      color: #02070a !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-top-announcement {
+      background: rgba(2, 7, 10, 0.85) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      color: #94a3b8 !important;
+      backdrop-filter: blur(12px) !important;
+      position: relative;
+      z-index: 10;
+    }
+    body.blog-page.fluxedit-theme .editorial-top-announcement a {
+      color: #fc734d !important;
+      font-weight: 700 !important;
+    }
+    body.blog-page.fluxedit-theme .guide-nav {
+      background: rgba(2, 7, 10, 0.82) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+      backdrop-filter: blur(16px) !important;
+      position: sticky !important;
+      top: 0;
+      z-index: 100;
+    }
+    body.blog-page.fluxedit-theme .guide-brand span {
+      color: #fcffff !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px !important;
+    }
+    body.blog-page.fluxedit-theme .guide-nav-links a {
+      color: #cbd5e1 !important;
+      font-weight: 500 !important;
+    }
+    body.blog-page.fluxedit-theme .guide-nav-btn {
+      background: #0297de !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(2, 151, 222, 0.4) !important;
+      border-radius: 20px !important;
+    }
+
+    /* FluxEdit Hero */
+    .flux-hero {
+      position: relative;
+      z-index: 2;
+      padding: 80px 24px 40px;
+      max-width: 1080px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .flux-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(252, 115, 77, 0.12);
+      border: 1px solid rgba(252, 115, 77, 0.4);
+      color: #fc734d;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      text-transform: uppercase;
+    }
+    .flux-headline {
+      font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+      font-weight: 700;
+      color: #fcffff;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+    .flux-headline span.italic-accent {
+      font-family: 'Newsreader', serif;
+      font-style: italic;
+      font-weight: 400;
+      background: linear-gradient(135deg, #fc734d 10%, #d83995 55%, #0297de 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      padding: 0 4px;
+    }
+    .flux-sub {
+      font-size: 1.15rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .flux-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    .flux-btn-glow {
+      background: linear-gradient(135deg, #fc734d, #d83995);
+      color: #ffffff !important;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(252, 115, 77, 0.45);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flux-btn-ghost {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #cbd5e1 !important;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    /* 3 Dark Frosted Cards */
+    .flux-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+    @media (max-width: 768px) {
+      .flux-cards-row { grid-template-columns: 1fr; }
+    }
+    .flux-feature-card {
+      background: rgba(11, 20, 31, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 22px;
+      text-align: left;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    }
+    .card-icon {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #fc734d;
+    }
+    .card-header-text {
+      font-size: 14px;
+      font-weight: 700;
+      color: #fcffff;
+      margin-bottom: 6px;
+    }
+    .card-body-text {
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.5;
+    }
+
+    /* Mockup Showcase Window */
+    .flux-showcase {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .flux-window-frame {
+      background: rgba(8, 14, 22, 0.9);
+      border: 1.5px solid rgba(2, 151, 222, 0.35);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 35px 90px rgba(0,0,0,0.85), 0 0 60px rgba(2, 151, 222, 0.15);
+    }
+    .flux-window-header {
+      background: rgba(14, 24, 38, 0.95);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .flux-window-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .flux-caption {
+      padding: 16px 20px;
+      background: rgba(6, 11, 18, 0.95);
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Editorial Content */
+    body.blog-page.fluxedit-theme .editorial-wrapper {
+      max-width: 1200px !important;
+      position: relative;
+      z-index: 2;
+    }
+    body.blog-page.fluxedit-theme .editorial-body-grid {
+      display: grid !important;
+      grid-template-columns: 280px 1fr !important;
+      gap: 40px !important;
+      margin-top: 40px !important;
+    }
+    @media (max-width: 900px) {
+      body.blog-page.fluxedit-theme .editorial-body-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    body.blog-page.fluxedit-theme .editorial-outline {
+      background: rgba(8, 14, 22, 0.75) !important;
+      border: 1px solid rgba(2, 151, 222, 0.25) !important;
+      border-radius: 18px !important;
+      padding: 24px !important;
+      backdrop-filter: blur(16px) !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-outline-heading {
+      color: #0297de !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1px !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-outline-list a {
+      color: #94a3b8 !important;
+      font-size: 13px !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-outline-list a:hover {
+      color: #fc734d !important;
+    }
+
+    body.blog-page.fluxedit-theme .editorial-main-content {
+      background: rgba(8, 14, 22, 0.75) !important;
+      border: 1px solid rgba(255, 255, 255, 0.1) !important;
+      border-radius: 24px !important;
+      padding: 40px !important;
+      backdrop-filter: blur(20px) !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content h2 {
+      color: #fcffff !important;
+      font-size: 1.8rem !important;
+      font-weight: 800 !important;
+      margin-top: 36px !important;
+      margin-bottom: 16px !important;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #fc734d, #0297de);
+      border-radius: 4px;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content h3 {
+      color: #bae6fd !important;
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      margin-top: 28px !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content p {
+      color: #cbd5e1 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.75 !important;
+      margin-bottom: 20px !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content ol,
+    body.blog-page.fluxedit-theme .editorial-main-content ul {
+      color: #cbd5e1 !important;
+      margin-left: 20px !important;
+      margin-bottom: 24px !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content li {
+      margin-bottom: 12px !important;
+      line-height: 1.6 !important;
+    }
+    body.blog-page.fluxedit-theme .editorial-main-content code {
+      background: rgba(2, 151, 222, 0.15) !important;
+      border: 1px solid rgba(2, 151, 222, 0.3) !important;
+      color: #38bdf8 !important;
+      padding: 2px 6px !important;
+      border-radius: 6px !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 0.9em !important;
+    }
+
+    /* Flux Quick Answer Card */
+    .flux-tldr-card {
+      background: linear-gradient(135deg, rgba(252, 115, 77, 0.12), rgba(8, 14, 22, 0.9)) !important;
+      border: 1.5px solid rgba(252, 115, 77, 0.35) !important;
+      border-radius: 18px !important;
+      padding: 24px 28px !important;
+      margin-bottom: 36px !important;
+    }
+    .flux-tldr-heading {
+      color: #fc734d !important;
+      font-size: 1.15rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .flux-tldr-list {
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .flux-tldr-list li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px !important;
+      color: #e2e8f0 !important;
+      font-size: 0.95rem !important;
+    }
+    .flux-tldr-list li::before {
+      content: '⚡';
+      position: absolute;
+      left: 0;
+      color: #fc734d;
+    }
+
+    /* Flux CTA Banner */
+    .flux-cta-banner {
+      background: radial-gradient(circle at 50% 50%, rgba(252, 115, 77, 0.22) 0%, rgba(8, 14, 22, 0.95) 75%) !important;
+      border: 1.5px solid rgba(252, 115, 77, 0.4) !important;
+      border-radius: 24px !important;
+      padding: 48px 40px !important;
+      margin: 60px 0 !important;
+      text-align: center !important;
+    }
+    .flux-cta-banner h2 {
+      color: #fcffff !important;
+      font-size: 2.2rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+    }
+    .flux-cta-banner p {
+      color: #cbd5e1 !important;
+      font-size: 1.1rem !important;
+      max-width: 600px;
+      margin: 0 auto 28px !important;
+    }
+
+    body.blog-page.fluxedit-theme .guide-footer {
+      background: #010406 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      position: relative;
+      z-index: 10;
+    }
+    body.blog-page.fluxedit-theme .guide-footer a {
+      color: #64748b !important;
+    }
+    body.blog-page.fluxedit-theme .guide-footer a:hover {
+      color: #fc734d !important;
+    }
+  </style>
+</head>
+<body class="blog-page fluxedit-theme">
+  <div class="flux-aurora"></div>
+  <div class="flux-matrix"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="editorial-top-announcement" aria-label="Product announcement">
+    FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing.html">Get $5.99 lifetime license →</a>
+  </aside>
+
+  <nav class="guide-nav" aria-label="Main navigation">
+    <a class="guide-brand" href="/">
+      <img src="/icon.png" width="26" height="26" alt="FloatBoard" class="guide-brand-icon">
+      <span>FLOATBOARD BLOG.</span>
+    </a>
+    <div class="guide-nav-links">
+      <a href="/blog/">Guides</a>
+      <a href="/clipboard-manager.html">Clipboard</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/download/" class="guide-nav-btn">Download Free</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- FluxEdit Hero Section -->
+    <header class="flux-hero">
+      <div class="flux-badge">
+        <span>⚡</span> Speed of Sight · Windows 11 &amp; Mac
+      </div>
+      <h1 class="flux-headline">
+        Capture at the <span class="italic-accent">Speed</span> of <span class="italic-accent">Sight</span>.
+      </h1>
+      <p class="flux-sub">
+        Snip screen regions, copy snippets from active windows, and keep working sets visible at the speed of thought. Zero delay, zero file clutter.
+      </p>
+      <div class="flux-actions">
+        <a href="/download/" class="flux-btn-glow">
+          <span>⚡ Snip &amp; Pin Now</span>
+        </a>
+        <a href="#tutorial-start" class="flux-btn-ghost">
+          View Step-by-Step
+        </a>
+      </div>
+
+      <!-- 3 Dark Frosted Cards -->
+      <div class="flux-cards-row">
+        <div class="flux-feature-card">
+          <div class="card-icon">⚡</div>
+          <div class="card-header-text">Win + Shift + S Ingestion</div>
+          <div class="card-body-text">Auto-pulls bitmap data from system memory without saving junk PNGs.</div>
+        </div>
+        <div class="flux-feature-card">
+          <div class="card-icon">📐</div>
+          <div class="card-header-text">Vehicle &amp; 3D Modeling Specs</div>
+          <div class="card-body-text">Keep wheelbase curves, styling cues, and dimensions pinned above Blender or CAD.</div>
+        </div>
+        <div class="flux-feature-card">
+          <div class="card-icon">🔒</div>
+          <div class="card-header-text">100% Offline Scratchpad</div>
+          <div class="card-body-text">No cloud telemetry. Proprietary designs remain locked to local RAM.</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Showcase Demo Window -->
+    <div class="flux-showcase" id="tutorial-start">
+      <div class="flux-window-frame">
+        <div class="flux-window-header">
+          <div style="display: flex; gap: 7px;">
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #ff5f56;"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #ffbd2e;"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #27c93f;"></div>
+          </div>
+          <span style="font-size: 12px; color: #fc734d; font-weight: 700; font-family: 'JetBrains Mono', monospace;">
+            ● FloatBoard — Live Screenshot Buffer Ingestion
+          </span>
+          <div style="width: 40px;"></div>
+        </div>
+        <img src="/blog/assets/screenshot-capture-to-floating-board-demo.jpg" alt="Windows Snipping Tool region crop on sports car auto-imported into FloatBoard dark floating card" width="1400" height="900" loading="eager" fetchpriority="high">
+        <div class="flux-caption">
+          Pressing Win + Shift + S imports the active region crop straight into FloatBoard, pinned alongside scratchpad notes.
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Layout -->
+    <article class="editorial-wrapper">
+      <div class="editorial-body-grid">
+        <aside class="editorial-sidebar">
+          <div class="editorial-outline">
+            <p class="editorial-outline-heading">WORKFLOW OUTLINE</p>
+            <ul class="editorial-outline-list">
+              <li><a href="#speed-of-sight-capture">Capture screen crops instantly</a></li>
+              <li><a href="#simultaneous-text-snippets">Text snippets &amp; visual crops</a></li>
+              <li><a href="#offline-zero-leak-privacy">100% offline clipboard protection</a></li>
+              <li><a href="#screenshot-text-faq">Frequently asked questions</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="editorial-main-content">
+          <div class="flux-tldr-card">
+            <h3 class="flux-tldr-heading">Quick Workflow Summary (TL;DR)</h3>
+            <ul class="flux-tldr-list">
+              <li>Use <strong>Win + Shift + S</strong> to snip any screen area without opening file dialogs.</li>
+              <li>FloatBoard automatically captures the buffer and pins the visual crop above all apps.</li>
+              <li>Attach scratchpad notes and code snippets on the same floating board for unified context.</li>
+            </ul>
+          </div>
+
+          <section id="speed-of-sight-capture">
+            <h2>Capture screen crops at the speed of thought</h2>
+            <p>
+              When tuning 3D vehicle geometry, debugging responsive CSS breakpoints, or comparing API docs, you need immediate visual feedback. Switching out of your primary editor to open Snipping Tool or Paint destroys concentration.
+            </p>
+            <p>
+              FloatBoard bridges Windows 11's native <strong>Win + Shift + S</strong> hotkey directly to your floating desktop board. The moment your selection rectangle snaps, FloatBoard imports the buffer and floats it above VS Code, Blender, or Unreal Engine with zero latency.
+            </p>
+          </section>
+
+          <section id="simultaneous-text-snippets">
+            <h2>Keep text snippets and visual crops on one unified card</h2>
+            <p>
+              Visual references are rarely complete without technical specifications. When analyzing a vehicle chassis or styling line, you often need dimensions, wheelbase numbers, and torque ratings alongside the image.
+            </p>
+            <p>
+              FloatBoard combines visual cards with instant markdown scratchpads in the same floating window. Copy technical specifications, color hex codes, or terminal error outputs right underneath the captured crop. Everything stays pinned on top, moving together as one unified workspace widget.
+            </p>
+          </section>
+
+          <section id="offline-zero-leak-privacy">
+            <h2>100% offline clipboard protection</h2>
+            <p>
+              Unlike cloud-synced clipboard utilities that upload your screen captures to remote servers, FloatBoard is strictly offline. Proprietary engineering schematics, confidential client mockups, and pre-release automotive designs remain exclusively in your local machine's memory.
+            </p>
+            <p>
+              When you finish your task, one click clears the active working set. No traces remain on external cloud dashboards or secondary sync services.
+            </p>
+          </section>
+
+          <section id="screenshot-text-faq">
+            <h2>Frequently asked questions about Windows 11 screenshot capture</h2>
+            <h3>What shortcut triggers instant screenshot capture?</h3>
+            <p>Press <strong>Win + Shift + S</strong> on Windows 11 or 10. Once you drag your crop area, FloatBoard automatically pulls the clipboard bitmap onto your pinned board.</p>
+            <h3>Can I copy text directly from the screen?</h3>
+            <p>Yes. Select and copy any onscreen text with <strong>Ctrl + C</strong>, or paste code snippets directly into FloatBoard's integrated scratchpad panel.</p>
+            <h3>Does FloatBoard interfere with the native Windows clipboard history?</h3>
+            <p>No. Windows + V history continues to function independently for historical recall, while FloatBoard serves as your focused, pinned foreground working set.</p>
+          </section>
+
+          <!-- Flux CTA Banner -->
+          <div class="flux-cta-banner">
+            <h2>Capture your screen at the speed of sight</h2>
+            <p>Never lose your working context to secondary windows. Download FloatBoard and snip straight to a pinned board.</p>
+            <a href="/download/" class="flux-btn-glow">Download FloatBoard Free ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="guide-footer">
+    <a href="/">FloatBoard</a>
+    <a href="/clipboard-manager.html">Clipboard Manager</a>
+    <a href="/download/">Download App</a>
+    <a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a>
+    <a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a>
+    <a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a>
+    <a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a>
+    <a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a>
+    <a href="/web-pad/">Online WebPad</a>
+    <a href="/blog/about/">About Blog</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </footer>
+
+  <!-- 100% privacy-first analytics -->
+  <script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>

@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop | FloatBoard</title>
+  <meta name="description" content="Compare photos, vehicle angles, and design mockups side by side with a dedicated visual reference board maker for Windows &amp; Mac.">
+  <link rel="canonical" href="https://floatboard.xyz/blog/side-by-side-image-comparison-reference-board/">
+  <link rel="icon" href="/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/blog.css?v=20261103d">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FloatBoard">
+  <meta property="og:title" content="Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop">
+  <meta property="og:description" content="Compare photos, vehicle angles, and design mockups side by side with a dedicated visual reference board maker for Windows &amp; Mac.">
+  <meta property="og:url" content="https://floatboard.xyz/blog/side-by-side-image-comparison-reference-board/">
+  <meta property="og:image" content="https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop">
+  <meta name="twitter:description" content="Compare photos, vehicle angles, and design mockups side by side with a dedicated visual reference board maker for Windows &amp; Mac.">
+  <meta name="twitter:image" content="https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Side-by-Side Image Comparison & Reference Board Maker for Desktop",
+        "description": "Compare photos, vehicle angles, and design mockups side by side with a dedicated visual reference board maker for Windows & Mac.",
+        "image": ["https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg"],
+        "datePublished": "2026-11-06",
+        "dateModified": "2026-11-06",
+        "mainEntityOfPage": "https://floatboard.xyz/blog/side-by-side-image-comparison-reference-board/",
+        "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"},
+        "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"},
+        "keywords": ["compare images side by side", "side by side photo comparison", "reference board maker", "side by side picture comparison"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How do I compare two images side by side in FloatBoard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copy or drag both images into FloatBoard. FloatBoard arranges them in clean parallel cards that remain pinned above all desktop applications."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I lock the reference window so it doesn't move?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Toggle the pin icon in the title bar to lock FloatBoard's position and keep it always on top while you paint or model."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is FloatBoard compatible with both Windows 11 and Mac?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. FloatBoard runs smoothly on Windows 11, Windows 10, macOS, and Linux."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* SOLIX THEME OVERRIDES (Scoped) */
+    body.blog-page.solix-theme {
+      background-color: #061848 !important;
+      color: #ffffff !important;
+      font-family: 'Inter', -apple-system, sans-serif !important;
+      position: relative !important;
+      overflow-x: hidden !important;
+    }
+    .solix-aurora {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 50% 5%, #0e3ea6 0%, #082163 40%, #030d2d 100%);
+    }
+    .solix-matrix {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.22) 1.2px, transparent 1.2px);
+      background-size: 26px 26px;
+      opacity: 0.35;
+    }
+    body.blog-page.solix-theme a.skip-link {
+      background: #fd91cc !important;
+      color: #09318d !important;
+    }
+    body.blog-page.solix-theme .editorial-top-announcement {
+      background: rgba(9, 49, 141, 0.45) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+      color: #e0f2fe !important;
+      backdrop-filter: blur(12px) !important;
+      position: relative;
+      z-index: 10;
+    }
+    body.blog-page.solix-theme .editorial-top-announcement a {
+      color: #fd91cc !important;
+      font-weight: 700 !important;
+    }
+    body.blog-page.solix-theme .guide-nav {
+      background: rgba(9, 36, 100, 0.85) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+      backdrop-filter: blur(18px) !important;
+      position: sticky !important;
+      top: 0;
+      z-index: 100;
+    }
+    body.blog-page.solix-theme .guide-brand span {
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px !important;
+    }
+    body.blog-page.solix-theme .guide-nav-links a {
+      color: #e2e8f0 !important;
+      font-weight: 600 !important;
+    }
+    body.blog-page.solix-theme .guide-nav-btn {
+      background: linear-gradient(135deg, #fd91cc, #d83995) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(216, 57, 149, 0.4) !important;
+      border-radius: 20px !important;
+    }
+
+    /* Solix Hero Header */
+    .solix-hero {
+      position: relative;
+      z-index: 2;
+      padding: 70px 24px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .solix-tag-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+    }
+    .solix-tag {
+      font-size: 11px;
+      font-weight: 700;
+      color: #93c5fd;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+    .solix-headline {
+      font-size: clamp(2.5rem, 5vw, 4.2rem);
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .solix-headline span.solix-accent {
+      background: linear-gradient(135deg, #fd91cc 0%, #ffffff 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .solix-sub {
+      font-size: 1.15rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      max-width: 680px;
+      margin: 0 auto 36px;
+    }
+    .solix-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    .solix-btn-pink {
+      background: linear-gradient(135deg, #fd91cc, #d83995);
+      color: #ffffff !important;
+      font-weight: 800;
+      padding: 14px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(216, 57, 149, 0.45);
+    }
+    .solix-btn-frosted {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff !important;
+      font-weight: 600;
+      padding: 14px 26px;
+      border-radius: 30px;
+      text-decoration: none;
+      backdrop-filter: blur(12px);
+    }
+
+    /* Solix 3 White Floating Gauge Cards */
+    .solix-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 30px;
+    }
+    @media (max-width: 820px) {
+      .solix-cards-row { grid-template-columns: 1fr; }
+    }
+    .solix-gauge-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      text-align: left;
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .gauge-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .gauge-card-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: #09318d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .gauge-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+    .gauge-badge.blue { background: #e0f2fe; color: #0284c7; }
+    .gauge-badge.pink { background: #fce7f3; color: #d83995; }
+    .gauge-value {
+      font-size: 28px;
+      font-weight: 900;
+      color: #0f172a;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .gauge-bar-track {
+      width: 100%;
+      height: 8px;
+      background: #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .gauge-bar-fill {
+      height: 100%;
+      border-radius: 10px;
+    }
+    .gauge-subtext {
+      font-size: 12px;
+      color: #64748b;
+      line-height: 1.4;
+    }
+
+    /* Mockup Showcase Window */
+    .solix-showcase {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .solix-window-frame {
+      background: rgba(10, 25, 68, 0.9);
+      border: 1.5px solid rgba(255, 255, 255, 0.18);
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 40px 100px rgba(0,0,0,0.8), 0 0 60px rgba(13, 56, 150, 0.4);
+    }
+    .solix-window-header {
+      background: rgba(14, 34, 88, 0.95);
+      padding: 16px 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    .solix-window-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .solix-caption {
+      padding: 16px 20px;
+      background: rgba(7, 18, 48, 0.95);
+      color: #93c5fd;
+      font-size: 13px;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Editorial Layout */
+    body.blog-page.solix-theme .editorial-wrapper {
+      max-width: 1200px !important;
+      position: relative;
+      z-index: 2;
+    }
+    body.blog-page.solix-theme .editorial-body-grid {
+      display: grid !important;
+      grid-template-columns: 280px 1fr !important;
+      gap: 40px !important;
+      margin-top: 40px !important;
+    }
+    @media (max-width: 900px) {
+      body.blog-page.solix-theme .editorial-body-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+    body.blog-page.solix-theme .editorial-outline {
+      background: rgba(10, 26, 70, 0.85) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 18px !important;
+      padding: 24px !important;
+      backdrop-filter: blur(16px) !important;
+    }
+    body.blog-page.solix-theme .editorial-outline-heading {
+      color: #fd91cc !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1px !important;
+    }
+    body.blog-page.solix-theme .editorial-outline-list a {
+      color: #93c5fd !important;
+      font-size: 13px !important;
+    }
+    body.blog-page.solix-theme .editorial-outline-list a:hover {
+      color: #ffffff !important;
+    }
+
+    body.blog-page.solix-theme .editorial-main-content {
+      background: rgba(10, 26, 70, 0.8) !important;
+      border: 1px solid rgba(255, 255, 255, 0.15) !important;
+      border-radius: 24px !important;
+      padding: 40px !important;
+      backdrop-filter: blur(20px) !important;
+    }
+    body.blog-page.solix-theme .editorial-main-content h2 {
+      color: #ffffff !important;
+      font-size: 1.8rem !important;
+      font-weight: 800 !important;
+      margin-top: 36px !important;
+      margin-bottom: 16px !important;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    body.blog-page.solix-theme .editorial-main-content h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #fd91cc, #0284c7);
+      border-radius: 4px;
+    }
+    body.blog-page.solix-theme .editorial-main-content h3 {
+      color: #93c5fd !important;
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      margin-top: 28px !important;
+    }
+    body.blog-page.solix-theme .editorial-main-content p {
+      color: #e2e8f0 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.75 !important;
+      margin-bottom: 20px !important;
+    }
+    body.blog-page.solix-theme .editorial-main-content ol,
+    body.blog-page.solix-theme .editorial-main-content ul {
+      color: #e2e8f0 !important;
+      margin-left: 20px !important;
+      margin-bottom: 24px !important;
+    }
+    body.blog-page.solix-theme .editorial-main-content li {
+      margin-bottom: 12px !important;
+      line-height: 1.6 !important;
+    }
+    body.blog-page.solix-theme .editorial-main-content code {
+      background: rgba(253, 145, 204, 0.15) !important;
+      border: 1px solid rgba(253, 145, 204, 0.3) !important;
+      color: #fd91cc !important;
+      padding: 2px 6px !important;
+      border-radius: 6px !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 0.9em !important;
+    }
+
+    /* Solix Quick Answer Card */
+    .solix-tldr-card {
+      background: linear-gradient(135deg, rgba(253, 145, 204, 0.15), rgba(10, 26, 70, 0.9)) !important;
+      border: 1.5px solid rgba(253, 145, 204, 0.35) !important;
+      border-radius: 18px !important;
+      padding: 24px 28px !important;
+      margin-bottom: 36px !important;
+    }
+    .solix-tldr-heading {
+      color: #fd91cc !important;
+      font-size: 1.15rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .solix-tldr-list {
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .solix-tldr-list li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px !important;
+      color: #f1f5f9 !important;
+      font-size: 0.95rem !important;
+    }
+    .solix-tldr-list li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      color: #fd91cc;
+    }
+
+    /* Solix CTA Banner */
+    .solix-cta-banner {
+      background: linear-gradient(135deg, rgba(253, 145, 204, 0.2), rgba(10, 26, 70, 0.95)) !important;
+      border: 1.5px solid rgba(253, 145, 204, 0.4) !important;
+      border-radius: 24px !important;
+      padding: 48px 40px !important;
+      margin: 60px 0 !important;
+      text-align: center !important;
+    }
+    .solix-cta-banner h2 {
+      color: #ffffff !important;
+      font-size: 2.2rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+    }
+    .solix-cta-banner p {
+      color: #cbd5e1 !important;
+      font-size: 1.1rem !important;
+      max-width: 600px;
+      margin: 0 auto 28px !important;
+    }
+
+    body.blog-page.solix-theme .guide-footer {
+      background: #020b22 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      position: relative;
+      z-index: 10;
+    }
+    body.blog-page.solix-theme .guide-footer a {
+      color: #64748b !important;
+    }
+    body.blog-page.solix-theme .guide-footer a:hover {
+      color: #fd91cc !important;
+    }
+  </style>
+</head>
+<body class="blog-page solix-theme">
+  <div class="solix-aurora"></div>
+  <div class="solix-matrix"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="editorial-top-announcement" aria-label="Product announcement">
+    FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing.html">Get $5.99 lifetime license →</a>
+  </aside>
+
+  <nav class="guide-nav" aria-label="Main navigation">
+    <a class="guide-brand" href="/">
+      <img src="/icon.png" width="26" height="26" alt="FloatBoard" class="guide-brand-icon">
+      <span>FLOATBOARD BLOG.</span>
+    </a>
+    <div class="guide-nav-links">
+      <a href="/blog/">Guides</a>
+      <a href="/clipboard-manager.html">Clipboard</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/download/" class="guide-nav-btn">Download Free</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Solix Hero Section -->
+    <header class="solix-hero">
+      <div class="solix-tag-row">
+        <span class="solix-tag">→ Side-by-Side Comparison</span>
+        <span class="solix-tag">→ Dual Angle Benchmarking</span>
+        <span class="solix-tag">→ 50/50 Split View</span>
+      </div>
+      <h1 class="solix-headline">
+        Visual Reference Boards <span class="solix-accent">Without Complexity</span>
+      </h1>
+      <p class="solix-sub">
+        Pin, compare, and scale two visual references side-by-side across CAD, Figma, and browser workflows without juggling separate windows.
+      </p>
+      <div class="solix-actions">
+        <a href="/download/" class="solix-btn-pink">
+          <span>Start Comparing Free</span>
+        </a>
+        <a href="#tutorial-start" class="solix-btn-frosted">
+          View Comparison Benchmarks
+        </a>
+      </div>
+
+      <!-- 3 White Floating Gauge Cards -->
+      <div class="solix-cards-row">
+        <div class="solix-gauge-card">
+          <div class="gauge-top">
+            <span class="gauge-card-title">Aspect Alignment</span>
+            <span class="gauge-badge blue">Synchronized</span>
+          </div>
+          <div class="gauge-value">100%</div>
+          <div class="gauge-bar-track">
+            <div class="gauge-bar-fill" style="width: 100%; background: #0284c7;"></div>
+          </div>
+          <div class="gauge-subtext">Pixel-accurate scale lock for 3D bodywork &amp; character model sheets.</div>
+        </div>
+
+        <div class="solix-gauge-card">
+          <div class="gauge-top">
+            <span class="gauge-card-title">Color Grade Match</span>
+            <span class="gauge-badge pink">Score 92</span>
+          </div>
+          <div class="gauge-value">92<span style="font-size: 16px; color: #64748b;">/100</span></div>
+          <div class="gauge-bar-track">
+            <div class="gauge-bar-fill" style="width: 92%; background: linear-gradient(90deg, #fd91cc, #d83995);"></div>
+          </div>
+          <div class="gauge-subtext">Direct side-by-side gamut comparison across digital painting canvases.</div>
+        </div>
+
+        <div class="solix-gauge-card">
+          <div class="gauge-top">
+            <span class="gauge-card-title">Dual Split Ratio</span>
+            <span class="gauge-badge blue">50 / 50</span>
+          </div>
+          <div class="gauge-value">2 Cards</div>
+          <div class="gauge-bar-track">
+            <div class="gauge-bar-fill" style="width: 50%; background: #0284c7;"></div>
+          </div>
+          <div class="gauge-subtext">Balanced parallel panels pinned continuously above active workspace.</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Showcase Demo Window -->
+    <div class="solix-showcase" id="tutorial-start">
+      <div class="solix-window-frame">
+        <div class="solix-window-header">
+          <div style="display: flex; gap: 7px;">
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #ff5f56;"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #ffbd2e;"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #27c93f;"></div>
+          </div>
+          <span style="font-size: 12px; color: #fd91cc; font-weight: 700; font-family: 'JetBrains Mono', monospace;">
+            ● FloatBoard · Dual View Comparison Board
+          </span>
+          <div style="width: 40px;"></div>
+        </div>
+        <img src="/blog/assets/side-by-side-reference-board-demo.jpg" alt="Side by side car reference comparison cards in FloatBoard dual view pinned on desktop" width="1400" height="900" loading="eager" fetchpriority="high">
+        <div class="solix-caption">
+          FloatBoard's dual card comparison aligns two high-resolution reference images side by side above 3D modeling and rendering applications.
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Layout -->
+    <article class="editorial-wrapper">
+      <div class="editorial-body-grid">
+        <aside class="editorial-sidebar">
+          <div class="editorial-outline">
+            <p class="editorial-outline-heading">WORKFLOW OUTLINE</p>
+            <ul class="editorial-outline-list">
+              <li><a href="#side-by-side-benchmarking">Side-by-side comparison without clutter</a></li>
+              <li><a href="#automotive-design-benchmark">Scale matching for 3D artists</a></li>
+              <li><a href="#pure-offline-utility">Featherweight moodboard alternative</a></li>
+              <li><a href="#side-by-side-faq">Frequently asked questions</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="editorial-main-content">
+          <div class="solix-tldr-card">
+            <h3 class="solix-tldr-heading">Quick Workflow Summary (TL;DR)</h3>
+            <ul class="solix-tldr-list">
+              <li>Pin two visual references side-by-side in FloatBoard to compare styling and color grades.</li>
+              <li>FloatBoard stays locked on top of 3D modeling and CAD tools without window switching.</li>
+              <li>Lightweight, 100% offline alternative to heavy desktop moodboard apps.</li>
+            </ul>
+          </div>
+
+          <section id="side-by-side-benchmarking">
+            <h2>Side-by-side visual comparison without window clutter</h2>
+            <p>
+              Comparing two complex visual assets—such as a coupe profile versus a roadster stance, or an original raw photograph versus a color-graded edit—requires uninterrupted focus. Traditional desktop photo viewers feature heavy title bars, menus, and conflicting window focus that hide underneath your modeling canvas.
+            </p>
+            <p>
+              FloatBoard acts as a dedicated reference board maker. Its side-by-side layout locks two visual assets in a balanced 50/50 dual card frame that floats permanently above your work. You can zoom, pan, and verify proportions without moving your cursor away from your main application.
+            </p>
+          </section>
+
+          <section id="automotive-design-benchmark">
+            <h2>Proportion and scale matching for 3D artists and designers</h2>
+            <p>
+              When modeling automotive bodywork or character silhouettes, scale consistency is everything. FloatBoard lets you align wheelbases, roof curves, and aerodynamic lines side by side.
+            </p>
+            <p>
+              Pin your primary reference card on the left and a variant or competitor benchmark on the right. Add quick measurement notes and styling criteria in the card footer to ensure your 3D geometry stays true to real-world specifications.
+            </p>
+          </section>
+
+          <section id="pure-offline-utility">
+            <h2>A featherweight alternative to bloated moodboard tools</h2>
+            <p>
+              Heavy digital canvas applications like PureRef or web-based whiteboards consume hundreds of megabytes of RAM and demand constant window management. FloatBoard is engineered for minimalism: clean floating cards, instant clipboard ingestion, and zero CPU waste while idling in the background.
+            </p>
+            <p>
+              Keep your focus on high-fidelity creative output, while FloatBoard holds your critical reference benchmarks right in your line of sight.
+            </p>
+          </section>
+
+          <section id="side-by-side-faq">
+            <h2>Frequently asked questions about side-by-side reference boards</h2>
+            <h3>How do I compare two images side by side in FloatBoard?</h3>
+            <p>Copy or drag both images into FloatBoard. FloatBoard arranges them in clean parallel cards that remain pinned above all desktop applications.</p>
+            <h3>Can I lock the reference window so it doesn't move?</h3>
+            <p>Yes. Toggle the pin icon in the title bar to lock FloatBoard's position and keep it always on top while you paint or model.</p>
+            <h3>Is FloatBoard compatible with both Windows 11 and Mac?</h3>
+            <p>Yes. FloatBoard runs smoothly on Windows 11, Windows 10, macOS, and Linux.</p>
+          </section>
+
+          <!-- Solix CTA Banner -->
+          <div class="solix-cta-banner">
+            <h2>Benchmark your designs with side-by-side clarity</h2>
+            <p>Lock two visual references side-by-side above any application. Download FloatBoard and keep your visual standards in sight.</p>
+            <a href="/download/" class="solix-btn-pink">Download FloatBoard Free ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="guide-footer">
+    <a href="/">FloatBoard</a>
+    <a href="/clipboard-manager.html">Clipboard Manager</a>
+    <a href="/download/">Download App</a>
+    <a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a>
+    <a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a>
+    <a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a>
+    <a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a>
+    <a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a>
+    <a href="/web-pad/">Online WebPad</a>
+    <a href="/blog/about/">About Blog</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </footer>
+
+  <!-- 100% privacy-first analytics -->
+  <script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>

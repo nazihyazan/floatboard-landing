@@ -1,0 +1,685 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How to Copy Images from Websites Directly to a Floating Board | FloatBoard</title>
+  <meta name="description" content="Copy any web picture directly into a floating reference board without saving files to disk. Step-by-step workflow for web research and moodboards.">
+  <link rel="canonical" href="https://floatboard.xyz/blog/how-to-copy-images-from-websites-directly-to-board/">
+  <link rel="icon" href="/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/blog/blog.css?v=20261103d">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="FloatBoard">
+  <meta property="og:title" content="How to Copy Images from Websites Directly to a Floating Board">
+  <meta property="og:description" content="Copy any web picture directly into a floating reference board without saving files to disk. Step-by-step workflow for web research and moodboards.">
+  <meta property="og:url" content="https://floatboard.xyz/blog/how-to-copy-images-from-websites-directly-to-board/">
+  <meta property="og:image" content="https://floatboard.xyz/blog/assets/copy-image-to-floating-board-demo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="How to Copy Images from Websites Directly to a Floating Board">
+  <meta name="twitter:description" content="Copy any web picture directly into a floating reference board without saving files to disk. Step-by-step workflow for web research and moodboards.">
+  <meta name="twitter:image" content="https://floatboard.xyz/blog/assets/copy-image-to-floating-board-demo.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "headline": "How to Copy Images from Websites Directly to a Floating Board",
+        "description": "Copy any web picture directly into a floating reference board without saving files to disk. Step-by-step workflow for web research and moodboards.",
+        "image": ["https://floatboard.xyz/blog/assets/copy-image-to-floating-board-demo.jpg"],
+        "datePublished": "2026-11-06",
+        "dateModified": "2026-11-06",
+        "mainEntityOfPage": "https://floatboard.xyz/blog/how-to-copy-images-from-websites-directly-to-board/",
+        "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"},
+        "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"},
+        "keywords": ["how to copy image from website", "copy and paste picture from website", "save web image without downloading", "image clipboard manager"]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does copying an image download a file to my hard drive?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. FloatBoard reads the raster image buffer directly from your operating system's clipboard memory. Your hard drive and downloads folder remain completely clean."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why did FloatBoard capture a URL instead of a picture?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If you choose 'Copy Link' or 'Copy Image Address', the browser sends plaintext rather than pixel data. Make sure to click 'Copy Image' in your browser's context menu."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I drag and drop images directly into FloatBoard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Dragging an image file or web element directly into FloatBoard also adds it to your active board immediately."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* PELMATECH THEME OVERRIDES (Scoped) */
+    body.blog-page.pelmatech-theme {
+      background-color: #0c1a29 !important;
+      color: #0f172a !important;
+      font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif !important;
+      position: relative !important;
+      overflow-x: hidden !important;
+    }
+    .pelmatech-aurora {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: radial-gradient(circle at 85% 15%, rgba(5, 147, 198, 0.45) 0%, rgba(56, 189, 248, 0.25) 30%, transparent 65%),
+                  radial-gradient(circle at 15% 75%, rgba(216, 57, 149, 0.25) 0%, transparent 50%),
+                  radial-gradient(circle at 50% 50%, rgba(2, 132, 199, 0.2) 0%, transparent 70%),
+                  #07131e;
+    }
+    .pelmatech-scanlines {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: repeating-linear-gradient(0deg, rgba(255,255,255,0.015) 0px, rgba(255,255,255,0.015) 1px, transparent 1px, transparent 4px);
+      opacity: 0.8;
+    }
+    body.blog-page.pelmatech-theme a.skip-link {
+      background: #0593c6 !important;
+      color: #ffffff !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-top-announcement {
+      background: rgba(5, 147, 198, 0.15) !important;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.3) !important;
+      color: #bae6fd !important;
+      backdrop-filter: blur(12px) !important;
+      position: relative;
+      z-index: 10;
+    }
+    body.blog-page.pelmatech-theme .editorial-top-announcement a {
+      color: #38bdf8 !important;
+      font-weight: 700 !important;
+    }
+    body.blog-page.pelmatech-theme .guide-nav {
+      background: rgba(7, 19, 30, 0.8) !important;
+      border-bottom: 1px solid rgba(56, 189, 248, 0.2) !important;
+      backdrop-filter: blur(16px) !important;
+      position: sticky !important;
+      top: 0;
+      z-index: 100;
+    }
+    body.blog-page.pelmatech-theme .guide-brand span {
+      color: #ffffff !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.5px !important;
+    }
+    body.blog-page.pelmatech-theme .guide-nav-links a {
+      color: #bae6fd !important;
+      font-weight: 600 !important;
+    }
+    body.blog-page.pelmatech-theme .guide-nav-btn {
+      background: linear-gradient(135deg, #0593c6, #0284c7) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(5, 147, 198, 0.4) !important;
+      border-radius: 30px !important;
+      padding: 8px 18px !important;
+    }
+
+    /* Pelmatech Hero Layout */
+    .pelma-hero {
+      position: relative;
+      z-index: 2;
+      padding: 70px 24px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .pelma-hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .pelma-hero-grid { grid-template-columns: 1fr; }
+    }
+    .pelma-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      color: #38bdf8;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 20px;
+    }
+    .pelma-title {
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      margin-bottom: 20px;
+    }
+    .pelma-subtitle {
+      font-size: 1.1rem;
+      color: #94a3b8;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      max-width: 580px;
+    }
+    .pelma-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .pelma-btn-primary {
+      background: linear-gradient(135deg, #0593c6, #0284c7);
+      color: #ffffff !important;
+      font-weight: 700;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(5, 147, 198, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform 0.2s ease;
+    }
+    .pelma-btn-primary:hover { transform: translateY(-2px); }
+    .pelma-btn-secondary {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #e2e8f0 !important;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Pelmatech Schedule / Spec Glass Cards */
+    .pelma-spec-card {
+      background: rgba(15, 28, 45, 0.65);
+      backdrop-filter: blur(24px);
+      border: 1.5px solid rgba(56, 189, 248, 0.3);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(5, 147, 198, 0.15);
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .spec-slot {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .slot-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #38bdf8;
+    }
+    .slot-val {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .slot-sub {
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    /* Pelmatech Horizontal Feature Bar */
+    .pelma-feature-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .feature-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+    .feature-bar-item span.icon {
+      color: #38bdf8;
+      font-size: 18px;
+    }
+
+    /* Pinned Showcase Demo */
+    .pelma-demo-showcase {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+    }
+    .demo-window-frame {
+      background: rgba(11, 23, 38, 0.85);
+      backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(56, 189, 248, 0.35);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.7), 0 0 50px rgba(5, 147, 198, 0.2);
+    }
+    .demo-window-header {
+      background: rgba(15, 30, 48, 0.95);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .demo-window-frame img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .demo-caption {
+      padding: 16px 20px;
+      background: rgba(8, 17, 28, 0.9);
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.5;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Main Article Container */
+    body.blog-page.pelmatech-theme .editorial-wrapper {
+      max-width: 1200px !important;
+      position: relative;
+      z-index: 2;
+    }
+    body.blog-page.pelmatech-theme .editorial-body-grid {
+      display: grid !important;
+      grid-template-columns: 280px 1fr !important;
+      gap: 40px !important;
+      margin-top: 40px !important;
+    }
+    @media (max-width: 900px) {
+      body.blog-page.pelmatech-theme .editorial-body-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    /* Sidebar Outline */
+    body.blog-page.pelmatech-theme .editorial-outline {
+      background: rgba(14, 27, 43, 0.7) !important;
+      border: 1px solid rgba(56, 189, 248, 0.2) !important;
+      border-radius: 18px !important;
+      padding: 24px !important;
+      backdrop-filter: blur(16px) !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-outline-heading {
+      color: #38bdf8 !important;
+      font-size: 11px !important;
+      font-weight: 800 !important;
+      letter-spacing: 1px !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-outline-list a {
+      color: #94a3b8 !important;
+      font-size: 13px !important;
+      transition: color 0.2s ease !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-outline-list a:hover {
+      color: #38bdf8 !important;
+    }
+
+    /* Main Content Article */
+    body.blog-page.pelmatech-theme .editorial-main-content {
+      background: rgba(14, 27, 43, 0.65) !important;
+      border: 1px solid rgba(56, 189, 248, 0.2) !important;
+      border-radius: 24px !important;
+      padding: 40px !important;
+      backdrop-filter: blur(20px) !important;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4) !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content h2 {
+      color: #ffffff !important;
+      font-size: 1.8rem !important;
+      font-weight: 800 !important;
+      margin-top: 36px !important;
+      margin-bottom: 16px !important;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content h2::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #0593c6, #38bdf8);
+      border-radius: 4px;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content h3 {
+      color: #bae6fd !important;
+      font-size: 1.25rem !important;
+      font-weight: 700 !important;
+      margin-top: 28px !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content p {
+      color: #cbd5e1 !important;
+      font-size: 1.05rem !important;
+      line-height: 1.75 !important;
+      margin-bottom: 20px !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content ol,
+    body.blog-page.pelmatech-theme .editorial-main-content ul {
+      color: #cbd5e1 !important;
+      margin-left: 20px !important;
+      margin-bottom: 24px !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content li {
+      margin-bottom: 12px !important;
+      line-height: 1.6 !important;
+    }
+    body.blog-page.pelmatech-theme .editorial-main-content code {
+      background: rgba(56, 189, 248, 0.15) !important;
+      border: 1px solid rgba(56, 189, 248, 0.3) !important;
+      color: #38bdf8 !important;
+      padding: 2px 6px !important;
+      border-radius: 6px !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 0.9em !important;
+    }
+
+    /* TL;DR Quick Answer Card */
+    .pelma-tldr-card {
+      background: linear-gradient(135deg, rgba(5, 147, 198, 0.18), rgba(15, 28, 45, 0.8)) !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.35) !important;
+      border-radius: 18px !important;
+      padding: 24px 28px !important;
+      margin-bottom: 36px !important;
+    }
+    .pelma-tldr-heading {
+      color: #38bdf8 !important;
+      font-size: 1.15rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .pelma-tldr-list {
+      list-style: none !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    .pelma-tldr-list li {
+      padding-left: 24px;
+      position: relative;
+      margin-bottom: 10px !important;
+      color: #e2e8f0 !important;
+      font-size: 0.95rem !important;
+    }
+    .pelma-tldr-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: #38bdf8;
+      font-weight: 800;
+    }
+
+    /* Pelmatech CTA Footer Banner */
+    .pelma-cta-banner {
+      background: linear-gradient(135deg, rgba(5, 147, 198, 0.25), rgba(7, 19, 30, 0.9)) !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.4) !important;
+      border-radius: 24px !important;
+      padding: 48px 40px !important;
+      margin: 60px 0 !important;
+      text-align: center !important;
+      position: relative;
+      overflow: hidden;
+    }
+    .pelma-cta-banner h2 {
+      color: #ffffff !important;
+      font-size: 2.2rem !important;
+      font-weight: 800 !important;
+      margin-bottom: 14px !important;
+    }
+    .pelma-cta-banner p {
+      color: #bae6fd !important;
+      font-size: 1.1rem !important;
+      max-width: 600px;
+      margin: 0 auto 28px !important;
+    }
+
+    /* Footer */
+    body.blog-page.pelmatech-theme .guide-footer {
+      background: #050d15 !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+      position: relative;
+      z-index: 10;
+    }
+    body.blog-page.pelmatech-theme .guide-footer a {
+      color: #64748b !important;
+    }
+    body.blog-page.pelmatech-theme .guide-footer a:hover {
+      color: #38bdf8 !important;
+    }
+  </style>
+</head>
+<body class="blog-page pelmatech-theme">
+  <div class="pelmatech-aurora"></div>
+  <div class="pelmatech-scanlines"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <aside class="editorial-top-announcement" aria-label="Product announcement">
+    FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing.html">Get $5.99 lifetime license →</a>
+  </aside>
+
+  <nav class="guide-nav" aria-label="Main navigation">
+    <a class="guide-brand" href="/">
+      <img src="/icon.png" width="26" height="26" alt="FloatBoard" class="guide-brand-icon">
+      <span>FLOATBOARD BLOG.</span>
+    </a>
+    <div class="guide-nav-links">
+      <a href="/blog/">Guides</a>
+      <a href="/clipboard-manager.html">Clipboard</a>
+      <a href="/pricing.html">Pricing</a>
+      <a href="/download/" class="guide-nav-btn">Download Free</a>
+    </div>
+  </nav>
+
+  <main id="main">
+    <!-- Pelmatech Hero Section -->
+    <header class="pelma-hero">
+      <div class="pelma-hero-grid">
+        <div class="pelma-hero-left">
+          <div class="pelma-badge">
+            <span>●</span> Visual Research &amp; Moodboards
+          </div>
+          <h1 class="pelma-title">Your Visual Image Reference Companion</h1>
+          <p class="pelma-subtitle">
+            Copy, pin, and organize web photos directly above your working apps without filling your downloads folder. A pure, distraction-free companion for designers, illustrators, and researchers.
+          </p>
+          <div class="pelma-actions">
+            <a href="/download/" class="pelma-btn-primary">
+              <span>Try FloatBoard Free</span> ↗
+            </a>
+            <a href="#tutorial-start" class="pelma-btn-secondary">
+              Explore Workflow
+            </a>
+          </div>
+        </div>
+
+        <div class="pelma-hero-right">
+          <div class="pelma-spec-card">
+            <div class="spec-slot">
+              <span class="slot-label">⚡ Direct Ingestion</span>
+              <span class="slot-val">Ctrl + C / Right Click</span>
+              <span class="slot-sub">Auto-imported from OS clipboard buffer</span>
+            </div>
+            <div class="spec-slot">
+              <span class="slot-label">📌 Window Behavior</span>
+              <span class="slot-val">Always On Top (Pinned)</span>
+              <span class="slot-sub">Floats above Photoshop, Blender, Figma &amp; IDEs</span>
+            </div>
+            <div class="spec-slot">
+              <span class="slot-label">🔒 Local Privacy</span>
+              <span class="slot-val">100% Offline Storage</span>
+              <span class="slot-sub">Zero telemetry, no cloud sync, zero data leaks</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Bar -->
+      <div class="pelma-feature-bar">
+        <div class="feature-bar-item"><span class="icon">✓</span> Zero File Clutter</div>
+        <div class="feature-bar-item"><span class="icon">✓</span> Auto-Link Tracking</div>
+        <div class="feature-bar-item"><span class="icon">✓</span> Offline Privacy</div>
+        <div class="feature-bar-item"><span class="icon">✓</span> Instant Dual View</div>
+      </div>
+    </header>
+
+    <!-- Showcase Demo Window -->
+    <div class="pelma-demo-showcase" id="tutorial-start">
+      <div class="demo-window-frame">
+        <div class="demo-window-header">
+          <div style="display: flex; gap: 7px;">
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #ff5f56;"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #ffbd2e;"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: #27c93f;"></div>
+          </div>
+          <span style="font-size: 12px; color: #38bdf8; font-weight: 700; font-family: 'JetBrains Mono', monospace;">
+            ● FloatBoard — Direct Web Image Ingestion
+          </span>
+          <div style="width: 40px;"></div>
+        </div>
+        <img src="/blog/assets/copy-image-to-floating-board-demo.jpg" alt="Browser context menu copying a nature photo directly into FloatBoard pinned reference window" width="1400" height="900" loading="eager" fetchpriority="high">
+        <div class="demo-caption">
+          Copying an image directly from the browser context menu places it into FloatBoard without filling your downloads folder.
+        </div>
+      </div>
+    </div>
+
+    <!-- Editorial Layout -->
+    <article class="editorial-wrapper">
+      <div class="editorial-body-grid">
+        <!-- Sidebar Outline -->
+        <aside class="editorial-sidebar">
+          <div class="editorial-outline">
+            <p class="editorial-outline-heading">WORKFLOW OUTLINE</p>
+            <ul class="editorial-outline-list">
+              <li><a href="#direct-clipboard-import">Why clipboard capture beats saving files</a></li>
+              <li><a href="#step-by-step-copy-workflow">Step-by-step copy workflow</a></li>
+              <li><a href="#moodboard-limits">Keep the working set small</a></li>
+              <li><a href="#copy-images-faq">Frequently asked questions</a></li>
+            </ul>
+          </div>
+        </aside>
+
+        <!-- Main Editorial Content -->
+        <div class="editorial-main-content">
+          <!-- Quick Answer Card -->
+          <div class="pelma-tldr-card">
+            <h3 class="pelma-tldr-heading">⚡ Quick Workflow Summary (TL;DR)</h3>
+            <ul class="pelma-tldr-list">
+              <li>Right-click any web photo and click <strong>Copy Image</strong> (or press <strong>Ctrl + C</strong>) rather than saving files.</li>
+              <li>FloatBoard automatically detects clipboard pixel buffers and pins the card on top of your working workspace.</li>
+              <li>Annotate design observations directly beside the image without downloads folder clutter.</li>
+            </ul>
+          </div>
+
+          <section id="direct-clipboard-import">
+            <h2>Why direct clipboard capture beats saving image files</h2>
+            <p>
+              When gathering references for automotive styling, landscape illustration, or web design, standard browser habits encourage saving every file to disk. After thirty minutes, your Downloads folder contains dozens of generic filenames like <code>photo-1506744038136.jpg</code>, while none of them remain visible where you are actually sketching or coding.
+            </p>
+            <p>
+              FloatBoard monitors your system clipboard buffer for image data. When you right-click any web photo and choose <strong>Copy Image</strong> (or press <strong>Ctrl + C</strong>), the pixels are immediately ingested into your floating working set. The reference stays visible in an always-on-top window beside your editor, eliminating the need to organize temporary files before you make your first design decision.
+            </p>
+          </section>
+
+          <section id="step-by-step-copy-workflow">
+            <h2>Step-by-step: Pin web pictures into your active reference set</h2>
+            <ol>
+              <li><strong>Open FloatBoard:</strong> Launch FloatBoard and ensure the pin icon in the title bar is activated (Always on Top mode).</li>
+              <li><strong>Browse your reference source:</strong> Find high-resolution landscape, nature, or vehicle references on sites like Unsplash or design portals.</li>
+              <li><strong>Right-click and select 'Copy Image':</strong> Do not click 'Copy Image Address' or 'Save Image As'. Choosing 'Copy Image' sends uncompressed pixel data straight to the system clipboard.</li>
+              <li><strong>Observe instant pin:</strong> FloatBoard detects the clipboard event and pins the photo as a clean visual card immediately.</li>
+              <li><strong>Annotate with notes:</strong> Click into FloatBoard's text field to type design constraints, lighting angles, or hex codes beside the photo.</li>
+            </ol>
+          </section>
+
+          <section id="moodboard-limits">
+            <h2>Keep the working set small and purposeful</h2>
+            <p>
+              A high-impact moodboard is not an endless infinite canvas. It is a tight selection of 3 to 6 authoritative benchmarks that guide current work. Keeping fewer images visible forces clarity: one photo for palette, one for silhouette, and one for surface texture.
+            </p>
+            <p>
+              When an angle or color reference is no longer needed, click its <strong>✕</strong> close icon to discard it. Because FloatBoard works from memory and clipboard buffers, closing a card leaves no orphaned files in your folders.
+            </p>
+          </section>
+
+          <section id="copy-images-faq">
+            <h2>Frequently asked questions about copying web images</h2>
+            <h3>Does copying an image download a file to my hard drive?</h3>
+            <p>No. FloatBoard reads the raster image buffer directly from your operating system's clipboard memory. Your hard drive and downloads folder remain completely clean.</p>
+            <h3>Why did FloatBoard capture a URL instead of a picture?</h3>
+            <p>If you choose 'Copy Link' or 'Copy Image Address', the browser sends plaintext rather than pixel data. Make sure to click 'Copy Image' in your browser's context menu.</p>
+            <h3>Can I drag and drop images directly into FloatBoard?</h3>
+            <p>Yes. Dragging an image file or web element directly into FloatBoard also adds it to your active board immediately.</p>
+          </section>
+
+          <!-- Pelmatech CTA Banner -->
+          <div class="pelma-cta-banner">
+            <h2>Pin your visual references in seconds</h2>
+            <p>Stop saving throwaway images to disk. Download FloatBoard and keep your visual working set pinned always on top.</p>
+            <a href="/download/" class="pelma-btn-primary">Download FloatBoard Free ↗</a>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="guide-footer">
+    <a href="/">FloatBoard</a>
+    <a href="/clipboard-manager.html">Clipboard Manager</a>
+    <a href="/download/">Download App</a>
+    <a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a>
+    <a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a>
+    <a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a>
+    <a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a>
+    <a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a>
+    <a href="/web-pad/">Online WebPad</a>
+    <a href="/blog/about/">About Blog</a>
+    <a href="/pricing.html">Pricing</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/terms.html">Terms</a>
+  </footer>
+
+  <!-- 100% privacy-first analytics -->
+  <script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+</body>
+</html>

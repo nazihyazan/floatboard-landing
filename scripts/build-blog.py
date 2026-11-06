@@ -109,7 +109,13 @@ def page(path, title, description, body, schema, picture=None):
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
 </head><body class="blog-page"><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}<script>document.addEventListener("DOMContentLoaded",function(){{var v=document.querySelector("video.guide-demo");if(v){{v.muted=true;v.play().catch(function(){{}});}}}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
-    if path.strip('/') == 'blog/clear-copied-text-history-keep-working-set':
+    custom_themed_slugs = {
+        'blog/clear-copied-text-history-keep-working-set',
+        'blog/how-to-copy-images-from-websites-directly-to-board',
+        'blog/screenshot-and-copy-text-from-screen-windows-11',
+        'blog/side-by-side-image-comparison-reference-board',
+    }
+    if path.strip('/') in custom_themed_slugs:
         return
     dest.parent.mkdir(parents=True, exist_ok=True)
     dest.write_text(result)
