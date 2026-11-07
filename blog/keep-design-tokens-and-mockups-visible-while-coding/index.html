@@ -2,21 +2,55 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding</title><meta name="description" content="Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.">
 <link rel="canonical" href="https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261103d">
+<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
 <meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding"><meta property="og:description" content="Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor."><meta property="og:url" content="https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding"><meta name="twitter:description" content="Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "How to Pin Figma Mockups, Hex Colors & Design Tokens Above VS Code While Coding", "description": "Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.", "image": ["https://floatboard.xyz/blog/assets/design-tokens-and-mockup-board.jpg"], "datePublished": "2026-10-17", "dateModified": "2026-10-17", "mainEntityOfPage": "https://floatboard.xyz/blog/keep-design-tokens-and-mockups-visible-while-coding/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["pin figma mockup on top of vs code", "always on top image overlay for developers", "keep design tokens visible", "frontend developer floating tool"]}</script>
-</head><body class="blog-page"><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
-FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing">Get $5.99 lifetime license →</a>
+<style>
+:root, body.blog-page.uisavior-theme {
+  --theme-primary: #0297de;
+  --theme-primary-rgb: 2, 151, 222;
+  --theme-secondary: #fc734d;
+  --theme-secondary-rgb: 252, 115, 77;
+  --theme-accent: #fd91cc;
+  --theme-accent-rgb: 253, 145, 204;
+  --theme-dark-bg: #02070a;
+  --theme-card-bg: rgba(13, 22, 32, 0.72);
+  --theme-btn-gradient: linear-gradient(135deg, #0297de, #016fa3);
+  --theme-btn-hover: linear-gradient(135deg, #05a7f5, #0297de);
+  --theme-cta-gradient: linear-gradient(135deg, #fc734d 0%, #d83995 100%);
+  --border-glow: rgba(2, 151, 222, 0.35);
+}
+body.blog-page.uisavior-theme {
+  background-color: #02070a !important;
+}
+.uisavior-aurora {
+  background: 
+    radial-gradient(circle at 50% -8%, rgba(2, 151, 222, 0.38) 0%, rgba(2, 151, 222, 0.08) 45%, transparent 72%),
+    radial-gradient(circle at 10% 25%, rgba(252, 115, 77, 0.22) 0%, transparent 48%),
+    radial-gradient(circle at 90% 28%, rgba(253, 145, 204, 0.18) 0%, transparent 48%),
+    radial-gradient(circle at 50% 68%, rgba(2, 151, 222, 0.15) 0%, transparent 60%) !important;
+}
+.uisavior-matrix {
+  background-image: radial-gradient(rgba(2, 151, 222, 0.2) 1.2px, transparent 1.2px) !important;
+}
+</style>
+</head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
+<span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
+<a href="/pricing">Get $5.99 lifetime license →</a>
 </aside><nav class="guide-nav" aria-label="Main navigation">
+<div class="guide-nav-content">
 <a class="guide-brand" href="/">
-<img src="/icon.png" width="26" height="26" alt="FloatBoard" class="guide-brand-icon">
-<span>FLOATBOARD BLOG.</span>
+<span class="guide-logo-dot"></span>
+<span class="guide-brand-text">FloatBoard</span>
 </a>
 <div class="guide-nav-links">
-<a href="/blog/">Guides</a>
+<a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
+<a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
+</div>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
 </div>
 </nav><main id="main"><article class="editorial-wrapper">
@@ -36,10 +70,47 @@ FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard man
 <span>5 min read</span>
 </div>
 </header>
-<figure class="editorial-hero-figure">
+<figure class="editorial-hero-figure uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots">
+<span class="uisavior-dot r"></span>
+<span class="uisavior-dot y"></span>
+<span class="uisavior-dot g"></span>
+</div>
+<div class="uisavior-mockup-title">
+<span class="active-indicator"></span>
+<span>FloatBoard Native · Frontend developers &amp; designers</span>
+</div>
+<span class="uisavior-mockup-badge">ACTIVE BOARD</span>
+</div>
+<div class="uisavior-mockup-body">
 <img src="/blog/assets/design-tokens-and-mockup-board.jpg" width="1560" height="1040" alt="FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right" decoding="async" fetchpriority="high">
-<figcaption>FloatBoard pinned beside an editor with color tokens, typography rules, and component reference mockups visible in one compact workspace.</figcaption>
+</div>
+<figcaption class="uisavior-mockup-footer">
+<span>FloatBoard pinned beside an editor with color tokens, typography rules, and component reference mockups visible in one compact workspace.</span>
+<span class="uisavior-tag">OFFLINE // 100% LOCAL</span>
+</figcaption>
 </figure>
+<div class="uisavior-chips-row">
+<div class="uisavior-chip">
+<div class="uisavior-chip-icon chip-accent-1">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+</div>
+<div class="uisavior-chip-content">
+<h4>Always-on-Top Scratchpad</h4>
+<p>Pin notes and reference crops above active full-screen applications</p>
+</div>
+</div>
+<div class="uisavior-chip">
+<div class="uisavior-chip-icon chip-accent-2">
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+</div>
+<div class="uisavior-chip-content">
+<h4>100% Offline Local Storage</h4>
+<p>Never touches third-party cloud servers or telemetry analytics</p>
+</div>
+</div>
+</div>
 <div class="editorial-grid">
 <aside class="editorial-left-col" aria-label="Table of contents and app download">
 <div class="editorial-outline-box">
@@ -63,17 +134,17 @@ FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard man
 </aside>
 <div class="editorial-content-col">
 <div class="editorial-quick-answer">
-<div class="editorial-quick-title">⚡ Quick Workflow Summary (TL;DR)</div>
+<div class="editorial-quick-title"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> <span>Quick Workflow Summary (TL;DR)</span></div>
 <ol class="editorial-quick-steps"><li>Take a quick screenshot of your Figma component, padding specs, and color palette tokens.</li><li>FloatBoard pins the mockup in an always-on-top window directly over your HTML/CSS editor.</li><li>Implement pixel-perfect styling without splitting your monitor into narrow 40-character columns.</li></ol>
 </div>
 <div class="editorial-article-sheet">
 <div class="editorial-article-body">
-<section aria-labelledby="pin-tokens-next-to-editor"><h2 id="pin-tokens-next-to-editor">Keep the active design tokens in immediate sight</h2><p>When implementing a new component or landing page section, write down the three or four variables you will reuse most: brand primary and accent hex codes, surface background colors, default border radiuses, and padding steps. Storing these in a short FloatBoard text card keeps the exact values visible without requiring you to repeatedly inspect design files or search global stylesheets.</p><p>A working card should contain values for the immediate task, not the entire design library. If a token is already standardized in your framework's utility classes or CSS custom properties, note only the token name or active override. This keeps the reference card compact and legible beside your editor window.</p></section><section aria-labelledby="pair-notes-with-visual-crops"><h2 id="pair-notes-with-visual-crops">Pair exact text rules with visual mockup crops</h2><p>Specifications on their own lack visual context, while full design boards consume too much screen area. FloatBoard's two-column layout pairs text specification cards on the left with image reference tiles on the right. You can crop the specific desktop and mobile views of the component you are implementing and drop them into the image section.</p><p>Seeing the target spacing, typography hierarchy, and visual balance alongside the exact CSS values helps you catch alignment discrepancies early. Because the image tiles remain pinned, you do not need to hide your code editor or browser devtools to verify button margins or card paddings.</p></section><div class="editorial-dark-card" style="background:#2e4723 !important; color:#ffffff !important; border-color:#1e3117 !important;" aria-label="Product showcase">
-<h3 class="editorial-dark-heading" style="color:#ffffff !important;">FLOATBOARD.</h3>
-<p class="editorial-dark-sub" style="color:#e2ecd9 !important;">Stop paying the Alt-Tab tax. Keep active notes, API keys, and reference screenshots pinned permanently above your browser or code editor. 100% offline local memory.</p>
+<section aria-labelledby="pin-tokens-next-to-editor"><h2 id="pin-tokens-next-to-editor">Keep the active design tokens in immediate sight</h2><p>When implementing a new component or landing page section, write down the three or four variables you will reuse most: brand primary and accent hex codes, surface background colors, default border radiuses, and padding steps. Storing these in a short FloatBoard text card keeps the exact values visible without requiring you to repeatedly inspect design files or search global stylesheets.</p><p>A working card should contain values for the immediate task, not the entire design library. If a token is already standardized in your framework's utility classes or CSS custom properties, note only the token name or active override. This keeps the reference card compact and legible beside your editor window.</p></section><section aria-labelledby="pair-notes-with-visual-crops"><h2 id="pair-notes-with-visual-crops">Pair exact text rules with visual mockup crops</h2><p>Specifications on their own lack visual context, while full design boards consume too much screen area. FloatBoard's two-column layout pairs text specification cards on the left with image reference tiles on the right. You can crop the specific desktop and mobile views of the component you are implementing and drop them into the image section.</p><p>Seeing the target spacing, typography hierarchy, and visual balance alongside the exact CSS values helps you catch alignment discrepancies early. Because the image tiles remain pinned, you do not need to hide your code editor or browser devtools to verify button margins or card paddings.</p></section><div class="editorial-dark-card" aria-label="Product showcase">
+<h3 class="editorial-dark-heading">FLOATBOARD.</h3>
+<p class="editorial-dark-sub">Stop paying the Alt-Tab tax. Keep active notes, API keys, and reference screenshots pinned permanently above your browser or code editor. 100% offline local memory.</p>
 <div class="editorial-dark-actions">
-<a href="/download/" class="editorial-btn-coral" style="background:#eadbb6 !important; color:#1e3117 !important;">Download Free App →</a>
-<span class="editorial-dark-price" style="color:#c8d7c2 !important;">$5.99 Lifetime · No Subscriptions</span>
+<a href="/download/" class="editorial-btn-coral">Download Free App →</a>
+<span class="editorial-dark-price">$5.99 Lifetime · No Subscriptions</span>
 </div>
 </div><section aria-labelledby="reduce-context-switching"><h2 id="reduce-context-switching">Avoid constant window flipping between Figma and the IDE</h2><p>Switching back and forth between a heavy design tool and a code editor disrupts focus and slows down frontend styling. On a single laptop screen, splitting the display evenly between an editor and a browser leaves little room for a third full application window.</p><p>FloatBoard stays on top as a lightweight overlay. You can pin it near the top or side of your editor, check color codes or target alignment, and continue typing in your code editor without losing keyboard focus. When you finish the component, minimize or hide the board with a single click.</p></section><section aria-labelledby="keep-the-board-focused"><h2 id="keep-the-board-focused">Retain only what the current component needs</h2><p>A floating board works best as a transient working surface rather than a permanent asset archive. Keep your comprehensive design files, vector assets, and full Figma links in your project repository or task tracking tickets. Place only the immediate component's tokens, breakpoints, and visual references on the active board.</p><p>Overloading the board with dozens of unrelated screenshots defeats the purpose of rapid visual reference. When a card has served its purpose, remove it to keep the interface clean and easy to scan.</p></section><section aria-labelledby="review-and-clean"><h2 id="review-and-clean">Update the working set between frontend components</h2><p>Once the component styling is verified in your local browser and passes responsiveness tests, clear or update the references for the next task. FloatBoard's built-in history preserves deleted items so you can retrieve a previous token note if needed, while your active surface stays clean.</p><p>If your workflow also involves capturing transient debugging screenshots or copying error traces, see the <a href="/blog/code-snippets-and-screenshots/">code snippets and screenshots guide</a>. For broader image comparison workflows, explore the <a href="/blog/organize-image-references/">image reference organizer guide</a>.</p></section>
 </div>
