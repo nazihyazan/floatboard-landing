@@ -806,3 +806,58 @@ table.comparison td {
     font-size: 1.75rem;
   }
 }
+
+/* Robust Guide Navigation Bar & Content */
+.guide-nav {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.guide-nav-content {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  gap: 20px !important;
+  box-sizing: border-box !important;
+}
+
+.guide-brand {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+}
+
+.guide-nav-links {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 24px !important;
+  margin: 0 auto !important;
+  flex-wrap: nowrap !important;
+}
+
+.guide-nav-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  text-decoration: none !important;
+}
+
+@media (max-width: 820px) {
+  .guide-nav-links {
+    display: none !important;
+  }
+}
