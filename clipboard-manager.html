@@ -7,7 +7,23 @@
     <meta name="description" content="Always-on-top floating clipboard history for text, code snippets &amp; screenshots. Stop Alt-Tabbing. 100% private &amp; offline. Free trial or $5.99 lifetime.">
     <link rel="canonical" href="https://floatboard.xyz/clipboard-manager">
     <link rel="icon" href="/icon.png">
-    <link rel="stylesheet" href="/assets/content.css">
+    <link rel="stylesheet" href="/assets/content.css?v=20261107c">
+    <style>
+    :root, body.guide-page {
+      --theme-primary: #0297de;
+      --theme-primary-rgb: 2, 151, 222;
+      --theme-secondary: #fc734d;
+      --theme-secondary-rgb: 252, 115, 77;
+      --theme-accent: #fd91cc;
+      --theme-accent-rgb: 253, 145, 204;
+      --theme-dark-bg: #02070a;
+      --theme-card-bg: rgba(13, 22, 32, 0.72);
+      --theme-btn-gradient: linear-gradient(135deg, #0297de, #016fa3);
+      --theme-btn-hover: linear-gradient(135deg, #05a7f5, #0297de);
+      --theme-cta-gradient: linear-gradient(135deg, #fc734d 0%, #d83995 100%);
+      --border-glow: rgba(2, 151, 222, 0.35);
+    }
+    </style>
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="FloatBoard">
     <meta property="og:title" content="Floating Clipboard Manager Windows 10/11 &amp; Mac | FloatBoard">
@@ -79,23 +95,81 @@
     </script>
 </head>
 <body class="guide-page">
+    <div class="uisavior-aurora"></div>
+    <div class="uisavior-matrix"></div>
+
     <nav class="guide-nav" aria-label="Main navigation">
-        <a class="guide-brand" href="/"><img src="/assets/icon.webp" width="24" height="24" alt="">FloatBoard</a>
-        <div class="guide-nav-links">
-            <a href="/blog/">Blog</a>
-            <a href="/pricing">Pricing</a>
-            <a href="/download/">Download</a>
+        <div class="guide-nav-content">
+            <a class="guide-brand" href="/">
+                <span class="guide-logo-dot"></span>
+                <span class="guide-brand-text">FloatBoard</span>
+            </a>
+            <div class="guide-nav-links">
+                <a href="/">Overview</a>
+                <a href="/clipboard-manager">Clipboard</a>
+                <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+                <a href="/blog/">Editorial</a>
+                <a href="/pricing">Pricing</a>
+            </div>
+            <a href="/download/" class="guide-nav-btn">Download Free</a>
         </div>
     </nav>
     <main class="guide-main">
         <header>
-            <p class="guide-eyebrow">Copy and paste across your desktop</p>
+            <p class="guide-eyebrow">CLIPBOARD WORKFLOW</p>
             <h1>A floating clipboard manager for text and images</h1>
             <p class="guide-intro">FloatBoard keeps copied content in an always-on-top workspace. Collect text and images, refer to them while you work, and use clipboard history to copy recent text again on Windows, macOS or Linux.</p>
             <div class="guide-actions">
-                <a class="guide-button" href="/download/">Download FloatBoard Free</a>
+                <a class="guide-button" href="/download/">
+                    <span>Download FloatBoard Free</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </a>
             </div>
         </header>
+
+        <div class="uisavior-mockup-window">
+            <div class="uisavior-mockup-header">
+                <div class="uisavior-mockup-dots">
+                    <span class="uisavior-dot r"></span>
+                    <span class="uisavior-dot y"></span>
+                    <span class="uisavior-dot g"></span>
+                </div>
+                <div class="uisavior-mockup-title">
+                    <span class="active-indicator"></span>
+                    <span>FloatBoard Native · Floating Clipboard Workspace</span>
+                </div>
+                <span class="uisavior-mockup-badge">ACTIVE BOARD</span>
+            </div>
+            <div class="uisavior-mockup-body">
+                <img src="/blog/assets/offline-clipboard-manager-windows-11.jpg" width="1300" height="874" alt="FloatBoard floating clipboard manager interface showing active text snippets and image references pinned on screen" fetchpriority="high">
+            </div>
+            <div class="uisavior-mockup-footer">
+                <span>Text cards and image crops auto-organized in a compact floating board with zero cloud syncing.</span>
+                <span class="uisavior-tag">OFFLINE // 100% LOCAL</span>
+            </div>
+        </div>
+
+        <div class="uisavior-chips-row">
+            <div class="uisavior-chip">
+                <div class="uisavior-chip-icon chip-accent-1">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                </div>
+                <div class="uisavior-chip-content">
+                    <h4>Always-on-Top Scratchpad</h4>
+                    <p>Stays permanently visible above active browser and code windows</p>
+                </div>
+            </div>
+            <div class="uisavior-chip">
+                <div class="uisavior-chip-icon chip-accent-2">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                </div>
+                <div class="uisavior-chip-content">
+                    <h4>100% Offline Privacy</h4>
+                    <p>Local SQLite database on your device with no telemetry or external APIs</p>
+                </div>
+            </div>
+        </div>
+
         <section aria-labelledby="clipboard-workflow">
             <h2 id="clipboard-workflow">Build a copy and paste workspace</h2>
             <ol>
@@ -122,6 +196,13 @@
             <p>The <a href="/download/">download section</a> includes a Windows installer and app package, a macOS ZIP, and Linux DEB, RPM and AppImage packages. Pick the package for your computer and try the free plan before deciding whether you need Premium.</p>
             <p>Free includes 5 texts per day, 5 images per day and one window. See the <a href="/pricing">Free and Premium comparison</a> for the current plan details.</p>
         </section>
+
+        <div class="cta-banner">
+            <h2>Ready to Stop Paying the Alt-Tab Tax?</h2>
+            <p>Join developers, designers, and researchers keeping working text and visual references in immediate view.</p>
+            <a class="guide-button" href="/download/">Download FloatBoard Free →</a>
+        </div>
+
         <section class="faq-list" aria-labelledby="clipboard-faq">
             <h2 id="clipboard-faq">Clipboard manager questions</h2>
             <details>
@@ -140,20 +221,18 @@
     </main>
     <footer class="guide-footer">
         <a href="/">FloatBoard</a>
-        <a href="/clipboard-manager">Floating Clipboard Manager</a>
-        <a href="/download/">Download for Windows, Mac &amp; Linux</a>
+        <a href="/clipboard-manager">Clipboard Manager</a>
+        <a href="/download/">Download App</a>
         <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
-        <a href="/alternatives/pureref-with-text-and-clipboard">PureRef Alternative</a>
-        <a href="/alternatives/windows-sticky-notes-always-on-top">Sticky Notes Alternative</a>
-        <a href="/alternatives/ditto-copyq-visual-clipboard">Ditto / CopyQ Alternative</a>
-        <a href="/linux/floating-clipboard-notes-ubuntu">Linux &amp; Ubuntu</a>
-        <a href="/web-pad/">Online Floating Notepad</a>
-        <a href="/blog/">Blog</a>
+        <a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
+        <a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a>
+        <a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a>
+        <a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a>
+        <a href="/web-pad/">Online WebPad</a>
+        <a href="/blog/about/">About Blog</a>
         <a href="/pricing">Pricing</a>
         <a href="/privacy">Privacy</a>
         <a href="/terms">Terms</a>
-        <a href="/refund">Refunds</a>
-        <a href="/#contact">Support</a>
     </footer>
     <!-- 100% privacy-first analytics -->
     <script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
