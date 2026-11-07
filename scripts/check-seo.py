@@ -30,7 +30,10 @@ class Page(HTMLParser):
 
 def file_for(path):
     p=ROOT / unquote(path).lstrip('/')
-    return p/'index.html' if p.is_dir() else p
+    if p.is_dir(): return p/'index.html'
+    if p.exists(): return p
+    if p.with_suffix('.html').exists(): return p.with_suffix('.html')
+    return p
 
 urls=[e.text for e in ET.parse(ROOT/'sitemap.xml').findall('.//{*}loc')]
 assert len(urls)==len(set(urls))

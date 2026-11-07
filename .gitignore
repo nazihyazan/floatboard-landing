@@ -147,3 +147,4 @@ repos/
 .cursor/
 reporrt/
 blog/assets/.original/
+__pycache__/

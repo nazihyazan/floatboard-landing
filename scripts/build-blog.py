@@ -20,14 +20,14 @@ nav = '''<nav class="guide-nav" aria-label="Main navigation">
 </a>
 <div class="guide-nav-links">
 <a href="/blog/">Guides</a>
-<a href="/clipboard-manager.html">Clipboard</a>
-<a href="/pricing.html">Pricing</a>
+<a href="/clipboard-manager">Clipboard</a>
+<a href="/pricing">Pricing</a>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
 </div>
 </nav>'''
 
 announcement_bar = '''<aside class="editorial-top-announcement" aria-label="Product announcement">
-FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing.html">Get $5.99 lifetime license →</a>
+FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager. <a href="/pricing">Get $5.99 lifetime license →</a>
 </aside>'''
 
 sidebar_download_card = '''<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
@@ -52,7 +52,7 @@ incontent_dark_card = '''<div class="editorial-dark-card" style="background:#2e4
 </div>
 </div>'''
 
-footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager.html">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top.html">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard.html">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top.html">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard.html">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu.html">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing.html">Pricing</a><a href="/privacy.html">Privacy</a><a href="/terms.html">Terms</a></footer>'
+footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer>'
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']

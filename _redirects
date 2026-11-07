@@ -8,3 +8,14 @@
 /blog /blog/ 301
 /index.html / 301
 
+# 301 redirects for clean URLs (Cloudflare Pages extensionless)
+/clipboard-manager.html /clipboard-manager 301
+/pricing.html /pricing 301
+/privacy.html /privacy 301
+/terms.html /terms 301
+/refund.html /refund 301
+/alternatives/pureref-with-text-and-clipboard.html /alternatives/pureref-with-text-and-clipboard 301
+/compare/floatboard-vs-powertoys-always-on-top.html /compare/floatboard-vs-powertoys-always-on-top 301
+/alternatives/windows-sticky-notes-always-on-top.html /alternatives/windows-sticky-notes-always-on-top 301
+/alternatives/ditto-copyq-visual-clipboard.html /alternatives/ditto-copyq-visual-clipboard 301
+/linux/floating-clipboard-notes-ubuntu.html /linux/floating-clipboard-notes-ubuntu 301
