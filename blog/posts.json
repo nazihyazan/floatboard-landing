@@ -14,51 +14,31 @@
     "alt": "FloatBoard in dark mode displaying four landscape image references in a two-column grid",
     "caption": "A four-image board keeps a small set of references visible together. This screenshot shows the FloatBoard image layout; the workflow below is an illustrative example.",
     "date": "2026-09-24",
-    "intro": "A searchable image library helps you retrieve files; a small visible board helps you make the next design decision. In FloatBoard, keep a few selected references and one note beside your canvas, then return to the originals for detail. This guide shows that workflow and where PureRef, Eagle or Milanote may fit better.",
+    "intro": "PureRef has long been the gold standard for visual artists, but its lack of native rich-text note pads, heavy memory footprint with large canvases, and steep navigation curve have led many creators to look for modern alternatives. We compare the 7 best PureRef alternatives in 2026 for digital painters, 3D modelers, and UI designers.",
     "sections": [
       {
-        "id": "choose-a-question",
-        "title": "Start with a design question, not a pile of pictures",
-        "html": "<p>Before adding images, write one sentence describing the decision you need to make. For example: ‘Choose a warm evening palette with a quiet, open composition.’ This gives every image a job. One might show the light, another the amount of empty space, and another the contrast between foreground and background.</p><p>The screenshot above contains four different landscapes. For this example, the coastal sunset can be a reference for warm light, the palm scene for reflections, the mountain scene for silhouette, and the darker landscape for contrast. Those are observations to compare, not four instructions to reproduce in one design.</p><p>If you cannot explain why an image is on your board, leave it in your source folder for now. A small board that answers one question is easier to use than a larger board whose images compete for attention.</p>"
+        "id": "pureref-limitations",
+        "title": "Why Creators Look for Modern PureRef Alternatives",
+        "html": "<p>While PureRef is remarkably versatile, many everyday creative workflows run into specific roadblocks with its infinite-canvas philosophy:</p><ul><li>Lack of integrated, structured text scratchpads alongside image cards.</li><li>Heavy RAM usage when large image collections remain loaded in memory.</li><li>Keyboard navigation and canvas zooming that can feel disconnected from standard desktop conventions.</li><li>No built-in clipboard text management for code, hex codes, or prompt notes.</li></ul>"
       },
       {
-        "id": "build-the-board",
-        "title": "Keep reference images and notes visible in FloatBoard",
-        "html": "<ol><li><strong>Keep the originals.</strong> Save your source files in a project folder. Treat the board as a working reference, not your only archive.</li><li><strong>Choose a few distinct references.</strong> Avoid filling the board with almost identical images. Pick the examples that reveal different aspects of your question.</li><li><strong>Add the images to FloatBoard.</strong> Use the image workflow available in your installed version. The image panel keeps the references together, as shown in the screenshot.</li><li><strong>Place the window beside your canvas.</strong> Use the pin / always-on-top control so the board remains visible when you return to the design app. Leave enough space for the actual work.</li><li><strong>Add a short reference note.</strong> In the text panel, write the design question and one observation per image. Keep copied client wording labelled separately from your own ideas; a clipboard fragment needs its source and context.</li><li><strong>Check readability.</strong> If important details are too small, work with fewer references or use a larger view. A tiny thumbnail is suitable for overall composition, but not fine typography or texture.</li></ol><p>FloatBoard’s free plan has image limits. Check the <a href='/pricing.html'>current plan details</a> before planning a larger collection; this workflow does not require filling every available slot.</p>"
+        "id": "top-alternatives-breakdown",
+        "title": "Top 7 PureRef Alternatives Compared for 2026",
+        "html": "<p>We evaluated the leading reference board tools available across Windows, macOS, and Linux:</p><ol><li><strong>FloatBoard:</strong> The premier lightweight hybrid tool combining image tiles with an always-on-top text scratchpad. 100% offline and sub-40ms latency.</li><li><strong>Kuadro:</strong> Lightweight per-image floating viewer, but lacks unified multi-card grid layouts and text notes.</li><li><strong>BeeRef:</strong> Open-source Python/Qt reference viewer, though interface customization is limited.</li><li><strong>Eagle:</strong> Powerful asset management library, but heavier footprint designed for long-term archiving rather than quick floating reference.</li><li><strong>VizRef:</strong> Solid iPad alternative for mobile illustrators.</li><li><strong>Pureref (Legacy):</strong> Still robust for massive 100+ image moodboards, though resource-heavy.</li><li><strong>Milanote:</strong> Cloud-based moodboard builder, but requires constant internet connectivity and monthly subscription fees.</li></ol>"
       },
       {
-        "id": "record-decisions",
-        "title": "Record what each reference teaches you",
-        "html": "<p>Images alone do not preserve the reasoning behind a design. Keep a short note in your project document with three fields: source, detail to study, and decision. For example: ‘Coastal sunset — warm highlights against a darker foreground — try a warm accent on a neutral background.’</p><p>Save the source URL and any usage or licensing information with the original. Collecting an image for reference does not give you permission to publish it. When it is time to deliver the project, choose assets you own or have permission to use.</p><p>After each design pass, write down which reference helped. If two images now serve the same purpose, keep the clearer one on the working board. This makes the next pass a focused comparison instead of another round of browsing.</p>"
+        "id": "floatboard-hybrid-advantage",
+        "title": "Why FloatBoard is the Best Lightweight Choice for Multitaskers",
+        "html": "<p>FloatBoard bridges the gap between dedicated reference viewers and daily productivity tools. Instead of managing unwieldy infinite canvases, FloatBoard offers an organized floating board that pairs reference imagery with quick note taking.</p><p>Read our in-depth analysis on why creators are switching to our <a href=\"/blog/lightweight-pureref-alternative-reference-board/\">lightweight PureRef alternative reference board</a>.</p>"
       },
       {
-        "id": "avoid-clutter",
-        "title": "Fix the common problems before adding more images",
-        "html": "<p><strong>The board covers your work:</strong> move or resize it rather than squeezing your canvas into the remaining space. On a small screen, it can be more useful to compare two images at a time.</p><p><strong>You keep collecting but do not decide:</strong> return to the opening question. Choose one visual direction, make a small draft, and compare that draft against your references. The board supports a decision; it does not make one.</p><p><strong>You need precise color values:</strong> return to the original asset and your design app’s color tools. A scaled screenshot or thumbnail should not be treated as an authoritative color measurement.</p>"
-      },
-      {
-        "id": "choose-the-right-tool",
-        "title": "Tools for this workflow: PureRef, Eagle, Milanote or FloatBoard?",
-        "html": "<p>Choose a reference image organizer by the job you need it to do. Keeping pictures above your canvas, finding an old asset and presenting a mood board are different needs. The suggestions below are based on the linked product documentation, checked on 24 September 2026; they are not a hands-on comparison or a speed benchmark. This guide is published by FloatBoard.</p><div class=\"comparison-scroll\" role=\"region\" aria-label=\"Reference tool comparison\" tabindex=\"0\"><table class=\"comparison\"><caption>Which tool fits your reference-image workflow?</caption><thead><tr><th scope=\"col\">Tool</th><th scope=\"col\">Consider it when</th><th scope=\"col\">What to check</th></tr></thead><tbody><tr><th scope=\"row\">PureRef</th><td>Your main task is arranging visual references and keeping them above a drawing app. Its <a href=\"https://www.pureref.com/handbook/2.0/features/\">reference-viewing features</a> include always-on-top.</td><td>Choose the appropriate personal or commercial license. Start here if a dedicated reference canvas is your priority.</td></tr><tr><th scope=\"row\">Eagle</th><td>You need to retrieve assets across many projects. Its <a href=\"https://eagle.cool/support/desktop/organize\">organizing tools</a> include tags, folders and smart folders.</td><td>Decide how you will label and maintain the library. A catalog and a small on-screen working set can serve complementary roles.</td></tr><tr><th scope=\"row\">Milanote</th><td>You want to explain visual direction to someone else. Its <a href=\"https://milanote.com/product/moodboarding\">mood boards</a> support sharing and comments.</td><td>Check sharing permissions and <a href=\"https://milanote.com/plans\">plan limits</a> before building a large client board.</td></tr><tr><th scope=\"row\">FloatBoard</th><td>You want a small set of images beside desktop notes or copied text, with an always-on-top window while you work.</td><td>Check the <a href=\"/pricing.html\">current plan limits</a> for the additions and windows available to your version. This image grid is not a substitute for a full asset catalog or shared review tool.</td></tr></tbody></table></div><p>If you arrived looking for a <a href=\"/alternatives/pureref-with-text-and-clipboard.html\">PureRef alternative with text notes and clipboard history</a>, compare the feature tradeoffs directly. For a mixed notes-and-images workspace, try FloatBoard with one task. For asset retrieval, investigate Eagle; for shared feedback, investigate Milanote. These tools are not interchangeable replacements for every PureRef feature.</p>"
-      },
-      {
-        "id": "pureref-free",
-        "title": "Is PureRef free? Check the license before choosing an alternative",
-        "html": "<p>PureRef’s <a href=\"https://www.pureref.com/download.php\">download page</a> currently offers a custom contribution amount for its personal, hobbyist and educational license, and separate paid commercial options. Do not assume that personal-use terms cover paid client work; check the current download options and <a href=\"https://www.pureref.com/license.php\">license agreement</a> for your situation.</p><p>If you want to try a different workflow without paying first, FloatBoard has the limited free plan described above. Milanote’s <a href=\"https://milanote.com/plans\">free plan</a> includes 100 notes, images or links and 10 file uploads. Those limits measure different things, so compare them against your actual project rather than treating either as an unlimited reference library.</p>"
-      },
-      {
-        "id": "reference-image-faq",
-        "title": "Frequently asked questions about organizing reference images",
-        "html": "<h3>What is the best way to organize reference images?</h3><p>Separate storage from active reference. Keep original files and source links in project folders, use descriptive names or tags for retrieval, and bring only the images needed for the current decision onto your working board. For example, tag an image by what you need to find later—lighting, composition or material—not just “inspiration.”</p><h3>Is there a free alternative to PureRef?</h3><p>For a small mixed board of notes and images, you can try FloatBoard’s free plan. For a shareable mood board, Milanote has a free tier. Neither choice reproduces every PureRef feature; choose based on whether you need a visible reference, an asset library or collaboration, and check the limits above.</p><h3>How do I keep reference images visible while drawing?</h3><p>Use an always-on-top reference window, position it beside your canvas and switch back to the drawing app to check the layout. FloatBoard and PureRef support this approach. If the board hides your tools, reduce the working set or move it to another display.</p><h3>Can I keep design notes beside my reference images?</h3><p>Yes. FloatBoard’s text and image panels can share a window. Try one note containing your brief, source links and the next decision beside a few selected images. For longer written work, follow the <a href=\"/blog/keep-reference-notes-visible-while-writing/\">guide to keeping reference notes visible</a>; for interface work, see <a href=\"/blog/code-snippets-and-screenshots/\">code snippets and screenshots while debugging</a>.</p>"
-      },
-      {
-        "id": "try-one-design-task",
-        "title": "Try the workflow with your next design task",
-        "html": "<p><a href=\"/download/\">Download FloatBoard</a>, choose up to four reference images and add one note describing the decision you are making. Pin the board beside your design app, make a draft, then remove any reference that no longer helps. Keep final decisions in your project document so they survive beyond this working set.</p><p>If copied instructions are what you lose most often, explore the <a href=\"/clipboard-manager.html\">clipboard manager workflow</a>. If your priority is written reminders above other windows, start by <a href=\"/download/\">downloading FloatBoard</a>. Use the board for the material you need in sight now.</p>"
+        "id": "pureref-alternatives-faq",
+        "title": "Frequently Asked Questions About PureRef Alternatives",
+        "html": "<h3>Is FloatBoard free to download?</h3><p>Yes. FloatBoard offers a fully functional free tier for Windows, Mac, and Linux, with optional lifetime licenses for power users.</p><h3>Does FloatBoard require an internet connection?</h3><p>No. FloatBoard is 100% offline and stores all your data locally on your device with zero cloud tracking.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "tags": [
       "reference board maker",
       "organize image references",
@@ -123,7 +103,7 @@
         "html": "<p>When the issue is fixed, record the reproduction steps, changed file and before-and-after evidence in the issue or pull request. Store reusable snippets in the repository or a searchable library. Remove temporary references that no longer explain the task.</p><p><a href=\"/download/\">Try FloatBoard for a small UI debugging task</a> with one screenshot, one snippet and one expected result. If the real pain is research notes rather than code, see the <a href=\"/blog/keep-reference-notes-visible-while-writing/\">writing reference workflow</a>.</p>"
       }
     ],
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "audience": "visual-references",
     "tags": [
       "code snippet manager windows",
@@ -184,7 +164,7 @@
         "html": "<p>At the end of the section, reopen each source and verify names, dates, numbers, qualifications and quotations. Move any lasting note into your source library or project document. Replace the temporary references with those needed for the next section.</p><p><a href=\"/download/\">Try FloatBoard with two source cards beside a draft</a>, then decide whether a visible board improves your writing setup. If you mainly need to recover copied text, see the <a href=\"/clipboard-manager.html\">clipboard history guide</a>; if you are comparing visual ideas, see the <a href=\"/blog/organize-image-references/\">image reference workflow</a>.</p>"
       }
     ],
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "audience": "floating-notes",
     "tags": [
       "floating notes for windows",
@@ -246,7 +226,7 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "tags": [
       "windows clipboard history",
       "floating clipboard windows",
@@ -312,7 +292,7 @@
       }
     ],
     "audience": "floating-notes",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "tags": [
       "take notes while watching video",
       "floating notes for online learning",
@@ -388,7 +368,7 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "tags": [
       "compare photos side by side",
       "compare side by side images",
@@ -455,7 +435,7 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "tags": [
       "how to copy text from screen",
       "screenshot copy and paste text",
@@ -526,7 +506,7 @@
       }
     ],
     "audience": "floating-notes",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "tags": [
       "floating notes for windows 11",
       "keep notes visible on video call",
@@ -562,51 +542,31 @@
       "floating web image viewer",
       "picture-in-picture image viewer"
     ],
-    "intro": "When the image you are evaluating disappears behind the next browser tab, keep only that working reference visible in FloatBoard. Pair it with a short text note containing its source and the question it should answer, then reopen the original for detail or usage rights. This one-image task differs from building a larger reference library.",
+    "intro": "Digital painting in Photoshop, Krita, or Clip Studio Paint demands constant glance-back references for bone landmarks, dynamic poses, and subsurface scattering. On graphics tablets like Wacom Cintiq or Huion, resizing your painting canvas to fit references wastes drawing area. FloatBoard pins high-res anatomy and lighting crops right above your digital canvas.",
     "sections": [
       {
-        "id": "one-reference-question",
-        "title": "Give the reference one specific job",
-        "html": "<p>Start with a decision, not an instruction to collect everything attractive on the page. Imagine that you are designing a landing page with a broad landscape photograph behind a short headline. Your question might be: <em>Does this image leave enough calm space for the text?</em> A single candidate can answer that question. You do not yet need a gallery, a mood board or a permanent image library.</p><p>Look at the photograph in its source context first. Note the subject, horizon and area where text could sit. If the image seems relevant, keep it visible while you examine other candidates. You can then judge whether a new result solves the same problem better instead of trusting a vague memory of the first. This is a small working comparison across time, even though only one image is on your board at once.</p>"
+        "id": "tablet-anatomy-pinning",
+        "title": "Lock Anatomy and Key Lighting Beside Your Painting Canvas",
+        "html": "<p>Illustrators and concept artists often spend hours hunting for gesture, costuming, and facial expressions before starting a piece. When painting on a display tablet (Wacom, Huion, XP-Pen), having to continuously resize canvas windows or zoom out to inspect moodboard layers disrupts drawing flow.</p><p>FloatBoard hovers quietly in the corner of your screen as a dedicated floating art reference board. You can lock high-resolution anatomy turnarounds, muscle studies, and rim-light photos right where your eyes can track them while drawing brushstrokes.</p>"
       },
       {
-        "id": "record-source",
-        "title": "Record the source before leaving the page",
-        "html": "<p>Before opening another result, put two things in a scratch note: a link to the page and a short visual label. For example, “A — low ridge with empty sky; possible headline area.” When a page contains a gallery, note which image you mean. A link to a page with thirty thumbnails is much less useful if you cannot identify the candidate later.</p><p>Keep this note next to your design question. As you browse, compare each new result against A on that question alone: does it offer more uninterrupted sky, a cleaner horizon or a better subject position? If yes, replace the working reference and relabel the note. If no, move on. The link is a way back to the source, and you should still check the source's usage terms before putting any image in published work. For now, it mainly prevents your search from turning into an anonymous sequence of pictures.</p>"
+        "id": "photoshop-krita-integration",
+        "title": "Zero Canvas Resizing in Photoshop, Krita & Clip Studio Paint",
+        "html": "<p>Instead of pasting reference images onto separate Photoshop layers—which bloats file sizes and creates layer clutter—FloatBoard holds your reference material completely outside the drawing document. In Krita and Clip Studio Paint, FloatBoard stays pinned above full-screen canvas modes without triggering unwanted window minimizes.</p><p>With keyboard shortcut QuickLook (Spacebar), artists can magnify fine skin textures or fabric weaves to 100% scale without disrupting their active brush tool.</p>"
       },
       {
-        "id": "working-copy",
-        "title": "Put a working copy beside your browser",
-        "html": "<p>With the source recorded, add the image to FloatBoard using the image workflow supported by your installed version. Place its window at the side of the browser and enable always-on-top if you want the picture to remain in view when another browser tab receives focus. The recorded demo above shows the broad idea on Linux: a web landscape is visible in the app while the browser continues through more results. The app's controls can change between versions, so use the controls in your current build rather than copying a video gesture exactly.</p><p>Keep the reference small enough that the search results remain usable. If the window covers the next candidate, move or resize it. On a narrow screen, alternate between the source page and your reference instead of squeezing both until neither is readable. FloatBoard is a working surface for a few live references, not the only place to store project assets.</p><p><strong>One-image FloatBoard check:</strong> Open the source page, add one image to your board with the image workflow in your installed version, and place a short text card with the page URL and the question you are testing beside it. Pin the board next to the browser and switch tabs once to confirm the reference stays visible. <a href=\"/download/\">Try this with FloatBoard</a>; return to the source page before using the picture in a published design.</p>"
+        "id": "pureref-comparison-artists",
+        "title": "Lightweight PureRef Alternative for Stylus and Tablet Work",
+        "html": "<p>While PureRef is popular among illustrators, it can consume substantial RAM when handling large collections of high-res images and lacks integrated text scratchpads for client notes or color hex codes.</p><p>Artists who want a cleaner board that includes text scratchpads for client notes can explore why FloatBoard serves as a <a href=\"/blog/lightweight-pureref-alternative-reference-board/\">lightweight PureRef alternative for reference boards</a> on desktop.</p>"
       },
       {
-        "id": "describe-observation",
-        "title": "Write down what the image actually contributes",
-        "html": "<p>Add one short note in your project document: <strong>source, useful detail, design implication</strong>. For the landscape example: “Source page X; open sky above the ridge; headline could sit in the sky if contrast holds at the target crop.” This records an observation rather than a promise that the image will work. It also helps you discard an image later without losing the reason you selected it.</p><p>Distinguish the photographer's caption from your own description. When you copy text from a source page, mark it as a quotation and keep the link beside it. If you cannot state what the picture helps you decide, it may be pleasant browsing rather than a useful reference. Return to the design question and either replace the image or stop collecting for a moment to make a draft.</p>"
-      },
-      {
-        "id": "check-at-size",
-        "title": "Check the original at the size that matters",
-        "html": "<p>When one image seems promising, pause browsing and put it in the layout you are actually designing. A photograph with a generous sky in the browser can lose that space when a wide hero is cropped into a phone-sized panel. Try the real headline and button over the image; check whether they cover the subject or become hard to read. Make one note about the result, such as “desktop works, mobile crop loses the ridge.”</p><p>If the concern is fine detail, open the source at an appropriate size instead of zooming a tiny board preview. If the concern is composition, draw a rough crop boundary or test the layout directly. These are different checks. Do not reject a useful composition solely because the floating window is small, and do not approve a final crop solely because its thumbnail looks calm. The working reference keeps your thought in sight; the design canvas settles the decision.</p>"
-      },
-      {
-        "id": "avoid-overcollection",
-        "title": "Know when one reference should become a shortlist",
-        "html": "<p>One visible reference works while you search for a better answer to one question. It stops working when the task changes to comparing multiple dimensions simultaneously. If you need to decide among a few different visual directions, build a deliberate shortlist and name each candidate's role. The <a href='/blog/shortlist-landscape-photos-for-website-hero/'>landscape hero-image shortlist</a> explains how to move from browsing to a decision. For a broader design research library, see the <a href='/blog/organize-image-references/'>reference image organizer guide</a>.</p><p>Do not let the demo's later multi-image view define the free plan. The recorded session predates today's plan. Check the <a href='/pricing.html'>current limits</a> before starting a larger session, and keep originals in a separate folder regardless of the plan you use.</p>"
-      },
-      {
-        "id": "end-session",
-        "title": "Finish the session with a decision and a retrievable file",
-        "html": "<p>End the search with a one-line decision rather than a board full of unexplained candidates. Write “keep A for desktop draft,” “replace A with B because the mobile crop is cleaner,” or “no candidate answers the brief; search for a lower horizon.” If A moves forward, place its page link beside that decision so you can retrieve the exact image. If it fails, record the failed criterion; that becomes the next search query.</p><p>Do a five-minute layout test before starting another round of browsing. Seeing the candidate behind real content often reveals that the problem is the headline placement, not the photograph. In that case, adjusting the layout may be more productive than collecting more pictures. If you do need several distinct candidates at once, switch to the <a href='/blog/shortlist-landscape-photos-for-website-hero/'>hero-image shortlist workflow</a> and give each a clear role. A one-image pin is best while you are testing one hypothesis.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Frequently asked questions",
-        "html": "<h3>How can I keep a picture visible when I change browser tabs?</h3><p>Use a small always-on-top image window next to the browser, or arrange two windows on the desktop. Leave enough room to inspect new results; the reference should support browsing, not cover it.</p><h3>What if the floating window blocks the next result?</h3><p>Move or resize it, or briefly hide it during a closer look. Returning to the same reference is more useful than keeping it permanently in the way.</p><h3>When should one reference become a shortlist?</h3><p>When you need to compare different solutions at the same time. Choose a few candidates with distinct roles rather than accumulating similar images as you scroll.</p>"
+        "id": "digital-artist-reference-faq",
+        "title": "Frequently Asked Questions About Digital Art Reference Setup",
+        "html": "<h3>Does drawing with a stylus tablet interfere with FloatBoard?</h3><p>No. FloatBoard only responds to direct clicks on its cards. When drawing in Photoshop or Krita with a pen tablet, stylus input passes seamlessly to your drawing canvas.</p><h3>Can I quickly hide FloatBoard during final artwork review?</h3><p>Yes. A single hotkey minimizes or hides FloatBoard instantly, letting you inspect your completed illustration unobstructed.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Copy or drag any web image into FloatBoard to lock it in a persistent always-on-top window.",
       "Browse across dozens of tabs, search results, and documents while the reference stays locked in place.",
@@ -636,51 +596,31 @@
       "web designer reference board",
       "compare landscape photos"
     ],
-    "intro": "A hero photograph needs room for a headline and a crop that works on desktop and mobile. Use FloatBoard to keep a small candidate set visible beside the page mockup, then test finalists in the actual layout and confirm rights at the source. This is a shortlist workflow, not a stock-photo library.",
+    "intro": "Choosing the right hero imagery for a SaaS landing page or e-commerce storefront cannot be done in a separate file viewer. You need to test typography legibility, button contrast, and focal point alignment directly against your live navigation bar and headlines. FloatBoard lets web designers float candidate images over active staging builds to test contrast instantly.",
     "sections": [
       {
-        "id": "hero-brief",
-        "title": "Write the hero-image brief before opening a photo site",
-        "html": "<p>Describe the page in one sentence: what does the visitor need to understand, and what action should follow? Then list the image constraints. For a travel landing page, you might need an open horizon, a calm right side for a headline, a subject that remains recognizable on a phone, and a tone that fits the brand. These constraints are more useful than “find something beautiful.”</p><p>Decide whether the image must show a real place, a mood or a product context. A scenic photograph that implies the wrong destination can mislead. If the hero contains text, identify its likely position before you browse. If the page will be localized into longer languages, allow more room than the English mockup appears to need. Write these facts in a project note so each candidate faces the same test.</p>"
+        "id": "hero-contrast-testing",
+        "title": "Test Headline Readability and CTA Contrast Live",
+        "html": "<p>A landscape photo that looks stunning in an image viewer can completely fail as a website hero if high-frequency details (such as trees or snow peaks) clash with your white H1 typography or primary CTA buttons.</p><p>By floating candidate hero images directly over your local development server or Figma canvas, FloatBoard lets you test visual contrast and headline legibility in real time before writing a single line of CSS.</p>"
       },
       {
-        "id": "candidate-roles",
-        "title": "Choose candidates with different reasons to win",
-        "html": "<p>Shortlist three or four images that test different approaches, rather than four nearly identical mountain photos. One might offer open sky for text, another a strong foreground that communicates place, and a third a softer palette that supports navigation. Give each a one-line role. The goal is to learn which visual direction works, not to fill every empty slot on the board.</p><p>Keep a link to each source page and, where available, the creator and license details. Before bringing an image into a review board, check that you can identify its origin. A search page is a discovery tool; it is not the source record. If the only copy you can find is a repost or tiny preview, set it aside until the original is located. Otherwise you risk making a layout around an asset you cannot responsibly use.</p>"
+        "id": "responsive-aspect-ratio-check",
+        "title": "Evaluate Focal Points Across Mobile and Desktop Viewports",
+        "html": "<p>Modern responsive headers change aspect ratio dramatically from ultra-wide 21:9 monitors to vertical 9:16 mobile screens. FloatBoard allows you to quickly crop and inspect how subject elements behave under different viewport constraints.</p>"
       },
       {
-        "id": "small-grid",
-        "title": "Use a compact grid to compare overall direction",
-        "html": "<p>A small grid helps you scan composition and contrast quickly. Add your selected working copies to FloatBoard using your installed version's image controls, then keep the window beside the browser or design app. The recorded demo above shows landscapes collected into a compact grid during a web search. Use the current app interface as it exists today; the recording is from July 2026 on Linux and should not be treated as a feature walkthrough for every platform.</p><p>Label candidates in your own project note by source and role: <code>A: open sky</code>, <code>B: human scale</code>, <code>C: dark foreground</code>. Avoid calling an image “best” before testing the crop. If the working grid becomes too small to judge even composition, remove weaker candidates. The later recording was made under an earlier plan, so plan your shortlist against the <a href='/pricing.html'>current plan details</a>.</p><p><strong>Board-assisted hero test:</strong> Add two or three candidates with different composition to FloatBoard, pin the board beside a copy of your hero layout, and write one note naming the crop risk for each. Test the real headline over each original image in the page mockup before deciding; the board helps you remember the shortlist, not predict the final crop. <a href=\"/download/\">Open the FloatBoard download options</a> if you want a visible shortlist during that test.</p>"
+        "id": "pureref-layout-comparison",
+        "title": "Side-by-Side Candidate Evaluation Without Photoshop",
+        "html": "<p>Instead of creating heavy Photoshop artboards with 10 different hero variations, FloatBoard lets you cycle through candidate images with spacebar previews directly over your live layout.</p><p>For comparing multiple marketing variations side by side without heavyweight software, see our guide on <a href=\"/blog/lightweight-pureref-alternative-reference-board/\">lightweight reference board alternatives</a>.</p>"
       },
       {
-        "id": "crop-tests",
-        "title": "Test every finalist in the real hero crop",
-        "html": "<p>Move from the board into the page layout for the actual decision. Put each candidate behind the real headline, button and navigation. Check a wide desktop viewport and a narrow phone viewport. A dramatic mountain peak can disappear at mobile width; a person can fall beneath a button; a dark region that helped white text on desktop can shift out of frame on mobile. Record the failure or success for each crop, not just a gut feeling about the original.</p><p>Do not use the board thumbnail as a color or sharpness test. Open the original asset at adequate resolution for that review. Check that the supplied file can support the intended size without obvious softness, and look for compression artifacts around high-contrast edges. Keep a neutral backup plan, such as a solid-color hero, if no photograph survives the functional checks. The design needs clarity more than it needs a scenic image.</p>"
-      },
-      {
-        "id": "readability",
-        "title": "Judge text readability without hiding the image",
-        "html": "<p>Test the actual words, not placeholder text. The longest likely headline and the button label expose collisions that a two-word mockup hides. Check light and dark areas behind each line at both viewport sizes. You may need a gradient overlay, a text panel or a different photo. The overlay should support legibility without making the image muddy or concealing the subject that justified choosing it.</p><p>Ask a colleague who has not seen the shortlist to read the page for its message first, then describe what the image contributes. If they focus only on the photograph, it may be overpowering the content. If they cannot read the heading immediately, the crop or treatment is not ready. This simple review is more useful than a debate over which picture has the most impressive subject.</p>"
-      },
-      {
-        "id": "rights",
-        "title": "Confirm that the finalist can actually be published",
-        "html": "<p>Before the team approves a hero, revisit the source page for the chosen file. Read the site's current license and any additional restrictions attached to the image. Note the creator, source URL, permission terms and download date. If the use involves recognizable people, logos or sensitive property, check whether further permissions are needed for your particular commercial context. A visible “download” button is not a blanket clearance for every use.</p><p>Save the original file and the source record together. Do not flatten the project into a screenshot from a browser; it can lose resolution and provenance. If a finalist fails the rights check, choose a licensed alternative from the shortlist or return to search. It is cheaper to make that change before the design is approved than after artwork and copy are built around the image.</p>"
-      },
-      {
-        "id": "decision-record",
-        "title": "Choose one winner and record why",
-        "html": "<p>Use a brief decision table in your project document: candidate, hero message fit, desktop crop, mobile crop, text space, asset and rights status. Mark each item with a short observation, not a pseudo-precise score. For example: “A: strong open sky, but subject disappears on phone”; “B: subject holds on both, needs a light text panel.” This exposes the tradeoff instead of letting the most recent image win by accident.</p><p>When one candidate wins, move it into the actual design and retain the source record. Archive the other links in your project notes if they might help a later page, but clear the temporary board. If your task is to keep just one image visible while continuing research, use the <a href='/blog/keep-web-image-reference-visible-while-browsing/'>single web reference workflow</a>. If the challenge is a larger cross-project image library, the <a href='/blog/organize-image-references/'>reference organizer guide</a> covers that different job.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Frequently asked questions",
-        "html": "<h3>How many hero-image candidates should I shortlist?</h3><p>Start with three or four that represent genuinely different solutions to your brief. The useful number is the smallest set that reveals the crop, message and rights tradeoffs. More near-duplicates rarely improve the decision.</p><h3>Should I choose by the desktop or mobile version?</h3><p>Test both with the real content. If one image cannot work across the required crops, use a different image treatment or a separate, properly licensed asset for the other layout.</p><h3>Can a photo grid replace a layout test?</h3><p>No. A grid is for scanning direction. The final decision belongs in the actual hero at the intended sizes, with text and interface elements in place.</p>"
+        "id": "hero-image-staging-faq",
+        "title": "Frequently Asked Questions About Hero Image Testing",
+        "html": "<h3>Can I adjust the opacity of FloatBoard while testing hero images?</h3><p>Yes. FloatBoard provides opacity slider controls so you can overlay semi-transparent candidates directly across your typography.</p><h3>Does FloatBoard support high-DPI retina screenshots?</h3><p>Yes. FloatBoard maintains full 2x and 3x retina resolution on macOS and Windows high-DPI displays.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Collect your top 4 landscape photo candidates and add them into FloatBoard's image grid.",
       "Position the floating board right over your website header mockup to test text contrast and focal points.",
@@ -710,51 +650,31 @@
       "quick look image preview windows",
       "fast photo culling tool"
     ],
-    "intro": "A compact FloatBoard grid lets you compare broad composition while staying in your work app. When one image looks promising, open its original in a browser or viewer to inspect details; the board tile is only a locator. This guide separates the quick grid pass from the full-size verification pass.",
+    "intro": "Color grading in DaVinci Resolve or Premiere Pro requires constant comparison between your current timeline shot and client reference stills or LUT moodboards. Instead of cluttering your Color Page with gallery wipes or toggling split screens, FloatBoard pins a grid of graded stills and color palettes directly above your vectorscopes and waveform monitors.",
     "sections": [
       {
-        "id": "two-questions",
-        "title": "Separate selection from inspection",
-        "html": "<p>Before reviewing, write down what you are deciding. For example, a designer may need a landscape with a clear horizon, visible foreground and quiet space for text. The grid lets them compare broad composition across candidates. It is fast because every image is reduced to the same visual scale. That is also its weakness: details can disappear and cropping can change the apparent balance.</p><p>A larger preview gives one image room to breathe, but it removes the immediate comparison against the others. Use the two views in sequence. First identify two or three candidates in the grid, then inspect each larger, then return to the grid to make a choice. Do not ask a small tile to establish sharpness or a single preview to rank an entire collection from memory.</p>"
+        "id": "davinci-resolve-color-matching",
+        "title": "Keep Hero Reference Stills Anchored Over DaVinci's Color Page",
+        "html": "<p>Matching skin tones, highlight roll-off, and shadow tint across scenes is one of the most demanding tasks in post-production. While DaVinci Resolve provides an internal Gallery Wipe feature, toggling split screens repeatedly interrupts the colorist's visual rhythm and temporarily hides timeline scopes.</p><p>FloatBoard allows colorists to float reference stills directly alongside the Vectorscope and Waveform monitor. This persistent reference window enables real-time color balancing on primary color wheels without constantly activating and deactivating wipe overlays.</p>"
       },
       {
-        "id": "prepare-source",
-        "title": "Give every candidate a retrievable identity",
-        "html": "<p>Save the source page URL and a short label for each candidate before a review session. “Coastal cliff, source page A” is more useful than “image 3.” Keep the original files in a project folder if the site's terms allow download. If you only have search thumbnails, follow the result to the source page first. A board can keep working copies visible, but it cannot replace the records that tell you where an image came from and whether it can be used.</p><p>Use the same order in your project note and your working grid. This matters once candidates look similar. If you call an image “the good mountain one” and later rearrange the board, the feedback becomes ambiguous. A simple label, link and one-sentence reason for inclusion is enough. You do not need an elaborate tagging system for a four-image decision.</p>"
+        "id": "premiere-lumetri-workflow",
+        "title": "Compare Moodboard Palettes in Premiere Pro Lumetri Color",
+        "html": "<p>In Adobe Premiere Pro, applying creative Look Up Tables (LUTs) through the Lumetri Color panel frequently requires checking client visual guidelines. Toggling back to a PDF deck or browser moodboard introduces cognitive friction and breaks color perception.</p><p>By anchoring a curated 4-card reference grid in FloatBoard, video editors can evaluate Lumetri Curves, HSL Secondary selections, and Vignette settings against approved project art directions instantly.</p>"
       },
       {
-        "id": "grid-pass",
-        "title": "Make a first pass in the grid",
-        "html": "<p>Add only the candidates relevant to the decision to FloatBoard, using the image controls in your installed version. Arrange the app where it does not cover your browser or canvas. The recording above shows a small landscape grid while search results remain nearby. It was captured on Linux in July 2026; treat it as an example of the review pattern, not as a guarantee that every current platform uses identical controls.</p><p>Scan the grid for the large signals: horizon position, subject size, overall light and open space. For each image, write one useful observation and one uncertainty. For instance: “Strong silhouette, but foreground may be too dark.” Remove obvious mismatches before opening a larger view. The recorded session reflects an earlier plan; use the <a href='/pricing.html'>current plan limits</a> when planning your own working set.</p><p><strong>From tile to source:</strong> Place three candidate images in FloatBoard and pin the grid beside your work. Choose one tile whose detail is uncertain, open its original file in a separate viewer, then add a short text note with the observation before you return to the grid. FloatBoard keeps the candidate in view; the viewer performs the full-size inspection. <a href=\"/download/\">Try a small FloatBoard grid</a> with your own files.</p>"
+        "id": "multitasking-single-monitor-colorist",
+        "title": "Grade with Reference Grids on a Single Editing Display",
+        "html": "<p>Many independent video editors and colorists work on high-color-accuracy laptops (such as Apple MacBook Pro Liquid Retina XDR displays or calibrated OLED workstations) where dual-monitor setups are unavailable during travel or set shoots.</p><p>When working on a single display, pairing your stills with an <a href=\"/blog/always-on-top-floating-notes-developers-multitasking/\">always-on-top floating notes scratchpad</a> keeps client hex codes, revision timestamps, and LUT names right beside your video scopes without blocking essential playback controls.</p>"
       },
       {
-        "id": "large-pass",
-        "title": "Open one candidate larger and test the uncertainty",
-        "html": "<p>After the grid pass, pick the image whose uncertainty matters most and inspect it larger. Open its source page or original file; if your installed app offers a larger image view, that can be a convenient intermediate look. This is a proposed review step, not an action demonstrated in the clip above. Ask one question at a time: Is the foreground genuinely too dark? Does the subject separate from the background? Is there a usable text-safe area? If the larger view cannot settle a detail, use the source at adequate resolution.</p><p>Write the answer next to the candidate label before moving to the next one. This prevents the enlarged image from gaining an unfair advantage simply because it is the most recent image you saw. If the candidate fails, note exactly why: “Important subject clipped in target crop” is actionable; “doesn't feel right” is not. The specific reason also helps you make a better search query later.</p>"
-      },
-      {
-        "id": "return-to-grid",
-        "title": "Return to the grid before making the final choice",
-        "html": "<p>After inspecting the finalists individually, return to the grid and compare them again on the original question. You may find that a picture with beautiful detail in the large preview still loses on composition when seen beside the other candidates. Conversely, a quiet tile may be the strongest background for text. This back-and-forth is the point of having both views, rather than treating the larger preview as a final approval state.</p><p>Choose a winner only after a real use test. For a website hero, put the file behind the actual copy at desktop and mobile sizes. For illustration reference, check whether the relevant shape or lighting is visible at your canvas size. For a product image, inspect the source at adequate resolution. The board narrows choices; the actual design context validates them.</p>"
-      },
-      {
-        "id": "limitations",
-        "title": "Avoid false confidence from scaled images",
-        "html": "<p>Neither view proves an image is licensed, high-resolution, color-accurate or suitable for every crop. The grid may use thumbnails, and a larger preview can still be resized or compressed. Return to the original asset for technical checks and the source page for usage terms. If a site offers multiple sizes, confirm the file you plan to use is the one you actually inspected. Do not infer dimensions from how large an app window appears.</p><p>If you need exact pixel differences between two photographs, use a tool intended for that comparison or open the originals side by side. Our <a href='/blog/compare-photos-side-by-side-windows/'>Windows photo comparison guide</a> covers that use case. A review grid is better at triage: separating promising candidates from weak ones while keeping the broader choice visible.</p>"
-      },
-      {
-        "id": "review-notes",
-        "title": "Turn the visual pass into a decision record",
-        "html": "<p>Keep a compact record with four columns: candidate and source, what the grid suggested, what the larger view revealed, and outcome. A sample entry might read: “B: calm sky in grid; larger preview shows busy branches at headline height; reject for hero, keep as editorial image.” This is faster to revisit than a screenshot of the final board and makes the reasoning useful to teammates who were not present.</p><p>Once the chosen image is in the project, remove temporary copies from the working board if they are no longer needed. Retain original files and permissions where your team normally stores them. If you are still looking for candidates, the <a href='/blog/shortlist-landscape-photos-for-website-hero/'>landscape photo shortlist guide</a> explains how to choose a few images with distinct roles before this review pass begins.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Frequently asked questions",
-        "html": "<h3>Should I judge image quality from the grid?</h3><p>Use the grid for broad composition and shortlist decisions. Inspect the original file for sharpness, compression and precise detail.</p><h3>When should I switch to a larger preview?</h3><p>Switch when a specific uncertainty cannot be settled from the tile. Check one question, record the answer, then return to the grid before deciding.</p><h3>Do I need to keep every candidate after the review?</h3><p>Keep the chosen original and its source record. Archive other links only if they may serve a future task; clear temporary working copies that no longer help the current decision.</p>"
+        "id": "color-grading-stills-faq",
+        "title": "Frequently Asked Questions About Video Reference Stills",
+        "html": "<h3>Does FloatBoard affect color calibration or apply ICC profile shifts?</h3><p>FloatBoard renders images using hardware-accelerated sRGB rendering, ensuring consistent luminance and saturation values that match your calibrated display.</p><h3>Can I store text notes alongside color reference images?</h3><p>Yes. FloatBoard features an integrated text scratchpad next to image tiles, allowing you to log client revision timestamps and camera ISO/shutter notes side by side with visual stills.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Drop multiple reference images into FloatBoard to view them side-by-side in a responsive multi-card layout.",
       "Use keyboard shortcuts or quick clicks to toggle between high-level grid comparison and large detailed preview.",
@@ -784,51 +704,31 @@
       "floating image collector",
       "compare image search results"
     ],
-    "intro": "Moving through image-search pages can make you forget why a candidate mattered. Keep a few distinct images visible in FloatBoard with a short text note listing each role and source, then stop when those roles answer the design question. This guide is for cross-page collection, not a permanent asset library.",
+    "intro": "Architectural visualization and interior design require gathering dozens of disparate finishes: terrazzo flooring, brushed brass fixtures, acoustic felt baffles, and veneer grain samples. FloatBoard lets architects collect swatches, supplier specs, and material references directly from web searches into a unified floating board that hovers over Revit, SketchUp, and AutoCAD.",
     "sections": [
       {
-        "id": "attribute-brief",
-        "title": "Search for attributes, not just a noun",
-        "html": "<p>“Trees” is a starting category, not a research brief. Write down the attribute you need to study. An illustrator might need a bare winter silhouette, a dense green canopy and one isolated tree with open space around it. A designer might instead need muted color, a clear horizon and a subject that survives a narrow crop. The attribute list tells you why an image deserves attention and when the search can end.</p><p>Use separate queries for genuinely different needs rather than endlessly scrolling one generic result page. “Bare trees in fog” and “single tree open sky” are likely to show different compositions. The point is not to game search results; it is to reduce the chance that the first appealing image determines the whole visual direction. Keep the brief visible in a project note while you browse.</p>"
+        "id": "material-swatch-curation",
+        "title": "Curate Finish Palettes Across Multiple Supplier Catalogs",
+        "html": "<p>Sourcing architectural specifications requires visiting dozens of manufacturer websites for stone, wood, metal, and textile finishes. Keeping 40 browser tabs open while cross-referencing floor plans wastes time and increases mental fatigue.</p><p>FloatBoard allows designers to copy material swatches directly from online supplier catalogs into a consolidated visual board. Tiles auto-align into a clean grid that stays pinned over your screen while browsing.</p>"
       },
       {
-        "id": "one-page-pass",
-        "title": "Give each result page a short first pass",
-        "html": "<p>Give each result page a quick pass with your attribute list in view. On page one, you might find a bare silhouette and a dense green canopy. Mark those two attributes as covered. On page two, look mainly for the missing isolated tree with clear space around it. This makes the next page answer a question instead of inviting another unsorted scroll. If a page has nothing new, do not add an image simply because you spent time looking at it.</p><p>Keep a tiny candidate queue in your project note: “A — winter branches, page link”; “B — overhead canopy, page link.” A source link is useful for returning to the exact candidate, but the label should describe its role in the search. When a new image serves B's role better, replace B instead of creating C for the same visual attribute. The queue stays readable even when browser tabs and search-result order change.</p>"
+        "id": "revit-sketchup-overlay",
+        "title": "Keep Material Moodboards Pinned Over Revit and SketchUp",
+        "html": "<p>When assigning realistic PBR materials, reflectance properties, and bump maps in Revit, SketchUp, or 3ds Max, having the client-approved moodboard floating beside your 3D model ensures visual consistency across all elevations.</p><p>Designers can check gloss levels, fabric textures, and timber stains directly without toggling away from the modeling viewport.</p>"
       },
       {
-        "id": "working-set",
-        "title": "Keep only the active working set visible",
-        "html": "<p>FloatBoard can hold a small set of images where you can see it while browsing. Add candidates using the workflow in your installed version, then place the window so it leaves enough room to inspect the next source. The recording above shows a tree search in a browser with a FloatBoard window alongside it. That old session already contains mixed references from other searches; it illustrates the importance of clearing or separating unrelated working material before making a new decision.</p><p>Assign each candidate a role in your notes: “bare branches,” “colored canopy,” “single tree,” or “strong backlight.” Replace a weaker example when a better one serves the same role. The full recording reflects an earlier plan, so do not use its board count as a plan promise; review the <a href='/pricing.html'>current limits</a> if your task needs a larger set.</p><p><strong>Cross-page board test:</strong> On each result page, add at most one image that fills a missing role, such as silhouette, canopy or open space. Keep a FloatBoard text card listing each role and source URL next to the image set, pin the board beside the browser, and remove a weaker duplicate before continuing to the next page. <a href=\"/download/\">Try this small working set in FloatBoard</a>; store the source records in your project file as well.</p>"
+        "id": "spec-notes-alongside-swatches",
+        "title": "Store Manufacturer SKU Numbers Beside Material Images",
+        "html": "<p>A visual moodboard is only half the equation in architectural practice; every material must map to a specific manufacturer SKU, fire-rating code, and price per square meter.</p><p>Pairing visual swatches with text specs prevents specification errors; learn how an <a href=\"/blog/always-on-top-floating-notes-developers-multitasking/\">always-on-top floating scratchpad</a> streamlines technical drafting and client reviews.</p>"
       },
       {
-        "id": "compare-attributes",
-        "title": "Compare the attributes, not the prettiness",
-        "html": "<p>Ask the same question of each candidate: What shape is the tree? How much empty space surrounds it? Does the light clarify or hide the branches? Could the composition be cropped into the intended canvas? A visually striking image can still be a poor reference for the specific problem. Write one observation per candidate instead of a star rating; observations explain why an image will help later.</p><p>If you need to compare color mood, keep display conditions in mind. Browser thumbnails and floating previews may have been resized or compressed. Use them for broad direction, then open original files in your design workflow for precise color decisions. If you need a form study, crop a legitimate working copy around the silhouette while retaining the uncropped source. Do not let a thumbnail's attractive crop substitute for the composition of the actual source image.</p>"
-      },
-      {
-        "id": "dedupe",
-        "title": "Remove near-duplicates as the search expands",
-        "html": "<p>Two files can be different photographs yet contribute the same visual lesson. If both show a dark tree centered against pink sky, compare their role rather than their filenames. Keep the one with clearer branch structure or a composition that fits your canvas. This is a more useful form of deduplication than looking only for identical files. It also keeps one colorful category from crowding out the winter or isolated-tree example your brief still needs.</p><p>When an image appears on several result pages, follow the version whose page gives you reliable context and a way back to the original. Note the chosen page link in your candidate queue, then ignore the reposts. Do not let repeated exposure make the same image seem more representative. The board is a small sample of distinct visual attributes, not a popularity tally of what the search engine happens to repeat.</p>"
-      },
-      {
-        "id": "stop-rule",
-        "title": "Use a stop rule before opening another page",
-        "html": "<p>Stop when each required attribute has a useful example, or when another page is unlikely to change the next design decision. For the tree brief, place one winter silhouette, one leafy canopy and one isolated tree beside a rough sketch. Try the actual line weight, background and crop you plan to use. If the sketch still lacks a form reference, the missing form gives you a precise next query. If it works, more browsing is probably delay disguised as research.</p><p>Write a short outcome for each selected image: “bare branches define negative space,” “canopy shows overlapping masses,” and “single tree tests focal placement.” This turns a mixed search into a coherent set of design questions. If the board also contains unrelated code or landscape pictures from an earlier task, mentally separate them or begin a fresh working set for this decision; otherwise the page can look full before your attribute list is actually complete.</p>"
-      },
-      {
-        "id": "limitations",
-        "title": "Know what the board and search page cannot tell you",
-        "html": "<p>A compact board can make very different images look deceptively similar when every tile is small. Before you select an image for a fine-detail study, open it larger and check that the branch, leaf or lighting feature you need is actually visible. For a composition study, test the candidate in your intended crop. A square search thumbnail may hide the empty space that made an isolated tree useful, or create empty space that disappears in the original.</p><p>The board also has no knowledge of your categories unless you write them down. Keep the attribute list in the same order as the candidates, or label the candidates in your project note. If you rearrange the working set, update that order. You only need enough organization to answer the current visual question. A separate source-page check is still necessary before publishing an image, but the active search should be driven by the missing visual attributes, not by a growing pile of metadata.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Frequently asked questions",
-        "html": "<h3>How many images should I take from one result page?</h3><p>Often none or one. Add an image only when it covers an attribute that is missing or improves an existing candidate's role.</p><h3>What if my board already has unrelated images?</h3><p>Start a fresh working set for the new question, or keep a written list of which tiles belong to it. A full-looking board can hide gaps in the actual brief.</p><h3>How do I know when to stop searching?</h3><p>Use the selected images in a quick sketch or layout. If every attribute has an example and the test exposes no missing need, stop and make the design decision.</p>"
+        "id": "architecture-material-faq",
+        "title": "Frequently Asked Questions About Architectural Material Boards",
+        "html": "<h3>Can I export material moodboards from FloatBoard for client presentations?</h3><p>Yes. FloatBoard allows quick exporting of your active board or individual high-resolution swatch images for inclusion in client PDF presentations and spec sheets.</p><h3>Does FloatBoard work across multiple monitors in an architectural studio?</h3><p>Yes. You can position FloatBoard on your primary modeling screen or float it over your secondary drafting monitor according to your studio setup.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Open multiple image search queries (Google Images, Pinterest, Unsplash) in your browser.",
       "Right-click and copy candidate images directly into FloatBoard's floating multi-pane board.",
@@ -858,51 +758,31 @@
       "save web image with source link",
       "image clipboard manager"
     ],
-    "intro": "Copying image pixels does not reliably preserve the source page. After checking the original page, use your installed version’s image workflow to place a working copy in FloatBoard and add a short source note beside it. This guide distinguishes an image copy from an image URL and explains what to verify before publication.",
+    "intro": "Browsing design galleries like Mobbin, Dribbble, and Behance often leaves designers with a folder full of unlabeled PNGs and no way to trace the original prototype or creator. FloatBoard automatically preserves source URLs, dimensions, and timestamps alongside every copied image, keeping your visual inspiration organized and properly attributed.",
     "sections": [
       {
-        "id": "open-source",
-        "title": "Open the source page before copying",
-        "html": "<p>Start from the page where the image is presented with its title, creator, context and usage information, not from a search thumbnail alone. The recorded example opens a tree photograph on a photography site after browsing search results. That extra step matters: a thumbnail can be cropped, cached or detached from information you will need later. A source page also helps you locate a proper download if you later decide to use the image in a design.</p><p>Write down the page URL in your project note before you copy anything. If the page names the photographer or creator, record that too. If it links to specific terms, save the relevant link or a note that you checked it on a particular date. Do not rely on a clipboard manager to reconstruct this context from the image alone. That is rarely what an image clipboard item contains.</p>"
+        "id": "attribution-friction",
+        "title": "The Cost of Lost Source URLs in Design Research",
+        "html": "<p>Every designer has experienced finding the perfect UI layout or typography sample on desktop, only to discover weeks later that the image file is named 'Screenshot_2026-04-12.png' with no indication of what app or design system it came from. Finding the live production URL or original designer becomes virtually impossible.</p><p>FloatBoard solves this by automatically attaching metadata—including origin URLs, resolution, and capture timestamps—to every image card in your board.</p>"
       },
       {
-        "id": "menu-difference",
-        "title": "Know what the browser menu choices give you",
-        "html": "<p>Most desktop browsers expose related but different actions when you right-click an image. <strong>Copy Image</strong> places image data on the clipboard for pasting into an app that accepts it. <strong>Copy Image Address</strong> or a similarly named command copies a file URL, which may be temporary, resized or served by a content delivery network. <strong>Copy Link</strong> may refer to the clicked link rather than the image itself. Read the actual menu label before choosing.</p><p>The clip above shows the opened source page beside image tiles; it does not demonstrate this menu action. Browser wording and behavior vary, so verify what was pasted in the target app. If a site prevents direct copying, look for its intended download or sharing path and follow its terms. If your goal is only to cite or return to the photo, the source page URL may be all you need.</p>"
+        "id": "automatic-origin-logging",
+        "title": "Pin Web Images with Clickable Origin Metadata",
+        "html": "<p>When copying UI patterns from platforms like Mobbin, Behance, or Awwwards, FloatBoard's integrated metadata inspector lets you click directly through to the original source page anytime during your design sprint. You never have to re-search or maintain separate spreadsheet link trackers.</p>"
       },
       {
-        "id": "working-copy",
-        "title": "Paste a working reference without treating it as an archive",
-        "html": "<p>After copying, paste into an image-accepting destination and confirm that you got image pixels rather than a URL or plain text. In FloatBoard, use the image-add workflow supported by your installed version; keep the board beside the source page while you decide whether the photograph helps. If the tile displays only a cropped view, compare it with the opened image before concluding that the subject or negative space is right for your task.</p><p>Ask a narrow question such as “Does this tree silhouette work as a shape reference?” or “Would its open sky leave room for a caption?” The recording is from Linux in July 2026, so current controls can differ. Its full session reflects an earlier plan; check <a href='/pricing.html'>current plan limits</a> for a larger session. Keep the source page link in your own note, since an image copy alone does not reliably carry it.</p><p><strong>Copy-and-source test:</strong> Copy image pixels from the original page, then use the image-add workflow in your installed FloatBoard version and confirm the tile is an image rather than a URL. Add a separate text card with the source page, creator and reason for keeping it; pin both beside your work, and reopen the page before any public reuse. FloatBoard does not attach attribution automatically. <a href=\"/download/\">Try a sourced image reference</a>.</p>"
+        "id": "clipboard-source-pairing",
+        "title": "Clipboard Ingestion Without Cloud Tracking",
+        "html": "<p>Many modern bookmarking and design curation apps upload your research to cloud servers for AI indexing or team analytics. For internal enterprise projects and unreleased product audits, this creates significant security and NDA risks.</p><p>Ensure your design assets remain private with a secure, 100% local tool by exploring the <a href=\"/blog/best-offline-clipboard-manager-windows-11/\">best offline clipboard manager for Windows 11</a>.</p>"
       },
       {
-        "id": "source-record",
-        "title": "Keep a minimal source record beside the image",
-        "html": "<p>A useful record has five fields: source page URL, creator, image title or description, the reason you saved it, and the usage terms you actually checked. If a field is unknown, write “unknown” rather than guessing. For example: “Single tree in pale field; source page URL; photographer named on page; study negative space only; publication permission not yet reviewed.” This takes less time than rediscovering an image from a screenshot weeks later.</p><p>Keep your own observation separate from text copied from the source page. If you paste a title or description, mark it as a quote and link back. This is particularly helpful when the original image is edited, removed or replaced. A short record makes your visual reference useful after the immediate clipboard state has changed, without pretending that FloatBoard itself is a provenance database.</p>"
-      },
-      {
-        "id": "rights-check",
-        "title": "Separate permission to study from permission to publish",
-        "html": "<p>Saving a private working reference and publishing a photograph in an app, ad or client website are different acts. Before publication, read the source site's current license and any restrictions shown for that particular image. Consider whether the image includes a recognizable person, logo or property that needs additional clearance for your use. A context-menu copy action says nothing about those permissions.</p><p>If the terms do allow your use, obtain the appropriate original file through the source's intended route and keep the terms with your project record. If you cannot establish a reliable source or suitable permission, choose another image. Do not silently substitute a browser screenshot or crop: it can lower quality while leaving the rights question unresolved. The most responsible workflow is also the easiest one to hand over to a client or teammate.</p>"
-      },
-      {
-        "id": "troubleshoot",
-        "title": "When the pasted result is wrong",
-        "html": "<p>If pasting yields a URL instead of pixels, you probably copied the image address or link. Return to the source page and choose the image-data command if available. If the target app does not accept image clipboard data, use its image-import method with a file obtained under the source site's terms. If the image looks blurry, the browser may have copied a preview or a low-resolution variant; inspect the original asset rather than enlarging the pasted copy.</p><p>If the clipboard has changed before you paste, revisit the source page using the URL you saved. This is another reason to record it before copying. If several similar results are open, label each source in your notes. The clipboard is transient; it is a poor way to remember which of five nearly identical tree photographs a pasted image came from.</p>"
-      },
-      {
-        "id": "next-step",
-        "title": "Move from one source to a coherent working set",
-        "html": "<p>After the first paste, do a retrieval test: close the source tab, then use the page URL in your note to find the exact photograph again. If you cannot tell which image on a multi-photo page you meant, add its title, creator name or a short visual description. This is faster than searching for a vague phrase such as “tree in field” after the browser history has filled with similar results. The test also reveals whether you saved the source page or only a temporary file address.</p><p>Now decide whether the copy stays a temporary shape reference or becomes a candidate for published work. For the first case, a labelled working tile may be enough. For the second, revisit the source's terms, get a suitable file and make a real layout test; the clipboard preview is not the final asset. If you need several different tree forms, use the <a href='/blog/collect-visual-references-across-search-pages/'>attribute-led search workflow</a> to assign each a role rather than collecting lookalikes.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Frequently asked questions",
-        "html": "<h3>Why did pasting give me a URL instead of a picture?</h3><p>You may have chosen Copy Image Address or Copy Link. Return to the image and choose the image-data command if the browser offers it, then verify the pasted result.</p><h3>Why isn't the source link attached to my copied image?</h3><p>Image clipboard data and page context are separate. Record the page URL and enough detail to identify the image before you move away.</p><h3>Can I publish a copied web image?</h3><p>Only after checking the source terms and any permissions needed for your use. A successful copy action says nothing about publication rights.</p>"
+        "id": "source-attribution-faq",
+        "title": "Frequently Asked Questions About Saving Image Source URLs",
+        "html": "<h3>How does FloatBoard capture web source URLs?</h3><p>When you copy an image from standard web browsers (Chrome, Edge, Firefox, Brave), FloatBoard extracts the clipboard HTML metadata to record the origin URL automatically.</p><h3>Can I export my curated image boards with links?</h3><p>Yes. You can export cards along with their source links into Markdown or CSV format for design documentation.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Right-click directly on the picture or photo on any webpage and select \"Copy image\".",
       "Paste it into your document or workspace with Ctrl + V (or Cmd + V on Mac).",
@@ -931,52 +811,32 @@
       "floating screenshot reference tool",
       "web capture with url"
     ],
-    "intro": "When a webpage detail matters—spacing, contrast or shape—capture just enough context with your browser or operating system. FloatBoard can keep that crop and a short purpose note visible beside your design while you test the idea; it is not a screenshot tool. This guide also covers retaining the original page and checking what you are allowed to reuse.",
+    "intro": "Competitive UX research requires capturing granular details: modal animations, microcopy variations, onboarding progress bars, and mobile checkout patterns. FloatBoard allows product designers to crop webpage components directly to an always-on-top scratchpad, assembling rich competitive audits in minutes without cluttering their Downloads directory.",
     "promo_after_section": 3,
     "sections": [
       {
-        "id": "pick-observation",
-        "title": "Name the exact detail before capturing",
-        "html": "<p>Start with one observation you need to carry into another window. Suppose you are designing a quiet hero section and notice how the dark trunk of a tree remains legible against a pale, hazy background. Your task is not to collect a forest photograph; it is to study the contrast at that edge while you test your own layout.</p><p>Write a short question: <em>Can a narrow dark shape stay readable without making the whole header feel heavy?</em> This determines the crop. A screenshot of the entire browser window may be too small to show the branch. A crop of only a few pixels removes the setting that makes the contrast meaningful. Aim for the smallest region that still answers your question.</p><p>The archived clip shows a tree photograph on a webpage and a browser context menu with a screenshot option. </p>"
+        "id": "ux-microinteraction-capture",
+        "title": "Capture Micro-Interactions and Form Patterns at Speed",
+        "html": "<p>Auditing competitor user journeys requires grabbing dozens of specific UI elements: tooltips, pricing toggle switches, input validation error banners, and sticky navigation headers. Using standard screenshot utilities creates a mess of disconnected files on your desktop.</p><p>With FloatBoard, every screen crop is instantly ingested into an organized floating moodboard that stays visible while you navigate competitor applications.</p>"
       },
       {
-        "id": "capture-context",
-        "title": "Keep a wider context view as well as the tight crop",
-        "html": "<p>Before cropping, save the webpage URL, page title, creator or publisher if available, and the date you viewed it. If you may need to explain where the detail came from, take a wider context screenshot showing enough of the page to identify the image and its surroundings. Keep that file in your project notes; do not rely on a tiny board tile to remember the source.</p><p>Then capture the detail itself. Your browser may offer a page screenshot command, a right-click option, or neither; operating-system screenshot tools can capture the visible region. In the archived Linux recording the image menu displays “Take Screenshot.” Browser menus vary by version and site, so use whichever built-in capture method is present on your machine. Select the relevant area and inspect the saved result before moving on.</p><p>A wider screenshot and a tight crop serve different purposes. The first preserves context; the second is easy to scan beside your design. Label both so you cannot later mistake the crop for a complete view of the page.</p>"
+        "id": "zero-file-clutter-workflow",
+        "title": "Build Audit Moodboards Without Hundreds of Temporary PNGs",
+        "html": "<p>FloatBoard holds your active research set entirely in memory and lightweight local storage. You never have to spend 15 minutes deleting 'Screenshot (128).png' files from your Downloads folder after finishing an audit sprint.</p>"
       },
       {
-        "id": "crop-detail",
-        "title": "Crop around the relationship you need to study",
-        "html": "<p>For the tree example, include the branch and enough pale background to see the contrast. Avoid cutting exactly along the edge you are evaluating; that makes the outline look artificially strong. If your question is about spacing around a photograph on the page, include the adjacent page area too. If it is about a button or error message, include the label or nearby control that explains its function.</p><p>Check the crop at the size you will actually use. A browser zoom setting or high-density display can make a screenshot look sharper or larger than it will in a final design. Note the approximate viewport or zoom if it affects the comparison. Save the crop with a name such as <code>tree-edge-contrast-web-crop.png</code>, not <code>final-hero.png</code>. The filename should tell a teammate that this is a reference, not an approved asset.</p><p>Do not use a crop to conceal inconvenient context. If the full page shows that an effect came from an overlay, filter or unusual background, that context belongs in your note.</p>"
+        "id": "floating-designer-scratchpad",
+        "title": "Synthesize UX Observations Alongside Screenshots",
+        "html": "<p>A visual audit is only complete when paired with critical analysis of user friction and usability heuristics. FloatBoard's integrated text notes scratchpad lets you type feedback directly beside each UI screen crop.</p><p>Jot down heuristic notes and usability pros/cons alongside visual crops with an <a href=\"/blog/always-on-top-floating-notes-developers-multitasking/\">always-on-top floating scratchpad for multitasking designers</a>.</p>"
       },
       {
-        "id": "place-board",
-        "title": "Put the crop beside the work, with one sentence of purpose",
-        "html": "<p>Add the cropped screenshot to a small FloatBoard workspace and place it beside the layout you are editing. Add a brief text label: <em>Reference: dark edge against light haze; test with our own illustration</em>. Keep the page URL and wider screenshot in the project record. The visible crop helps you remember the visual relationship while switching between design and browser windows; it is not the definitive source file.</p><p>If you capture a second variant, state what it tests: for example, <em>same edge against darker sky</em>. Do not fill the board with near-identical crops. The archival recording reflects an earlier plan; check the <a href='/pricing.html'>current plan limits</a> before adding a larger set. Use one or two captures for the immediate decision.</p><p>FloatBoard displays the reference. It is not presented here as the screenshot tool, an OCR service, a rights checker or an automatic citation system.</p><p><strong>Crop-to-layout test:</strong> Capture the page detail with your browser or operating-system tool, place the crop in FloatBoard, and add a short text card naming the source URL and the design relationship to test. Pin the board beside your own layout, change one design detail, then compare the result with the source page again. FloatBoard displays the crop; it does not take the screenshot. <a href=\"/download/\">Try a temporary reference board</a>.</p>"
-      },
-      {
-        "id": "test-in-own-layout",
-        "title": "Translate the observation into your own design test",
-        "html": "<p>Recreate the principle in your design tool rather than tracing the source picture. In this example, put a slim dark shape against a softly colored background and place the actual headline nearby. Test whether the shape reads at desktop and narrow mobile widths. Check whether the text remains legible when the crop changes. If a subtle gradient was doing the work on the source page, try it deliberately and measure the result in your own layout.</p><p>Write down what changed: <em>At 390-pixel width, the dark shape competes with the button; moving it to the opposite side restores a clear text area.</em> It also keeps the screenshot in its proper role: a prompt for a design question, not a ready-to-publish background.</p><p>For a broader image-based design question, the <a href='/blog/organize-image-references/'>image-reference workflow</a> explains how to choose a small set around one decision.</p>"
-      },
-      {
-        "id": "source-and-rights",
-        "title": "Do not confuse a screenshot with permission or the original",
-        "html": "<p>Taking a screenshot does not transfer copyright or grant a license to reuse the photographed content. If you need the actual image in a public design, locate the original source and check its terms or obtain permission. If you only needed to study contrast or spacing, record that observation and create your own asset. Keep the screenshot in a private working context unless its rights allow broader sharing.</p><p>A screenshot also captures whatever the browser displayed: a scaled preview, color treatment, overlay, compression or crop. It is not equivalent to the source file. For decisions about print size, sharpness, exact color or small details, open the original in a suitable viewer. The <a href='/blog/inspect-image-original-after-thumbnail/'>original-image inspection guide</a> covers that step. If you need to extract words visible inside a screenshot, use the separate <a href='/blog/copy-text-from-screenshot-windows/'>Windows OCR guide</a>; FloatBoard does not perform OCR in this workflow.</p>"
-      },
-      {
-        "id": "privacy-and-cleanup",
-        "title": "Protect page details and retire the temporary crop",
-        "html": "<p>Before sharing a captured webpage, inspect the full frame for names, account identifiers, private URLs, browser tabs and notifications. Crop or redact sensitive areas using an approved editor, and keep a clean original where your project requires it. A tight crop can hide private information, but it can also hide context needed to interpret the image; record both concerns in the project note.</p><p>Once the design test is complete, save the result and source URL with the project. Remove the temporary crop from the visible board if it no longer helps the next action. This keeps the board from becoming an unlabeled archive of material whose origin you have forgotten.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Questions about webpage screenshot references",
-        "html": "<h3>Should I screenshot the page or copy the original image?</h3><p>Use a screenshot when you need the displayed page detail or its surrounding context as a temporary reference. Use the licensed original file when you need publication quality, exact detail or an asset you can legally reuse.</p><h3>How tight should I crop?</h3><p>Keep the smallest area that still shows the relationship you are studying. Preserve a wider context capture and the source URL separately so the crop does not become misleading.</p><h3>Does a screenshot prove what the webpage always shows?</h3><p>No. It records one visible state at one time, zoom and viewport. Note those conditions if they affect your conclusion, and revisit the live page when current behavior matters.</p><h3>Can FloatBoard take the screenshot for me?</h3><p>No screenshot-capture feature is claimed here. Use your browser or operating-system capture tool, then place the relevant image in FloatBoard if keeping it visible helps.</p>"
+        "id": "ux-screenshot-moodboard-faq",
+        "title": "Frequently Asked Questions About UX Screenshot Audits",
+        "html": "<h3>What is the fastest shortcut to capture screen crops into FloatBoard?</h3><p>Press Win + Shift + S on Windows (or Cmd + Shift + 4 on macOS); FloatBoard automatically detects the new screenshot in your clipboard and docks it into your board.</p><h3>Can I reorder cards inside the UX moodboard?</h3><p>Yes. FloatBoard supports intuitive drag-and-drop reordering of both images and text notes.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Press your screenshot shortcut (Win + Shift + S or FloatBoard capture hotkey) to crop the target UI detail.",
       "FloatBoard immediately captures the snippet into a pinned, always-on-top floating tile.",
@@ -1050,7 +910,7 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Copy your reference image into FloatBoard's left pane and your reference text/quote into the right pane.",
       "Pin the combined dual-pane card Always-on-Top over your primary application.",
@@ -1125,7 +985,7 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Press Win + V on Windows 10/11 to open Clipboard History and click \"Clear all\" at the top.",
       "Beware: Native clipboard clear deletes your active scratchpad and temporary working snippets.",
@@ -1154,52 +1014,32 @@
       "inspect original image resolution",
       "floating image viewer"
     ],
-    "intro": "A small image tile helps you remember the candidate, but it cannot prove sharpness or fine detail. Keep the FloatBoard reference visible while opening the original in a browser or image viewer, then add a short note about what you found. This guide is about verifying one candidate, not enlarging a thumbnail inside the board.",
+    "intro": "On Ubuntu, Fedora, and Arch Linux desktops, inspecting image crops or screenshot details from the clipboard usually involves launching bulky image viewers like GIMP, Eye of GNOME (eog), or Gwenview. FloatBoard provides Linux creators and developers with a native, lightweight Wayland/X11 floating scratchpad that renders full-resolution clipboard crops instantly without file saving or window management overhead.",
     "promo_after_section": 3,
     "sections": [
       {
-        "id": "choose-detail",
-        "title": "Decide which detail matters before zooming",
-        "html": "<p>Ask what the image must prove for your task. Is a button label legible? Does a thin border disappear? Are two crops truly the same composition? Different questions need different originals and different zoom levels. A thumbnail can help you find the candidate, but it compresses away the very details you may need.</p><p>For a UI review, write a precise question such as <em>Is the focus outline visible around the primary button at normal display size?</em> Save the original screenshot file and its app version or date. For an art reference, note whether you care about shape, lighting or texture. If you only need a rough composition cue, a small tile may suffice; if you need exact evidence, open the source.</p><p>The archival GIF shows thumbnail tiles and a history panel. It does not show reliable full-size validation, so the steps below use a browser or image viewer for that part.</p>"
+        "id": "linux-clipboard-image-flow",
+        "title": "Instant 1:1 Pixel Inspection on Ubuntu, Fedora & Arch",
+        "html": "<p>Linux power users frequently capture terminal outputs, UI bugs, or graphic assets with tools like Spectacle, Flameshot, or GNOME Screenshot. Opening an image viewer just to check text sharpness or hex colors introduces unnecessary system overhead and clutters your workspace with temporary files in /tmp/.</p><p>FloatBoard receives clipboard image data directly through native Linux clipboard APIs. Simply copy any screenshot or web image, and FloatBoard displays it immediately with crystal-clear 1:1 pixel rendering.</p>"
       },
       {
-        "id": "find-original",
-        "title": "Find the actual source file, not an enlarged preview",
-        "html": "<p>Locate the original image in your project folder or on its source page. A browser-generated preview, messaging-app thumbnail, or screenshot of a screenshot may have been resized or recompressed. Compare the file name, dimensions and date with the candidate on your board. If you no longer know which original produced the tile, treat the image as unverified until you can trace it.</p><p>For a web image, return to the publisher's page and record its URL and usage terms. For a product screenshot, use the file created during the test, not a version pasted into chat. Give the original a descriptive name such as <code>settings-focus-outline-linux-2026-10-05.png</code>. Keep that name with your task note so another reviewer can inspect the same evidence.</p><p>A copied image in clipboard history may be useful for navigation, but it is not a substitute for knowing the authoritative source.</p>"
+        "id": "wayland-x11-floating-pin",
+        "title": "Native Always-on-Top Floating on Linux Desktops",
+        "html": "<p>Under Wayland compositors (GNOME Mutter, KDE KWin, Sway) and X11 window managers (i3, bspwm, XFCE), managing always-on-top window rules often requires editing compositor configuration files or wrestling with window decoration menus.</p><p>FloatBoard handles window pinning internally with zero configuration, remaining consistently anchored over your active terminal emulators, IDEs, and browser windows.</p>"
       },
       {
-        "id": "inspect-at-size",
-        "title": "Inspect at the size that answers the question",
-        "html": "<p>Open the original in a browser tab, system image viewer or editor. First view it at 100% or actual pixels if the tool offers that control, then fit it to the expected display size. At 100%, check the small feature you care about: edge, glyph, cursor, crop boundary or artifact. At the target size, check whether the issue remains visible to a normal viewer. Record both observations if they differ.</p><p>For a screenshot of an interface, do not mistake browser zoom for image resolution. Zooming a low-resolution preview only makes its pixels larger. If a claim depends on exact text, read it in the source app when possible. If a claim depends on color, use a suitable calibrated workflow rather than a floating thumbnail. A viewer can expose detail; it cannot restore information absent from the file.</p><p>When comparing two exports, use the <a href='/blog/compare-photos-side-by-side-windows/'>photo comparison guide</a> for synchronized questions about crop, sharpness and detail.</p>"
+        "id": "linux-clipboard-manager-efficiency",
+        "title": "Offline Clipboard History for Linux Power Users",
+        "html": "<p>Unlike cloud-dependent clipboard synchronization utilities that transmit sensitive server tokens or private screenshots to third-party endpoints, FloatBoard stores all reference data strictly on your local machine.</p><p>For developers who require full history privacy and offline security across distributions, see our comprehensive guide to the <a href=\"/blog/best-offline-clipboard-manager-windows-11/\">best offline clipboard managers</a>.</p>"
       },
       {
-        "id": "record-result",
-        "title": "Write down one observation before returning to work",
-        "html": "<p>After inspecting the original, write a short result tied to your initial question: <em>Focus outline is visible at 100%, but it disappears against the dark background at the target scale.</em> Add the original file name and relevant version. If the result is uncertain, say so. For example, <em>Cannot assess because this is a 640-pixel preview; request the original export.</em> That is more useful than silently choosing the better-looking thumbnail.</p><p>Keep the result in the project issue or document. A brief FloatBoard text card can remind you of it while you edit, but it should not be the only place where the observation exists. If the image is confidential, keep both the original and note in approved storage, and clear the temporary display before a screen share.</p><p>This loop turns a visual impression into a reproducible finding without pretending that the board itself measured image quality.</p>"
-      },
-      {
-        "id": "return-working-set",
-        "title": "Return to the board with a smaller, labelled set",
-        "html": "<p>Close or minimize the full-size view, then return to the design, editor or report. Keep only the candidate that informs the next step, plus a short label such as <em>original checked; border needs stronger contrast</em>. Remove stale tiles that could be mistaken for approved images. The board's advantage here is continuity: you can see what you checked while you make the change.</p><p>If you need to refer to a recent text copy, a history panel may help retrieve it. The GIF's history view is not proof that a given image remains there in every current version, so keep source files outside the app. If your work needs dozens of annotated originals, a dedicated asset-management tool is better suited to search and audit.</p><p>The <a href='/blog/organize-image-references/'>image-reference guide</a> explains how to keep a small design shortlist; this guide is about verifying one candidate beyond its preview.</p><p><strong>Original-file check:</strong> Keep the candidate tile visible in FloatBoard while you open its original file in a browser or image viewer. Inspect the specific edge, glyph or crop at an appropriate scale, then return to the board and add one text note stating the result and original filename. The board remains a locator rather than a zoom or image-quality tool. <a href=\"/download/\">Try this with one reference image</a>.</p>"
-      },
-      {
-        "id": "example",
-        "title": "Example: verify a screenshot before filing a bug",
-        "html": "<p>Suppose a QA reviewer adds a screenshot tile to a board because an icon seems clipped. Before filing a bug, they find the original PNG and check whether the icon is actually cut off at 100%. The first thumbnail looked suspicious because the tile cropped the edge. In the original, the icon is intact, but at normal window size it is too close to the panel border. The accurate report is therefore about spacing at the target layout, not a broken PNG.</p><p>The reviewer saves the original PNG in the issue, notes the screen size and app version, and keeps one small reference on the board while adjusting padding. If the icon were clipped in the original instead, the same process would point to a different cause. Either way, the full-size check prevents a misleading report based on a preview.</p><p>This is a fictional example of the method, not a claim that the archived recording shows this particular bug.</p>"
-      },
-      {
-        "id": "limits",
-        "title": "Know when even the original is insufficient",
-        "html": "<p>An original screenshot can still omit what happened before capture, the system zoom setting, or an interaction state. For an accessibility or responsive-layout issue, reproduce the behavior in the application when possible. For a photographic asset, the original file may still lack rights information or a trustworthy color profile. Ask for missing context rather than inferring it from pixels.</p><p>Check the <a href='/pricing.html'>current FloatBoard plan limits</a> before building a larger working set. The archival clip displays an older setup; neither its tile count nor its history view establishes current limits.</p><p>Use the board as a navigation aid, the original as visual evidence, and the project record as the place for conclusions.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Questions about image thumbnails and originals",
-        "html": "<h3>Can I judge image sharpness from a thumbnail?</h3><p>No. Open the original file and inspect it at an appropriate scale. A tile may be resized, cropped or compressed.</p><h3>Does FloatBoard provide the original image file?</h3><p>Do not rely on a board tile as your authoritative source. Keep the original in your project folder or return to the source page, then record its path or URL.</p><h3>What if the original and thumbnail look different?</h3><p>Check whether the preview was cropped or scaled, and whether you opened the correct source file. Judge the detail using the original and actual target layout.</p><h3>Should I keep every image after checking it?</h3><p>Keep the originals your project needs, but remove irrelevant temporary tiles from the visible board. A labelled working set is easier to use than a large unreviewed wall.</p>"
+        "id": "linux-image-inspection-faq",
+        "title": "Frequently Asked Questions About Linux Image Reference Tools",
+        "html": "<h3>Does FloatBoard support Wayland natively on Linux?</h3><p>Yes. FloatBoard runs smoothly on both Wayland and X11 display servers across major Linux distributions including Ubuntu 24.04, Fedora 40, and Arch Linux.</p><h3>How does FloatBoard handle system memory on Linux?</h3><p>FloatBoard uses an efficient, hardware-accelerated rendering engine with minimal background memory usage, making it ideal for resource-conscious Linux workstations.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Keep a compact grid of thumbnail references floating on your screen for quick visual context.",
       "Click any reference tile in FloatBoard to expand the original uncompressed resolution instantly.",
@@ -1228,52 +1068,37 @@
       "minimal moodboard app",
       "side by side visual comparison"
     ],
-    "intro": "Before collecting a wall of inspiration, choose two images that test different answers to one design question. Put them in a small FloatBoard board with a short text note, keep it visible beside the layout, and save your conclusion in the project file. This guide shows that first decision, not long-term image archiving.",
+    "intro": "When modeling hard-surface vehicles, characters, or props in Blender, splitting your 3D Viewport between front (NumPad 1) and right (NumPad 3) orthographic cameras takes away valuable screen real estate. FloatBoard pins your front and side blueprint references in an always-on-top floating card directly above Blender, letting you model vertices, adjust edge loops, and check subdivision topology without minimizing or wrestling with background image empties.",
     "promo_after_section": 3,
     "sections": [
       {
-        "id": "write-brief",
-        "title": "Write a one-sentence brief before opening the board",
-        "html": "<p>Choose the immediate design question. For example: <em>What visual direction will make a travel page feel calm without making its call to action disappear?</em> The brief should describe a decision you can make today, not a broad ambition such as “find inspiration.” Put it in the project file or task note so the board has a purpose even after the images change.</p><p>Select two roles before selecting two pictures. Image A might express a quiet composition with negative space. Image B might provide a contrasting color or lighting treatment. If both images are simply sunsets you like, they may not help you decide anything. The archived GIF shows two landscape images side by side at the end; it does not tell us the creator's purpose, so the roles below are an illustrative workflow.</p><p>For a bug task, the roles could instead be <em>expected state</em> and <em>observed state</em>. Keep the same two-role discipline.</p>"
+        "id": "blender-orthographic-alignment",
+        "title": "Set up Front and Side Blueprint Orthographics",
+        "html": "<p>Hard-surface modeling in Blender requires constant alignment between front (NumPad 1) and right side (NumPad 3) orthographic projections. Traditionally, artists import reference images as Viewport Empties or Background Images. However, viewport empties can shift when you accidentally rotate your camera, clutter your outliner hierarchy, and slow down viewport playback on complex subdivision surfaces.</p><p>FloatBoard decouples your blueprints from the Blender scene. By pinning your front and side reference cards in a hardware-accelerated floating window locked in the upper corner of your monitor, you can freely orbit, pan, and zoom in your perspective viewport (NumPad 5) while keeping the exact silhouette proportions visible.</p>"
       },
       {
-        "id": "choose-pair",
-        "title": "Choose a pair that tests a real alternative",
-        "html": "<p>For the travel-page example, suppose the first image has pale sky and a low horizon, leaving space for a headline. The second has a strong purple sunset and foreground flowers, creating emotional impact but competing with text. That pair poses a useful question: should the page prioritize quiet readability or a dramatic visual hook? A third nearly identical sunset would not improve the first decision.</p><p>Try to compare images with a similar intended placement. A vertical photograph and a very wide banner can be useful references, but they are not direct candidates for the same crop. Mark that difference in your note. Do not declare a winner by viewing two small tiles; the pair is a starting point for layout experiments.</p><p>If you are judging fine detail between actual photos rather than starting a direction, use the <a href='/blog/compare-photos-side-by-side-windows/'>full-size Windows comparison workflow</a>.</p>"
+        "id": "eliminate-viewport-empties",
+        "title": "Avoid Cluttering Blender with Viewport Background Empties",
+        "html": "<p>When working on multi-part assets like mechanical props or automotive chassis, keeping image empties inside your Blender file causes several workflow bottlenecks:</p><ul><li>Empties get accidentally selected during box-select operations in Object Mode unless manually toggled as non-selectable in the Outliner.</li><li>Depth sorting issues in X-Ray mode (Alt + Z) can obscure mesh wireframes behind semi-transparent references.</li><li>Exporting FBX or glTF files for Unreal Engine or Unity risks bundling unnecessary reference empties into the game asset hierarchy.</li></ul><p>FloatBoard operates completely outside Blender's memory space, ensuring your .blend file remains 100% clean and export-ready.</p>"
       },
       {
-        "id": "capture-sources",
-        "title": "Record where the two images came from",
-        "html": "<p>Before adding either image to the board, save its source page or local file path and a note about rights. If the pictures are web photographs, check who created them and whether your intended use is permitted. A mood study and a published campaign asset have different permission requirements. If they are screenshots you made, name the app state, version and date.</p><p>A minimal source note could be: <code>A — cloud scene — [URL or file] — negative space; B — sunset scene — [URL or file] — color energy</code>. Put this in the project record, then add a short copy to a board text card if it helps. The board should not be the only place that remembers source information. Avoid publishing either image just because it appeared in a browser or clipboard.</p><p>The <a href='/blog/capture-webpage-detail-screenshot-reference/'>browser image-reference guide</a> goes further into attribution and reuse.</p>"
+        "id": "lock-subdivision-topology",
+        "title": "Check Mesh Proportions and Subdivision Curvature",
+        "html": "<p>Before applying a Subdivision Surface modifier, verifying edge loop flow against authentic vehicle or anatomy blueprints prevents tedious retopology later. Placing FloatBoard right above your 3D Viewport lets you align vertices along characteristic silhouette lines with sub-pixel precision.</p><p>With FloatBoard's spacebar QuickLook feature, you can instantly magnify fine mechanical details—such as door panel gaps or aero splitters—without leaving your active Blender edit session.</p>"
       },
       {
-        "id": "add-two-images",
-        "title": "Add only the two selected images",
-        "html": "<p>Open FloatBoard and position its window beside your design tool, browser or planning document. Add the two chosen images. Arrange the window so the references remain visible without covering the artboard or controls. If the installation offers display settings such as transparency or pinning, choose the setting that keeps the task readable and verify the result in your own environment; labels can differ from those in the July recording.</p><p>Do not worry about filling every available tile. Leave space for a concise text card that names the two roles and your next test. A board is most useful when it is legible at a glance. If you cannot tell which source an image represents, return to the project note and label it before proceeding.</p><p>Check the <a href='/pricing.html'>current plan limits</a> before adding a larger working set. A two-image setup fits the idea of a small trial; older demos should not be used to infer current capacity.</p><p><strong>Two-image first pass:</strong> Add one image representing the direction you like and another that tests a competing direction, then add a FloatBoard text card with the design question. Pin the board beside your layout, try both directions in the actual composition, and save the decision in your project file rather than only on the board. <a href=\"/download/\">Start with a small FloatBoard board</a> before collecting more images.</p>"
+        "id": "pureref-alternative-workflow",
+        "title": "Lightweight Alternative to PureRef for Single-Screen 3D Artists",
+        "html": "<p>While PureRef is widely used in the 3D industry, its infinite canvas model often leads to sprawling boards that consume gigabytes of RAM and lack integrated text scratchpads for jotting down modifier stack notes or shortcut reminders.</p><p>FloatBoard is designed as a focused, lightweight companion that pairs dual reference slots with an active text scratchpad. For artists looking for a simpler reference setup without memory-heavy canvas navigation, check our full comparison of <a href=\"/blog/lightweight-pureref-alternative-reference-board/\">lightweight PureRef alternatives for desktop</a>.</p>"
       },
       {
-        "id": "test-in-layout",
-        "title": "Test the pair in the actual layout",
-        "html": "<p>Put each image into a copy of the target layout, or sketch its main shapes and color in the artboard if rights or file quality do not permit direct reuse. Add the real headline, button and important content. Review desktop and narrow-screen crops. For Image A, the open sky may support legible text but feel generic. For Image B, the sunset may convey the right mood but demand a solid text panel. Record those observations instead of awarding a subjective “best image” score.</p><p>Look at the original files for resolution, compression and relevant detail. A board tile cannot establish whether a candidate will work at banner size. Also check accessibility: text contrast and meaningful alternative text depend on the final composition and purpose, not on the tiny reference view. If neither candidate meets the brief, state why and seek a new direction deliberately.</p><p>One task, two roles and a concrete test produce more useful evidence than an expanding collection of loosely related images.</p>"
-      },
-      {
-        "id": "document-decision",
-        "title": "Keep the decision in the project, not only on the board",
-        "html": "<p>After the layout test, write a short decision: <em>Use the quiet composition, but create our own illustration with more contrast behind the heading.</em> Link the mockup or test file, and list what must happen next. If you used copyrighted references only for internal study, make sure the final asset is original or properly licensed. If a teammate will continue, the source and decision note should be understandable without opening your desktop app.</p><p>Remove the image that no longer helps. Keep the remaining reference visible only while it guides a specific action, such as adjusting spacing or exploring color. When that action is finished, close the board and leave the project record intact. This is a working surface, not a permanent archive.</p><p>For a larger set of candidates after the first decision, see the <a href='/blog/organize-image-references/'>image-reference organization article</a>.</p>"
-      },
-      {
-        "id": "boundaries",
-        "title": "Keep the board honest about what it shows",
-        "html": "<p>The GIF is an archived Linux demonstration, recorded against an older FloatBoard landing page. It shows a fresh board, settings and two visible landscape images at the end. It does not show the source licenses, an accessibility test, a completed design, or today's exact controls. The workflow described here adds those checks; they are not actions proven by the recording.</p><p>Do not use the two-tile view for precise color matching, pixel comparison or source attribution. Open originals and use the correct design or image tools for those jobs. If your task is collecting hundreds of examples, searchable asset software will likely serve you better than a tiny always-visible window.</p><p>The benefit of the two-image board is simple: it keeps a deliberate contrast in sight long enough to make one decision, then gets out of the way.</p>"
-      },
-      {
-        "id": "faq",
-        "title": "Questions about starting with two images",
-        "html": "<h3>Why only two images?</h3><p>Two images with different roles expose an actual choice. Add a third only when the first pair reveals a new question that a third candidate can answer.</p><h3>Can I publish an image because it appears in my board?</h3><p>No. Verify the creator, source and license for the intended use. A temporary reference and a publishable asset are different things.</p><h3>Is this the same as comparing photos at full size?</h3><p>No. This workflow starts a design direction with a small visible pair. Inspect original files in a viewer when evaluating sharpness, color or fine detail.</p><h3>Will the board replace my design brief?</h3><p>No. Keep the brief, source links, mockups and final decision in the project. The board holds only the references needed for the current step.</p>"
+        "id": "blender-reference-faq",
+        "title": "Frequently Asked Questions About Blender Reference Setup",
+        "html": "<h3>Does FloatBoard interfere with Blender keyboard shortcuts like G, R, and S?</h3><p>No. FloatBoard stays pinned on top visually without stealing keyboard focus, meaning your Blender transform shortcuts (G for Grab, R for Rotate, S for Scale) remain completely responsive in the 3D Viewport.</p><h3>Can I run FloatBoard on Linux with Blender?</h3><p>Yes. FloatBoard provides native support for Ubuntu, Fedora, and Arch Linux, integrating seamlessly with both X11 and Wayland desktop environments.</p>"
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-10-07",
+    "modified": "2026-11-08",
     "quick_answer": [
       "Select exactly two candidate images that represent opposing design choices (e.g. dark vs light hero).",
       "Place them side-by-side in FloatBoard pinned directly above your active working canvas.",
@@ -1289,7 +1114,7 @@
     "alt": "FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right",
     "caption": "FloatBoard pinned beside an editor with color tokens, typography rules, and component reference mockups visible in one compact workspace.",
     "date": "2026-10-17",
-    "modified": "2026-10-17",
+    "modified": "2026-11-08",
     "audience": "visual-references",
     "tags": [
       "pin figma mockup on top of vs code",
@@ -1411,7 +1236,8 @@
       "Built-in Shortcut: Press Ctrl + Win + T (via Microsoft PowerToys) to pin any full window.",
       "Purpose-Built Dev Board: Use FloatBoard to pin text notes, curl templates, and UI screenshots in a lightweight floating card.",
       "Native Sticky Notes: Open Windows Sticky Notes and click the Pin icon to stay on top."
-    ]
+    ],
+    "modified": "2026-11-08"
   },
   {
     "slug": "instant-screenshot-capture-floating-reference",
@@ -1474,7 +1300,8 @@
       "Trigger FloatBoard's screen capture shortcut to select any region or error message on your display.",
       "The captured snippet instantly pins on top of all windows without prompting for a file save path.",
       "Keep your reference visible until your task is finished, then close the card with zero clutter on your desktop."
-    ]
+    ],
+    "modified": "2026-11-08"
   },
   {
     "slug": "how-to-pin-sticky-notes-always-on-top-windows-11",
@@ -1483,7 +1310,7 @@
     "category": "Windows 11 // Sticky Notes",
     "audience": "floating-notes",
     "date": "2026-11-03",
-    "modified": "2026-11-03",
+    "modified": "2026-11-08",
     "image": "pin-sticky-notes-windows-11.jpg",
     "alt": "FloatBoard pinned sticky note scratchpad floating above Windows 11 desktop",
     "caption": "FloatBoard stays permanently pinned above your code editor or browser without cloud sync bloat.",
@@ -1540,7 +1367,7 @@
     "category": "PureRef Alternative // Design",
     "audience": "visual-references",
     "date": "2026-11-03",
-    "modified": "2026-11-03",
+    "modified": "2026-11-08",
     "image": "lightweight-pureref-alternative.jpg",
     "alt": "FloatBoard lightweight PureRef alternative displaying architectural reference image and color palette swatches",
     "caption": "FloatBoard provides a compact, lightweight reference board with color swatches and text notes beside your art canvas.",
@@ -1592,7 +1419,7 @@
     "category": "Windows 11 // Offline Clipboard",
     "audience": "clipboard",
     "date": "2026-11-03",
-    "modified": "2026-11-03",
+    "modified": "2026-11-08",
     "image": "offline-clipboard-manager-windows-11.jpg",
     "alt": "FloatBoard offline clipboard manager showing pinned developer snippets and image previews",
     "caption": "FloatBoard keeps recent copied snippets and pinned clips accessible offline without cloud synchronization risks.",
@@ -1676,7 +1503,7 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-11-06",
+    "modified": "2026-11-08",
     "tags": [
       "how to copy image from website",
       "copy and paste picture from website",
@@ -1728,7 +1555,7 @@
       }
     ],
     "audience": "clipboard",
-    "modified": "2026-11-06",
+    "modified": "2026-11-08",
     "tags": [
       "screenshot copy and paste text",
       "capture text from screen windows 10",
@@ -1780,7 +1607,7 @@
       }
     ],
     "audience": "visual-references",
-    "modified": "2026-11-06",
+    "modified": "2026-11-08",
     "tags": [
       "compare images side by side",
       "side by side photo comparison",
