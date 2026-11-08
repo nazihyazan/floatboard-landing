@@ -14,21 +14,22 @@ assert len(posts_by_slug) == len(posts), 'Duplicate blog slug'
 esc = html.escape
 
 # 6 Radiant Cosmic Color Palettes inspired by UiSavior, Pelmatech, FluxEdit & Solix
+# Palette 0 matches the Exact "Unexpected Accent" Rule: Midnight Black (#00070A), Electric Blue (#0267DE), Cantaloupe Orange (#FC7940)
 PALETTES = [
     {
-        'id': 'cyber-blue',
-        'name': 'Electric Cyber Blue & Neon Coral',
-        'primary': '#0297de',
-        'primary_rgb': '2, 151, 222',
-        'secondary': '#fc734d',
-        'secondary_rgb': '252, 115, 77',
-        'accent': '#fd91cc',
-        'accent_rgb': '253, 145, 204',
-        'dark_bg': '#02070a',
-        'card_bg': 'rgba(13, 22, 32, 0.72)',
-        'btn_gradient': 'linear-gradient(135deg, #0297de, #016fa3)',
-        'btn_hover_gradient': 'linear-gradient(135deg, #05a7f5, #0297de)',
-        'cta_gradient': 'linear-gradient(135deg, #fc734d 0%, #d83995 100%)',
+        'id': 'midnight-cantaloupe',
+        'name': 'Midnight Black, Electric Blue & Cantaloupe Orange',
+        'primary': '#0267de',
+        'primary_rgb': '2, 103, 222',
+        'secondary': '#fc7940',
+        'secondary_rgb': '252, 121, 64',
+        'accent': '#fc7940',
+        'accent_rgb': '252, 121, 64',
+        'dark_bg': '#00070a',
+        'card_bg': 'rgba(255, 255, 255, 0.03)',
+        'btn_gradient': 'linear-gradient(135deg, #fc7940 0%, #ff5238 100%)',
+        'btn_hover_gradient': 'linear-gradient(135deg, #ff8c5a 0%, #fc7940 100%)',
+        'cta_gradient': 'linear-gradient(135deg, #fc7940 0%, #ff5238 100%)',
     },
     {
         'id': 'aurora-coral',
@@ -107,7 +108,7 @@ PALETTES = [
     },
 ]
 
-nav = '''<nav class="guide-nav" aria-label="Main navigation">
+nav = '''<nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -117,10 +118,18 @@ nav = '''<nav class="guide-nav" aria-label="Main navigation">
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
 </div>
 </nav>'''
 
@@ -129,17 +138,31 @@ announcement_bar = '''<aside class="editorial-top-announcement" aria-label="Prod
 <a href="/pricing">Get $5.99 lifetime license →</a>
 </aside>'''
 
-sidebar_download_card = '''<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+sidebar_download_card = '''<div class="editorial-card-sidebar glass-cta-sidebar" aria-label="Download FloatBoard desktop app">
+<div class="sidebar-mockup-preview">
+<div class="sidebar-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="sidebar-mockup-tag">ALWAYS ON TOP</span>
+</div>
+<div class="sidebar-preview-frame">
+<video class="guide-demo sidebar-loop-video" width="480" height="270" autoplay muted loop playsinline controls preload="none" poster="/blog/assets/gif-1-poster.jpg" aria-label="5-second looping preview of FloatBoard pinned above desktop workspace">
+<source src="/blog/assets/gif-1-demo.mp4" type="video/mp4">
+</video>
+</div>
+</div>
 <div class="editorial-sidebar-brand">
-<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
+<img src="/icon.png" width="32" height="32" alt="FloatBoard icon" class="guide-brand-icon">
 <div>
-<h4 class="editorial-sidebar-title">FloatBoard</h4>
-<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
+<h4 class="editorial-sidebar-title">FloatBoard Desktop</h4>
+<p class="editorial-sidebar-sub">Windows, macOS &amp; Linux</p>
 </div>
 </div>
-<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
-<a href="/download/" class="editorial-btn-black">Download Free App →</a>
-<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+<p class="editorial-sidebar-desc">Eliminate the Alt-Tab tax. Keep active clipboard clips, code snippets, and reference images pinned permanently in a transparent floating board.</p>
+<a href="/download/" class="sidebar-cta-btn">Download Free App →</a>
+<div class="sidebar-guarantee-row">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+<span>100% Offline · $5.99 Lifetime · No Subscriptions</span>
+</div>
 </div>'''
 
 incontent_dark_card = '''<div class="editorial-dark-card" aria-label="Product showcase">
@@ -232,16 +255,49 @@ def page(path, title, description, body, schema, picture=None, palette=None):
     kind = 'article' if is_article else 'website'
     title_tag = f"{esc(title)} | FloatBoard" if len(title) <= 46 else esc(title)
     style_block = generate_palette_style(palette)
+    # Replace top announcement bar with clean hero on blog index
+    top_bar = '' if path.strip('/') == 'blog' else announcement_bar
     result = f'''<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title_tag}</title><meta name="description" content="{esc(description)}">
 <link rel="canonical" href="{url}"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="{kind}"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{url}"><meta property="og:image" content="{social}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}"><meta name="twitter:description" content="{esc(description)}"><meta name="twitter:image" content="{social}">
 <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False).replace('<', chr(92)+'u003c')}</script>
 {style_block}
-</head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a>{announcement_bar}{nav}<main id="main">{body}</main>{footer}<script>document.addEventListener("DOMContentLoaded",function(){{var v=document.querySelector("video.guide-demo");if(v){{v.muted=true;v.play().catch(function(){{}});}}}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>'''
+</head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a>{top_bar}{nav}<main id="main">{body}</main>{footer}<script>
+(function(){{
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {{
+    document.documentElement.setAttribute('data-theme', stored);
+  }}
+  document.addEventListener("DOMContentLoaded", function(){{
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {{
+      btn.addEventListener("click", function(){{
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {{
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        }} else {{
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }}
+      }});
+    }}
+    var v = document.querySelector("video.guide-demo");
+    if (v) {{
+      v.muted = true;
+      v.play().catch(function(){{}});
+    }}
+  }});
+}})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>'''
     dest = ROOT / path.strip('/') / 'index.html'
     custom_themed_slugs = {
         'blog/clear-copied-text-history-keep-working-set',
@@ -274,19 +330,25 @@ audiences = {
         'guide_label': 'Download Reference Board',
     },
 }
-featured_order = {
-    'windows-clipboard-history-vs-floating-notes': 0,
-    'clear-copied-text-history-keep-working-set': 1,
-    'keep-reference-notes-visible-while-writing': 0,
-    'keep-meeting-notes-visible-video-call': 1,
-    'code-snippets-and-screenshots': 2,
-    'organize-image-references': 0,
-    'compare-photos-side-by-side-windows': 1,
-}
-cards = {audience: [] for audience in audiences}
+
+def get_filter_tags(p):
+    tags = ['all']
+    aud = p.get('audience', '')
+    cat = p.get('category', '').lower()
+    slug = p.get('slug', '').lower()
+    
+    if aud == 'clipboard' or 'clipboard' in cat or 'clipboard' in slug or 'copy' in slug:
+        tags.append('clipboard')
+    if aud == 'visual-references' or 'pureref' in slug or 'image' in cat or 'photo' in cat or 'design' in cat:
+        tags.append('visual-references')
+    if 'developer' in cat or 'coding' in cat or 'tokens' in slug or 'code' in slug or 'power users' in cat or 'multitask' in cat:
+        tags.append('developer')
+    if aud == 'floating-notes' or 'notes' in cat or 'sticky' in slug or 'always on top' in p['title'].lower():
+        tags.append('floating-notes')
+    return ' '.join(tags)
+
+# Build all individual blog post articles
 for post_index, p in enumerate(posts):
-    audience = p['audience']
-    assert audience in audiences, f'Unknown audience for {p["slug"]}: {audience}'
     palette = PALETTES[post_index % len(PALETTES)]
     path = '/blog/' + p['slug'] + '/'
     toc = ''.join(f'<li><a href="#{s["id"]}">{esc(s["title"])}</a></li>' for s in p['sections'])
@@ -426,27 +488,217 @@ for post_index, p in enumerate(posts):
     else:
         schema = {'@context':'https://schema.org', **article_schema}
     page(path,p['title'],p['description'],body,schema,p['image'],palette=palette)
-    cards[audience].append((featured_order.get(p['slug'], 100), -date.fromisoformat(p['date']).toordinal(), f'<article class="blog-card"><a href="{path}" aria-label="{esc(p["title"])}">{image(p,True)}</a><div><p class="guide-eyebrow">{esc(p["category"])}</p><h3><a href="{path}">{esc(p["title"])}</a></h3><p>{esc(p["description"])}</p><a href="{path}">Read article →</a></div></article>'))
 
-blog_sections = []
-for key, info in audiences.items():
-    entries = ''.join(markup for _, _, markup in sorted(cards[key]))
-    blog_sections.append(f'<section id="{key}" class="blog-topic" aria-labelledby="{key}-heading"><h2 id="{key}-heading">{info["title"]}</h2><p>{info["description"]} <a href="{info["guide"]}">{info["guide_label"]}</a>.</p><div class="blog-grid">{entries}</div></section>')
+# ==============================================================================
+# Build High-Converting SaaS Editorial Blog Index (https://floatboard.xyz/blog/)
+# Specifications:
+# 1. Midnight Black (#00070A), Electric Blue (#0267DE), Cantaloupe Orange (#FC7940)
+# 2. Hero: Fluted Glass layer + Radial glows (Electric Blue center, Cantaloupe bottom)
+# 3. Mixed Editorial Typography: Plus Jakarta Sans + Instrument Serif italic focal word
+# 4. Featured Pillar Bento Grid (1 flagship + 2 stacked secondary) + Filterable 3-col grid
+# 5. Conversion Pill CTA inside hero replacing top discount banner
+# ==============================================================================
 
-blog_intro = '''<header class="editorial-wrapper editorial-index-header">
-<div class="editorial-badge-row" style="justify-content: center; margin-bottom: 16px;">
-<span class="editorial-category-badge">KNOWLEDGE BASE &amp; GUIDES</span>
+# Flagship Post: Best Offline Clipboard Manager
+flagship_post = posts_by_slug['best-offline-clipboard-manager-windows-11']
+flagship_img = image(flagship_post, lazy=False)
+
+# Secondary Stacked Post 1: Lightweight PureRef Alternative
+sec1_post = posts_by_slug['lightweight-pureref-alternative-reference-board']
+sec1_img = image(sec1_post, lazy=True)
+
+# Secondary Stacked Post 2: Always on Top Windows 11 & Mac
+sec2_post = posts_by_slug['always-on-top-floating-notes-developers-multitasking']
+sec2_img = image(sec2_post, lazy=True)
+
+# Generate Bento Grid Cards for all 27 articles
+all_bento_cards_html = []
+for p in posts:
+    filter_tags = get_filter_tags(p)
+    card_path = f"/blog/{p['slug']}/"
+    card_img = image(p, lazy=True)
+    all_bento_cards_html.append(f'''<article class="editorial-bento-card" data-category="{filter_tags}" data-audience="{p['audience']}">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · {esc(p['category'])}</span>
 </div>
-<h1 class="editorial-title">Keep copied text, notes and images visible while you work</h1>
-<p class="editorial-intro-text">FloatBoard is a desktop working board for short notes and image references that stays above your other windows. Explore practical workflow guides, alternatives comparisons, and multi-clipboard tips.</p>
-</header>'''
-blog_outro = '''<section class="editorial-wrapper editorial-index-about">
+<a href="{card_path}" class="card-media-link" aria-label="{esc(p['title'])}">
+{card_img}
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">{esc(p['category'])}</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="{card_path}">{esc(p['title'])}</a></h3>
+<p class="card-description">{esc(p['description'])}</p>
+<div class="card-footer-action">
+<a href="{card_path}" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article>''')
+
+blog_index_body = f'''<header class="editorial-index-hero">
+<div class="hero-glow-layer" aria-hidden="true"></div>
+<div class="fluted-glass-layer" aria-hidden="true"></div>
+<div class="hero-content">
+<div class="editorial-badge-row" style="justify-content: center; margin-bottom: 20px;">
+<span class="editorial-category-badge">SAAS EDITORIAL HUB &amp; GUIDES</span>
+</div>
+<h1 class="hero-editorial-title">Keep Your References Visible at the Speed of <em class="editorial-focal-italic">Thought</em>.</h1>
+<p class="hero-editorial-sub">FloatBoard eliminates the 200-daily Alt-Tab tax. Pin active clipboard clips, code snippets, and visual moodboards permanently above your workspace in a zero-latency, 100% offline desktop board.</p>
+<div class="hero-cta-wrapper">
+<a href="/download/" class="hero-cta-pill">
+<span class="cta-pill-inner">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+<span>Download Free for Windows, Mac &amp; Linux</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</span>
+</a>
+<div class="hero-cta-badges">
+<span>100% Offline Local Storage</span>
+<span class="dot-sep">·</span>
+<span>Zero Cloud Telemetry</span>
+<span class="dot-sep">·</span>
+<span>No Account Needed</span>
+</div>
+</div>
+</div>
+</header>
+
+<div class="editorial-wrapper">
+<!-- Featured Pillar Bento Grid -->
+<section class="bento-featured-section" aria-label="Featured pillar guides">
+<div class="bento-featured-header">
+<span class="bento-tag">FLAGSHIP PILLARS</span>
+<h2>Featured Architecture &amp; Productivity Guides</h2>
+</div>
+<div class="bento-featured-grid">
+<!-- Flagship 2-column card -->
+<article class="bento-flagship-card">
+<div class="bento-card-mockup uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<div class="uisavior-mockup-title"><span class="active-indicator"></span><span>FloatBoard 1.0 · Flagship Guide</span></div>
+<span class="uisavior-mockup-badge">PINNED</span>
+</div>
+<div class="uisavior-mockup-body">
+<a href="/blog/{flagship_post['slug']}/" aria-label="{esc(flagship_post['title'])}">{flagship_img}</a>
+</div>
+</div>
+<div class="bento-card-body">
+<div class="card-meta">
+<span class="card-category-badge">{esc(flagship_post['category'])}</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3><a href="/blog/{flagship_post['slug']}/">{esc(flagship_post['title'])}</a></h3>
+<p>{esc(flagship_post['description'])}</p>
+<a href="/blog/{flagship_post['slug']}/" class="bento-cta-btn">Read Pillar Guide →</a>
+</div>
+</article>
+
+<!-- Stack of 2 secondary cards -->
+<div class="bento-stacked-col">
+<article class="bento-secondary-card">
+<div class="bento-secondary-mockup uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="uisavior-mockup-badge">ACTIVE</span>
+</div>
+<div class="uisavior-mockup-body">
+<a href="/blog/{sec1_post['slug']}/" aria-label="{esc(sec1_post['title'])}">{sec1_img}</a>
+</div>
+</div>
+<div class="bento-secondary-content">
+<span class="card-category-badge">{esc(sec1_post['category'])}</span>
+<h4><a href="/blog/{sec1_post['slug']}/">{esc(sec1_post['title'])}</a></h4>
+<p>{esc(sec1_post['description'])}</p>
+<a href="/blog/{sec1_post['slug']}/" class="card-read-link">Explore workflow →</a>
+</div>
+</article>
+
+<article class="bento-secondary-card">
+<div class="bento-secondary-mockup uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="uisavior-mockup-badge">ACTIVE</span>
+</div>
+<div class="uisavior-mockup-body">
+<a href="/blog/{sec2_post['slug']}/" aria-label="{esc(sec2_post['title'])}">{sec2_img}</a>
+</div>
+</div>
+<div class="bento-secondary-content">
+<span class="card-category-badge">{esc(sec2_post['category'])}</span>
+<h4><a href="/blog/{sec2_post['slug']}/">{esc(sec2_post['title'])}</a></h4>
+<p>{esc(sec2_post['description'])}</p>
+<a href="/blog/{sec2_post['slug']}/" class="card-read-link">Explore workflow →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Filterable 3-Column Bento Grid -->
+<section class="editorial-hub-library" aria-label="Explore all guides">
+<div class="editorial-hub-header">
+<span class="bento-tag">KNOWLEDGE BASE</span>
+<h2>All Engineering, Design &amp; Multitasking Guides</h2>
+<p>Browse by specific desktop workflow or explore the complete directory</p>
+</div>
+
+<div class="blog-filter-bar" role="tablist" aria-label="Filter guides by topic">
+<button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" type="button">All Guides ({len(posts)})</button>
+<button class="filter-btn" data-filter="clipboard" role="tab" aria-selected="false" type="button">Clipboard &amp; History</button>
+<button class="filter-btn" data-filter="visual-references" role="tab" aria-selected="false" type="button">PureRef &amp; Image Boards</button>
+<button class="filter-btn" data-filter="developer" role="tab" aria-selected="false" type="button">Developer &amp; UI Coding</button>
+<button class="filter-btn" data-filter="floating-notes" role="tab" aria-selected="false" type="button">Always-on-Top Notes</button>
+</div>
+
+<div class="editorial-filterable-grid">
+{''.join(all_bento_cards_html)}
+</div>
+</section>
+
+<!-- Outro About Card -->
+<section class="editorial-index-about">
 <div class="editorial-about-card">
 <h2>About these guides</h2>
 <p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach →</a></p>
 </div>
-</section>'''
-page('/blog/','FloatBoard Guides: Windows 11, Mac & Linux Multitasking, Clipboard & Floating Notes Tips','Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.', blog_intro + ''.join(blog_sections) + blog_outro,{'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'}, palette=PALETTES[0])
+</section>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){{
+  var buttons = document.querySelectorAll(".blog-filter-bar .filter-btn");
+  var cards = document.querySelectorAll(".editorial-filterable-grid .editorial-bento-card");
+  if (!buttons.length || !cards.length) return;
+  buttons.forEach(function(btn){{
+    btn.addEventListener("click", function(){{
+      buttons.forEach(function(b){{ b.classList.remove("active"); b.setAttribute("aria-selected", "false"); }});
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      var f = btn.getAttribute("data-filter");
+      cards.forEach(function(card){{
+        var cat = (card.getAttribute("data-category") || "").toLowerCase();
+        var aud = (card.getAttribute("data-audience") || "").toLowerCase();
+        if (f === "all" || cat.indexOf(f) !== -1 || aud.indexOf(f) !== -1) {{
+          card.style.display = "";
+        }} else {{
+          card.style.display = "none";
+        }}
+      }});
+    }});
+  }});
+}});
+</script>'''
+
+page('/blog/','FloatBoard Guides: Windows 11, Mac & Linux Multitasking, Clipboard & Floating Notes Tips','Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.', blog_index_body, {'@context':'https://schema.org','@type':'Blog','name':'FloatBoard Blog','url':BASE+'/blog/'}, palette=PALETTES[0])
 
 about_body = '''<article class="editorial-wrapper editorial-about-page" style="max-width: 860px; margin: 0 auto;">
 <div class="editorial-badge-row">

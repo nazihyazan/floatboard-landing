@@ -2,7 +2,10 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Start a Two-Image Reference Board for Focused Visual Decisions</title><meta name="description" content="Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction.">
 <link rel="canonical" href="https://floatboard.xyz/blog/start-two-image-reference-board/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Start a Two-Image Reference Board for Focused Visual Decisions"><meta property="og:description" content="Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction."><meta property="og:url" content="https://floatboard.xyz/blog/start-two-image-reference-board/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/gif-12-poster.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Start a Two-Image Reference Board for Focused Visual Decisions"><meta name="twitter:description" content="Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/gif-12-poster.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to Start a Two-Image Reference Board for Focused Visual Decisions", "description": "Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction.", "image": ["https://floatboard.xyz/blog/assets/gif-12-poster.jpg"], "datePublished": "2026-10-05", "dateModified": "2026-10-07", "mainEntityOfPage": "https://floatboard.xyz/blog/start-two-image-reference-board/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["compare two images side by side", "two image reference board", "minimal moodboard app", "side by side visual comparison"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why only two images?", "acceptedAnswer": {"@type": "Answer", "text": "Two images with different roles expose an actual choice. Add a third only when the first pair reveals a new question that a third candidate can answer."}}, {"@type": "Question", "name": "Can I publish an image because it appears in my board?", "acceptedAnswer": {"@type": "Answer", "text": "No. Verify the creator, source and license for the intended use. A temporary reference and a publishable asset are different things."}}, {"@type": "Question", "name": "Is this the same as comparing photos at full size?", "acceptedAnswer": {"@type": "Answer", "text": "No. This workflow starts a design direction with a small visible pair. Inspect original files in a viewer when evaluating sharpness, color or fine detail."}}, {"@type": "Question", "name": "Will the board replace my design brief?", "acceptedAnswer": {"@type": "Answer", "text": "No. Keep the brief, source links, mockups and final decision in the project. The board holds only the references needed for the current step."}}]}]}</script>
@@ -38,7 +41,7 @@ body.blog-page.uisavior-theme {
 </head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
 <span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
 <a href="/pricing">Get $5.99 lifetime license →</a>
-</aside><nav class="guide-nav" aria-label="Main navigation">
+</aside><nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -48,10 +51,18 @@ body.blog-page.uisavior-theme {
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
 </div>
 </nav><main id="main"><article class="editorial-wrapper">
 <header class="editorial-hero-header">
@@ -119,17 +130,31 @@ body.blog-page.uisavior-theme {
 <li><a href="#write-brief">Write a one-sentence brief before opening the board</a></li><li><a href="#choose-pair">Choose a pair that tests a real alternative</a></li><li><a href="#capture-sources">Record where the two images came from</a></li><li><a href="#add-two-images">Add only the two selected images</a></li><li><a href="#test-in-layout">Test the pair in the actual layout</a></li><li><a href="#document-decision">Keep the decision in the project, not only on the board</a></li><li><a href="#boundaries">Keep the board honest about what it shows</a></li><li><a href="#faq">Questions about starting with two images</a></li>
 </ul>
 </div>
-<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+<div class="editorial-card-sidebar glass-cta-sidebar" aria-label="Download FloatBoard desktop app">
+<div class="sidebar-mockup-preview">
+<div class="sidebar-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="sidebar-mockup-tag">ALWAYS ON TOP</span>
+</div>
+<div class="sidebar-preview-frame">
+<video class="guide-demo sidebar-loop-video" width="480" height="270" autoplay muted loop playsinline controls preload="none" poster="/blog/assets/gif-1-poster.jpg" aria-label="5-second looping preview of FloatBoard pinned above desktop workspace">
+<source src="/blog/assets/gif-1-demo.mp4" type="video/mp4">
+</video>
+</div>
+</div>
 <div class="editorial-sidebar-brand">
-<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
+<img src="/icon.png" width="32" height="32" alt="FloatBoard icon" class="guide-brand-icon">
 <div>
-<h4 class="editorial-sidebar-title">FloatBoard</h4>
-<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
+<h4 class="editorial-sidebar-title">FloatBoard Desktop</h4>
+<p class="editorial-sidebar-sub">Windows, macOS &amp; Linux</p>
 </div>
 </div>
-<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
-<a href="/download/" class="editorial-btn-black">Download Free App →</a>
-<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+<p class="editorial-sidebar-desc">Eliminate the Alt-Tab tax. Keep active clipboard clips, code snippets, and reference images pinned permanently in a transparent floating board.</p>
+<a href="/download/" class="sidebar-cta-btn">Download Free App →</a>
+<div class="sidebar-guarantee-row">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+<span>100% Offline · $5.99 Lifetime · No Subscriptions</span>
+</div>
 </div>
 </aside>
 <div class="editorial-content-col">
@@ -157,4 +182,32 @@ body.blog-page.uisavior-theme {
 </section>
 </div>
 </div>
-</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
+</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>
+(function(){
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function(){
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }
+      });
+    }
+    var v = document.querySelector("video.guide-demo");
+    if (v) {
+      v.muted = true;
+      v.play().catch(function(){});
+    }
+  });
+})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>

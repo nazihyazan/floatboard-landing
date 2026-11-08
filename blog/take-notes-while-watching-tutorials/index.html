@@ -2,7 +2,10 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)</title><meta name="description" content="Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen.">
 <link rel="canonical" href="https://floatboard.xyz/blog/take-notes-while-watching-tutorials/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)"><meta property="og:description" content="Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen."><meta property="og:url" content="https://floatboard.xyz/blog/take-notes-while-watching-tutorials/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/code-and-image-references.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)"><meta name="twitter:description" content="Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/code-and-image-references.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)", "description": "Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen.", "image": ["https://floatboard.xyz/blog/assets/code-and-image-references.jpg"], "datePublished": "2026-09-29", "dateModified": "2026-10-07", "mainEntityOfPage": "https://floatboard.xyz/blog/take-notes-while-watching-tutorials/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["take notes while watching video", "floating notes for online learning", "always on top notes youtube tutorial", "single screen study notes"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Should I write down everything the instructor says?", "acceptedAnswer": {"@type": "Answer", "text": "For a practical software task, begin with the action, expected result and question you need answered. Add background explanation when it changes how you perform the task. A full transcript can be useful for other purposes, but it is hard to use as a small on-screen checklist."}}, {"@type": "Question", "name": "How can I take notes without a second monitor?", "acceptedAnswer": {"@type": "Answer", "text": "Pause the lesson while practising, use side-by-side windows when space allows, or keep a short note pinned above your app. Change the layout if it makes controls too small to use comfortably."}}, {"@type": "Question", "name": "Does FloatBoard automatically transcribe or synchronize a video?", "acceptedAnswer": {"@type": "Answer", "text": "This workflow uses manually written notes, timestamps and selected image references. It does not depend on transcription, a video integration or automatic timestamp capture."}}, {"@type": "Question", "name": "Can I use this for reading a written tutorial?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Replace the timestamp with the heading or section link. For longer reading and drafting, use the research notes workflow. To try the compact tutorial setup, download FloatBoard and start with a single next-action note."}}]}]}</script>
@@ -38,7 +41,7 @@ body.blog-page.uisavior-theme {
 </head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
 <span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
 <a href="/pricing">Get $5.99 lifetime license →</a>
-</aside><nav class="guide-nav" aria-label="Main navigation">
+</aside><nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -48,10 +51,18 @@ body.blog-page.uisavior-theme {
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
 </div>
 </nav><main id="main"><article class="editorial-wrapper">
 <header class="editorial-hero-header">
@@ -119,17 +130,31 @@ body.blog-page.uisavior-theme {
 <li><a href="#set-a-learning-task">Choose one result to reproduce</a></li><li><a href="#choose-screen-layout">Split screen, PowerToys or FloatBoard?</a></li><li><a href="#tutorial-note-template">A tutorial note template you can copy</a></li><li><a href="#follow-one-cycle">Follow a watch, pause, practise and check cycle</a></li><li><a href="#when-you-get-stuck">What to do when the tutorial and your result differ</a></li><li><a href="#save-the-learning">Turn the temporary note into a useful record</a></li><li><a href="#tutorial-notes-faq">Questions about taking notes during tutorials</a></li>
 </ul>
 </div>
-<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+<div class="editorial-card-sidebar glass-cta-sidebar" aria-label="Download FloatBoard desktop app">
+<div class="sidebar-mockup-preview">
+<div class="sidebar-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="sidebar-mockup-tag">ALWAYS ON TOP</span>
+</div>
+<div class="sidebar-preview-frame">
+<video class="guide-demo sidebar-loop-video" width="480" height="270" autoplay muted loop playsinline controls preload="none" poster="/blog/assets/gif-1-poster.jpg" aria-label="5-second looping preview of FloatBoard pinned above desktop workspace">
+<source src="/blog/assets/gif-1-demo.mp4" type="video/mp4">
+</video>
+</div>
+</div>
 <div class="editorial-sidebar-brand">
-<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
+<img src="/icon.png" width="32" height="32" alt="FloatBoard icon" class="guide-brand-icon">
 <div>
-<h4 class="editorial-sidebar-title">FloatBoard</h4>
-<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
+<h4 class="editorial-sidebar-title">FloatBoard Desktop</h4>
+<p class="editorial-sidebar-sub">Windows, macOS &amp; Linux</p>
 </div>
 </div>
-<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
-<a href="/download/" class="editorial-btn-black">Download Free App →</a>
-<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+<p class="editorial-sidebar-desc">Eliminate the Alt-Tab tax. Keep active clipboard clips, code snippets, and reference images pinned permanently in a transparent floating board.</p>
+<a href="/download/" class="sidebar-cta-btn">Download Free App →</a>
+<div class="sidebar-guarantee-row">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+<span>100% Offline · $5.99 Lifetime · No Subscriptions</span>
+</div>
 </div>
 </aside>
 <div class="editorial-content-col">
@@ -164,4 +189,32 @@ QUESTION: [what remains unclear]</pre><p>For the responsive-card example, the ne
 </section>
 </div>
 </div>
-</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
+</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>
+(function(){
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function(){
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }
+      });
+    }
+    var v = document.querySelector("video.guide-demo");
+    if (v) {
+      v.muted = true;
+      v.play().catch(function(){});
+    }
+  });
+})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>

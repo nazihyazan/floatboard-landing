@@ -2,7 +2,10 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)</title><meta name="description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.">
 <link rel="canonical" href="https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)"><meta property="og:description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk."><meta property="og:url" content="https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)"><meta name="twitter:description" content="Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to Pin Screenshots Always on Top in Windows 11 & Mac (Clean Desktop Workflow)", "description": "Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.", "image": ["https://floatboard.xyz/blog/assets/infinity-mirror-screenshot-reference.jpg"], "datePublished": "2026-10-23", "dateModified": "2026-10-23", "mainEntityOfPage": "https://floatboard.xyz/blog/instant-screenshot-capture-floating-reference/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["pin screenshot on screen", "screenshot always on top windows 11", "floating screenshot viewer", "snip and pin desktop"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I pin a screenshot so it stays on top of other windows?", "acceptedAnswer": {"@type": "Answer", "text": "Open FloatBoard and ensure the pin icon in the top header is active. Then take a screenshot using your usual keyboard shortcut (such as Win+Shift+S on Windows or Cmd+Shift+4 on Mac). FloatBoard automatically captures the image and keeps it pinned above all other windows."}}, {"@type": "Question", "name": "Does FloatBoard create temporary file clutter on my desktop?", "acceptedAnswer": {"@type": "Answer", "text": "No. FloatBoard manages its working media internally in local application memory and temporary app cache. When you remove a card from the board, it is purged automatically without leaving throwaway files on your desktop."}}, {"@type": "Question", "name": "Can I keep written instructions next to my pinned screenshots?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. FloatBoard features a dual-pane workspace. You can keep terminal commands, hex tokens, or task checklists in the text panel while your reference screenshots remain visible in the adjacent image panel."}}, {"@type": "Question", "name": "Is there a browser-based option to try floating notes?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. You can test the free WebPad online tool directly inside Google Chrome or Microsoft Edge using the Document Picture-in-Picture API without installing anything."}}]}]}</script>
@@ -38,7 +41,7 @@ body.blog-page.uisavior-theme {
 </head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
 <span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
 <a href="/pricing">Get $5.99 lifetime license →</a>
-</aside><nav class="guide-nav" aria-label="Main navigation">
+</aside><nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -48,10 +51,18 @@ body.blog-page.uisavior-theme {
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
 </div>
 </nav><main id="main"><article class="editorial-wrapper">
 <header class="editorial-hero-header">
@@ -123,17 +134,31 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 <li><a href="#the-temporary-screenshot-trap">The temporary screenshot trap: 6 wasted steps per capture</a></li><li><a href="#instant-floating-capture-workflow">Zero files, zero clutter: The floating clipboard loop</a></li><li><a href="#visual-mirror-technique">The infinite mirror demo: Why recursive capture matters</a></li><li><a href="#compare-screenshot-tools">FloatBoard vs Lightshot vs Snagit: Choose by the job</a></li><li><a href="#screenshot-workflow-faq">Frequently asked questions about floating screenshot references</a></li><li><a href="#try-floating-screenshot-board">Clean up your desktop once and for all</a></li>
 </ul>
 </div>
-<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+<div class="editorial-card-sidebar glass-cta-sidebar" aria-label="Download FloatBoard desktop app">
+<div class="sidebar-mockup-preview">
+<div class="sidebar-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="sidebar-mockup-tag">ALWAYS ON TOP</span>
+</div>
+<div class="sidebar-preview-frame">
+<video class="guide-demo sidebar-loop-video" width="480" height="270" autoplay muted loop playsinline controls preload="none" poster="/blog/assets/gif-1-poster.jpg" aria-label="5-second looping preview of FloatBoard pinned above desktop workspace">
+<source src="/blog/assets/gif-1-demo.mp4" type="video/mp4">
+</video>
+</div>
+</div>
 <div class="editorial-sidebar-brand">
-<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
+<img src="/icon.png" width="32" height="32" alt="FloatBoard icon" class="guide-brand-icon">
 <div>
-<h4 class="editorial-sidebar-title">FloatBoard</h4>
-<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
+<h4 class="editorial-sidebar-title">FloatBoard Desktop</h4>
+<p class="editorial-sidebar-sub">Windows, macOS &amp; Linux</p>
 </div>
 </div>
-<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
-<a href="/download/" class="editorial-btn-black">Download Free App →</a>
-<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+<p class="editorial-sidebar-desc">Eliminate the Alt-Tab tax. Keep active clipboard clips, code snippets, and reference images pinned permanently in a transparent floating board.</p>
+<a href="/download/" class="sidebar-cta-btn">Download Free App →</a>
+<div class="sidebar-guarantee-row">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+<span>100% Offline · $5.99 Lifetime · No Subscriptions</span>
+</div>
 </div>
 </aside>
 <div class="editorial-content-col">
@@ -161,4 +186,32 @@ The video demonstration above shows the opposite: recursive floating capture. Wh
 </section>
 </div>
 </div>
-</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
+</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>
+(function(){
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function(){
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }
+      });
+    }
+    var v = document.querySelector("video.guide-demo");
+    if (v) {
+      v.muted = true;
+      v.play().catch(function(){});
+    }
+  });
+})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>

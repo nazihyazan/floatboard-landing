@@ -2,43 +2,43 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>FloatBoard Guides: Windows 11, Mac &amp; Linux Multitasking, Clipboard &amp; Floating Notes Tips</title><meta name="description" content="Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps.">
 <link rel="canonical" href="https://floatboard.xyz/blog/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="website"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="FloatBoard Guides: Windows 11, Mac &amp; Linux Multitasking, Clipboard &amp; Floating Notes Tips"><meta property="og:description" content="Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps."><meta property="og:url" content="https://floatboard.xyz/blog/"><meta property="og:image" content="https://floatboard.xyz/icon.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="FloatBoard Guides: Windows 11, Mac &amp; Linux Multitasking, Clipboard &amp; Floating Notes Tips"><meta name="twitter:description" content="Practical FloatBoard guides for keeping copied text, short notes and a few image references visible while working across desktop apps."><meta name="twitter:image" content="https://floatboard.xyz/icon.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Blog", "name": "FloatBoard Blog", "url": "https://floatboard.xyz/blog/"}</script>
 <style>
 :root, body.blog-page.uisavior-theme {
-  --theme-primary: #0297de;
-  --theme-primary-rgb: 2, 151, 222;
-  --theme-secondary: #fc734d;
-  --theme-secondary-rgb: 252, 115, 77;
-  --theme-accent: #fd91cc;
-  --theme-accent-rgb: 253, 145, 204;
-  --theme-dark-bg: #02070a;
-  --theme-card-bg: rgba(13, 22, 32, 0.72);
-  --theme-btn-gradient: linear-gradient(135deg, #0297de, #016fa3);
-  --theme-btn-hover: linear-gradient(135deg, #05a7f5, #0297de);
-  --theme-cta-gradient: linear-gradient(135deg, #fc734d 0%, #d83995 100%);
-  --border-glow: rgba(2, 151, 222, 0.35);
+  --theme-primary: #0267de;
+  --theme-primary-rgb: 2, 103, 222;
+  --theme-secondary: #fc7940;
+  --theme-secondary-rgb: 252, 121, 64;
+  --theme-accent: #fc7940;
+  --theme-accent-rgb: 252, 121, 64;
+  --theme-dark-bg: #00070a;
+  --theme-card-bg: rgba(255, 255, 255, 0.03);
+  --theme-btn-gradient: linear-gradient(135deg, #fc7940 0%, #ff5238 100%);
+  --theme-btn-hover: linear-gradient(135deg, #ff8c5a 0%, #fc7940 100%);
+  --theme-cta-gradient: linear-gradient(135deg, #fc7940 0%, #ff5238 100%);
+  --border-glow: rgba(2, 103, 222, 0.35);
 }
 body.blog-page.uisavior-theme {
-  background-color: #02070a !important;
+  background-color: #00070a !important;
 }
 .uisavior-aurora {
   background: 
-    radial-gradient(circle at 50% -8%, rgba(2, 151, 222, 0.38) 0%, rgba(2, 151, 222, 0.08) 45%, transparent 72%),
-    radial-gradient(circle at 10% 25%, rgba(252, 115, 77, 0.22) 0%, transparent 48%),
-    radial-gradient(circle at 90% 28%, rgba(253, 145, 204, 0.18) 0%, transparent 48%),
-    radial-gradient(circle at 50% 68%, rgba(2, 151, 222, 0.15) 0%, transparent 60%) !important;
+    radial-gradient(circle at 50% -8%, rgba(2, 103, 222, 0.38) 0%, rgba(2, 103, 222, 0.08) 45%, transparent 72%),
+    radial-gradient(circle at 10% 25%, rgba(252, 121, 64, 0.22) 0%, transparent 48%),
+    radial-gradient(circle at 90% 28%, rgba(252, 121, 64, 0.18) 0%, transparent 48%),
+    radial-gradient(circle at 50% 68%, rgba(2, 103, 222, 0.15) 0%, transparent 60%) !important;
 }
 .uisavior-matrix {
-  background-image: radial-gradient(rgba(2, 151, 222, 0.2) 1.2px, transparent 1.2px) !important;
+  background-image: radial-gradient(rgba(2, 103, 222, 0.2) 1.2px, transparent 1.2px) !important;
 }
 </style>
-</head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
-<span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
-<a href="/pricing">Get $5.99 lifetime license →</a>
-</aside><nav class="guide-nav" aria-label="Main navigation">
+</head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -48,20 +48,846 @@ body.blog-page.uisavior-theme {
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
 </div>
-</nav><main id="main"><header class="editorial-wrapper editorial-index-header">
-<div class="editorial-badge-row" style="justify-content: center; margin-bottom: 16px;">
-<span class="editorial-category-badge">KNOWLEDGE BASE &amp; GUIDES</span>
 </div>
-<h1 class="editorial-title">Keep copied text, notes and images visible while you work</h1>
-<p class="editorial-intro-text">FloatBoard is a desktop working board for short notes and image references that stays above your other windows. Explore practical workflow guides, alternatives comparisons, and multi-clipboard tips.</p>
-</header><section id="clipboard" class="blog-topic" aria-labelledby="clipboard-heading"><h2 id="clipboard-heading">Clipboard & Copied Text</h2><p>For people moving text and images between desktop apps. Learn when recent clipboard history helps and when a short working note needs to stay visible. <a href="/clipboard-manager.html">Explore Clipboard Manager</a>.</p><div class="blog-grid"><article class="blog-card"><a href="/blog/windows-clipboard-history-vs-floating-notes/" aria-label="Windows Clipboard (Win + V) vs Floating Notes Setup"><img src="/blog/assets/writing-reference-notes.jpg" width="1300" height="874" alt="FloatBoard window showing separate text cards beside a grid of image thumbnails" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Windows clipboard workflow</p><h3><a href="/blog/windows-clipboard-history-vs-floating-notes/">Windows Clipboard (Win + V) vs Floating Notes Setup</a></h3><p>Compare Windows Win+V clipboard history with always-on-top floating scratchpads for daily developer productivity, coding, and multi-monitor workflows.</p><a href="/blog/windows-clipboard-history-vs-floating-notes/">Read article →</a></div></article><article class="blog-card"><a href="/blog/clear-copied-text-history-keep-working-set/" aria-label="Clear Windows Clipboard (Keep Pinned Clips)"><img src="/blog/assets/gif-10-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demonstration showing several text cards, an image board, and a clipboard history panel with a clear control" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Clipboard cleanup workflow</p><h3><a href="/blog/clear-copied-text-history-keep-working-set/">Clear Windows Clipboard (Keep Pinned Clips)</a></h3><p>Safely clear Windows 11 and 10 clipboard history with Win+V without losing your pinned clips and notes. Complete step-by-step developer tutorial.</p><a href="/blog/clear-copied-text-history-keep-working-set/">Read article →</a></div></article><article class="blog-card"><a href="/blog/screenshot-and-copy-text-from-screen-windows-11/" aria-label="Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight)"><img src="/blog/assets/screenshot-capture-to-floating-board-demo.jpg" width="1400" height="900" alt="Windows Snipping Tool region crop on sports car auto-imported into FloatBoard dark floating card" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Developers &amp; power users</p><h3><a href="/blog/screenshot-and-copy-text-from-screen-windows-11/">Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight)</a></h3><p>Instantly capture screen crops and copy text snippets directly into a pinned floating workspace on Windows 11 without opening Snipping Tool files.</p><a href="/blog/screenshot-and-copy-text-from-screen-windows-11/">Read article →</a></div></article><article class="blog-card"><a href="/blog/best-offline-clipboard-manager-windows-11/" aria-label="Best Offline Clipboard Manager for Windows 11 (With Image Preview)"><img src="/blog/assets/offline-clipboard-manager-windows-11.jpg" width="1200" height="675" alt="FloatBoard offline clipboard manager showing pinned developer snippets and image previews" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Productivity &amp; shortcuts</p><h3><a href="/blog/best-offline-clipboard-manager-windows-11/">Best Offline Clipboard Manager for Windows 11 (With Image Preview)</a></h3><p>Protect developer API keys, confidential tokens, and copied snippets with a 100% offline clipboard manager. Compare Windows Win + V and local visual clipboards.</p><a href="/blog/best-offline-clipboard-manager-windows-11/">Read article →</a></div></article><article class="blog-card"><a href="/blog/keep-webpage-text-beside-image-references/" aria-label="How to Keep Copied Webpage Text Beside Image References on One Screen"><img src="/blog/assets/gif-9-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demo with text selected on a website and text cards displayed beside image thumbnails" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Web research workflow</p><h3><a href="/blog/keep-webpage-text-beside-image-references/">How to Keep Copied Webpage Text Beside Image References on One Screen</a></h3><p>Pin copied web text, quotes, and research excerpts right next to visual references in a dual-pane always-on-top floating window.</p><a href="/blog/keep-webpage-text-beside-image-references/">Read article →</a></div></article><article class="blog-card"><a href="/blog/copy-text-from-screenshot-windows/" aria-label="How to Copy Text from Screen on Windows 11/10"><img src="/blog/assets/code-and-image-references.jpg" width="1308" height="882" alt="FloatBoard displaying four image thumbnails beside a text card containing HTML reference text" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Windows screenshot workflow</p><h3><a href="/blog/copy-text-from-screenshot-windows/">How to Copy Text from Screen on Windows 11/10</a></h3><p>Copy text from any screenshot or non-selectable screen area on Windows 11 and 10 with fast native OCR tools and floating scratchpads. 100% offline.</p><a href="/blog/copy-text-from-screenshot-windows/">Read article →</a></div></article></div></section><section id="floating-notes" class="blog-topic" aria-labelledby="floating-notes-heading"><h2 id="floating-notes-heading">Notes That Stay In View</h2><p>For writing, learning, calls and debugging when the next instruction or reference disappears behind another window. <a href="/download/">Download FloatBoard Free</a>.</p><div class="blog-grid"><article class="blog-card"><a href="/blog/keep-reference-notes-visible-while-writing/" aria-label="How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)"><img src="/blog/assets/writing-reference-notes.jpg" width="1300" height="874" alt="FloatBoard showing text reference cards on the left and six image thumbnails on the right" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Writing with notes</p><h3><a href="/blog/keep-reference-notes-visible-while-writing/">How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)</a></h3><p>Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion.</p><a href="/blog/keep-reference-notes-visible-while-writing/">Read article →</a></div></article><article class="blog-card"><a href="/blog/keep-meeting-notes-visible-video-call/" aria-label="How to Pin Notes on Top in Zoom, Teams &amp; Meet"><img src="/blog/assets/writing-reference-notes.jpg" width="1300" height="874" alt="FloatBoard window with text cards on the left and image thumbnails on the right" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Meeting notes &amp; desktop workflow</p><h3><a href="/blog/keep-meeting-notes-visible-video-call/">How to Pin Notes on Top in Zoom, Teams &amp; Meet</a></h3><p>Keep speaking agendas, talking points &amp; notes pinned floating directly beside your webcam during Zoom &amp; Teams calls. Never look away from your camera.</p><a href="/blog/keep-meeting-notes-visible-video-call/">Read article →</a></div></article><article class="blog-card"><a href="/blog/how-to-pin-sticky-notes-always-on-top-windows-11/" aria-label="How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)"><img src="/blog/assets/pin-sticky-notes-windows-11.jpg" width="1200" height="675" alt="FloatBoard pinned sticky note scratchpad floating above Windows 11 desktop" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Developers &amp; multitaskers</p><h3><a href="/blog/how-to-pin-sticky-notes-always-on-top-windows-11/">How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)</a></h3><p>Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools.</p><a href="/blog/how-to-pin-sticky-notes-always-on-top-windows-11/">Read article →</a></div></article><article class="blog-card"><a href="/blog/always-on-top-floating-notes-developers-multitasking/" aria-label="Always on Top Windows 11 &amp; Mac: Pin Any Note or Window"><img src="/blog/assets/developer-floating-notes-workspace.jpg" width="1560" height="1040" alt="FloatBoard desktop window showing developer API endpoints and auth tokens on the left with four visual reference images on the right" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Developer workflows &amp; focus</p><h3><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top Windows 11 &amp; Mac: Pin Any Note or Window</a></h3><p>Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference mockups always on top of your IDE or code editor. 100% offline.</p><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Read article →</a></div></article><article class="blog-card"><a href="/blog/take-notes-while-watching-tutorials/" aria-label="How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)"><img src="/blog/assets/code-and-image-references.jpg" width="1308" height="882" alt="FloatBoard displaying image thumbnails next to a text panel containing an HTML reference snippet" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Learning &amp; desktop notes</p><h3><a href="/blog/take-notes-while-watching-tutorials/">How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)</a></h3><p>Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen.</p><a href="/blog/take-notes-while-watching-tutorials/">Read article →</a></div></article></div></section><section id="visual-references" class="blog-topic" aria-labelledby="visual-references-heading"><h2 id="visual-references-heading">Image References & Boards</h2><p>For designers and developers who need visual assets beside their work. Keep the original files safe and use the floating board for active decisions. <a href="/download/">Download Reference Board</a>.</p><div class="blog-grid"><article class="blog-card"><a href="/blog/organize-image-references/" aria-label="How to Organize Image References (PureRef Alternative)"><img src="/blog/assets/image-reference-board.jpg" width="1314" height="882" alt="FloatBoard in dark mode displaying four landscape image references in a two-column grid" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Designers &amp; illustrators</p><h3><a href="/blog/organize-image-references/">How to Organize Image References (PureRef Alternative)</a></h3><p>Organize visual reference boards and text notes on one screen. A lightweight, always-on-top PureRef alternative for artists, UI designers, and devs.</p><a href="/blog/organize-image-references/">Read article →</a></div></article><article class="blog-card"><a href="/blog/compare-photos-side-by-side-windows/" aria-label="Compare Photos Side by Side on Windows 11 &amp; 10"><img src="/blog/assets/compare-photos-side-by-side.png" width="1608" height="916" alt="FloatBoard showing four car-photo thumbnails in a two-by-two grid above a browser page with larger source images" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Photo comparison workflow</p><h3><a href="/blog/compare-photos-side-by-side-windows/">Compare Photos Side by Side on Windows 11 &amp; 10</a></h3><p>Compare two or more photos side by side on Windows 11 &amp; 10 without Alt-Tabbing between windows. Lightweight floating image boards for fast inspection.</p><a href="/blog/compare-photos-side-by-side-windows/">Read article →</a></div></article><article class="blog-card"><a href="/blog/code-snippets-and-screenshots/" aria-label="Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)"><img src="/blog/assets/code-and-image-references.jpg" width="1308" height="882" alt="FloatBoard with four image thumbnails on the left and a text card containing HTML markup on the right" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Developer workflow</p><h3><a href="/blog/code-snippets-and-screenshots/">Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)</a></h3><p>Keep curl commands, API tokens, regex patterns, and error screenshots pinned directly over your IDE while debugging.</p><a href="/blog/code-snippets-and-screenshots/">Read article →</a></div></article><article class="blog-card"><a href="/blog/how-to-copy-images-from-websites-directly-to-board/" aria-label="How to Copy Images from Websites Directly to a Floating Board"><img src="/blog/assets/copy-image-to-floating-board-demo.jpg" width="1400" height="900" alt="Browser context menu copying a nature photo directly into FloatBoard pinned reference window" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Visual research &amp; moodboards</p><h3><a href="/blog/how-to-copy-images-from-websites-directly-to-board/">How to Copy Images from Websites Directly to a Floating Board</a></h3><p>Copy any web picture directly into a floating reference board without saving files to disk. Step-by-step workflow for web research and moodboards.</p><a href="/blog/how-to-copy-images-from-websites-directly-to-board/">Read article →</a></div></article><article class="blog-card"><a href="/blog/side-by-side-image-comparison-reference-board/" aria-label="Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop"><img src="/blog/assets/side-by-side-reference-board-demo.jpg" width="1400" height="900" alt="Side by side car reference comparison cards in FloatBoard dual view pinned on desktop" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Visual comparison &amp; design</p><h3><a href="/blog/side-by-side-image-comparison-reference-board/">Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop</a></h3><p>Compare photos, vehicle angles, and design mockups side by side with a dedicated visual reference board maker for Windows &amp; Mac.</p><a href="/blog/side-by-side-image-comparison-reference-board/">Read article →</a></div></article><article class="blog-card"><a href="/blog/lightweight-pureref-alternative-reference-board/" aria-label="Lightweight PureRef Alternative for Fast Image Reference Boards"><img src="/blog/assets/lightweight-pureref-alternative.jpg" width="1200" height="675" alt="FloatBoard lightweight PureRef alternative displaying architectural reference image and color palette swatches" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Designers &amp; illustrators</p><h3><a href="/blog/lightweight-pureref-alternative-reference-board/">Lightweight PureRef Alternative for Fast Image Reference Boards</a></h3><p>Need reference images pinned beside your 3D canvas or web design without loading a heavy infinite canvas? Here is how to keep visual references floating offline.</p><a href="/blog/lightweight-pureref-alternative-reference-board/">Read article →</a></div></article><article class="blog-card"><a href="/blog/instant-screenshot-capture-floating-reference/" aria-label="How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)"><img src="/blog/assets/infinity-mirror-screenshot-reference.jpg" width="1560" height="1040" alt="FloatBoard desktop window displaying recursive screenshot-in-screenshot mirror loop beside working text notes" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Designers &amp; developers</p><h3><a href="/blog/instant-screenshot-capture-floating-reference/">How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)</a></h3><p>Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.</p><a href="/blog/instant-screenshot-capture-floating-reference/">Read article →</a></div></article><article class="blog-card"><a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/" aria-label="How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding"><img src="/blog/assets/design-tokens-and-mockup-board.jpg" width="1560" height="1040" alt="FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Frontend developers &amp; designers</p><h3><a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/">How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding</a></h3><p>Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.</p><a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/">Read article →</a></div></article><article class="blog-card"><a href="/blog/capture-webpage-detail-screenshot-reference/" aria-label="How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference"><img src="/blog/assets/gif-8-poster.jpg" width="1920" height="1080" alt="Archived Linux browser recording showing a tree photograph, an image context menu with Take Screenshot, and a floating board with image thumbnails" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Webpage screenshot workflow</p><h3><a href="/blog/capture-webpage-detail-screenshot-reference/">How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference</a></h3><p>Capture any UI snippet or article diagram and keep it floating always on top while designing or coding without cluttering your desktop.</p><a href="/blog/capture-webpage-detail-screenshot-reference/">Read article →</a></div></article><article class="blog-card"><a href="/blog/collect-visual-references-across-search-pages/" aria-label="How to Collect Visual References Across Search Pages into One Floating Board"><img src="/blog/assets/gif-6-poster.jpg" width="1920" height="1080" alt="Recorded browser search for tree images with a FloatBoard window visible while different results and pages are reviewed" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Image reference workflows</p><h3><a href="/blog/collect-visual-references-across-search-pages/">How to Collect Visual References Across Search Pages into One Floating Board</a></h3><p>Gather images and inspiration across multiple Google search tabs into a single persistent floating reference board.</p><a href="/blog/collect-visual-references-across-search-pages/">Read article →</a></div></article><article class="blog-card"><a href="/blog/copy-web-image-and-keep-source/" aria-label="Copy Images from Any Website (Keep Source URL)"><img src="/blog/assets/gif-7-poster.jpg" width="1920" height="1080" alt="Recorded browser demo showing an opened tree photograph on its source page beside FloatBoard image tiles" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Clipboard &amp; source tracking</p><h3><a href="/blog/copy-web-image-and-keep-source/">Copy Images from Any Website (Keep Source URL)</a></h3><p>Copy and paste any web picture in seconds even when right-click is disabled. Automatically track and save the original image URL on Windows &amp; Mac.</p><a href="/blog/copy-web-image-and-keep-source/">Read article →</a></div></article><article class="blog-card"><a href="/blog/inspect-image-original-after-thumbnail/" aria-label="How to View 100% Full-Size Images from Clipboard"><img src="/blog/assets/gif-11-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demonstration showing image thumbnails on a board and a history panel with older entries" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Image quality workflow</p><h3><a href="/blog/inspect-image-original-after-thumbnail/">How to View 100% Full-Size Images from Clipboard</a></h3><p>Inspect original full-resolution image details directly from clipboard thumbnails without opening heavy image editors on Windows, Mac, and Linux.</p><a href="/blog/inspect-image-original-after-thumbnail/">Read article →</a></div></article><article class="blog-card"><a href="/blog/keep-web-image-reference-visible-while-browsing/" aria-label="How to Keep a Web Image Pinned on Screen While Browsing Multiple Tabs"><img src="/blog/assets/gif-1-poster.jpg" width="1920" height="1080" alt="Recorded FloatBoard demo beside a browser search for landscape photography, with a selected reference image shown in a larger view" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Image reference workflows</p><h3><a href="/blog/keep-web-image-reference-visible-while-browsing/">How to Keep a Web Image Pinned on Screen While Browsing Multiple Tabs</a></h3><p>Pin a reference image on top of Chrome or Edge while continuing to browse other sites, search pages, and online documents.</p><a href="/blog/keep-web-image-reference-visible-while-browsing/">Read article →</a></div></article><article class="blog-card"><a href="/blog/review-image-grid-and-large-preview/" aria-label="How to View Photos in a Side-by-Side Grid with Instant Large Preview on Windows"><img src="/blog/assets/gif-3-poster.jpg" width="1920" height="1080" alt="Recorded FloatBoard demo showing a small grid of landscape references beside browser image results" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Image reference workflows</p><h3><a href="/blog/review-image-grid-and-large-preview/">How to View Photos in a Side-by-Side Grid with Instant Large Preview on Windows</a></h3><p>Review dozens of copied images in a floating grid and trigger instant full-size previews without saving temporary files to disk.</p><a href="/blog/review-image-grid-and-large-preview/">Read article →</a></div></article><article class="blog-card"><a href="/blog/shortlist-landscape-photos-for-website-hero/" aria-label="How to Compare &amp; Pick the Best Website Hero Image Side-by-Side (Web Design Workflow)"><img src="/blog/assets/gif-2-poster.jpg" width="1920" height="1080" alt="Recorded FloatBoard demo showing a small grid of landscape candidate images while browsing a photography website" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Designers &amp; illustrators</p><h3><a href="/blog/shortlist-landscape-photos-for-website-hero/">How to Compare &amp; Pick the Best Website Hero Image Side-by-Side (Web Design Workflow)</a></h3><p>Shortlist and compare candidate hero photos directly over your website staging layout with a floating reference board.</p><a href="/blog/shortlist-landscape-photos-for-website-hero/">Read article →</a></div></article><article class="blog-card"><a href="/blog/start-two-image-reference-board/" aria-label="How to Start a Two-Image Reference Board for Focused Visual Decisions"><img src="/blog/assets/gif-12-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demonstration starting with an empty window and ending with two landscape images visible side by side" decoding="async" loading="lazy"></a><div><p class="guide-eyebrow">Two-image design workflow</p><h3><a href="/blog/start-two-image-reference-board/">How to Start a Two-Image Reference Board for Focused Visual Decisions</a></h3><p>Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction.</p><a href="/blog/start-two-image-reference-board/">Read article →</a></div></article></div></section><section class="editorial-wrapper editorial-index-about">
+</nav><main id="main"><header class="editorial-index-hero">
+<div class="hero-glow-layer" aria-hidden="true"></div>
+<div class="fluted-glass-layer" aria-hidden="true"></div>
+<div class="hero-content">
+<div class="editorial-badge-row" style="justify-content: center; margin-bottom: 20px;">
+<span class="editorial-category-badge">SAAS EDITORIAL HUB &amp; GUIDES</span>
+</div>
+<h1 class="hero-editorial-title">Keep Your References Visible at the Speed of <em class="editorial-focal-italic">Thought</em>.</h1>
+<p class="hero-editorial-sub">FloatBoard eliminates the 200-daily Alt-Tab tax. Pin active clipboard clips, code snippets, and visual moodboards permanently above your workspace in a zero-latency, 100% offline desktop board.</p>
+<div class="hero-cta-wrapper">
+<a href="/download/" class="hero-cta-pill">
+<span class="cta-pill-inner">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+<span>Download Free for Windows, Mac &amp; Linux</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</span>
+</a>
+<div class="hero-cta-badges">
+<span>100% Offline Local Storage</span>
+<span class="dot-sep">·</span>
+<span>Zero Cloud Telemetry</span>
+<span class="dot-sep">·</span>
+<span>No Account Needed</span>
+</div>
+</div>
+</div>
+</header>
+
+<div class="editorial-wrapper">
+<!-- Featured Pillar Bento Grid -->
+<section class="bento-featured-section" aria-label="Featured pillar guides">
+<div class="bento-featured-header">
+<span class="bento-tag">FLAGSHIP PILLARS</span>
+<h2>Featured Architecture &amp; Productivity Guides</h2>
+</div>
+<div class="bento-featured-grid">
+<!-- Flagship 2-column card -->
+<article class="bento-flagship-card">
+<div class="bento-card-mockup uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<div class="uisavior-mockup-title"><span class="active-indicator"></span><span>FloatBoard 1.0 · Flagship Guide</span></div>
+<span class="uisavior-mockup-badge">PINNED</span>
+</div>
+<div class="uisavior-mockup-body">
+<a href="/blog/best-offline-clipboard-manager-windows-11/" aria-label="Best Offline Clipboard Manager for Windows 11 (With Image Preview)"><img src="/blog/assets/offline-clipboard-manager-windows-11.jpg" width="1200" height="675" alt="FloatBoard offline clipboard manager showing pinned developer snippets and image previews" decoding="async" fetchpriority="high"></a>
+</div>
+</div>
+<div class="bento-card-body">
+<div class="card-meta">
+<span class="card-category-badge">Productivity &amp; shortcuts</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3><a href="/blog/best-offline-clipboard-manager-windows-11/">Best Offline Clipboard Manager for Windows 11 (With Image Preview)</a></h3>
+<p>Protect developer API keys, confidential tokens, and copied snippets with a 100% offline clipboard manager. Compare Windows Win + V and local visual clipboards.</p>
+<a href="/blog/best-offline-clipboard-manager-windows-11/" class="bento-cta-btn">Read Pillar Guide →</a>
+</div>
+</article>
+
+<!-- Stack of 2 secondary cards -->
+<div class="bento-stacked-col">
+<article class="bento-secondary-card">
+<div class="bento-secondary-mockup uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="uisavior-mockup-badge">ACTIVE</span>
+</div>
+<div class="uisavior-mockup-body">
+<a href="/blog/lightweight-pureref-alternative-reference-board/" aria-label="Lightweight PureRef Alternative for Fast Image Reference Boards"><img src="/blog/assets/lightweight-pureref-alternative.jpg" width="1200" height="675" alt="FloatBoard lightweight PureRef alternative displaying architectural reference image and color palette swatches" decoding="async" loading="lazy"></a>
+</div>
+</div>
+<div class="bento-secondary-content">
+<span class="card-category-badge">Designers &amp; illustrators</span>
+<h4><a href="/blog/lightweight-pureref-alternative-reference-board/">Lightweight PureRef Alternative for Fast Image Reference Boards</a></h4>
+<p>Need reference images pinned beside your 3D canvas or web design without loading a heavy infinite canvas? Here is how to keep visual references floating offline.</p>
+<a href="/blog/lightweight-pureref-alternative-reference-board/" class="card-read-link">Explore workflow →</a>
+</div>
+</article>
+
+<article class="bento-secondary-card">
+<div class="bento-secondary-mockup uisavior-mockup-window">
+<div class="uisavior-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="uisavior-mockup-badge">ACTIVE</span>
+</div>
+<div class="uisavior-mockup-body">
+<a href="/blog/always-on-top-floating-notes-developers-multitasking/" aria-label="Always on Top Windows 11 &amp; Mac: Pin Any Note or Window"><img src="/blog/assets/developer-floating-notes-workspace.jpg" width="1560" height="1040" alt="FloatBoard desktop window showing developer API endpoints and auth tokens on the left with four visual reference images on the right" decoding="async" loading="lazy"></a>
+</div>
+</div>
+<div class="bento-secondary-content">
+<span class="card-category-badge">Developer workflows &amp; focus</span>
+<h4><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top Windows 11 &amp; Mac: Pin Any Note or Window</a></h4>
+<p>Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference mockups always on top of your IDE or code editor. 100% offline.</p>
+<a href="/blog/always-on-top-floating-notes-developers-multitasking/" class="card-read-link">Explore workflow →</a>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Filterable 3-Column Bento Grid -->
+<section class="editorial-hub-library" aria-label="Explore all guides">
+<div class="editorial-hub-header">
+<span class="bento-tag">KNOWLEDGE BASE</span>
+<h2>All Engineering, Design &amp; Multitasking Guides</h2>
+<p>Browse by specific desktop workflow or explore the complete directory</p>
+</div>
+
+<div class="blog-filter-bar" role="tablist" aria-label="Filter guides by topic">
+<button class="filter-btn active" data-filter="all" role="tab" aria-selected="true" type="button">All Guides (27)</button>
+<button class="filter-btn" data-filter="clipboard" role="tab" aria-selected="false" type="button">Clipboard &amp; History</button>
+<button class="filter-btn" data-filter="visual-references" role="tab" aria-selected="false" type="button">PureRef &amp; Image Boards</button>
+<button class="filter-btn" data-filter="developer" role="tab" aria-selected="false" type="button">Developer &amp; UI Coding</button>
+<button class="filter-btn" data-filter="floating-notes" role="tab" aria-selected="false" type="button">Always-on-Top Notes</button>
+</div>
+
+<div class="editorial-filterable-grid">
+<article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Designers &amp; illustrators</span>
+</div>
+<a href="/blog/organize-image-references/" class="card-media-link" aria-label="How to Organize Image References (PureRef Alternative)">
+<img src="/blog/assets/image-reference-board.jpg" width="1314" height="882" alt="FloatBoard in dark mode displaying four landscape image references in a two-column grid" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Designers &amp; illustrators</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/organize-image-references/">How to Organize Image References (PureRef Alternative)</a></h3>
+<p class="card-description">Organize visual reference boards and text notes on one screen. A lightweight, always-on-top PureRef alternative for artists, UI designers, and devs.</p>
+<div class="card-footer-action">
+<a href="/blog/organize-image-references/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references developer floating-notes" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Developer workflow</span>
+</div>
+<a href="/blog/code-snippets-and-screenshots/" class="card-media-link" aria-label="Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)">
+<img src="/blog/assets/code-and-image-references.jpg" width="1308" height="882" alt="FloatBoard with four image thumbnails on the left and a text card containing HTML markup on the right" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Developer workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/code-snippets-and-screenshots/">Best Way to Save Code Snippets &amp; Terminal Screenshots Always on Top (Windows, Mac &amp; Linux)</a></h3>
+<p class="card-description">Keep curl commands, API tokens, regex patterns, and error screenshots pinned directly over your IDE while debugging.</p>
+<div class="card-footer-action">
+<a href="/blog/code-snippets-and-screenshots/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all floating-notes" data-audience="floating-notes">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Writing with notes</span>
+</div>
+<a href="/blog/keep-reference-notes-visible-while-writing/" class="card-media-link" aria-label="How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)">
+<img src="/blog/assets/writing-reference-notes.jpg" width="1300" height="874" alt="FloatBoard showing text reference cards on the left and six image thumbnails on the right" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Writing with notes</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/keep-reference-notes-visible-while-writing/">How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)</a></h3>
+<p class="card-description">Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion.</p>
+<div class="card-footer-action">
+<a href="/blog/keep-reference-notes-visible-while-writing/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard" data-audience="clipboard">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Windows clipboard workflow</span>
+</div>
+<a href="/blog/windows-clipboard-history-vs-floating-notes/" class="card-media-link" aria-label="Windows Clipboard (Win + V) vs Floating Notes Setup">
+<img src="/blog/assets/writing-reference-notes.jpg" width="1300" height="874" alt="FloatBoard window showing separate text cards beside a grid of image thumbnails" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Windows clipboard workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/windows-clipboard-history-vs-floating-notes/">Windows Clipboard (Win + V) vs Floating Notes Setup</a></h3>
+<p class="card-description">Compare Windows Win+V clipboard history with always-on-top floating scratchpads for daily developer productivity, coding, and multi-monitor workflows.</p>
+<div class="card-footer-action">
+<a href="/blog/windows-clipboard-history-vs-floating-notes/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all floating-notes" data-audience="floating-notes">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Learning &amp; desktop notes</span>
+</div>
+<a href="/blog/take-notes-while-watching-tutorials/" class="card-media-link" aria-label="How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)">
+<img src="/blog/assets/code-and-image-references.jpg" width="1308" height="882" alt="FloatBoard displaying image thumbnails next to a text panel containing an HTML reference snippet" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Learning &amp; desktop notes</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/take-notes-while-watching-tutorials/">How to Take Notes While Watching Video Tutorials on One Screen (Always on Top)</a></h3>
+<p class="card-description">Keep code snippets, timestamps, and study notes floating right above YouTube or Udemy video tutorials on a single laptop screen.</p>
+<div class="card-footer-action">
+<a href="/blog/take-notes-while-watching-tutorials/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Photo comparison workflow</span>
+</div>
+<a href="/blog/compare-photos-side-by-side-windows/" class="card-media-link" aria-label="Compare Photos Side by Side on Windows 11 &amp; 10">
+<img src="/blog/assets/compare-photos-side-by-side.png" width="1608" height="916" alt="FloatBoard showing four car-photo thumbnails in a two-by-two grid above a browser page with larger source images" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Photo comparison workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/compare-photos-side-by-side-windows/">Compare Photos Side by Side on Windows 11 &amp; 10</a></h3>
+<p class="card-description">Compare two or more photos side by side on Windows 11 &amp; 10 without Alt-Tabbing between windows. Lightweight floating image boards for fast inspection.</p>
+<div class="card-footer-action">
+<a href="/blog/compare-photos-side-by-side-windows/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard" data-audience="clipboard">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Windows screenshot workflow</span>
+</div>
+<a href="/blog/copy-text-from-screenshot-windows/" class="card-media-link" aria-label="How to Copy Text from Screen on Windows 11/10">
+<img src="/blog/assets/code-and-image-references.jpg" width="1308" height="882" alt="FloatBoard displaying four image thumbnails beside a text card containing HTML reference text" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Windows screenshot workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/copy-text-from-screenshot-windows/">How to Copy Text from Screen on Windows 11/10</a></h3>
+<p class="card-description">Copy text from any screenshot or non-selectable screen area on Windows 11 and 10 with fast native OCR tools and floating scratchpads. 100% offline.</p>
+<div class="card-footer-action">
+<a href="/blog/copy-text-from-screenshot-windows/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all floating-notes" data-audience="floating-notes">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Meeting notes &amp; desktop workflow</span>
+</div>
+<a href="/blog/keep-meeting-notes-visible-video-call/" class="card-media-link" aria-label="How to Pin Notes on Top in Zoom, Teams &amp; Meet">
+<img src="/blog/assets/writing-reference-notes.jpg" width="1300" height="874" alt="FloatBoard window with text cards on the left and image thumbnails on the right" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Meeting notes &amp; desktop workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/keep-meeting-notes-visible-video-call/">How to Pin Notes on Top in Zoom, Teams &amp; Meet</a></h3>
+<p class="card-description">Keep speaking agendas, talking points &amp; notes pinned floating directly beside your webcam during Zoom &amp; Teams calls. Never look away from your camera.</p>
+<div class="card-footer-action">
+<a href="/blog/keep-meeting-notes-visible-video-call/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Image reference workflows</span>
+</div>
+<a href="/blog/keep-web-image-reference-visible-while-browsing/" class="card-media-link" aria-label="How to Keep a Web Image Pinned on Screen While Browsing Multiple Tabs">
+<img src="/blog/assets/gif-1-poster.jpg" width="1920" height="1080" alt="Recorded FloatBoard demo beside a browser search for landscape photography, with a selected reference image shown in a larger view" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Image reference workflows</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/keep-web-image-reference-visible-while-browsing/">How to Keep a Web Image Pinned on Screen While Browsing Multiple Tabs</a></h3>
+<p class="card-description">Pin a reference image on top of Chrome or Edge while continuing to browse other sites, search pages, and online documents.</p>
+<div class="card-footer-action">
+<a href="/blog/keep-web-image-reference-visible-while-browsing/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Designers &amp; illustrators</span>
+</div>
+<a href="/blog/shortlist-landscape-photos-for-website-hero/" class="card-media-link" aria-label="How to Compare &amp; Pick the Best Website Hero Image Side-by-Side (Web Design Workflow)">
+<img src="/blog/assets/gif-2-poster.jpg" width="1920" height="1080" alt="Recorded FloatBoard demo showing a small grid of landscape candidate images while browsing a photography website" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Designers &amp; illustrators</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/shortlist-landscape-photos-for-website-hero/">How to Compare &amp; Pick the Best Website Hero Image Side-by-Side (Web Design Workflow)</a></h3>
+<p class="card-description">Shortlist and compare candidate hero photos directly over your website staging layout with a floating reference board.</p>
+<div class="card-footer-action">
+<a href="/blog/shortlist-landscape-photos-for-website-hero/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Image reference workflows</span>
+</div>
+<a href="/blog/review-image-grid-and-large-preview/" class="card-media-link" aria-label="How to View Photos in a Side-by-Side Grid with Instant Large Preview on Windows">
+<img src="/blog/assets/gif-3-poster.jpg" width="1920" height="1080" alt="Recorded FloatBoard demo showing a small grid of landscape references beside browser image results" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Image reference workflows</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/review-image-grid-and-large-preview/">How to View Photos in a Side-by-Side Grid with Instant Large Preview on Windows</a></h3>
+<p class="card-description">Review dozens of copied images in a floating grid and trigger instant full-size previews without saving temporary files to disk.</p>
+<div class="card-footer-action">
+<a href="/blog/review-image-grid-and-large-preview/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Image reference workflows</span>
+</div>
+<a href="/blog/collect-visual-references-across-search-pages/" class="card-media-link" aria-label="How to Collect Visual References Across Search Pages into One Floating Board">
+<img src="/blog/assets/gif-6-poster.jpg" width="1920" height="1080" alt="Recorded browser search for tree images with a FloatBoard window visible while different results and pages are reviewed" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Image reference workflows</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/collect-visual-references-across-search-pages/">How to Collect Visual References Across Search Pages into One Floating Board</a></h3>
+<p class="card-description">Gather images and inspiration across multiple Google search tabs into a single persistent floating reference board.</p>
+<div class="card-footer-action">
+<a href="/blog/collect-visual-references-across-search-pages/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Clipboard &amp; source tracking</span>
+</div>
+<a href="/blog/copy-web-image-and-keep-source/" class="card-media-link" aria-label="Copy Images from Any Website (Keep Source URL)">
+<img src="/blog/assets/gif-7-poster.jpg" width="1920" height="1080" alt="Recorded browser demo showing an opened tree photograph on its source page beside FloatBoard image tiles" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Clipboard &amp; source tracking</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/copy-web-image-and-keep-source/">Copy Images from Any Website (Keep Source URL)</a></h3>
+<p class="card-description">Copy and paste any web picture in seconds even when right-click is disabled. Automatically track and save the original image URL on Windows &amp; Mac.</p>
+<div class="card-footer-action">
+<a href="/blog/copy-web-image-and-keep-source/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Webpage screenshot workflow</span>
+</div>
+<a href="/blog/capture-webpage-detail-screenshot-reference/" class="card-media-link" aria-label="How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference">
+<img src="/blog/assets/gif-8-poster.jpg" width="1920" height="1080" alt="Archived Linux browser recording showing a tree photograph, an image context menu with Take Screenshot, and a floating board with image thumbnails" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Webpage screenshot workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/capture-webpage-detail-screenshot-reference/">How to Take a Webpage Screenshot on Windows &amp; Pin It as a Floating Reference</a></h3>
+<p class="card-description">Capture any UI snippet or article diagram and keep it floating always on top while designing or coding without cluttering your desktop.</p>
+<div class="card-footer-action">
+<a href="/blog/capture-webpage-detail-screenshot-reference/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard" data-audience="clipboard">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Web research workflow</span>
+</div>
+<a href="/blog/keep-webpage-text-beside-image-references/" class="card-media-link" aria-label="How to Keep Copied Webpage Text Beside Image References on One Screen">
+<img src="/blog/assets/gif-9-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demo with text selected on a website and text cards displayed beside image thumbnails" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Web research workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/keep-webpage-text-beside-image-references/">How to Keep Copied Webpage Text Beside Image References on One Screen</a></h3>
+<p class="card-description">Pin copied web text, quotes, and research excerpts right next to visual references in a dual-pane always-on-top floating window.</p>
+<div class="card-footer-action">
+<a href="/blog/keep-webpage-text-beside-image-references/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard" data-audience="clipboard">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Clipboard cleanup workflow</span>
+</div>
+<a href="/blog/clear-copied-text-history-keep-working-set/" class="card-media-link" aria-label="Clear Windows Clipboard (Keep Pinned Clips)">
+<img src="/blog/assets/gif-10-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demonstration showing several text cards, an image board, and a clipboard history panel with a clear control" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Clipboard cleanup workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/clear-copied-text-history-keep-working-set/">Clear Windows Clipboard (Keep Pinned Clips)</a></h3>
+<p class="card-description">Safely clear Windows 11 and 10 clipboard history with Win+V without losing your pinned clips and notes. Complete step-by-step developer tutorial.</p>
+<div class="card-footer-action">
+<a href="/blog/clear-copied-text-history-keep-working-set/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Image quality workflow</span>
+</div>
+<a href="/blog/inspect-image-original-after-thumbnail/" class="card-media-link" aria-label="How to View 100% Full-Size Images from Clipboard">
+<img src="/blog/assets/gif-11-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demonstration showing image thumbnails on a board and a history panel with older entries" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Image quality workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/inspect-image-original-after-thumbnail/">How to View 100% Full-Size Images from Clipboard</a></h3>
+<p class="card-description">Inspect original full-resolution image details directly from clipboard thumbnails without opening heavy image editors on Windows, Mac, and Linux.</p>
+<div class="card-footer-action">
+<a href="/blog/inspect-image-original-after-thumbnail/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Two-image design workflow</span>
+</div>
+<a href="/blog/start-two-image-reference-board/" class="card-media-link" aria-label="How to Start a Two-Image Reference Board for Focused Visual Decisions">
+<img src="/blog/assets/gif-12-poster.jpg" width="1920" height="1080" alt="Archived Linux FloatBoard demonstration starting with an empty window and ending with two landscape images visible side by side" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Two-image design workflow</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/start-two-image-reference-board/">How to Start a Two-Image Reference Board for Focused Visual Decisions</a></h3>
+<p class="card-description">Compare two visual alternatives side by side on a clean floating board to make fast design and color decisions without distraction.</p>
+<div class="card-footer-action">
+<a href="/blog/start-two-image-reference-board/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references developer" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Frontend developers &amp; designers</span>
+</div>
+<a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/" class="card-media-link" aria-label="How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding">
+<img src="/blog/assets/design-tokens-and-mockup-board.jpg" width="1560" height="1040" alt="FloatBoard in dark mode showing three design token notes on the left and four landscape UI reference cards on the right" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Frontend developers &amp; designers</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/">How to Pin Figma Mockups, Hex Colors &amp; Design Tokens Above VS Code While Coding</a></h3>
+<p class="card-description">Eliminate Alt-Tab between Figma and VS Code. Pin design tokens, hex codes, and UI mockups always on top of your code editor.</p>
+<div class="card-footer-action">
+<a href="/blog/keep-design-tokens-and-mockups-visible-while-coding/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all developer floating-notes" data-audience="floating-notes">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Developer workflows &amp; focus</span>
+</div>
+<a href="/blog/always-on-top-floating-notes-developers-multitasking/" class="card-media-link" aria-label="Always on Top Windows 11 &amp; Mac: Pin Any Note or Window">
+<img src="/blog/assets/developer-floating-notes-workspace.jpg" width="1560" height="1040" alt="FloatBoard desktop window showing developer API endpoints and auth tokens on the left with four visual reference images on the right" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Developer workflows &amp; focus</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top Windows 11 &amp; Mac: Pin Any Note or Window</a></h3>
+<p class="card-description">Eliminate 1,200 Alt-Tabs a day. Pin active API tokens, curl commands, and reference mockups always on top of your IDE or code editor. 100% offline.</p>
+<div class="card-footer-action">
+<a href="/blog/always-on-top-floating-notes-developers-multitasking/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references developer floating-notes" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Designers &amp; developers</span>
+</div>
+<a href="/blog/instant-screenshot-capture-floating-reference/" class="card-media-link" aria-label="How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)">
+<img src="/blog/assets/infinity-mirror-screenshot-reference.jpg" width="1560" height="1040" alt="FloatBoard desktop window displaying recursive screenshot-in-screenshot mirror loop beside working text notes" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Designers &amp; developers</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/instant-screenshot-capture-floating-reference/">How to Pin Screenshots Always on Top in Windows 11 &amp; Mac (Clean Desktop Workflow)</a></h3>
+<p class="card-description">Capture screen regions and keep them pinned immediately in an always-on-top floating workspace without saving throwaway PNGs to disk.</p>
+<div class="card-footer-action">
+<a href="/blog/instant-screenshot-capture-floating-reference/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all developer floating-notes" data-audience="floating-notes">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Developers &amp; multitaskers</span>
+</div>
+<a href="/blog/how-to-pin-sticky-notes-always-on-top-windows-11/" class="card-media-link" aria-label="How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)">
+<img src="/blog/assets/pin-sticky-notes-windows-11.jpg" width="1200" height="675" alt="FloatBoard pinned sticky note scratchpad floating above Windows 11 desktop" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Developers &amp; multitaskers</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/how-to-pin-sticky-notes-always-on-top-windows-11/">How to Pin Sticky Notes Always on Top in Windows 11 (Without PowerToys)</a></h3>
+<p class="card-description">Keep desktop sticky notes and scratchpads permanently pinned above active windows in Windows 11. Compare OneNote pins, PowerToys, and lightweight floating tools.</p>
+<div class="card-footer-action">
+<a href="/blog/how-to-pin-sticky-notes-always-on-top-windows-11/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Designers &amp; illustrators</span>
+</div>
+<a href="/blog/lightweight-pureref-alternative-reference-board/" class="card-media-link" aria-label="Lightweight PureRef Alternative for Fast Image Reference Boards">
+<img src="/blog/assets/lightweight-pureref-alternative.jpg" width="1200" height="675" alt="FloatBoard lightweight PureRef alternative displaying architectural reference image and color palette swatches" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Designers &amp; illustrators</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/lightweight-pureref-alternative-reference-board/">Lightweight PureRef Alternative for Fast Image Reference Boards</a></h3>
+<p class="card-description">Need reference images pinned beside your 3D canvas or web design without loading a heavy infinite canvas? Here is how to keep visual references floating offline.</p>
+<div class="card-footer-action">
+<a href="/blog/lightweight-pureref-alternative-reference-board/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard" data-audience="clipboard">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Productivity &amp; shortcuts</span>
+</div>
+<a href="/blog/best-offline-clipboard-manager-windows-11/" class="card-media-link" aria-label="Best Offline Clipboard Manager for Windows 11 (With Image Preview)">
+<img src="/blog/assets/offline-clipboard-manager-windows-11.jpg" width="1200" height="675" alt="FloatBoard offline clipboard manager showing pinned developer snippets and image previews" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Productivity &amp; shortcuts</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/best-offline-clipboard-manager-windows-11/">Best Offline Clipboard Manager for Windows 11 (With Image Preview)</a></h3>
+<p class="card-description">Protect developer API keys, confidential tokens, and copied snippets with a 100% offline clipboard manager. Compare Windows Win + V and local visual clipboards.</p>
+<div class="card-footer-action">
+<a href="/blog/best-offline-clipboard-manager-windows-11/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Visual research &amp; moodboards</span>
+</div>
+<a href="/blog/how-to-copy-images-from-websites-directly-to-board/" class="card-media-link" aria-label="How to Copy Images from Websites Directly to a Floating Board">
+<img src="/blog/assets/copy-image-to-floating-board-demo.jpg" width="1400" height="900" alt="Browser context menu copying a nature photo directly into FloatBoard pinned reference window" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Visual research &amp; moodboards</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/how-to-copy-images-from-websites-directly-to-board/">How to Copy Images from Websites Directly to a Floating Board</a></h3>
+<p class="card-description">Copy any web picture directly into a floating reference board without saving files to disk. Step-by-step workflow for web research and moodboards.</p>
+<div class="card-footer-action">
+<a href="/blog/how-to-copy-images-from-websites-directly-to-board/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all clipboard developer" data-audience="clipboard">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Developers &amp; power users</span>
+</div>
+<a href="/blog/screenshot-and-copy-text-from-screen-windows-11/" class="card-media-link" aria-label="Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight)">
+<img src="/blog/assets/screenshot-capture-to-floating-board-demo.jpg" width="1400" height="900" alt="Windows Snipping Tool region crop on sports car auto-imported into FloatBoard dark floating card" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Developers &amp; power users</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/screenshot-and-copy-text-from-screen-windows-11/">Capture Screenshots &amp; Copy Text from Screen on Windows 11 (Speed of Sight)</a></h3>
+<p class="card-description">Instantly capture screen crops and copy text snippets directly into a pinned floating workspace on Windows 11 without opening Snipping Tool files.</p>
+<div class="card-footer-action">
+<a href="/blog/screenshot-and-copy-text-from-screen-windows-11/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article><article class="editorial-bento-card" data-category="all visual-references" data-audience="visual-references">
+<div class="card-mockup-frame">
+<div class="card-mockup-bar">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="card-mockup-title">FloatBoard · Visual comparison &amp; design</span>
+</div>
+<a href="/blog/side-by-side-image-comparison-reference-board/" class="card-media-link" aria-label="Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop">
+<img src="/blog/assets/side-by-side-reference-board-demo.jpg" width="1400" height="900" alt="Side by side car reference comparison cards in FloatBoard dual view pinned on desktop" decoding="async" loading="lazy">
+</a>
+</div>
+<div class="card-content">
+<div class="card-meta">
+<span class="card-category-badge">Visual comparison &amp; design</span>
+<span class="card-read-time">5 min read</span>
+</div>
+<h3 class="card-title"><a href="/blog/side-by-side-image-comparison-reference-board/">Side-by-Side Image Comparison &amp; Reference Board Maker for Desktop</a></h3>
+<p class="card-description">Compare photos, vehicle angles, and design mockups side by side with a dedicated visual reference board maker for Windows &amp; Mac.</p>
+<div class="card-footer-action">
+<a href="/blog/side-by-side-image-comparison-reference-board/" class="card-read-btn">
+<span>Read Guide</span>
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"></polyline></svg>
+</a>
+</div>
+</div>
+</article>
+</div>
+</section>
+
+<!-- Outro About Card -->
+<section class="editorial-index-about">
 <div class="editorial-about-card">
 <h2>About these guides</h2>
 <p>Published by FloatBoard, the app featured in these examples. Each guide addresses a specific workflow and explains when another tool is a better fit. <a href="/blog/about/">Read our editorial approach →</a></p>
 </div>
-</section></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
+</section>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+  var buttons = document.querySelectorAll(".blog-filter-bar .filter-btn");
+  var cards = document.querySelectorAll(".editorial-filterable-grid .editorial-bento-card");
+  if (!buttons.length || !cards.length) return;
+  buttons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      buttons.forEach(function(b){ b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      var f = btn.getAttribute("data-filter");
+      cards.forEach(function(card){
+        var cat = (card.getAttribute("data-category") || "").toLowerCase();
+        var aud = (card.getAttribute("data-audience") || "").toLowerCase();
+        if (f === "all" || cat.indexOf(f) !== -1 || aud.indexOf(f) !== -1) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    });
+  });
+});
+</script></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>
+(function(){
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function(){
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }
+      });
+    }
+    var v = document.querySelector("video.guide-demo");
+    if (v) {
+      v.muted = true;
+      v.play().catch(function(){});
+    }
+  });
+})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>

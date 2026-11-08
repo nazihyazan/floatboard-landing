@@ -2,7 +2,10 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About FloatBoard – The Offline Always-on-Top Floating Clipboard &amp; Scratchpad for Desktop</title><meta name="description" content="Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error.">
 <link rel="canonical" href="https://floatboard.xyz/blog/about/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="website"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="About FloatBoard – The Offline Always-on-Top Floating Clipboard &amp; Scratchpad for Desktop"><meta property="og:description" content="Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error."><meta property="og:url" content="https://floatboard.xyz/blog/about/"><meta property="og:image" content="https://floatboard.xyz/icon.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="About FloatBoard – The Offline Always-on-Top Floating Clipboard &amp; Scratchpad for Desktop"><meta name="twitter:description" content="Who publishes the FloatBoard blog, how its workflow guides are created, and how to report an error."><meta name="twitter:image" content="https://floatboard.xyz/icon.png">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "AboutPage", "name": "About the FloatBoard blog", "url": "https://floatboard.xyz/blog/about/"}</script>
@@ -38,7 +41,7 @@ body.blog-page.uisavior-theme {
 </head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
 <span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
 <a href="/pricing">Get $5.99 lifetime license →</a>
-</aside><nav class="guide-nav" aria-label="Main navigation">
+</aside><nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -48,10 +51,18 @@ body.blog-page.uisavior-theme {
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
 </div>
 </nav><main id="main"><article class="editorial-wrapper editorial-about-page" style="max-width: 860px; margin: 0 auto;">
 <div class="editorial-badge-row">
@@ -75,4 +86,32 @@ body.blog-page.uisavior-theme {
 </section>
 </div>
 <p style="margin-top: 32px;"><a href="/blog/" style="color: var(--theme-secondary); font-weight: 700; text-decoration: none;">← Back to guides</a></p>
-</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
+</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>
+(function(){
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function(){
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }
+      });
+    }
+    var v = document.querySelector("video.guide-demo");
+    if (v) {
+      v.muted = true;
+      v.play().catch(function(){});
+    }
+  });
+})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>

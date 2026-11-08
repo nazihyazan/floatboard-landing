@@ -2,7 +2,10 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)</title><meta name="description" content="Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion.">
 <link rel="canonical" href="https://floatboard.xyz/blog/keep-reference-notes-visible-while-writing/"><link rel="icon" href="/icon.png">
-<link rel="stylesheet" href="/blog/blog.css?v=20261107b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/blog/blog.css?v=20261108">
 <meta property="og:type" content="article"><meta property="og:site_name" content="FloatBoard"><meta property="og:title" content="How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)"><meta property="og:description" content="Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion."><meta property="og:url" content="https://floatboard.xyz/blog/keep-reference-notes-visible-while-writing/"><meta property="og:image" content="https://floatboard.xyz/blog/assets/writing-reference-notes.jpg">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How to Keep Research &amp; Reference Notes Always on Top While Writing (Word, Docs &amp; Notion)"><meta name="twitter:description" content="Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion."><meta name="twitter:image" content="https://floatboard.xyz/blog/assets/writing-reference-notes.jpg">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "How to Keep Research & Reference Notes Always on Top While Writing (Word, Docs & Notion)", "description": "Stop switching between browser tabs and your draft. Keep quotes, research snippets, and outlines pinned above Word, Docs, or Notion.", "image": ["https://floatboard.xyz/blog/assets/writing-reference-notes.jpg"], "datePublished": "2026-09-24", "dateModified": "2026-10-07", "mainEntityOfPage": "https://floatboard.xyz/blog/keep-reference-notes-visible-while-writing/", "author": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/blog/about/"}, "publisher": {"@type": "Organization", "name": "FloatBoard", "url": "https://floatboard.xyz/"}, "keywords": ["floating notes for windows", "keep notes on top of word", "always on top notepad windows 11", "split screen alternative for writers"]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How can I keep notes always on top while writing in Windows?", "acceptedAnswer": {"@type": "Answer", "text": "Open your notes app and use Microsoft PowerToys Always On Top to pin its active window, or use FloatBoard’s own pin control. Resize the note window so Word or your browser stays readable."}}, {"@type": "Question", "name": "Can I keep reference notes beside Google Docs?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Google Docs runs in a browser window, so you can place a separate notes window beside it or keep a small FloatBoard window pinned above it. If your screen is narrow, a side-by-side layout may work better than an overlapping note."}}, {"@type": "Question", "name": "Should I use a floating note or Zotero for research?", "acceptedAnswer": {"@type": "Answer", "text": "Use Zotero or another reference manager for the source collection and final citations. Use a floating note for the few facts or questions you need in view during the current paragraph. A source card on the board should always point back to the original."}}, {"@type": "Question", "name": "How do I avoid accidentally copying source text into my draft?", "acceptedAnswer": {"@type": "Answer", "text": "Label exact quotations and your own paraphrases differently. Draft from the source idea with the original closed or beside you, then reopen it to verify accuracy and attribution before publishing."}}]}]}</script>
@@ -38,7 +41,7 @@ body.blog-page.uisavior-theme {
 </head><body class="blog-page uisavior-theme"><div class="uisavior-aurora"></div><div class="uisavior-matrix"></div><a class="skip-link" href="#main">Skip to content</a><aside class="editorial-top-announcement" aria-label="Product announcement">
 <span>FloatBoard 1.0 — 100% offline always-on-top floating notes &amp; clipboard manager.</span>
 <a href="/pricing">Get $5.99 lifetime license →</a>
-</aside><nav class="guide-nav" aria-label="Main navigation">
+</aside><nav class="guide-nav floating-nav" aria-label="Main navigation">
 <div class="guide-nav-content">
 <a class="guide-brand" href="/">
 <span class="guide-logo-dot"></span>
@@ -48,10 +51,18 @@ body.blog-page.uisavior-theme {
 <a href="/">Overview</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
+<a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
 <a href="/blog/">Editorial</a>
 <a href="/pricing">Pricing</a>
 </div>
+<div class="guide-nav-actions">
+<button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+<span class="theme-dot default-dot" aria-hidden="true"></span>
+<span class="theme-dot contrast-dot" aria-hidden="true"></span>
+<span class="theme-toggle-label">Theme</span>
+</button>
 <a href="/download/" class="guide-nav-btn">Download Free</a>
+</div>
 </div>
 </nav><main id="main"><article class="editorial-wrapper">
 <header class="editorial-hero-header">
@@ -119,17 +130,31 @@ body.blog-page.uisavior-theme {
 <li><a href="#choose-reference-notes">Choose the notes needed for the next paragraph</a></li><li><a href="#set-up">Three ways to keep notes beside Word or Google Docs</a></li><li><a href="#example-note">Copy this source-card structure before drafting</a></li><li><a href="#sources-and-quotes">Do not let a floating note become a lost citation</a></li><li><a href="#writing-faq">Frequently asked questions about visible writing notes</a></li><li><a href="#review">Review the draft, then refresh the working set</a></li>
 </ul>
 </div>
-<div class="editorial-card-sidebar" aria-label="Download FloatBoard">
+<div class="editorial-card-sidebar glass-cta-sidebar" aria-label="Download FloatBoard desktop app">
+<div class="sidebar-mockup-preview">
+<div class="sidebar-mockup-header">
+<div class="uisavior-mockup-dots"><span class="uisavior-dot r"></span><span class="uisavior-dot y"></span><span class="uisavior-dot g"></span></div>
+<span class="sidebar-mockup-tag">ALWAYS ON TOP</span>
+</div>
+<div class="sidebar-preview-frame">
+<video class="guide-demo sidebar-loop-video" width="480" height="270" autoplay muted loop playsinline controls preload="none" poster="/blog/assets/gif-1-poster.jpg" aria-label="5-second looping preview of FloatBoard pinned above desktop workspace">
+<source src="/blog/assets/gif-1-demo.mp4" type="video/mp4">
+</video>
+</div>
+</div>
 <div class="editorial-sidebar-brand">
-<img src="/icon.png" width="30" height="30" alt="FloatBoard icon" class="guide-brand-icon">
+<img src="/icon.png" width="32" height="32" alt="FloatBoard icon" class="guide-brand-icon">
 <div>
-<h4 class="editorial-sidebar-title">FloatBoard</h4>
-<p class="editorial-sidebar-sub">Windows, Mac &amp; Linux</p>
+<h4 class="editorial-sidebar-title">FloatBoard Desktop</h4>
+<p class="editorial-sidebar-sub">Windows, macOS &amp; Linux</p>
 </div>
 </div>
-<p class="editorial-sidebar-desc">Pin scratchpad notes, code snippets, and reference images directly above your active apps.</p>
-<a href="/download/" class="editorial-btn-black">Download Free App →</a>
-<span class="editorial-card-footnote">$5.99 Lifetime · Offline Privacy</span>
+<p class="editorial-sidebar-desc">Eliminate the Alt-Tab tax. Keep active clipboard clips, code snippets, and reference images pinned permanently in a transparent floating board.</p>
+<a href="/download/" class="sidebar-cta-btn">Download Free App →</a>
+<div class="sidebar-guarantee-row">
+<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+<span>100% Offline · $5.99 Lifetime · No Subscriptions</span>
+</div>
 </div>
 </aside>
 <div class="editorial-content-col">
@@ -163,4 +188,32 @@ Before publishing: reopen source and verify context</code></pre><p>Put the sourc
 </section>
 </div>
 </div>
-</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>document.addEventListener("DOMContentLoaded",function(){var v=document.querySelector("video.guide-demo");if(v){v.muted=true;v.play().catch(function(){});}});</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
+</article></main><footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer><script>
+(function(){
+  var stored = localStorage.getItem('fb_theme');
+  if (stored) {
+    document.documentElement.setAttribute('data-theme', stored);
+  }
+  document.addEventListener("DOMContentLoaded", function(){
+    var btn = document.getElementById("theme-toggle");
+    if (btn) {
+      btn.addEventListener("click", function(){
+        var cur = document.documentElement.getAttribute("data-theme");
+        var next = cur === "high-contrast" ? "default" : "high-contrast";
+        if (next === "default") {
+          document.documentElement.removeAttribute("data-theme");
+          localStorage.removeItem("fb_theme");
+        } else {
+          document.documentElement.setAttribute("data-theme", "high-contrast");
+          localStorage.setItem("fb_theme", "high-contrast");
+        }
+      });
+    }
+    var v = document.querySelector("video.guide-demo");
+    if (v) {
+      v.muted = true;
+      v.play().catch(function(){});
+    }
+  });
+})();
+</script><!-- 100% privacy-first analytics --><script data-collect-dnt="true" data-detect-404="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script></body></html>
