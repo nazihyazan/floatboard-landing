@@ -336,14 +336,15 @@ def get_filter_tags(p):
     aud = p.get('audience', '')
     cat = p.get('category', '').lower()
     slug = p.get('slug', '').lower()
+    title = p.get('title', '').lower()
     
-    if aud == 'clipboard' or 'clipboard' in cat or 'clipboard' in slug or 'copy' in slug:
+    if aud == 'clipboard' or 'clipboard' in cat or 'clipboard' in slug or 'copy' in slug or 'clipboard' in title or 'ocr' in cat:
         tags.append('clipboard')
-    if aud == 'visual-references' or 'pureref' in slug or 'image' in cat or 'photo' in cat or 'design' in cat:
+    if aud == 'visual-references' or 'pureref' in slug or 'image' in cat or 'photo' in cat or 'design' in cat or 'pureref' in cat or 'artist' in cat or 'moodboard' in cat:
         tags.append('visual-references')
-    if 'developer' in cat or 'coding' in cat or 'tokens' in slug or 'code' in slug or 'power users' in cat or 'multitask' in cat:
+    if 'developer' in cat or 'coding' in cat or 'tokens' in slug or 'code' in slug or 'dev' in cat or 'figma' in cat or 'linux' in cat:
         tags.append('developer')
-    if aud == 'floating-notes' or 'notes' in cat or 'sticky' in slug or 'always on top' in p['title'].lower():
+    if aud == 'floating-notes' or 'notes' in cat or 'sticky' in slug or 'always on top' in title or 'teams' in cat or 'word' in cat or 'multitask' in cat:
         tags.append('floating-notes')
     return ' '.join(tags)
 
