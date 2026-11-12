@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Online Productivity &amp; Design Tools | FloatBoard</title>
+  <meta name="description" content="Free in-browser productivity utilities: online side-by-side image comparison, screenshot OCR text extractor, and floating WebPad notepad. 100% private, zero uploads.">
+  <link rel="canonical" href="https://floatboard.xyz/tools/">
+  <link rel="icon" href="/icon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FloatBoard">
+  <meta property="og:title" content="Free Online Productivity &amp; Design Tools | FloatBoard">
+  <meta property="og:description" content="Zero-upload online tools: side-by-side image comparison, client-side screenshot OCR, and floating WebPad notepad.">
+  <meta property="og:url" content="https://floatboard.xyz/tools/">
+  <meta property="og:image" content="https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Online Productivity &amp; Design Tools | FloatBoard">
+  <meta name="twitter:description" content="Free in-browser design and productivity tools. 100% client-side privacy.">
+  <meta name="twitter:image" content="https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg">
+
+  <!-- Fonts & Shared Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../blog/blog.css?v=20261112b">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "name": "FloatBoard Free Online Productivity & Design Tools",
+        "url": "https://floatboard.xyz/tools/",
+        "description": "Directory of free client-side web tools for image comparison, screenshot OCR text extraction, and floating notepads.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "FloatBoard",
+          "url": "https://floatboard.xyz/"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    .tools-hub-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      position: relative;
+      z-index: 2;
+    }
+    .tools-bento-hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+      margin: 40px 0 60px;
+    }
+    .tool-hub-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      text-decoration: none;
+    }
+    .tool-hub-card:hover {
+      border-color: rgba(252, 121, 64, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 30px rgba(252, 121, 64, 0.15);
+    }
+    .tool-badge-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .tool-status-tag {
+      font-size: 11px;
+      font-weight: 800;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--theme-secondary);
+      background: rgba(252, 121, 64, 0.12);
+      border: 1px solid rgba(252, 121, 64, 0.25);
+      padding: 4px 10px;
+      border-radius: 9999px;
+    }
+    .tool-hub-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+    .tool-hub-desc {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0 0 24px;
+      line-height: 1.6;
+    }
+    .tool-card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--theme-secondary);
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .tool-hub-card:hover .tool-card-cta {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body class="blog-page">
+  <div class="uisavior-aurora" aria-hidden="true"></div>
+  <div class="uisavior-matrix" aria-hidden="true"></div>
+
+  <a href="#tools-hub" class="skip-link">Skip to tools list</a>
+
+  <!-- Top Announcement -->
+  <aside class="editorial-top-announcement" aria-label="Tools hub announcement">
+    <span>Free In-Browser Suite — 100% Client-Side Privacy (Zero Server Uploads).</span>
+    <a href="/download/">Download FloatBoard Desktop App Free ↗</a>
+  </aside>
+
+  <!-- Floating Pill-Shaped Navigation Bar -->
+  <nav class="guide-nav" aria-label="Main navigation">
+    <div class="guide-nav-content">
+      <a href="/" class="guide-brand">
+        <span class="guide-logo-dot"></span>
+        <span class="guide-brand-text">FloatBoard</span>
+      </a>
+      <div class="guide-nav-links">
+        <a href="/">Overview</a>
+        <a href="/tools/" class="active">Tools Hub</a>
+        <a href="/tools/compare-images-online/">Image Compare</a>
+        <a href="/tools/extract-text-from-image/">Screen OCR</a>
+        <a href="/web-pad/">WebPad</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="guide-nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+          <span class="theme-dot default-dot" aria-hidden="true"></span>
+          <span class="theme-dot contrast-dot" aria-hidden="true"></span>
+          <span class="theme-toggle-label">Theme</span>
+        </button>
+        <a href="/download/" class="guide-nav-btn">Download Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="editorial-index-hero" id="tools-hub" style="padding-top: 40px; padding-bottom: 30px;">
+    <div class="hero-glow-layer" aria-hidden="true"></div>
+    <div class="hero-ribbed-glass" aria-hidden="true"></div>
+
+    <div class="hero-badge-pill" style="margin-bottom: 16px;">
+      <span class="badge-dot" style="background: var(--theme-secondary);"></span>
+      <span>FREE IN-BROWSER UTILITIES // 100% CLIENT-SIDE PRIVACY</span>
+    </div>
+
+    <h1 class="hero-editorial-h1" style="max-width: 900px; margin: 0 auto 16px;">
+      Free Online Productivity Tools at the Speed of <em class="editorial-focal-italic">Thought</em>.
+    </h1>
+
+    <p class="hero-editorial-sub" style="max-width: 720px; margin: 0 auto 28px;">
+      Zero downloads required to get started. Compare images side by side, extract text from screenshots with client-side OCR, and write floating notes in your browser.
+    </p>
+  </header>
+
+  <!-- Tools Bento Grid -->
+  <main class="tools-hub-container">
+    <div class="tools-bento-hero-grid">
+      <!-- Tool 1: Side by Side Compare -->
+      <a href="/tools/compare-images-online/" class="tool-hub-card">
+        <div>
+          <div class="tool-badge-row">
+            <span class="tool-status-tag">SIDE-BY-SIDE // SLIDER // DIFF</span>
+            <span style="font-size: 11px; color: #34d399; font-weight: 700;">● ZERO UPLOADS</span>
+          </div>
+          <h2 class="tool-hub-title">Online Image Comparison Tool</h2>
+          <p class="tool-hub-desc">
+            Compare two photos, UI mockups, or 3D render passes side-by-side. Features interactive split slider, pixel difference blend, zoom, and clipboard paste (Ctrl + V).
+          </p>
+        </div>
+        <div class="tool-card-cta">
+          Launch Image Compare Tool →
+        </div>
+      </a>
+
+      <!-- Tool 2: Screen OCR -->
+      <a href="/tools/extract-text-from-image/" class="tool-hub-card">
+        <div>
+          <div class="tool-badge-row">
+            <span class="tool-status-tag">CLIENT-SIDE OCR // WEBASSEMBLY</span>
+            <span style="font-size: 11px; color: #34d399; font-weight: 700;">● LOCAL RAM ONLY</span>
+          </div>
+          <h2 class="tool-hub-title">Screenshot &amp; Image OCR Extractor</h2>
+          <p class="tool-hub-desc">
+            Paste screenshots directly with Win+Shift+S and Ctrl+V. Extracts clean text, terminal logs, and code snippets in your browser with side-by-side image verification.
+          </p>
+        </div>
+        <div class="tool-card-cta">
+          Launch Screen OCR Tool →
+        </div>
+      </a>
+
+      <!-- Tool 3: WebPad Floating Notes -->
+      <a href="/web-pad/" class="tool-hub-card">
+        <div>
+          <div class="tool-badge-row">
+            <span class="tool-status-tag">PICTURE-IN-PICTURE // FLOATING</span>
+            <span style="font-size: 11px; color: #34d399; font-weight: 700;">● ALWAYS ON TOP</span>
+          </div>
+          <h2 class="tool-hub-title">WebPad Floating Notepad</h2>
+          <p class="tool-hub-desc">
+            Detaches into a native Picture-in-Picture floating window that hovers always-on-top above all browser tabs and applications without installing any software.
+          </p>
+        </div>
+        <div class="tool-card-cta">
+          Launch WebPad Notepad →
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Callout Banner -->
+    <section class="desktop-callout-card" style="margin-top: 20px;">
+      <div class="callout-text">
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(252, 121, 64, 0.2); color: #fc7940; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 800; margin-bottom: 8px;">
+          NATIVE DESKTOP UPGRADE
+        </div>
+        <h3 style="color: #ffffff; font-size: 1.4rem; font-weight: 800; margin: 0 0 8px;">Want all these tools pinned always-on-top offline?</h3>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0;">FloatBoard desktop app integrates image reference boards, offline OCR, and clipboard history directly above your active windows with system-wide hotkeys.</p>
+      </div>
+      <div class="callout-actions">
+        <a href="/download/" class="guide-nav-btn" style="padding: 12px 24px;">Download FloatBoard Free ↗</a>
+        <a href="/pricing" style="color: #cbd5e1; font-size: 0.88rem; font-weight: 600; text-decoration: none;">View $5.99 Lifetime →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="editorial-footer">
+    <div class="editorial-footer-content">
+      <div class="editorial-footer-brand">
+        <a href="/" class="guide-brand">
+          <span class="guide-logo-dot"></span>
+          <span class="guide-brand-text">FloatBoard</span>
+        </a>
+        <p class="editorial-footer-copy">
+          Zero-latency floating scratchpad, reference board &amp; offline clipboard manager for Windows 11, macOS &amp; Linux.
+        </p>
+      </div>
+      <div class="editorial-footer-columns">
+        <div class="footer-col">
+          <h4>Free Tools</h4>
+          <ul>
+            <li><a href="/tools/compare-images-online/">Image Compare Tool</a></li>
+            <li><a href="/tools/extract-text-from-image/">Screen OCR Tool</a></li>
+            <li><a href="/web-pad/">WebPad Notepad</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/blog/best-offline-clipboard-manager-windows-11/">Offline Clipboard</a></li>
+            <li><a href="/blog/lightweight-pureref-alternative-reference-board/">PureRef Alternative</a></li>
+            <li><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top</a></li>
+            <li><a href="/blog/">All 27 Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/download/">Download Free</a></li>
+            <li><a href="/pricing">Pricing ($5.99)</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const current = document.documentElement.getAttribute('data-theme') || 'default';
+          const next = current === 'high-contrast' ? 'default' : 'high-contrast';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('floatboard-theme', next);
+        });
+        const saved = localStorage.getItem('floatboard-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+      }
+    })();
+  </script>
+</body>
+</html>

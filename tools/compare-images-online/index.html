@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compare Two Images Online Side by Side (Free Image Diff Tool) | FloatBoard</title>
+  <meta name="description" content="Free online side-by-side image comparison tool. Compare two photos or mockups side-by-side, split-screen slider, or overlay diff with zero uploads (100% private in browser).">
+  <link rel="canonical" href="https://floatboard.xyz/tools/compare-images-online/">
+  <link rel="icon" href="/icon.png">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FloatBoard">
+  <meta property="og:title" content="Compare Two Images Online Side by Side (Free Image Diff Tool)">
+  <meta property="og:description" content="Compare photos, design mockups, and render passes side by side with interactive split slider and pixel diff. 100% private, client-side in your browser.">
+  <meta property="og:url" content="https://floatboard.xyz/tools/compare-images-online/">
+  <meta property="og:image" content="https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Compare Two Images Online Side by Side (Free Image Diff Tool)">
+  <meta name="twitter:description" content="Zero-upload side-by-side image comparison, split slider, and diff tool in your browser.">
+  <meta name="twitter:image" content="https://floatboard.xyz/blog/assets/side-by-side-reference-board-demo.jpg">
+
+  <!-- Fonts & Shared Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../blog/blog.css?v=20261112b">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "FloatBoard Online Image Comparison Tool",
+        "url": "https://floatboard.xyz/tools/compare-images-online/",
+        "applicationCategory": "DesignApplication",
+        "operatingSystem": "All modern web browsers (Chrome, Edge, Firefox, Safari)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free web-based side-by-side image comparison tool supporting dual grid, split-screen before/after slider, and difference overlay without server uploads."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Are my images uploaded to any server when comparing online?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. FloatBoard's comparison tool operates 100% client-side using browser HTML5 Canvas and the FileReader API. Your images remain in your local device memory and are never uploaded, stored, or transmitted to any remote server."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I paste images directly from my clipboard?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. You can press Ctrl + V (or Cmd + V on Mac) anywhere on the page to paste screenshots or web images directly into Slot A or Slot B."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What comparison modes are available?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Three modes are supported: Side-by-Side Dual View for parallel examination, Split Slider for interactive Before/After dragging, and Difference Overlay (Diff) to highlight exact pixel discrepancies between revisions."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does this compare to FloatBoard Desktop App?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "This online tool provides quick browser comparisons. The native FloatBoard desktop application ($5.99 lifetime) stays permanently pinned always-on-top above Blender, Photoshop, Premiere, and code editors with hotkeys, text scratchpads, and offline clipboard history."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Tool-specific interactive styles aligned with SaaS theme */
+    .tool-workspace-wrapper {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .tool-app-window {
+      background: rgba(10, 15, 25, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(2, 103, 222, 0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
+    .tool-window-bar {
+      background: rgba(12, 18, 30, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .window-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .window-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+    .window-dot.r { background: #ff5f56; }
+    .window-dot.y { background: #ffbd2e; }
+    .window-dot.g { background: #27c93f; }
+
+    .window-mode-tabs {
+      display: flex;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      padding: 3px;
+      gap: 2px;
+    }
+    .mode-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: inherit;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mode-tab-btn:hover {
+      color: #ffffff;
+    }
+    .mode-tab-btn.active {
+      background: var(--theme-secondary);
+      color: #ffffff;
+      box-shadow: 0 0 14px rgba(252, 121, 64, 0.5);
+    }
+
+    .window-quick-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .tool-action-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .tool-action-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Comparison Stage */
+    .comparison-stage {
+      min-height: 540px;
+      max-height: 720px;
+      position: relative;
+      background: #020508;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(rgba(2, 103, 222, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+    }
+
+    /* Side-by-Side Dual Grid */
+    .stage-side-by-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+      min-height: 540px;
+      position: absolute;
+      inset: 0;
+    }
+    .compare-slot {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px;
+    }
+    .compare-slot:last-child {
+      border-right: none;
+    }
+    .slot-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: rgba(10, 15, 25, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+    .slot-badge span {
+      color: var(--theme-secondary);
+      font-weight: 700;
+    }
+
+    .slot-empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+      border: 2px dashed rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      padding: 40px 24px;
+      max-width: 380px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .slot-empty-state:hover, .slot-empty-state.drag-over {
+      border-color: var(--theme-secondary);
+      background: rgba(252, 121, 64, 0.06);
+    }
+    .slot-empty-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--theme-secondary);
+    }
+    .slot-empty-title {
+      color: #ffffff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .slot-empty-desc {
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .compare-img-view {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
+      transition: transform 0.15s ease-out;
+    }
+
+    /* Split Slider View */
+    .stage-split-slider {
+      display: none;
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+    }
+    .split-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .split-layer-a {
+      z-index: 1;
+    }
+    .split-layer-b {
+      z-index: 2;
+      overflow: hidden;
+      width: 50%;
+      border-right: 2px solid var(--theme-secondary);
+    }
+    .split-layer-b .compare-img-view {
+      position: absolute;
+      left: 0;
+      min-width: 100%;
+    }
+    .split-handle-line {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: var(--theme-secondary);
+      z-index: 10;
+      cursor: ew-resize;
+      box-shadow: 0 0 12px var(--theme-secondary);
+    }
+    .split-handle-knob {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--theme-secondary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 20px rgba(252, 121, 64, 0.8);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    /* Difference Overlay */
+    .stage-diff-overlay {
+      display: none;
+      position: absolute;
+      inset: 0;
+      align-items: center;
+      justify-content: center;
+    }
+    .stage-diff-overlay .diff-img-b {
+      position: absolute;
+      mix-blend-mode: difference;
+    }
+
+    /* Bottom Info Bar */
+    .tool-window-footer {
+      background: rgba(12, 18, 30, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 12px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .tool-privacy-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      color: #34d399;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+    .tool-privacy-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 8px #34d399;
+    }
+
+    /* Desktop CTA Callout Card */
+    .desktop-callout-card {
+      background: linear-gradient(135deg, rgba(2, 103, 222, 0.18) 0%, rgba(252, 121, 64, 0.14) 100%);
+      border: 1.5px solid rgba(252, 121, 64, 0.4);
+      border-radius: 20px;
+      padding: 32px 36px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 40px 0 60px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(252, 121, 64, 0.15);
+      position: relative;
+      overflow: hidden;
+    }
+    .desktop-callout-card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(252, 121, 64, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .callout-text h3 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 8px;
+    }
+    .callout-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin: 0;
+      max-width: 650px;
+      line-height: 1.6;
+    }
+    .callout-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    /* Bento Features */
+    .tool-bento-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin: 40px 0 60px;
+    }
+    .tool-bento-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 20px;
+      padding: 28px;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .tool-bento-card:hover {
+      border-color: rgba(252, 121, 64, 0.6);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 24px rgba(252, 121, 64, 0.15);
+    }
+    .tool-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(2, 103, 222, 0.15);
+      border: 1px solid rgba(2, 103, 222, 0.3);
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .tool-bento-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0;
+    }
+    .tool-bento-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* FAQ Section */
+    .tool-faq-section {
+      max-width: 900px;
+      margin: 40px auto 80px;
+    }
+    .tool-faq-title {
+      font-size: 2rem;
+      font-weight: 800;
+      text-align: center;
+      color: #ffffff;
+      margin-bottom: 30px;
+    }
+    .faq-accordion-item {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 14px;
+    }
+    .faq-accordion-item h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 10px;
+    }
+    .faq-accordion-item p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    @media (max-width: 768px) {
+      .stage-side-by-side {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .compare-slot {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .desktop-callout-card {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .tool-window-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body class="blog-page">
+  <div class="uisavior-aurora" aria-hidden="true"></div>
+  <div class="uisavior-matrix" aria-hidden="true"></div>
+
+  <a href="#tool-main" class="skip-link">Skip to comparison tool</a>
+
+  <!-- Top Announcement -->
+  <aside class="editorial-top-announcement" aria-label="Tool announcement">
+    <span>Free In-Browser Tool — 100% Client-Side Private (Zero Uploads).</span>
+    <a href="/download/">Want it floating always-on-top? Get FloatBoard Desktop ↗</a>
+  </aside>
+
+  <!-- Floating Pill-Shaped Navigation Bar -->
+  <nav class="guide-nav" aria-label="Main navigation">
+    <div class="guide-nav-content">
+      <a href="/" class="guide-brand">
+        <span class="guide-logo-dot"></span>
+        <span class="guide-brand-text">FloatBoard</span>
+      </a>
+      <div class="guide-nav-links">
+        <a href="/">Overview</a>
+        <a href="/tools/compare-images-online/" class="active">Image Compare</a>
+        <a href="/tools/extract-text-from-image/">Screen OCR</a>
+        <a href="/web-pad/">WebPad</a>
+        <a href="/blog/">Editorial</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="guide-nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+          <span class="theme-dot default-dot" aria-hidden="true"></span>
+          <span class="theme-dot contrast-dot" aria-hidden="true"></span>
+          <span class="theme-toggle-label">Theme</span>
+        </button>
+        <a href="/download/" class="guide-nav-btn">Download Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="editorial-index-hero" id="tool-main" style="padding-top: 40px; padding-bottom: 30px;">
+    <div class="hero-glow-layer" aria-hidden="true"></div>
+    <div class="hero-ribbed-glass" aria-hidden="true"></div>
+
+    <div class="hero-badge-pill" style="margin-bottom: 16px;">
+      <span class="badge-dot" style="background: var(--theme-secondary);"></span>
+      <span>100% PRIVATE CLIENT-SIDE UTILITY // ZERO SERVER UPLOADS</span>
+    </div>
+
+    <h1 class="hero-editorial-h1" style="max-width: 900px; margin: 0 auto 16px;">
+      Compare Two Images Side by Side at the Speed of <em class="editorial-focal-italic">Thought</em>.
+    </h1>
+
+    <p class="hero-editorial-sub" style="max-width: 720px; margin: 0 auto 28px;">
+      Paste screenshots, drop design mockups, or inspect 3D render passes. Compare in side-by-side dual view, interactive before/after split slider, or pixel difference overlay without uploading files.
+    </p>
+  </header>
+
+  <!-- Main Tool Workspace -->
+  <main class="tool-workspace-wrapper">
+    <div class="tool-app-window">
+      <!-- Tool Window Bar -->
+      <div class="tool-window-bar">
+        <div class="window-controls">
+          <span class="window-dot r"></span>
+          <span class="window-dot y"></span>
+          <span class="window-dot g"></span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffffff; font-weight: 700; margin-left: 8px;">
+            FloatBoard DualView — HTML5 Canvas
+          </span>
+        </div>
+
+        <!-- Mode Tabs -->
+        <div class="window-mode-tabs" role="tablist" aria-label="Comparison Modes">
+          <button class="mode-tab-btn active" id="tab-side" type="button" role="tab" aria-selected="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="8" height="18" rx="2"></rect><rect x="13" y="3" width="8" height="18" rx="2"></rect></svg>
+            Side-by-Side
+          </button>
+          <button class="mode-tab-btn" id="tab-slider" type="button" role="tab" aria-selected="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><line x1="12" y1="3" x2="12" y2="21"></line></svg>
+            Split Slider
+          </button>
+          <button class="mode-tab-btn" id="tab-diff" type="button" role="tab" aria-selected="false">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="9" cy="12" r="6"></circle><circle cx="15" cy="12" r="6"></circle></svg>
+            Difference Diff
+          </button>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="window-quick-actions">
+          <button class="tool-action-btn" id="btn-sample" type="button" title="Load sample car photography to test instantly">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Load Sample Pair
+          </button>
+          <button class="tool-action-btn" id="btn-swap" type="button" title="Swap Slot A and Slot B">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 16V4M7 4L3 8M7 4L11 8M17 8V20M17 20L21 16M17 20L13 16"></path></svg>
+            Swap (A ⇄ B)
+          </button>
+          <button class="tool-action-btn" id="btn-reset" type="button" title="Clear both images">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+            Reset
+          </button>
+        </div>
+      </div>
+
+      <!-- Comparison Stage -->
+      <div class="comparison-stage" id="comparison-stage">
+        <!-- MODE 1: Side by Side -->
+        <div class="stage-side-by-side" id="stage-side">
+          <!-- Slot A -->
+          <div class="compare-slot" id="slot-a" tabindex="0" role="region" aria-label="Image Slot A">
+            <div class="slot-badge">SLOT A · <span>ORIGINAL</span></div>
+            <div class="slot-empty-state" id="empty-a">
+              <div class="slot-empty-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+              <h4 class="slot-empty-title">Drop or Paste Image A</h4>
+              <p class="slot-empty-desc">Click to browse file, drag &amp; drop PNG/JPG/WebP, or press <strong>Ctrl + V</strong> to paste from clipboard.</p>
+              <input type="file" id="file-input-a" accept="image/*" style="display: none;">
+            </div>
+            <img id="img-a" class="compare-img-view" style="display: none;" alt="Image A Comparison Target" width="800" height="600">
+          </div>
+
+          <!-- Slot B -->
+          <div class="compare-slot" id="slot-b" tabindex="0" role="region" aria-label="Image Slot B">
+            <div class="slot-badge">SLOT B · <span>REVISION</span></div>
+            <div class="slot-empty-state" id="empty-b">
+              <div class="slot-empty-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+              </div>
+              <h4 class="slot-empty-title">Drop or Paste Image B</h4>
+              <p class="slot-empty-desc">Click to browse file, drag &amp; drop PNG/JPG/WebP, or press <strong>Ctrl + V</strong> to paste from clipboard.</p>
+              <input type="file" id="file-input-b" accept="image/*" style="display: none;">
+            </div>
+            <img id="img-b" class="compare-img-view" style="display: none;" alt="Image B Comparison Target" width="800" height="600">
+          </div>
+        </div>
+
+        <!-- MODE 2: Split Slider -->
+        <div class="stage-split-slider" id="stage-slider">
+          <div class="split-layer split-layer-a">
+            <img id="slider-img-a" class="compare-img-view" alt="Slider Base Image A" width="800" height="600">
+          </div>
+          <div class="split-layer split-layer-b" id="split-layer-b">
+            <img id="slider-img-b" class="compare-img-view" alt="Slider Revision Image B" width="800" height="600">
+          </div>
+          <div class="split-handle-line" id="split-handle">
+            <div class="split-handle-knob">⇄</div>
+          </div>
+        </div>
+
+        <!-- MODE 3: Difference Diff -->
+        <div class="stage-diff-overlay" id="stage-diff">
+          <img id="diff-img-a" class="compare-img-view" alt="Diff Image A" width="800" height="600">
+          <img id="diff-img-b" class="compare-img-view diff-img-b" alt="Diff Image B" width="800" height="600">
+        </div>
+      </div>
+
+      <!-- Tool Footer Bar -->
+      <div class="tool-window-footer">
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <span class="tool-privacy-pill">
+            <span class="tool-privacy-dot"></span>
+            100% Client-Side RAM (0 Bytes Uploaded)
+          </span>
+          <span id="meta-info">Slot A: None | Slot B: None</span>
+        </div>
+        <div>
+          <span>Tip: Press <strong>Ctrl + V</strong> anywhere to paste clipboard crops</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop App Callout (High-Converting Bridge) -->
+    <section class="desktop-callout-card" aria-label="FloatBoard Desktop Promotion">
+      <div class="callout-text">
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(252, 121, 64, 0.2); color: #fc7940; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 800; margin-bottom: 8px;">
+          NATIVE DESKTOP ENHANCEMENT
+        </div>
+        <h3>Need this comparison board locked floating above your software?</h3>
+        <p>FloatBoard desktop app hovers this exact dual comparison board always-on-top above Blender, Photoshop, Premiere, and your code editor with zero window-switching. Works 100% offline with global hotkeys.</p>
+      </div>
+      <div class="callout-actions">
+        <a href="/download/" class="guide-nav-btn" style="padding: 12px 24px; font-size: 0.95rem;">Download FloatBoard Free ↗</a>
+        <a href="/pricing" style="color: #cbd5e1; font-size: 0.88rem; font-weight: 600; text-decoration: none;">View $5.99 Lifetime →</a>
+      </div>
+    </section>
+
+    <!-- Bento Features Section -->
+    <section class="tool-bento-grid">
+      <div class="tool-bento-card">
+        <div class="tool-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h4>Zero-Upload Privacy Guarantee</h4>
+        <p>Unlike online file converters that upload your confidential UI mockups, client NDAs, or proprietary 3D renders to remote cloud servers, FloatBoard processes every byte locally in your browser memory.</p>
+      </div>
+
+      <div class="tool-bento-card">
+        <div class="tool-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+        </div>
+        <h4>60 FPS Hardware Acceleration</h4>
+        <p>Smooth split-screen dragging and pixel diff comparison powered by your GPU via HTML5 Canvas. Inspect 4K render passes, RAW photo adjustments, and SVG exports with zero lag.</p>
+      </div>
+
+      <div class="tool-bento-card">
+        <div class="tool-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+        </div>
+        <h4>Direct Clipboard Ingestion</h4>
+        <p>Copy any screenshot with Win+Shift+S (or Cmd+Shift+4) and press Ctrl+V directly on the stage. No temporary files in your Downloads folder and no file dialog clicks needed.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="tool-faq-section" aria-label="Frequently Asked Questions">
+      <h2 class="tool-faq-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-accordion-item">
+        <h3>How does the online image comparison tool work?</h3>
+        <p>The tool uses modern browser APIs (FileReader and HTML5 Canvas) to render two images in parallel memory. You can toggle between side-by-side view, draggable before/after slider, and difference overlay without sending data over the network.</p>
+      </div>
+
+      <div class="faq-accordion-item">
+        <h3>Is there any file size limit for image comparison?</h3>
+        <p>Because processing happens locally in your device RAM, you can compare large 4K and 8K PNG, JPG, or WebP images up to your system memory capacity without upload timeouts.</p>
+      </div>
+
+      <div class="faq-accordion-item">
+        <h3>How do I compare vehicle blueprints or 3D renders?</h3>
+        <p>Load your front orthographic view in Slot A and your side orthographic view in Slot B. You can inspect alignment, silhouette proportions, and edge loop curvature side by side. For Blender workflows, the desktop app pins this board directly over your 3D Viewport.</p>
+      </div>
+
+      <div class="faq-accordion-item">
+        <h3>Can I run this comparison board offline on my computer?</h3>
+        <p>Yes. The standalone FloatBoard desktop app runs natively on Windows 11/10, macOS, and Linux without internet access. It pins reference boards always-on-top above any application.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="editorial-footer">
+    <div class="editorial-footer-content">
+      <div class="editorial-footer-brand">
+        <a href="/" class="guide-brand">
+          <span class="guide-logo-dot"></span>
+          <span class="guide-brand-text">FloatBoard</span>
+        </a>
+        <p class="editorial-footer-copy">
+          Zero-latency floating scratchpad, reference board &amp; offline clipboard manager for Windows 11, macOS &amp; Linux.
+        </p>
+      </div>
+      <div class="editorial-footer-columns">
+        <div class="footer-col">
+          <h4>Free Tools</h4>
+          <ul>
+            <li><a href="/tools/compare-images-online/">Image Compare Tool</a></li>
+            <li><a href="/tools/extract-text-from-image/">Screen OCR Tool</a></li>
+            <li><a href="/web-pad/">WebPad Notepad</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/blog/best-offline-clipboard-manager-windows-11/">Offline Clipboard</a></li>
+            <li><a href="/blog/lightweight-pureref-alternative-reference-board/">PureRef Alternative</a></li>
+            <li><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top</a></li>
+            <li><a href="/blog/">All 27 Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/download/">Download Free</a></li>
+            <li><a href="/pricing">Pricing ($5.99)</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Engine -->
+  <script>
+    (function() {
+      // Theme Toggle Logic
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const current = document.documentElement.getAttribute('data-theme') || 'default';
+          const next = current === 'high-contrast' ? 'default' : 'high-contrast';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('floatboard-theme', next);
+        });
+        const saved = localStorage.getItem('floatboard-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+      }
+
+      // App State
+      let srcA = null;
+      let srcB = null;
+      let activeMode = 'side'; // 'side', 'slider', 'diff'
+      let isDraggingSlider = false;
+
+      // Elements
+      const stageSide = document.getElementById('stage-side');
+      const stageSlider = document.getElementById('stage-slider');
+      const stageDiff = document.getElementById('stage-diff');
+
+      const emptyA = document.getElementById('empty-a');
+      const emptyB = document.getElementById('empty-b');
+      const imgA = document.getElementById('img-a');
+      const imgB = document.getElementById('img-b');
+
+      const sliderImgA = document.getElementById('slider-img-a');
+      const sliderImgB = document.getElementById('slider-img-b');
+      const splitLayerB = document.getElementById('split-layer-b');
+      const splitHandle = document.getElementById('split-handle');
+
+      const diffImgA = document.getElementById('diff-img-a');
+      const diffImgB = document.getElementById('diff-img-b');
+
+      const fileInputA = document.getElementById('file-input-a');
+      const fileInputB = document.getElementById('file-input-b');
+      const metaInfo = document.getElementById('meta-info');
+
+      // Sample Images
+      const sampleA = '/blog/assets/supercar-silhouette-side-by-side.jpg';
+      const sampleB = '/blog/assets/cyber-night-car-reference.jpg';
+
+      function updateMeta() {
+        const infoA = srcA ? 'Loaded' : 'None';
+        const infoB = srcB ? 'Loaded' : 'None';
+        metaInfo.textContent = `Slot A: ${infoA} | Slot B: ${infoB}`;
+      }
+
+      function setImageA(url) {
+        srcA = url;
+        imgA.src = url;
+        sliderImgA.src = url;
+        diffImgA.src = url;
+        imgA.style.display = 'block';
+        emptyA.style.display = 'none';
+        updateMeta();
+      }
+
+      function setImageB(url) {
+        srcB = url;
+        imgB.src = url;
+        sliderImgB.src = url;
+        diffImgB.src = url;
+        imgB.style.display = 'block';
+        emptyB.style.display = 'none';
+        updateMeta();
+      }
+
+      function handleFile(file, slot) {
+        if (!file || !file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          if (slot === 'A') setImageA(e.target.result);
+          else setImageB(e.target.result);
+        };
+        reader.readAsDataURL(file);
+      }
+
+      // Empty State Click to Browse
+      emptyA.addEventListener('click', () => fileInputA.click());
+      emptyB.addEventListener('click', () => fileInputB.click());
+
+      fileInputA.addEventListener('change', (e) => {
+        if (e.target.files.length) handleFile(e.target.files[0], 'A');
+      });
+      fileInputB.addEventListener('change', (e) => {
+        if (e.target.files.length) handleFile(e.target.files[0], 'B');
+      });
+
+      // Drag and Drop
+      [emptyA, emptyB].forEach(el => {
+        const slot = el === emptyA ? 'A' : 'B';
+        el.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          el.classList.add('drag-over');
+        });
+        el.addEventListener('dragleave', () => el.classList.remove('drag-over'));
+        el.addEventListener('drop', (e) => {
+          e.preventDefault();
+          el.classList.remove('drag-over');
+          if (e.dataTransfer.files.length) {
+            handleFile(e.dataTransfer.files[0], slot);
+          }
+        });
+      });
+
+      // Global Clipboard Paste (Ctrl + V)
+      window.addEventListener('paste', (e) => {
+        const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+        for (let item of items) {
+          if (item.kind === 'file' && item.type.startsWith('image/')) {
+            const blob = item.getAsFile();
+            if (!srcA) handleFile(blob, 'A');
+            else handleFile(blob, 'B');
+            break;
+          }
+        }
+      });
+
+      // Mode Switcher Tabs
+      const tabSide = document.getElementById('tab-side');
+      const tabSlider = document.getElementById('tab-slider');
+      const tabDiff = document.getElementById('tab-diff');
+
+      function switchMode(mode) {
+        activeMode = mode;
+        [tabSide, tabSlider, tabDiff].forEach(b => b.classList.remove('active'));
+        stageSide.style.display = 'none';
+        stageSlider.style.display = 'none';
+        stageDiff.style.display = 'none';
+
+        if (mode === 'side') {
+          tabSide.classList.add('active');
+          stageSide.style.display = 'grid';
+        } else if (mode === 'slider') {
+          tabSlider.classList.add('active');
+          stageSlider.style.display = 'block';
+        } else if (mode === 'diff') {
+          tabDiff.classList.add('active');
+          stageDiff.style.display = 'flex';
+        }
+      }
+
+      tabSide.addEventListener('click', () => switchMode('side'));
+      tabSlider.addEventListener('click', () => switchMode('slider'));
+      tabDiff.addEventListener('click', () => switchMode('diff'));
+
+      // Sample Pair Button
+      document.getElementById('btn-sample').addEventListener('click', () => {
+        setImageA(sampleA);
+        setImageB(sampleB);
+      });
+
+      // Swap Button
+      document.getElementById('btn-swap').addEventListener('click', () => {
+        const temp = srcA;
+        if (srcB) setImageA(srcB);
+        else {
+          srcA = null;
+          imgA.style.display = 'none';
+          emptyA.style.display = 'flex';
+        }
+        if (temp) setImageB(temp);
+        else {
+          srcB = null;
+          imgB.style.display = 'none';
+          emptyB.style.display = 'flex';
+        }
+        updateMeta();
+      });
+
+      // Reset Button
+      document.getElementById('btn-reset').addEventListener('click', () => {
+        srcA = null;
+        srcB = null;
+        imgA.style.display = 'none';
+        imgB.style.display = 'none';
+        emptyA.style.display = 'flex';
+        emptyB.style.display = 'flex';
+        fileInputA.value = '';
+        fileInputB.value = '';
+        updateMeta();
+      });
+
+      // Split Slider Dragging
+      function setSliderPosition(x) {
+        const rect = stageSlider.getBoundingClientRect();
+        let pos = (x - rect.left) / rect.width;
+        pos = Math.max(0, Math.min(1, pos));
+        const pct = pos * 100;
+        splitLayerB.style.width = pct + '%';
+        splitHandle.style.left = pct + '%';
+      }
+
+      splitHandle.addEventListener('mousedown', () => isDraggingSlider = true);
+      window.addEventListener('mouseup', () => isDraggingSlider = false);
+      window.addEventListener('mousemove', (e) => {
+        if (isDraggingSlider && activeMode === 'slider') {
+          setSliderPosition(e.clientX);
+        }
+      });
+
+      // Touch events for mobile
+      splitHandle.addEventListener('touchstart', () => isDraggingSlider = true);
+      window.addEventListener('touchend', () => isDraggingSlider = false);
+      window.addEventListener('touchmove', (e) => {
+        if (isDraggingSlider && activeMode === 'slider') {
+          setSliderPosition(e.touches[0].clientX);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

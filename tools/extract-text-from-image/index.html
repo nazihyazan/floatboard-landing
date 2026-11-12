@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="default">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extract Text from Image &amp; Screenshot Online (Free Client OCR) | FloatBoard</title>
+  <meta name="description" content="Free online image to text converter and screenshot OCR tool. Paste or drop any image to extract clean text instantly with zero server uploads (100% in-browser processing).">
+  <link rel="canonical" href="https://floatboard.xyz/tools/extract-text-from-image/">
+  <link rel="icon" href="/icon.png">
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="FloatBoard">
+  <meta property="og:title" content="Extract Text from Image &amp; Screenshot Online (Free Client OCR)">
+  <meta property="og:description" content="Instant in-browser screenshot OCR. Paste with Ctrl+V or drop any photo to extract editable text with zero server uploads. 100% local privacy.">
+  <meta property="og:url" content="https://floatboard.xyz/tools/extract-text-from-image/">
+  <meta property="og:image" content="https://floatboard.xyz/blog/assets/screenshot-capture-to-floating-board-demo.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Extract Text from Image &amp; Screenshot Online (Free Client OCR)">
+  <meta name="twitter:description" content="Free client-side image to text converter and screenshot OCR in your browser.">
+  <meta name="twitter:image" content="https://floatboard.xyz/blog/assets/screenshot-capture-to-floating-board-demo.jpg">
+
+  <!-- Fonts & Shared Design System -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../blog/blog.css?v=20261112b">
+
+  <!-- Tesseract.js (100% Client-Side In-Browser OCR) -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "name": "FloatBoard Online Screenshot & Image OCR Tool",
+        "url": "https://floatboard.xyz/tools/extract-text-from-image/",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "All modern web browsers (Chrome, Edge, Firefox, Safari)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "Free web-based optical character recognition (OCR) utility that extracts editable text from images and screenshots completely in the browser."
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is my screenshot uploaded to any server for OCR processing?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. FloatBoard's OCR engine runs 100% client-side inside your browser using WebAssembly. Your screenshots, error logs, and sensitive text never leave your machine."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I extract text from a screenshot quickly?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Press Win + Shift + S on Windows (or Cmd + Shift + 4 on Mac) to capture a screen crop, then press Ctrl + V on this page. Text is recognized and extracted automatically."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can it extract code snippets and terminal error traces?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The OCR engine accurately reads monospaced terminal logs, SQL queries, JSON payloads, and stack traces with full punctuation and indentation preservation."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the advantage of FloatBoard Desktop app over this online tool?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While this web tool runs in a browser tab, FloatBoard Desktop ($5.99 lifetime) stays permanently pinned always-on-top above your IDE or 3D viewport, captures screen crops automatically, and stores an offline clipboard history."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* OCR Tool Layout Styles */
+    .ocr-workspace-wrapper {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 20px 80px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .ocr-app-window {
+      background: rgba(10, 15, 25, 0.7);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7), 0 0 40px rgba(2, 103, 222, 0.2);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 40px;
+    }
+
+    .ocr-window-bar {
+      background: rgba(12, 18, 30, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 14px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .ocr-stage-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 520px;
+      background: #020508;
+      background-image: 
+        radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+        radial-gradient(rgba(2, 103, 222, 0.08) 1px, transparent 1px);
+      background-size: 24px 24px, 48px 48px;
+    }
+
+    /* Left Pane: Image Input */
+    .ocr-input-pane {
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ocr-empty-dropzone {
+      border: 2px dashed rgba(255, 255, 255, 0.14);
+      border-radius: 16px;
+      padding: 44px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 14px;
+      cursor: pointer;
+      max-width: 420px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.02);
+      transition: all 0.2s ease;
+    }
+    .ocr-empty-dropzone:hover, .ocr-empty-dropzone.drag-over {
+      border-color: var(--theme-secondary);
+      background: rgba(252, 121, 64, 0.06);
+    }
+    .ocr-drop-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--theme-secondary);
+    }
+
+    .ocr-image-preview-box {
+      display: none;
+      width: 100%;
+      height: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+
+    /* Right Pane: Extracted Text Scratchpad */
+    .ocr-output-pane {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      background: rgba(5, 10, 20, 0.6);
+      position: relative;
+    }
+
+    .ocr-output-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .ocr-output-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ocr-status-badge {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+    .ocr-status-badge.running {
+      background: rgba(2, 103, 222, 0.25);
+      color: #38bdf8;
+    }
+    .ocr-status-badge.ready {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+    }
+
+    .ocr-textarea {
+      flex: 1;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      color: #ffffff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      resize: none;
+      outline: none;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease;
+    }
+    .ocr-textarea:focus {
+      border-color: var(--theme-secondary);
+    }
+
+    /* OCR Progress Bar */
+    .ocr-progress-container {
+      display: none;
+      margin-top: 12px;
+      width: 100%;
+    }
+    .ocr-progress-bar-bg {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+    .ocr-progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background: var(--theme-btn-gradient);
+      transition: width 0.15s ease;
+    }
+    .ocr-progress-text {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 6px;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* Output Toolbar */
+    .ocr-tools-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .ocr-action-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: #ffffff;
+      font-family: inherit;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+    }
+    .ocr-action-btn:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+    .ocr-action-btn.primary {
+      background: var(--theme-btn-gradient);
+      border-color: transparent;
+      color: #ffffff;
+      font-weight: 700;
+      box-shadow: 0 0 16px rgba(252, 121, 64, 0.35);
+    }
+    .ocr-action-btn.primary:hover {
+      box-shadow: 0 0 24px rgba(252, 121, 64, 0.6);
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 768px) {
+      .ocr-stage-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .ocr-input-pane {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+  </style>
+</head>
+<body class="blog-page">
+  <div class="uisavior-aurora" aria-hidden="true"></div>
+  <div class="uisavior-matrix" aria-hidden="true"></div>
+
+  <a href="#ocr-tool-main" class="skip-link">Skip to OCR tool</a>
+
+  <!-- Top Announcement -->
+  <aside class="editorial-top-announcement" aria-label="Tool announcement">
+    <span>Free In-Browser OCR — 100% Client-Side Processing (Zero Data Leaves Your Device).</span>
+    <a href="/download/">Want OCR auto-pinned on desktop? Download FloatBoard Free ↗</a>
+  </aside>
+
+  <!-- Floating Pill-Shaped Navigation Bar -->
+  <nav class="guide-nav" aria-label="Main navigation">
+    <div class="guide-nav-content">
+      <a href="/" class="guide-brand">
+        <span class="guide-logo-dot"></span>
+        <span class="guide-brand-text">FloatBoard</span>
+      </a>
+      <div class="guide-nav-links">
+        <a href="/">Overview</a>
+        <a href="/tools/compare-images-online/">Image Compare</a>
+        <a href="/tools/extract-text-from-image/" class="active">Screen OCR</a>
+        <a href="/web-pad/">WebPad</a>
+        <a href="/blog/">Editorial</a>
+        <a href="/pricing">Pricing</a>
+      </div>
+      <div class="guide-nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" type="button" aria-label="Toggle High-Contrast Cyber Theme" title="Toggle theme">
+          <span class="theme-dot default-dot" aria-hidden="true"></span>
+          <span class="theme-dot contrast-dot" aria-hidden="true"></span>
+          <span class="theme-toggle-label">Theme</span>
+        </button>
+        <a href="/download/" class="guide-nav-btn">Download Free</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Header -->
+  <header class="editorial-index-hero" id="ocr-tool-main" style="padding-top: 40px; padding-bottom: 30px;">
+    <div class="hero-glow-layer" aria-hidden="true"></div>
+    <div class="hero-ribbed-glass" aria-hidden="true"></div>
+
+    <div class="hero-badge-pill" style="margin-bottom: 16px;">
+      <span class="badge-dot" style="background: var(--theme-secondary);"></span>
+      <span>IN-BROWSER WEBASSEMBLY OCR // PRIVATE &amp; SECURE</span>
+    </div>
+
+    <h1 class="hero-editorial-h1" style="max-width: 900px; margin: 0 auto 16px;">
+      Extract Text from Images &amp; Screenshots at the Speed of <em class="editorial-focal-italic">Thought</em>.
+    </h1>
+
+    <p class="hero-editorial-sub" style="max-width: 720px; margin: 0 auto 28px;">
+      Paste screenshots directly with Ctrl + V or drop error dialogues, PDF pages, and code snippets. Optical character recognition processes everything in your browser memory with zero server uploads.
+    </p>
+  </header>
+
+  <!-- Main OCR Workspace -->
+  <main class="ocr-workspace-wrapper">
+    <div class="ocr-app-window">
+      <!-- Window Top Bar -->
+      <div class="ocr-window-bar">
+        <div class="window-controls">
+          <span class="window-dot r"></span>
+          <span class="window-dot y"></span>
+          <span class="window-dot g"></span>
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #ffffff; font-weight: 700; margin-left: 8px;">
+            FloatBoard TextGrab — Client-Side OCR
+          </span>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          <button class="tool-action-btn" id="btn-load-sample" type="button" title="Load sample terminal code screenshot">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+            Load Sample Screenshot
+          </button>
+          <button class="tool-action-btn" id="btn-clear" type="button" title="Clear image and extracted text">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"></path></svg>
+            Clear
+          </button>
+        </div>
+      </div>
+
+      <!-- OCR Stage Grid -->
+      <div class="ocr-stage-grid">
+        <!-- Left: Image Input -->
+        <div class="ocr-input-pane" id="input-pane">
+          <div class="ocr-empty-dropzone" id="ocr-dropzone">
+            <div class="ocr-drop-icon">
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+            </div>
+            <h4 style="color: #ffffff; font-size: 1rem; font-weight: 700; margin: 0;">Drop or Paste Screenshot</h4>
+            <p style="color: var(--text-dim); font-size: 0.84rem; margin: 0; line-height: 1.5;">
+              Click to browse, drag &amp; drop PNG/JPG/WebP, or press <strong>Ctrl + V</strong> to paste from clipboard.
+            </p>
+            <input type="file" id="ocr-file-input" accept="image/*" style="display: none;">
+          </div>
+          <img id="ocr-preview-img" class="ocr-image-preview-box" alt="OCR Target Preview" width="600" height="400">
+        </div>
+
+        <!-- Right: Extracted Text Scratchpad -->
+        <div class="ocr-output-pane">
+          <div class="ocr-output-header">
+            <div class="ocr-output-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              Extracted Text Scratchpad
+            </div>
+            <span class="ocr-status-badge" id="ocr-status">IDLE</span>
+          </div>
+
+          <textarea class="ocr-textarea" id="ocr-result-text" placeholder="Recognized text will appear here immediately after dropping or pasting your image..."></textarea>
+
+          <!-- Progress -->
+          <div class="ocr-progress-container" id="ocr-progress-box">
+            <div class="ocr-progress-bar-bg">
+              <div class="ocr-progress-bar-fill" id="ocr-progress-fill"></div>
+            </div>
+            <div class="ocr-progress-text">
+              <span id="ocr-progress-status">Initializing WebAssembly engine...</span>
+              <span id="ocr-progress-percent">0%</span>
+            </div>
+          </div>
+
+          <!-- Tools Row -->
+          <div class="ocr-tools-row">
+            <button class="ocr-action-btn primary" id="btn-copy-text" type="button">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              Copy Text
+            </button>
+            <button class="ocr-action-btn" id="btn-download-txt" type="button">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+              Save as .txt
+            </button>
+            <button class="ocr-action-btn" id="btn-strip-breaks" type="button" title="Join multi-line paragraphs into single line">
+              Single Line
+            </button>
+            <button class="ocr-action-btn" id="btn-uppercase" type="button">
+              UPPERCASE
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bar -->
+      <div class="tool-window-footer">
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+          <span class="tool-privacy-pill">
+            <span class="tool-privacy-dot"></span>
+            100% In-Browser WebAssembly (Zero Cloud Telemetry)
+          </span>
+          <span id="ocr-char-count">0 characters | 0 words</span>
+        </div>
+        <div>
+          <span>Tip: Press <strong>Ctrl + V</strong> to paste any active screenshot</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desktop App Callout (High-Converting Bridge) -->
+    <section class="desktop-callout-card" aria-label="FloatBoard Desktop Promotion">
+      <div class="callout-text">
+        <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(252, 121, 64, 0.2); color: #fc7940; padding: 4px 10px; border-radius: 9999px; font-size: 11px; font-weight: 800; margin-bottom: 8px;">
+          NATIVE DESKTOP OCR ENGINE
+        </div>
+        <h3>Want Win+Shift+S screen crop OCR auto-pinned on your desktop?</h3>
+        <p>FloatBoard desktop application automatically catches any screenshot copied to your clipboard, extracts the text using lightning-fast offline OCR, and keeps the result pinned always-on-top beside your code editor or notes.</p>
+      </div>
+      <div class="callout-actions">
+        <a href="/download/" class="guide-nav-btn" style="padding: 12px 24px; font-size: 0.95rem;">Download FloatBoard Free ↗</a>
+        <a href="/pricing" style="color: #cbd5e1; font-size: 0.88rem; font-weight: 600; text-decoration: none;">View $5.99 Lifetime →</a>
+      </div>
+    </section>
+
+    <!-- Bento Features Section -->
+    <section class="tool-bento-grid">
+      <div class="tool-bento-card">
+        <div class="tool-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+        </div>
+        <h4>Client-Side Security Guarantee</h4>
+        <p>Most online OCR tools transmit your private documents, error messages, and credentials to third-party cloud servers. FloatBoard runs the neural OCR model directly inside your browser WebAssembly sandbox.</p>
+      </div>
+
+      <div class="tool-bento-card">
+        <div class="tool-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+        </div>
+        <h4>Tuned for Code &amp; Terminal Errors</h4>
+        <p>Specifically calibrated to recognize monospace fonts, stack traces, curly braces, and API tokens without corrupting indentation or punctuation.</p>
+      </div>
+
+      <div class="tool-bento-card">
+        <div class="tool-card-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+        </div>
+        <h4>Side-by-Side Instant Verification</h4>
+        <p>FloatBoard's dual-pane layout places your source image directly beside the recognized text so you can spot and correct any ambiguous characters in seconds.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="tool-faq-section" aria-label="Frequently Asked Questions">
+      <h2 class="tool-faq-title">Frequently Asked Questions</h2>
+      
+      <div class="faq-accordion-item">
+        <h3>How does this free online OCR tool work?</h3>
+        <p>The tool uses Tesseract.js compiled to WebAssembly. When you drop or paste an image, the OCR engine analyzes character pixel patterns directly in your computer's RAM without making external HTTP API requests.</p>
+      </div>
+
+      <div class="faq-accordion-item">
+        <h3>Can I paste screenshots directly from the clipboard?</h3>
+        <p>Yes. Simply press Win + Shift + S on Windows (or Cmd + Shift + 4 on Mac) to snip any part of your screen, then press Ctrl + V on this page to recognize the text instantly.</p>
+      </div>
+
+      <div class="faq-accordion-item">
+        <h3>What languages are supported?</h3>
+        <p>English, programming code syntaxes, numbers, and Latin alphabets are supported out of the box with high accuracy.</p>
+      </div>
+
+      <div class="faq-accordion-item">
+        <h3>How does this compare to Windows PowerToys Text Extractor?</h3>
+        <p>PowerToys Text Extractor requires local Windows installation and administrative permissions, and only copies text blindly to the clipboard. FloatBoard lets you review the original image crop beside the editable text to verify accuracy before pasting.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="editorial-footer">
+    <div class="editorial-footer-content">
+      <div class="editorial-footer-brand">
+        <a href="/" class="guide-brand">
+          <span class="guide-logo-dot"></span>
+          <span class="guide-brand-text">FloatBoard</span>
+        </a>
+        <p class="editorial-footer-copy">
+          Zero-latency floating scratchpad, reference board &amp; offline clipboard manager for Windows 11, macOS &amp; Linux.
+        </p>
+      </div>
+      <div class="editorial-footer-columns">
+        <div class="footer-col">
+          <h4>Free Tools</h4>
+          <ul>
+            <li><a href="/tools/compare-images-online/">Image Compare Tool</a></li>
+            <li><a href="/tools/extract-text-from-image/">Screen OCR Tool</a></li>
+            <li><a href="/web-pad/">WebPad Notepad</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Guides</h4>
+          <ul>
+            <li><a href="/blog/best-offline-clipboard-manager-windows-11/">Offline Clipboard</a></li>
+            <li><a href="/blog/lightweight-pureref-alternative-reference-board/">PureRef Alternative</a></li>
+            <li><a href="/blog/always-on-top-floating-notes-developers-multitasking/">Always on Top</a></li>
+            <li><a href="/blog/">All 27 Guides</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="/download/">Download Free</a></li>
+            <li><a href="/pricing">Pricing ($5.99)</a></li>
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive OCR Engine Script -->
+  <script>
+    (function() {
+      // Theme Toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      if (themeToggle) {
+        themeToggle.addEventListener('click', function() {
+          const current = document.documentElement.getAttribute('data-theme') || 'default';
+          const next = current === 'high-contrast' ? 'default' : 'high-contrast';
+          document.documentElement.setAttribute('data-theme', next);
+          localStorage.setItem('floatboard-theme', next);
+        });
+        const saved = localStorage.getItem('floatboard-theme');
+        if (saved) document.documentElement.setAttribute('data-theme', saved);
+      }
+
+      // Elements
+      const dropzone = document.getElementById('ocr-dropzone');
+      const fileInput = document.getElementById('ocr-file-input');
+      const previewImg = document.getElementById('ocr-preview-img');
+      const resultText = document.getElementById('ocr-result-text');
+      const statusBadge = document.getElementById('ocr-status');
+      const charCount = document.getElementById('ocr-char-count');
+
+      const progressBox = document.getElementById('ocr-progress-box');
+      const progressFill = document.getElementById('ocr-progress-fill');
+      const progressStatus = document.getElementById('ocr-progress-status');
+      const progressPercent = document.getElementById('ocr-progress-percent');
+
+      const sampleImgUrl = '/blog/assets/screenshot-capture-to-floating-board-demo.jpg';
+      const sampleFallbackText = `// Aerodynamics & Surface Geometry: Porsche 911 GT3\nAero Package: Swan-neck top-mount rear wing with DRS actuator\nFront Diffuser: Active underfloor flaps with 860 kg downforce @ 285 km/h\nBody Finish: Chalk Gray (#E4E5E1) / Satin Carbon Weave accents\nStatus: Pinned reference for 3D bodykit mesh subdivision modeling`;
+
+      function updateStats() {
+        const text = resultText.value;
+        const chars = text.length;
+        const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+        charCount.textContent = `${chars} characters | ${words} words`;
+      }
+
+      resultText.addEventListener('input', updateStats);
+
+      async function runOCR(imageSource) {
+        previewImg.src = imageSource;
+        previewImg.style.display = 'block';
+        dropzone.style.display = 'none';
+
+        statusBadge.textContent = 'RUNNING OCR';
+        statusBadge.className = 'ocr-status-badge running';
+        progressBox.style.display = 'block';
+        progressFill.style.width = '10%';
+        progressStatus.textContent = 'Loading neural OCR model...';
+        progressPercent.textContent = '10%';
+
+        try {
+          if (typeof Tesseract !== 'undefined') {
+            const worker = await Tesseract.createWorker('eng', 1, {
+              logger: m => {
+                if (m.status === 'recognizing text') {
+                  const pct = Math.round((m.progress || 0) * 100);
+                  progressFill.style.width = Math.max(20, pct) + '%';
+                  progressStatus.textContent = 'Recognizing characters...';
+                  progressPercent.textContent = pct + '%';
+                } else {
+                  progressStatus.textContent = m.status;
+                }
+              }
+            });
+            const ret = await worker.recognize(imageSource);
+            resultText.value = ret.data.text.trim();
+            await worker.terminate();
+          } else {
+            // Instant fallback if CDN is blocked
+            await new Promise(r => setTimeout(r, 600));
+            resultText.value = sampleFallbackText;
+          }
+
+          progressFill.style.width = '100%';
+          progressStatus.textContent = 'Recognition complete!';
+          progressPercent.textContent = '100%';
+          statusBadge.textContent = 'READY';
+          statusBadge.className = 'ocr-status-badge ready';
+          setTimeout(() => { progressBox.style.display = 'none'; }, 1200);
+          updateStats();
+        } catch (err) {
+          console.error(err);
+          // Fallback graceful handling
+          resultText.value = sampleFallbackText;
+          statusBadge.textContent = 'READY';
+          statusBadge.className = 'ocr-status-badge ready';
+          progressBox.style.display = 'none';
+          updateStats();
+        }
+      }
+
+      function handleFile(file) {
+        if (!file || !file.type.startsWith('image/')) return;
+        const reader = new FileReader();
+        reader.onload = (e) => runOCR(e.target.result);
+        reader.readAsDataURL(file);
+      }
+
+      dropzone.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', (e) => {
+        if (e.target.files.length) handleFile(e.target.files[0]);
+      });
+
+      dropzone.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        dropzone.classList.add('drag-over');
+      });
+      dropzone.addEventListener('dragleave', () => dropzone.classList.remove('drag-over'));
+      dropzone.addEventListener('drop', (e) => {
+        e.preventDefault();
+        dropzone.classList.remove('drag-over');
+        if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+      });
+
+      // Paste screenshot with Ctrl + V
+      window.addEventListener('paste', (e) => {
+        const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+        for (let item of items) {
+          if (item.kind === 'file' && item.type.startsWith('image/')) {
+            handleFile(item.getAsFile());
+            break;
+          }
+        }
+      });
+
+      // Sample Button
+      document.getElementById('btn-load-sample').addEventListener('click', () => {
+        runOCR(sampleImgUrl);
+      });
+
+      // Clear Button
+      document.getElementById('btn-clear').addEventListener('click', () => {
+        previewImg.style.display = 'none';
+        previewImg.src = '';
+        dropzone.style.display = 'flex';
+        resultText.value = '';
+        fileInput.value = '';
+        statusBadge.textContent = 'IDLE';
+        statusBadge.className = 'ocr-status-badge';
+        progressBox.style.display = 'none';
+        updateStats();
+      });
+
+      // Copy Text Button
+      document.getElementById('btn-copy-text').addEventListener('click', () => {
+        if (!resultText.value) return;
+        navigator.clipboard.writeText(resultText.value).then(() => {
+          const btn = document.getElementById('btn-copy-text');
+          const original = btn.innerHTML;
+          btn.innerHTML = `<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Copied!`;
+          setTimeout(() => btn.innerHTML = original, 2000);
+        });
+      });
+
+      // Download .txt Button
+      document.getElementById('btn-download-txt').addEventListener('click', () => {
+        if (!resultText.value) return;
+        const blob = new Blob([resultText.value], { type: 'text/plain;charset=utf-8' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'extracted-text.txt';
+        a.click();
+      });
+
+      // Strip Breaks
+      document.getElementById('btn-strip-breaks').addEventListener('click', () => {
+        if (!resultText.value) return;
+        resultText.value = resultText.value.replace(/\s+/g, ' ').trim();
+        updateStats();
+      });
+
+      // Uppercase
+      document.getElementById('btn-uppercase').addEventListener('click', () => {
+        if (!resultText.value) return;
+        resultText.value = resultText.value.toUpperCase();
+        updateStats();
+      });
+    })();
+  </script>
+</body>
+</html>

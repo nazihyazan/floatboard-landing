@@ -266,3 +266,4 @@ def update_posts():
 
 if __name__ == '__main__':
     update_posts()
+

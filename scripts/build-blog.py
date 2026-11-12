@@ -116,6 +116,7 @@ nav = '''<nav class="guide-nav floating-nav" aria-label="Main navigation">
 </a>
 <div class="guide-nav-links">
 <a href="/">Overview</a>
+<a href="/tools/">Tools</a>
 <a href="/clipboard-manager">Clipboard</a>
 <a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a>
 <a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a>
@@ -174,7 +175,7 @@ incontent_dark_card = '''<div class="editorial-dark-card" aria-label="Product sh
 </div>
 </div>'''
 
-footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer>'
+footer = '<footer class="guide-footer"><a href="/">FloatBoard</a><a href="/tools/">Free Tools</a><a href="/tools/compare-images-online/">Compare Images</a><a href="/tools/extract-text-from-image/">Screen OCR</a><a href="/clipboard-manager">Clipboard Manager</a><a href="/download/">Download App</a><a href="/compare/floatboard-vs-powertoys-always-on-top">vs PowerToys</a><a href="/alternatives/pureref-with-text-and-clipboard">vs PureRef</a><a href="/alternatives/windows-sticky-notes-always-on-top">vs Sticky Notes</a><a href="/alternatives/ditto-copyq-visual-clipboard">vs Ditto</a><a href="/linux/floating-clipboard-notes-ubuntu">Linux Guide</a><a href="/web-pad/">Online WebPad</a><a href="/blog/about/">About Blog</a><a href="/pricing">Pricing</a><a href="/privacy">Privacy</a><a href="/terms">Terms</a></footer>'
 
 def image(p, lazy=False):
     file = ROOT / 'blog/assets' / p['image']
